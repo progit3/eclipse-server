@@ -145,3 +145,15 @@ public static class RoboticsConsoleConstants
     public const string NET_DISABLE_COMMAND = "cyborg-disable";
     public const string NET_DESTROY_COMMAND = "cyborg-destroy";
 }
+
+public sealed class CyborgControlDataUpdatedEvent : EntityEventArgs
+{
+    public readonly string Address;
+    public readonly CyborgControlData Data;
+
+    public CyborgControlDataUpdatedEvent(string address, CyborgControlData data)
+    {
+        Address = address;
+        Data = data;
+    }
+}

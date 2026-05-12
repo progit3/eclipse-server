@@ -1,0 +1,127 @@
+- type: entity
+  id: BaseImplantOnlyImplanterInteQ
+  parent: [BaseImplantOnlyImplanter, BaseInteQContraband]
+  name: InteQ implanter
+  description: A compact disposable syringe exclusively designed for the injection of subdermal implants. Make sure to scrub it with soap or a rag to remove residual DNA after use!
+  abstract: true
+  components:
+    - type: Item
+      sprite: Objects/Specific/Medical/syndi_implanter.rsi
+      heldPrefix: implanter
+    - type: Sprite
+      sprite: Objects/Specific/Medical/syndi_implanter.rsi
+      state: implanter1
+      layers:
+        - state: implanter0
+          map: [ "implantFull" ]
+          visible: true
+        - state: implanter1
+          map: [ "implantOnly" ]
+    - type: GenericVisualizer
+      visuals:
+        enum.ImplanterVisuals.Full:
+          implantFull:
+            True: {visible: true}
+            False: {visible: false}
+        enum.ImplanterImplantOnlyVisuals.ImplantOnly:
+          implantOnly:
+            True: {state: broken}
+            False: {state: implanter1}
+    - type: Tag
+      tags: []
+
+- type: entity
+  id: StorageImplanterInteQ
+  name: storage implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: StorageImplant
+
+- type: entity
+  id: FreedomImplanterInteQ
+  name: freedom implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: FreedomImplant
+
+- type: entity
+  id: RadioImplanterInteQ
+  name: inteq radio implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+  - type: Implanter
+    implant: RadioImplantInteQ
+
+- type: entity
+  id: EmpImplanterInteQ
+  name: EMP implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: EmpImplant
+
+- type: entity
+  id: ScramImplanterInteQ
+  name: scram implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: ScramImplant
+
+- type: entity
+  id: DnaScramblerImplanterInteQ
+  name: DNA scrambler implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: DnaScramblerImplant
+
+- type: entity
+  id: ChameleonControllerImplanterInteQ
+  name: chameleon controller implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+  - type: Implanter
+    implant: ChameleonControllerImplant
+
+- type: entity
+  id: MicroBombImplanterInteQ
+  name: micro-bomb implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: MicroBombImplant
+
+- type: entity
+  id: MacroBombImplanterInteQ
+  name: macro-bomb implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: MacroBombImplant
+
+- type: entity
+  id: DeathRattleImplanterInteQ
+  name: death rattle implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+    - type: Implanter
+      implant: DeathRattleImplantInteQ
+
+- type: entity
+  id: DeathAcidifierImplanterInteQ
+  name: death acidifier implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+  - type: Implanter
+    implant: DeathAcidifierImplant
+
+- type: entity
+  id: FakeMindShieldImplanterInteQ
+  name: fake mindshield implanter
+  parent: BaseImplantOnlyImplanterInteQ
+  components:
+  - type: Implanter
+    implant: FakeMindShieldImplant

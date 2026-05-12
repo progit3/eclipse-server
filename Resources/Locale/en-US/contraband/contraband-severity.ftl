@@ -40,6 +40,12 @@ contraband-examine-text-Syndicate =
         [reagent] [color=crimson]This reagent is highly illegal Syndicate contraband![/color]
     }
 
+contraband-examine-text-InteQ =
+    { $type ->
+        *[item] [color=crimson]This item is highly illegal InteQ contraband![/color]
+        [reagent] [color=crimson]This reagent is highly illegal InteQ contraband![/color]
+    }
+
 contraband-examine-text-Magical =
     { $type ->
         *[item] [color=#b337b3]This item is highly illegal magical contraband![/color]

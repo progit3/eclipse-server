@@ -58,6 +58,7 @@ public sealed partial class BorgSystem
                 [RoboticsConsoleConstants.NET_CYBORG_DATA] = data
             };
             _deviceNetwork.QueuePacket(uid, null, payload, device: device);
+            RaiseLocalEvent(new CyborgControlDataUpdatedEvent(device.Address, data));
 
             comp.NextBroadcast = now + comp.BroadcastDelay;
         }
@@ -93,7 +94,7 @@ public sealed partial class BorgSystem
             Destroy(ent.Owner);
     }
 
-    private void Disable(Entity<BorgTransponderComponent, BorgChassisComponent?> ent)
+    public void Disable(Entity<BorgTransponderComponent, BorgChassisComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp2) || ent.Comp2.BrainEntity == null || ent.Comp1.NextDisable != null)
             return;

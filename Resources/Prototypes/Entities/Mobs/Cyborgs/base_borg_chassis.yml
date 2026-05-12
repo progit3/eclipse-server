@@ -322,6 +322,7 @@
   - type: RandomMetadata
     nameSegments:
     - NamesBorg
+  - type: StationAiWhitelist
   - type: NpcFactionMember
     factions:
     - NanoTrasen
@@ -337,6 +338,7 @@
   - type: InteractionPopup
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: BorgControl
 
 - type: entity
   id: BaseBorgChassisSyndicate

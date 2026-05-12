@@ -20,6 +20,8 @@ public sealed partial class StationAiSystem : SharedStationAiSystem
         base.Initialize();
         InitializeAirlock();
         InitializePowerToggle();
+        InitializeBorgControl();
+        InitializeBorgCharger();
 
         SubscribeLocalEvent<StationAiOverlayComponent, LocalPlayerAttachedEvent>(OnAiAttached);
         SubscribeLocalEvent<StationAiOverlayComponent, LocalPlayerDetachedEvent>(OnAiDetached);

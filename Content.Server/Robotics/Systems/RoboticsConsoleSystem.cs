@@ -1,12 +1,17 @@
 using Content.Server.Administration.Logs;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Server.Radio.EntitySystems;
+using Content.Server.Silicons.Borgs;
+using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Lock;
 using Content.Shared.Database;
 using Content.Shared.DeviceNetwork;
+using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.Robotics;
 using Content.Shared.Robotics.Components;
 using Content.Shared.Robotics.Systems;
+using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared.Silicons.StationAi;
 using Robust.Server.GameObjects;
 using Robust.Shared.Timing;
 using Content.Shared.DeviceNetwork.Events;
@@ -25,6 +30,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
     [Dependency] private readonly LockSystem _lock = default!;
     [Dependency] private readonly RadioSystem _radio = default!;
     [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private readonly BorgSystem _borg = default!;
 
     // almost never timing out more than 1 per tick so initialize with that capacity
     private List<string> _removing = new(1);
@@ -34,6 +40,7 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
         base.Initialize();
 
         SubscribeLocalEvent<RoboticsConsoleComponent, DeviceNetworkPacketEvent>(OnPacketReceived);
+        SubscribeLocalEvent<CyborgControlDataUpdatedEvent>(OnCyborgDataUpdated);
         Subs.BuiEvents<RoboticsConsoleComponent>(RoboticsConsoleUiKey.Key, subs =>
         {
             subs.Event<BoundUIOpenedEvent>(OnOpened);
@@ -88,6 +95,18 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
         UpdateUserInterface(ent);
     }
 
+    private void OnCyborgDataUpdated(CyborgControlDataUpdatedEvent args)
+    {
+        var query = EntityQueryEnumerator<StationAiHeldComponent, RoboticsConsoleComponent>();
+        while (query.MoveNext(out var uid, out _, out var console))
+        {
+            var data = args.Data;
+            data.Timeout = _timing.CurTime + console.Timeout;
+            console.Cyborgs[args.Address] = data;
+            UpdateUserInterface((uid, console));
+        }
+    }
+
     private void OnOpened(Entity<RoboticsConsoleComponent> ent, ref BoundUIOpenedEvent args)
     {
         UpdateUserInterface(ent);
@@ -104,12 +123,21 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
         if (!ent.Comp.Cyborgs.TryGetValue(args.Address, out var data))
             return;
 
-        var payload = new NetworkPayload()
+        if (HasComp<StationAiHeldComponent>(ent.Owner))
         {
-            [DeviceNetworkConstants.Command] = RoboticsConsoleConstants.NET_DISABLE_COMMAND
-        };
+            if (TryGetBorg(args.Address, out var borg))
+                _borg.Disable((borg.Value.Owner, borg.Value.Transponder, null));
+        }
+        else
+        {
+            var payload = new NetworkPayload()
+            {
+                [DeviceNetworkConstants.Command] = RoboticsConsoleConstants.NET_DISABLE_COMMAND
+            };
 
-        _deviceNetwork.QueuePacket(ent, args.Address, payload);
+            _deviceNetwork.QueuePacket(ent, args.Address, payload);
+        }
+
         _adminLogger.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(args.Actor):user} disabled borg {data.Name} with address {args.Address}");
     }
 
@@ -128,12 +156,20 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
         if (!ent.Comp.Cyborgs.Remove(args.Address, out var data))
             return;
 
-        var payload = new NetworkPayload()
+        if (HasComp<StationAiHeldComponent>(ent.Owner))
         {
-            [DeviceNetworkConstants.Command] = RoboticsConsoleConstants.NET_DESTROY_COMMAND
-        };
+            if (TryGetBorg(args.Address, out var borg))
+                _borg.Destroy((borg.Value.Owner, borg.Value.Transponder));
+        }
+        else
+        {
+            var payload = new NetworkPayload()
+            {
+                [DeviceNetworkConstants.Command] = RoboticsConsoleConstants.NET_DESTROY_COMMAND
+            };
 
-        _deviceNetwork.QueuePacket(ent, args.Address, payload);
+            _deviceNetwork.QueuePacket(ent, args.Address, payload);
+        }
 
         var message = Loc.GetString(ent.Comp.DestroyMessage, ("name", data.Name));
         _radio.SendRadioMessage(ent, message, ent.Comp.RadioChannel, ent);
@@ -141,6 +177,22 @@ public sealed class RoboticsConsoleSystem : SharedRoboticsConsoleSystem
 
         ent.Comp.NextDestroy = now + ent.Comp.DestroyCooldown;
         Dirty(ent, ent.Comp);
+    }
+
+    private bool TryGetBorg(string address, [NotNullWhen(true)] out (EntityUid Owner, BorgTransponderComponent Transponder)? borg)
+    {
+        var query = EntityQueryEnumerator<BorgTransponderComponent, DeviceNetworkComponent>();
+        while (query.MoveNext(out var uid, out var transponder, out var device))
+        {
+            if (device.Address != address)
+                continue;
+
+            borg = (uid, transponder);
+            return true;
+        }
+
+        borg = null;
+        return false;
     }
 
     private void UpdateUserInterface(Entity<RoboticsConsoleComponent> ent)

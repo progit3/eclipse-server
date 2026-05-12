@@ -16,6 +16,21 @@
 
 - type: entity
   parent: BaseMentalAction
+  id: ActionStationAiReturnToCore
+  name: Return to AI Core
+  description: Stop controlling this borg and return to your AI core.
+  components:
+  - type: Action
+    priority: -8
+    itemIconStyle: BigAction
+    icon:
+      sprite: Interface/Actions/actions_ai.rsi
+      state: ai_core
+  - type: InstantAction
+    event: !type:StationAiReturnToCoreEvent
+
+- type: entity
+  parent: BaseMentalAction
   id: ActionAIViewLaws
   name: View Laws
   description: View the laws that you must follow.
@@ -29,3 +44,17 @@
     useDelay: 0.5
   - type: InstantAction
     event: !type:ToggleLawsScreenEvent
+
+- type: entity
+  parent: BaseAGhostAction
+  id: ActionAIShowRobotics
+  name: Cyborg Control Interface
+  description: View the station cyborg control interface.
+  components:
+  - type: Action
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: xenoborg-control-computer }
+    iconOn: { sprite: Interface/Actions/actions_borg.rsi, state: xenoborg-control-computer }
+    keywords: [ "AI", "cyborg", "console", "interface" ]
+    priority: -5
+  - type: InstantAction
+    event: !type:ToggleIntrinsicUIEvent { key: enum.RoboticsConsoleUiKey.Key }

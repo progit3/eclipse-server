@@ -35,10 +35,13 @@
     actions:
     - ActionJumpToCore
     - ActionAIViewLaws
+    - ActionAIShowRobotics
   - type: UserInterface
     interfaces:
       enum.RadarConsoleUiKey.Key:
         type: RadarConsoleBoundUserInterface
+      enum.RoboticsConsoleUiKey.Key:
+        type: RoboticsConsoleBoundUserInterface
       enum.CrewMonitoringUIKey.Key:
         type: CrewMonitoringBoundUserInterface
       enum.GeneralStationRecordConsoleKey.Key:
@@ -51,6 +54,8 @@
     uis:
       enum.RadarConsoleUiKey.Key:
         toggleAction: ActionAGhostShowRadar
+      enum.RoboticsConsoleUiKey.Key:
+        toggleAction: ActionAIShowRobotics
       enum.CrewMonitoringUIKey.Key:
         toggleAction: ActionAGhostShowCrewMonitoring
       enum.GeneralStationRecordConsoleKey.Key:
@@ -58,6 +63,8 @@
       enum.CommunicationsConsoleUiKey.Key:
         toggleAction: ActionAGhostShowCommunications
   - type: CrewMonitoringConsole
+  - type: RoboticsConsole
+    allowBorgControl: true
   - type: GeneralStationRecordConsole
   - type: DeviceNetwork
     deviceNetId: Wireless

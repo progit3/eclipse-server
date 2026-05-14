@@ -115,6 +115,10 @@
     interactSuccessString: hugging-success-generic
     interactSuccessSound: /Audio/Effects/thudswoosh.ogg
     messagePerceivedByOthers: hugging-success-generic-others
+  - type: OwnInteractionVerbs
+    allowedVerbs: []
+  - type: Carriable
+  - type: PseudoItem
   - type: CanHostGuardian
   - type: NpcFactionMember
     factions:

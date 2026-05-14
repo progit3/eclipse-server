@@ -29,6 +29,12 @@
     count: 3
 
 - type: localizedDataset
+  id: DormomatGoodbyes
+  values:
+    prefix: thankyou-dormomat-
+    count: 3
+
+- type: localizedDataset
   id: HotDrinksMachineGoodbyes
   values:
     prefix: thankyou-coffee-

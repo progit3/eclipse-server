@@ -71,6 +71,12 @@
     count: 7
 
 - type: localizedDataset
+  id: DormomatAds
+  values:
+    prefix: advertisement-dormomat-
+    count: 5
+
+- type: localizedDataset
   id: HotDrinksMachineAds
   values:
     prefix: advertisement-coffee-

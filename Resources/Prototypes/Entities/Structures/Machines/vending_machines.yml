@@ -428,6 +428,37 @@
 
 - type: entity
   parent: VendingMachine
+  id: VendingMachineDormomat
+  name: Dorm-O-Mat
+  description: A vending machine stocked with dormitory linens, slippers, and soft little comforts.
+  components:
+  - type: VendingMachine
+    pack: DormomatInventory
+    offState: off
+    brokenState: broken
+    normalState: normal-unshaded
+    denyState: deny-unshaded
+  - type: DatasetVocalizer
+    dataset: DormomatAds
+  - type: SpeakOnUIClosed
+    pack: DormomatGoodbyes
+  - type: Sprite
+    sprite: Eclipse/Structures/Machines/VendingMachines/dormomat.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: PointLight
+    radius: 1.8
+    energy: 3.0
+    color: "#8eb6ff"
+
+- type: entity
+  parent: VendingMachine
   id: VendingMachineWinter
   name: WinterDrobe
   description: The best place to enjoy the cold!

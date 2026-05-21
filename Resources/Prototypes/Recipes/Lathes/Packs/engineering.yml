@@ -77,6 +77,10 @@
 - type: latheRecipePack
   id: EngineeringBoards
   recipes:
+  # ERIDA-start
+  - TinyFanCircuitboard
+  - TinyFanDirectionalCircuitboard
+  # ERIDA-end
   - ThermomachineFreezerMachineCircuitBoard
   - HellfireFreezerMachineCircuitBoard
   - PortableScrubberMachineCircuitBoard

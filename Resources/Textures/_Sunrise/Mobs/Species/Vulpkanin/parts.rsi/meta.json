@@ -31,6 +31,14 @@
             "directions": 4
         },
         {
+            "name": "groin_f",
+            "directions": 4
+        },
+        {
+            "name": "groin_m",
+            "directions": 4
+        },
+        {
             "name": "l_foot_straight",
             "directions": 4
         },
@@ -79,7 +87,31 @@
             "directions": 4
         },
         {
+            "name": "torso_f_fat",
+            "directions": 4
+        },
+        {
             "name": "torso_m",
+            "directions": 4
+        },
+        {
+            "name": "torso_m_fat",
+            "directions": 4
+        },
+        {
+            "name": "vulptail_delay",
+            "directions": 4
+        },
+        {
+            "name": "vulptail_s",
+            "directions": 4
+        },
+        {
+            "name": "vulptailw_s",
+            "directions": 4
+        },
+        {
+            "name": "overlay_husk",
             "directions": 4
         }
     ]

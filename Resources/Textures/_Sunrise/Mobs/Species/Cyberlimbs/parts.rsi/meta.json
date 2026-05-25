@@ -189,7 +189,15 @@
       "directions": 4
     },
     {
+      "name": "l_ripper_arm_SURG",
+      "directions": 4
+    },
+    {
       "name": "r_hephaestus_TOOLS",
+      "directions": 4
+    },
+    {
+      "name": "r_ripper_arm_SURG",
       "directions": 4
     },
     {

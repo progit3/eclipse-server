@@ -11,6 +11,9 @@
             "name": "full"
         },
         {
+            "name": "fullDepricated"
+        },
+        {
             "name": "head_f",
             "directions": 4
         },

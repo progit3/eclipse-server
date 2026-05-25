@@ -269,6 +269,10 @@
       "directions": 4
     },
     {
+      "name": "r_bull_emmitter",
+      "directions": 4
+    },
+    {
       "name": "l_bulwark_arm_SHIELD",
       "directions": 4
     },

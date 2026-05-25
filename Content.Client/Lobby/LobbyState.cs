@@ -1,12 +1,19 @@
 using Content.Client.Audio;
+using Content.Client.Administration.Managers;
+using System.Linq;
 using Content.Client.GameTicking.Managers;
 using Content.Client.LateJoin;
 using Content.Client.Lobby.UI;
 using Content.Client.Message;
+using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Playtime;
-using Content.Client.UserInterface.Systems.Chat;
 using Content.Client.Voting;
+using Content.Shared.Administration;
 using Content.Shared.CCVar;
+using Content.Shared.Chat;
+using Content.Shared.GameTicking;
+using Content.Shared.Preferences;
+using Content.Shared.Roles;
 using Robust.Client;
 using Robust.Client.Console;
 using Robust.Client.ResourceManagement;
@@ -29,10 +36,14 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
         [Dependency] private readonly ClientsidePlaytimeTrackingManager _playtimeTracking = default!;
+        [Dependency] private readonly IClientPreferencesManager _preferencesManager = default!;
+        [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
         [Dependency] private readonly IPrototypeManager _protoMan = default!;
+        [Dependency] private readonly IClientAdminManager _adminManager = default!;
 
         private ClientGameTicker _gameTicker = default!;
         private ContentAudioSystem _contentAudioSystem = default!;
+        private float _accountRefreshTimer;
 
         protected override Type? LinkedScreenType { get; } = typeof(LobbyGui);
         public LobbyGui? Lobby;
@@ -46,12 +57,17 @@ namespace Content.Client.Lobby
 
             Lobby = (LobbyGui) _userInterfaceManager.ActiveScreen;
 
-            var chatController = _userInterfaceManager.GetUIController<ChatUIController>();
             _gameTicker = _entityManager.System<ClientGameTicker>();
             _contentAudioSystem = _entityManager.System<ContentAudioSystem>();
             _contentAudioSystem.LobbySoundtrackChanged += UpdateLobbySoundtrackInfo;
 
-            chatController.SetMainChat(true);
+            Lobby.Chat.Main = true;
+            Lobby.Chat.MinWidth = 0f;
+            Lobby.Chat.MinHeight = 0f;
+            Lobby.Chat.ChatWindowPanel.MinWidth = 0f;
+            Lobby.Chat.ChatInput.MinWidth = 0f;
+            Lobby.Chat.SafelySelectChannel(ChatSelectChannel.OOC);
+            Lobby.Chat.Repopulate();
 
             _voteManager.SetPopupContainer(Lobby.VoteContainer);
             LayoutContainer.SetAnchorPreset(Lobby, LayoutContainer.LayoutPreset.Wide);
@@ -63,14 +79,16 @@ namespace Content.Client.Lobby
                 ? Loc.GetString("ui-lobby-title", ("serverName", serverName))
                 : lobbyNameCvar;
 
-            var width = _cfg.GetCVar(CCVars.ServerLobbyRightPanelWidth);
-            Lobby.RightSide.SetWidth = width;
-
             UpdateLobbyUi();
 
             Lobby.CharacterPreview.CharacterSetupButton.OnPressed += OnSetupPressed;
             Lobby.ReadyButton.OnPressed += OnReadyPressed;
             Lobby.ReadyButton.OnToggled += OnReadyToggled;
+            _adminManager.AdminStatusUpdated += UpdateAdminControls;
+            _preferencesManager.OnServerDataLoaded += RefreshAccountCard;
+            _jobRequirements.Updated += RefreshAccountCard;
+            UpdateAdminControls();
+            RefreshAccountCard();
 
             _gameTicker.InfoBlobUpdated += UpdateLobbyUi;
             _gameTicker.LobbyStatusUpdated += LobbyStatusUpdated;
@@ -79,8 +97,9 @@ namespace Content.Client.Lobby
 
         protected override void Shutdown()
         {
-            var chatController = _userInterfaceManager.GetUIController<ChatUIController>();
-            chatController.SetMainChat(false);
+            if (Lobby != null)
+                Lobby.Chat.Main = false;
+
             _gameTicker.InfoBlobUpdated -= UpdateLobbyUi;
             _gameTicker.LobbyStatusUpdated -= LobbyStatusUpdated;
             _gameTicker.LobbyLateJoinStatusUpdated -= LobbyLateJoinStatusUpdated;
@@ -91,6 +110,9 @@ namespace Content.Client.Lobby
             Lobby!.CharacterPreview.CharacterSetupButton.OnPressed -= OnSetupPressed;
             Lobby!.ReadyButton.OnPressed -= OnReadyPressed;
             Lobby!.ReadyButton.OnToggled -= OnReadyToggled;
+            _adminManager.AdminStatusUpdated -= UpdateAdminControls;
+            _preferencesManager.OnServerDataLoaded -= RefreshAccountCard;
+            _jobRequirements.Updated -= RefreshAccountCard;
 
             Lobby = null;
         }
@@ -124,14 +146,23 @@ namespace Content.Client.Lobby
 
         public override void FrameUpdate(FrameEventArgs e)
         {
+            _accountRefreshTimer += e.DeltaSeconds;
+            if (_accountRefreshTimer >= 1f)
+            {
+                _accountRefreshTimer = 0f;
+                RefreshAccountCard();
+            }
+
             if (_gameTicker.IsGameStarted)
             {
                 Lobby!.StartTime.Text = string.Empty;
+                Lobby.SetLaunchStatusVisible(false);
                 var roundTime = _gameTiming.CurTime.Subtract(_gameTicker.RoundStartTimeSpan);
                 Lobby!.StationTime.Text = Loc.GetString("lobby-state-player-status-round-time", ("hours", roundTime.Hours), ("minutes", roundTime.Minutes));
                 return;
             }
 
+            Lobby!.SetLaunchStatusVisible(true);
             Lobby!.StationTime.Text = Loc.GetString("lobby-state-player-status-round-not-started");
             string text;
 
@@ -162,7 +193,7 @@ namespace Content.Client.Lobby
                 }
             }
 
-            Lobby!.StartTime.Text = Loc.GetString("lobby-state-round-start-countdown-text", ("timeLeft", text));
+            Lobby!.StartTime.Text = text;
         }
 
         private void LobbyStatusUpdated()
@@ -176,6 +207,78 @@ namespace Content.Client.Lobby
             Lobby!.ReadyButton.Disabled = _gameTicker.DisallowedLateJoin;
         }
 
+        private void UpdateAdminControls()
+        {
+            Lobby?.SetNewsAdminControlsVisible(_adminManager.HasFlag(AdminFlags.News));
+        }
+
+        private void RefreshAccountCard()
+        {
+            if (Lobby == null)
+                return;
+
+            var accountName = _cfg.GetCVar(CCVars.PlayerName).Trim();
+            if (string.IsNullOrWhiteSpace(accountName))
+                accountName = Loc.GetString("generic-unknown-title");
+
+            var roleName = GetPreferredRoleName(_preferencesManager.Preferences?.SelectedCharacter);
+            var overallPlaytime = _jobRequirements.FetchOverallPlaytime();
+            var minutes = Math.Max(overallPlaytime.TotalMinutes, _playtimeTracking.PlaytimeMinutesToday);
+            var totalExperience = Math.Max(0, (int) Math.Floor(minutes * 6));
+            var progress = CalculateAccountProgress(totalExperience);
+            var merits = totalExperience / 2;
+            var shards = totalExperience / 250;
+
+            Lobby.SetAccountInfo(
+                accountName,
+                roleName,
+                progress.Level,
+                progress.CurrentExperience,
+                progress.NextLevelExperience,
+                merits,
+                shards);
+        }
+
+        private string GetPreferredRoleName(HumanoidCharacterProfile? profile)
+        {
+            if (profile != null)
+            {
+                foreach (var (jobId, priority) in profile.JobPriorities.OrderByDescending(p => p.Value))
+                {
+                    if (priority == JobPriority.Never)
+                        continue;
+
+                    if (_protoMan.TryIndex<JobPrototype>(jobId, out var job))
+                        return job.LocalizedName;
+                }
+            }
+
+            return _protoMan.TryIndex<JobPrototype>(SharedGameTicker.FallbackOverflowJob, out var fallback)
+                ? fallback.LocalizedName
+                : Loc.GetString("generic-unknown-title");
+        }
+
+        private static AccountProgress CalculateAccountProgress(int totalExperience)
+        {
+            var level = 1;
+            var current = totalExperience;
+            var next = GetExperienceForLevel(level);
+
+            while (current >= next)
+            {
+                current -= next;
+                level++;
+                next = GetExperienceForLevel(level);
+            }
+
+            return new AccountProgress(level, current, next);
+        }
+
+        private static int GetExperienceForLevel(int level)
+        {
+            return 800 + level * 80;
+        }
+
         private void UpdateLobbyUi()
         {
             if (_gameTicker.IsGameStarted)
@@ -184,6 +287,7 @@ namespace Content.Client.Lobby
                 Lobby!.ReadyButton.ToggleMode = false;
                 Lobby!.ReadyButton.Pressed = false;
                 Lobby!.ObserveButton.Disabled = false;
+                Lobby!.SetLaunchStatusVisible(false);
             }
             else
             {
@@ -193,6 +297,7 @@ namespace Content.Client.Lobby
                 Lobby!.ReadyButton.ToggleMode = true;
                 Lobby!.ReadyButton.Disabled = false;
                 Lobby!.ObserveButton.Disabled = true;
+                Lobby!.SetLaunchStatusVisible(true);
             }
 
             if (_gameTicker.ServerInfoBlob != null)
@@ -252,22 +357,8 @@ namespace Content.Client.Lobby
 
         private void UpdateLobbyBackground()
         {
-            if (_protoMan.TryIndex(_gameTicker.LobbyBackground, out var proto))
-            {
-                Lobby!.Background.Texture = _resourceCache.GetResource<TextureResource>(proto.Background);
-
-                var markup = Loc.GetString("lobby-state-background-text",
-                    ("backgroundTitle", Loc.GetString(proto.Title)),
-                    ("backgroundArtist", Loc.GetString(proto.Artist)));
-
-                Lobby!.LobbyBackground.SetMarkup(markup);
-            }
-            else
-            {
-                Lobby!.Background.Texture = null;
-
-                Lobby!.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text"));
-            }
+            Lobby!.Background.Texture = _resourceCache.GetResource<TextureResource>("/Textures/Eclipse/MainMenu/eclipse_lobby_background.png");
+            Lobby!.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text"));
         }
 
         private void SetReady(bool newReady)
@@ -279,5 +370,7 @@ namespace Content.Client.Lobby
 
             _consoleHost.ExecuteCommand($"toggleready {newReady}");
         }
+
+        private readonly record struct AccountProgress(int Level, int CurrentExperience, int NextLevelExperience);
     }
 }

@@ -180,7 +180,7 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
         }
 
         PreviewPanel.ProfilePreviewSpriteView.LoadPreview(humanoid);
-        PreviewPanel.SetSummaryText(humanoid.Summary);
+        PreviewPanel.SetCharacterInfo(humanoid.Name, humanoid.Age);
     }
 
     private void RefreshProfileEditor()

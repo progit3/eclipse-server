@@ -13,6 +13,34 @@ public sealed partial class MainMenuControl : Control
 {
     public const string StyleIdentifierMainMenu = "mainMenu";
     public const string StyleIdentifierMainMenuVBox = "mainMenuVBox";
+    public const string StyleIdentifierLogoText = "mainMenuLogoText";
+    public const string StyleIdentifierPrimary = "mainMenuPrimary";
+    public const string StyleIdentifierNav = "mainMenuNav";
+    public const string StyleIdentifierFooter = "mainMenuFooter";
+    public const string StyleIdentifierSecondary = "mainMenuSecondary";
+    public const string StyleIdentifierText = "mainMenuText";
+    public const string StyleIdentifierSubtle = "mainMenuSubtle";
+    public const string StyleIdentifierTinySubtle = "mainMenuTinySubtle";
+    public const string StyleIdentifierGoldSmall = "mainMenuGoldSmall";
+    public const string StyleIdentifierHeaderGold = "mainMenuHeaderGold";
+    public const string StyleIdentifierNavTitle = "mainMenuNavTitle";
+    public const string StyleIdentifierNavSubtitle = "mainMenuNavSubtitle";
+    public const string StyleIdentifierFooterTitle = "mainMenuFooterTitle";
+    public const string StyleIdentifierSecondaryTitle = "mainMenuSecondaryTitle";
+    public const string StyleIdentifierRankIcon = "mainMenuRankIcon";
+    public const string StyleIdentifierServerIcon = "mainMenuServerIcon";
+    public const string StyleIdentifierStatusIcon = "mainMenuStatusIcon";
+    public const string StyleIdentifierSecondaryIcon = "mainMenuSecondaryIcon";
+    public const string StyleIdentifierScore = "mainMenuScore";
+    public const string StyleIdentifierTab = "mainMenuTab";
+    public const string StyleIdentifierTabActive = "mainMenuTabActive";
+    public const string StyleIdentifierTabButton = "mainMenuTabButton";
+    public const string StyleIdentifierTabButtonActive = "mainMenuTabButtonActive";
+    public const string StyleIdentifierWarning = "mainMenuWarning";
+    public const string StyleIdentifierCompactButton = "mainMenuCompactButton";
+    public const string StyleIdentifierCompactText = "mainMenuCompactText";
+    public const string StyleIdentifierCompactSubtle = "mainMenuCompactSubtle";
+    public const string StyleIdentifierCompactHeaderGold = "mainMenuCompactHeaderGold";
 
     public MainMenuControl(IResourceCache resCache, IConfigurationManager configMan)
     {

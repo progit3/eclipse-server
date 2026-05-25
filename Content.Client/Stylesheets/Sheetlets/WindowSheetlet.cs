@@ -49,6 +49,10 @@ public sealed class WindowSheetlet<T> : Sheetlet<T>
         };
         borderedBackgroundBox.SetPatchMargin(StyleBox.Margin.All, 2);
         var closeButtonTex = sheet.GetTextureOr(iconCfg.CrossIconPath, NanotrasenStylesheet.TextureRoot);
+        var eclipseHeader = EclipsePanel("#1A0900E8", "#A85E12CC", 6, 1);
+        var eclipseHeaderAlert = EclipsePanel("#260408EE", "#D43B3BCC", 6, 1);
+        var eclipseBackground = EclipsePanel("#070300F4", "#A85E1290", 0, 0);
+        var eclipseBorderedBackground = EclipsePanel("#070300F4", "#A85E1290", 8, 8);
 
         var leftPanel = StyleBoxHelpers.OpenLeftStyleBox(sheet);
         leftPanel.SetPadding(StyleBox.Margin.All, 0.0f);
@@ -68,16 +72,16 @@ public sealed class WindowSheetlet<T> : Sheetlet<T>
             // TODO: maybe also change everything here to `NanoWindow` or something
             E()
                 .Class(DefaultWindow.StyleClassWindowPanel)
-                .Panel(backgroundBox),
+                .Panel(eclipseBackground),
             E()
                 .Class(DefaultWindow.StyleClassWindowHeader)
-                .Panel(headerStylebox),
+                .Panel(eclipseHeader),
             E()
                 .Class(StyleClass.AlertWindowHeader)
-                .Panel(headerAlertStylebox),
+                .Panel(eclipseHeaderAlert),
             E()
                 .Class(StyleClass.BorderedWindowPanel)
-                .Panel(borderedBackgroundBox),
+                .Panel(eclipseBorderedBackground),
 
             // Close button
             E<TextureButton>()
@@ -128,5 +132,19 @@ public sealed class WindowSheetlet<T> : Sheetlet<T>
                 .Prop(Label.StylePropertyFont, sheet.BaseFont.GetFont(8))
                 .Prop(Label.StylePropertyFontColor, Color.FromHex("#757575")),
         ];
+    }
+
+    private static StyleBoxFlat EclipsePanel(string background, string border, float horizontalPadding, float verticalPadding)
+    {
+        var style = new StyleBoxFlat
+        {
+            BackgroundColor = Color.FromHex(background),
+            BorderColor = Color.FromHex(border),
+            BorderThickness = new Thickness(1),
+        };
+
+        style.SetContentMarginOverride(StyleBox.Margin.Horizontal, horizontalPadding);
+        style.SetContentMarginOverride(StyleBox.Margin.Vertical, verticalPadding);
+        return style;
     }
 }

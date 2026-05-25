@@ -1,5 +1,6 @@
 using Content.Client.Info;
 using Content.Client.Info.PlaytimeStats;
+using Content.Client.MainMenu.UI;
 using Content.Client.Resources;
 using Content.Corvax.Interfaces.Client;
 using Content.Shared.CCVar;
@@ -38,19 +39,20 @@ namespace Content.Client.Lobby.UI
             RobustXamlLoader.Load(this);
             IoCManager.InjectDependencies(this);
 
-            var panelTex = _resourceCache.GetTexture("/Textures/Interface/Nano/button.svg.96dpi.png");
-            var back = new StyleBoxTexture
+            var back = new EclipseStyleBoxRounded
             {
-                Texture = panelTex,
-                Modulate = new Color(37, 37, 42)
+                BackgroundColor = Color.FromHex("#070300F8"),
+                BorderColor = Color.FromHex("#A85E1268"),
+                BorderThickness = new Thickness(1),
+                Radius = 8f,
             };
-            back.SetPatchMargin(StyleBox.Margin.All, 10);
 
             BackgroundPanel.PanelOverride = back;
 
             _createNewCharacterButton = new Button
             {
                 Text = Loc.GetString("character-setup-gui-create-new-character-button"),
+                StyleIdentifier = MainMenuControl.StyleIdentifierCompactButton,
             };
 
             _createNewCharacterButton.OnPressed += args =>

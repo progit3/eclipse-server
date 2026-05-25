@@ -1,4 +1,5 @@
 using Content.Client.Humanoid;
+using Content.Client.MainMenu.UI;
 using Content.Client.Message;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Sprite;
@@ -334,7 +335,29 @@ namespace Content.Client.Lobby.UI
             SpeciesInfoButton.OnPressed += OnSpeciesInfoButtonPressed;
 
             UpdateSpeciesGuidebookIcon();
+            ApplyEclipseStyle(this);
             IsDirty = false;
+        }
+
+        private static void ApplyEclipseStyle(Control control)
+        {
+            switch (control)
+            {
+                case Button button when button.StyleIdentifier is null:
+                    button.StyleIdentifier = MainMenuControl.StyleIdentifierCompactButton;
+                    break;
+                case OptionButton optionButton when optionButton.StyleIdentifier is null:
+                    optionButton.StyleIdentifier = MainMenuControl.StyleIdentifierCompactButton;
+                    break;
+                case Label label when label.StyleIdentifier is null:
+                    label.StyleIdentifier = MainMenuControl.StyleIdentifierCompactText;
+                    break;
+            }
+
+            foreach (var child in control.Children)
+            {
+                ApplyEclipseStyle(child);
+            }
         }
 
         private void SetDirty()

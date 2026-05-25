@@ -28,6 +28,13 @@ public sealed partial class LobbyCharacterPreviewPanel : Control
 
     public void SetSummaryText(string value)
     {
-        Summary.Text = value;
+        CharacterName.Text = value;
+        CharacterAge.Text = string.Empty;
+    }
+
+    public void SetCharacterInfo(string name, int age)
+    {
+        CharacterName.Text = name;
+        CharacterAge.Text = $"{age} \u043B\u0435\u0442";
     }
 }

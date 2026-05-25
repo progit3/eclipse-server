@@ -91,20 +91,20 @@ namespace Content.Client.Stylesheets
         public const string StyleClassPopupMessageLarge = "PopupMessageLarge";
         public const string StyleClassPopupMessageLargeCaution = "PopupMessageLargeCaution";
 
-        public static readonly Color PanelDark = Color.FromHex("#1E1E22");
+        public static readonly Color PanelDark = Color.FromHex("#070300");
 
-        public static readonly Color NanoGold = Color.FromHex("#A88B5E");
+        public static readonly Color NanoGold = Color.FromHex("#FFB52A");
         public static readonly Color GoodGreenFore = Color.FromHex("#31843E");
         public static readonly Color ConcerningOrangeFore = Color.FromHex("#A5762F");
         public static readonly Color DangerousRedFore = Color.FromHex("#BB3232");
         public static readonly Color DisabledFore = Color.FromHex("#5A5A5A");
 
-        public static readonly Color ButtonColorDefault = Color.FromHex("#464966");
+        public static readonly Color ButtonColorDefault = Color.FromHex("#2A1200");
         public static readonly Color ButtonColorDefaultRed = Color.FromHex("#D43B3B");
-        public static readonly Color ButtonColorHovered = Color.FromHex("#575b7f");
+        public static readonly Color ButtonColorHovered = Color.FromHex("#3D1C00");
         public static readonly Color ButtonColorHoveredRed = Color.FromHex("#DF6B6B");
-        public static readonly Color ButtonColorPressed = Color.FromHex("#3e6c45");
-        public static readonly Color ButtonColorDisabled = Color.FromHex("#30313c");
+        public static readonly Color ButtonColorPressed = Color.FromHex("#A85E12");
+        public static readonly Color ButtonColorDisabled = Color.FromHex("#1A0900");
 
         public static readonly Color ButtonColorCautionDefault = Color.FromHex("#ab3232");
         public static readonly Color ButtonColorCautionHovered = Color.FromHex("#cf2f2f");
@@ -154,7 +154,7 @@ namespace Content.Client.Stylesheets
         public const string StyleClassButtonColorRed = "ButtonColorRed";
         public const string StyleClassButtonColorGreen = "ButtonColorGreen";
 
-        public static readonly Color ChatBackgroundColor = Color.FromHex("#25252ADD");
+        public static readonly Color ChatBackgroundColor = Color.FromHex("#070300F8");
 
         // i'm not sure what the missing symbols were referencing, and this is getting obseleted anyway so:
         public const string ButtonOpenRight = "OpenRight";
@@ -244,12 +244,13 @@ namespace Content.Client.Stylesheets
             };
             handSlotHighlight.SetPatchMargin(StyleBox.Margin.All, 2);
 
-            var hotbarBackground = new StyleBoxTexture
+            var hotbarBackground = new StyleBoxFlat
             {
-                Texture = borderedWindowBackgroundTex,
+                BackgroundColor = Color.FromHex("#070300F0"),
+                BorderColor = Color.FromHex("#A85E1290"),
+                BorderThickness = new Thickness(1),
             };
-            hotbarBackground.SetPatchMargin(StyleBox.Margin.All, 2);
-            hotbarBackground.SetExpandMargin(StyleBox.Margin.All, 4);
+            hotbarBackground.SetContentMarginOverride(StyleBox.Margin.All, 4);
 
             var buttonStorage = new StyleBoxTexture(BaseButton);
             buttonStorage.SetPatchMargin(StyleBox.Margin.All, 10);

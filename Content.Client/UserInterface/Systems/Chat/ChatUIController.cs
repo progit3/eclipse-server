@@ -9,6 +9,7 @@ using Content.Client.Chat.UI;
 using Content.Client.Examine;
 using Content.Client.Gameplay;
 using Content.Client.Ghost;
+using Content.Client.MainMenu.UI;
 using Content.Client.Mind;
 using Content.Client.Roles;
 using Content.Client.Stylesheets;
@@ -274,6 +275,17 @@ public sealed partial class ChatUIController : UIController
         Color color;
         if (panel.PanelOverride is StyleBoxFlat styleBoxFlat)
             color = styleBoxFlat.BackgroundColor;
+        else if (panel.PanelOverride is EclipseStyleBoxRounded roundedStyleBox)
+        {
+            panel.PanelOverride = new EclipseStyleBoxRounded
+            {
+                BackgroundColor = roundedStyleBox.BackgroundColor.WithAlpha(opacity),
+                BorderColor = roundedStyleBox.BorderColor,
+                BorderThickness = roundedStyleBox.BorderThickness,
+                Radius = roundedStyleBox.Radius,
+            };
+            return;
+        }
         else if (panel.TryGetStyleProperty<StyleBox>(PanelContainer.StylePropertyPanel, out var style)
                  && style is StyleBoxFlat propStyleBoxFlat)
             color = propStyleBoxFlat.BackgroundColor;

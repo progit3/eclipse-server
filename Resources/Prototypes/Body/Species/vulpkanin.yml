@@ -276,7 +276,7 @@
   components:
   - type: VisualOrgan
     data:
-      sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi # Mobs/Species/Vulpkanin/parts.rsi #Corvax-Vulp_Port
+      sprite: _Eclipse/Mobs/Species/VulpkaninLustCompat/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Vulpkanin
@@ -287,7 +287,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Corvax/Mobs/Species/Vulpkanin/parts.rsi #Mobs/Species/Vulpkanin/parts.rsi #Corvax-Vulp_Port
+    sprite: _Eclipse/Mobs/Species/VulpkaninLustCompat/parts.rsi
 
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganVulpkaninExternal ]

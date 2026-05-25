@@ -185,7 +185,7 @@
   components:
   - type: VisualOrgan
     data:
-      sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+      sprite: _Eclipse/Mobs/Species/TajaranLustCompat/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Tajaran
@@ -196,7 +196,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: Corvax/Mobs/Species/Tajaran/parts.rsi
+    sprite: _Eclipse/Mobs/Species/TajaranLustCompat/parts.rsi
 
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganTajaranExternal ]

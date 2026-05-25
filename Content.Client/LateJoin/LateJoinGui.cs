@@ -3,6 +3,7 @@ using System.Numerics;
 using Content.Client.CrewManifest;
 using Content.Client.GameTicking.Managers;
 using Content.Client.Lobby;
+using Content.Client.MainMenu.UI;
 using Content.Client.UserInterface.Controls;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Shared.CCVar;
@@ -11,6 +12,7 @@ using Content.Shared.Roles;
 using Content.Shared.StatusIcon;
 using Robust.Client.Console;
 using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
@@ -40,13 +42,13 @@ namespace Content.Client.LateJoin
 
         private readonly Dictionary<NetEntity, Dictionary<string, List<JobButton>>> _jobButtons = new();
         private readonly Dictionary<NetEntity, Dictionary<string, BoxContainer>> _jobCategories = new();
-        private readonly List<ScrollContainer> _jobLists = new();
+        private readonly List<Control> _jobLists = new();
 
-        private readonly Control _base;
+        private readonly BoxContainer _base;
 
         public LateJoinGui()
         {
-            MinSize = SetSize = new Vector2(450, 560);
+            MinSize = SetSize = new Vector2(430, 500);
             IoCManager.InjectDependencies(this);
             _sprites = _entitySystem.GetEntitySystem<SpriteSystem>();
             _crewManifest = _entitySystem.GetEntitySystem<CrewManifestSystem>();
@@ -54,14 +56,27 @@ namespace Content.Client.LateJoin
             _sawmill = _logManager.GetSawmill("latejoin.panel");
 
             Title = Loc.GetString("late-join-gui-title");
+            ApplyEclipseWindowStyle();
 
             _base = new BoxContainer()
             {
                 Orientation = LayoutOrientation.Vertical,
                 VerticalExpand = true,
+                HorizontalExpand = true,
+                Margin = new Thickness(8),
             };
 
-            ContentsContainer.AddChild(_base);
+            ContentsContainer.Margin = new Thickness(0);
+            ContentsContainer.AddChild(new PanelContainer
+            {
+                VerticalExpand = true,
+                HorizontalExpand = true,
+                PanelOverride = EclipsePanel("#00000000", "#A85E1270", 6f, 0f, 0f),
+                Children =
+                {
+                    _base
+                }
+            });
 
             _jobRequirements.Updated += RebuildUI;
             RebuildUI();
@@ -92,50 +107,56 @@ namespace Content.Client.LateJoin
                 var jobList = new BoxContainer
                 {
                     Orientation = LayoutOrientation.Vertical,
+                    HorizontalExpand = true,
                     Margin = new Thickness(0, 0, 5f, 0),
                 };
 
                 var collapseButton = new ContainerButton()
                 {
-                    HorizontalAlignment = HAlignment.Right,
+                    HorizontalExpand = true,
                     ToggleMode = true,
+                    MinSize = new Vector2(0, 32),
+                    StyleIdentifier = MainMenuControl.StyleIdentifierSecondary,
                     Children =
                     {
-                        new TextureRect
+                        new BoxContainer
                         {
-                            StyleClasses = { OptionButton.StyleClassOptionTriangle },
-                            Margin = new Thickness(8, 0),
-                            HorizontalAlignment = HAlignment.Center,
-                            VerticalAlignment = VAlignment.Center,
+                            Orientation = LayoutOrientation.Horizontal,
+                            HorizontalExpand = true,
+                            Children =
+                            {
+                                new Label
+                                {
+                                    Text = name,
+                                    Align = Label.AlignMode.Center,
+                                    StyleIdentifier = MainMenuControl.StyleIdentifierNavTitle,
+                                    HorizontalExpand = true,
+                                    VerticalAlignment = VAlignment.Center,
+                                },
+                                new TextureRect
+                                {
+                                    StyleClasses = { OptionButton.StyleClassOptionTriangle },
+                                    Margin = new Thickness(8, 0),
+                                    HorizontalAlignment = HAlignment.Center,
+                                    VerticalAlignment = VAlignment.Center,
+                                    ModulateSelfOverride = Color.FromHex("#FFC34A"),
+                                }
+                            }
                         }
                     }
                 };
 
-                _base.AddChild(new StripeBack()
-                {
-                    Children =
-                    {
-                        new PanelContainer()
-                        {
-                            Children =
-                            {
-                                new Label()
-                                {
-                                    StyleClasses = { "LabelBig" },
-                                    Text = name,
-                                    Align = Label.AlignMode.Center,
-                                },
-                                collapseButton
-                            }
-                        }
-                    }
-                });
+                _base.AddChild(collapseButton);
 
                 if (_configManager.GetCVar(CCVars.CrewManifestWithoutEntity))
                 {
                     var crewManifestButton = new Button()
                     {
-                        Text = Loc.GetString("crew-manifest-button-label")
+                        Text = Loc.GetString("crew-manifest-button-label"),
+                        HorizontalExpand = true,
+                        StyleIdentifier = MainMenuControl.StyleIdentifierFooter,
+                        Margin = new Thickness(0, 6, 0, 6),
+                        MinSize = new Vector2(0, 32),
                     };
                     crewManifestButton.OnPressed += _ => _crewManifest.RequestCrewManifest(id);
 
@@ -149,12 +170,27 @@ namespace Content.Client.LateJoin
                     Visible = false,
                 };
 
+                var jobListPanel = new PanelContainer
+                {
+                    VerticalExpand = true,
+                    HorizontalExpand = true,
+                    PanelOverride = EclipsePanel("#000000E8", "#5A3B1870", 6f, 8f, 6f),
+                    Children =
+                    {
+                        jobListScroll
+                    },
+                    Visible = false,
+                };
+
                 if (_jobLists.Count == 0)
+                {
                     jobListScroll.Visible = true;
+                    jobListPanel.Visible = true;
+                }
 
-                _jobLists.Add(jobListScroll);
+                _jobLists.Add(jobListPanel);
 
-                _base.AddChild(jobListScroll);
+                _base.AddChild(jobListPanel);
 
                 collapseButton.OnToggled += _ =>
                 {
@@ -162,6 +198,7 @@ namespace Content.Client.LateJoin
                     {
                         section.Visible = false;
                     }
+                    jobListPanel.Visible = true;
                     jobListScroll.Visible = true;
                 };
 
@@ -208,17 +245,19 @@ namespace Content.Client.LateJoin
                     {
                         category.AddChild(new Control
                         {
-                            MinSize = new Vector2(0, 23),
+                            MinSize = new Vector2(0, 12),
                         });
                     }
 
                     category.AddChild(new PanelContainer
                     {
+                        Margin = new Thickness(0, 0, 0, 4),
+                        PanelOverride = EclipsePanel("#251600D8", "#A85E1270", 4f, 6f, 3f),
                         Children =
                         {
                             new Label
                             {
-                                StyleClasses = { "LabelBig" },
+                                StyleIdentifier = MainMenuControl.StyleIdentifierGoldSmall,
                                 Text = Loc.GetString("late-join-gui-department-jobs-label", ("departmentName", departmentName))
                             }
                         }
@@ -233,7 +272,9 @@ namespace Content.Client.LateJoin
 
                         var jobLabel = new Label
                         {
-                            Margin = new Thickness(5f, 0, 0, 0)
+                            Margin = new Thickness(6f, 0, 0, 0),
+                            StyleIdentifier = MainMenuControl.StyleIdentifierNavTitle,
+                            VerticalAlignment = VAlignment.Center,
                         };
 
                         var jobButton = new JobButton(jobLabel, prototype.ID, prototype.LocalizedName, value);
@@ -241,13 +282,15 @@ namespace Content.Client.LateJoin
                         var jobSelector = new BoxContainer
                         {
                             Orientation = LayoutOrientation.Horizontal,
-                            HorizontalExpand = true
+                            HorizontalExpand = true,
+                            Margin = new Thickness(1, 0, 1, 0),
                         };
 
                         var icon = new TextureRect
                         {
-                            TextureScale = new Vector2(2, 2),
-                            VerticalAlignment = VAlignment.Center
+                            TextureScale = new Vector2(1.5f, 1.5f),
+                            VerticalAlignment = VAlignment.Center,
+                            ModulateSelfOverride = Color.White,
                         };
 
                         var jobIcon = _prototypeManager.Index(prototype.Icon);
@@ -283,6 +326,12 @@ namespace Content.Client.LateJoin
                         else if (value == 0)
                         {
                             jobButton.Disabled = true;
+                        }
+
+                        if (jobButton.Disabled)
+                        {
+                            jobLabel.StyleIdentifier = MainMenuControl.StyleIdentifierTinySubtle;
+                            jobButton.ModulateSelfOverride = Color.FromHex("#FFFFFFA0");
                         }
 
                         if (!_jobButtons[id].ContainsKey(prototype.ID))
@@ -336,6 +385,39 @@ namespace Content.Client.LateJoin
                 _jobCategories.Clear();
             }
         }
+
+        private void ApplyEclipseWindowStyle()
+        {
+            var windowPanel = Children.OfType<PanelContainer>().FirstOrDefault();
+            if (windowPanel != null)
+                windowPanel.PanelOverride = new StyleBoxEmpty();
+
+            WindowHeader.PanelOverride = EclipsePanel("#160500D8", "#A85E12CC", 6f, 6f, 1f);
+            TitleLabel.StyleIdentifier = MainMenuControl.StyleIdentifierGoldSmall;
+            CloseButton.MinSize = new Vector2(22, 22);
+            CloseButton.ModulateSelfOverride = Color.FromHex("#E6A11A");
+        }
+
+        private static EclipseStyleBoxRounded EclipsePanel(
+            string background,
+            string border,
+            float radius,
+            float horizontalPadding,
+            float verticalPadding)
+        {
+            var style = new EclipseStyleBoxRounded
+            {
+                BackgroundColor = Color.FromHex(background),
+                BorderColor = Color.FromHex(border),
+                BorderThickness = new Thickness(1),
+                Radius = radius,
+            };
+
+            style.SetContentMarginOverride(StyleBox.Margin.Horizontal, horizontalPadding);
+            style.SetContentMarginOverride(StyleBox.Margin.Vertical, verticalPadding);
+            return style;
+        }
+
     }
 
     sealed class JobButton : ContainerButton
@@ -351,8 +433,11 @@ namespace Content.Client.LateJoin
             JobLabel = jobLabel;
             JobId = jobId;
             JobLocalisedName = jobLocalisedName;
+            HorizontalExpand = true;
+            Margin = new Thickness(0, 0, 0, 3);
+            MinSize = new Vector2(0, 28);
+            StyleIdentifier = MainMenuControl.StyleIdentifierSecondary;
             RefreshLabel(amount);
-            AddStyleClass(StyleClassButton);
             _initialised = true;
         }
 

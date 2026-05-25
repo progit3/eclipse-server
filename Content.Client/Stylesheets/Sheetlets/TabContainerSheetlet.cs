@@ -12,15 +12,9 @@ public sealed class TabContainerSheetlet<T> : Sheetlet<T> where T: PalettedStyle
 {
     public override StyleRule[] GetRules(T sheet, object config)
     {
-        ITabContainerConfig tabCfg = sheet;
-
-        var tabContainerPanel = sheet.GetTextureOr(tabCfg.TabContainerPanelPath, NanotrasenStylesheet.TextureRoot)
-            .IntoPatch(StyleBox.Margin.All, 2);
-
-        var tabContainerBoxActive = new StyleBoxFlat(sheet.SecondaryPalette.Element);
-        tabContainerBoxActive.SetContentMarginOverride(StyleBox.Margin.Horizontal, 5);
-        var tabContainerBoxInactive = new StyleBoxFlat(sheet.SecondaryPalette.Background);
-        tabContainerBoxInactive.SetContentMarginOverride(StyleBox.Margin.Horizontal, 5);
+        var tabContainerPanel = EclipsePanel("#070300F4", "#A85E1290", 8, 8);
+        var tabContainerBoxActive = EclipsePanel("#1A0900E8", "#A85E1270", 8, 2);
+        var tabContainerBoxInactive = EclipsePanel("#00000000", "#00000000", 8, 2);
 
         return
         [
@@ -29,5 +23,20 @@ public sealed class TabContainerSheetlet<T> : Sheetlet<T> where T: PalettedStyle
                 .Prop(TabContainer.StylePropertyTabStyleBox, tabContainerBoxActive)
                 .Prop(TabContainer.StylePropertyTabStyleBoxInactive, tabContainerBoxInactive),
         ];
+    }
+
+    private static StyleBoxFlat EclipsePanel(string background, string border, float horizontalPadding, float verticalPadding)
+    {
+        var borderColor = Color.FromHex(border);
+        var style = new StyleBoxFlat
+        {
+            BackgroundColor = Color.FromHex(background),
+            BorderColor = borderColor,
+            BorderThickness = borderColor.A > 0 ? new Thickness(1) : new Thickness(0),
+        };
+
+        style.SetContentMarginOverride(StyleBox.Margin.Horizontal, horizontalPadding);
+        style.SetContentMarginOverride(StyleBox.Margin.Vertical, verticalPadding);
+        return style;
     }
 }

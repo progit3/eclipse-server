@@ -15,26 +15,9 @@ public sealed class ChatSheetlet<T> : Sheetlet<T> where T: PalettedStylesheet, I
     {
         IButtonConfig btnCfg = sheet;
 
-        var chatColor = sheet.SecondaryPalette.Background.WithAlpha(221.0f / 255.0f);
-        var chatBg = new StyleBoxFlat(chatColor);
-
-        var chatChannelButtonTex =
-            sheet.GetTextureOr(btnCfg.RoundedButtonBorderedPath, NanotrasenStylesheet.TextureRoot);
-        var chatChannelButton = new StyleBoxTexture
-        {
-            Texture = chatChannelButtonTex,
-        };
-        chatChannelButton.SetPatchMargin(StyleBox.Margin.All, 5);
-        chatChannelButton.SetPadding(StyleBox.Margin.All, 2);
-
-        var chatFilterButtonTex =
-            sheet.GetTextureOr(btnCfg.RoundedButtonBorderedPath, NanotrasenStylesheet.TextureRoot);
-        var chatFilterButton = new StyleBoxTexture
-        {
-            Texture = chatFilterButtonTex,
-        };
-        chatFilterButton.SetPatchMargin(StyleBox.Margin.All, 5);
-        chatFilterButton.SetPadding(StyleBox.Margin.All, 2);
+        var chatBg = EclipsePanel("#070300F8", "#A85E1290", 0, 0);
+        var chatChannelButton = EclipsePanel("#070300F4", "#A85E1240", 8, 3);
+        var chatFilterButton = EclipsePanel("#070300F4", "#A85E1266", 4, 3);
 
         return
         [
@@ -47,5 +30,19 @@ public sealed class ChatSheetlet<T> : Sheetlet<T> where T: PalettedStylesheet, I
             E<Button>().Class(ChatInputBox.StyleClassChatFilterOptionButton).Box(chatChannelButton),
             E<ContainerButton>().Class(ChatInputBox.StyleClassChatFilterOptionButton).Box(chatFilterButton),
         ];
+    }
+
+    private static StyleBoxFlat EclipsePanel(string background, string border, float horizontalPadding, float verticalPadding)
+    {
+        var style = new StyleBoxFlat
+        {
+            BackgroundColor = Color.FromHex(background),
+            BorderColor = Color.FromHex(border),
+            BorderThickness = Color.FromHex(border).A > 0 ? new Thickness(1) : new Thickness(0),
+        };
+
+        style.SetContentMarginOverride(StyleBox.Margin.Horizontal, horizontalPadding);
+        style.SetContentMarginOverride(StyleBox.Margin.Vertical, verticalPadding);
+        return style;
     }
 }

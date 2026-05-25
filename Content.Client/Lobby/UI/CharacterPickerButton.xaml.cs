@@ -1,5 +1,6 @@
 using System.Linq;
 using Content.Client.Humanoid;
+using Content.Client.MainMenu.UI;
 using Content.Shared.Clothing;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Prototypes;
@@ -35,6 +36,9 @@ public sealed partial class CharacterPickerButton : ContainerButton
     {
         RobustXamlLoader.Load(this);
         AddStyleClass(StyleClassButton);
+        StyleIdentifier = isSelected
+            ? MainMenuControl.StyleIdentifierPrimary
+            : MainMenuControl.StyleIdentifierSecondary;
         ToggleMode = true;
         Group = group;
         var description = profile.Name;
@@ -50,6 +54,9 @@ public sealed partial class CharacterPickerButton : ContainerButton
 
         Pressed = isSelected;
         DeleteButton.Visible = !isSelected;
+        DeleteButton.StyleIdentifier = MainMenuControl.StyleIdentifierSecondary;
+        ConfirmDeleteButton.StyleIdentifier = MainMenuControl.StyleIdentifierSecondary;
+        DescriptionLabel.StyleIdentifier = MainMenuControl.StyleIdentifierText;
 
         DescriptionLabel.Text = description;
 

@@ -179,7 +179,7 @@
   components:
   - type: VisualOrgan
     data:
-      sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+      sprite: _Eclipse/Mobs/Species/AnthropomorphCompat/parts.rsi
   - type: VisualOrganMarkings
     markingData:
       group: Anthropomorph
@@ -190,7 +190,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _Orion/Mobs/Species/Anthropomorph/parts.rsi
+    sprite: _Eclipse/Mobs/Species/AnthropomorphCompat/parts.rsi
 
 - type: entity
   parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganAnthropomorphExternal ]
@@ -200,10 +200,30 @@
   parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganAnthropomorphExternal ]
   id: OrganAnthropomorphHead
   components:
+  - type: Sprite
+    sprite: _Eclipse/Mobs/Species/AnthropomorphCompat/parts.rsi
+    state: head_m
+  - type: VisualOrgan
+    data:
+      sprite: _Eclipse/Mobs/Species/AnthropomorphCompat/parts.rsi
+      state: head_m
+    sexStateOverrides:
+      Male: head_m
+      Female: head_f
   - type: VisualOrganMarkings
     hideableLayers:
     - enum.HumanoidVisualLayers.Hair
     - enum.HumanoidVisualLayers.Snout
+    markingData:
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+      group: Anthropomorph
 
 - type: entity
   parent: [ OrganBaseArmLeft, OrganAnthropomorphExternal ]

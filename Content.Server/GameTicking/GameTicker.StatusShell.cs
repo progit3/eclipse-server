@@ -51,7 +51,10 @@ namespace Content.Server.GameTicking
                 jObject["panic_bunker"] = _cfg.GetCVar(CCVars.PanicBunkerEnabled);
                 jObject["run_level"] = (int) _runLevel;
                 if (preset != null)
+                {
                     jObject["preset"] = (Decoy == null) ? Loc.GetString(preset.ModeTitle) : Loc.GetString(Decoy.ModeTitle);
+                    jObject["preset_description"] = (Decoy == null) ? Loc.GetString(preset.Description) : Loc.GetString(Decoy.Description);
+                }
                 if (_runLevel >= GameRunLevel.InRound)
                 {
                     jObject["round_start_time"] = _roundStartDateTime.ToString("o");

@@ -54,9 +54,9 @@ public sealed partial class CharacterPickerButton : ContainerButton
 
         Pressed = isSelected;
         DeleteButton.Visible = !isSelected;
-        DeleteButton.StyleIdentifier = MainMenuControl.StyleIdentifierSecondary;
-        ConfirmDeleteButton.StyleIdentifier = MainMenuControl.StyleIdentifierSecondary;
-        DescriptionLabel.StyleIdentifier = MainMenuControl.StyleIdentifierText;
+        DeleteButton.StyleIdentifier = MainMenuControl.StyleIdentifierCompactButton;
+        ConfirmDeleteButton.StyleIdentifier = MainMenuControl.StyleIdentifierCompactButton;
+        DescriptionLabel.StyleIdentifier = MainMenuControl.StyleIdentifierCompactText;
 
         DescriptionLabel.Text = description;
 

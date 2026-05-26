@@ -1897,7 +1897,7 @@ entities:
     - type: Transform
       pos: 2.5,6.5
       parent: 407
-- proto: PosterLegitNanotrasenLogo
+- proto: PosterLegitEidosEmpire
   entities:
   - uid: 341
     components:

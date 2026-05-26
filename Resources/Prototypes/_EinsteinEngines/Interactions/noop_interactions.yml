@@ -7,7 +7,7 @@
   contactInteraction: false
   allowSelfInteract: true
   icon: /Textures/Interface/Actions/eyeopen.png
-  range: {max: 20}
+  range: {max: 3}
   effectSuccess:
     popup: Obvious
     sound: {path: /Audio/Effects/chime.ogg}
@@ -21,7 +21,7 @@
   priority: 3
   requiresCanInteract: false
   contactInteraction: false
-  range: {max: 20}
+  range: {max: 3}
   effectSuccess:
     popup: Obvious
     sound: {path: /Audio/Effects/chime.ogg}

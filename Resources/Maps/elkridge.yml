@@ -93558,7 +93558,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: PosterLegitNanotrasenLogo
+- proto: PosterLegitEidosEmpire
   entities:
   - uid: 3227
     components:

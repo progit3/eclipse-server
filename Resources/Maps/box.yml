@@ -135702,7 +135702,7 @@ entities:
       parent: 8364
     - type: Fixtures
       fixtures: {}
-- proto: PosterLegitNanotrasenLogo
+- proto: PosterLegitEidosEmpire
   entities:
   - uid: 3196
     components:

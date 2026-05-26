@@ -87320,7 +87320,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: PosterLegitNanotrasenLogo
+- proto: PosterLegitEidosEmpire
   entities:
   - uid: 7899
     components:

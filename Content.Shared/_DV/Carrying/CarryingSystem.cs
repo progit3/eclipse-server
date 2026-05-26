@@ -95,6 +95,7 @@ public sealed class CarryingSystem : EntitySystem
         {
             Act = () => StartCarryDoAfter(user, ent),
             Text = Loc.GetString("carry-verb"),
+            Category = VerbCategory.Interact,
             Priority = 2
         });
     }

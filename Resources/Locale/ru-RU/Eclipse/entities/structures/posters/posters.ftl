@@ -3,3 +3,6 @@ ent-PosterPact = Пакт
 
 ent-PosterPactRecruit = Вступайте в пакт.
     .desc = Слава пакту!
+
+ent-PosterLegitEidosEmpire = Эйдосская Империя
+    .desc = Постер с эмблемой Эйдосской Империи.

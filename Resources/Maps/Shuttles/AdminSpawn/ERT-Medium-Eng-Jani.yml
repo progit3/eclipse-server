@@ -3209,7 +3209,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,7.5
       parent: 1
-- proto: PosterLegitNanotrasenLogo
+- proto: PosterLegitEidosEmpire
   entities:
   - uid: 188
     components:

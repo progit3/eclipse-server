@@ -60,10 +60,10 @@
     state: target_h
 
 - type: entity
-  name: syndicate target
-  id: TargetSyndicate
+  name: legion target
+  id: TargetLegion
   parent: BaseTarget
-  description: A shooting target. This one is a syndicate agent.
+  description: A shooting target. This one is a legion agent.
   components:
   - type: Sprite
     sprite: Objects/Specific/Security/target.rsi

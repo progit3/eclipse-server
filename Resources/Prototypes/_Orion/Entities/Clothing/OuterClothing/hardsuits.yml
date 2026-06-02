@@ -1,7 +1,7 @@
 - type: entity
-  parent: [ BaseMajorContraband, ClothingOuterHardsuitSyndieElite ]
-  id: ClothingOuterHardsuitInteQElite
-  name: elite InteQ hardsuit
+  parent: [ BaseMajorContraband, ClothingOuterHardsuitLegionElite ]
+  id: ClothingOuterHardsuitAshLegionElite
+  name: elite AshLegion hardsuit
   description: An upgraded version of the syndicate hardsuit that features enhanced fireproofing, pressure resist, and superior armor.
   components:
   - type: Sprite
@@ -9,12 +9,12 @@
   - type: Clothing
     sprite: _Orion/Clothing/OuterClothing/Hardsuits/elite_inteq_hardsuit.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitInteQElite
+    clothingPrototype: ClothingHeadHelmetHardsuitAshLegionElite
 
 - type: entity
-  parent: [ BaseMajorContraband, ClothingOuterHardsuitSyndie ]
-  id: ClothingOuterHardsuitInteQ
-  name: InteQ hardsuit
+  parent: [ BaseMajorContraband, ClothingOuterHardsuitLegion ]
+  id: ClothingOuterHardsuitAshLegion
+  name: AshLegion hardsuit
   description: An upgraded version of the syndicate hardsuit that features enhanced fireproofing, pressure resist, and superior armor.
   components:
   - type: Sprite
@@ -22,12 +22,12 @@
   - type: Clothing
     sprite: _Orion/Clothing/OuterClothing/Hardsuits/inteq_hardsuit.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitInteQ
+    clothingPrototype: ClothingHeadHelmetHardsuitAshLegion
 
 - type: entity
-  parent: [ BaseMajorContraband, ClothingOuterHardsuitSyndie ]
-  id: ClothingOuterHardsuitSyndicateInteQ
-  name: InteQ syndicate hardsuit
+  parent: [ BaseMajorContraband, ClothingOuterHardsuitLegion ]
+  id: ClothingOuterHardsuitSyndicateAshLegion
+  name: AshLegion syndicate hardsuit
   description: An upgraded version of the syndicate hardsuit that features enhanced fireproofing, pressure resist, and superior armor.
   components:
   - type: Sprite
@@ -35,4 +35,4 @@
   - type: Clothing
     sprite: _Orion/Clothing/OuterClothing/Hardsuits/inteq_syn_hardsuit.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitSyndicateInteQ
+    clothingPrototype: ClothingHeadHelmetHardsuitSyndicateAshLegion

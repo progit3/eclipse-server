@@ -449,7 +449,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -1.2701128,9.835111
       parent: 1
-- proto: BorgModuleSyndicateWeapon
+- proto: BorgModuleLegionWeapon
   entities:
   - uid: 343
     components:

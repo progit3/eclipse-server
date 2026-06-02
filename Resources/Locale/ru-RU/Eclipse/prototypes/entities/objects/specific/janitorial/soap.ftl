@@ -1,4 +1,4 @@
-ent-SoapInteQ = мыло
+ent-SoapAshLegion = мыло
     .desc = Не вызывающий доверия кусок мыла. Пахнет страхом.
-ent-SlipocalypseInteQClusterSoap = кластерное мыло Скользкопокалипсис
+ent-SlipocalypseAshLegionClusterSoap = кластерное мыло Скользкопокалипсис
     .desc = После приземления разбрасывает вокруг себя маленькие кусочки мыла.

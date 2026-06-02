@@ -32,7 +32,7 @@
   recipeUnlocks:
   - TargetClown
   - TargetHuman
-  - TargetSyndicate
+  - TargetLegion
   technologyPrerequisites:
   - Security
   position: 1,-4

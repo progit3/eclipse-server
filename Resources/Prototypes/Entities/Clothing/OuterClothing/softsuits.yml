@@ -15,17 +15,17 @@
     - MonkeyWearable
     - WhitelistChameleon
 
-#Syndicate EVA
+#Legion EVA
 - type: entity
-  parent: [ ClothingOuterEVASuitBase, BaseSyndicateContraband ]
-  id: ClothingOuterEVASuitSyndicate
-  name: syndicate EVA suit
+  parent: [ ClothingOuterEVASuitBase, BaseLegionContraband ]
+  id: ClothingOuterEVASuitLegion
+  name: legion EVA suit
   description: "Has a tag on the back that reads: 'Totally not property of an enemy corporation, honest!'"
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Suits/eva_syndicate.rsi
+    sprite: Clothing/OuterClothing/Suits/eva_legion.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Suits/eva_syndicate.rsi
+    sprite: Clothing/OuterClothing/Suits/eva_legion.rsi
   - type: Tag
     tags:
     - SuitEVA

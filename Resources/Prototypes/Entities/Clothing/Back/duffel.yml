@@ -163,13 +163,13 @@
       sprite: Clothing/Back/Duffels/salvage.rsi
 
 - type: entity
-  parent: [ClothingBackpackDuffel, BaseSyndicateContraband]
-  id: ClothingBackpackDuffelSyndicate
-  name: syndicate duffel bag
+  parent: [ClothingBackpackDuffel, BaseLegionContraband]
+  id: ClothingBackpackDuffelLegion
+  name: legion duffel bag
   description: A large duffel bag for holding various traitor goods.
   components:
   - type: Sprite
-    sprite: Clothing/Back/Duffels/syndicate.rsi
+    sprite: Clothing/Back/Duffels/legion.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1
   - type: Storage
@@ -177,8 +177,8 @@
     - 0,0,8,4
 
 - type: entity
-  parent: [ ClothingBackpackDuffelSyndicate, BaseSyndicateContraband ]
-  id: ClothingBackpackDuffelSyndicateBundle
+  parent: [ ClothingBackpackDuffelLegion, BaseLegionContraband ]
+  id: ClothingBackpackDuffelLegionBundle
   abstract: true
   components:
   - type: Tag
@@ -193,11 +193,11 @@
     tags: [] # ignore "WhitelistChameleon" tag
 
 - type: entity
-  parent: ClothingBackpackDuffelSyndicate
-  id: ClothingBackpackDuffelSyndicateAmmo
+  parent: ClothingBackpackDuffelLegion
+  id: ClothingBackpackDuffelLegionAmmo
   components:
   - type: Sprite
-    sprite: Clothing/Back/Duffels/syndicate.rsi
+    sprite: Clothing/Back/Duffels/legion.rsi
     state: icon-ammo
   - type: Item
     heldPrefix: ammo
@@ -205,19 +205,19 @@
     equippedPrefix: ammo
 
 - type: entity
-  parent: ClothingBackpackDuffelSyndicateAmmo
-  id: ClothingBackpackDuffelSyndicateAmmoBundle
+  parent: ClothingBackpackDuffelLegionAmmo
+  id: ClothingBackpackDuffelLegionAmmoBundle
   abstract: true
   components:
     - type: Tag
       tags: [] # ignore "WhitelistChameleon" tag
 
 - type: entity
-  parent: ClothingBackpackDuffelSyndicate
-  id: ClothingBackpackDuffelSyndicateMedical
+  parent: ClothingBackpackDuffelLegion
+  id: ClothingBackpackDuffelLegionMedical
   components:
   - type: Sprite
-    sprite: Clothing/Back/Duffels/syndicate.rsi
+    sprite: Clothing/Back/Duffels/legion.rsi
     state: icon-med
   - type: Item
     heldPrefix: med
@@ -225,8 +225,8 @@
     equippedPrefix: med
 
 - type: entity
-  parent: ClothingBackpackDuffelSyndicateMedical
-  id: ClothingBackpackDuffelSyndicateMedicalBundle
+  parent: ClothingBackpackDuffelLegionMedical
+  id: ClothingBackpackDuffelLegionMedicalBundle
   abstract: true
   components:
     - type: Tag

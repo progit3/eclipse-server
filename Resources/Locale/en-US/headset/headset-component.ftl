@@ -13,7 +13,7 @@ chat-radio-science = Science
 chat-radio-security = Security
 chat-radio-service = Service
 chat-radio-supply = Supply
-chat-radio-syndicate = Syndicate
+chat-radio-legion = Legion
 chat-radio-freelance = Freelance
 
 # not headset but whatever

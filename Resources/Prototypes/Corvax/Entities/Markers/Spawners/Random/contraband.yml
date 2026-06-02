@@ -7,7 +7,7 @@
     - type: Sprite
       layers:
         - state: red
-        - sprite: Objects/Fun/Balloons/syndicate.rsi
+        - sprite: Objects/Fun/Balloons/legion.rsi
           state: icon
     - type: RandomSpawner
       rarePrototypes:
@@ -17,14 +17,14 @@
         - ClothingHeadHelmetCult
         - ClothingOuterArmorCult
         - DehydratedSpaceCarp
-        - ClothingOuterEVASuitSyndicate
-        - ClothingHeadHelmetSyndicate
-        - ClothingHeadHelmetSwatSyndicate
-        - ToolboxSyndicateFilled
+        - ClothingOuterEVASuitLegion
+        - ClothingHeadHelmetLegion
+        - ClothingHeadHelmetSwatLegion
+        - ToolboxLegionFilled
         - ClothingOuterVestWeb
-        - SyndicateJawsOfLife
+        - LegionJawsOfLife
         - HappyHonkNukie
-        - CigPackSyndicate
+        - CigPackLegion
         - LanternFlash
       rareChance: 0.2
       prototypes:
@@ -35,30 +35,30 @@
         - ClothingHeadHatHoodCulthood
         - ClothingOuterRobesCult
         - ClothingShoesCult
-        # Useless non-contra syndie loot
+        # Useless non-contra legion loot
         - BalloonSyn
-        - ClothingUniformJumpsuitPyjamaSyndicateRed
-        - ClothingUniformJumpsuitPyjamaSyndicateBlack
-        - ClothingUniformJumpsuitPyjamaSyndicatePink
-        - ClothingHeadPyjamaSyndicateRed
-        - ClothingHeadPyjamaSyndicateBlack
-        - ClothingHeadPyjamaSyndicatePink
+        - ClothingUniformJumpsuitPyjamaLegionRed
+        - ClothingUniformJumpsuitPyjamaLegionBlack
+        - ClothingUniformJumpsuitPyjamaLegionPink
+        - ClothingHeadPyjamaLegionRed
+        - ClothingHeadPyjamaLegionBlack
+        - ClothingHeadPyjamaLegionPink
         - ClothingHeadHatOutlawHat
-        - ClothingHeadHatSyndie
+        - ClothingHeadHatLegion
         - ClothingMaskNeckGaiter
-        - ClothingOuterWinterSyndie
-        - ClothingHeadHatSyndieMAA
-        - ClothingOuterWinterSyndieCap
-        - ClothingOuterCoatSyndieCap
-        - ClothingUniformJumpsuitSyndieFormal
-        - ClothingUniformJumpskirtSyndieFormalDress
+        - ClothingOuterWinterLegion
+        - ClothingHeadHatLegionMAA
+        - ClothingOuterWinterLegionCap
+        - ClothingOuterCoatLegionCap
+        - ClothingUniformJumpsuitLegionFormal
+        - ClothingUniformJumpskirtLegionFormalDress
         - ClothingUniformJumpsuitOperative
         - ClothingUniformJumpskirtOperative
-        - ClothingNeckScarfStripedSyndieGreen
-        - ClothingNeckScarfStripedSyndieRed
-        - ClothingShoesBootsWinterSyndicate
-        - ClothingBeltSyndieHolster
-        - ToolboxSyndicate
+        - ClothingNeckScarfStripedLegionGreen
+        - ClothingNeckScarfStripedLegionRed
+        - ClothingShoesBootsWinterLegion
+        - ClothingBeltLegionHolster
+        - ToolboxLegion
       chance: 0.8
       offset: 0.0
 
@@ -71,16 +71,16 @@
     - type: Sprite
       layers:
         - state: red
-        - sprite: Objects/Fun/Balloons/syndicate.rsi
+        - sprite: Objects/Fun/Balloons/legion.rsi
           state: icon
     - type: RandomSpawner
       rarePrototypes:
         - RevolverCapGunFake
-        - ClothingShoesBootsMagSyndie
-        - ClothingHeadsetAltSyndicate
+        - ClothingShoesBootsMagLegion
+        - ClothingHeadsetAltLegion
         - Stimpack
-        - EncryptionKeySyndie
-        - SyndicateSpongeBox
+        - EncryptionKeyLegion
+        - LegionSpongeBox
         - PenExplodingBox
         - HypopenBox
         - GatfruitSeeds
@@ -92,20 +92,20 @@
         - SpeedLoaderMagnumAP
       rareChance: 0.2
       prototypes:
-        - CigPackSyndicate
+        - CigPackLegion
         - HappyHonkNukie
         - LanternFlash
         - CyberPen
         - ClothingHandsGlovesBoxingRiggedRed
-        - ClothingMaskGasSyndicate
-        - RubberStampSyndicate
-        - SoapSyndie
+        - ClothingMaskGasLegion
+        - RubberStampLegion
+        - SoapLegion
         - DrinkNukieCan
         - StimpackMini
         - NukeDiskFake
-        - SyndicatePersonalAI
+        - LegionPersonalAI
         - Telecrystal1
-        - SyndicateIDCard
+        - LegionIDCard
         - BaseUplinkRadio
         - MagazinePistol
         - MagazinePistolCaselessRifle
@@ -122,7 +122,7 @@
     - type: Sprite
       layers:
         - state: red
-        - sprite: Objects/Fun/Balloons/syndicate.rsi
+        - sprite: Objects/Fun/Balloons/legion.rsi
           state: icon
     - type: RandomSpawner
       rarePrototypes:
@@ -138,7 +138,7 @@
         - MicroBombImplanter
         - Emag
         - RadioJammer
-        - SyndicateBomb
+        - LegionBomb
         - WeaponRevolverPythonAP
         - ThrowingKnivesKit
         - ExGrenade
@@ -162,15 +162,15 @@
         - ClothingHandsChameleon
         - ClothingShoesChameleon
         - ClothingUniformJumpsuitChameleon
-        - EncryptionKeySyndie
-        - SyndicateSpongeBox
+        - EncryptionKeyLegion
+        - LegionSpongeBox
         - EnergyDagger
         - EmpImplanter
-        - SyndieMiniBomb
+        - LegionMiniBomb
         - C4
         - EmpGrenade
         - HotPotato
         - Telecrystal5
-        - BorgModuleSyndicateWeapon
+        - BorgModuleLegionWeapon
       chance: 0.8
       offset: 0.0

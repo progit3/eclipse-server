@@ -8,7 +8,7 @@ namespace Content.Shared.Armor;
 /// <summary>
 /// Used for clothing that reduces damage when worn.
 /// </summary>
-[RegisterComponent, NetworkedComponent, Access(typeof(SharedArmorSystem))]
+[RegisterComponent, NetworkedComponent, Access(typeof(SharedArmorSystem), Other = AccessPermissions.ReadExecute)]
 public sealed partial class ArmorComponent : Component
 {
     /// <summary>
@@ -29,6 +29,14 @@ public sealed partial class ArmorComponent : Component
     /// </summary>
     [DataField]
     public bool ShowArmorOnExamine = true;
+
+    public float? GetProtection(string damageType)
+    {
+        if (!Modifiers.Coefficients.TryGetValue(damageType, out var coefficient))
+            return null;
+
+        return Math.Clamp((1f - coefficient) * 100f, 0f, 100f);
+    }
 }
 
 /// <summary>

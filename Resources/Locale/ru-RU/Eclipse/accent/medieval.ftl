@@ -36,7 +36,7 @@ accent-medieval-words-9-2 = предатель
 accent-medieval-words-9-3 = агент
 accent-medieval-words-replace-9 = еретик
 
-accent-medieval-words-10 = интековцы
+accent-medieval-words-10 = Легион пеплаовцы
 accent-medieval-words-10-2 = предатели
 accent-medieval-words-10-3 = агенты
 accent-medieval-words-10-4 = ЯО

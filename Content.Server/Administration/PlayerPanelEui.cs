@@ -7,6 +7,7 @@ using Content.Server.EUI;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Systems;
 using Content.Shared.Database;
+using Content.Shared.Eclipse.Progression;
 using Content.Shared.Eui;
 using Content.Shared.Follower;
 using Robust.Server.Player;
@@ -154,7 +155,33 @@ public sealed class PlayerPanelEui : BaseEui
 
                 _follower.StartFollowingEntity(Player.AttachedEntity.Value, session.AttachedEntity.Value);
                 break;
+            case PlayerPanelGrantExperienceMessage grant:
+                if (!_admins.HasAdminFlag(Player, AdminFlags.Admin) || grant.Amount <= 0)
+                    return;
+
+                GrantExperience(grant.Amount);
+                break;
         }
+    }
+
+    private async void GrantExperience(int amount)
+    {
+        var current = (await _db.GetPlayTimes(_targetPlayer.UserId.UserId))
+            .Where(p => p.Tracker == EclipseProgression.BonusExperienceTracker)
+            .Select(p => p.TimeSpent)
+            .FirstOrDefault();
+
+        var bonusTime = TimeSpan.FromMinutes((double) amount / EclipseProgression.BonusExperiencePerMinute);
+        await _db.UpdatePlayTimes([
+            new PlayTimeUpdate(
+                _targetPlayer.UserId,
+                EclipseProgression.BonusExperienceTracker,
+                current + bonusTime),
+        ]);
+
+        _adminLog.Add(LogType.Action, LogImpact.Medium,
+            $"{Player:actor} granted {amount} Eclipse XP to {_targetPlayer.Username:subject}");
+        SetPlayerState();
     }
 
     public async void SetPlayerState()

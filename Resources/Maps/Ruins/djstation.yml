@@ -808,7 +808,7 @@ entities:
     - type: Transform
       pos: 1.627266,-9.441588
       parent: 2
-- proto: ClothingHeadHelmetSyndicate
+- proto: ClothingHeadHelmetLegion
   entities:
   - uid: 322
     components:

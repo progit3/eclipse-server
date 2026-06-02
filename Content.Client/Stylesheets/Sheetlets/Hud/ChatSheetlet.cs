@@ -15,9 +15,10 @@ public sealed class ChatSheetlet<T> : Sheetlet<T> where T: PalettedStylesheet, I
     {
         IButtonConfig btnCfg = sheet;
 
-        var chatBg = EclipsePanel("#070300F8", "#A85E1290", 0, 0);
-        var chatChannelButton = EclipsePanel("#070300F4", "#A85E1240", 8, 3);
-        var chatFilterButton = EclipsePanel("#070300F4", "#A85E1266", 4, 3);
+        var chatBg = EclipsePanel("#190900F4", "#D47D1BAA", 0, 0);
+        var chatLine = EclipsePanel("#252430F6", "#D47D1BCC", 8, 4);
+        var chatChannelButton = EclipsePanel("#2D1100F4", "#D47D1B66", 9, 4);
+        var chatFilterButton = EclipsePanel("#2D1100F4", "#D47D1B88", 4, 4);
 
         return
         [
@@ -26,7 +27,11 @@ public sealed class ChatSheetlet<T> : Sheetlet<T> where T: PalettedStylesheet, I
                 .Panel(chatBg),
             E<LineEdit>()
                 .Class(ChatInputBox.StyleClassChatLineEdit)
-                .Prop(LineEdit.StylePropertyStyleBox, new StyleBoxEmpty()),
+                .Prop(LineEdit.StylePropertyStyleBox, chatLine),
+            E<LineEdit>()
+                .Class(ChatInputBox.StyleClassChatLineEdit)
+                .Pseudo(LineEdit.StylePseudoClassPlaceholder)
+                .Prop("font-color", Color.FromHex("#AFA49E")),
             E<Button>().Class(ChatInputBox.StyleClassChatFilterOptionButton).Box(chatChannelButton),
             E<ContainerButton>().Class(ChatInputBox.StyleClassChatFilterOptionButton).Box(chatFilterButton),
         ];

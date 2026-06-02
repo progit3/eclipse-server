@@ -84,19 +84,19 @@
     selectedBorgType: service
 
 - type: entity
-  id: BorgChassisSyndicateAssault
-  parent: BaseBorgChassisSyndicate
-  name: syndicate assault cyborg
+  id: BorgChassisLegionAssault
+  parent: BaseBorgChassisLegion
+  name: legion assault cyborg
   description: A lean, mean killing machine with access to a variety of deadly modules.
   components:
     - type: Sprite
       layers:
-        - state: synd_sec
-        - state: synd_sec_e
+        - state: legion_sec
+        - state: legion_sec_e
           map: ["enum.BorgVisualLayers.Light"]
           shader: unshaded
           visible: false
-        - state: synd_sec_l
+        - state: legion_sec_l
           shader: unshaded
           map: ["light"]
           visible: false
@@ -105,30 +105,30 @@
       moduleWhitelist:
         tags:
           - BorgModuleGeneric
-          - BorgModuleSyndicate
-          - BorgModuleSyndicateAssault
-      hasMindState: synd_sec_e
-      noMindState: synd_sec
+          - BorgModuleLegion
+          - BorgModuleLegionAssault
+      hasMindState: legion_sec_e
+      noMindState: legion_sec
     - type: InteractionPopup
-      interactSuccessString: petting-success-syndicate-cyborg
-      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessString: petting-success-legion-cyborg
+      interactFailureString: petting-failure-legion-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
 
 - type: entity
-  id: BorgChassisSyndicateMedical
-  parent: [BaseBorgChassisSyndicate, ShowMedicalIcons]
-  name: syndicate medical cyborg
+  id: BorgChassisLegionMedical
+  parent: [BaseBorgChassisLegion, ShowMedicalIcons]
+  name: legion medical cyborg
   description: A combat medical cyborg. Has limited offensive potential, but makes more than up for it with its support capabilities.
   components:
     - type: Sprite
       layers:
-        - state: synd_medical
-        - state: synd_medical_e
+        - state: legion_medical
+        - state: legion_medical_e
           map: ["enum.BorgVisualLayers.Light"]
           shader: unshaded
           visible: false
-        - state: synd_medical_l
+        - state: legion_medical_l
           shader: unshaded
           map: ["light"]
           visible: false
@@ -138,13 +138,13 @@
         tags:
           - BorgModuleGeneric
           - BorgModuleMedical
-          - BorgModuleSyndicate
-      hasMindState: synd_medical_e
-      noMindState: synd_medical
+          - BorgModuleLegion
+      hasMindState: legion_medical_e
+      noMindState: legion_medical
     - type: ShowHealthBars
     - type: InteractionPopup
-      interactSuccessString: petting-success-syndicate-cyborg
-      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessString: petting-success-legion-cyborg
+      interactFailureString: petting-failure-legion-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
     - type: SolutionScanner
@@ -155,19 +155,19 @@
           volume: -6
 
 - type: entity
-  id: BorgChassisSyndicateSaboteur
-  parent: BaseBorgChassisSyndicate
-  name: syndicate saboteur cyborg
+  id: BorgChassisLegionSaboteur
+  parent: BaseBorgChassisLegion
+  name: legion saboteur cyborg
   description: A streamlined engineering cyborg, equipped with covert modules. Its chameleon projector lets it disguise itself as a Nanotrasen cyborg.
   components:
     - type: Sprite
       layers:
-        - state: synd_engi
-        - state: synd_engi_e
+        - state: legion_engi
+        - state: legion_engi_e
           map: ["enum.BorgVisualLayers.Light"]
           shader: unshaded
           visible: false
-        - state: synd_engi_l
+        - state: legion_engi_l
           shader: unshaded
           map: ["light"]
           visible: false
@@ -177,16 +177,16 @@
         tags:
           - BorgModuleGeneric
           - BorgModuleEngineering
-          - BorgModuleSyndicate
-      hasMindState: synd_engi_e
-      noMindState: synd_engi
+          - BorgModuleLegion
+      hasMindState: legion_engi_e
+      noMindState: legion_engi
     - type: ShowHealthBars
       damageContainers:
       - Inorganic
       - Silicon
     - type: InteractionPopup
-      interactSuccessString: petting-success-syndicate-cyborg
-      interactFailureString: petting-failure-syndicate-cyborg
+      interactSuccessString: petting-success-legion-cyborg
+      interactFailureString: petting-failure-legion-cyborg
       interactSuccessSound:
         path: /Audio/Ambience/Objects/periodic_beep.ogg
 
@@ -362,19 +362,19 @@
     noMindState: miner_e_r
 
 - type: entity
-  parent: BaseBorgChassisSyndicateDerelict
-  id: SyndicateAssaultBorgChassisDerelict
-  name: derelict syndicate assault cyborg
+  parent: BaseBorgChassisLegionDerelict
+  id: LegionAssaultBorgChassisDerelict
+  name: derelict legion assault cyborg
   description: A lean, mean killing machine with access to a variety of deadly modules. This one is more rust-orange than blood-red.
   components:
   - type: Sprite
     layers:
-    - state: synd_sec_derelict
-    - state: synd_sec_e
+    - state: legion_sec_derelict
+    - state: legion_sec_e
       map: ["enum.BorgVisualLayers.Light"]
       shader: unshaded
       visible: false
-    - state: synd_sec_l
+    - state: legion_sec_l
       shader: unshaded
       map: ["light"]
       visible: false
@@ -383,9 +383,9 @@
     moduleWhitelist: # Note - the Derelict Assault Borg does not have a traversal module. This is intentional as Assault Borgs have space traversal with their c20 and free space movement, and they can navigate to the station using the pinpointer.
       tags:
       - BorgModuleGeneric
-      - BorgModuleSyndicate
-      - BorgModuleSyndicateAssault
-    hasMindState: synd_sec_derelict_e
-    noMindState: synd_sec_derelict
+      - BorgModuleLegion
+      - BorgModuleLegionAssault
+    hasMindState: legion_sec_derelict_e
+    noMindState: legion_sec_derelict
   - type: Construction
     node: derelictcyborg

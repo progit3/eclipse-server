@@ -739,37 +739,37 @@
       sprite: Clothing/Uniforms/Jumpsuit/lawyergood.rsi
 
 - type: entity
-  parent: [UnsensoredClothingUniformBase, BaseSyndicateContraband]
-  id: ClothingUniformJumpsuitPyjamaSyndicateBlack
-  name: black syndicate pyjamas
+  parent: [UnsensoredClothingUniformBase, BaseLegionContraband]
+  id: ClothingUniformJumpsuitPyjamaLegionBlack
+  name: black legion pyjamas
   description: For those long nights in perma.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicateblack.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/pyjamalegionblack.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicateblack.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/pyjamalegionblack.rsi
 
 - type: entity
-  parent: [UnsensoredClothingUniformBase, BaseSyndicateContraband]
-  id: ClothingUniformJumpsuitPyjamaSyndicatePink
-  name: pink syndicate pyjamas
+  parent: [UnsensoredClothingUniformBase, BaseLegionContraband]
+  id: ClothingUniformJumpsuitPyjamaLegionPink
+  name: pink legion pyjamas
   description: For those long nights in perma.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatepink.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/pyjamalegionpink.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatepink.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/pyjamalegionpink.rsi
 
 - type: entity
-  parent: [UnsensoredClothingUniformBase, BaseSyndicateContraband]
-  id: ClothingUniformJumpsuitPyjamaSyndicateRed
-  name: red syndicate pyjamas
+  parent: [UnsensoredClothingUniformBase, BaseLegionContraband]
+  id: ClothingUniformJumpsuitPyjamaLegionRed
+  name: red legion pyjamas
   description: For those long nights in perma.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatered.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/pyjamalegionred.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/pyjamasyndicatered.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/pyjamalegionred.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -816,10 +816,10 @@
     sprite: Clothing/Uniforms/Jumpsuit/hosformal.rsi
 
 - type: entity
-  parent: [UnsensoredClothingUniformBase, BaseSyndicateContraband]
+  parent: [UnsensoredClothingUniformBase, BaseLegionContraband]
   id: ClothingUniformJumpsuitOperative
   name: operative jumpsuit
-  description: Uniform for elite syndicate operatives performing tactical operations in deep space.
+  description: Uniform for elite legion operatives performing tactical operations in deep space.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/operative.rsi
@@ -1119,15 +1119,15 @@
     sprite: Clothing/Uniforms/Jumpsuit/hawaiyellow.rsi
 
 - type: entity
-  parent: [ClothingUniformBase, BaseSyndicateContraband]
-  id: ClothingUniformJumpsuitSyndieFormal
-  name: syndicate formal suit
-  description: "The syndicate's uniform is made in an elegant style, it's even a pity to do dirty tricks in this."
+  parent: [ClothingUniformBase, BaseLegionContraband]
+  id: ClothingUniformJumpsuitLegionFormal
+  name: legion formal suit
+  description: "The legion's uniform is made in an elegant style, it's even a pity to do dirty tricks in this."
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpsuit/syndieformal.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/legionformal.rsi
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpsuit/syndieformal.rsi
+    sprite: Clothing/Uniforms/Jumpsuit/legionformal.rsi
 
 - type: entity
   parent: ClothingUniformBase

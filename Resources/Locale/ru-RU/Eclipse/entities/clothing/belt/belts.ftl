@@ -4,5 +4,5 @@ ent-ClothingBeltWhiteSheath = белые сабельные ножны
 ent-ClothingBeltSheriffSheath = сабельные ножны шерифа
    .desc = Практичность, прочность, сабля точно не окажется в вашей ноге.
 
-ent-ClothingBeltInteQHolster = плечевая кобура InteQ
+ent-ClothingBeltAshLegionHolster = плечевая кобура Легион пепла
    .desc = { ent-ClothingBeltSyndieHolster.desc }

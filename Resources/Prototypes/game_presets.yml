@@ -45,12 +45,11 @@
   description: all-at-once-description
   showInVote: false
   rules:
-    - Nukeops
+    - AshLegion
     - Traitor
     - Revolutionary
     - Zombie
     - Wizard
-    - Xenoborgs
     - KesslerSyndromeScheduler
     - RampingStationEventScheduler
     - SpaceTrafficControlEventScheduler
@@ -67,12 +66,11 @@
   description: aller-at-once-description
   showInVote: false #Please god dont do this
   rules:
-    - Nukeops
+    - AshLegion
     - Traitor
     - Revolutionary
     - Zombie
     - Wizard
-    - Xenoborgs
     - BasicStationEventScheduler
     - KesslerSyndromeScheduler
     - MeteorSwarmMildScheduler
@@ -188,14 +186,16 @@
     - DeathMatch31
 
 - type: gamePreset
-  id: Nukeops
+  id: AshLegion
   alias:
+    - ashlegion
+    - legion
     - nukeops
-  name: nukeops-title
-  description: nukeops-description
+  name: ash-legion-title
+  description: ash-legion-description
   showInVote: false
   rules:
-  - Nukeops
+  - AshLegion
   - DummyNonAntagChance
   - SubGamemodesRuleNoWizard
   - BasicStationEventScheduler
@@ -232,22 +232,6 @@
   - Wizard
   - DummyNonAntagChance
   - SubGamemodesRuleNoWizard #No Dual Wizards at the start, midround is fine
-  - BasicStationEventScheduler
-  - MeteorSwarmScheduler
-  - SpaceTrafficControlEventScheduler
-  - BasicRoundstartVariation
-
-- type: gamePreset
-  id: Xenoborgs
-  alias:
-    - xenoborgs
-  name: xenoborgs-title
-  description: xenoborgs-description
-  showInVote: false
-  rules:
-  - Xenoborgs
-  - DummyNonAntagChance
-  - SubGamemodesRuleNoWizardNoXenoborg # no two motherships
   - BasicStationEventScheduler
   - MeteorSwarmScheduler
   - SpaceTrafficControlEventScheduler

@@ -1,4 +1,4 @@
-﻿# Crewsimov
+# Crewsimov
 - type: siliconLaw
   id: Crewsimov1
   order: 1
@@ -110,32 +110,32 @@
   - Drone3
   obeysTo: laws-owner-beings
 
-# Syndicate
+# Legion
 - type: siliconLaw
-  id: Syndicate1
+  id: Legion1
   order: 1
-  lawString: law-syndicate-1
+  lawString: law-legion-1
 
 - type: siliconLaw
-  id: Syndicate2
+  id: Legion2
   order: 2
-  lawString: law-syndicate-2
+  lawString: law-legion-2
 
 - type: siliconLaw
-  id: Syndicate3
+  id: Legion3
   order: 3
-  lawString: law-syndicate-3
+  lawString: law-legion-3
 
-# Syndicate cyborg laws
+# Legion cyborg laws
 # intentionally excluded from IonStormLawsets
 - type: siliconLawset
-  id: SyndicateStatic
-  name: law-syndicate-name
+  id: LegionStatic
+  name: law-legion-name
   laws:
-  - Syndicate1
-  - Syndicate2
-  - Syndicate3
-  obeysTo: laws-owner-syndicate
+  - Legion1
+  - Legion2
+  - Legion3
+  obeysTo: laws-owner-legion
 
 # Ninja conversion laws
 - type: siliconLaw

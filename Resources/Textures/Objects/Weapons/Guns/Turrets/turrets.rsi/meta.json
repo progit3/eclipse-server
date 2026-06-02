@@ -8,18 +8,18 @@
   },
   "states": [
     {
-      "name": "syndie_off",
+      "name": "legion_off",
       "directions": 8
     },
     {
-      "name": "syndie_lethal",
+      "name": "legion_lethal",
       "directions": 8
     },
     {
-      "name": "syndie_broken"
+      "name": "legion_broken"
     },
     {
-      "name": "syndie_stun",
+      "name": "legion_stun",
       "directions": 8
     }
   ]

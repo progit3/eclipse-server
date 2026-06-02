@@ -1,21 +1,21 @@
 - type: entity
-  parent: [BaseWeaponBallisticTurret, BaseSyndicateContraband]
-  id: WeaponTurretSyndicate
-  suffix: Syndicate
+  parent: [BaseWeaponBallisticTurret, BaseLegionContraband]
+  id: WeaponTurretLegion
+  suffix: Legion
   components:
   - type: NpcFactionMember
     factions:
-    - Syndicate
+    - Legion
 
 - type: entity
   parent: BaseWeaponBallisticTurret
-  id: WeaponTurretSyndicateDisposable
+  id: WeaponTurretLegionDisposable
   name: disposable ballistic turret
-  suffix: Syndicate, Disposable
+  suffix: Legion, Disposable
   components:
   - type: NpcFactionMember
     factions:
-    - Syndicate
+    - Legion
   - type: Destructible
     thresholds:
     - trigger:
@@ -42,7 +42,7 @@
     capacity: 50
   - type: Construction
     deconstructionTarget: null
-    graph: WeaponTurretSyndicateDisposable
+    graph: WeaponTurretLegionDisposable
     node: disposableTurret
   - type: Repairable
     qualityNeeded: "Anchoring"

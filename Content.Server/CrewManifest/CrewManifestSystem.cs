@@ -69,7 +69,26 @@ public sealed class CrewManifestSystem : EntitySystem
             return;
         }
 
-        OpenEui(GetEntity(message.Id), sessionCast);
+        var station = GetEntity(message.Id);
+        if (!message.Id.Valid || !HasComp<StationRecordsComponent>(station))
+        {
+            if (!TryGetDefaultCrewManifestStation(out station))
+                return;
+        }
+
+        OpenEui(station, sessionCast);
+    }
+
+    private bool TryGetDefaultCrewManifestStation(out EntityUid station)
+    {
+        var query = EntityQueryEnumerator<StationRecordsComponent>();
+        while (query.MoveNext(out station, out _))
+        {
+            return true;
+        }
+
+        station = EntityUid.Invalid;
+        return false;
     }
 
     // Not a big fan of this one. Rebuilds the crew manifest every time

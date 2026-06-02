@@ -512,10 +512,10 @@
     sprite: Clothing/Uniforms/Jumpskirt/hosformaldress.rsi
 
 - type: entity
-  parent: [UnsensoredClothingUniformSkirtBase, BaseSyndicateContraband]
+  parent: [UnsensoredClothingUniformSkirtBase, BaseLegionContraband]
   id: ClothingUniformJumpskirtOperative
   name: operative jumpskirt
-  description: Uniform for elite syndicate operatives performing tactical operations in deep space.
+  description: Uniform for elite legion operatives performing tactical operations in deep space.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpskirt/operative_s.rsi
@@ -628,15 +628,15 @@
       sprite: Clothing/Uniforms/Jumpskirt/lawyergood.rsi
 
 - type: entity
-  parent: [ ClothingUniformSkirtBase, BaseSyndicateContraband ]
-  id: ClothingUniformJumpskirtSyndieFormalDress
-  name: syndicate formal dress
-  description: "The syndicate's uniform is made in an elegant style, it's even a pity to do dirty tricks in this."
+  parent: [ ClothingUniformSkirtBase, BaseLegionContraband ]
+  id: ClothingUniformJumpskirtLegionFormalDress
+  name: legion formal dress
+  description: "The legion's uniform is made in an elegant style, it's even a pity to do dirty tricks in this."
   components:
     - type: Sprite
-      sprite: Clothing/Uniforms/Jumpskirt/syndieformaldress.rsi
+      sprite: Clothing/Uniforms/Jumpskirt/legionformaldress.rsi
     - type: Clothing
-      sprite: Clothing/Uniforms/Jumpskirt/syndieformaldress.rsi
+      sprite: Clothing/Uniforms/Jumpskirt/legionformaldress.rsi
 
 - type: entity
   parent: ClothingUniformSkirtBase

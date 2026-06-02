@@ -21,7 +21,7 @@
         - id: CratePermaEscapeDigging
           weight: 2
         - id: CratePermaEscapeEVA
-        - id: CratePermaEscapeGiftsFromSyndicate
+        - id: CratePermaEscapeGiftsFromLegion
         - id: CratePermaEscapeGun
         - id: CratePermaEscapeLights
         - id: CratePermaEscapeMats
@@ -79,7 +79,7 @@
           prob: 0.10
         - id: ClothingOuterSanta
           prob: 0.10
-        - id: ClothingOuterEVASuitSyndicate
+        - id: ClothingOuterEVASuitLegion
           prob: 0.20
         - id: EmergencyOxygenTankFilled
           prob: 0.25
@@ -200,8 +200,8 @@
 
 - type: entity
   parent: CrateGenericSteel
-  id: CratePermaEscapeGiftsFromSyndicate
-  suffix: Syndicate gifts
+  id: CratePermaEscapeGiftsFromLegion
+  suffix: Legion gifts
   components:
   - type: EntityTableContainerFill
     containers:
@@ -219,13 +219,13 @@
             weight: 0.20
           - id: SpaceCarpCube
             weight: 0.20
-          - id: SyndicateSponge
+          - id: LegionSponge
             weight: 0.20
         - id: MindShieldImplanter
           prob: 0.20
         - id: ClothingHandsGlovesConducting # funny
           prob: 0.30
-        - id: CigPackSyndicate
+        - id: CigPackLegion
           prob: 0.80
         - id: StimpackMini
           prob: 0.20
@@ -235,7 +235,7 @@
           prob: 0.05
         - id: MedkitCombatFilled
           prob: 0.01
-        - id: SoapSyndie
+        - id: SoapLegion
           prob: 0.15
         - id: DnaScramblerImplanter
           prob: 0.005

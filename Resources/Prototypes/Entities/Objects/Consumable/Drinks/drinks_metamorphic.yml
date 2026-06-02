@@ -2001,18 +2001,18 @@
 
 - type: entity
   parent: DrinkGlass
-  id: DrinkSyndicatebomb
-  suffix: syndicate bomb
+  id: DrinkLegionbomb
+  suffix: legion bomb
   components:
   - type: SolutionContainerManager
     solutions:
       drink:
         maxVol: 30
         reagents:
-        - ReagentId: SyndicateBomb
+        - ReagentId: LegionBomb
           Quantity: 30
   - type: Icon
-    sprite: Objects/Consumable/Drinks/syndicatebomb.rsi
+    sprite: Objects/Consumable/Drinks/legionbomb.rsi
     state: icon
 
 - type: entity

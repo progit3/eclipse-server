@@ -421,7 +421,7 @@ entities:
     - type: GasTileOverlay
     - type: SpreaderGrid
     - type: GridPathfinding
-- proto: AirlockExternalGlassShuttleSyndicateLocked
+- proto: AirlockExternalGlassShuttleLegionLocked
   entities:
   - uid: 2
     components:
@@ -429,7 +429,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 3.5,15.5
       parent: 1
-- proto: AirlockExternalGlassSyndicateLocked
+- proto: AirlockExternalGlassLegionLocked
   entities:
   - uid: 3
     components:
@@ -448,7 +448,7 @@ entities:
     - type: Transform
       pos: 6.5,2.5
       parent: 1
-- proto: AirlockExternalShuttleSyndicateLocked
+- proto: AirlockExternalShuttleLegionLocked
   entities:
   - uid: 6
     components:
@@ -462,7 +462,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 8.5,2.5
       parent: 1
-- proto: AirlockSyndicateGlassLocked
+- proto: AirlockLegionGlassLocked
   entities:
   - uid: 8
     components:
@@ -506,7 +506,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 5.5,6.5
       parent: 1
-- proto: AirlockSyndicateLocked
+- proto: AirlockLegionLocked
   entities:
   - uid: 15
     components:
@@ -2022,7 +2022,7 @@ entities:
     - type: Transform
       pos: -6.27275,8.540821
       parent: 1
-- proto: ClothingOuterCoatSyndieCapArmored
+- proto: ClothingOuterCoatLegionCapArmored
   entities:
   - uid: 296
     components:
@@ -2083,7 +2083,7 @@ entities:
     - type: Transform
       pos: -0.305537,7.583114
       parent: 1
-- proto: ComputerIFFSyndicate
+- proto: ComputerIFFLegion
   entities:
   - uid: 307
     components:
@@ -2214,7 +2214,7 @@ entities:
       parent: 1
     - type: Physics
       canCollide: False
-- proto: FaxMachineSyndie
+- proto: FaxMachineLegion
   entities:
   - uid: 324
     components:
@@ -3176,7 +3176,7 @@ entities:
     - type: Transform
       pos: -8.5,7.5
       parent: 1
-- proto: PosterContrabandSyndicateRecruitment
+- proto: PosterContrabandLegionRecruitment
   entities:
   - uid: 481
     components:
@@ -3794,7 +3794,7 @@ entities:
     - type: Transform
       pos: -8.5,8.5
       parent: 1
-- proto: SyndicatePersonalAI
+- proto: LegionPersonalAI
   entities:
   - uid: 575
     components:

@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: Recycler
   parent: BaseMachinePowered
   name: recycler
@@ -114,4 +114,4 @@
     messageSet: SpookySpeakerMessagesRecycler
   - type: Speech
     speechVerb: Robotic
-    speechSounds: SyndieBorg
+    speechSounds: LegionBorg

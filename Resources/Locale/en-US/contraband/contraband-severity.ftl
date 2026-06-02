@@ -24,8 +24,8 @@ contraband-examine-text-Major =
 
 contraband-examine-text-GrandTheft =
     { $type ->
-        *[item] [color=red]This item is a highly valuable target for Syndicate agents![/color]
-        [reagent] [color=red]This reagent is a highly valuable target for Syndicate agents![/color]
+        *[item] [color=red]This item is a highly valuable target for Legion agents![/color]
+        [reagent] [color=red]This reagent is a highly valuable target for Legion agents![/color]
     }
 
 contraband-examine-text-Highly-Illegal =
@@ -34,16 +34,16 @@ contraband-examine-text-Highly-Illegal =
         [reagent] [color=crimson]This reagent is highly illegal contraband![/color]
     }
 
-contraband-examine-text-Syndicate =
+contraband-examine-text-Legion =
     { $type ->
-        *[item] [color=crimson]This item is highly illegal Syndicate contraband![/color]
-        [reagent] [color=crimson]This reagent is highly illegal Syndicate contraband![/color]
+        *[item] [color=crimson]This item is highly illegal Legion contraband![/color]
+        [reagent] [color=crimson]This reagent is highly illegal Legion contraband![/color]
     }
 
-contraband-examine-text-InteQ =
+contraband-examine-text-AshLegion =
     { $type ->
-        *[item] [color=crimson]This item is highly illegal InteQ contraband![/color]
-        [reagent] [color=crimson]This reagent is highly illegal InteQ contraband![/color]
+        *[item] [color=crimson]This item is highly illegal Ash Legion contraband![/color]
+        [reagent] [color=crimson]This reagent is highly illegal Ash Legion contraband![/color]
     }
 
 contraband-examine-text-Magical =

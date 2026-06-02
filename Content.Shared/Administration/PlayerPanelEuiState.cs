@@ -55,3 +55,9 @@ public sealed class PlayerPanelRejuvenationMessage: EuiMessageBase;
 
 [Serializable, NetSerializable]
 public sealed class PlayerPanelFollowMessage: EuiMessageBase;
+
+[Serializable, NetSerializable]
+public sealed class PlayerPanelGrantExperienceMessage(int amount) : EuiMessageBase
+{
+    public readonly int Amount = amount;
+}

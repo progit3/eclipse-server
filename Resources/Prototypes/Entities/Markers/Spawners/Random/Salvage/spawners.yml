@@ -355,12 +355,12 @@
         tableId: MaintToolsTable
       - !type:NestedSelector
         tableId: MaintFluffTable
-    # 1% chance of syndie maintenance loot
+    # 1% chance of legion maintenance loot
     - !type:GroupSelector
       weight: 1
       children:
       - !type:NestedSelector
-        tableId: SyndieMaintLoot
+        tableId: LegionMaintLoot
 
 - type: entity
   parent: MarkerBase

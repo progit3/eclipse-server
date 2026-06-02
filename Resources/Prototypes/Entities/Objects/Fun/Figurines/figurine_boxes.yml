@@ -74,7 +74,7 @@
       - id: DonkcoLighter
         orGroup: Lighterbox
         weight: 0.25
-      - id: SyndicateFlippo
+      - id: LegionFlippo
         orGroup: Lighterbox
         weight: 0.15
 
@@ -96,5 +96,5 @@
         orGroup: Lighterbox
       - id: DonkcoLighter
         orGroup: Lighterbox
-      - id: SyndicateFlippo
+      - id: LegionFlippo
         orGroup: Lighterbox

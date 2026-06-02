@@ -271,9 +271,9 @@ public sealed class FaxSystem : EntitySystem
             switch (command)
             {
                 case FaxConstants.FaxPingCommand:
-                    var isForSyndie = _emag.CheckFlag(uid, EmagType.Interaction) &&
-                                      args.Data.ContainsKey(FaxConstants.FaxSyndicateData);
-                    if (!isForSyndie && !component.ResponsePings)
+                    var isForLegion = _emag.CheckFlag(uid, EmagType.Interaction) &&
+                                      args.Data.ContainsKey(FaxConstants.FaxLegionData);
+                    if (!isForLegion && !component.ResponsePings)
                         return;
 
                     var payload = new NetworkPayload()
@@ -403,7 +403,7 @@ public sealed class FaxSystem : EntitySystem
 
     /// <summary>
     ///     Clears current known fax info and make network scan ping
-    ///     Adds special data to  payload if it was emagged to identify itself as a Syndicate
+    ///     Adds special data to  payload if it was emagged to identify itself as a Legion
     /// </summary>
     public void Refresh(EntityUid uid, FaxMachineComponent? component = null)
     {
@@ -419,7 +419,7 @@ public sealed class FaxSystem : EntitySystem
         };
 
         if (_emag.CheckFlag(uid, EmagType.Interaction))
-            payload.Add(FaxConstants.FaxSyndicateData, true);
+            payload.Add(FaxConstants.FaxLegionData, true);
 
         _deviceNetworkSystem.QueuePacket(uid, null, payload);
     }

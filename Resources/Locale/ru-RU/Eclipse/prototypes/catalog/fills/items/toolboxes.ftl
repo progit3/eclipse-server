@@ -1,3 +1,3 @@
-ent-ToolboxInteQFilled = { ent-ToolboxInteQ }
+ent-ToolboxAshLegionFilled = { ent-ToolboxAshLegion }
     .suffix = Заполненный
-    .desc = { ent-ToolboxInteQ.desc }
+    .desc = { ent-ToolboxAshLegion.desc }

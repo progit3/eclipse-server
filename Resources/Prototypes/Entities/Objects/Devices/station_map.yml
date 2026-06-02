@@ -72,15 +72,15 @@
     sprite: Objects/Devices/tablets.rsi
     layers:
     - state: tablet
-    - state: syndie
+    - state: legion
       shader: unshaded
   - type: Item
     sprite: Objects/Devices/tablets.rsi
     inhandVisuals:
       left:
-      - state: inhand-left-syndie
+      - state: inhand-left-legion
       right:
-      - state: inhand-right-syndie
+      - state: inhand-right-legion
   - type: StationMap
     showLocation: false
     initializeWithStation: true

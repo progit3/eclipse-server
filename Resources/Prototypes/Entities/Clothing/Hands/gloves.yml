@@ -425,7 +425,7 @@
   - type: Unremoveable
 
 - type: entity
-  parent: [ClothingHandsButcherable, BaseSyndicateContraband]
+  parent: [ClothingHandsButcherable, BaseLegionContraband]
   id: ClothingHandsGlovesNorthStar
   name: gloves of the north star
   description: These gloves allow you to punch incredibly fast.
@@ -572,16 +572,16 @@
     stealGroup: ClothingHandsKnuckleDustersQM
 
 - type: entity
-  parent: [ClothingHandsBase, BaseSyndicateContraband]
-  id: ClothingHandsKnuckleDustersSyndicate
-  name: syndicate knuckle dusters
+  parent: [ClothingHandsBase, BaseLegionContraband]
+  id: ClothingHandsKnuckleDustersLegion
+  name: legion knuckle dusters
   description: "Plastitanium knuckle dusters branded with the blood-red S. A real man beats someone to death with these."
   components:
   - type: Sprite
-    sprite: Clothing/Hands/Gloves/KnuckleDusters/syndicateknuckleduster.rsi
-    state: syndicateknuckleduster
+    sprite: Clothing/Hands/Gloves/KnuckleDusters/legionknuckleduster.rsi
+    state: legionknuckleduster
   - type: Clothing
-    sprite: Clothing/Hands/Gloves/KnuckleDusters/syndicateknuckleduster.rsi
+    sprite: Clothing/Hands/Gloves/KnuckleDusters/legionknuckleduster.rsi
   - type: MeleeWeapon
     attackRate: 1.5
     damage:

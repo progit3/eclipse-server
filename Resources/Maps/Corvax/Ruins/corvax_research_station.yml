@@ -6438,7 +6438,7 @@ entities:
       removedMasks: 20
     - type: PlaceableSurface
       isPlaceable: True
-- proto: LockerSyndicate
+- proto: LockerLegion
   entities:
   - uid: 1040
     components:
@@ -6471,7 +6471,7 @@ entities:
       removedMasks: 20
     - type: PlaceableSurface
       isPlaceable: True
-- proto: LockerSyndicatePersonal
+- proto: LockerLegionPersonal
   entities:
   - uid: 781
     components:

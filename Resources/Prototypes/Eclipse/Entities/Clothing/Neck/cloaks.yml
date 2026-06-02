@@ -22,12 +22,12 @@
 
 - type: entity
   parent: ClothingNeckBase
-  id: ClothingNeckCloakSyndicateAdmiral
-  name: Syndicate Admiral cloak
+  id: ClothingNeckCloakLegionAdmiral
+  name: Legion Admiral cloak
   description: Red cloak sewn with a gold cloth.
   components:
     - type: Sprite
-      sprite: Eclipse/Clothing/Neck/Cloaks/syndicate_admiral.rsi
+      sprite: Eclipse/Clothing/Neck/Cloaks/legion_admiral.rsi
 
 - type: entity
   parent: ClothingNeckBase

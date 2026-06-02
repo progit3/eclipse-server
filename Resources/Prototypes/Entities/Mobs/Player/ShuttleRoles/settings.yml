@@ -740,66 +740,66 @@
 
 # Misc
 
-### Syndicate & Hostiles
+### Legion & Hostiles
 
 - type: randomHumanoidSettings
-  id: SyndieSoldierTeamLeader
+  id: LegionSoldierTeamLeader
   parent: EventHumanoid
   components:
     - type: NpcFactionMember
       factions:
-      - Syndicate
+      - Legion
     - type: NukeOperative
     - type: GhostRole
-      name: ghost-role-information-syndie-soldier-teamlead-name
-      description: ghost-role-information-syndie-soldier-teamlead-description
+      name: ghost-role-information-legion-soldier-teamlead-name
+      description: ghost-role-information-legion-soldier-teamlead-description
       rules: ghost-role-information-rules-team-antagonist
       mindRoles:
       - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: default
     - type: Loadout
-      prototypes: [ SyndicateFootsoldierTeamLeaderGear ]
-      roleLoadout: [ RoleSurvivalSyndicate ]
+      prototypes: [ LegionFootsoldierTeamLeaderGear ]
+      roleLoadout: [ RoleSurvivalLegion ]
 
 - type: randomHumanoidSettings
-  id: SyndieSoldier
+  id: LegionSoldier
   parent: EventHumanoid
   components:
     - type: NpcFactionMember
       factions:
-      - Syndicate
+      - Legion
     - type: NukeOperative
     - type: GhostRole
-      name: ghost-role-information-syndie-soldier-name
-      description: ghost-role-information-syndie-soldier-description
+      name: ghost-role-information-legion-soldier-name
+      description: ghost-role-information-legion-soldier-description
       rules: ghost-role-information-rules-team-antagonist
       mindRoles:
       - MindRoleGhostRoleTeamAntagonist
       raffle:
         settings: default
     - type: Loadout
-      prototypes: [ SyndicateFootsoldierGear ]
-      roleLoadout: [ RoleSurvivalSyndicate ]
+      prototypes: [ LegionFootsoldierGear ]
+      roleLoadout: [ RoleSurvivalLegion ]
 
 - type: randomHumanoidSettings
-  id: SyndieVisitor
+  id: LegionVisitor
   parent: EventHumanoid
   components:
     - type: NpcFactionMember
       factions:
-      - Syndicate
+      - Legion
     - type: GhostRole
-      name: ghost-role-information-syndie-disaster-victim-name
-      description: ghost-role-information-syndie-disaster-victim-description
+      name: ghost-role-information-legion-disaster-victim-name
+      description: ghost-role-information-legion-disaster-victim-description
       rules: ghost-role-information-freeagent-rules
       mindRoles:
       - MindRoleGhostRoleFreeAgent
       raffle:
         settings: short
     - type: Loadout
-      prototypes: [ SyndicateOperativeGearCivilian ]
-      roleLoadout: [ RoleSurvivalSyndicate ]
+      prototypes: [ LegionOperativeGearCivilian ]
+      roleLoadout: [ RoleSurvivalLegion ]
 
 - type: randomHumanoidSettings
   id: PirateScooner
@@ -807,7 +807,7 @@
   components:
     - type: NpcFactionMember
       factions:
-      - Syndicate
+      - Legion
     - type: GhostRole
       name: ghost-role-information-pirate-name
       description: ghost-role-information-pirate-description
@@ -826,7 +826,7 @@
   components:
     - type: NpcFactionMember
       factions:
-      - Syndicate
+      - Legion
     - type: GhostRole
       name: ghost-role-information-pirate-captain-name
       description: ghost-role-information-pirate-captain-description

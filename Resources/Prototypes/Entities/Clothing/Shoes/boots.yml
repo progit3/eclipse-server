@@ -164,15 +164,15 @@
     sprite: Clothing/Shoes/Boots/winterbootssec.rsi
 
 - type: entity
-  parent: [ClothingShoesBaseWinterBoots, BaseSyndicateContraband]
-  id: ClothingShoesBootsWinterSyndicate
-  name: syndicate's winter boots
-  description: Durable heavy boots, looks like merch from "Syndieland".
+  parent: [ClothingShoesBaseWinterBoots, BaseLegionContraband]
+  id: ClothingShoesBootsWinterLegion
+  name: legion's winter boots
+  description: Durable heavy boots, looks like merch from "Legionland".
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Boots/winterbootssyndicate.rsi
+    sprite: Clothing/Shoes/Boots/winterbootslegion.rsi
   - type: Clothing
-    sprite: Clothing/Shoes/Boots/winterbootssyndicate.rsi
+    sprite: Clothing/Shoes/Boots/winterbootslegion.rsi
 
 - type: entity
   parent: ClothingShoesBaseWinterBoots

@@ -123,12 +123,12 @@
     sprite: Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
-  parent: AirlockSecurity # if you get syndie door somehow it counts as sec
-  id: AirlockSyndicate
-  suffix: Syndicate
+  parent: AirlockSecurity # if you get legion door somehow it counts as sec
+  id: AirlockLegion
+  suffix: Legion
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/syndicate.rsi
+    sprite: Structures/Doors/Airlocks/Standard/legion.rsi
 
 - type: entity
   parent: AirlockCargo
@@ -182,12 +182,12 @@
 
 - type: entity
   parent: Airlock
-  id: AirlockHatchSyndicate
+  id: AirlockHatchLegion
   name: airtight hatch
-  suffix: Syndicate
+  suffix: Legion
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/hatch_syndicate.rsi
+    sprite: Structures/Doors/Airlocks/Standard/hatch_legion.rsi
 
 # Glass
 - type: entity
@@ -306,11 +306,11 @@
 
 - type: entity
   parent: AirlockSecurityGlass # see standard
-  id: AirlockSyndicateGlass
-  suffix: Syndicate
+  id: AirlockLegionGlass
+  suffix: Legion
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/syndicate.rsi
+    sprite: Structures/Doors/Airlocks/Glass/legion.rsi
 
 - type: entity
   parent: AirlockCargoGlass

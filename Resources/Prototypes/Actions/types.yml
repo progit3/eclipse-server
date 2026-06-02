@@ -148,7 +148,7 @@
   parent: BaseAction
   id: ActionOpenUplinkImplant
   name: Open Uplink
-  description: Opens the syndicate uplink embedded under your skin
+  description: Opens the legion uplink embedded under your skin
   components:
   - type: Action
     itemIconStyle: BigAction
@@ -318,7 +318,7 @@
   description: Go to sleep.
   components:
   - type: Action
-    icon: { sprite: Clothing/Head/Hats/pyjamasyndicatered.rsi, state: icon }
+    icon: { sprite: Clothing/Head/Hats/pyjamalegionred.rsi, state: icon }
   - type: InstantAction
     event: !type:SleepActionEvent
 
@@ -331,7 +331,7 @@
   - type: Action
     startDelay: true
     useDelay: 2
-    icon: { sprite: Clothing/Head/Hats/pyjamasyndicatered.rsi, state: icon }
+    icon: { sprite: Clothing/Head/Hats/pyjamalegionred.rsi, state: icon }
   - type: InstantAction
     event: !type:WakeActionEvent
 

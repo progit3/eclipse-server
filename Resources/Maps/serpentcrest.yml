@@ -4578,202 +4578,202 @@ entities:
             491: -17.959455,12.74525
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo1
+            id: legionlogo1
           decals:
             73: -2,14
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo10
+            id: legionlogo10
           decals:
             92: -1,12
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo10
+            id: legionlogo10
           decals:
             196: -19,43
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo11
+            id: legionlogo11
           decals:
             83: 0,12
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo11
+            id: legionlogo11
           decals:
             198: -19,44
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo12
+            id: legionlogo12
           decals:
             84: 1,12
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo12
+            id: legionlogo12
           decals:
             199: -19,45
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo13
+            id: legionlogo13
           decals:
             206: -18,42
             207: -18,42
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo14
+            id: legionlogo14
           decals:
             86: 0,11
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo14
+            id: legionlogo14
           decals:
             200: -18,44
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo15
+            id: legionlogo15
           decals:
             87: 1,11
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo15
+            id: legionlogo15
           decals:
             201: -18,45
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo16
+            id: legionlogo16
           decals:
             88: -2,10
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo16
+            id: legionlogo16
           decals:
             205: -17,42
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo17
+            id: legionlogo17
           decals:
             89: -1,10
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo17
+            id: legionlogo17
           decals:
             204: -17,43
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo18
+            id: legionlogo18
           decals:
             90: 0,10
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo18
+            id: legionlogo18
           decals:
             203: -17,44
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo19
+            id: legionlogo19
           decals:
             91: 1,10
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo19
+            id: legionlogo19
           decals:
             202: -17,45
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo2
+            id: legionlogo2
           decals:
             4205: -1,14
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo2
+            id: legionlogo2
           decals:
             189: -21,43
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo3
+            id: legionlogo3
           decals:
             4206: 0,14
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo3
+            id: legionlogo3
           decals:
             190: -21,44
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo4
+            id: legionlogo4
           decals:
             76: 1,14
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo4
+            id: legionlogo4
           decals:
             191: -21,45
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo5
+            id: legionlogo5
           decals:
             77: -2,13
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo5
+            id: legionlogo5
           decals:
             195: -20,42
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo6
+            id: legionlogo6
           decals:
             78: -1,13
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo6
+            id: legionlogo6
           decals:
             194: -20,43
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo7
+            id: legionlogo7
           decals:
             79: 0,13
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo7
+            id: legionlogo7
           decals:
             193: -20,44
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo8
+            id: legionlogo8
           decals:
             80: 1,13
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo8
+            id: legionlogo8
           decals:
             192: -20,45
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo9
+            id: legionlogo9
           decals:
             59: 41,31
             93: -2,12
         - node:
             angle: 1.5707963267948966 rad
             color: '#FFFFFFFF'
-            id: syndlogo9
+            id: legionlogo9
           decals:
             197: -19,42
         - node:
@@ -12159,7 +12159,7 @@ entities:
     - type: Transform
       pos: -10.5,-91.5
       parent: 2
-- proto: AirlockExternalShuttleSyndicateLocked
+- proto: AirlockExternalShuttleLegionLocked
   entities:
   - uid: 26331
     components:
@@ -12235,7 +12235,7 @@ entities:
     - type: Transform
       pos: 64.5,29.5
       parent: 2
-- proto: AirlockGlassShuttleSyndicate
+- proto: AirlockGlassShuttleLegion
   entities:
   - uid: 4101
     components:
@@ -13125,7 +13125,7 @@ entities:
     - type: Transform
       pos: -37.5,-27.5
       parent: 2
-- proto: AirlockSyndicate
+- proto: AirlockLegion
   entities:
   - uid: 28
     components:
@@ -13420,7 +13420,7 @@ entities:
     - type: Transform
       pos: -36.5,-15.5
       parent: 2
-- proto: AirlockSyndicateGlass
+- proto: AirlockLegionGlass
   entities:
   - uid: 97
     components:
@@ -13941,7 +13941,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -11.5,-11.5
       parent: 2
-- proto: AirlockSyndicateGlassLocked
+- proto: AirlockLegionGlassLocked
   entities:
   - uid: 8186
     components:
@@ -13954,7 +13954,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -6.5,-0.5
       parent: 26286
-- proto: AirlockSyndicateLocked
+- proto: AirlockLegionLocked
   entities:
   - uid: 127
     components:
@@ -17865,7 +17865,7 @@ entities:
     - type: Transform
       pos: -1.5,4.5
       parent: 2
-- proto: BannerSyndicate
+- proto: BannerLegion
   entities:
   - uid: 726
     components:
@@ -18453,7 +18453,7 @@ entities:
     components:
     - type: MetaData
       desc: seems like someone intentionally broke this to prevent it from falling into the..er...right hands?
-      name: Broken syndicate uplink
+      name: Broken legion uplink
     - type: Transform
       pos: -52.58311,-44.45091
       parent: 2
@@ -18821,7 +18821,7 @@ entities:
     - type: Transform
       pos: -45.5,-49.5
       parent: 2
-- proto: BedsheetSyndie
+- proto: BedsheetLegion
   entities:
   - uid: 1995
     components:
@@ -19930,7 +19930,7 @@ entities:
     - type: Transform
       pos: -14.561359,-59.383175
       parent: 2
-- proto: BoxSurvivalSyndicate
+- proto: BoxSurvivalLegion
   entities:
   - uid: 10444
     components:
@@ -69967,7 +69967,7 @@ entities:
     - type: Transform
       pos: 41.483154,30.777632
       parent: 2
-- proto: CigaretteSyndicate
+- proto: CigaretteLegion
   entities:
   - uid: 3650
     components:
@@ -70059,7 +70059,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -4.5031505,72.59761
       parent: 2
-- proto: CigPackSyndicate
+- proto: CigPackLegion
   entities:
   - uid: 6890
     components:
@@ -71118,7 +71118,7 @@ entities:
           priority: 0
           component: ClothingSpeedModifier
         title: null
-- proto: ClothingBackpackDuffelSyndicateAmmo
+- proto: ClothingBackpackDuffelLegionAmmo
   entities:
   - uid: 24485
     components:
@@ -71130,7 +71130,7 @@ entities:
     - type: Transform
       pos: -20.142391,-39.332623
       parent: 2
-- proto: ClothingBackpackDuffelSyndicateMedical
+- proto: ClothingBackpackDuffelLegionMedical
   entities:
   - uid: 5923
     components:
@@ -71143,7 +71143,7 @@ entities:
   - uid: 7441
     components:
     - type: MetaData
-      name: syndicate medical duffle bag
+      name: legion medical duffle bag
     - type: Transform
       pos: -2.4898367,-45.35287
       parent: 2
@@ -71194,7 +71194,7 @@ entities:
     - type: Transform
       pos: -19.467323,39.59529
       parent: 2
-- proto: ClothingBackpackSyndicate
+- proto: ClothingBackpackLegion
   entities:
   - uid: 7173
     components:
@@ -71687,7 +71687,7 @@ entities:
     - type: Transform
       pos: -2.5779638,-47.075096
       parent: 2
-- proto: ClothingHeadHatSyndie
+- proto: ClothingHeadHatLegion
   entities:
   - uid: 7168
     components:
@@ -71710,7 +71710,7 @@ entities:
     - type: Transform
       pos: -51.82135,-44.426586
       parent: 2
-- proto: ClothingHeadHatSyndieMAA
+- proto: ClothingHeadHatLegionMAA
   entities:
   - uid: 1958
     components:
@@ -71807,7 +71807,7 @@ entities:
     - type: Transform
       pos: 5.2519917,20.579002
       parent: 2
-- proto: ClothingHeadHelmetSyndicate
+- proto: ClothingHeadHelmetLegion
   entities:
   - uid: 7486
     components:
@@ -71894,14 +71894,14 @@ entities:
     - type: Transform
       pos: -13.615357,-46.00355
       parent: 2
-- proto: ClothingHeadPyjamaSyndicateBlack
+- proto: ClothingHeadPyjamaLegionBlack
   entities:
   - uid: 27824
     components:
     - type: Transform
       pos: -59.346767,-17.45577
       parent: 2
-- proto: ClothingHeadPyjamaSyndicatePink
+- proto: ClothingHeadPyjamaLegionPink
   entities:
   - uid: 10002
     components:
@@ -71918,7 +71918,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadPyjamaSyndicateRed
+- proto: ClothingHeadPyjamaLegionRed
   entities:
   - uid: 10199
     components:
@@ -72215,7 +72215,7 @@ entities:
       canCollide: False
     - type: InsideEntityStorage
       storage: 10492
-- proto: ClothingNeckScarfStripedSyndieGreen
+- proto: ClothingNeckScarfStripedLegionGreen
   entities:
   - uid: 7171
     components:
@@ -72238,7 +72238,7 @@ entities:
     - type: Transform
       pos: -4.3369713,-38.38059
       parent: 2
-- proto: ClothingNeckScarfStripedSyndieRed
+- proto: ClothingNeckScarfStripedLegionRed
   entities:
   - uid: 7172
     components:
@@ -72364,7 +72364,7 @@ entities:
     - type: Transform
       pos: 2.4109516,3.6897278
       parent: 26470
-- proto: ClothingOuterCoatSyndieCap
+- proto: ClothingOuterCoatLegionCap
   entities:
   - uid: 8087
     components:
@@ -72388,7 +72388,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterEVASuitSyndicate
+- proto: ClothingOuterEVASuitLegion
   entities:
   - uid: 7492
     components:
@@ -72604,7 +72604,7 @@ entities:
       canCollide: False
     - type: InsideEntityStorage
       storage: 7004
-- proto: ClothingOuterWinterSyndie
+- proto: ClothingOuterWinterLegion
   entities:
   - uid: 7537
     components:
@@ -72617,7 +72617,7 @@ entities:
   - uid: 24335
     components:
     - type: MetaData
-      desc: a syndicate coat with the Interdyne logo on the shoulder
+      desc: a legion coat with the Interdyne logo on the shoulder
       name: Interdyne winter coat
     - type: Transform
       pos: -4.2744713,-38.302464
@@ -72625,12 +72625,12 @@ entities:
   - uid: 24336
     components:
     - type: MetaData
-      desc: a syndicate coat with the logo of Interdyne on the shoulder
+      desc: a legion coat with the logo of Interdyne on the shoulder
       name: Interdyne winter coat
     - type: Transform
       pos: -4.3838463,-38.22434
       parent: 2
-- proto: ClothingOuterWinterSyndieCap
+- proto: ClothingOuterWinterLegionCap
   entities:
   - uid: 8427
     components:
@@ -72836,7 +72836,7 @@ entities:
       canCollide: False
     - type: InsideEntityStorage
       storage: 7235
-- proto: ClothingShoesBootsMagSyndie
+- proto: ClothingShoesBootsMagLegion
   entities:
   - uid: 28561
     components:
@@ -72871,7 +72871,7 @@ entities:
     - type: Transform
       pos: -10.531073,-30.428234
       parent: 2
-- proto: ClothingShoesBootsWinterSyndicate
+- proto: ClothingShoesBootsWinterLegion
   entities:
   - uid: 7967
     components:
@@ -73029,7 +73029,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpskirtSyndieFormalDress
+- proto: ClothingUniformJumpskirtLegionFormalDress
   entities:
   - uid: 7064
     components:
@@ -73073,7 +73073,7 @@ entities:
     - type: Transform
       pos: 14.548066,10.675587
       parent: 2
-- proto: ClothingUniformJumpsuitChiefEngineerSyndie
+- proto: ClothingUniformJumpsuitChiefEngineerLegion
   entities:
   - uid: 7313
     components:
@@ -73182,7 +73182,7 @@ entities:
       canCollide: False
     - type: InsideEntityStorage
       storage: 8043
-- proto: ClothingUniformJumpsuitParamedicSyndie
+- proto: ClothingUniformJumpsuitParamedicLegion
   entities:
   - uid: 6902
     components:
@@ -73197,7 +73197,7 @@ entities:
   - uid: 22880
     components:
     - type: MetaData
-      name: Syndicate corpsman jumpsuit
+      name: Legion corpsman jumpsuit
     - type: Transform
       pos: 12.438838,10.471194
       parent: 2
@@ -73257,14 +73257,14 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitPyjamaSyndicateBlack
+- proto: ClothingUniformJumpsuitPyjamaLegionBlack
   entities:
   - uid: 27823
     components:
     - type: Transform
       pos: -59.534267,-17.377645
       parent: 2
-- proto: ClothingUniformJumpsuitPyjamaSyndicatePink
+- proto: ClothingUniformJumpsuitPyjamaLegionPink
   entities:
   - uid: 8643
     components:
@@ -73281,7 +73281,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitPyjamaSyndicateRed
+- proto: ClothingUniformJumpsuitPyjamaLegionRed
   entities:
   - uid: 8212
     components:
@@ -73298,7 +73298,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitRecruitSyndie
+- proto: ClothingUniformJumpsuitRecruitLegion
   entities:
   - uid: 7163
     components:
@@ -73331,7 +73331,7 @@ entities:
       canCollide: False
     - type: InsideEntityStorage
       storage: 7166
-- proto: ClothingUniformJumpsuitRepairmanSyndie
+- proto: ClothingUniformJumpsuitRepairmanLegion
   entities:
   - uid: 7311
     components:
@@ -73357,7 +73357,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitSyndieFormal
+- proto: ClothingUniformJumpsuitLegionFormal
   entities:
   - uid: 7065
     components:
@@ -73595,7 +73595,7 @@ entities:
     components:
     - type: MetaData
       desc: unlike the other computers, this one seems to have been smashed with intention, rather than being unlucky collateral.
-      name: broken syndicate communications computer
+      name: broken legion communications computer
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -22.5,45.5
@@ -74629,7 +74629,7 @@ entities:
   - uid: 9659
     components:
     - type: MetaData
-      desc: this would have been considered full of illegal contraband....when this was a syndicate station.
+      desc: this would have been considered full of illegal contraband....when this was a legion station.
       name: Nanotrasen crate
     - type: Transform
       pos: -33.5,-62.5
@@ -75574,7 +75574,7 @@ entities:
     - type: Transform
       pos: 53.5,38.5
       parent: 2
-- proto: CrateSyndicate
+- proto: CrateLegion
   entities:
   - uid: 5971
     components:
@@ -76703,7 +76703,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: DefibrillatorSyndicate
+- proto: DefibrillatorLegion
   entities:
   - uid: 12475
     components:
@@ -82947,7 +82947,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: DrinkSyndicatebomb
+- proto: DrinkLegionbomb
   entities:
   - uid: 6199
     components:
@@ -89979,7 +89979,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: FoodSnackSyndi
+- proto: FoodSnackLegion
   entities:
   - uid: 25602
     components:
@@ -130989,7 +130989,7 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: LockerSyndicate
+- proto: LockerLegion
   entities:
   - uid: 645
     components:
@@ -131159,7 +131159,7 @@ entities:
     - type: Transform
       pos: -49.5,-50.5
       parent: 2
-- proto: LockerSyndicateShipGearBasic
+- proto: LockerLegionShipGearBasic
   entities:
   - uid: 25581
     components:
@@ -134029,7 +134029,7 @@ entities:
       parent: 2
     - type: Paper
       content: >-
-        The syndiejuice machine is still coded to only accept syndicate access cards, to use it, youll need to snip the 'acc' wire. cargo should be getting an NT-coded model soon, be sure to check with them
+        The legionjuice machine is still coded to only accept legion access cards, to use it, youll need to snip the 'acc' wire. cargo should be getting an NT-coded model soon, be sure to check with them
 
 
 
@@ -134041,7 +134041,7 @@ entities:
       parent: 2
     - type: Paper
       content: >-
-        The bruise-o-mat is still coded to only accept syndicate access cards, to use it, youll need to snip the 'acc' wire. cargo should be getting an NT-coded model soon, be sure to check with them
+        The bruise-o-mat is still coded to only accept legion access cards, to use it, youll need to snip the 'acc' wire. cargo should be getting an NT-coded model soon, be sure to check with them
 
 
 
@@ -134108,7 +134108,7 @@ entities:
       parent: 2
     - type: Paper
       content: >-
-        Please replace the old syndicate eva suits with these as quickly as possible. more will be sent soon.
+        Please replace the old legion eva suits with these as quickly as possible. more will be sent soon.
 
 
 
@@ -134120,7 +134120,7 @@ entities:
       parent: 2
     - type: Paper
       content: >+
-        please deliver this to the bar to replace the outdated syndicate model as soon as possible.
+        please deliver this to the bar to replace the outdated legion model as soon as possible.
 
   - uid: 24567
     components:
@@ -134409,7 +134409,7 @@ entities:
     - type: Transform
       pos: -3.9987059,35.65833
       parent: 2
-- proto: PhoneInstrumentSyndicate
+- proto: PhoneInstrumentLegion
   entities:
   - uid: 8147
     components:
@@ -136117,7 +136117,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandSyndicatePistol
+- proto: PosterContrabandLegionPistol
   entities:
   - uid: 27036
     components:
@@ -136134,7 +136134,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandSyndicateRecruitment
+- proto: PosterContrabandLegionRecruitment
   entities:
   - uid: 13296
     components:
@@ -157279,7 +157279,7 @@ entities:
           - 23882
           - 23838
           - 16069
-- proto: SuitStorageEVASyndicate
+- proto: SuitStorageEVALegion
   entities:
   - uid: 26469
     components:
@@ -159492,7 +159492,7 @@ entities:
     - type: Transform
       pos: 54.350807,-37.410973
       parent: 2
-- proto: SyndicateBusinessCard
+- proto: LegionBusinessCard
   entities:
   - uid: 8612
     components:
@@ -159502,7 +159502,7 @@ entities:
     - type: Paper
       content: >
         Enjoy your victory while it lasts, we will be back.
-- proto: SyndicateFlippo
+- proto: LegionFlippo
   entities:
   - uid: 10246
     components:
@@ -159525,7 +159525,7 @@ entities:
     - type: Transform
       pos: 14.384364,-9.473054
       parent: 2
-- proto: SyndicateMicrowave
+- proto: LegionMicrowave
   entities:
   - uid: 6165
     components:
@@ -159537,7 +159537,7 @@ entities:
     - type: Transform
       pos: 54.5,-25.5
       parent: 2
-- proto: SyndicateShuttleConsoleCircuitboard
+- proto: LegionShuttleConsoleCircuitboard
   entities:
   - uid: 7792
     components:
@@ -159555,7 +159555,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -7.6186714,-1.3359184
       parent: 26286
-- proto: SyndieFlag
+- proto: LegionFlag
   entities:
   - uid: 21691
     components:
@@ -159585,7 +159585,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: SyndieHandyFlag
+- proto: LegionHandyFlag
   entities:
   - uid: 24208
     components:
@@ -162904,7 +162904,7 @@ entities:
     - type: Transform
       pos: -8.5,25.5
       parent: 2
-- proto: TargetSyndicate
+- proto: TargetLegion
   entities:
   - uid: 28529
     components:
@@ -163407,7 +163407,7 @@ entities:
       canCollide: False
     - type: InsideEntityStorage
       storage: 9659
-- proto: TowelColorSyndicate
+- proto: TowelColorLegion
   entities:
   - uid: 7179
     components:
@@ -164279,7 +164279,7 @@ entities:
     - type: Transform
       pos: 54.5,-17.5
       parent: 2
-- proto: VendingMachineBoozeSyndicate
+- proto: VendingMachineBoozeLegion
   entities:
   - uid: 6183
     components:
@@ -164350,7 +164350,7 @@ entities:
     - type: Transform
       pos: 55.5,-17.5
       parent: 2
-- proto: VendingMachineChemicalsSyndicate
+- proto: VendingMachineChemicalsLegion
   entities:
   - uid: 6662
     components:
@@ -164522,28 +164522,28 @@ entities:
   - uid: 478
     components:
     - type: MetaData
-      name: Syndimed plus
+      name: Legionmed plus
     - type: Transform
       pos: 7.5,-39.5
       parent: 2
   - uid: 1209
     components:
     - type: MetaData
-      name: Syndimed plus
+      name: Legionmed plus
     - type: Transform
       pos: -21.5,-44.5
       parent: 2
   - uid: 6970
     components:
     - type: MetaData
-      name: Syndimed plus
+      name: Legionmed plus
     - type: Transform
       pos: -2.5,-42.5
       parent: 2
   - uid: 24328
     components:
     - type: MetaData
-      name: SyndiMed Plus
+      name: LegionMed Plus
     - type: Transform
       pos: -15.5,-41.5
       parent: 2
@@ -164579,8 +164579,8 @@ entities:
   - uid: 10387
     components:
     - type: MetaData
-      desc: slot into your department's Syndimed or Syndimedplus to dispense. handle with care.
-      name: SyndiMed restock box
+      desc: slot into your department's Legionmed or Legionmedplus to dispense. handle with care.
+      name: LegionMed restock box
     - type: Transform
       pos: -7.505855,-55.391235
       parent: 2
@@ -164659,7 +164659,7 @@ entities:
     - type: Transform
       pos: 19.5,7.5
       parent: 2
-- proto: VendingMachineSyndieDrobe
+- proto: VendingMachineLegionDrobe
   entities:
   - uid: 7072
     components:
@@ -183178,7 +183178,7 @@ entities:
   - uid: 7166
     components:
     - type: MetaData
-      name: syndicate wardrobe
+      name: legion wardrobe
     - type: Transform
       pos: -48.5,-10.5
       parent: 2
@@ -183702,7 +183702,7 @@ entities:
       canCollide: False
     missingComponents:
     - Gun
-- proto: WeaponTurretSyndicateBroken
+- proto: WeaponTurretLegionBroken
   entities:
   - uid: 8558
     components:

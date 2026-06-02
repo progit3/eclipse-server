@@ -2,263 +2,263 @@
 # Pointless
 ##################
 
-uplink-inteq-balloon-name =  Воздушный шарик InteQ
-uplink-inteq-balloon-desc = Вручается смелейшим из смелейших, пережившим аттракцион "Атомный смерч".
+uplink-ashlegion-balloon-name =  Воздушный шарик Легион пепла
+uplink-ashlegion-balloon-desc = Вручается смелейшим из смелейших, пережившим аттракцион "Атомный смерч".
 
-uplink-inteq-costume-clown-name = Вещмешок с костюмом клоуна
-uplink-inteq-costume-clown-desc = Содержит полный комплект клоунского костюма. Включает КПК и гарнитуру сервисного отдела.
+uplink-ashlegion-costume-clown-name = Вещмешок с костюмом клоуна
+uplink-ashlegion-costume-clown-desc = Содержит полный комплект клоунского костюма. Включает КПК и гарнитуру сервисного отдела.
 
-uplink-inteq-outlaw-hat-name = Шляпа негодяя
-uplink-inteq-outlaw-hat-desc =  Шляпа, в которой вы выглядите словно носите пистолет с одной и ещё девятнадцатью зарубками.
+uplink-ashlegion-outlaw-hat-name = Шляпа негодяя
+uplink-ashlegion-outlaw-hat-desc =  Шляпа, в которой вы выглядите словно носите пистолет с одной и ещё девятнадцатью зарубками.
 
-uplink-inteq-outlaw-glasses-name = Очки негодяя
-uplink-inteq-outlaw-glasses-desc = Обязательны для каждого уважающего себя агента под прикрытием.
+uplink-ashlegion-outlaw-glasses-name = Очки негодяя
+uplink-ashlegion-outlaw-glasses-desc = Обязательны для каждого уважающего себя агента под прикрытием.
 
-uplink-inteq-stamp-name = Печать InteQ
-uplink-inteq-stamp-desc = Печать из резины, для проставления печатей на важных документах.
+uplink-ashlegion-stamp-name = Печать Легион пепла
+uplink-ashlegion-stamp-desc = Печать из резины, для проставления печатей на важных документах.
 
-uplink-inteq-jug-plasma-name = Кувшин плазмы
-uplink-inteq-jug-plasma-desc = Кувшин с плазмой, требуемый для работы плазменного вооружения InteQ
+uplink-ashlegion-jug-plasma-name = Кувшин плазмы
+uplink-ashlegion-jug-plasma-desc = Кувшин с плазмой, требуемый для работы плазменного вооружения Легион пепла
 
-uplink-inteq-cloak-name = Фирменный плащ Inteq
-uplink-inteq-cloak-desc = Он явно не стоит своей цены
+uplink-ashlegion-cloak-name = Фирменный плащ Inteq
+uplink-ashlegion-cloak-desc = Он явно не стоит своей цены
 
 ##################
 # Wearables
 ##################
 
-uplink-inteq-carp-suit-bundle-name = Вещмешок с костюмом карпа
-uplink-inteq-carp-suit-bundle-desc = Содержит костюм карпа и нескольких друзей для игр
+uplink-ashlegion-carp-suit-bundle-name = Вещмешок с костюмом карпа
+uplink-ashlegion-carp-suit-bundle-desc = Содержит костюм карпа и нескольких друзей для игр
 
-uplink-inteq-holster-name = Плечевая кобура
-uplink-inteq-holster-desc = Глубокая плечевая кобура, способная вместить множество различных видов оружия.
+uplink-ashlegion-holster-name = Плечевая кобура
+uplink-ashlegion-holster-desc = Глубокая плечевая кобура, способная вместить множество различных видов оружия.
 
-uplink-inteq-operative-suit-name = Комбинезон оперативника
-uplink-inteq-operative-suit-desc = Комбинезон из отборной ткани, выдаваемый нашим ядерным оперативникам, гарантирует, что вы будете выделяться, и не имеет никаких других преимуществ, кроме крутого внешнего вида.
+uplink-ashlegion-operative-suit-name = Комбинезон оперативника
+uplink-ashlegion-operative-suit-desc = Комбинезон из отборной ткани, выдаваемый нашим ядерным оперативникам, гарантирует, что вы будете выделяться, и не имеет никаких других преимуществ, кроме крутого внешнего вида.
 
-uplink-inteq-operative-skirt-name = Юбка-комбинезон оперативника
-uplink-inteq-operative-skirt-desc = Юбка-комбинезон из отборной ткани, выдаваемая нашим ядерным оперативницам, гарантирует, что вы будете выделяться, и не имеет никаких других преимуществ, кроме крутого внешнего вида.
+uplink-ashlegion-operative-skirt-name = Юбка-комбинезон оперативника
+uplink-ashlegion-operative-skirt-desc = Юбка-комбинезон из отборной ткани, выдаваемая нашим ядерным оперативницам, гарантирует, что вы будете выделяться, и не имеет никаких других преимуществ, кроме крутого внешнего вида.
 
-uplink-inteq-shield-belt-name = Поясной щит InteQ
-uplink-inteq-shield-belt-desc = Энергетический щит, отражающий снаряды, но требующий постоянную подзарядку батареи.
+uplink-ashlegion-shield-belt-name = Поясной щит Легион пепла
+uplink-ashlegion-shield-belt-desc = Энергетический щит, отражающий снаряды, но требующий постоянную подзарядку батареи.
 
-uplink-inteq-inteq-hardsuit-name =  скафандр InteQ
-uplink-inteq-inteq-hardsuit-desc =  Широко известный бронированный скафандр InteQ, позволяющий выходить в открытый космос и устойчивый к пулям.
+uplink-ashlegion-ashlegion-hardsuit-name =  скафандр Легион пепла
+uplink-ashlegion-ashlegion-hardsuit-desc =  Широко известный бронированный скафандр Легион пепла, позволяющий выходить в открытый космос и устойчивый к пулям.
 
-uplink-inteq-hardsuit-name = Боевой скафандр InteQ
-uplink-inteq-hardsuit-desc = Боевой скафандр члена частной военной компании.
+uplink-ashlegion-hardsuit-name = Боевой скафандр Легион пепла
+uplink-ashlegion-hardsuit-desc = Боевой скафандр члена частной военной компании.
 
-uplink-inteq-inteq-elite-hardsuit-name = Элитный скафандр InteQ
-uplink-inteq-inteq-elite-hardsuit-desc = Элитная версия кроваво-красного скафандра, отличающаяся повышенной мобильностью и огнеупорностью. Собственность Мародёров InteQ.
+uplink-ashlegion-ashlegion-elite-hardsuit-name = Элитный скафандр Легион пепла
+uplink-ashlegion-ashlegion-elite-hardsuit-desc = Элитная версия кроваво-красного скафандра, отличающаяся повышенной мобильностью и огнеупорностью. Собственность Мародёров Легион пепла.
 
-uplink-inteq-inteq-hardsuit-syndicate-name = Синдикатский скафандр InteQ
-uplink-inteq-inteq-hardsuit-syndicate-desc = Довольно старая версия скафандра синдиката, переделанная под InteQ.
+uplink-ashlegion-ashlegion-hardsuit-syndicate-name = Синдикатский скафандр Легион пепла
+uplink-ashlegion-ashlegion-hardsuit-syndicate-desc = Довольно старая версия скафандра синдиката, переделанная под Легион пепла.
 
-uplink-inteq-inteq-iron-tombstone-name = Бронекостюм Железное Надгробие
-uplink-inteq-inteq-iron-tombstone-desc =  Древний доспех, улучшенный пассивным экзоскелетом. Обеспечивает невероятную защиту от пуль и осколков, но затрудняет передвижение.
+uplink-ashlegion-ashlegion-iron-tombstone-name = Бронекостюм Железное Надгробие
+uplink-ashlegion-ashlegion-iron-tombstone-desc =  Древний доспех, улучшенный пассивным экзоскелетом. Обеспечивает невероятную защиту от пуль и осколков, но затрудняет передвижение.
 
-uplink-inteq-infiltrator-set-name = Набор экипировки лазутчика
-uplink-inteq-infiltrator-set-desc =  Широко известный набор брони InteQ, включающий в себя не только хорошую защиту, но и мобильность.
+uplink-ashlegion-infiltrator-set-name = Набор экипировки лазутчика
+uplink-ashlegion-infiltrator-set-desc =  Широко известный набор брони Легион пепла, включающий в себя не только хорошую защиту, но и мобильность.
 
-uplink-inteq-noslips-shoes-name = Нескользящая обувь
-uplink-inteq-noslips-shoes-desc = Ботинки-хамелеоны, которые защищают вас от подскальзывания.
+uplink-ashlegion-noslips-shoes-name = Нескользящая обувь
+uplink-ashlegion-noslips-shoes-desc = Ботинки-хамелеоны, которые защищают вас от подскальзывания.
 
-uplink-inteq-infiltrator-mask-name = Балаклава лазутчика
-uplink-inteq-infiltrator-mask-desc = Балаклава Inteq, защищающаю от повреждений и позволяющая изменить свой голос.
+uplink-ashlegion-infiltrator-mask-name = Балаклава лазутчика
+uplink-ashlegion-infiltrator-mask-desc = Балаклава Inteq, защищающаю от повреждений и позволяющая изменить свой голос.
 
-uplink-clothing-shoes-boots-mag-inteq-name = Магнитные сапоги InteQ
-uplink-clothing-shoes-boots-mag-inteq-desc = Пара ботинок, которые предотвращают поскальзывание и позволяют нормально передвигаться в условиях невесомости за счёт небольшого замедления. Кроме этого, они обладают функционалом реактивного ранца и поставляются заправленными, но хватает их ненадолго.
+uplink-clothing-shoes-boots-mag-ashlegion-name = Магнитные сапоги Легион пепла
+uplink-clothing-shoes-boots-mag-ashlegion-desc = Пара ботинок, которые предотвращают поскальзывание и позволяют нормально передвигаться в условиях невесомости за счёт небольшого замедления. Кроме этого, они обладают функционалом реактивного ранца и поставляются заправленными, но хватает их ненадолго.
 
-uplink-inteq-backpack-name = Рюкзак InteQ
-uplink-inteq-backpack-desc = Лёгкий взрывоустойчивый рюкзак бойцов InteQ.
+uplink-ashlegion-backpack-name = Рюкзак Легион пепла
+uplink-ashlegion-backpack-desc = Лёгкий взрывоустойчивый рюкзак бойцов Легион пепла.
 
-uplink-inteq-eva-name =  Набор ВКД InteQ
-uplink-inteq-eva-desc = Простой ВКД скафандр, который не даёт никакой защиты, кроме той, что необходима для выживания в космосе.
+uplink-ashlegion-eva-name =  Набор ВКД Легион пепла
+uplink-ashlegion-eva-desc = Простой ВКД скафандр, который не даёт никакой защиты, кроме той, что необходима для выживания в космосе.
 
 ##################
 # Weaponry
 ##################
 
-uplink-inteq-gloves-knuckleduster-name = Кастеты InteQ
-uplink-inteq-gloves-knuckleduster-desc = Пара пластитановых кастетов, позволяющий вам сломать челюсть капитана вдребезги всего одним ударом.
+uplink-ashlegion-gloves-knuckleduster-name = Кастеты Легион пепла
+uplink-ashlegion-gloves-knuckleduster-desc = Пара пластитановых кастетов, позволяющий вам сломать челюсть капитана вдребезги всего одним ударом.
 
-uplink-inteq-plasma-scythe-name = Плазменная коса
-uplink-inteq-plasma-scythe-desc = Более дорогая альтернатива плазменному мечу: с большим шансом отражения, большим углом атаки и большей скоростью замаха. Требует жидкую плазму для работы
+uplink-ashlegion-plasma-scythe-name = Плазменная коса
+uplink-ashlegion-plasma-scythe-desc = Более дорогая альтернатива плазменному мечу: с большим шансом отражения, большим углом атаки и большей скоростью замаха. Требует жидкую плазму для работы
 
-uplink-inteq-revolver-python-name = Питон
-uplink-inteq-revolver-python-desc = Брутально простой, эффективный и громкий револьвер InteQ. Поставляется с бронебойными патронами. Использует патроны калибра .45 магнум.
+uplink-ashlegion-revolver-python-name = Питон
+uplink-ashlegion-revolver-python-desc = Брутально простой, эффективный и громкий револьвер Легион пепла. Поставляется с бронебойными патронами. Использует патроны калибра .45 магнум.
 
-uplink-inteq-rifle-mosin-name = Кардашёв-Мосин
-uplink-inteq-rifle-mosin-desc = Затворная винтовка, повидавшая не одну войну. Не современная ни по каким стандартам, заряжается вручную и имеет ужасную отдачу, но зато дешёвая.
+uplink-ashlegion-rifle-mosin-name = Кардашёв-Мосин
+uplink-ashlegion-rifle-mosin-desc = Затворная винтовка, повидавшая не одну войну. Не современная ни по каким стандартам, заряжается вручную и имеет ужасную отдачу, но зато дешёвая.
 
-uplink-inteq-edagger-name =  Энергокинжал
-uplink-inteq-edagger-desc = Небольшой энергитический кинжал, удобно замаскированный под ручку.
+uplink-ashlegion-edagger-name =  Энергокинжал
+uplink-ashlegion-edagger-desc = Небольшой энергитический кинжал, удобно замаскированный под ручку.
 
-uplink-inteq-smg-case-name = Набор SMG
-uplink-inteq-smg-case-desc = Старый добрый: Классический пистолет-пулемёт InteQ в комплекте с двумя магазинами и коробкой патронов.
+uplink-ashlegion-smg-case-name = Набор SMG
+uplink-ashlegion-smg-case-desc = Старый добрый: Классический пистолет-пулемёт Легион пепла в комплекте с двумя магазинами и коробкой патронов.
 
-uplink-inteq-energycrossbow-name = Энергетический мини-арбалет
-uplink-inteq-energycrossbow-desc = Незаменимое оружие для любого агента, предпочитающего, чтобы его жертвы не двигались. Стреляет восстанавливающимися ядовитыми стрелами, которые мгновенно сражают жертву.
+uplink-ashlegion-energycrossbow-name = Энергетический мини-арбалет
+uplink-ashlegion-energycrossbow-desc = Незаменимое оружие для любого агента, предпочитающего, чтобы его жертвы не двигались. Стреляет восстанавливающимися ядовитыми стрелами, которые мгновенно сражают жертву.
 
-uplink-inteq-akm-name = Кейс с AKM InteQ
-uplink-inteq-akm-desc = Коричневый кейс содержащий АКМ InteQ, 4 обоймы .30 и коробку патронов
+uplink-ashlegion-akm-name = Кейс с AKM Легион пепла
+uplink-ashlegion-akm-desc = Коричневый кейс содержащий АКМ Легион пепла, 4 обоймы .30 и коробку патронов
 
-uplink-inteq-commissar-name = Коробка с Комиссаром InteQ
-uplink-inteq-commissar-desc = Коричневая коробка содержащая автоматический пистолет Комиссар, 2 обоймы .35 и коробку патронов
+uplink-ashlegion-commissar-name = Коробка с Комиссаром Легион пепла
+uplink-ashlegion-commissar-desc = Коричневая коробка содержащая автоматический пистолет Комиссар, 2 обоймы .35 и коробку патронов
 
-uplink-inteq-bulldog-name = Кейс с Бульдогом InteQ
-uplink-inteq-bulldog-desc = Коричневый кейс содержащий Бульдог, 2 барабана .50 и коробку патронов
+uplink-ashlegion-bulldog-name = Кейс с Бульдогом Легион пепла
+uplink-ashlegion-bulldog-desc = Коричневый кейс содержащий Бульдог, 2 барабана .50 и коробку патронов
 
-uplink-inteq-plasma-sword-name = Плазменный меч
-uplink-inteq-plasma-sword-desc = Плазменный меч, идеально подходящий для вырезки экипажа
+uplink-ashlegion-plasma-sword-name = Плазменный меч
+uplink-ashlegion-plasma-sword-desc = Плазменный меч, идеально подходящий для вырезки экипажа
 
-uplink-inteq-estoc-bundle-name = Эсток (маркманская)
-uplink-inteq-estoc-bundle-desc = Снайперская винтовка, оснащенная оптическим прицелом среднего диапазона для ведения боя на больших расстояниях. В комплекте с двумя магазинами для винтовки (.20 rifle).
+uplink-ashlegion-estoc-bundle-name = Эсток (маркманская)
+uplink-ashlegion-estoc-bundle-desc = Снайперская винтовка, оснащенная оптическим прицелом среднего диапазона для ведения боя на больших расстояниях. В комплекте с двумя магазинами для винтовки (.20 rifle).
 
-uplink-inteq-l6-saw-bundle-name = Набор "L6 Saw"
-uplink-inteq-l6-saw-bundle-desc = Ещё больше дакки: культовый лёгкий пулемёт L6 в комплекте с 1 коробой патронов.
+uplink-ashlegion-l6-saw-bundle-name = Набор "L6 Saw"
+uplink-ashlegion-l6-saw-bundle-desc = Ещё больше дакки: культовый лёгкий пулемёт L6 в комплекте с 1 коробой патронов.
 
-uplink-inteq-atreides-bundle-name = Набор "Atreides"
-uplink-inteq-atreides-bundle-desc = Набор включающий в себя ПП Atreides, 2 магазина и коробку патронов .35
+uplink-ashlegion-atreides-bundle-name = Набор "Atreides"
+uplink-ashlegion-atreides-bundle-desc = Набор включающий в себя ПП Atreides, 2 магазина и коробку патронов .35
 
-uplink-inteq-eshield-name = Энергетический щит Интек
-uplink-inteq-eshield-desc = Экзотический энергетический щит, в сложенном состоянии может поместиться даже в кармане.
+uplink-ashlegion-eshield-name = Энергетический щит Легион пепла
+uplink-ashlegion-eshield-desc = Экзотический энергетический щит, в сложенном состоянии может поместиться даже в кармане.
 
-uplink-inteq-disposable-turret-name = Одноразовая баллистическая турель
-uplink-inteq-disposable-turret-desc = На вид и по функционалу напоминает обычный электротехнический ящик для инструментов. После удара ящик превращается в баллистическую турель, которая теоретически может стрелять во всех, кроме представителей InteQ. С помощью отвёртки её можно превратить обратно в ящик для инструментов, а с помощью гаечного ключа — отремонтировать.
+uplink-ashlegion-disposable-turret-name = Одноразовая баллистическая турель
+uplink-ashlegion-disposable-turret-desc = На вид и по функционалу напоминает обычный электротехнический ящик для инструментов. После удара ящик превращается в баллистическую турель, которая теоретически может стрелять во всех, кроме представителей Легион пепла. С помощью отвёртки её можно превратить обратно в ящик для инструментов, а с помощью гаечного ключа — отремонтировать.
 
 ##################
 # Implants
 ##################
 
-uplink-inteq-macro-bomb-implanter-name = имплантер "Макробомба"
-uplink-inteq-macro-bomb-implanter-desc =  Введите это, и при смерти вы создадите большой взрыв. Огромные потери для команды, используйте на свой страх и риск. Заменяет внутреннюю микробомбу.
+uplink-ashlegion-macro-bomb-implanter-name = имплантер "Макробомба"
+uplink-ashlegion-macro-bomb-implanter-desc =  Введите это, и при смерти вы создадите большой взрыв. Огромные потери для команды, используйте на свой страх и риск. Заменяет внутреннюю микробомбу.
 
-uplink-inteq-micro-bomb-implanter-name = имплантер "Микробомба"
-uplink-inteq-micro-bomb-implanter-desc = Взрывается при смерти или ручной активации. Уничтожает тело со всем снаряжением.
+uplink-ashlegion-micro-bomb-implanter-name = имплантер "Микробомба"
+uplink-ashlegion-micro-bomb-implanter-desc = Взрывается при смерти или ручной активации. Уничтожает тело со всем снаряжением.
 
-uplink-inteq-storage-implanter-name = имплантер "хранилище"
-uplink-inteq-storage-implanter-desc = Прячьте предметы внутри себя благодаря новой блюспейс-технологии!
+uplink-ashlegion-storage-implanter-name = имплантер "хранилище"
+uplink-ashlegion-storage-implanter-desc = Прячьте предметы внутри себя благодаря новой блюспейс-технологии!
 
-uplink-inteq-freedom-implanter-name = имплантер "свобода"
-uplink-inteq-freedom-implanter-desc = Сбегите от этих противных сотрудников СБ при помощи этого импланта, который можно использовать аж три раза!
+uplink-ashlegion-freedom-implanter-name = имплантер "свобода"
+uplink-ashlegion-freedom-implanter-desc = Сбегите от этих противных сотрудников СБ при помощи этого импланта, который можно использовать аж три раза!
 
-uplink-inteq-radio-implanter-name = имплантер "радио InteQ"
-uplink-inteq-radio-implanter-desc = Импланитрует радио InteQ, позволяя скрыто общаться без гарнитуры.
+uplink-ashlegion-radio-implanter-name = имплантер "радио Легион пепла"
+uplink-ashlegion-radio-implanter-desc = Импланитрует радио Легион пепла, позволяя скрыто общаться без гарнитуры.
 
-uplink-inteq-emp-implanter-name = имплантер "ЭМИ"
-uplink-inteq-emp-implanter-desc = При активации создаёт небольшой ЭМИ, который обесточивает находящуюся рядом электронику; может быть использован три раза, прежде чем разрядится внутренняя батарея.
+uplink-ashlegion-emp-implanter-name = имплантер "ЭМИ"
+uplink-ashlegion-emp-implanter-desc = При активации создаёт небольшой ЭМИ, который обесточивает находящуюся рядом электронику; может быть использован три раза, прежде чем разрядится внутренняя батарея.
 
-uplink-inteq-scram-implanter-name = имплантер "побег"
-uplink-inteq-scram-implanter-desc = Двухразовый имплант, который телепортирует вас в большом радиусе. Попытается телепортировать вас на незанятое место. Иногда сбоит. Страхование жизни не прилагается.
+uplink-ashlegion-scram-implanter-name = имплантер "побег"
+uplink-ashlegion-scram-implanter-desc = Двухразовый имплант, который телепортирует вас в большом радиусе. Попытается телепортировать вас на незанятое место. Иногда сбоит. Страхование жизни не прилагается.
 
-uplink-inteq-dna-scrambler-implanter-name = имплантер "миксер ДНК"
-uplink-inteq-dna-scrambler-implanter-desc = Одноразовый имплант, который можно активировать для перемешивания ДНК и приобретения совершенно нового облика.
+uplink-ashlegion-dna-scrambler-implanter-name = имплантер "миксер ДНК"
+uplink-ashlegion-dna-scrambler-implanter-desc = Одноразовый имплант, который можно активировать для перемешивания ДНК и приобретения совершенно нового облика.
 
-uplink-inteq-fake-mindShield-implanter-name = имплантер "фальшивый щит разума"
-uplink-inteq-fake-mindShield-implanter-desc = Переключаемый имплант, способный имитировать те же сигналы, что испускает настоящий Щит разума, когда он включён, обманывая способные визоры, заставляя их думать, что у вас есть Щит разума (имплант марки Nanotrasen не предоставляется).
+uplink-ashlegion-fake-mindShield-implanter-name = имплантер "фальшивый щит разума"
+uplink-ashlegion-fake-mindShield-implanter-desc = Переключаемый имплант, способный имитировать те же сигналы, что испускает настоящий Щит разума, когда он включён, обманывая способные визоры, заставляя их думать, что у вас есть Щит разума (имплант марки Nanotrasen не предоставляется).
 
-uplink-inteq-uplink-implanter-name = имплантер аплинка InteQ
-uplink-inteq-uplink-implanter-desc = Незаметно заказывайте снаряжение без использования КПК. Глотайте телекристаллы, чтобы пополнить аплинк.
+uplink-ashlegion-uplink-implanter-name = имплантер аплинка Легион пепла
+uplink-ashlegion-uplink-implanter-desc = Незаметно заказывайте снаряжение без использования КПК. Глотайте телекристаллы, чтобы пополнить аплинк.
 
-uplink-inteq-death-rattler-implanter-name = имплантер "предсмертный хрип"
-uplink-inteq-death-rattler-implanter-desc = Имплант, сообщающий о вашей смерти по частоте InteQ
+uplink-ashlegion-death-rattler-implanter-name = имплантер "предсмертный хрип"
+uplink-ashlegion-death-rattler-implanter-desc = Имплант, сообщающий о вашей смерти по частоте Легион пепла
 
-uplink-inteq-chameleon-name = имплантер "контроллер хамелеона"
-uplink-inteq-chameleon-desc = Имплант, позволяющий управлять хамелеоном
+uplink-ashlegion-chameleon-name = имплантер "контроллер хамелеона"
+uplink-ashlegion-chameleon-desc = Имплант, позволяющий управлять хамелеоном
 
 ##################
 # Ammo
 ##################
 
-uplink-inteq-magazine-box-pistol-name = коробка патронов (.35 авто)
-uplink-inteq-magazine-box-pistol-desc = коробка патронов, содержащая патроны .35 авто
+uplink-ashlegion-magazine-box-pistol-name = коробка патронов (.35 авто)
+uplink-ashlegion-magazine-box-pistol-desc = коробка патронов, содержащая патроны .35 авто
 
-uplink-inteq-magazine-box-shotgun-name = коробка патронов (.50 дробь)
-uplink-inteq-magazine-box-shotgun-desc = коробка патронов, содержащая дробь .50
+uplink-ashlegion-magazine-box-shotgun-name = коробка патронов (.50 дробь)
+uplink-ashlegion-magazine-box-shotgun-desc = коробка патронов, содержащая дробь .50
 
-uplink-inteq-magazine-box-light-rifle-name = коробка патронов (.30 винтовочные)
-uplink-inteq-magazine-box-light-rifle-desc = коробка патронов, содержащая винтовочные патроны .30
+uplink-ashlegion-magazine-box-light-rifle-name = коробка патронов (.30 винтовочные)
+uplink-ashlegion-magazine-box-light-rifle-desc = коробка патронов, содержащая винтовочные патроны .30
 
-uplink-inteq-magazine-box-rifle-incendiary-name = коробка патронов (.30 зажигательные)
-uplink-inteq-magazine-box-rifle-incendiary-desc = коробка патронов, содержащая зажигательные патроны .30
+uplink-ashlegion-magazine-box-rifle-incendiary-name = коробка патронов (.30 зажигательные)
+uplink-ashlegion-magazine-box-rifle-incendiary-desc = коробка патронов, содержащая зажигательные патроны .30
 
 ##################
 # Explosives
 ##################
 
-uplink-inteq-penguin-grenade-name = Пингвин-гренадёр
-uplink-inteq-penguin-grenade-desc = Маленький, крайне агрессивный пингвин с гранатой на шее. Такие собираются InteQ на отсталых ледяных планетах.
+uplink-ashlegion-penguin-grenade-name = Пингвин-гренадёр
+uplink-ashlegion-penguin-grenade-desc = Маленький, крайне агрессивный пингвин с гранатой на шее. Такие собираются Легион пепла на отсталых ледяных планетах.
 
 ##################
 # Deception
 ##################
 
-uplink-inteq-smuggler-satchel-name = Сумка контрабандиста
-uplink-inteq-smuggler-satchel-desc = Удобная, подозрительная на вид сумка. Достаточно плоская, чтобы поместиться под напольной плиткой.
+uplink-ashlegion-smuggler-satchel-name = Сумка контрабандиста
+uplink-ashlegion-smuggler-satchel-desc = Удобная, подозрительная на вид сумка. Достаточно плоская, чтобы поместиться под напольной плиткой.
 
-uplink-inteq-id-card-name = ID карта InteQ
-uplink-inteq-id-card-desc = ID карта InteQ с доступом к интеку. Сама по себе вряд ли будет полезна, но отлично сочетается с перенастроенными дверями. Не имеет функции копирования доступа.
+uplink-ashlegion-id-card-name = ID карта Легион пепла
+uplink-ashlegion-id-card-desc = ID карта Легион пепла с доступом к Легиону пепла. Сама по себе вряд ли будет полезна, но отлично сочетается с перенастроенными дверями. Не имеет функции копирования доступа.
 
-uplink-inteq-thief-gloves-name = Воровские перчатки
-uplink-inteq-thief-gloves-desc = Прекрасно помогут в кражах. Имеют хамелион.
+uplink-ashlegion-thief-gloves-name = Воровские перчатки
+uplink-ashlegion-thief-gloves-desc = Прекрасно помогут в кражах. Имеют хамелион.
 
-uplink-inteq-blueprint-name = Чертёж Интек
-uplink-inteq-blueprint-desc = Чёртёж для автолата, включающий в себя способы создания вооружения InteQ.
+uplink-ashlegion-blueprint-name = Чертёж Легион пепла
+uplink-ashlegion-blueprint-desc = Чёртёж для автолата, включающий в себя способы создания вооружения Легион пепла.
 
-uplink-inteq-chameleon-projector-name = Маскировочный проектор
-uplink-inteq-chameleon-projector-desc = Исчезните из поля зрения, создав вокруг себя голограмму какого-либо предмета. Не используйте его для игры «Prop Hunt».
+uplink-ashlegion-chameleon-projector-name = Маскировочный проектор
+uplink-ashlegion-chameleon-projector-desc = Исчезните из поля зрения, создав вокруг себя голограмму какого-либо предмета. Не используйте его для игры «Prop Hunt».
 
-uplink-inteq-box-encryption-key-name = Ключи шифрования InteQ
-uplink-inteq-box-encryption-key-desc = Два ключа шифрования для доступа к секретной частоте наших специальных агентов. Отдайте второй товарищу, но следите, чтобы он не попал в руки противника.
+uplink-ashlegion-box-encryption-key-name = Ключи шифрования Легион пепла
+uplink-ashlegion-box-encryption-key-desc = Два ключа шифрования для доступа к секретной частоте наших специальных агентов. Отдайте второй товарищу, но следите, чтобы он не попал в руки противника.
 
 ##################
 # Disruption
 ##################
 
-uplink-inteq-weapon-module-name = Оружейный модуль киборга
-uplink-inteq-weapon-module-desc = Модернизирует киборга с помощью энергокинжала и продвинутого пистолета.
+uplink-ashlegion-weapon-module-name = Оружейный модуль киборга
+uplink-ashlegion-weapon-module-desc = Модернизирует киборга с помощью энергокинжала и продвинутого пистолета.
 
-uplink-inteq-martyr-module-name = Модуль киборга Мученик
-uplink-inteq-martyr-module-desc = Превратите с помощью этого модуля своего емагнутого друга-борга в ходячую бомбу. Убедитесь, что они верны вашему делу, результаты могут варьироваться.
+uplink-ashlegion-martyr-module-name = Модуль киборга Мученик
+uplink-ashlegion-martyr-module-desc = Превратите с помощью этого модуля своего емагнутого друга-борга в ходячую бомбу. Убедитесь, что они верны вашему делу, результаты могут варьироваться.
 
-uplink-inteq-soap-name = Мыло
-uplink-inteq-soap-desc = Натурально сворованное из чертежей InteQ!
+uplink-ashlegion-soap-name = Мыло
+uplink-ashlegion-soap-desc = Натурально сворованное из чертежей Легион пепла!
 
-uplink-inteq-slipocalypse-clustersoap-name = Кластерное мыло Скользкопокалипсис
-uplink-inteq-slipocalypse-clustersoap-desc = После приземления разбрасывает вокруг себя маленькие кусочки InteQ, которые испарятся сами через 60 секунд. InteQ почти потеряло его рецепт!
+uplink-ashlegion-slipocalypse-clustersoap-name = Кластерное мыло Скользкопокалипсис
+uplink-ashlegion-slipocalypse-clustersoap-desc = После приземления разбрасывает вокруг себя маленькие кусочки Легион пепла, которые испарятся сами через 60 секунд. Легион пепла почти потеряло его рецепт!
 
-uplink-inteq-toolbox-name = Ящик инструментов
-uplink-inteq-toolbox-desc = Полный набор инструментов для предателя с тягой к механике. Включает пару изолированных боевых перчаток.
+uplink-ashlegion-toolbox-name = Ящик инструментов
+uplink-ashlegion-toolbox-desc = Полный набор инструментов для предателя с тягой к механике. Включает пару изолированных боевых перчаток.
 
-uplink-inteq-jaws-of-life-name = Челюсти жизни
-uplink-inteq-jaws-of-life-desc = Комбинация лома и кусачек. Используется для проникновения на станцию или в её отделы.
+uplink-ashlegion-jaws-of-life-name = Челюсти жизни
+uplink-ashlegion-jaws-of-life-desc = Комбинация лома и кусачек. Используется для проникновения на станцию или в её отделы.
 
 ##################
 # Chemicals
 ##################
 
-uplink-inteq-zombie-bundle-name = Зомби-набор InteQ
-uplink-inteq-zombie-bundle-desc = Универсальный набор для создания зомби на станции.
+uplink-ashlegion-zombie-bundle-name = Зомби-набор Легион пепла
+uplink-ashlegion-zombie-bundle-desc = Универсальный набор для создания зомби на станции.
 
-uplink-inteq-stimpack-name = Инъектор гиперзина
-uplink-inteq-stimpack-desc = Легендарный химический коктейль, производимый для InteQ и украденный для InteQ. Одна инъекция этого вещества увеличивает скорость бега и позволяет быстрее восстанавливаться после оглушения в течение 30-ти секунд.
+uplink-ashlegion-stimpack-name = Инъектор гиперзина
+uplink-ashlegion-stimpack-desc = Легендарный химический коктейль, производимый для Легион пепла и украденный для Легион пепла. Одна инъекция этого вещества увеличивает скорость бега и позволяет быстрее восстанавливаться после оглушения в течение 30-ти секунд.
 
-uplink-inteq-cigarettes-name = Пачка сигарет InteQ
-uplink-inteq-cigarettes-desc = Элитные сигареты для элитных агентов InteQ. Насыщенные лекарствами, когда вам нужно больше, чем просто успокоить нервы.
+uplink-ashlegion-cigarettes-name = Пачка сигарет Легион пепла
+uplink-ashlegion-cigarettes-desc = Элитные сигареты для элитных агентов Легион пепла. Насыщенные лекарствами, когда вам нужно больше, чем просто успокоить нервы.
 
-uplink-inteq-meds-bundle-name = Медицинский набор InteQ
-uplink-inteq-meds-bundle-desc = Ассортимент автоинъекторов и медицинского оборудования премиум-класса на все случаи жизни. Содержит элитный компактный дефибриллятор, который можно использовать в качестве оружия.
+uplink-ashlegion-meds-bundle-name = Медицинский набор Легион пепла
+uplink-ashlegion-meds-bundle-desc = Ассортимент автоинъекторов и медицинского оборудования премиум-класса на все случаи жизни. Содержит элитный компактный дефибриллятор, который можно использовать в качестве оружия.
 
 ##################
 # Allies
 ##################
 
-uplink-inteq-pai-name = пИИ InteQ
-uplink-inteq-pai-desc = Вариант пИИ от InteQ, с доступом к радиоканалу InteQ. Полезность не гарантируется
+uplink-ashlegion-pai-name = пИИ Легион пепла
+uplink-ashlegion-pai-desc = Вариант пИИ от Легион пепла, с доступом к радиоканалу Легион пепла. Полезность не гарантируется
 
-uplink-inteq-carp-dehydrated-name = Обезвоженный космический карп
-uplink-inteq-carp-dehydrated-desc = Выглядит как плюшевый игрушечный карп, но стоит только добавить воды, и он превращается в настоящего космического карпа!
+uplink-ashlegion-carp-dehydrated-name = Обезвоженный космический карп
+uplink-ashlegion-carp-dehydrated-desc = Выглядит как плюшевый игрушечный карп, но стоит только добавить воды, и он превращается в настоящего космического карпа!
 
 ##################
 # Synd

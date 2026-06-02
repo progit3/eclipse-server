@@ -1191,7 +1191,7 @@ entities:
     - type: Transform
       pos: 6.5,6.5
       parent: 2
-- proto: CigaretteSyndicate
+- proto: CigaretteLegion
   entities:
   - uid: 663
     components:

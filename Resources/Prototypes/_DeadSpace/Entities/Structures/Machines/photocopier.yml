@@ -10,7 +10,6 @@
     drawdepth: SmallObjects
     layers:
     - state: icon
-      map: [ "enum.PhotocopierVisuals.VisualState" ]
   - type: Transform #Backmen-edit
     noRot: false
   - type: Icon
@@ -18,7 +17,7 @@
     state: icon
   - type: Appearance
   - type: Machine
-    board: PhotocopierMachineCircuitboard
+    board: PrinterDocMachineCircuitboard
   - type: Physics
     bodyType: Static
   - type: Fixtures
@@ -32,29 +31,8 @@
         - MachineMask
         layer:
         - MachineLayer
-  - type: ActivatableUI
-    key: enum.PhotocopierUiKey.Key
-  - type: ActivatableUIRequiresPower
-  - type: UserInterface
-    interfaces:
-      enum.PhotocopierUiKey.Key:
-        type: PhotocopierBoundUi
   - type: ApcPowerReceiver
     powerLoad: 250
-  - type: Photocopier
-    paperSlot:
-      ejectSound: /Audio/Machines/tray_eject.ogg
-      whitelist:
-        components:
-          - Paper
-    photocopierType: Default
-  - type: GenericVisualizer
-    visuals:
-      enum.PhotocopierVisuals.VisualState:
-        base:
-          Normal: { state: icon }
-          Scanning: { state: scanning }
-          Printing: { state: printing }
   - type: ItemSlots
   - type: ContainerContainer
     containers:
@@ -68,14 +46,6 @@
   name: копировальный аппарат командования
   description: ЦК закупило их чтобы сэкономить на ручках для юридического отдела.
   suffix: Командование
-  components:
-  - type: Photocopier
-    paperSlot:
-      ejectSound: /Audio/Machines/tray_eject.ogg
-      whitelist:
-        components:
-          - Paper
-    photocopierType: Command
 
 - type: entity
   parent: PhotocopierBase
@@ -83,29 +53,13 @@
   name: копировальный аппарат Центкома
   description: От этого копировального аппарата веет понижением зарплаты станции.
   suffix: Центком
-  components:
-  - type: Photocopier
-    paperSlot:
-      ejectSound: /Audio/Machines/tray_eject.ogg
-      whitelist:
-        components:
-          - Paper
-    photocopierType: Centcomm
 
 - type: entity
   parent: PhotocopierBase
   id: PhotocopierSyndicate
-  name: копировальный аппарат InteQ
+  name: копировальный аппарат AshLegion
   description: Скорее всего он был украден со станции NanoTrasen.
   suffix: Syndicate
-  components:
-  - type: Photocopier
-    paperSlot:
-      ejectSound: /Audio/Machines/tray_eject.ogg
-      whitelist:
-        components:
-          - Paper
-    photocopierType: Syndicate
 
 - type: entity
   parent: PhotocopierBase
@@ -113,14 +67,6 @@
   name: копировальный аппарат ядерных оперативников
   description: Скорее всего он был украден со станции NanoTrasen.
   suffix: Ядерные оперативники
-  components:
-  - type: Photocopier
-    paperSlot:
-      ejectSound: /Audio/Machines/tray_eject.ogg
-      whitelist:
-        components:
-          - Paper
-    photocopierType: Nukeops
 
 - type: entity
   parent: BaseItem
@@ -136,7 +82,6 @@
     state: icon
   - type: StaticPrice
     price: 80
-  - type: TonerCartridge
 
 - type: entity
   name: коробка тонеров для копировального аппарата
@@ -393,7 +338,7 @@
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
   - type: PaperVisuals
-    headerImagePath: "/Textures/Interface/Paper/paper_heading_nt_cargo.svg.96dpi.png"
+    headerImagePath: "/Textures/Interface/Paper/paper_heading_ussp_cargo.svg.96dpi.png"
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
     contentMargin: 6.0, 6.0, 6.0, 6.0
@@ -417,7 +362,7 @@
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
   - type: PaperVisuals
-    headerImagePath: "/Textures/Interface/Paper/paper_heading_nt_civilian.svg.96dpi.png"
+    headerImagePath: "/Textures/Interface/Paper/paper_heading_ussp_civilian.svg.96dpi.png"
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
     contentMargin: 6.0, 6.0, 6.0, 6.0
@@ -441,7 +386,7 @@
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
   - type: PaperVisuals
-    headerImagePath: "/Textures/Interface/Paper/paper_heading_nt_command.svg.96dpi.png"
+    headerImagePath: "/Textures/Interface/Paper/paper_heading_ussp_command.svg.96dpi.png"
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
     contentMargin: 6.0, 6.0, 6.0, 6.0
@@ -465,7 +410,7 @@
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
   - type: PaperVisuals
-    headerImagePath: "/Textures/Interface/Paper/paper_heading_nt_engineering.svg.96dpi.png"
+    headerImagePath: "/Textures/Interface/Paper/paper_heading_ussp_engineering.svg.96dpi.png"
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
     contentMargin: 6.0, 6.0, 6.0, 6.0
@@ -489,7 +434,7 @@
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
   - type: PaperVisuals
-    headerImagePath: "/Textures/Interface/Paper/paper_heading_nt_law.svg.96dpi.png"
+    headerImagePath: "/Textures/Interface/Paper/paper_heading_ussp_law.svg.96dpi.png"
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
     contentMargin: 6.0, 6.0, 6.0, 6.0
@@ -513,7 +458,7 @@
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
   - type: PaperVisuals
-    headerImagePath: "/Textures/Interface/Paper/paper_heading_nt_medical.svg.96dpi.png"
+    headerImagePath: "/Textures/Interface/Paper/paper_heading_ussp_medical.svg.96dpi.png"
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
     contentMargin: 6.0, 6.0, 6.0, 6.0
@@ -537,7 +482,7 @@
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
   - type: PaperVisuals
-    headerImagePath: "/Textures/Interface/Paper/paper_heading_nt_science.svg.96dpi.png"
+    headerImagePath: "/Textures/Interface/Paper/paper_heading_ussp_science.svg.96dpi.png"
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
     contentMargin: 6.0, 6.0, 6.0, 6.0
@@ -561,7 +506,7 @@
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
   - type: PaperVisuals
-    headerImagePath: "/Textures/Interface/Paper/paper_heading_nt_security.svg.96dpi.png"
+    headerImagePath: "/Textures/Interface/Paper/paper_heading_ussp_security.svg.96dpi.png"
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
     contentMargin: 6.0, 6.0, 6.0, 6.0
@@ -585,7 +530,7 @@
       map: ["enum.PaperVisualLayers.Stamp"]
       visible: false
   - type: PaperVisuals
-    headerImagePath: "/Textures/Interface/Paper/paper_heading_nt_centcomm.svg.96dpi.png"
+    headerImagePath: "/Textures/Interface/Paper/paper_heading_ussp_centcomm.svg.96dpi.png"
     backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
     backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
     contentMargin: 6.0, 6.0, 6.0, 6.0

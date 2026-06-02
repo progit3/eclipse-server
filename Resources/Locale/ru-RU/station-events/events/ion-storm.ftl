@@ -75,7 +75,7 @@ ion-storm-part = {ION-PART($ion) ->
 }
 # due to phrasing, this would mean a law such as
 # ONLY HUMANS ARE NOT PART OF THE CREW
-# would make non-human nukies/syndies/whatever crew :)
+# would make non-human nukies/legions/whatever crew :)
 ion-storm-law-crew-only-1 = ТОЛЬКО { ION-WHO-RANDOM($ion) } { ion-storm-part } ЧЛЕНАМИ ЭКИПАЖА
 ion-storm-law-crew-only-2 = ТОЛЬКО { ION-WHO-RANDOM($ion) } И { ION-WHO-RANDOM($ion) } { ion-storm-part } ЧЛЕНАМИ ЭКИПАЖА
 ion-storm-law-crew-only-subjects = ТОЛЬКО { ION-ADJECTIVE($ion) } { ION-SUBJECT($ion) } { ion-storm-part } ЧЛЕНАМИ ЭКИПАЖА

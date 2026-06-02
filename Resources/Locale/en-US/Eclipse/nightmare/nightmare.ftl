@@ -1,1 +1,1 @@
-nightmare-round-end-agent-name = Nightmare
+nightmare-round-end-agent-name = Nightmare

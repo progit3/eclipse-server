@@ -1,1 +1,1 @@
-comms-console-announcement-title-inteq-nukie = Ядерные оперативники InteQ
+comms-console-announcement-title-ashlegion-nukie = Ядерные оперативники Легион пепла

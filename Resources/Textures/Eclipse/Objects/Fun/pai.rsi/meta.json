@@ -11,28 +11,37 @@
       "name": "pai-base"
     },
     {
+      "name": "ashlegion-pai-off-overlay"
+    },
+    {
+      "name": "ashlegion-pai-on-overlay",
+      "delays": [
+        [
+          0.8,
+          0.8
+        ]
+      ]
+    },
+    {
+      "name": "ashlegion-pai-searching-overlay",
+      "delays": [
+        [
+          0.8,
+          0.8
+        ]
+      ]
+    },
+    {
       "name": "inteq-icon-pai-off"
     },
     {
       "name": "inteq-pai-off-overlay"
     },
     {
-      "name": "inteq-pai-on-overlay",
-      "delays": [
-        [
-          0.8,
-          0.8
-        ]
-      ]
+      "name": "inteq-pai-on-overlay"
     },
     {
-      "name": "inteq-pai-searching-overlay",
-      "delays": [
-        [
-          0.8,
-          0.8
-        ]
-      ]
+      "name": "inteq-pai-searching-overlay"
     }
   ]
 }

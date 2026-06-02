@@ -18,7 +18,7 @@
       - id: FoodPacketRaisinsTrash
       - id: FoodPacketSemkiTrash
       - id: FoodPacketSusTrash
-      - id: FoodPacketSyndiTrash
+      - id: FoodPacketLegionTrash
       - id: BrokenBottle
     - !type:GroupSelector
       weight: 5

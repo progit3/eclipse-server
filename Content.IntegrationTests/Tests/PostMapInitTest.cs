@@ -67,7 +67,7 @@ namespace Content.IntegrationTests.Tests
             {"/Maps/bagel.yml", ["RubberStampMime"]},
             {"/Maps/reach.yml", ["HandheldCrewMonitor"]},
             {"/Maps/Shuttles/ShuttleEvent/honki.yml", ["GoldenBikeHorn", "RubberStampClown"]},
-            {"/Maps/Shuttles/ShuttleEvent/syndie_evacpod.yml", ["RubberStampSyndicate"]},
+            {"/Maps/Shuttles/ShuttleEvent/legion_evacpod.yml", ["RubberStampLegion"]},
             {"/Maps/Shuttles/ShuttleEvent/cruiser.yml", ["ShuttleGunPerforator"]},
             {"/Maps/Shuttles/ShuttleEvent/instigator.yml", ["ShuttleGunFriendship"]},
         };

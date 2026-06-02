@@ -271,8 +271,8 @@ reagent-desc-snow-white = Морозная свежесть.
 reagent-name-sui-dream = сон Сью
 reagent-desc-sui-dream = 'Состав: Белая газировка, голубой Кюрасао, дынный ликер.'
 
-reagent-name-syndicate-bomb = бомба Синдиката
-reagent-desc-syndicate-bomb = Кто-то подложил нам бомбу!
+reagent-name-legion-bomb = бомба Легиона
+reagent-desc-legion-bomb = Кто-то подложил нам бомбу!
 
 reagent-name-tequila-sunrise = текила санрайз
 reagent-desc-tequila-sunrise = Текила и апельсиновый сок. Очень похож на "Отвёртку", только мексиканскую.

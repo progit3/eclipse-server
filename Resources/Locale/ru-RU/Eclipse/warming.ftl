@@ -1,1 +1,1 @@
-warming-with-welder = Вы греете {$container} с помощью {$welder}
+warming-with-welder = Вы греете {$container} с помощью {$welder}

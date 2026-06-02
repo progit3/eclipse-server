@@ -7734,7 +7734,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 24.376524,0.5749662
       parent: 1
-- proto: CigPackSyndicate
+- proto: CigPackLegion
   entities:
   - uid: 1209
     components:
@@ -7857,7 +7857,7 @@ entities:
           occludes: True
           ents:
           - 1224
-- proto: ClothingOuterCoatSyndieCapArmored
+- proto: ClothingOuterCoatLegionCapArmored
   entities:
   - uid: 1225
     components:
@@ -9379,7 +9379,7 @@ entities:
     - type: Transform
       pos: 39.5,-9.5
       parent: 1
-- proto: SyndicateBomb
+- proto: LegionBomb
   entities:
   - uid: 1392
     components:

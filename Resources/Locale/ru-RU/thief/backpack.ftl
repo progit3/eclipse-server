@@ -36,12 +36,12 @@ thief-backpack-category-chemistry-description =
     В комплект входят: имплантер-хранилище, имплантер-миксер ДНК,
     бутылочка эфедрина, шприц, пустой шейкер и омега мыло
 
-thief-backpack-category-syndie-name = Набор Синдиката
-thief-backpack-category-syndie-description =
+thief-backpack-category-legion-name = Набор Легиона
+thief-backpack-category-legion-description =
     Побрякушки из забытого прошлого или украденные у нерадивого агента?
     Вы нашли кое-какую связь. Виски, эхо...
     В комплект входят: Емаг, взломщик доступов, сигареты Interdyne,
-    кодовое слово Синдиката, зажигалка, глушитель связи,
+    кодовое слово Легиона, зажигалка, глушитель связи,
     и несколько странных красных кристаллов.
 
 thief-backpack-category-sleeper-name = Набор сони

@@ -182,9 +182,9 @@
 
 - type: entity
   parent: ClothingNeckPinBase
-  id: ClothingNeckSyndicakePin
-  name: Syndicake pin
-  description: The pin of Syndicakes, on backside have a little numbers "2559".
+  id: ClothingNeckLegioncakePin
+  name: Legioncake pin
+  description: The pin of Legioncakes, on backside have a little numbers "2559".
   components:
   - type: Sprite
     sprite: Corvax/Clothing/Neck/Misc/pins.rsi

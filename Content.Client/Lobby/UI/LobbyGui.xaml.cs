@@ -1,5 +1,11 @@
 using Content.Client.Message;
+using Content.Client.CrewManifest;
+using Content.Client.GameTicking.Managers;
 using Content.Client.UserInterface.Systems.EscapeMenu;
+using Content.Client.UserInterface.Systems.Bwoink;
+using Content.Client.Voting;
+using Content.Client.Voting.UI;
+using Content.Shared.Eclipse.Progression;
 using System;
 using System.Globalization;
 using System.Numerics;
@@ -11,6 +17,7 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Client.UserInterface.XAML;
+using Robust.Shared.GameObjects;
 using Robust.Shared.Timing;
 
 namespace Content.Client.Lobby.UI
@@ -19,9 +26,14 @@ namespace Content.Client.Lobby.UI
     public sealed partial class LobbyGui : UIScreen
     {
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
+        [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly IUriOpener _uriOpener = default!;
+        [Dependency] private readonly IVoteManager _voteManager = default!;
 
         private static readonly Uri WebsiteUri = new("https://eclipse-station.online");
+        private static readonly Color NavNormalColor = Color.FromHex("#A6A6A6");
+        private static readonly Color NavActiveColor = Color.FromHex("#E6A11A");
+        private static readonly Color NavSubtitleActiveColor = Color.FromHex("#D8D8D8");
 
         private const float SidebarWidth = 280f;
         private const float RightWidth = 390f;
@@ -44,7 +56,9 @@ namespace Content.Client.Lobby.UI
         private const float AccountWidthWithLaunch = 775f;
         private readonly EclipseNewsEntry[] _news;
         private readonly StoreItem[] _storeItems;
+        private readonly RoadmapEntry[] _roadmapEntries;
         private EclipseNewsAdminWindow? _newsWindow;
+        private VoteCallMenu? _voteCallMenu;
         private LobbySection _section = LobbySection.Play;
         private bool _launchStatusTargetVisible = true;
         private float _launchStatusVisibility = 1f;
@@ -65,8 +79,24 @@ namespace Content.Client.Lobby.UI
             StoreSectionButton.OnPressed += _ => ShowSection(LobbySection.Store);
             AccountSectionButton.OnPressed += _ => ShowSection(LobbySection.Account);
             SettingsSectionButton.OnPressed += _ => ShowSection(LobbySection.Settings);
+            RoadmapSectionButton.OnPressed += _ => ShowSection(LobbySection.Roadmap);
             SectionOptionsButton.OnPressed += _ => UserInterfaceManager.GetUIController<OptionsUIController>().ToggleWindow();
             NewsAdminButton.OnPressed += _ => OpenNewsAdminWindow();
+            LobbyTabButton.OnPressed += _ => SetRightTabActive(RightSideTab.Lobby);
+            ManifestTabButton.OnPressed += _ => OpenCrewManifest();
+            AdminsTabButton.OnPressed += _ =>
+            {
+                SetRightTabActive(RightSideTab.Admins);
+                UserInterfaceManager.GetUIController<AHelpUIController>().Open();
+            };
+            VotesTabButton.OnPressed += _ => OpenVoteMenu();
+            RegisterNavHover(PlaySectionButton, PlaySectionIcon, PlaySectionTitle, PlaySectionSubtitle, () => _section == LobbySection.Play);
+            RegisterNavHover(StoreSectionButton, StoreSectionIcon, StoreSectionTitle, StoreSectionSubtitle, () => _section == LobbySection.Store);
+            RegisterNavHover(AccountSectionButton, AccountSectionIcon, AccountSectionTitle, AccountSectionSubtitle, () => _section == LobbySection.Account);
+            RegisterNavHover(SettingsSectionButton, SettingsSectionIcon, SettingsSectionTitle, SettingsSectionSubtitle, () => _section == LobbySection.Settings);
+            RegisterNavHover(RoadmapSectionButton, RoadmapSectionIcon, RoadmapSectionTitle, RoadmapSectionSubtitle, () => _section == LobbySection.Roadmap);
+            RegisterNavHover(SiteButton, SiteButtonIcon, SiteButtonTitle, SiteButtonSubtitle, () => false);
+            RegisterNavHover(LeaveButton, LeaveButtonIcon, LeaveButtonTitle, LeaveButtonSubtitle, () => false);
 
             _news =
             [
@@ -89,25 +119,71 @@ namespace Content.Client.Lobby.UI
 
             _storeItems =
             [
-                new StoreItem("\u041A\u041E\u0421\u0422\u042E\u041C ECLIPSE", "\u0423\u043D\u0438\u043A\u0430\u043B\u044C\u043D\u044B\u0439 \u043A\u043E\u0441\u0442\u044E\u043C", "\u041A\u043E\u0441\u043C\u0435\u0442\u0438\u043A\u0430 • \u041E\u0434\u0435\u0436\u0434\u0430", 600, StoreCurrency.Shards, "/Textures/Clothing/OuterClothing/Hardsuits/deathsquad.rsi/icon.png", "\u0420\u0415\u041A\u041E\u041C\u0415\u041D\u0414\u0423\u0415\u041C\u041E\u0415"),
-                new StoreItem("\u0424\u041E\u0420\u041C\u0410 \u041A\u0410\u041F\u0418\u0422\u0410\u041D\u0410", "\u041F\u0430\u0440\u0430\u0434\u043D\u044B\u0439 \u043E\u0431\u0440\u0430\u0437", "\u041A\u043E\u0441\u043C\u0435\u0442\u0438\u043A\u0430 • \u041E\u0434\u0435\u0436\u0434\u0430", 1500, StoreCurrency.Merits, "/Textures/Clothing/Uniforms/Jumpsuit/captain.rsi/icon.png", "\u041D\u041E\u0412\u041E\u0415"),
-                new StoreItem("\u0420\u0410\u041C\u041A\u0410 «\u041E\u0420\u0411\u0418\u0422\u0410»", "\u041F\u0440\u043E\u0444\u0438\u043B\u044C\u043D\u0430\u044F \u0440\u0430\u043C\u043A\u0430", "\u041A\u043E\u0441\u043C\u0435\u0442\u0438\u043A\u0430 • \u041F\u0440\u043E\u0444\u0438\u043B\u044C", 750, StoreCurrency.Merits, "/Textures/Eclipse/MainMenu/news/news-update.png", "\u041D\u041E\u0412\u041E\u0415"),
-                new StoreItem("\u0427\u0410\u0421\u042B \u0417\u0410\u0422\u041C\u0415\u041D\u0418\u042F", "\u041B\u043E\u0431\u0431\u0438-\u0443\u043A\u0440\u0430\u0448\u0435\u043D\u0438\u0435", "\u041A\u043E\u0441\u043C\u0435\u0442\u0438\u043A\u0430 • \u041B\u043E\u0431\u0431\u0438", 250, StoreCurrency.Shards, "/Textures/Interface/VerbIcons/clock.svg.192dpi.png", "\u0420\u0415\u0414\u041A\u041E\u0415"),
-                new StoreItem("\u0424\u041E\u0420\u041C\u0410 \u0421\u0411 «\u0417\u0410\u0422\u041C\u0415\u041D\u0418\u0415»", "\u0422\u0451\u043C\u043D\u044B\u0439 \u0432\u0430\u0440\u0438\u0430\u043D\u0442", "\u041A\u043E\u0441\u043C\u0435\u0442\u0438\u043A\u0430 • \u041E\u0434\u0435\u0436\u0434\u0430", 900, StoreCurrency.Shards, "/Textures/Clothing/OuterClothing/WinterCoats/coathosarmored.rsi/icon.png", "\u041D\u041E\u0412\u041E\u0415"),
-                new StoreItem("\u0424\u041E\u041D \u041F\u0420\u041E\u0424\u0418\u041B\u042F", "\u0422\u0443\u043C\u0430\u043D\u043D\u043E\u0441\u0442\u044C", "\u041A\u043E\u0441\u043C\u0435\u0442\u0438\u043A\u0430 • \u041F\u0440\u043E\u0444\u0438\u043B\u044C", 350, StoreCurrency.Shards, "/Textures/Eclipse/MainMenu/news/news-event.png", null),
-                new StoreItem("\u0414\u0415\u041A\u041E\u0420 «\u0424\u0418\u041A\u0423\u0421»", "\u0423\u044E\u0442 \u0434\u043B\u044F \u043B\u043E\u0431\u0431\u0438", "\u041A\u043E\u0441\u043C\u0435\u0442\u0438\u043A\u0430 • \u041B\u043E\u0431\u0431\u0438", 350, StoreCurrency.Merits, "/Textures/_Orion/Structures/Furniture/potted_plants.rsi/plasma_plant.png", "\u041D\u041E\u0412\u041E\u0415"),
-                new StoreItem("\u041D\u0410\u0411\u041E\u0420 \u041D\u041E\u0412\u0418\u0427\u041A\u0410", "\u0411\u0430\u0437\u043E\u0432\u044B\u0439 \u043D\u0430\u0431\u043E\u0440", "\u041D\u0430\u0431\u043E\u0440", 1200, StoreCurrency.Merits, "/Textures/Objects/Devices/pda.rsi/pda.png", null),
-                new StoreItem("\u0420\u042E\u041A\u0417\u0410\u041A \u0418\u041D\u0416\u0415\u041D\u0415\u0420\u0410", "\u041A\u043E\u0441\u043C\u0435\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439 \u0441\u043A\u0438\u043D", "\u041A\u043E\u0441\u043C\u0435\u0442\u0438\u043A\u0430 • \u0421\u043F\u0438\u043D\u0430", 450, StoreCurrency.Merits, "/Textures/_Orion/Clothing/Back/Backpacks/inteq_backpack.rsi/icon.png", "\u041D\u041E\u0412\u041E\u0415"),
-                new StoreItem("ID-\u041A\u0410\u0420\u0422\u0410 3K", "\u041E\u0431\u043B\u0438\u043A \u043A\u0430\u0440\u0442\u044B", "\u041A\u043E\u0441\u043C\u0435\u0442\u0438\u043A\u0430 • \u0410\u043A\u0441\u0435\u0441\u0441\u0443\u0430\u0440", 300, StoreCurrency.Merits, "/Textures/_Backmen/Objects/Misc/id_cards.rsi/idstationengineer.png", "\u041D\u041E\u0412\u041E\u0415"),
-                new StoreItem("\u041F\u041E\u0421\u0422\u0415\u0420 \u00AB\u0417\u0410\u0422\u041C\u0415\u041D\u0418\u0415\u00BB", "\u0414\u0435\u043A\u043E\u0440 \u0434\u043B\u044F \u043B\u043E\u0431\u0431\u0438", "\u041A\u043E\u0441\u043C\u0435\u0442\u0438\u043A\u0430 • \u041B\u043E\u0431\u0431\u0438", 300, StoreCurrency.Merits, "/Textures/_Orion/Structures/Wallmounts/Posters/inteq_posters.rsi/inteq_poster1.png", "\u041D\u041E\u0412\u041E\u0415"),
-                new StoreItem("\u0414\u0420\u041E\u041D \u00AB\u0421\u041C\u041E\u0422\u0420\u0418\u0422\u0415\u041B\u042C\u00BB", "\u0421\u043F\u0443\u0442\u043D\u0438\u043A \u043F\u0440\u043E\u0444\u0438\u043B\u044F", "\u041A\u043E\u0441\u043C\u0435\u0442\u0438\u043A\u0430 • \u0421\u043F\u0443\u0442\u043D\u0438\u043A", 600, StoreCurrency.Merits, "/Textures/Eclipse/VA11_HallA/sparklestar.rsi/icon.png", "\u041D\u041E\u0412\u041E\u0415"),
+                new StoreItem("КОСТЮМ ECLIPSE", "Уникальный костюм", "Косметика • Одежда", 600, StoreCurrency.Shards, "/Textures/Clothing/OuterClothing/Hardsuits/deathsquad.rsi/icon.png", "РЕКОМЕНДУЕМОЕ"),
+                new StoreItem("ФОРМА КАПИТАНА", "Парадный образ", "Косметика • Одежда", 1500, StoreCurrency.Merits, "/Textures/Clothing/Uniforms/Jumpsuit/captain.rsi/icon.png", "НОВОЕ"),
+                new StoreItem("РАМКА «ОРБИТА»", "Профильная рамка", "Косметика • Профиль", 750, StoreCurrency.Merits, "/Textures/Eclipse/MainMenu/news/news-update.png", "НОВОЕ"),
+                new StoreItem("ЧАСЫ ЗАТМЕНИЯ", "Лобби-украшение", "Косметика • Лобби", 250, StoreCurrency.Shards, "/Textures/Interface/VerbIcons/clock.svg.192dpi.png", "РЕДКОЕ"),
+                new StoreItem("ФОРМА СБ «ЗАТМЕНИЕ»", "Тёмный вариант", "Косметика • Одежда", 900, StoreCurrency.Shards, "/Textures/Clothing/OuterClothing/WinterCoats/coathosarmored.rsi/icon.png", "НОВОЕ"),
+                new StoreItem("ФОН ПРОФИЛЯ", "Туманность", "Косметика • Профиль", 350, StoreCurrency.Shards, "/Textures/Eclipse/MainMenu/news/news-event.png", null),
+                new StoreItem("ДЕКОР «ФИКУС»", "Уют для лобби", "Косметика • Лобби", 350, StoreCurrency.Merits, "/Textures/_Orion/Structures/Furniture/potted_plants.rsi/plasma_plant.png", "НОВОЕ"),
+                new StoreItem("НАБОР НОВИЧКА", "Базовый набор", "Набор", 1200, StoreCurrency.Merits, "/Textures/Objects/Devices/pda.rsi/pda.png", null),
+                new StoreItem("РЮКЗАК ИНЖЕНЕРА", "Косметический скин", "Косметика • Спина", 450, StoreCurrency.Merits, "/Textures/_Orion/Clothing/Back/Backpacks/inteq_backpack.rsi/icon.png", "НОВОЕ"),
+                new StoreItem("ID-КАРТА 3K", "Облик карты", "Косметика • Аксессуар", 300, StoreCurrency.Merits, "/Textures/_Backmen/Objects/Misc/id_cards.rsi/idstationengineer.png", "НОВОЕ"),
+                new StoreItem("ПОСТЕР «ЗАТМЕНИЕ»", "Декор для лобби", "Косметика • Лобби", 300, StoreCurrency.Merits, "/Textures/_Orion/Structures/Wallmounts/Posters/inteq_posters.rsi/inteq_poster1.png", "НОВОЕ"),
+                new StoreItem("ДРОН «СМОТРИТЕЛЬ»", "Спутник профиля", "Косметика • Спутник", 600, StoreCurrency.Merits, "/Textures/Eclipse/VA11_HallA/sparklestar.rsi/icon.png", "НОВОЕ"),
+            ];
+
+            _roadmapEntries =
+            [
+                new RoadmapEntry(
+                    "Магазин",
+                    "Новые витрины, наборы косметики и редкие предметы.",
+                    "Скоро",
+                    "Июнь 2026",
+                    "/Textures/Interface/VerbIcons/outfit.svg.192dpi.png"),
+                new RoadmapEntry(
+                    "Профиль игрока",
+                    "Расширенная страница аккаунта с аватаром, статистикой и прогрессом.",
+                    "В разработке",
+                    null,
+                    "/Textures/Interface/VerbIcons/group.svg.192dpi.png"),
+                new RoadmapEntry(
+                    "Ранги и награды",
+                    "Система заслуг, ранги службы и уникальные награды.",
+                    "Планируется",
+                    "Август 2026",
+                    "/Textures/Interface/examine-star.png"),
+                new RoadmapEntry(
+                    "Новые режимы и ивенты",
+                    "Сезонные события, особые миссии и развитие контента станции.",
+                    "Долгосрочно",
+                    null,
+                    "/Textures/Interface/VerbIcons/clock.svg.192dpi.png"),
             ];
 
             ApplyLobbyChatStyle();
             BuildStoreCatalog();
+            BuildRoadmap();
             SetLaunchStatusVisible(true);
             ShowSection(LobbySection.Play);
             ApplyEclipseLayout();
+        }
+
+        protected override void EnteredTree()
+        {
+            base.EnteredTree();
+            UpdateVotesTab(_voteManager.CanCallVote);
+            _voteManager.CanCallVoteChanged += UpdateVotesTab;
+        }
+
+        protected override void ExitedTree()
+        {
+            _voteManager.CanCallVoteChanged -= UpdateVotesTab;
+
+            if (_voteCallMenu is { IsOpen: true })
+                _voteCallMenu.Close();
+
+            base.ExitedTree();
         }
 
         public void SetLaunchStatusVisible(bool visible)
@@ -127,8 +203,8 @@ namespace Content.Client.Lobby.UI
         {
             AccountName.Text = accountName;
             AccountTitle.Text = roleName;
-            AccountRole.Text = roleName;
-            AccountLevel.Text = $"\u0423\u0440\u043E\u0432\u0435\u043D\u044C {level}";
+            AccountRole.Text = EclipseProgression.GetRankName(level);
+            AccountLevel.Text = $"Уровень {level}";
             AccountExperience.Text = $"{FormatAmount(currentExperience)} / {FormatAmount(nextLevelExperience)} XP";
             AccountExperienceProgress.Value = nextLevelExperience <= 0
                 ? 0f
@@ -151,7 +227,7 @@ namespace Content.Client.Lobby.UI
 
         private void OpenNewsAdminWindow()
         {
-            if (_newsWindow is { Disposed: false })
+            if (_newsWindow is { Disposed: false, IsOpen: true })
             {
                 _newsWindow.MoveToFront();
                 return;
@@ -290,7 +366,7 @@ namespace Content.Client.Lobby.UI
 
             root.AddChild(new Button
             {
-                Text = "\u041A\u0443\u043F\u0438\u0442\u044C",
+                Text = "Купить",
                 MinHeight = 30,
                 HorizontalExpand = true,
                 StyleIdentifier = item.Currency == StoreCurrency.Shards
@@ -299,6 +375,153 @@ namespace Content.Client.Lobby.UI
             });
 
             return card;
+        }
+
+        private void BuildRoadmap()
+        {
+            RoadmapEntries.RemoveAllChildren();
+            RoadmapProgressDots.RemoveAllChildren();
+            RoadmapProgressDots.Columns = Math.Max(1, _roadmapEntries.Length);
+
+            for (var i = 0; i < _roadmapEntries.Length; i++)
+            {
+                RoadmapProgressDots.AddChild(BuildRoadmapDot(i == 0));
+                RoadmapEntries.AddChild(BuildRoadmapEntry(_roadmapEntries[i], i + 1));
+            }
+        }
+
+        private static Control BuildRoadmapDot(bool active)
+        {
+            var wrapper = new BoxContainer
+            {
+                HorizontalExpand = true,
+                HorizontalAlignment = HAlignment.Center,
+            };
+
+            wrapper.AddChild(new Label
+            {
+                Text = active ? "●" : "○",
+                StyleIdentifier = active
+                    ? MainMenuControl.StyleIdentifierRoadmapDotActive
+                    : MainMenuControl.StyleIdentifierRoadmapDot,
+                Align = Label.AlignMode.Center,
+            });
+
+            return wrapper;
+        }
+
+        private static Control BuildRoadmapEntry(RoadmapEntry entry, int number)
+        {
+            var card = new PanelContainer
+            {
+                HorizontalExpand = true,
+                MinSize = new Vector2(0f, 112f),
+                PanelOverride = StorePanel("#070300D8", "#A85E1280", 1, 24, 18),
+            };
+
+            var root = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Horizontal,
+                HorizontalExpand = true,
+                VerticalExpand = true,
+                SeparationOverride = 24,
+            };
+            card.AddChild(root);
+
+            root.AddChild(new Label
+            {
+                Text = number.ToString("00", CultureInfo.InvariantCulture),
+                StyleIdentifier = MainMenuControl.StyleIdentifierRoadmapNumber,
+                SetWidth = 70,
+                VAlign = Label.VAlignMode.Center,
+                Align = Label.AlignMode.Center,
+            });
+
+            root.AddChild(new PanelContainer
+            {
+                SetWidth = 1,
+                VerticalExpand = true,
+                PanelOverride = new StyleBoxFlat
+                {
+                    BackgroundColor = Color.FromHex("#A85E123F"),
+                },
+            });
+
+            var iconWrap = new PanelContainer
+            {
+                SetSize = new Vector2(82f, 82f),
+                PanelOverride = StorePanel("#070300A0", "#A85E12A8", 1, 14, 14),
+            };
+            iconWrap.AddChild(new TextureRect
+            {
+                TexturePath = entry.IconTexturePath,
+                Stretch = TextureRect.StretchMode.KeepAspectCentered,
+                ModulateSelfOverride = Color.FromHex("#E6A11A"),
+                HorizontalExpand = true,
+                VerticalExpand = true,
+            });
+            root.AddChild(iconWrap);
+
+            var textColumn = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Vertical,
+                HorizontalExpand = true,
+                VerticalAlignment = VAlignment.Center,
+                SeparationOverride = 8,
+            };
+            root.AddChild(textColumn);
+
+            textColumn.AddChild(new Label
+            {
+                Text = entry.Title,
+                StyleIdentifier = MainMenuControl.StyleIdentifierRoadmapItemTitle,
+                ClipText = true,
+            });
+            textColumn.AddChild(new Label
+            {
+                Text = entry.Description,
+                StyleIdentifier = MainMenuControl.StyleIdentifierSubtle,
+                ClipText = true,
+            });
+
+            root.AddChild(BuildRoadmapBadge(entry));
+
+            return card;
+        }
+
+        private static Control BuildRoadmapBadge(RoadmapEntry entry)
+        {
+            var badge = new PanelContainer
+            {
+                MinSize = new Vector2(178f, 48f),
+                VerticalAlignment = VAlignment.Center,
+                PanelOverride = StorePanel("#070300E8", "#F0A51390", 1, 12, 8),
+            };
+
+            var row = new BoxContainer
+            {
+                Orientation = BoxContainer.LayoutOrientation.Horizontal,
+                HorizontalAlignment = HAlignment.Center,
+                VerticalAlignment = VAlignment.Center,
+                SeparationOverride = 9,
+            };
+            badge.AddChild(row);
+
+            row.AddChild(new Label
+            {
+                Text = entry.Date is null ? "⚙" : "▣",
+                StyleIdentifier = MainMenuControl.StyleIdentifierGoldSmall,
+                VAlign = Label.VAlignMode.Center,
+            });
+            row.AddChild(new Label
+            {
+                Text = entry.Date ?? entry.Status,
+                StyleIdentifier = MainMenuControl.StyleIdentifierGoldSmall,
+                VAlign = Label.VAlignMode.Center,
+                ClipText = true,
+            });
+
+            return badge;
         }
 
         private static string GetStoreCurrencyIcon(StoreCurrency currency)
@@ -323,6 +546,92 @@ namespace Content.Client.Lobby.UI
             return style;
         }
 
+        private static void RegisterNavHover(
+            Button button,
+            TextureRect icon,
+            Label title,
+            Label subtitle,
+            Func<bool> isActive)
+        {
+            button.OnMouseEntered += _ => SetNavButtonVisual(icon, title, subtitle, true);
+            button.OnMouseExited += _ => SetNavButtonVisual(icon, title, subtitle, isActive());
+        }
+
+        private static void SetNavButtonVisual(TextureRect icon, Label title, Label subtitle, bool highlighted)
+        {
+            icon.ModulateSelfOverride = highlighted ? NavActiveColor : NavNormalColor;
+            title.ModulateSelfOverride = highlighted ? NavActiveColor : null;
+            subtitle.ModulateSelfOverride = highlighted ? NavSubtitleActiveColor : null;
+        }
+
+        private void OpenCrewManifest()
+        {
+            SetRightTabActive(RightSideTab.Manifest);
+            _entityManager.System<CrewManifestSystem>().RequestCrewManifest(GetCrewManifestStation());
+        }
+
+        private void OpenVoteMenu()
+        {
+            if (!_voteManager.CanCallVote)
+                return;
+
+            if (_voteCallMenu is { IsOpen: true })
+            {
+                _voteCallMenu.Close();
+                return;
+            }
+
+            _voteCallMenu = new VoteCallMenu();
+            _voteCallMenu.OpenCentered();
+        }
+
+        private void UpdateVotesTab(bool canCall)
+        {
+            VotesTabButton.Disabled = !canCall;
+        }
+
+        private NetEntity GetCrewManifestStation()
+        {
+            var gameTicker = _entityManager.System<ClientGameTicker>();
+
+            foreach (var station in gameTicker.StationNames.Keys)
+            {
+                if (station.Valid)
+                    return station;
+            }
+
+            foreach (var station in gameTicker.JobsAvailable.Keys)
+            {
+                if (station.Valid)
+                    return station;
+            }
+
+            return NetEntity.Invalid;
+        }
+
+        private void SetRightTabActive(RightSideTab tab)
+        {
+            LobbyTabButton.StyleIdentifier = tab == RightSideTab.Lobby
+                ? MainMenuControl.StyleIdentifierTabButtonActive
+                : MainMenuControl.StyleIdentifierTabButton;
+            ManifestTabButton.StyleIdentifier = tab == RightSideTab.Manifest
+                ? MainMenuControl.StyleIdentifierTabButtonActive
+                : MainMenuControl.StyleIdentifierTabButton;
+            AdminsTabButton.StyleIdentifier = tab == RightSideTab.Admins
+                ? MainMenuControl.StyleIdentifierTabButtonActive
+                : MainMenuControl.StyleIdentifierTabButton;
+
+            LobbyTabLabel.StyleIdentifier = tab == RightSideTab.Lobby
+                ? MainMenuControl.StyleIdentifierTabActive
+                : MainMenuControl.StyleIdentifierTab;
+            ManifestTabLabel.StyleIdentifier = tab == RightSideTab.Manifest
+                ? MainMenuControl.StyleIdentifierTabActive
+                : MainMenuControl.StyleIdentifierTab;
+            AdminsTabLabel.StyleIdentifier = tab == RightSideTab.Admins
+                ? MainMenuControl.StyleIdentifierTabActive
+                : MainMenuControl.StyleIdentifierTab;
+        }
+
         private void ShowSection(LobbySection section)
         {
             _section = section;
@@ -335,15 +644,27 @@ namespace Content.Client.Lobby.UI
             BottomActions.Visible = true;
             VoteContainer.Visible = play;
             SectionPanel.Visible = !play;
-            StoreContent.Visible = section == LobbySection.Store;
-            StoreHeaderBalances.Visible = section == LobbySection.Store;
-            SectionBody.Visible = section != LobbySection.Store;
-            SectionFiller.Visible = section != LobbySection.Store;
+            SectionHeader.Visible = section != LobbySection.Roadmap;
+            SectionDivider.Visible = section != LobbySection.Roadmap;
+            StoreContent.Visible = false;
+            StoreEmptyContent.Visible = section == LobbySection.Store;
+            RoadmapContent.Visible = section == LobbySection.Roadmap;
+            StoreHeaderBalances.Visible = false;
+            SectionBody.Visible = section != LobbySection.Store && section != LobbySection.Roadmap;
+            SectionFiller.Visible = section != LobbySection.Store && section != LobbySection.Roadmap;
 
             PlaySectionButton.StyleIdentifier = play ? MainMenuControl.StyleIdentifierPrimary : MainMenuControl.StyleIdentifierNav;
             StoreSectionButton.StyleIdentifier = section == LobbySection.Store ? MainMenuControl.StyleIdentifierPrimary : MainMenuControl.StyleIdentifierNav;
             AccountSectionButton.StyleIdentifier = section == LobbySection.Account ? MainMenuControl.StyleIdentifierPrimary : MainMenuControl.StyleIdentifierNav;
             SettingsSectionButton.StyleIdentifier = section == LobbySection.Settings ? MainMenuControl.StyleIdentifierPrimary : MainMenuControl.StyleIdentifierNav;
+            RoadmapSectionButton.StyleIdentifier = section == LobbySection.Roadmap ? MainMenuControl.StyleIdentifierPrimary : MainMenuControl.StyleIdentifierNav;
+            SetNavButtonVisual(PlaySectionIcon, PlaySectionTitle, PlaySectionSubtitle, play);
+            SetNavButtonVisual(StoreSectionIcon, StoreSectionTitle, StoreSectionSubtitle, section == LobbySection.Store);
+            SetNavButtonVisual(AccountSectionIcon, AccountSectionTitle, AccountSectionSubtitle, section == LobbySection.Account);
+            SetNavButtonVisual(SettingsSectionIcon, SettingsSectionTitle, SettingsSectionSubtitle, section == LobbySection.Settings);
+            SetNavButtonVisual(RoadmapSectionIcon, RoadmapSectionTitle, RoadmapSectionSubtitle, section == LobbySection.Roadmap);
+            SetNavButtonVisual(SiteButtonIcon, SiteButtonTitle, SiteButtonSubtitle, false);
+            SetNavButtonVisual(LeaveButtonIcon, LeaveButtonTitle, LeaveButtonSubtitle, false);
 
             SectionOptionsButton.Visible = section == LobbySection.Settings;
 
@@ -353,20 +674,25 @@ namespace Content.Client.Lobby.UI
                     break;
                 case LobbySection.Store:
                     SectionIconTexture.TexturePath = "/Textures/Eclipse/MainMenu/icons/nav-store.png";
-                    SectionTitle.Text = "\u041C\u0410\u0413\u0410\u0417\u0418\u041D";
-                    SectionSubtitle.Text = "\u0412\u0438\u0442\u0440\u0438\u043D\u0430 \u043D\u0430\u0440\u044F\u0434\u043E\u0432 \u0438 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432";
+                    SectionTitle.Text = "МАГАЗИН";
+                    SectionSubtitle.Text = "Витрина нарядов и предметов";
                     break;
                 case LobbySection.Account:
                     SectionIconTexture.TexturePath = "/Textures/Eclipse/MainMenu/icons/nav-account.png";
-                    SectionTitle.Text = "\u0410\u041A\u041A\u0410\u0423\u041D\u0422";
-                    SectionSubtitle.Text = "\u041F\u0440\u043E\u0444\u0438\u043B\u044C, \u0430\u0432\u0430\u0442\u0430\u0440 \u0438 \u0434\u043E\u0441\u0442\u0438\u0436\u0435\u043D\u0438\u044F";
-                    SectionBody.Text = "\u0417\u0434\u0435\u0441\u044C \u0431\u0443\u0434\u0435\u0442 \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0439 \u043F\u043E\u043B\u043D\u043E\u044D\u043A\u0440\u0430\u043D\u043D\u044B\u0439 \u043F\u0440\u043E\u0444\u0438\u043B\u044C \u0430\u043A\u043A\u0430\u0443\u043D\u0442\u0430. \u0410\u0432\u0430\u0442\u0430\u0440 \u043C\u043E\u0436\u043D\u043E \u0431\u0443\u0434\u0435\u0442 \u043C\u0435\u043D\u044F\u0442\u044C \u0432 \u044D\u0442\u043E\u043C \u0440\u0430\u0437\u0434\u0435\u043B\u0435.";
+                    SectionTitle.Text = "АККАУНТ";
+                    SectionSubtitle.Text = "Профиль, аватар и достижения";
+                    SectionBody.Text = "Здесь будет отдельный полноэкранный профиль аккаунта. Аватар можно будет менять в этом разделе.";
                     break;
                 case LobbySection.Settings:
-                    SectionIconTexture.TexturePath = "/Textures/Eclipse/MainMenu/icons/nav-settings.png";
-                    SectionTitle.Text = "\u041D\u0410\u0421\u0422\u0420\u041E\u0419\u041A\u0418";
-                    SectionSubtitle.Text = "\u0418\u0433\u0440\u0430 \u0438 \u0438\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441";
-                    SectionBody.Text = "\u0417\u0434\u0435\u0441\u044C \u0431\u0443\u0434\u0435\u0442 \u043E\u0442\u0434\u0435\u043B\u044C\u043D\u044B\u0439 \u043F\u043E\u043B\u043D\u043E\u044D\u043A\u0440\u0430\u043D\u043D\u044B\u0439 \u0440\u0430\u0437\u0434\u0435\u043B \u043D\u0430\u0441\u0442\u0440\u043E\u0435\u043A.";
+                    SectionIconTexture.TexturePath = "/Textures/Interface/VerbIcons/settings.svg.192dpi.png";
+                    SectionTitle.Text = "НАСТРОЙКИ";
+                    SectionSubtitle.Text = "Игра и интерфейс";
+                    SectionBody.Text = "Здесь будет отдельный полноэкранный раздел настроек.";
+                    break;
+                case LobbySection.Roadmap:
+                    SectionIconTexture.TexturePath = "/Textures/Eclipse/MainMenu/icons/nav-roadmap.png";
+                    SectionTitle.Text = "ДОРОЖНАЯ КАРТА";
+                    SectionSubtitle.Text = "Чего ожидать в будущих обновлениях";
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(section), section, null);
@@ -566,6 +892,14 @@ namespace Content.Client.Lobby.UI
             Store,
             Account,
             Settings,
+            Roadmap,
+        }
+
+        private enum RightSideTab : byte
+        {
+            Lobby,
+            Manifest,
+            Admins,
         }
 
         private enum StoreCurrency : byte
@@ -582,6 +916,13 @@ namespace Content.Client.Lobby.UI
             StoreCurrency Currency,
             string TexturePath,
             string? Badge);
+
+        private sealed record RoadmapEntry(
+            string Title,
+            string Description,
+            string Status,
+            string? Date,
+            string IconTexturePath);
 
         private sealed class EclipseNewsEntry
         {

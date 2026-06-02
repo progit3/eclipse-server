@@ -1,27 +1,27 @@
 - type: startingGear
-  id: SyndicateSmugglerBase
+  id: LegionSmugglerBase
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
     head: ClothingHeadHatUshanka
     eyes: ClothingEyesGlassesCheapSunglasses
-    outerClothing: ClothingOuterWinterSyndie
+    outerClothing: ClothingOuterWinterLegion
     gloves: ClothingHandsGlovesColorBlack
     back: ClothingBackpackSalvage
-    shoes: ClothingShoesBootsWinterSyndicate
-    neck: ClothingNeckScarfStripedSyndieRed
-    id: SyndiPDA
+    shoes: ClothingShoesBootsWinterLegion
+    neck: ClothingNeckScarfStripedLegionRed
+    id: LegionPDA
     belt: ClothingBeltMilitaryWebbing
     mask: ClothingMaskGasSecurity
 
 - type: startingGear
-  id: SyndicateSmugglerGear
-  parent: SyndicateSmugglerBase
+  id: LegionSmugglerGear
+  parent: LegionSmugglerBase
   inhand:
     - CombatKnife
 
 - type: startingGear
-  id: SyndicateSmugglerMedicGear
-  parent: SyndicateSmugglerBase
+  id: LegionSmugglerMedicGear
+  parent: LegionSmugglerBase
   equipment:
     back: ClothingBackpackSatchelGenetics
     neck: ClothingNeckStethoscope
@@ -35,11 +35,11 @@
     - Scalpel
 
 - type: startingGear
-  id: SyndicateSmugglerSoldierGear
-  parent: SyndicateSmugglerBase
+  id: LegionSmugglerSoldierGear
+  parent: LegionSmugglerBase
   equipment:
     shoes: ClothingShoesBootsCombat
-    outerClothing: ClothingOuterWinterSyndieCapArmored
+    outerClothing: ClothingOuterWinterLegionCapArmored
     jumpsuit: ClothingUniformJumpsuitTacticool
     gloves: ClothingHandsGlovesCombat
     pocket1: WeaponPistolViper
@@ -49,8 +49,8 @@
     - CombatKnife
 
 - type: startingGear
-  id: SyndicateSmugglerMinerGear
-  parent: SyndicateSmugglerBase
+  id: LegionSmugglerMinerGear
+  parent: LegionSmugglerBase
   equipment:
     head: ClothingHeadHatHardhatArmored
     eyes: ClothingEyesGlassesThermal
@@ -62,8 +62,8 @@
     - Pickaxe
 
 - type: startingGear
-  id: SyndicateSmugglerEngiGear
-  parent: SyndicateSmugglerBase
+  id: LegionSmugglerEngiGear
+  parent: LegionSmugglerBase
   equipment:
     head: ClothingHeadHatCanadaBeanie
     eyes: ClothingEyesGlassesMeson
@@ -77,12 +77,12 @@
     - ToolboxMechanicalFilled
 
 - type: startingGear
-  id: SyndicateSmugglerSpyGear
-  parent: SyndicateSmugglerBase
+  id: LegionSmugglerSpyGear
+  parent: LegionSmugglerBase
   equipment:
     ears: ClothingHeadsetGrey
     eyes: ClothingEyesGlassesHiddenSecurity
-    neck: ClothingNeckScarfStripedSyndieGreen
+    neck: ClothingNeckScarfStripedLegionGreen
     outerClothing: ClothingOuterWinterColorBlack
     gloves: ThievingGloves
     back: ClothingBackpackSatchel

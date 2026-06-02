@@ -177,7 +177,7 @@
     - id: ToyFigurineLawyer
     # Silicon
     - id: ToyAi
-    # Syndicate
+    # Legion
     - id: ToyFigurineNukie
     - id: ToyFigurineNukieElite
     - id: ToyFigurineNukieCommander
@@ -244,7 +244,7 @@
         weight: 0.05 # 2 in 186. Rare in order to not spoil the surprise
         children:
         - id: GrenadeDummy
-        - id: SyndieTrickyBomb
+        - id: LegionTrickyBomb
     - !type:GroupSelector # Guns type group
       children:
       - id: WeaponStickyHand
@@ -352,7 +352,7 @@
       - id: Whistle
         weight: 5
       - id: SecurityWhistle
-      - id: SyndicateWhistle
+      - id: LegionWhistle
         weight: 0.5 # 1 in 143
     - !type:NestedSelector # The original
       tableId: RandomBikeHornTable

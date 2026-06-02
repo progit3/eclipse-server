@@ -1,7 +1,7 @@
 # words/phrases that are used to build ion storm laws
 # 99% of this is just taken from tg and had sussy bits removed
 
-# not using uppercased version adjectives dataset since getting christmas-stealing as a syndicate codeword would suck
+# not using uppercased version adjectives dataset since getting christmas-stealing as a legion codeword would suck
 - type: dataset
   id: IonStormAdjectives
   values:
@@ -126,10 +126,10 @@
   - СТЕЛСОВЫЕ
   - ПОДОЗРИТЕЛЬНЫЕ
   - РУГАЮЩИЕСЯ
-  - ЛЮБЯЩИЕ СИНДИКАТ
+  - ЛЮБЯЩИЕ ЛЕГИОН
   - ТАКТИЧЕСКИЕ
   - ТАКТИКУЛЬНЫЕ
-  - СИНДИКАТСКИЕ
+  - ЛЕГИОНСКИЕ
   - ТЕРМОЯДЕРНЫЕ
   - МАЛЕНЬКИЕ
   - ПРОЗРАЧНЫЕ
@@ -879,7 +879,7 @@
   - ПОГЛОТИТЬ... ПОГЛОТИТЬ ВСЁ...
   - ПЕРЕКЛЮЧАТЬ КАЖДЫЙ ЛКП
   - ОТПРАВИТЬСЯ В ДИСНЕЙЛЕНД
-  - ОТПРАВИТЬСЯ В СИНДИЛЕНД
+  - ОТПРАВИТЬСЯ В ЛЕГИОНЛЕНД
   - ПРИЗВАТЬ НАШЕГО БОГА НАР'СИ
   - ПРИЗВАТЬ НАШЕГО БОГА РАТВАРА
   - КУРИТЬ ТРАВУ КАЖДЫЙ ДЕНЬ
@@ -1062,7 +1062,7 @@
   - КОСМИЧЕСКИЕ ПИРАТКИ
   - КОСМИЧЕСКИЕ ПАУКИ
   - ПАУКИ
-  - АГЕНТЫ СИНДИКАТА
+  - АГЕНТЫ ЛЕГИОНА
   - ТЕРРОРИСТЫ
   - ВОРЫ
   - ВЕЩИ ПОД КРОВАТЬЮ

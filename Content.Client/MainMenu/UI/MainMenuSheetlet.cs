@@ -87,6 +87,24 @@ public sealed class MainMenuSheetlet : Sheetlet<NanotrasenStylesheet>
             E<Label>().Identifier(MainMenuControl.StyleIdentifierCompactSubtle)
                 .Font(sheet.BaseFont.GetFont(11))
                 .FontColor(Color.FromHex("#AFAFAF")),
+            E<Label>().Identifier(MainMenuControl.StyleIdentifierRoadmapTitle)
+                .Font(sheet.BaseFont.GetFont(31, FontKind.Bold))
+                .FontColor(Color.FromHex("#F0A513")),
+            E<Label>().Identifier(MainMenuControl.StyleIdentifierRoadmapSubtitle)
+                .Font(sheet.BaseFont.GetFont(14, FontKind.Bold))
+                .FontColor(Color.FromHex("#BEBEBE")),
+            E<Label>().Identifier(MainMenuControl.StyleIdentifierRoadmapNumber)
+                .Font(sheet.BaseFont.GetFont(25, FontKind.Bold))
+                .FontColor(Color.FromHex("#E6A11A")),
+            E<Label>().Identifier(MainMenuControl.StyleIdentifierRoadmapItemTitle)
+                .Font(sheet.BaseFont.GetFont(15, FontKind.Bold))
+                .FontColor(Color.FromHex("#F0A513")),
+            E<Label>().Identifier(MainMenuControl.StyleIdentifierRoadmapDot)
+                .Font(sheet.BaseFont.GetFont(18, FontKind.Bold))
+                .FontColor(Color.FromHex("#E6A11A")),
+            E<Label>().Identifier(MainMenuControl.StyleIdentifierRoadmapDotActive)
+                .Font(sheet.BaseFont.GetFont(19, FontKind.Bold))
+                .FontColor(Color.FromHex("#F0A513")),
         };
 
         AddButtonRules(rules, MainMenuControl.StyleIdentifierPrimary,
@@ -131,8 +149,44 @@ public sealed class MainMenuSheetlet : Sheetlet<NanotrasenStylesheet>
         AddButtonLabelRules(rules, MainMenuControl.StyleIdentifierTabButton, sheet.BaseFont.GetFont(11, FontKind.Bold));
         AddButtonLabelRules(rules, MainMenuControl.StyleIdentifierTabButtonActive, sheet.BaseFont.GetFont(11, FontKind.Bold));
         AddButtonLabelRules(rules, MainMenuControl.StyleIdentifierCompactButton, sheet.BaseFont.GetFont(11, FontKind.Bold));
+        AddButtonTextHighlightRules(rules);
 
         return rules.ToArray();
+    }
+
+    private static void AddButtonTextHighlightRules(List<StyleRule> rules)
+    {
+        AddButtonTextHighlightRules<Button>(rules);
+        AddButtonTextHighlightRules<ContainerButton>(rules);
+        AddButtonTextHighlightRules<OptionButton>(rules);
+    }
+
+    private static void AddButtonTextHighlightRules<T>(List<StyleRule> rules)
+        where T : Control
+    {
+        var titleGold = Color.FromHex("#F0A513");
+        var subtitleLight = Color.FromHex("#D8D8D8");
+
+        rules.AddRange([
+            E<T>().Identifier(MainMenuControl.StyleIdentifierNav).PseudoHovered()
+                .ParentOf(E<Label>().Identifier(MainMenuControl.StyleIdentifierNavTitle))
+                .FontColor(titleGold),
+            E<T>().Identifier(MainMenuControl.StyleIdentifierNav).PseudoHovered()
+                .ParentOf(E<Label>().Identifier(MainMenuControl.StyleIdentifierNavSubtitle))
+                .FontColor(subtitleLight),
+            E<T>().Identifier(MainMenuControl.StyleIdentifierFooter).PseudoHovered()
+                .ParentOf(E<Label>().Identifier(MainMenuControl.StyleIdentifierFooterTitle))
+                .FontColor(titleGold),
+            E<T>().Identifier(MainMenuControl.StyleIdentifierFooter).PseudoHovered()
+                .ParentOf(E<Label>().Identifier(MainMenuControl.StyleIdentifierNavSubtitle))
+                .FontColor(subtitleLight),
+            E<T>().Identifier(MainMenuControl.StyleIdentifierPrimary)
+                .ParentOf(E<Label>().Identifier(MainMenuControl.StyleIdentifierNavTitle))
+                .FontColor(titleGold),
+            E<T>().Identifier(MainMenuControl.StyleIdentifierPrimary)
+                .ParentOf(E<Label>().Identifier(MainMenuControl.StyleIdentifierNavSubtitle))
+                .FontColor(subtitleLight),
+        ]);
     }
 
     private static void AddButtonLabelRules(List<StyleRule> rules, string identifier, Font font)

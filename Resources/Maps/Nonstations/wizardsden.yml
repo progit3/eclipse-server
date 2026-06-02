@@ -1341,7 +1341,7 @@ entities:
     - type: Transform
       pos: -6.2777348,5.686091
       parent: 1
-- proto: FaxMachineSyndie
+- proto: FaxMachineLegion
   entities:
   - uid: 463
     components:

@@ -1,1 +1,1 @@
-key-phrase-gadget = гаджет в бой
+key-phrase-gadget = гаджет в бой

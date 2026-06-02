@@ -1,7 +1,7 @@
 #NANOTRASEN NAVY HARDSUITS
 #NT Navy Captain Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndieCommander ]
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitLegionCommander ]
   id: ClothingHeadHelmetHardsuitNTNavyCaptain
   name: nanotrasen navy captain hardsuit helmet
   description: A reinforced pressure helmet designed for NanoTrasen Naval Command officers. Gold decorative elements are applied to the sides, emphasizing the wearer's status. Heavy, reliable, and very expensive...
@@ -24,7 +24,7 @@
 
 #NT Navy Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitLegion ]
   id: ClothingHeadHelmetHardsuitNTNavy
   name: nanotrasen navy hardsuit helmet
   description: A special hardsuit helmet worn by crew members of an NanoTrasen naval vessels.
@@ -47,7 +47,7 @@
 
 #NT Navy Engineering Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitLegion ]
   id: ClothingHeadHelmetHardsuitNTNavyEngineering
   name: nanotrasen navy engineer hardsuit helmet
   description: A special hardsuit helmet worn by crew members of an NanoTrasen naval vessels.
@@ -72,7 +72,7 @@
 
 #NT Navy Medical Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndieElite ]
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitLegionElite ]
   id: ClothingHeadHelmetHardsuitNTNavyMedical
   name: nanotrasen navy medical hardsuit helmet
   description: A special hardsuit helmet worn by crew members of an NanoTrasen naval vessels.

@@ -24496,7 +24496,7 @@ entities:
     - type: Transform
       pos: -95.5,-17.5
       parent: 2
-- proto: BannerSyndicate
+- proto: BannerLegion
   entities:
   - uid: 2409
     components:
@@ -24507,7 +24507,7 @@ entities:
       allowedJobs: []
       allowedDepartments:
       - Security
-      severity: Syndicate
+      severity: Legion
 - proto: BarberScissors
   entities:
   - uid: 3403
@@ -24702,8 +24702,8 @@ entities:
   - uid: 2516
     components:
     - type: MetaData
-      desc: A normal bed, but there's a syndicate logo on the sticker - therefore making it highly illegal contraband.
-      name: syndicate bed
+      desc: A normal bed, but there's a legion logo on the sticker - therefore making it highly illegal contraband.
+      name: legion bed
     - type: Transform
       pos: -13.5,17.5
       parent: 2
@@ -24711,7 +24711,7 @@ entities:
       allowedJobs: []
       allowedDepartments:
       - Security
-      severity: Syndicate
+      severity: Legion
   - uid: 2894
     components:
     - type: Transform
@@ -25012,7 +25012,7 @@ entities:
     - type: Transform
       pos: -37.5,-56.5
       parent: 2
-- proto: BedsheetSyndie
+- proto: BedsheetLegion
   entities:
   - uid: 2382
     components:
@@ -65821,7 +65821,7 @@ entities:
     - type: Transform
       pos: -98.3052,-22.177402
       parent: 2
-- proto: ClothingNeckScarfStripedSyndieGreen
+- proto: ClothingNeckScarfStripedLegionGreen
   entities:
   - uid: 2415
     components:
@@ -65830,7 +65830,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingNeckScarfStripedSyndieRed
+- proto: ClothingNeckScarfStripedLegionRed
   entities:
   - uid: 2493
     components:
@@ -66046,7 +66046,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpskirtSyndieFormalDress
+- proto: ClothingUniformJumpskirtLegionFormalDress
   entities:
   - uid: 2480
     components:
@@ -66124,7 +66124,7 @@ entities:
       rot: 6.283185307179586 rad
       pos: -99.605385,0.49629807
       parent: 2
-- proto: ClothingUniformJumpsuitSyndieFormal
+- proto: ClothingUniformJumpsuitLegionFormal
   entities:
   - uid: 2432
     components:
@@ -128557,13 +128557,13 @@ entities:
     - type: Transform
       pos: -85.5,-27.5
       parent: 2
-- proto: LockerSyndicatePersonal
+- proto: LockerLegionPersonal
   entities:
   - uid: 2411
     components:
     - type: MetaData
       desc: Everything about this closet is illegal - not just the contents, the closet itself is also illicit contraband!
-      name: syndicate closet
+      name: legion closet
     - type: Transform
       pos: -15.5,16.5
       parent: 2
@@ -128596,7 +128596,7 @@ entities:
       allowedJobs: []
       allowedDepartments:
       - Security
-      severity: Syndicate
+      severity: Legion
 - proto: LockerWallMedicalFilled
   entities:
   - uid: 18473
@@ -131586,7 +131586,7 @@ entities:
     components:
     - type: MetaData
       desc: This shark is a vicious killer of the ocean, trained in over 20 martial art styles, including sleeping carp. It merely takes the form of a plushie to fool the unaware into trusting it, only so it may strike when they're at their most vulnerable.
-      name: highly illegal syndicate shark
+      name: highly illegal legion shark
     - type: Transform
       pos: -14.584713,16.470493
       parent: 2
@@ -131598,7 +131598,7 @@ entities:
     - type: Contraband
       allowedJobs: []
       allowedDepartments: []
-      severity: Syndicate
+      severity: Legion
 - proto: PlushieSlime
   entities:
   - uid: 3336
@@ -144088,7 +144088,7 @@ entities:
       allowedJobs: []
       allowedDepartments:
       - Security
-      severity: Syndicate
+      severity: Legion
 - proto: SmartFridge
   entities:
   - uid: 3405
@@ -149719,7 +149719,7 @@ entities:
       - SurveillanceCameraEntertainment
       nameSet: True
       id: LiveLeak
-- proto: SyndieFlag
+- proto: LegionFlag
   entities:
   - uid: 2406
     components:
@@ -149730,10 +149730,10 @@ entities:
       allowedJobs: []
       allowedDepartments:
       - Security
-      severity: Syndicate
+      severity: Legion
     - type: Fixtures
       fixtures: {}
-- proto: SyndieHandyFlag
+- proto: LegionHandyFlag
   entities:
   - uid: 18682
     components:
@@ -151294,14 +151294,14 @@ entities:
     components:
     - type: MetaData
       desc: You're not sure why this table is illegal, it just is.
-      name: syndicate reinforced table
+      name: legion reinforced table
     - type: Transform
       pos: -13.5,18.5
       parent: 2
     - type: Contraband
       allowedJobs: []
       allowedDepartments: []
-      severity: Syndicate
+      severity: Legion
   - uid: 2514
     components:
     - type: Transform
@@ -170633,19 +170633,19 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: WeaponTurretSyndicateBroken
+- proto: WeaponTurretLegionBroken
   entities:
   - uid: 2407
     components:
     - type: MetaData
-      name: ballistic turret (syndicate)
+      name: ballistic turret (legion)
     - type: Transform
       pos: -14.5,18.5
       parent: 2
     - type: Contraband
       allowedJobs: []
       allowedDepartments: []
-      severity: Syndicate
+      severity: Legion
 - proto: WelderIndustrial
   entities:
   - uid: 7350

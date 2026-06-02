@@ -1,6 +1,6 @@
-ent-ClothingBeltSheathSyndicateFilled = {ent-ClothingBeltSheathSyndicate}
-    .desc = { ent-ClothingBeltSheathSyndicate.desc }
-ent-ClothingBeltSheathSyndicate = ножны для рапиры
+ent-ClothingBeltSheathLegionFilled = {ent-ClothingBeltSheathLegion}
+    .desc = { ent-ClothingBeltSheathLegion.desc }
+ent-ClothingBeltSheathLegion = ножны для рапиры
     .desc = Зловещие тонкие ножны, подходящие для рапиры.
-ent-BeltSheathSyndieFilledBox = обёрнутая рапира синдиката
+ent-BeltSheathLegionFilledBox = обёрнутая рапира легиона
     .desc = Разверните.

@@ -111,5 +111,5 @@
 
 - type: latheRecipe
   parent: BaseSpecifiedBedsheetRecipe
-  id: BedsheetSyndie
-  result: BedsheetSyndie
+  id: BedsheetLegion
+  result: BedsheetLegion

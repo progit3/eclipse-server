@@ -54226,7 +54226,7 @@ entities:
     - type: Transform
       pos: 16.88813,-11.14423
       parent: 30
-- proto: CigaretteSyndicate
+- proto: CigaretteLegion
   entities:
   - uid: 21099
     components:

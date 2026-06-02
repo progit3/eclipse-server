@@ -1,1 +1,1 @@
-construction-graph-tag-xen-pcv-plate = плата PCV
+construction-graph-tag-xen-pcv-plate = плата PCV

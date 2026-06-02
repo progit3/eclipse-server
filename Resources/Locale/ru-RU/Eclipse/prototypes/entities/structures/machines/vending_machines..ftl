@@ -1,2 +1,2 @@
-ent-VendingMachineChemicalsInteQ = ИнтекСоки
-    .desc = Надеюсь, не из свежевыжатых интековцев?
+ent-VendingMachineChemicalsAshLegion = Соки Легиона пепла
+    .desc = Надеюсь, не из свежевыжатых Легион пеплаовцев?

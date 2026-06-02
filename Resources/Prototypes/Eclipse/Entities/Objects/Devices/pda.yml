@@ -107,12 +107,12 @@
     - DoorBumpOpener
 
 - type: entity
-  parent: [ BasePDA, BaseInteQContraband ]
-  id: InteQBasePDA
-  name: InteQ PDA
+  parent: [ BasePDA, BaseAshLegionContraband ]
+  id: AshLegionBasePDA
+  name: AshLegion PDA
   components:
   - type: Pda
-    id: InteQOpsBaseIDCard
+    id: AshLegionOpsBaseIDCard
   - type: Sprite
     sprite: Eclipse/Objects/Devices/pda.rsi
     layers:
@@ -130,7 +130,7 @@
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
         !type:String
-        inteq-base
+        ashlegion-base
   - type: PdaBorderColor
     borderColor: "#c56c00"
   - type: Icon
@@ -144,17 +144,17 @@
       - AstroNavCartridge
 
 - type: entity
-  parent: InteQBasePDA
-  id: InteQMedicalPDA
-  name: InteQ Medical PDA
+  parent: AshLegionBasePDA
+  id: AshLegionMedicalPDA
+  name: AshLegion Medical PDA
   components:
     - type: Appearance
       appearanceDataInit:
         enum.PdaVisuals.PdaType:
           !type:String
-          inteq-med
+          ashlegion-med
     - type: Pda
-      id: InteQOpsMedicalIDCard
+      id: AshLegionOpsMedicalIDCard
     - type: Icon
       state: inteq-med
     - type: CartridgeLoader
@@ -166,17 +166,17 @@
         - MedTekCartridge
 
 - type: entity
-  parent: InteQBasePDA
-  id: InteQLeaderPDA
-  name: InteQ Leader PDA
+  parent: AshLegionBasePDA
+  id: AshLegionLeaderPDA
+  name: AshLegion Leader PDA
   components:
     - type: Pda
-      id: InteQOpsLeaderIDCard
+      id: AshLegionOpsLeaderIDCard
     - type: Appearance
       appearanceDataInit:
         enum.PdaVisuals.PdaType:
           !type:String
-          inteq-lead
+          ashlegion-lead
     - type: Icon
       state: inteq-lead
 

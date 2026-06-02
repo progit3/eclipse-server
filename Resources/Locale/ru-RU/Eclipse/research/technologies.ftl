@@ -1,1 +1,1 @@
-research-technology-atmospheric-fans = Атмосферные вентиляторы
+research-technology-atmospheric-fans = Атмосферные вентиляторы

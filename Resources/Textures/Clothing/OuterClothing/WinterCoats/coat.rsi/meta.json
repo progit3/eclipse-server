@@ -345,33 +345,33 @@
       "directions": 4
     },
 	{
-      "name": "SYNDIECAP-icon"
+      "name": "LEGIONCAP-icon"
     },
     {
-      "name": "SYNDIECAP-equipped-OUTERCLOTHING",
+      "name": "LEGIONCAP-equipped-OUTERCLOTHING",
       "directions": 4
     },
     {
-      "name": "SYNDIECAP-inhand-left",
+      "name": "LEGIONCAP-inhand-left",
       "directions": 4
     },
     {
-      "name": "SYNDIECAP-inhand-right",
+      "name": "LEGIONCAP-inhand-right",
       "directions": 4
     },
 	{
-      "name": "SYNDIE-icon"
+      "name": "LEGION-icon"
     },
     {
-      "name": "SYNDIE-equipped-OUTERCLOTHING",
+      "name": "LEGION-equipped-OUTERCLOTHING",
       "directions": 4
     },
     {
-      "name": "SYNDIE-inhand-left",
+      "name": "LEGION-inhand-left",
       "directions": 4
     },
     {
-      "name": "SYNDIE-inhand-right",
+      "name": "LEGION-inhand-right",
       "directions": 4
     },
 	{
@@ -577,7 +577,7 @@
       "name": "HOS-ARMORED-icon"
     },
 	{
-      "name": "SYNDIE-ARMORED-icon"
+      "name": "LEGION-ARMORED-icon"
     },
 	{
       "name": "ARMOR-icon"

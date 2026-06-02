@@ -330,11 +330,11 @@
 - type: entity
   categories: [ HideSpawnMenu, Spawner ]
   parent: SpawnPointGhostDerelictCyborg
-  id: SpawnPointGhostDerelictSyndicateAssaultCyborg
+  id: SpawnPointGhostDerelictLegionAssaultCyborg
   components:
   - type: GhostRole
-    name: ghost-role-information-derelict-syndicate-assault-cyborg-name
-    description: ghost-role-information-derelict-syndicate-assault-cyborg-description
+    name: ghost-role-information-derelict-legion-assault-cyborg-name
+    description: ghost-role-information-derelict-legion-assault-cyborg-description
     rules: ghost-role-information-silicon-rules
     raffle:
       settings: default

@@ -1,21 +1,27 @@
 using System.Linq;
+using System.Numerics;
 using Content.Client.CharacterInfo;
 using Content.Client.Gameplay;
+using Content.Client.MainMenu.UI;
+using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Character.Controls;
 using Content.Client.UserInterface.Systems.Character.Windows;
 using Content.Client.UserInterface.Systems.Objectives.Controls;
+using Content.Shared.Eclipse.Progression;
 using Content.Shared.Input;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
+using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.Controls;
+using Robust.Shared.Maths;
 using Robust.Shared.Input.Binding;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
@@ -30,6 +36,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
     [Dependency] private readonly IEntityManager _ent = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
 
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
@@ -137,9 +144,18 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         UpdateRoleType();
 
         _window.NameLabel.Text = entityName;
-        _window.SubText.Text = job;
+        _window.NameLabel.FontColorOverride = Color.White;
+        _window.SubText.Text = string.IsNullOrWhiteSpace(job)
+            ? "Должность не назначена"
+            : job;
+        _window.SubText.FontColorOverride = Color.FromHex("#D5C9AE");
+        _window.RoleType.Visible = false;
         _window.Objectives.RemoveAllChildren();
-        _window.ObjectivesLabel.Visible = objectives.Any();
+        _window.PersonalTasks.RemoveAllChildren();
+        _window.ObjectivesLabel.Visible = false;
+        _window.ObjectivesScroll.Visible = false;
+        _window.RoleEmptyLabel.Visible = true;
+        BuildPersonalTasks(_window.PersonalTasks);
 
         foreach (var (groupId, conditions) in objectives)
         {
@@ -196,12 +212,145 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             _window.Objectives.AddChild(control);
         }
 
-        _window.RolePlaceholder.Visible = briefing == null && !controls.Any() && !objectives.Any();
+        var hasObjectiveContent = objectives.Any() || briefing != null || controls.Any();
+        _window.ObjectivesLabel.Visible = hasObjectiveContent;
+        _window.ObjectivesScroll.Visible = hasObjectiveContent;
+        _window.RoleEmptyLabel.Visible = !hasObjectiveContent;
+        _window.RolePlaceholder.Visible = false;
+    }
+
+    private void BuildPersonalTasks(BoxContainer container)
+    {
+        var totalExperience = Math.Max(0, (int) Math.Floor(_jobRequirements.FetchOverallPlaytime().TotalMinutes * 6));
+        totalExperience += Math.Max(0, (int) Math.Floor(
+            _jobRequirements.FetchPlaytimeTracker(EclipseProgression.BonusExperienceTracker).TotalMinutes *
+            EclipseProgression.BonusExperiencePerMinute));
+        var progress = EclipseProgression.CalculateProgress(totalExperience);
+
+        AddPersonalTask(container,
+            "Подготовить отчёт",
+            "Для командования или главы отдела.",
+            "Награда: 50 XP / 12 пыли",
+            "/Textures/Interface/VerbIcons/examine.svg.192dpi.png",
+            true);
+
+        AddPersonalTask(container,
+            "Помочь другому отделу",
+            "Выполнить полезное поручение вне своей должности.",
+            "Награда: 70 XP / 20 пыли",
+            "/Textures/Interface/VerbIcons/group.svg.192dpi.png",
+            false);
+
+        if (EclipseProgression.TryGetAttestationLevel(progress.Level, out var attestationLevel))
+        {
+            AddPersonalTask(container,
+                "Аттестационное поручение",
+                GetAttestationDescription(attestationLevel),
+                "Награда: допуск к следующему рангу",
+                "/Textures/Interface/examine-star.png",
+                true);
+        }
+    }
+
+    private static void AddPersonalTask(
+        BoxContainer container,
+        string title,
+        string description,
+        string reward,
+        string icon,
+        bool highlighted)
+    {
+        var panel = new PanelContainer
+        {
+            MinSize = new Vector2(0f, 116f),
+            HorizontalExpand = true,
+            PanelOverride = new StyleBoxFlat
+            {
+                BackgroundColor = Color.FromHex(highlighted ? "#1A0D00D8" : "#070300D8"),
+                BorderColor = Color.FromHex(highlighted ? "#E6A11A99" : "#D5C9AE66"),
+                BorderThickness = new Thickness(1),
+            },
+        };
+        container.AddChild(panel);
+
+        var card = new BoxContainer
+        {
+            Orientation = BoxContainer.LayoutOrientation.Horizontal,
+            HorizontalExpand = true,
+        };
+        panel.AddChild(card);
+
+        card.AddChild(new PanelContainer
+        {
+            SetWidth = 8f,
+            PanelOverride = new StyleBoxFlat
+            {
+                BackgroundColor = Color.FromHex(highlighted ? "#E6A11A" : "#00000000"),
+            },
+        });
+
+        var row = new BoxContainer
+        {
+            Orientation = BoxContainer.LayoutOrientation.Horizontal,
+            Margin = new Thickness(14, 12),
+            SeparationOverride = 16,
+            HorizontalExpand = true,
+        };
+        card.AddChild(row);
+
+        row.AddChild(new TextureRect
+        {
+            TexturePath = icon,
+            SetSize = new Vector2(44f, 44f),
+            Stretch = TextureRect.StretchMode.KeepAspectCentered,
+            ModulateSelfOverride = Color.FromHex(highlighted ? "#E6A11A" : "#D5C9AE"),
+        });
+
+        var texts = new BoxContainer
+        {
+            Orientation = BoxContainer.LayoutOrientation.Vertical,
+            HorizontalExpand = true,
+            SeparationOverride = 6,
+        };
+        row.AddChild(texts);
+
+        texts.AddChild(new Label
+        {
+            Text = title,
+            StyleIdentifier = highlighted
+                ? MainMenuControl.StyleIdentifierHeaderGold
+                : MainMenuControl.StyleIdentifierText,
+            ClipText = true,
+        });
+        texts.AddChild(new Label
+        {
+            Text = description,
+            StyleIdentifier = MainMenuControl.StyleIdentifierSubtle,
+            ClipText = true,
+        });
+        texts.AddChild(new Label
+        {
+            Text = reward,
+            StyleIdentifier = MainMenuControl.StyleIdentifierGoldSmall,
+            ClipText = true,
+        });
+    }
+
+    private static string GetAttestationDescription(int attestationLevel)
+    {
+        return attestationLevel switch
+        {
+            <= 1 => "Вывезти документ или выполнить поручение отдела.",
+            <= 3 => "Доставить редкий предмет или выполнить сложное поручение.",
+            <= 6 => "Сохранить ценный актив или помочь нескольким отделам.",
+            _ => "Выполнить важное поручение командования.",
+        };
     }
 
     private void OnRoleTypeChanged(MindRoleTypeChangedEvent ev, EntitySessionEventArgs _)
     {
         UpdateRoleType();
+        _characterInfo.RequestCharacterInfo();
     }
 
     private void UpdateRoleType()
@@ -219,8 +368,14 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         if (!_prototypeManager.TryIndex(mind.RoleType, out var proto))
             Log.Error($"Player '{_player.LocalSession}' has invalid Role Type '{mind.RoleType}'. Displaying default instead");
 
-        _window.RoleType.Text = Loc.GetString(proto?.Name ?? "role-type-crew-aligned-name");
-        _window.RoleType.FontColorOverride = proto?.Color ?? Color.White;
+        var roles = _ent.System<SharedRoleSystem>();
+        var roleName = roles.GetRoleSubtypeLabel(proto?.Name ?? RoleTypePrototype.FallbackName, mind.Subtype);
+        var roleColor = proto?.Color ?? RoleTypePrototype.FallbackColor;
+
+        _window.RoleHeader.Text = roleName;
+        _window.RoleHeader.FontColorOverride = roleColor;
+        _window.RoleType.Text = roleName;
+        _window.RoleType.FontColorOverride = roleColor;
     }
 
     private void CharacterDetached(EntityUid uid)

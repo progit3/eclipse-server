@@ -929,7 +929,7 @@
         - id: MobGoat
           amount: !type:RangeNumberSelector
             range: 1, 3
-        - id: MobMonkeySyndicateAgent #so lucky
+        - id: MobMonkeyLegionAgent #so lucky
           prob: 0.03
 
 - type: entity

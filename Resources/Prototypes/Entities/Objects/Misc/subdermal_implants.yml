@@ -149,19 +149,19 @@
   parent: BaseSubdermalImplant
   id: RadioImplant
   name: radio implant
-  description: This implant grants access to the Syndicate channel without a headset.
+  description: This implant grants access to the Legion channel without a headset.
   categories: [ HideSpawnMenu ]
   components:
   - type: SubdermalImplant
   - type: RadioImplant
     radioChannels:
-    - Syndicate
+    - Legion
 
 - type: entity
   parent: BaseSubdermalImplant
   id: UplinkImplant
   name: uplink implant
-  description: This implant lets the user access a hidden Syndicate uplink at will.
+  description: This implant lets the user access a hidden Legion uplink at will.
   categories: [ HideSpawnMenu ]
   components:
   - type: SubdermalImplant
@@ -214,7 +214,7 @@
     implantAction: ActionActivateDnaScramblerImplant
     whitelist:
       components:
-      - HumanoidProfile # syndies cant turn hamlet into a human
+      - HumanoidProfile # legions cant turn hamlet into a human
   - type: TriggerOnActivateImplant
   - type: DnaScrambleOnTrigger
     targetUser: true
@@ -361,7 +361,7 @@
   parent: BaseSubdermalImplant
   id: DeathRattleImplant
   name: death rattle implant
-  description: This implant will inform the Syndicate radio channel should the user fall into critical condition or die.
+  description: This implant will inform the Legion radio channel should the user fall into critical condition or die.
   categories: [ HideSpawnMenu ]
   components:
     - type: SubdermalImplant

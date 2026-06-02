@@ -368,7 +368,7 @@
           prob: 0.1
         - id: FoodPacketSusTrash
           prob: 0.1
-        - id: FoodPacketSyndiTrash
+        - id: FoodPacketLegionTrash
           prob: 0.1
         - id: FoodPacketChowMeinTrash
           prob: 0.1

@@ -282,15 +282,15 @@
       grid:
       - 0,0,7,6
 
-#Syndicate
+#Legion
 - type: entity
-  parent: [ClothingBackpack, BaseSyndicateContraband]
-  id: ClothingBackpackSyndicate
-  name: syndicate backpack
+  parent: [ClothingBackpack, BaseLegionContraband]
+  id: ClothingBackpackLegion
+  name: legion backpack
   description:
   components:
   - type: Sprite
-    sprite: Clothing/Back/Backpacks/syndicate.rsi
+    sprite: Clothing/Back/Backpacks/legion.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1
   - type: Storage

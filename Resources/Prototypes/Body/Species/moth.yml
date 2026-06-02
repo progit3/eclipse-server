@@ -4,7 +4,8 @@
   onlyGroupWhitelisted: true
   limits:
     enum.HumanoidVisualLayers.Hair:
-      limit: 0
+      limit: 1
+      onlyGroupWhitelisted: false
       required: false
     enum.HumanoidVisualLayers.FacialHair:
       limit: 0
@@ -249,6 +250,7 @@
   components:
   - type: VisualOrganMarkings
     hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
     - enum.HumanoidVisualLayers.HeadTop
 
 - type: entity

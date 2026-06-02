@@ -81,7 +81,7 @@
     - Security
     - Service
     - Supply
-    - Syndicate
+    - Legion
     globalReceive: true
   - type: Physics
     bodyStatus: InAir

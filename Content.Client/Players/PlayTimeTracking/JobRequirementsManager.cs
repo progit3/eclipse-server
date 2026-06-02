@@ -232,6 +232,11 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
         return _roles.TryGetValue("Overall", out var overallPlaytime) ? overallPlaytime : TimeSpan.Zero;
     }
 
+    public TimeSpan FetchPlaytimeTracker(string tracker)
+    {
+        return _roles.TryGetValue(tracker, out var playtime) ? playtime : TimeSpan.Zero;
+    }
+
     public IEnumerable<KeyValuePair<string, TimeSpan>> FetchPlaytimeByRoles()
     {
         var jobsToMap = _prototypes.EnumeratePrototypes<JobPrototype>();

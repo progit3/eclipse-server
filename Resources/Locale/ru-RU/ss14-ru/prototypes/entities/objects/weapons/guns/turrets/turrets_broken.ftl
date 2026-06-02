@@ -1,2 +1,2 @@
-ent-WeaponTurretSyndicateBroken = сломанная баллистическая турель
+ent-WeaponTurretLegionBroken = сломанная баллистическая турель
     .desc = Автоматическая турель с баллистическим пулемётом.

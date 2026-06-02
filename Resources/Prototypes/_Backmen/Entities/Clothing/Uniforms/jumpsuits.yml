@@ -78,13 +78,13 @@
 - type: entity
   parent: ClothingUniformBase
   id: AgentfoursevenSuit
-  name: Деловой костюм агента синдиката
+  name: Деловой костюм агента легиона
   description: Костюм сделанный по специальному заказу, ранее пренадлежал агенту 47
   components:
   - type: Sprite
-    sprite: _Backmen/Clothing/Uniforms/jumpsuit/syndicatetactic.rsi
+    sprite: _Backmen/Clothing/Uniforms/jumpsuit/legiontactic.rsi
   - type: Clothing
-    sprite: _Backmen/Clothing/Uniforms/jumpsuit/syndicatetactic.rsi
+    sprite: _Backmen/Clothing/Uniforms/jumpsuit/legiontactic.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -310,7 +310,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitSecurityPilot
   name: security pilot jumpsuit
-  description: A jumpsuit specifically for a security pilot. Definitely not in the colors of the Syndicate...
+  description: A jumpsuit specifically for a security pilot. Definitely not in the colors of the Legion...
   components:
     - type: Sprite
       sprite: _Backmen/Clothing/Uniforms/jumpsuit/sec_pilot.rsi

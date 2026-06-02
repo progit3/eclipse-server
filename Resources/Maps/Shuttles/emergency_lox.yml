@@ -3467,7 +3467,7 @@ entities:
     - type: Transform
       pos: -1.5,-6.5
       parent: 670
-- proto: PosterContrabandFreeSyndicateEncryptionKey
+- proto: PosterContrabandFreeLegionEncryptionKey
   entities:
   - uid: 652
     components:

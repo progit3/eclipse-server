@@ -422,17 +422,17 @@
         amount: 4
 
 - type: entity
-  name: syndicate encryption key box
-  parent: [BoxEncryptionKeyPassenger, BaseSyndicateContraband]
-  id: BoxEncryptionKeySyndie
-  description: Two syndicate encryption keys for the price of one. Miniaturized for ease of use.
+  name: legion encryption key box
+  parent: [BoxEncryptionKeyPassenger, BaseLegionContraband]
+  id: BoxEncryptionKeyLegion
+  description: Two legion encryption keys for the price of one. Miniaturized for ease of use.
   components:
   - type: Item
     size: Normal
   - type: EntityTableContainerFill
     containers:
       storagebase:
-        id: EncryptionKeySyndie
+        id: EncryptionKeyLegion
         amount: 2
   - type: Storage
 

@@ -1,15 +1,32 @@
 using Content.Shared.Examine;
+using Content.Shared.DoAfter;
+using Content.Shared.Input;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Inventory;
+using Content.Shared.Storage;
+using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Verbs;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Containers;
+using Robust.Shared.Input.Binding;
+using Robust.Shared.Player;
+using Robust.Shared.Serialization;
 
 namespace Content.Shared.Weapons.Ranged.Systems;
 
 public abstract partial class SharedGunSystem
 {
+    [Dependency] private readonly InventorySystem _inventorySystem = default!;
+    [Dependency] private readonly SharedStorageSystem _storage = default!;
+
+    private static readonly TimeSpan BeltMagazineReloadDelay = TimeSpan.FromSeconds(1);
+
     protected virtual void InitializeMagazine()
     {
+        CommandBinds.Builder
+            .Bind(ContentKeyFunctions.ReloadFromBelt, InputCmdHandler.FromDelegate(HandleReloadFromBelt, handle: false, outsidePrediction: false))
+            .Register<SharedGunSystem>();
+
         SubscribeLocalEvent<MagazineAmmoProviderComponent, MapInitEvent>(OnMagazineMapInit);
         SubscribeLocalEvent<MagazineAmmoProviderComponent, TakeAmmoEvent>(OnMagazineTakeAmmo);
         SubscribeLocalEvent<MagazineAmmoProviderComponent, GetAmmoCountEvent>(OnMagazineAmmoCount);
@@ -18,6 +35,126 @@ public abstract partial class SharedGunSystem
         SubscribeLocalEvent<MagazineAmmoProviderComponent, EntRemovedFromContainerMessage>(OnMagazineSlotChange);
         SubscribeLocalEvent<MagazineAmmoProviderComponent, UseInHandEvent>(OnMagazineUse);
         SubscribeLocalEvent<MagazineAmmoProviderComponent, ExaminedEvent>(OnMagazineExamine);
+        SubscribeLocalEvent<MagazineAmmoProviderComponent, BeltMagazineReloadDoAfterEvent>(OnBeltMagazineReloadDoAfter);
+    }
+
+    public override void Shutdown()
+    {
+        CommandBinds.Unregister<SharedGunSystem>();
+        base.Shutdown();
+    }
+
+    private void HandleReloadFromBelt(ICommonSession? session)
+    {
+        if (session?.AttachedEntity is not { Valid: true } user || !Exists(user))
+            return;
+
+        if (!TryGetGun(user, out var gun) ||
+            !TryComp<MagazineAmmoProviderComponent>(gun, out _) ||
+            !_actionBlockerSystem.CanInteract(user, gun))
+        {
+            return;
+        }
+
+        if (!TryGetBeltStorage(user, out var belt, out var storage) ||
+            !TryFindBeltMagazine(gun, user, (belt, storage), out _))
+        {
+            return;
+        }
+
+        _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
+            user,
+            BeltMagazineReloadDelay,
+            new BeltMagazineReloadDoAfterEvent(),
+            gun,
+            target: belt,
+            used: gun)
+        {
+            BreakOnMove = false,
+            BreakOnDamage = false,
+            NeedHand = true,
+        });
+    }
+
+    private bool TryGetBeltStorage(EntityUid user, out EntityUid belt, out StorageComponent storage)
+    {
+        belt = default;
+        storage = default!;
+
+        if (!_inventorySystem.TryGetSlotEntity(user, "belt", out var beltEnt) ||
+            beltEnt is not { } beltUid ||
+            !TryComp<StorageComponent>(beltUid, out var storageComp))
+        {
+            return false;
+        }
+
+        belt = beltUid;
+        storage = storageComp;
+        return true;
+    }
+
+    private bool TryFindBeltMagazine(
+        EntityUid gun,
+        EntityUid user,
+        Entity<StorageComponent> belt,
+        out EntityUid magazine)
+    {
+        magazine = default;
+
+        if (!_slots.TryGetSlot(gun, MagazineSlot, out var magazineSlot))
+            return false;
+
+        for (var i = belt.Comp.Container.ContainedEntities.Count - 1; i >= 0; i--)
+        {
+            var candidate = belt.Comp.Container.ContainedEntities[i];
+
+            if (!_slots.CanInsert(gun, candidate, user, magazineSlot, swap: true))
+                continue;
+
+            magazine = candidate;
+            return true;
+        }
+
+        return false;
+    }
+
+    private void OnBeltMagazineReloadDoAfter(EntityUid uid, MagazineAmmoProviderComponent component, BeltMagazineReloadDoAfterEvent args)
+    {
+        if (args.Handled || args.Cancelled)
+            return;
+
+        args.Handled = true;
+
+        if (!TryGetGun(args.User, out var gun) ||
+            gun.Owner != uid ||
+            args.Target is not { Valid: true } belt ||
+            !TryComp<StorageComponent>(belt, out var storage) ||
+            !_slots.TryGetSlot(uid, MagazineSlot, out var magazineSlot) ||
+            !TryFindBeltMagazine(uid, args.User, (belt, storage), out var newMagazine))
+        {
+            return;
+        }
+
+        if (!Containers.Remove(newMagazine, storage.Container))
+            return;
+
+        var oldMagazine = magazineSlot.Item;
+        if (oldMagazine != null)
+        {
+            if (!_slots.TryEject(uid, magazineSlot, args.User, out var ejected, excludeUserAudio: true) ||
+                !_storage.Insert(belt, ejected.Value, out _, args.User, storage, playSound: false))
+            {
+                _storage.Insert(belt, newMagazine, out _, args.User, storage, playSound: false);
+                return;
+            }
+        }
+
+        if (!_slots.TryInsert(uid, magazineSlot, newMagazine, args.User, excludeUserAudio: true))
+        {
+            _storage.Insert(belt, newMagazine, out _, args.User, storage, playSound: false);
+            if (oldMagazine != null)
+                _slots.TryInsert(uid, magazineSlot, oldMagazine.Value, args.User, excludeUserAudio: true);
+        }
     }
 
     private void OnMagazineMapInit(Entity<MagazineAmmoProviderComponent> ent, ref MapInitEvent args)
@@ -195,4 +332,7 @@ public abstract partial class SharedGunSystem
 
         _slots.TryEject(uid, MagazineSlot, null, out var a, excludeUserAudio: true);
     }
+
+    [Serializable, NetSerializable]
+    private sealed partial class BeltMagazineReloadDoAfterEvent : SimpleDoAfterEvent;
 }

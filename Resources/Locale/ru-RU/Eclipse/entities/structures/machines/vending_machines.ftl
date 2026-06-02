@@ -10,5 +10,5 @@ ent-LPPUnderpantsMat = ТрусоМат
 ent-CaptainDrobe = КапитанШкаф
    .desc = Стильная униформа для сильного лидера!
 
-ent-VendingMachineInteqDrobe = ИнтекШкаф
+ent-VendingMachineInteqDrobe = Шкаф Легиона пепла
     .desc = Элитные комплекты одежды для различных операций.

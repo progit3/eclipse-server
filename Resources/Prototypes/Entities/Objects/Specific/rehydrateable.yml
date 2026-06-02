@@ -198,7 +198,7 @@
 # It inherits FoodComponent from PlushieCarp, but is de-facto inedible
 # PlushieCarp has requiresSpecialDigestion:true, and this one is not whitelisted anywhere, so it behaves like it's not edible
 - type: entity
-  parent: [PlushieCarp, RehydratableItem, BaseSyndicateContraband]
+  parent: [PlushieCarp, RehydratableItem, BaseLegionContraband]
   id: DehydratedSpaceCarp
   name: dehydrated space carp
   description: Looks like a plush toy carp, but just add water and it becomes a real-life space carp!
@@ -241,8 +241,8 @@
 
 - type: entity
   parent: MonkeyCube
-  id: SyndicateSponge
-  suffix: Syndicate
+  id: LegionSponge
+  suffix: Legion
   components:
   - type: Rehydratable
     possibleSpawns:

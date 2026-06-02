@@ -769,67 +769,67 @@
     clothingPrototype: ClothingHeadHatHoodWinterWarden
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseSyndicateContraband]
-  id: ClothingOuterWinterSyndieCap
-  name: syndicate's winter coat
-  description: "The syndicate's winter coat is made of durable fabric, with gilded patterns, and coarse wool."
+  parent: [ClothingOuterWinterCoatToggleable, BaseLegionContraband]
+  id: ClothingOuterWinterLegionCap
+  name: legion's winter coat
+  description: "The legion's winter coat is made of durable fabric, with gilded patterns, and coarse wool."
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
-    - state: SYNDIECAP-icon
+    - state: LEGIONCAP-icon
   - type: Item
     inhandVisuals:
       left:
-      - state: SYNDIECAP-inhand-left
+      - state: LEGIONCAP-inhand-left
       right:
-      - state: SYNDIECAP-inhand-right
+      - state: LEGIONCAP-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
       outerClothing:
-      - state: SYNDIECAP-equipped-OUTERCLOTHING
+      - state: LEGIONCAP-equipped-OUTERCLOTHING
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterSyndie
+    clothingPrototype: ClothingHeadHatHoodWinterLegion
 
 ##############################################################
 - type: entity
-  parent: [ BaseSyndicateContraband, ClothingOuterWinterWarden ]
-  id: ClothingOuterWinterSyndieCapArmored
-  name: syndicate's armored winter coat
-  description: "The syndicate's armored winter coat is made of durable fabric, with gilded patterns, and coarse wool."
+  parent: [ BaseLegionContraband, ClothingOuterWinterWarden ]
+  id: ClothingOuterWinterLegionCapArmored
+  name: legion's armored winter coat
+  description: "The legion's armored winter coat is made of durable fabric, with gilded patterns, and coarse wool."
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/WinterCoats/syndicate/coatsyndiecaparmored.rsi
+    sprite: Clothing/OuterClothing/WinterCoats/legion/coatlegioncaparmored.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/WinterCoats/syndicate/coatsyndiecaparmored.rsi
+    sprite: Clothing/OuterClothing/WinterCoats/legion/coatlegioncaparmored.rsi
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterSyndie
+    clothingPrototype: ClothingHeadHatHoodWinterLegion
 ##############################################################
 
 - type: entity
-  parent: [ClothingOuterWinterCoatToggleable, BaseSyndicateContraband]
-  id: ClothingOuterWinterSyndie
-  name: syndicate's winter coat
-  description: Insulated winter coat, looks like a merch from "Syndieland".
+  parent: [ClothingOuterWinterCoatToggleable, BaseLegionContraband]
+  id: ClothingOuterWinterLegion
+  name: legion's winter coat
+  description: Insulated winter coat, looks like a merch from "Legionland".
   components:
   - type: Sprite
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     layers:
-    - state: SYNDIE-icon
+    - state: LEGION-icon
   - type: Item
     inhandVisuals:
       left:
-      - state: SYNDIE-inhand-left
+      - state: LEGION-inhand-left
       right:
-      - state: SYNDIE-inhand-right
+      - state: LEGION-inhand-right
   - type: Clothing
     sprite: Clothing/OuterClothing/WinterCoats/coat.rsi
     clothingVisuals:
       outerClothing:
-      - state: SYNDIE-equipped-OUTERCLOTHING
+      - state: LEGION-equipped-OUTERCLOTHING
   - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHatHoodWinterSyndie
+    clothingPrototype: ClothingHeadHatHoodWinterLegion
 
 - type: entity
   parent: ClothingOuterWinterCoat

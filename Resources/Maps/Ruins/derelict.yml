@@ -2654,7 +2654,7 @@ entities:
     - type: Transform
       pos: 26.373707,46.90609
       parent: 2
-- proto: ClothingHeadHelmetSwatSyndicate
+- proto: ClothingHeadHelmetSwatLegion
   entities:
   - uid: 2364
     components:
@@ -4461,7 +4461,7 @@ entities:
     - type: Transform
       pos: 5.5,24.5
       parent: 2
-- proto: PosterContrabandSyndicateRecruitment
+- proto: PosterContrabandLegionRecruitment
   entities:
   - uid: 2365
     components:
@@ -5762,7 +5762,7 @@ entities:
     - type: Transform
       pos: 11.434327,43.308563
       parent: 2
-- proto: ToolboxSyndicate
+- proto: ToolboxLegion
   entities:
   - uid: 2191
     components:

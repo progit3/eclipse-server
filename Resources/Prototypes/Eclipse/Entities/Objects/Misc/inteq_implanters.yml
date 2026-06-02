@@ -1,7 +1,7 @@
 - type: entity
-  id: BaseImplantOnlyImplanterInteQ
-  parent: [BaseImplantOnlyImplanter, BaseInteQContraband]
-  name: InteQ implanter
+  id: BaseImplantOnlyImplanterAshLegion
+  parent: [BaseImplantOnlyImplanter, BaseAshLegionContraband]
+  name: AshLegion implanter
   description: A compact disposable syringe exclusively designed for the injection of subdermal implants. Make sure to scrub it with soap or a rag to remove residual DNA after use!
   abstract: true
   components:
@@ -31,97 +31,97 @@
       tags: []
 
 - type: entity
-  id: StorageImplanterInteQ
+  id: StorageImplanterAshLegion
   name: storage implanter
-  parent: BaseImplantOnlyImplanterInteQ
+  parent: BaseImplantOnlyImplanterAshLegion
   components:
     - type: Implanter
       implant: StorageImplant
 
 - type: entity
-  id: FreedomImplanterInteQ
+  id: FreedomImplanterAshLegion
   name: freedom implanter
-  parent: BaseImplantOnlyImplanterInteQ
+  parent: BaseImplantOnlyImplanterAshLegion
   components:
     - type: Implanter
       implant: FreedomImplant
 
 - type: entity
-  id: RadioImplanterInteQ
-  name: inteq radio implanter
-  parent: BaseImplantOnlyImplanterInteQ
+  id: RadioImplanterAshLegion
+  name: ashlegion radio implanter
+  parent: BaseImplantOnlyImplanterAshLegion
   components:
   - type: Implanter
-    implant: RadioImplantInteQ
+    implant: RadioImplantAshLegion
 
 - type: entity
-  id: EmpImplanterInteQ
+  id: EmpImplanterAshLegion
   name: EMP implanter
-  parent: BaseImplantOnlyImplanterInteQ
+  parent: BaseImplantOnlyImplanterAshLegion
   components:
     - type: Implanter
       implant: EmpImplant
 
 - type: entity
-  id: ScramImplanterInteQ
+  id: ScramImplanterAshLegion
   name: scram implanter
-  parent: BaseImplantOnlyImplanterInteQ
+  parent: BaseImplantOnlyImplanterAshLegion
   components:
     - type: Implanter
       implant: ScramImplant
 
 - type: entity
-  id: DnaScramblerImplanterInteQ
+  id: DnaScramblerImplanterAshLegion
   name: DNA scrambler implanter
-  parent: BaseImplantOnlyImplanterInteQ
+  parent: BaseImplantOnlyImplanterAshLegion
   components:
     - type: Implanter
       implant: DnaScramblerImplant
 
 - type: entity
-  id: ChameleonControllerImplanterInteQ
+  id: ChameleonControllerImplanterAshLegion
   name: chameleon controller implanter
-  parent: BaseImplantOnlyImplanterInteQ
+  parent: BaseImplantOnlyImplanterAshLegion
   components:
   - type: Implanter
     implant: ChameleonControllerImplant
 
 - type: entity
-  id: MicroBombImplanterInteQ
+  id: MicroBombImplanterAshLegion
   name: micro-bomb implanter
-  parent: BaseImplantOnlyImplanterInteQ
+  parent: BaseImplantOnlyImplanterAshLegion
   components:
     - type: Implanter
       implant: MicroBombImplant
 
 - type: entity
-  id: MacroBombImplanterInteQ
+  id: MacroBombImplanterAshLegion
   name: macro-bomb implanter
-  parent: BaseImplantOnlyImplanterInteQ
+  parent: BaseImplantOnlyImplanterAshLegion
   components:
     - type: Implanter
       implant: MacroBombImplant
 
 - type: entity
-  id: DeathRattleImplanterInteQ
+  id: DeathRattleImplanterAshLegion
   name: death rattle implanter
-  parent: BaseImplantOnlyImplanterInteQ
+  parent: BaseImplantOnlyImplanterAshLegion
   components:
     - type: Implanter
-      implant: DeathRattleImplantInteQ
+      implant: DeathRattleImplantAshLegion
 
 - type: entity
-  id: DeathAcidifierImplanterInteQ
+  id: DeathAcidifierImplanterAshLegion
   name: death acidifier implanter
-  parent: BaseImplantOnlyImplanterInteQ
+  parent: BaseImplantOnlyImplanterAshLegion
   components:
   - type: Implanter
     implant: DeathAcidifierImplant
 
 - type: entity
-  id: FakeMindShieldImplanterInteQ
+  id: FakeMindShieldImplanterAshLegion
   name: fake mindshield implanter
-  parent: BaseImplantOnlyImplanterInteQ
+  parent: BaseImplantOnlyImplanterAshLegion
   components:
   - type: Implanter
     implant: FakeMindShieldImplant

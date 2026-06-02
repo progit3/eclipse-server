@@ -17,54 +17,54 @@
     back:
     - BoxSurvival
 
-# Syndicate Operative Outfit - Civilian
+# Legion Operative Outfit - Civilian
 - type: startingGear
-  id: SyndicateOperativeGearCivilian
+  id: LegionOperativeGearCivilian
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSyndieFormal
-    back: ClothingBackpackDuffelSyndicate
+    jumpsuit: ClothingUniformJumpsuitLegionFormal
+    back: ClothingBackpackDuffelLegion
     shoes: ClothingShoesBootsCombat
     gloves: ClothingHandsGlovesColorBlack
-    id: SyndiPDA
-    ears: ClothingHeadsetAltSyndicate
+    id: LegionPDA
+    ears: ClothingHeadsetAltLegion
 
-# Syndicate Footsoldier Gear - No Headset
+# Legion Footsoldier Gear - No Headset
 - type: startingGear
-  id: SyndicateFootsoldierGearRuin
+  id: LegionFootsoldierGearRuin
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
-    head: ClothingHeadHelmetSwatSyndicate
-    mask: ClothingMaskGasSyndicate
+    head: ClothingHeadHelmetSwatLegion
+    mask: ClothingMaskGasLegion
     outerClothing: ClothingOuterArmorBasic
     gloves: ClothingHandsGlovesCombat
     back: ClothingBackpack
     shoes: ClothingShoesBootsCombat
-    id: SyndiPDA
+    id: LegionPDA
   storage:
     back:
     - BoxSurvival
 
-# Syndicate Footsoldier Gear
+# Legion Footsoldier Gear
 - type: startingGear
-  id: SyndicateFootsoldierGear
-  parent: SyndicateOperativeGearCivilian
+  id: LegionFootsoldierGear
+  parent: LegionOperativeGearCivilian
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
-    head: ClothingHeadHelmetSwatSyndicate
-    eyes: ClothingEyesHudSyndicate
+    head: ClothingHeadHelmetSwatLegion
+    eyes: ClothingEyesHudLegion
     outerClothing: ClothingOuterArmorBasic
     gloves: ClothingHandsGlovesCombat
     back: ClothingBackpack
     shoes: ClothingShoesBootsCombatFilled
   storage:
     back:
-    - BoxSurvivalSyndicate
+    - BoxSurvivalLegion
 
 - type: startingGear
-  id: SyndicateFootsoldierTeamLeaderGear
-  parent: SyndicateFootsoldierGear
+  id: LegionFootsoldierTeamLeaderGear
+  parent: LegionFootsoldierGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSyndieFormal
+    jumpsuit: ClothingUniformJumpsuitLegionFormal
     head: ClothingHeadHatOutlawHat
     outerClothing: ClothingOuterArmorBasicSlim
     back: ClothingBackpackSatchel

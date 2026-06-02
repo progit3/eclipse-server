@@ -42,6 +42,8 @@ namespace Content.Server.Ghost
 {
     public sealed class GhostSystem : SharedGhostSystem
     {
+        private static readonly TimeSpan RespawnCooldown = TimeSpan.FromSeconds(350);
+
         [Dependency] private readonly SharedActionsSystem _actions = default!;
         [Dependency] private readonly IAdminLogManager _adminLog = default!;
         [Dependency] private readonly SharedEyeSystem _eye = default!;
@@ -93,6 +95,7 @@ namespace Content.Server.Ghost
 
             SubscribeNetworkEvent<GhostWarpsRequestEvent>(OnGhostWarpsRequest);
             SubscribeNetworkEvent<GhostReturnToBodyRequest>(OnGhostReturnToBodyRequest);
+            SubscribeNetworkEvent<GhostRespawnRequest>(OnGhostRespawnRequest);
             SubscribeNetworkEvent<GhostWarpToTargetRequestEvent>(OnGhostWarpToTargetRequest);
             SubscribeNetworkEvent<GhostnadoRequestEvent>(OnGhostnadoRequest);
 
@@ -273,6 +276,31 @@ namespace Content.Server.Ghost
             }
 
             _mind.UnVisit(actor.PlayerSession);
+        }
+
+        private void OnGhostRespawnRequest(GhostRespawnRequest msg, EntitySessionEventArgs args)
+        {
+            if (args.SenderSession.AttachedEntity is not { Valid: true } attached
+                || !_ghostQuery.TryComp(attached, out var ghost)
+                || !TryComp(attached, out ActorComponent? actor)
+                || ghost.CanGhostInteract)
+            {
+                Log.Warning($"User {args.SenderSession.Name} sent an invalid {nameof(GhostRespawnRequest)}");
+                return;
+            }
+
+            var remaining = ghost.TimeOfDeath + RespawnCooldown - _gameTiming.RealTime;
+            if (remaining > TimeSpan.Zero)
+            {
+                _popup.PopupEntity(Loc.GetString(
+                    "ghost-respawn-cooldown",
+                    ("seconds", Math.Ceiling(remaining.TotalSeconds))),
+                    attached,
+                    attached);
+                return;
+            }
+
+            _gameTicker.Respawn(actor.PlayerSession);
         }
 
         #region Warp

@@ -26,10 +26,10 @@
   id: HighlyIllegal
   examineText: contraband-examine-text-Highly-Illegal
 
-# This is clear syndicate contraband and is illegal to own IC.
+# This is clear legion contraband and is illegal to own IC.
 - type: contrabandSeverity
-  id: Syndicate
-  examineText: contraband-examine-text-Syndicate
+  id: Legion
+  examineText: contraband-examine-text-Legion
 
 # This is magical contraband and not permitted to be used IC.
 - type: contrabandSeverity

@@ -2,7 +2,7 @@
   "version": 1,
   "license": "CC-BY-SA-3.0",
   "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/f8f4aeda930fcd0805ca4cc76d9bc9412a5b3428",
-  "copyright": "syndie changed by lzk228",
+  "copyright": "legion changed by lzk228",
   "size": {
     "x": 32,
     "y": 32
@@ -69,19 +69,19 @@
       "name": "omega-4"
     },
     {
-      "name": "syndie-1"
+      "name": "legion-1"
     },
     {
-      "name": "syndie-2"
+      "name": "legion-2"
     },
     {
-      "name": "syndie-3"
+      "name": "legion-3"
     },
     {
-      "name": "syndie-4"
+      "name": "legion-4"
     },
     {
-      "name": "syndie-soaplet"
+      "name": "legion-soaplet"
     },
     {
       "name": "inhand-left",
@@ -124,11 +124,11 @@
       "directions": 4
     },
     {
-      "name": "syndie-inhand-left",
+      "name": "legion-inhand-left",
       "directions": 4
     },
     {
-      "name": "syndie-inhand-right",
+      "name": "legion-inhand-right",
       "directions": 4
     }
   ]

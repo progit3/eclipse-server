@@ -41,6 +41,12 @@ public sealed partial class MainMenuControl : Control
     public const string StyleIdentifierCompactText = "mainMenuCompactText";
     public const string StyleIdentifierCompactSubtle = "mainMenuCompactSubtle";
     public const string StyleIdentifierCompactHeaderGold = "mainMenuCompactHeaderGold";
+    public const string StyleIdentifierRoadmapTitle = "mainMenuRoadmapTitle";
+    public const string StyleIdentifierRoadmapSubtitle = "mainMenuRoadmapSubtitle";
+    public const string StyleIdentifierRoadmapNumber = "mainMenuRoadmapNumber";
+    public const string StyleIdentifierRoadmapItemTitle = "mainMenuRoadmapItemTitle";
+    public const string StyleIdentifierRoadmapDot = "mainMenuRoadmapDot";
+    public const string StyleIdentifierRoadmapDotActive = "mainMenuRoadmapDotActive";
 
     public MainMenuControl(IResourceCache resCache, IConfigurationManager configMan)
     {

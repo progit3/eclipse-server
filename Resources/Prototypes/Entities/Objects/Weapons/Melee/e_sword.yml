@@ -75,7 +75,7 @@
 
 - type: entity
   name: energy sword
-  parent: [BaseMeleeWeaponEnergy, BaseSyndicateContraband]
+  parent: [BaseMeleeWeaponEnergy, BaseLegionContraband]
   id: EnergySword
   description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
   components:
@@ -95,7 +95,7 @@
 
 - type: entity
   name: energy dagger
-  parent: [BaseMeleeWeaponEnergy, BaseSyndicateContraband]
+  parent: [BaseMeleeWeaponEnergy, BaseLegionContraband]
   id: EnergyDaggerLoud
   description: A not as loud and dangerous dagger with a beam made of pure, concentrated plasma. This one is completely undisguised.
   components:
@@ -196,7 +196,7 @@
     - type: Execution
       doAfterDuration: 4.0
     - type: Contraband
-      severity: Syndicate
+      severity: Legion
   - type: Sprite
     sprite: Objects/Weapons/Melee/e_dagger.rsi
     layers:
@@ -237,7 +237,7 @@
     - Write
 
 - type: entity
-  parent: [BaseItem, BaseSyndicateContraband]
+  parent: [BaseItem, BaseLegionContraband]
   id: EnergyDaggerBox
   name: e-dagger box
   suffix: E-Dagger
@@ -280,9 +280,9 @@
 
 - type: entity
   name: double-bladed energy sword
-  parent: [BaseMeleeWeaponEnergy, BaseSyndicateContraband]
+  parent: [BaseMeleeWeaponEnergy, BaseLegionContraband]
   id: EnergySwordDouble
-  description: Syndicate Command Interns thought that having one blade on the energy sword was not enough. This can be stored in pockets.
+  description: Legion Command Interns thought that having one blade on the energy sword was not enough. This can be stored in pockets.
   components:
   - type: ItemToggle
     onUse: false # wielding events control it instead
@@ -402,13 +402,13 @@
   parent: EnergySword
   id: CyborgEnergySword
   suffix: For Borgs
-  description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Specially designed for syndicate cyborgs.
+  description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Specially designed for legion cyborgs.
 
 - type: entity
   parent: EnergySwordDouble
   id: CyborgEnergySwordDouble # why is this invalid if ID is BorgEnergySwordDouble
   suffix: One-Handed, For Borgs
-  description: Syndicate Command Interns thought that having one blade on the energy sword was not enough. Specially designed for syndicate cyborgs.
+  description: Legion Command Interns thought that having one blade on the energy sword was not enough. Specially designed for legion cyborgs.
   components: # could add energy-draining like the L6C
   - type: Wieldable
     freeHandsRequired: 0 # because borg has no off-hand to wield with.  Without this, it will be unable to activate the esword

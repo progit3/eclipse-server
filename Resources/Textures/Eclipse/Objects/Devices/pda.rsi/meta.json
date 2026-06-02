@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "InteQ PDA by nikitok007 (Discord), other PDA taken from tgstation and resprited for Nanotrasen Navy by Agronomist-NN (GitHub)",
+  "copyright": "AshLegion PDA by nikitok007 (Discord), other PDA taken from tgstation and resprited for Nanotrasen Navy by Agronomist-NN (GitHub)",
   "size": {
     "x": 32,
     "y": 32
@@ -28,13 +28,13 @@
       "name": "light_overlay_wide"
     },
     {
-      "name": "inteq-base"
+      "name": "ashlegion-base"
     },
     {
-      "name": "inteq-med"
+      "name": "ashlegion-med"
     },
     {
-      "name": "inteq-lead"
+      "name": "ashlegion-lead"
     },
     {
       "name": "equipped-BELT",
@@ -67,6 +67,15 @@
     },
     {
       "name": "pda-nanotrasen-navy-captain"
+    },
+    {
+      "name": "inteq-base"
+    },
+    {
+      "name": "inteq-lead"
+    },
+    {
+      "name": "inteq-med"
     }
   ]
 }

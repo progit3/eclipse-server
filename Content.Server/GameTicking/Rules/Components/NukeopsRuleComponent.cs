@@ -93,13 +93,19 @@ public sealed partial class NukeopsRuleComponent : Component
     public EntityUid? TargetStation;
 
     [DataField]
-    public ProtoId<NpcFactionPrototype> Faction = "Syndicate";
+    public ProtoId<NpcFactionPrototype> Faction = "Legion";
 
     /// <summary>
     ///     Path to antagonist alert sound.
     /// </summary>
     [DataField]
     public SoundSpecifier GreetSoundNotification = new SoundPathSpecifier("/Audio/Ambience/Antag/nukeops_start.ogg");
+
+    [DataField]
+    public string WelcomeText = "nukeops-welcome";
+
+    [DataField]
+    public string BriefingText = "nukeops-briefing";
 }
 
 public enum WinType : byte

@@ -345,7 +345,7 @@ public abstract partial class SharedGunSystem : EntitySystem
             return false;
         }
 
-        var fromCoordinates = Transform(user).Coordinates;
+        var fromCoordinates = GetShootOrigin(gun, user);
         // Remove ammo
         var ev = new TakeAmmoEvent(shots, [], fromCoordinates, user);
 
@@ -418,6 +418,21 @@ public abstract partial class SharedGunSystem : EntitySystem
         if (shooterEv.Push)
             CauseImpulse(fromCoordinates, toCoordinates.Value, (user, userPhysics));
         return true;
+    }
+
+    private EntityCoordinates GetShootOrigin(Entity<GunComponent> gun, EntityUid user)
+    {
+        if (!TryComp(gun.Owner, out TransformComponent? gunXform))
+            return Transform(user).Coordinates;
+
+        var gunMap = TransformSystem.GetMapCoordinates((gun.Owner, gunXform));
+
+        if (gunMap.MapId == MapId.Nullspace || !gunMap.Position.IsValid())
+            return Transform(user).Coordinates;
+
+        return MapManager.TryFindGridAt(gunMap, out var gridUid, out _)
+            ? TransformSystem.ToCoordinates(gridUid, gunMap)
+            : TransformSystem.ToCoordinates(gunMap);
     }
 
     public void Shoot(

@@ -1,0 +1,14 @@
+- type: entity
+  name: ashlegion encryption key box
+  parent: [BoxEncryptionKeyPassenger, BaseAshLegionContraband]
+  id: BoxEncryptionKeyAshLegion
+  description: Two ashlegion encryption keys for the price of one. Miniaturized for ease of use.
+  components:
+  - type: Item
+    size: Normal
+  - type: EntityTableContainerFill
+    containers:
+      storagebase:
+        id: EncryptionKeyAshLegion
+        amount: 2
+  - type: Storage

@@ -44,7 +44,7 @@
     - Silicon
     tags:
     - NuclearOperative
-    - SyndicateAgent
+    - LegionAgent
     - CentralCommand
   - type: UserInterface
     interfaces:

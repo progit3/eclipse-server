@@ -476,7 +476,7 @@
             ]
         },
         {
-            "name": "syndibot0",
+            "name": "legionbot0",
             "delays": [
                 [
                     0.1,
@@ -504,13 +504,13 @@
             ]
         },
         {
-            "name": "syndibot1"
+            "name": "legionbot1"
         },
         {
-            "name": "syndibot2"
+            "name": "legionbot2"
         },
         {
-            "name": "syndibot3",
+            "name": "legionbot3",
             "delays": [
                 [
                     0.1,

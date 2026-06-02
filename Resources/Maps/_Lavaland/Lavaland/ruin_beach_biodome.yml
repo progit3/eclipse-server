@@ -1660,7 +1660,7 @@ entities:
     - type: Transform
       pos: 6.353715,21.540861
       parent: 1
-- proto: ClothingHeadHatSyndie
+- proto: ClothingHeadHatLegion
   entities:
   - uid: 214
     components:
@@ -3395,7 +3395,7 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: TowelColorSyndicate
+- proto: TowelColorLegion
   entities:
   - uid: 488
     components:

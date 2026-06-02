@@ -121,23 +121,23 @@
     residueColor: residue-brown
 
 - type: entity
-  parent: [BaseSoap, BaseSyndicateContraband]
-  id: SoapSyndie
+  parent: [BaseSoap, BaseLegionContraband]
+  id: SoapLegion
   description: An untrustworthy bar of soap. Smells of fear.
   components:
   - type: Sprite
     layers:
-    - state: syndie-4
+    - state: legion-4
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: SolutionContainerVisuals
-    fillBaseName: syndie-
+    fillBaseName: legion-
   - type: Slippery
     staminaDamage: 50
     slipData:
       knockdownTime: 3
       launchForwardsMultiplier: 3
   - type: Item
-    heldPrefix: syndie
+    heldPrefix: legion
   - type: FlavorProfile
     flavors:
       - clean
@@ -151,9 +151,9 @@
 
 - type: entity
   parent: BaseSoap
-  id: SoapletSyndie
+  id: SoapletLegion
   name: soaplet
-  description: A tiny piece of syndicate soap.
+  description: A tiny piece of legion soap.
   categories: [ HideSpawnMenu ]
   components:
   - type: SolutionContainerManager
@@ -167,13 +167,13 @@
     maxFillLevels: 0
   - type: Sprite
     layers:
-    - state: syndie-soaplet
+    - state: legion-soaplet
   - type: Slippery
   - type: StepTrigger
     intersectRatio: 0.04
   - type: TriggerOnStepTrigger
   - type: Item
-    heldPrefix: syndie
+    heldPrefix: legion
   - type: Fixtures
     fixtures:
       slips:

@@ -794,9 +794,9 @@
     price: 100
 
 - type: entity
-  parent: [WeaponPistolCHIMP, BaseSyndicateContraband]
+  parent: [WeaponPistolCHIMP, BaseLegionContraband]
   id: WeaponPistolCHIMPUpgraded
-  suffix: Syndicate
+  suffix: Legion
   components:
   - type: BatteryWeaponFireModes
     fireModes:

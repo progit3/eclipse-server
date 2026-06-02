@@ -1,1 +1,1 @@
-ent-StatusEffectRadiationProtection = защита от радиации
+ent-StatusEffectRadiationProtection = защита от радиации

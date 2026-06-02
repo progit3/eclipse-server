@@ -2,7 +2,7 @@
   id: Nukeops
   name: roles-antag-nuclear-operative-name
   antagonist: true
-  setPreference: true
+  setPreference: false
   objective: roles-antag-nuclear-operative-objective
   requirements:
   - !type:OverallPlaytimeRequirement
@@ -13,7 +13,7 @@
   id: NukeopsMedic
   name: roles-antag-nuclear-operative-agent-name
   antagonist: true
-  setPreference: true
+  setPreference: false
   objective: roles-antag-nuclear-operative-agent-objective
   requirements:
   - !type:OverallPlaytimeRequirement
@@ -27,7 +27,7 @@
   id: NukeopsCommander
   name: roles-antag-nuclear-operative-commander-name
   antagonist: true
-  setPreference: true
+  setPreference: false
   objective: roles-antag-nuclear-operative-commander-objective
   requirements:
   - !type:OverallPlaytimeRequirement
@@ -39,79 +39,79 @@
   guides: [ NuclearOperatives ]
 
 - type: startingGear
-  id: SyndicateOperativeGearFullNoUplink
+  id: LegionOperativeGearFullNoUplink
   equipment:
     jumpsuit: ClothingUniformJumpsuitOperative
-    back: ClothingBackpackDuffelSyndicate
-    mask: ClothingMaskGasSyndicate
-    eyes: ClothingEyesHudSyndicate
-    ears: ClothingHeadsetAltSyndicate
+    back: ClothingBackpackDuffelLegion
+    mask: ClothingMaskGasLegion
+    eyes: ClothingEyesHudLegion
+    ears: ClothingHeadsetAltLegion
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitSyndie
+    outerClothing: ClothingOuterHardsuitLegion
     shoes: ClothingShoesBootsCombatFilled
-    id: SyndiOperativePDA
+    id: LegionOperativePDA
     pocket2: PlushieCarp
     belt: ClothingBeltMilitaryWebbing
   storage:
     back:
     - WeaponPistolViper
-    - PinpointerSyndicateNuclear
+    - PinpointerLegionNuclear
     - DeathAcidifierImplanter
 
 #Nuclear Operative Gear
 - type: startingGear
-  id: SyndicateOperativeGearFull
-  parent: SyndicateOperativeGearFullNoUplink
+  id: LegionOperativeGearFull
+  parent: LegionOperativeGearFullNoUplink
   equipment:
     pocket2: BaseUplinkRadio40TC
 
 - type: chameleonOutfit
   id: NukeopsOutfit
   name: roles-antag-nuclear-operative-name
-  startingGear: SyndicateOperativeGearFullNoUplink
-  icon: "JobIconSyndicateOperative"
+  startingGear: LegionOperativeGearFullNoUplink
+  icon: "JobIconLegionOperative"
   equipment:
-    head: ClothingHeadHelmetHardsuitSyndie
-    neck: ClothingNeckScarfStripedSyndieRed
+    head: ClothingHeadHelmetHardsuitLegion
+    neck: ClothingNeckScarfStripedLegionRed
 
 #Nuclear Operative Commander Gear
 - type: startingGear
-  id: SyndicateCommanderGearFull
-  parent: SyndicateOperativeGearFull
+  id: LegionCommanderGearFull
+  parent: LegionOperativeGearFull
   equipment:
-    id: SyndiCommanderPDA
-    neck: SyndicateWhistle
-    outerClothing: ClothingOuterHardsuitSyndieCommander
+    id: LegionCommanderPDA
+    neck: LegionWhistle
+    outerClothing: ClothingOuterHardsuitLegionCommander
   inhand:
   - NukeOpsDeclarationOfWar
 
 - type: chameleonOutfit
   id: NukeopsCommanderOutfit
   name: roles-antag-nuclear-operative-commander-name
-  startingGear: SyndicateCommanderGearFull
-  icon: "JobIconSyndicateCommander"
+  startingGear: LegionCommanderGearFull
+  icon: "JobIconLegionCommander"
   equipment:
-    head: ClothingHeadHelmetHardsuitSyndieCommander
-    neck: ClothingNeckScarfStripedSyndieGreen
+    head: ClothingHeadHelmetHardsuitLegionCommander
+    neck: ClothingNeckScarfStripedLegionGreen
 
 #Nuclear Operative Medic Gear
 - type: startingGear
-  id: SyndicateOperativeMedicFull
-  parent: SyndicateOperativeGearFull
+  id: LegionOperativeMedicFull
+  parent: LegionOperativeGearFull
   equipment:
-    eyes: ClothingEyesHudSyndicateAgent
-    outerClothing: ClothingOuterHardsuitSyndieMedic
-    shoes: ClothingShoesBootsMagSyndie
-    id: SyndiCorpsmanPDA
+    eyes: ClothingEyesHudLegionAgent
+    outerClothing: ClothingOuterHardsuitLegionMedic
+    shoes: ClothingShoesBootsMagLegion
+    id: LegionCorpsmanPDA
     belt: ClothingBeltMilitaryWebbingMedFilled
   storage:
     back:
-    - SyndiHypo
+    - LegionHypo
     - SawAdvanced
     - Cautery
     - CombatKnife
     - WeaponPistolViper
-    - PinpointerSyndicateNuclear
+    - PinpointerLegionNuclear
     - HandheldHealthAnalyzer
     - CombatMedipen
     - DeathAcidifierImplanter
@@ -119,15 +119,15 @@
 - type: chameleonOutfit
   id: NukeopsMedicOutfit
   name: roles-antag-nuclear-operative-agent-name
-  startingGear: SyndicateOperativeMedicFull
-  icon: "JobIconSyndicateCorpsman"
+  startingGear: LegionOperativeMedicFull
+  icon: "JobIconLegionCorpsman"
   equipment:
-    head: ClothingHeadHelmetHardsuitSyndieMedic
+    head: ClothingHeadHelmetHardsuitLegionMedic
     neck: ClothingNeckScarfStripedLightBlue
 
 #Lone Operative Gear
 - type: startingGear
-  id: SyndicateLoneOperativeGearFull
-  parent: SyndicateOperativeGearFull
+  id: LegionLoneOperativeGearFull
+  parent: LegionOperativeGearFull
   equipment:
     pocket2: BaseUplinkRadio60TC

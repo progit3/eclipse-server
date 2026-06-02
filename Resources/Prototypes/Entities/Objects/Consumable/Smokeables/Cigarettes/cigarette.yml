@@ -69,8 +69,8 @@
       - Burnt
 
 - type: entity
-  id: CigaretteSyndicate
-  suffix: syndicate
+  id: CigaretteLegion
+  suffix: legion
   parent: Cigarette
   name: cigarette
   components:

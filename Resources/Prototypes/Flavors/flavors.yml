@@ -470,9 +470,9 @@
   description: flavor-complex-cheap-noodles
 
 - type: flavor
-  id: syndicakes
+  id: legioncakes
   flavorType: Complex
-  description: flavor-complex-syndi-cakes
+  description: flavor-complex-legion-cakes
 
 - type: flavor
   id: susjerky
@@ -860,9 +860,9 @@
   description: flavor-complex-singulo
 
 - type: flavor
-  id: syndiebomb
+  id: legionbomb
   flavorType: Complex
-  description: flavor-complex-syndie-bomb
+  description: flavor-complex-legion-bomb
 
 - type: flavor
   id: tequilasunrise

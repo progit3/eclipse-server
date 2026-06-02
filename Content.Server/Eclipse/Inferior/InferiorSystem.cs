@@ -41,7 +41,7 @@ public sealed class InferiorSystem : SharedInferiorSystem
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly IAdminLogManager _adminLogManager = default!;
     public ProtoId<NpcFactionPrototype> NanoTrasenFaction = "NanoTrasen";
-    public ProtoId<NpcFactionPrototype> SyndicateFaction = "Syndicate";
+    public ProtoId<NpcFactionPrototype> LegionFaction = "Legion";
     public override void Initialize()
     {
         base.Initialize();

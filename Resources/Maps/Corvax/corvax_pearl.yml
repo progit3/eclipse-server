@@ -73083,7 +73083,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -10.351472,-14.017773
       parent: 20154
-- proto: CigaretteSyndicate
+- proto: CigaretteLegion
   entities:
   - uid: 4893
     components:
@@ -73764,7 +73764,7 @@ entities:
           - 20687
     - type: Fixtures
       fixtures: {}
-- proto: ClothingBackpackDuffelSyndicatePyjamaBundle
+- proto: ClothingBackpackDuffelLegionPyjamaBundle
   entities:
   - uid: 4991
     components:
@@ -83873,7 +83873,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -25.5,-32.5
       parent: 2
-- proto: EncryptionKeySyndie
+- proto: EncryptionKeyLegion
   entities:
   - uid: 20741
     components:

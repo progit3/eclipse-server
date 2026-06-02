@@ -150,8 +150,8 @@
   - type: DamageExaminable
 
 - type: entity
-  id: SyndicateMicrowave
-  parent: [ KitchenMicrowave, BaseSyndicateContraband ]
+  id: LegionMicrowave
+  parent: [ KitchenMicrowave, BaseLegionContraband ]
   name: donk co. microwave
   description: So advanced, it can cook donk-pockets in a mere 2.5 seconds!
   components:
@@ -162,17 +162,17 @@
     canMicrowaveIdsSafely: false
     explosionChance: 0.3
   - type: Sprite
-    sprite: Structures/Machines/microwave_syndie.rsi
+    sprite: Structures/Machines/microwave_legion.rsi
     drawdepth: SmallObjects
     snapCardinals: true
   - type: Machine
-    board: SyndicateMicrowaveMachineCircuitboard
+    board: LegionMicrowaveMachineCircuitboard
   - type: FoodRecipeProvider
     providedRecipes:
     - RecipeBaguetteSword
     - RecipeThrowingCroissant
   - type: Item
-    sprite: Structures/Machines/microwave_syndie.rsi
+    sprite: Structures/Machines/microwave_legion.rsi
     size: Ginormous
   - type: MeleeWeapon
     attackRate: 0.75

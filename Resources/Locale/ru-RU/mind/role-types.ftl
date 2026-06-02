@@ -23,6 +23,7 @@ role-subtype-traitor = Предатель
 role-subtype-thief = Вор
 role-subtype-ninja = Ниндзя
 role-subtype-nukie = Нюкер
+role-subtype-ash-legion = Легион
 role-subtype-traitor-reinforcement = Подкреп
 role-subtype-revolutionary = Рев
 role-subtype-head-revolutionary = Глав рев

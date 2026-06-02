@@ -1146,14 +1146,14 @@
     SuiDream: 3
 
 - type: reaction
-  id: SyndicateBomb
+  id: LegionBomb
   reactants:
     Beer:
       amount: 1
     WhiskeyCola:
       amount: 1
   products:
-    SyndicateBomb: 2
+    LegionBomb: 2
 
 - type: reaction
   id: Tea
@@ -1553,7 +1553,7 @@
       amount: 1
     ManlyDorf:
       amount: 1
-    SyndicateBomb:
+    LegionBomb:
       amount: 1
   products:
     BacchusBlessing: 4

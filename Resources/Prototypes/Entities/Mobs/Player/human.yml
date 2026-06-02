@@ -1,25 +1,25 @@
-#Syndie
+#Legion
 - type: entity
   parent: MobHuman
-  id: MobHumanSyndicateAgentBase
-  name: syndicate agent
+  id: MobHumanLegionAgentBase
+  name: legion agent
   suffix: Human, Base
   components:
   - type: RandomHumanoidAppearance
     randomizeName: false
   - type: Loadout
-    prototypes: [SyndicateOperativeGearExtremelyBasic]
-    roleLoadout: [ RoleSurvivalSyndicate ]
+    prototypes: [LegionOperativeGearExtremelyBasic]
+    roleLoadout: [ RoleSurvivalLegion ]
   - type: RandomMetadata
     nameSegments: [NamesDeathCommando]
   - type: NpcFactionMember
     factions:
-    - Syndicate
+    - Legion
 
 - type: entity
-  parent: MobHumanSyndicateAgentBase
-  id: MobHumanSyndicateAgent
-  name: syndicate agent
+  parent: MobHumanLegionAgentBase
+  id: MobHumanLegionAgent
+  name: legion agent
   suffix: Human, Traitor
   components:
   # make the player a traitor once its taken
@@ -27,44 +27,44 @@
     profile: TraitorReinforcement
 
 - type: entity
-  parent: MobHumanSyndicateAgent
-  id: MobHumanSyndicateAgentMedic
-  name: syndicate medic
+  parent: MobHumanLegionAgent
+  id: MobHumanLegionAgentMedic
+  name: legion medic
   components:
   - type: Loadout
-    prototypes: [SyndicateReinforcementMedic]
-    roleLoadout: [ RoleSurvivalSyndicate ]
+    prototypes: [LegionReinforcementMedic]
+    roleLoadout: [ RoleSurvivalLegion ]
 
 - type: entity
-  parent: MobHumanSyndicateAgent
-  id: MobHumanSyndicateAgentSpy
-  name: syndicate spy
+  parent: MobHumanLegionAgent
+  id: MobHumanLegionAgentSpy
+  name: legion spy
   components:
   - type: Loadout
-    prototypes: [SyndicateReinforcementSpy]
-    roleLoadout: [ RoleSurvivalSyndicate ]
+    prototypes: [LegionReinforcementSpy]
+    roleLoadout: [ RoleSurvivalLegion ]
 
 - type: entity
-  parent: MobHumanSyndicateAgent
-  id: MobHumanSyndicateAgentThief
-  name: syndicate thief
+  parent: MobHumanLegionAgent
+  id: MobHumanLegionAgentThief
+  name: legion thief
   components:
   - type: Loadout
-    prototypes: [SyndicateReinforcementThief]
-    roleLoadout: [ RoleSurvivalSyndicate ]
+    prototypes: [LegionReinforcementThief]
+    roleLoadout: [ RoleSurvivalLegion ]
 
 - type: entity
-  parent: MobHumanSyndicateAgentBase
-  id: MobHumanSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
+  parent: MobHumanLegionAgentBase
+  id: MobHumanLegionAgentNukeops # Reinforcement exclusive to nukeops uplink
   suffix: Human, NukeOps
   components:
   - type: NukeOperative
   - type: RandomMetadata
     nameSegments:
-    - NamesSyndicateNormal
+    - NamesLegionNormal
     nameFormat: name-format-nukie-operator
   - type: Loadout
-    prototypes: [SyndicateOperativeGearFullNoUplink]
+    prototypes: [LegionOperativeGearFullNoUplink]
 
 # Nuclear Operative
 - type: entity
@@ -86,16 +86,16 @@
     randomizeName: false
   - type: NukeOperative
   - type: Loadout
-    prototypes: [SyndicateLoneOperativeGearFull]
-    roleLoadout: [ RoleSurvivalSyndicate ]
+    prototypes: [LegionLoneOperativeGearFull]
+    roleLoadout: [ RoleSurvivalLegion ]
   - type: RandomMetadata
     nameSegments:
-    - NamesSyndicatePrefix
-    - NamesSyndicateNormal
+    - NamesLegionPrefix
+    - NamesLegionNormal
     nameFormat: name-format-nukie-generic
   - type: NpcFactionMember
     factions:
-    - Syndicate
+    - Legion
 
 # Wizard
 - type: entity

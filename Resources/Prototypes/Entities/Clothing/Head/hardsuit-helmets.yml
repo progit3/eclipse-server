@@ -539,14 +539,14 @@
 #Blood-red Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
-  id: ClothingHeadHelmetHardsuitSyndie
+  id: ClothingHeadHelmetHardsuitLegion
   name: blood-red hardsuit helmet
   description: A heavily armored helmet designed for work in special operations. Property of Gorlex Marauders.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndicate.rsi
+    sprite: Clothing/Head/Hardsuits/legion.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndicate.rsi
+    sprite: Clothing/Head/Hardsuits/legion.rsi
   - type: PointLight
     color: green
   - type: PressureProtection
@@ -566,14 +566,14 @@
 #Blood-red Medic Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
-  id: ClothingHeadHelmetHardsuitSyndieMedic
+  id: ClothingHeadHelmetHardsuitLegionMedic
   name: blood-red medic hardsuit helmet
   description: An advanced red hardsuit helmet specifically designed for field medic operations.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
+    sprite: Clothing/Head/Hardsuits/legionmedic.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndiemedic.rsi
+    sprite: Clothing/Head/Hardsuits/legionmedic.rsi
   - type: PointLight
     color: green
   - type: PressureProtection
@@ -587,17 +587,17 @@
         Piercing: 0.9
         Heat: 0.9
 
-#Syndicate Elite Hardsuit
+#Legion Elite Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
-  id: ClothingHeadHelmetHardsuitSyndieElite
-  name: syndicate elite helmet
+  id: ClothingHeadHelmetHardsuitLegionElite
+  name: legion elite helmet
   description: An elite version of the blood-red hardsuit's helmet, with improved radiation resistance and fireproofing. Property of Gorlex Marauders.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndieelite.rsi
+    sprite: Clothing/Head/Hardsuits/legionelite.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndieelite.rsi
+    sprite: Clothing/Head/Hardsuits/legionelite.rsi
   - type: PointLight
     color: red
   - type: PressureProtection
@@ -619,17 +619,17 @@
     tags:
     - WhitelistChameleon
 
-#Syndicate Commander Hardsuit
+#Legion Commander Hardsuit
 - type: entity
   parent: [ ClothingHeadHardsuitBase, ClothingHeadSuitWithLightBase ]
-  id: ClothingHeadHelmetHardsuitSyndieCommander
-  name: syndicate commander helmet
-  description: A bulked up version of the blood-red hardsuit's helmet, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
+  id: ClothingHeadHelmetHardsuitLegionCommander
+  name: legion commander helmet
+  description: A bulked up version of the blood-red hardsuit's helmet, purpose-built for the commander of a legion operative squad. Has significantly improved armor for those deadly front-lines firefights.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
+    sprite: Clothing/Head/Hardsuits/legioncommander.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hardsuits/syndiecommander.rsi
+    sprite: Clothing/Head/Hardsuits/legioncommander.rsi
   - type: PointLight
     color: green
   - type: PressureProtection
@@ -785,7 +785,7 @@
 #CENTCOMM / ERT HARDSUITS
 #ERT Leader Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndieCommander ]
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitLegionCommander ]
   id: ClothingHeadHelmetHardsuitERTLeader
   name: ERT leader hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -806,7 +806,7 @@
 
 #ERT Chaplain Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitLegion ]
   id: ClothingHeadHelmetHardsuitERTChaplain
   name: ERT chaplain hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -820,7 +820,7 @@
 
 #ERT Engineer Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitLegion ]
   id: ClothingHeadHelmetHardsuitERTEngineer
   name: ERT engineer hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -843,7 +843,7 @@
 
 #ERT Medical Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndieElite ]
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitLegionElite ]
   id: ClothingHeadHelmetHardsuitERTMedical
   name: ERT medic hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -857,7 +857,7 @@
 
 #ERT Security Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitLegion ]
   id: ClothingHeadHelmetHardsuitERTSecurity
   name: ERT security hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -878,7 +878,7 @@
 
 #ERT Janitor Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ]
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitLegion ]
   id: ClothingHeadHelmetHardsuitERTJanitor
   name: ERT janitor hardsuit helmet
   description: A special hardsuit helmet worn by members of an emergency response team.
@@ -941,7 +941,7 @@
 
 #Deathsquad Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitSyndie ] # Corvax-Resprite
+  parent: [ BaseCentcommContraband, ClothingHeadHelmetHardsuitLegion ] # Corvax-Resprite
   id: ClothingHeadHelmetHardsuitDeathsquad
   name: deathsquad hardsuit helmet
   description: A robust helmet for special operations.

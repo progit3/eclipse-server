@@ -165,11 +165,11 @@
       weight: 0.005
     - id: ClothingUniformJumpskirtJanimaidmini
       weight: 0.005
-    - id: ClothingNeckScarfStripedSyndieRed
+    - id: ClothingNeckScarfStripedLegionRed
       weight: 0.005
     - id: ClothingHandsGlovesColorYellowBudget
       weight: 0.002
-    - id: ClothingUniformJumpsuitPyjamaSyndicatePink
+    - id: ClothingUniformJumpsuitPyjamaLegionPink
       weight: 0.002
     - id: FoodTinMRE
       weight: 0.010
@@ -369,7 +369,7 @@
       weight: 0.02
     - id: ClothingHeadHatBeretBrigmedic
       weight: 0.02
-    - id: ClothingHeadPyjamaSyndicatePink
+    - id: ClothingHeadPyjamaLegionPink
       weight: 0.002
     - id: ClothingHeadHatTacticalMaidHeadband
       weight: 0.001
@@ -409,11 +409,11 @@
       weight: 0.0001
     - id: ClothingUniformJumpskirtOfLife
       weight: 0.0001
-    - id: ClothingUniformJumpsuitSyndieFormal
+    - id: ClothingUniformJumpsuitLegionFormal
       weight: 0.0001
-    - id: ClothingUniformJumpskirtSyndieFormalDress
+    - id: ClothingUniformJumpskirtLegionFormalDress
       weight: 0.0001
-    - id: ClothingOuterWinterSyndie
+    - id: ClothingOuterWinterLegion
       weight: 0.0001
     - id: ClothingHeadHatRichard
       weight: 0.0001

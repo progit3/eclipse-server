@@ -40,6 +40,7 @@ public sealed class PlayerPanelEui : BaseEui
         PlayerPanel.OnRejuvenate += () => SendMessage(new PlayerPanelRejuvenationMessage());
         PlayerPanel.OnDelete += () => SendMessage(new PlayerPanelDeleteMessage());
         PlayerPanel.OnFollow += () => SendMessage(new PlayerPanelFollowMessage());
+        PlayerPanel.OnGrantExperience += () => SendMessage(new PlayerPanelGrantExperienceMessage(100));
 
         PlayerPanel.OnClose += () => SendMessage(new CloseEuiMessage());
     }

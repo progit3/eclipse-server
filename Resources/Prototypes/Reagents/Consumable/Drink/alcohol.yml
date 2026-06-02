@@ -1595,15 +1595,15 @@
   fizziness: 0.2
 
 - type: reagent
-  id: SyndicateBomb
-  name: reagent-name-syndicate-bomb
+  id: LegionBomb
+  name: reagent-name-legion-bomb
   parent: BaseAlcohol
-  desc: reagent-desc-syndicate-bomb
+  desc: reagent-desc-legion-bomb
   physicalDesc: reagent-physical-desc-opaque
-  flavor: syndiebomb
+  flavor: legionbomb
   color: "#e3e77b"
   metamorphicSprite:
-    sprite: Objects/Consumable/Drinks/syndicatebomb.rsi
+    sprite: Objects/Consumable/Drinks/legionbomb.rsi
     state: icon_empty
   metamorphicMaxFillLevels: 6
   metamorphicFillBaseName: fill-

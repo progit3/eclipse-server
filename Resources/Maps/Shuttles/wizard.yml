@@ -2040,7 +2040,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,-10.5
       parent: 768
-- proto: ComputerIFFSyndicate
+- proto: ComputerIFFLegion
   entities:
   - uid: 208
     components:
@@ -2111,7 +2111,7 @@ entities:
     - type: Transform
       pos: 2.3556552,-5.388743
       parent: 768
-- proto: FaxMachineSyndie
+- proto: FaxMachineLegion
   entities:
   - uid: 619
     components:

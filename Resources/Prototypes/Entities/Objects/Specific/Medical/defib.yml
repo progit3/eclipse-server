@@ -96,13 +96,13 @@
   - type: UseDelay
 
 - type: entity
-  id: DefibrillatorSyndicate
-  parent: [ DefibrillatorCompact, BaseSyndicateContraband ]
+  id: DefibrillatorLegion
+  parent: [ DefibrillatorCompact, BaseLegionContraband ]
   name: interdyne defibrillator
   description: Doubles as a self-defense weapon against war-crime inclined tiders.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Medical/defibsyndi.rsi
+    sprite: Objects/Specific/Medical/defiblegion.rsi
     layers:
       - state: icon
       - state: screen

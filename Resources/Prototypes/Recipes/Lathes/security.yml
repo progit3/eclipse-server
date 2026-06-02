@@ -126,8 +126,8 @@
 
 - type: latheRecipe
   parent: BaseTargetRecipe
-  id: TargetSyndicate
-  result: TargetSyndicate
+  id: TargetLegion
+  result: TargetLegion
 
 # Tools
 - type: latheRecipe

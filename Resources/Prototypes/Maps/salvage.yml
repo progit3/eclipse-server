@@ -53,8 +53,8 @@
   sizeString: salvage-map-wreck-size-small
 
 - type: salvageMap
-  id: SmallSyndicate
-  mapPath: /Maps/Salvage/small-syndicate.yml
+  id: SmallLegion
+  mapPath: /Maps/Salvage/small-legion.yml
   sizeString: salvage-map-wreck-size-small
 
 - type: salvageMap

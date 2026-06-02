@@ -44,7 +44,16 @@ public sealed partial class PlayerListControl : BoxContainer
         PopulateList(_adminSystem.PlayerList);
         FilterLineEdit.OnTextChanged += _ => FilterList();
         _adminSystem.PlayerListChanged += PopulateList;
-        BackgroundPanel.PanelOverride = new StyleBoxFlat { BackgroundColor = new Color(32, 32, 40) };
+        FilterLineEdit.StyleBoxOverride = new StyleBoxFlat
+        {
+            BackgroundColor = Color.FromHex("#160800F4"),
+            BorderColor = Color.FromHex("#D47D1B88"),
+            BorderThickness = new Thickness(1),
+            ContentMarginLeftOverride = 4,
+            ContentMarginRightOverride = 4,
+            ContentMarginTopOverride = 2,
+            ContentMarginBottomOverride = 2,
+        };
     }
 
     public IReadOnlyList<PlayerInfo> PlayerInfo => _playerList;

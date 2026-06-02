@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   parent: BaseItem
   id: BaseComputerCircuitboard
   name: computer board
@@ -220,10 +220,8 @@
       state: cpu_supply
     - type: ComputerBoard
       prototype: ComputerSalvageExpedition
-# Corvax-StealTarget-start
-#    - type: StealTarget
-#      stealGroup: SalvageExpeditionsComputerCircuitboard
-# Corvax-StealTarget-end
+    - type: StealTarget
+      stealGroup: SalvageExpeditionsComputerCircuitboard
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -369,7 +367,7 @@
       prototype: ComputerComms
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseSyndicateContraband ]
+  parent: [ BaseComputerCircuitboard, BaseLegionContraband ]
   id: SyndicateCommsComputerCircuitboard
   name: syndicate communications computer board
   description: A computer printed circuit board for a syndicate communications console.
@@ -380,7 +378,7 @@
     prototype: SyndicateComputerComms
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseSyndicateContraband ]
+  parent: [ BaseComputerCircuitboard, BaseLegionContraband ]
   id: WizardCommsComputerCircuitboard
   name: wizard communications computer board
   description: A computer printed circuit board for a wizard communications console.
@@ -463,7 +461,7 @@
     prototype: ComputerShuttle
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseSyndicateContraband ]
+  parent: [ BaseComputerCircuitboard, BaseLegionContraband ]
   id: SyndicateShuttleConsoleCircuitboard
   name: syndicate shuttle console board
   description: A computer printed circuit board for a syndicate shuttle console.
@@ -472,6 +470,17 @@
     state: cpu_syndicate
   - type: ComputerBoard
     prototype: ComputerShuttleSyndie
+
+- type: entity
+  parent: [ BaseComputerCircuitboard, BaseLegionContraband ]
+  id: AshLegionShuttleConsoleCircuitboard
+  name: AshLegion shuttle console board
+  description: A computer printed circuit board for a syndicate shuttle console.
+  components:
+  - type: Sprite
+    state: cpu_inteq
+  - type: ComputerBoard
+    prototype: ComputerShuttleAshLegion
 
 - type: entity
   parent: BaseComputerCircuitboard
@@ -496,7 +505,7 @@
       prototype: ComputerIFF
 
 - type: entity
-  parent: [ BaseComputerCircuitboard, BaseSyndicateContraband ]
+  parent: [ BaseComputerCircuitboard, BaseLegionContraband ]
   id: ComputerIFFSyndicateCircuitboard
   name: syndicate IFF console board
   description: Allows you to control the IFF and stealth characteristics of this vessel.

@@ -23,16 +23,16 @@
     sprite: Objects/Misc/Handy_Flags/NT_handy_flag.rsi
 
 - type: entity
-  parent: [BaseItem, BaseSyndicateContraband]
-  id: SyndieHandyFlag
-  name: syndicate handheld flag
+  parent: [BaseItem, BaseLegionContraband]
+  id: LegionHandyFlag
+  name: legion handheld flag
   description: "For truly rebellious patriots. Death to NT!"
   components:
   - type: Sprite
-    sprite: Objects/Misc/Handy_Flags/syndie_handy_flag.rsi
+    sprite: Objects/Misc/Handy_Flags/legion_handy_flag.rsi
     state: icon
   - type: Item
-    sprite: Objects/Misc/Handy_Flags/syndie_handy_flag.rsi
+    sprite: Objects/Misc/Handy_Flags/legion_handy_flag.rsi
 
 - type: entity
   parent: BaseItem

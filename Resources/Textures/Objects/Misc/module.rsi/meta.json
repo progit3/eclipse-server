@@ -80,19 +80,7 @@
       "name": "charger_wire"
     },
     {
-      "name": "clock_mod",
-      "delays": [
-        [
-          0.6,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1
-        ]
-      ]
+      "name": "clock_mod"
     },
     {
       "name": "command"
@@ -132,9 +120,6 @@
     },
     {
       "name": "cpu_supply"
-    },
-    {
-      "name": "cpu_syndicate"
     },
     {
       "name": "cpu_wizard"
@@ -179,14 +164,7 @@
       "name": "datadisk_base"
     },
     {
-      "name": "datadisk_gene",
-      "delays": [
-        [
-          0.1,
-          0.1,
-          0.1
-        ]
-      ]
+      "name": "datadisk_gene"
     },
     {
       "name": "datadisk_encrypted",
@@ -220,14 +198,7 @@
       ]
     },
     {
-      "name": "datadisk_hydro",
-      "delays": [
-        [
-          0.1,
-          0.1,
-          0.1
-        ]
-      ]
+      "name": "datadisk_hydro"
     },
     {
       "name": "datadisk_label"
@@ -365,6 +336,15 @@
     },
     {
       "name": "supply"
+    },
+    {
+      "name": "cpu_syndicate"
+    },
+    {
+      "name": "cpu_ashlegion"
+    },
+    {
+      "name": "cpu_inteq"
     }
   ]
 }

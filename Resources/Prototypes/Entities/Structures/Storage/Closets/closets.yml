@@ -161,18 +161,18 @@
     stateDoorOpen: generic_open
     stateDoorClosed: generic_door
 
-# Syndicate
+# Legion
 - type: entity
-  id: LockerSyndicate
+  id: LockerLegion
   name: blood-red closet
   parent: ClosetSteelBase
   description: It's a storage unit with a blood-red design.
   components:
   - type: Appearance
   - type: EntityStorageVisuals
-    stateBaseClosed: syndicate
-    stateDoorOpen: syndicate_open
-    stateDoorClosed: syndicate_door
+    stateBaseClosed: legion
+    stateDoorOpen: legion_open
+    stateDoorClosed: legion_door
 
 # Bluespace closet
 - type: entity

@@ -9264,7 +9264,7 @@ entities:
     - type: Transform
       pos: 49.5,55.5
       parent: 1
-- proto: ComputerShuttleSyndie
+- proto: ComputerShuttleLegion
   entities:
   - uid: 2630
     components:
@@ -15790,14 +15790,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 58.5,24.5
       parent: 1
-- proto: SyndicateComputerComms
+- proto: LegionComputerComms
   entities:
   - uid: 433
     components:
     - type: Transform
       pos: 49.5,61.5
       parent: 1
-- proto: SyndicateMicrowave
+- proto: LegionMicrowave
   entities:
   - uid: 1022
     components:
@@ -16119,7 +16119,7 @@ entities:
     - type: Transform
       pos: 80.5,41.5
       parent: 1
-- proto: TargetSyndicate
+- proto: TargetLegion
   entities:
   - uid: 2880
     components:
@@ -16390,7 +16390,7 @@ entities:
     - type: Transform
       pos: 38.5,38.5
       parent: 1
-- proto: VendingMachineBoozeSyndicate
+- proto: VendingMachineBoozeLegion
   entities:
   - uid: 915
     components:

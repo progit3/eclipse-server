@@ -116,15 +116,15 @@
     - 0,0,3,1
 
 - type: entity
-  parent: [ClothingBeltStorageBase, BaseSyndicateContraband]
-  id: ClothingBeltSyndieHolster
-  name: syndicate shoulder holster
+  parent: [ClothingBeltStorageBase, BaseLegionContraband]
+  id: ClothingBeltLegionHolster
+  name: legion shoulder holster
   description: A deep shoulder holster capable of holding many types of ballistics.
   components:
   - type: Sprite
-    sprite: Clothing/Belt/syndieholster.rsi
+    sprite: Clothing/Belt/legionholster.rsi
   - type: Clothing
-    sprite: Clothing/Belt/syndieholster.rsi
+    sprite: Clothing/Belt/legionholster.rsi
   - type: Storage
     maxItemSize: Huge
     grid:
@@ -175,10 +175,10 @@
     sprite: Clothing/Belt/salvagewebbing.rsi
 
 - type: entity
-  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseSyndicateContraband]
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase, BaseLegionContraband]
   id: ClothingBeltMilitaryWebbing
   name: chest rig
-  description: A set of tactical webbing worn by Syndicate boarding parties.
+  description: A set of tactical webbing worn by Legion boarding parties.
   components:
   - type: Sprite
     sprite: Clothing/Belt/militarywebbing.rsi

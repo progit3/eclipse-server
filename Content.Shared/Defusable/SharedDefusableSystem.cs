@@ -3,7 +3,7 @@ using Robust.Shared.Serialization;
 namespace Content.Shared.Defusable;
 
 /// <summary>
-/// This handles defusable explosives, such as Syndicate Bombs.
+/// This handles defusable explosives, such as Legion Bombs.
 /// </summary>
 /// <remarks>
 /// Most of the logic is in the server

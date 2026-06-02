@@ -157,7 +157,7 @@
 - files: ["Shuttles/ShuttleEvent/striker"]
   authors: IProduceWidgets
 
-- files: ["Shuttles/ShuttleEvent/syndie_evacpod.yml"]
+- files: ["Shuttles/ShuttleEvent/legion_evacpod.yml"]
   authors: TheShuEd
 
 - files: ["Shuttles/ShuttleEvent/traveling_china_cuisine.yml"]

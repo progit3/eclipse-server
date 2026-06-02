@@ -24,13 +24,13 @@
             ]
         },
         {
-            "name": "syndicate-bomb"
+            "name": "legion-bomb"
         },
         {
-            "name": "syndicate-bomb-wires"
+            "name": "legion-bomb-wires"
         },
         {
-            "name": "syndicate-bomb-active",
+            "name": "legion-bomb-active",
             "delays": [
                 [
                     0.25,

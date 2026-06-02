@@ -34,7 +34,7 @@ public sealed partial class CreditsWindow : DefaultWindow
     private static readonly Dictionary<string, int> PatronTierPriority = new()
     {
         ["Nuclear Operative"] = 1,
-        ["Syndicate Agent"] = 2,
+        ["Legion Agent"] = 2,
         ["Revolutionary"] = 3,
     };
 

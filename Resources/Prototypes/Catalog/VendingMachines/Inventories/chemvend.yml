@@ -28,7 +28,7 @@
     ChemistryBottleToxin: 1
 
 - type: vendingMachineInventory
-  id: ChemVendInventorySyndicate
+  id: ChemVendInventoryLegion
   startingInventory:
     Jug: 4
     JugAluminium: 2

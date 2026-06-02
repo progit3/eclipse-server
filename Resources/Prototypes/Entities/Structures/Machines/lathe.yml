@@ -141,7 +141,7 @@
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
-    - SyndicateAmmoStatic
+    - LegionAmmoStatic
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -404,7 +404,7 @@
     - SecurityDisablers
   - type: EmagLatheRecipes
     emagStaticPacks:
-    - SyndicateAmmoStatic
+    - LegionAmmoStatic
   - type: MaterialStorage
     whitelist: *StandardMaterialWhitelist
   - type: OreSiloClient
@@ -441,7 +441,7 @@
       - SecurityAmmoStatic
     - type: EmagLatheRecipes
       emagStaticPacks:
-      - SyndicateAmmoStatic
+      - LegionAmmoStatic
     - type: MaterialStorage
       whitelist: *StandardMaterialWhitelist
     - type: OreSiloClient
@@ -527,7 +527,7 @@
   - type: EmagLatheRecipes
     emagStaticPacks:
     - ClothingCentComm
-    - ClothingSyndie
+    - ClothingLegion
   - type: MaterialStorage
     whitelist: *StandardMaterialWhitelist
   - type: OreSiloClient

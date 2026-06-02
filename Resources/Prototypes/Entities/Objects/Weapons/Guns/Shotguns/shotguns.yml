@@ -47,7 +47,7 @@
 - type: entity
   name: Bulldog
   # Don't parent to BaseWeaponShotgun because it differs significantly
-  parent: [BaseItem, BaseGunWieldable, BaseSyndicateContraband]
+  parent: [BaseItem, BaseGunWieldable, BaseLegionContraband]
   id: WeaponShotgunBulldog
   description: An automatic magazine-fed shotgun for close-quarters combat. Kicks like a mule on steroids. Uses .50 shotgun shells.
   components:
@@ -308,7 +308,7 @@
     proto: ShellShotgunImprovised
 
 - type: entity
-  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSyndicateContraband]
+  parent: [BaseWeaponShotgun, BaseGunWieldable, BaseLegionContraband]
   id: WeaponShotgunHushpup
   name: Hushpup
   description: An obscure modification of the Enforcer, fitted with an experimental muffler. Great for those with a strict moral code. Uses .50 shotgun shells.

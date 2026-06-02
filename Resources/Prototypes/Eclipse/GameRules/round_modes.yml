@@ -236,13 +236,6 @@
         conditions:
         - !type:HasBudgetCondition
         - !type:MaxRuleOccurenceCondition
-      - id: Nukeops
-        weight: 25
-        conditions:
-        - !type:HasBudgetCondition
-        - !type:MaxRuleOccurenceCondition
-        - !type:PlayerCountCondition
-          min: 20
       - id: Revolutionary
         weight: 5
         conditions:
@@ -287,11 +280,6 @@
         - !type:MaxRuleOccurenceCondition
           max: 2
       - id: ZombieOutbreak
-        weight: 10
-        conditions:
-        - !type:HasBudgetCondition
-        - !type:MaxRuleOccurenceCondition
-      - id: LoneOpsSpawn
         weight: 10
         conditions:
         - !type:HasBudgetCondition

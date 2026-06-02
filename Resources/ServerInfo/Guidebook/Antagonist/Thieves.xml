@@ -51,7 +51,7 @@
   <Box>
     <GuideEntityEmbed Entity="NitrousOxideTank" Caption="снотворное"/>
     <GuideEntityEmbed Entity="Emag" Caption="контрабанда"/>
-    <GuideEntityEmbed Entity="Telecrystal" Caption="синдикат"/>
+    <GuideEntityEmbed Entity="Telecrystal" Caption="легион"/>
   </Box>
 
   [bold]Примечание:[/bold] Набор "хамелеон" теперь включает в себя рюкзак и дополнительную пару перчаток-хамелеонов. Будьте осторожны: эти перчатки не являются воровскими и их может быть трудно отличить от настоящих!

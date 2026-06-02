@@ -489,61 +489,61 @@
     containers:
       board: [ DoorElectronicsHeadOfPersonnel ]
 
-# Syndicate
+# Legion
 
 - type: entity
   parent: Windoor
-  id: WindoorSyndicateLocked
-  suffix: Syndicate, Locked
+  id: WindoorLegionLocked
+  suffix: Legion, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSyndicateAgent ]
+      board: [ DoorElectronicsLegionAgent ]
 
 - type: entity
   parent: WindoorSecure
-  id: WindoorSecureSyndicateLocked
-  suffix: Syndicate, Locked
+  id: WindoorSecureLegionLocked
+  suffix: Legion, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSyndicateAgent ]
+      board: [ DoorElectronicsLegionAgent ]
 
 - type: entity
   parent: WindoorPlasma
-  id: PlasmaWindoorSyndicateLocked
-  suffix: Syndicate, Locked, Plasma
+  id: PlasmaWindoorLegionLocked
+  suffix: Legion, Locked, Plasma
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSyndicateAgent ]
+      board: [ DoorElectronicsLegionAgent ]
 
 - type: entity
   parent: WindoorSecurePlasma
-  id: PlasmaWindoorSecureSyndicateLocked
-  suffix: Syndicate, Locked, Plasma
+  id: PlasmaWindoorSecureLegionLocked
+  suffix: Legion, Locked, Plasma
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSyndicateAgent ]
+      board: [ DoorElectronicsLegionAgent ]
 
 - type: entity
   parent: WindoorUranium
-  id: UraniumWindoorSyndicateLocked
-  suffix: Syndicate, Locked, Uranium
+  id: UraniumWindoorLegionLocked
+  suffix: Legion, Locked, Uranium
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSyndicateAgent ]
+      board: [ DoorElectronicsLegionAgent ]
 
 - type: entity
   parent: WindoorSecureUranium
-  id: UraniumWindoorSecureSyndicateLocked
-  suffix: Syndicate, Locked, Uranium
+  id: UraniumWindoorSecureLegionLocked
+  suffix: Legion, Locked, Uranium
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSyndicateAgent ]
+      board: [ DoorElectronicsLegionAgent ]
 
 - type: entity
   parent: Windoor

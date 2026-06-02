@@ -144,7 +144,7 @@ accent-streetrebel-words-44-2 = предатель
 accent-streetrebel-words-44-3 = агент
 accent-streetrebel-words-replace-44 = чушпан
 
-accent-streetrebel-words-45 = интековцы
+accent-streetrebel-words-45 = Легион пеплаовцы
 accent-streetrebel-words-45-2 = ЯО
 accent-streetrebel-words-45-3 = предатели
 accent-streetrebel-words-45-4 = агенты

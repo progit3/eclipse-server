@@ -1,7 +1,7 @@
 - type: entity
   id: InferiorImplanter
   name: inferior implanter
-  parent: BaseImplantOnlyImplanterSyndi
+  parent: BaseImplantOnlyImplanterLegion
   components:
   - type: Implanter
     implant: InferiorImplant

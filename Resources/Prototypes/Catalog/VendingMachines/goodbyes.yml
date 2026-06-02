@@ -119,9 +119,9 @@
     count: 3
 
 - type: localizedDataset
-  id: SyndieDrobeGoodbyes
+  id: LegionDrobeGoodbyes
   values:
-    prefix: thankyou-syndiedrobe-
+    prefix: thankyou-legiondrobe-
     count: 5
 
 - type: localizedDataset

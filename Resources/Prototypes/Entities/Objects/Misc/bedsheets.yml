@@ -305,15 +305,15 @@
     sprite: Clothing/Neck/Bedsheets/red.rsi
 
 - type: entity
-  id: BedsheetSyndie
-  parent: [ BedsheetBase, BaseSyndicateContraband ]
-  name: syndicate bedsheet
-  description: It has a syndicate emblem and it has an aura of evil.
+  id: BedsheetLegion
+  parent: [ BedsheetBase, BaseLegionContraband ]
+  name: legion bedsheet
+  description: It has a legion emblem and it has an aura of evil.
   components:
   - type: Sprite
-    state: sheetsyndie
+    state: sheetlegion
   - type: Clothing
-    sprite: Clothing/Neck/Bedsheets/syndie.rsi
+    sprite: Clothing/Neck/Bedsheets/legion.rsi
 
 - type: entity
   id: BedsheetUSA

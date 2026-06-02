@@ -83,9 +83,9 @@ ent-RandomHumanoidSpawnerCBURNUnit = Агент РХБЗЗ
 # misc
 ent-RandomHumanoidSpawnerCentcomOfficial = Представитель Центком
     .desc = { "" }
-ent-RandomHumanoidSpawnerSyndicateAgent = Агент Синдиката
+ent-RandomHumanoidSpawnerLegionAgent = Агент Легиона
     .desc = { "" }
-ent-RandomHumanoidSpawnerNukeOp = Ядерный оперативник
+ent-RandomHumanoidSpawnerNukeOp = Оперативник Легиона пепла (Не использовать)
     .desc = { "" }
 ent-RandomHumanoidSpawnerCluwne = Клувень
     .desc = { "" }

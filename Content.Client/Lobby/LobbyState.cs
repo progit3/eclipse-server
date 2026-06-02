@@ -11,6 +11,7 @@ using Content.Client.Voting;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
+using Content.Shared.Eclipse.Progression;
 using Content.Shared.GameTicking;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
@@ -222,10 +223,8 @@ namespace Content.Client.Lobby
                 accountName = Loc.GetString("generic-unknown-title");
 
             var roleName = GetPreferredRoleName(_preferencesManager.Preferences?.SelectedCharacter);
-            var overallPlaytime = _jobRequirements.FetchOverallPlaytime();
-            var minutes = Math.Max(overallPlaytime.TotalMinutes, _playtimeTracking.PlaytimeMinutesToday);
-            var totalExperience = Math.Max(0, (int) Math.Floor(minutes * 6));
-            var progress = CalculateAccountProgress(totalExperience);
+            var totalExperience = GetAccountExperience();
+            var progress = EclipseProgression.CalculateProgress(totalExperience);
             var merits = totalExperience / 2;
             var shards = totalExperience / 250;
 
@@ -258,25 +257,16 @@ namespace Content.Client.Lobby
                 : Loc.GetString("generic-unknown-title");
         }
 
-        private static AccountProgress CalculateAccountProgress(int totalExperience)
+        private int GetAccountExperience()
         {
-            var level = 1;
-            var current = totalExperience;
-            var next = GetExperienceForLevel(level);
+            var overallPlaytime = _jobRequirements.FetchOverallPlaytime();
+            var minutes = Math.Max(overallPlaytime.TotalMinutes, _playtimeTracking.PlaytimeMinutesToday);
+            var playtimeExperience = Math.Max(0, (int) Math.Floor(minutes * 6));
+            var bonusExperience = Math.Max(0, (int) Math.Floor(
+                _jobRequirements.FetchPlaytimeTracker(EclipseProgression.BonusExperienceTracker).TotalMinutes *
+                EclipseProgression.BonusExperiencePerMinute));
 
-            while (current >= next)
-            {
-                current -= next;
-                level++;
-                next = GetExperienceForLevel(level);
-            }
-
-            return new AccountProgress(level, current, next);
-        }
-
-        private static int GetExperienceForLevel(int level)
-        {
-            return 800 + level * 80;
+            return playtimeExperience + bonusExperience;
         }
 
         private void UpdateLobbyUi()
@@ -371,6 +361,5 @@ namespace Content.Client.Lobby
             _consoleHost.ExecuteCommand($"toggleready {newReady}");
         }
 
-        private readonly record struct AccountProgress(int Level, int CurrentExperience, int NextLevelExperience);
     }
 }

@@ -278,16 +278,16 @@
 
 - type: entity
   parent: BoxCardboard
-  id: BoxSurvivalSyndicate
+  id: BoxSurvivalLegion
   name: extended-capacity survival box
   description: It's a box with basic internals inside. This one is labelled to contain an extended-capacity tank.
-  suffix: Syndicate
+  suffix: Legion
   components:
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskGasSyndicate
+        - id: ClothingMaskGasLegion
         - id: ExtendedEmergencyOxygenTankFilled
         - id: EmergencyMedipen
         - id: Flare
@@ -298,15 +298,15 @@
     - state: extendedtank
 
 - type: entity
-  parent: BoxSurvivalSyndicate
-  id: BoxSurvivalSyndicateNitrogen
-  suffix: Syndicate N2
+  parent: BoxSurvivalLegion
+  id: BoxSurvivalLegionNitrogen
+  suffix: Legion N2
   components:
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingMaskGasSyndicate
+        - id: ClothingMaskGasLegion
         - id: ExtendedEmergencyNitrogenTankFilled
         - id: EmergencyMedipen
         - id: Flare

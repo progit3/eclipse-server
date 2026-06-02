@@ -1,4 +1,4 @@
-﻿# Donut
+# Donut
 
 # There is a newer, better version of the donutbox from tgstation included in the
 # donut.rsi. The reason it isn't implemented is it requires a StackVisuals offsetting
@@ -539,7 +539,7 @@
 
 - type: entity
   id: HappyHonkNukie
-  parent: [HappyHonk, BaseSyndicateContraband]
+  parent: [HappyHonk, BaseLegionContraband]
   name: robust nukie meal
   description: A sus meal with a potentially explosive surprise.
   suffix: Toy Unsafe
@@ -557,7 +557,7 @@
   parent: HappyHonkNukie
   id: HappyHonkNukieSnacks
   suffix: Toy Unsafe, Snacks
-  name: syndicate snack box
+  name: legion snack box
   components:
   - type: Storage
     grid:
@@ -584,7 +584,7 @@
           - id: FoodSaladValid
             weight: 0.05
             amount: 2
-          - id: FoodSnackSyndi
+          - id: FoodSnackLegion
             amount: 4
 
 - type: entity

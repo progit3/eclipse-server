@@ -111,7 +111,7 @@
   - type: SpaceGarbage
 
 - type: entity
-  parent: [Matchbox, BaseSyndicateContraband]
+  parent: [Matchbox, BaseLegionContraband]
   id: GorlexMatchbox
   name: Gorlex match box
   description: "A pneumatic match box styled after the Gorlex Marauders' equipment. Contains 24 matches."
@@ -132,7 +132,7 @@
 
 - type: entity
   name: match stick
-  parent: [Matchstick, BaseSyndicateContraband]
+  parent: [Matchstick, BaseLegionContraband]
   id: GorlexMatchstick
   description: A military grade match stick, used for lighting fine smokables and noncombatants alike.
   components:

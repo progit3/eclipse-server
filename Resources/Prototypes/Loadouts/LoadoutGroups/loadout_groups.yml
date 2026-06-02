@@ -1377,13 +1377,13 @@
 
 # Other
 - type: loadoutGroup
-  id: SurvivalSyndicate
-  name: loadout-group-survival-syndicate
+  id: SurvivalLegion
+  name: loadout-group-survival-legion
   minLimit: 2
   hidden: true
   loadouts:
-  - EmergencyNitrogenSyndicate
-  - EmergencyOxygenSyndicate
+  - EmergencyNitrogenLegion
+  - EmergencyOxygenLegion
   - LoadoutSpeciesVoxNitrogen
 
 - type: loadoutGroup

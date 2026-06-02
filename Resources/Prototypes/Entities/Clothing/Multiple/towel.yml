@@ -138,9 +138,9 @@
     fiberColor: fibers-green
 
 - type: entity
-  id: TowelColorSyndicate
-  name: syndicate towel
-  parent: [ BaseTowel, BaseSyndicateContraband ]
+  id: TowelColorLegion
+  name: legion towel
+  parent: [ BaseTowel, BaseLegionContraband ]
   components:
   - type: Sprite
     layers:

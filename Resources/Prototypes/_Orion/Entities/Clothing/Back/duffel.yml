@@ -1,6 +1,6 @@
 - type: entity
   parent: ClothingBackpackDuffel
-  id: ClothingBackpackDuffelInteQ
+  id: ClothingBackpackDuffelAshLegion
   name: combat duffel bag
   description: A large duffel bag for holding weapons and supplies.
   components:
@@ -8,8 +8,8 @@
     sprite: _Orion/Clothing/Back/Duffels/inteq_duffel.rsi
 
 - type: entity
-  parent: ClothingBackpackDuffelInteQ
-  id: ClothingBackpackDuffelInteQAmmo
+  parent: ClothingBackpackDuffelAshLegion
+  id: ClothingBackpackDuffelAshLegionAmmo
   name: combat duffel bag
   description: A large duffel bag for holding weapons and ammunition.
   components:
@@ -17,8 +17,8 @@
     sprite: _Orion/Clothing/Back/Duffels/inteq_duffel_ammo.rsi
 
 - type: entity
-  parent: ClothingBackpackDuffelInteQ
-  id: ClothingBackpackDuffelInteQMedical
+  parent: ClothingBackpackDuffelAshLegion
+  id: ClothingBackpackDuffelAshLegionMedical
   name: combat duffel bag
   description: A large duffel bag for holding weapons and medical things.
   components:

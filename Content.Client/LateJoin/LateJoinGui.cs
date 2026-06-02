@@ -19,6 +19,8 @@ using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Client.Administration.Managers;
+using Content.Client.Lobby.UI;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.LateJoin
@@ -32,6 +34,7 @@ namespace Content.Client.LateJoin
         [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
         [Dependency] private readonly IClientPreferencesManager _preferencesManager = default!;
         [Dependency] private readonly ILogManager _logManager = default!;
+        [Dependency] private IClientAdminManager _adminManager = default!;
 
         public event Action<(NetEntity, string)> SelectedId;
 
@@ -343,6 +346,53 @@ namespace Content.Client.LateJoin
                     }
                 }
             }
+
+            AddObservePanel();
+        }
+
+        private void AddObservePanel()
+        {
+            var observePanel = new PanelContainer
+            {
+                HorizontalExpand = true,
+                Margin = new Thickness(0, 10, 0, 0),
+                MinSize = new Vector2(0, 56),
+                PanelOverride = EclipsePanel("#000000E8", "#5A3B1870", 6f, 8f, 6f),
+            };
+
+            var observeBox = new BoxContainer
+            {
+                Orientation = LayoutOrientation.Vertical,
+                HorizontalExpand = true,
+                VerticalExpand = true,
+            };
+
+            var observeButton = new Button
+            {
+                Text = "Наблюдать",
+                StyleIdentifier = MainMenuControl.StyleIdentifierSecondary,
+                HorizontalExpand = true,
+                MinSize = new Vector2(0, 34),
+                VerticalAlignment = VAlignment.Center,
+            };
+
+            observeButton.OnPressed += _ =>
+            {
+                if (_adminManager.CanCommand("aghost"))
+                {
+                    new ObserveWarningWindow().OpenCentered();
+                    Close();
+                }
+                else
+                {
+                    _consoleHost.ExecuteCommand("observe");
+                    Close();
+                }
+            };
+
+            observeBox.AddChild(observeButton);
+            observePanel.AddChild(observeBox);
+            _base.AddChild(observePanel);
         }
 
         private void JobsAvailableUpdated(IReadOnlyDictionary<NetEntity, Dictionary<ProtoId<JobPrototype>, int?>> updatedJobs)

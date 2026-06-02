@@ -257,9 +257,9 @@
     count: 6
 
 - type: localizedDataset
-  id: SyndieDrobeAds
+  id: LegionDrobeAds
   values:
-    prefix: advertisement-syndiedrobe-
+    prefix: advertisement-legiondrobe-
     count: 31
 
 - type: localizedDataset

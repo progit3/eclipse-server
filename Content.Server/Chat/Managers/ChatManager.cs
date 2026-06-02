@@ -31,7 +31,7 @@ internal sealed partial class ChatManager : IChatManager
     {
         // I had plans for multiple colors and those went nowhere so...
         { "nuclear_operative", "#aa00ff" },
-        { "syndicate_agent", "#aa00ff" },
+        { "legion_agent", "#aa00ff" },
         { "revolutionary", "#aa00ff" }
     };
 

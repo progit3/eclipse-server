@@ -26,12 +26,12 @@
 
 - type: entity
   parent: BaseFlag
-  id: SyndieFlag
-  name: syndicate flag
+  id: LegionFlag
+  name: legion flag
   description: Smells bloody. Death to NT!
   components:
   - type: Sprite
-    state: syndie_flag
+    state: legion_flag
 
 - type: entity
   parent: BaseFlag

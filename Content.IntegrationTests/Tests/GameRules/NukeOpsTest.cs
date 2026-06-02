@@ -33,7 +33,7 @@ namespace Content.IntegrationTests.Tests.GameRules;
 [TestFixture]
 public sealed class NukeOpsTest : GameTest
 {
-    private static readonly ProtoId<NpcFactionPrototype> SyndicateFaction = "Syndicate";
+    private static readonly ProtoId<NpcFactionPrototype> LegionFaction = "Legion";
     private static readonly ProtoId<NpcFactionPrototype> NanotrasenFaction = "NanoTrasen";
 
     public override PoolSettings PoolSettings => new()
@@ -130,7 +130,7 @@ public sealed class NukeOpsTest : GameTest
         Assert.That(entMan.HasComponent<NukeOperativeComponent>(player));
         Assert.That(roleSys.MindIsAntagonist(mind));
         Assert.That(roleSys.MindHasRole<NukeopsRoleComponent>(mind));
-        Assert.That(factionSys.IsMember(player, SyndicateFaction), Is.True);
+        Assert.That(factionSys.IsMember(player, LegionFaction), Is.True);
         Assert.That(factionSys.IsMember(player, NanotrasenFaction), Is.False);
         var roles = roleSys.MindGetAllRoleInfo(mind);
         var cmdRoles = roles.Where(x => x.Prototype == "NukeopsCommander");
@@ -141,7 +141,7 @@ public sealed class NukeOpsTest : GameTest
         Assert.That(entMan.HasComponent<NukeOperativeComponent>(dummyEnts[1]));
         Assert.That(roleSys.MindIsAntagonist(dummyMind));
         Assert.That(roleSys.MindHasRole<NukeopsRoleComponent>(dummyMind));
-        Assert.That(factionSys.IsMember(dummyEnts[1], SyndicateFaction), Is.True);
+        Assert.That(factionSys.IsMember(dummyEnts[1], LegionFaction), Is.True);
         Assert.That(factionSys.IsMember(dummyEnts[1], NanotrasenFaction), Is.False);
         roles = roleSys.MindGetAllRoleInfo(dummyMind);
         cmdRoles = roles.Where(x => x.Prototype == "NukeopsMedic");
@@ -157,7 +157,7 @@ public sealed class NukeOpsTest : GameTest
             Assert.That(entMan.HasComponent<NukeOperativeComponent>(ent), Is.False);
             Assert.That(roleSys.MindIsAntagonist(mindCrew), Is.False);
             Assert.That(roleSys.MindHasRole<NukeopsRoleComponent>(mindCrew), Is.False);
-            Assert.That(factionSys.IsMember(ent, SyndicateFaction), Is.False);
+            Assert.That(factionSys.IsMember(ent, LegionFaction), Is.False);
             Assert.That(factionSys.IsMember(ent, NanotrasenFaction), Is.True);
             var nukeroles = new List<string>() { "Nukeops", "NukeopsMedic", "NukeopsCommander" };
             Assert.That(roleSys.MindGetAllRoleInfo(mindCrew).Any(x => nukeroles.Contains(x.Prototype)), Is.False);

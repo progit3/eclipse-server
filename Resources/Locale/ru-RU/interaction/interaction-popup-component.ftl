@@ -69,7 +69,7 @@ petting-success-engineer-cyborg = Вы гладите { $target } по { POSS-AD
 petting-success-janitor-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } сырой металлической голове.
 petting-success-medical-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } стерильной металлической голове.
 petting-success-service-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } нарядной металлической голове.
-petting-success-syndicate-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } угрожающего вида металлической голове.
+petting-success-legion-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } угрожающего вида металлической голове.
 petting-success-derelict-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } ржавой металлической голове.
 petting-success-recycler = Вы гладите { $target } по { POSS-ADJ($target) } слегка пугающему стальному покрытию.
 petting-success-station-ai = Вы гладите { $target } по { POSS-ADJ($target) } холодному, квадратному экрану.
@@ -85,7 +85,7 @@ petting-failure-engineer-cyborg = Вы тянетесь погладить { $ta
 petting-failure-janitor-cyborg = Вы тянетесь погладить { $target }, но { SUBJECT($target) } занят уборкой!
 petting-failure-medical-cyborg = Вы тянетесь погладить { $target }, но { SUBJECT($target) } занят спасением жизней!
 petting-failure-service-cyborg = Вы тянетесь погладить { $target }, но { SUBJECT($target) } занят обслуживанием экипажа!
-petting-failure-syndicate-cyborg = Вы тянетесь погладить { $target }, но { POSS-ADJ($target) } предательская натура заставляет вас передумать.
+petting-failure-legion-cyborg = Вы тянетесь погладить { $target }, но { POSS-ADJ($target) } предательская натура заставляет вас передумать.
 petting-failure-derelict-cyborg = Вы тянетесь погладить { $target }, но { POSS-ADJ($target) } ржавый и рваный внешний вид заставляет вас передумать.
 petting-failure-station-ai = Вы тянетесь погладить { $target }, но { POSS-ADJ($target) } разряд заставляет вас отдёрнуть руку.
 

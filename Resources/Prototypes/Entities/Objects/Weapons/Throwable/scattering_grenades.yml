@@ -1,4 +1,4 @@
-﻿# ScatteringGrenade is intended for grenades that spawn entities, especially those with timers
+# ScatteringGrenade is intended for grenades that spawn entities, especially those with timers
 - type: entity
   abstract: true
   parent: GrenadeBase
@@ -63,7 +63,7 @@
     positional: true
 
 - type: entity
-  parent: [VolatileGrenadeBase, ScatteringGrenadeBase, TimerGrenadeBase, BaseSyndicateContraband]
+  parent: [VolatileGrenadeBase, ScatteringGrenadeBase, TimerGrenadeBase, BaseLegionContraband]
   id: ClusterGrenade
   name: clustergrenade
   description: Why use one grenade when you can use three at once!
@@ -93,7 +93,7 @@
     price: 2500
 
 - type: entity
-  parent: [FragileGrenadeBase, ScatteringGrenadeBase, ImpactGrenadeBase, BaseSyndicateContraband]
+  parent: [FragileGrenadeBase, ScatteringGrenadeBase, ImpactGrenadeBase, BaseLegionContraband]
   id: ClusterBananaPeel
   name: cluster banana peel
   description: Splits into 6 explosive banana peels after throwing, guaranteed fun!
@@ -120,19 +120,19 @@
     positional: true
 
 - type: entity
-  parent: [SoapSyndie, ScatteringGrenadeBase, ImpactGrenadeBase, BaseSyndicateContraband]
+  parent: [SoapLegion, ScatteringGrenadeBase, ImpactGrenadeBase, BaseLegionContraband]
   id: SlipocalypseClusterSoap
   name: slipocalypse clustersoap
-  description: Spreads small pieces of syndicate soap over an area upon landing on the floor.
+  description: Spreads small pieces of legion soap over an area upon landing on the floor.
   components:
   - type: Sprite
     sprite: Objects/Specific/Janitorial/soap.rsi
     layers:
-    - state: syndie-4
+    - state: legion-4
       map: ["enum.SolutionContainerLayers.Fill"]
   - type: ScatteringGrenade
     triggerKey: trigger
-    fillPrototype: SoapletSyndie
+    fillPrototype: SoapletLegion
     capacity: 30
     delayBeforeTriggerContents: 60
     randomDistance: true

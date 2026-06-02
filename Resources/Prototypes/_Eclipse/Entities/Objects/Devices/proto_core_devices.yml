@@ -1,0 +1,60 @@
+- type: entity
+  id: ProtoCoreActivationKey
+  parent: BaseItem
+  name: activation key
+  description: A secured imperial data key that grants access to emergency proto core protocols.
+  components:
+  - type: Sprite
+    sprite: _Eclipse/Objects/Devices/proto_core_activation_key.rsi
+    state: icon
+  - type: Item
+    size: Tiny
+    sprite: _Eclipse/Objects/Devices/proto_core_activation_key.rsi
+  - type: ProtoCoreActivationKey
+  - type: Tag
+    tags:
+    - HighRiskItem
+  - type: StaticPrice
+    price: 20000
+  - type: StealTarget
+    stealGroup: ProtoCoreActivationKey
+  - type: NavMapBeacon
+    color: "#ff8b24"
+    text: activation key
+    enabled: true
+
+- type: entity
+  id: AshHackingDevice
+  parent: BaseItem
+  name: ash hacking device
+  description: A compact breaching apparatus built to force external authorization into a proto core.
+  components:
+  - type: Sprite
+    sprite: _Eclipse/Objects/Devices/ash_hacking_device.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: _Eclipse/Objects/Devices/ash_hacking_device.rsi
+  - type: AshHackingDevice
+  - type: StaticPrice
+    price: 15000
+
+- type: entity
+  id: PinpointerProtoCoreActivationKey
+  parent: PinpointerBase
+  name: activation key tracker
+  description: A handheld tracker locked onto the activation key's emergency beacon.
+  components:
+  - type: Sprite
+    layers:
+    - state: pinpointer-legion
+      map: ["enum.PinpointerLayers.Base"]
+    - state: pinonnull
+      map: ["enum.PinpointerLayers.Screen"]
+      shader: unshaded
+      visible: false
+  - type: Icon
+    state: pinpointer-legion
+  - type: Pinpointer
+    component: ProtoCoreActivationKey
+    targetName: activation key

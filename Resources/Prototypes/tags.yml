@@ -138,10 +138,10 @@
   id: BorgModuleService # Cyborg module category for bartenders, botanists, and more
 
 - type: Tag
-  id: BorgModuleSyndicate # Cyborg module category for evil red robots
+  id: BorgModuleLegion # Cyborg module category for evil red robots
 
 - type: Tag
-  id: BorgModuleSyndicateAssault # Cyborg module category for extra evil red robots (nukies)
+  id: BorgModuleLegionAssault # Cyborg module category for extra evil red robots (nukies)
 
 - type: Tag
   id: Bot # Targeting whitelist: ChameleonProjector
@@ -1401,7 +1401,7 @@
   id: SurveillanceCameraMonitorCircuitboard # ConstructionGraph: WallmountTelescreen
 
 - type: Tag
-  id: Syndicate # FTLDestination whitelist in nukieplanet.yml. Tag exists on ComputerShuttleSyndie and infiltrator.yml
+  id: Legion # FTLDestination whitelist in nukieplanet.yml. Tag exists on ComputerShuttleLegion and infiltrator.yml
 
 - type: Tag
   id: Syringe # Storage whitelist: ClothingBeltPlant, ChemBag, SmartFridge. CargoBounty: BountySyringe

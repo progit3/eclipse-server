@@ -179,7 +179,7 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
-- proto: AirlockHatchSyndicate
+- proto: AirlockHatchLegion
   entities:
   - uid: 14
     components:
@@ -598,7 +598,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 13.5,1.5
       parent: 1
-- proto: LockerSyndicateShipGearBasic
+- proto: LockerLegionShipGearBasic
   entities:
   - uid: 95
     components:
@@ -620,7 +620,7 @@ entities:
     - type: Transform
       pos: 9.5,-2.5
       parent: 1
-- proto: LockerSyndicateShipGearBasicChameleonKit
+- proto: LockerLegionShipGearBasicChameleonKit
   entities:
   - uid: 97
     components:
@@ -967,7 +967,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 3.5,-3.5
       parent: 1
-- proto: SyndicateShuttleConsoleCircuitboard
+- proto: LegionShuttleConsoleCircuitboard
   entities:
   - uid: 164
     components:
@@ -1188,14 +1188,14 @@ entities:
       parent: 1
     - type: ChamberMagazineAmmoProvider
       boltClosed: True
-- proto: WeaponTurretSyndicate
+- proto: WeaponTurretLegion
   entities:
   - uid: 155
     components:
     - type: Transform
       pos: 6.5,1.5
       parent: 1
-- proto: WeaponTurretSyndicateBroken
+- proto: WeaponTurretLegionBroken
   entities:
   - uid: 143
     components:

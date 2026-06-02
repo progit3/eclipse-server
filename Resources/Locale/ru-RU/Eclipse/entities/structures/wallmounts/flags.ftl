@@ -1,4 +1,4 @@
-ent-InteqFlag = флаг Интека
+ent-InteqFlag = флаг Легиона пепла
     .desc = Пахнет порохом.
 
 ent-PactFlag = Флаг Пакта

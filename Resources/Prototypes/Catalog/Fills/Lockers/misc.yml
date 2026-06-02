@@ -1,7 +1,7 @@
 - type: entity
-  id: LockerSyndicatePersonalFilled
+  id: LockerLegionPersonalFilled
   suffix: Nukie, Filled
-  parent: LockerSyndicatePersonal
+  parent: LockerLegionPersonal
   description: It's a personal storage unit for operative gear.
   components:
   - type: AccessReader
@@ -15,13 +15,13 @@
         - id: JetpackBlackFilled
         - id: ClothingUniformJumpsuitOperative
         - id: ClothingUniformJumpskirtOperative
-        - id: ClothingHeadsetAltSyndicate
-        - id: ClothingEyesHudSyndicate
+        - id: ClothingHeadsetAltLegion
+        - id: ClothingEyesHudLegion
 
 - type: entity
-  id: LockerSyndicateWallFilled
+  id: LockerLegionWallFilled
   suffix: Nukie, Filled
-  parent: LockerWallSyndicate
+  parent: LockerWallLegion
   description: It's a personal storage unit for operative gear.
   components:
   - type: AccessReader
@@ -35,8 +35,8 @@
         - id: JetpackBlackFilled
         - id: ClothingUniformJumpsuitOperative
         - id: ClothingUniformJumpskirtOperative
-        - id: ClothingHeadsetAltSyndicate
-        - id: ClothingEyesHudSyndicate
+        - id: ClothingHeadsetAltLegion
+        - id: ClothingEyesHudLegion
 
 - type: entityTable
   id: FillEmergencyInflatables
@@ -164,24 +164,24 @@
         tableId: FillLockerFireStandard
 
 - type: entityTable
-  id: SyndieMaintLoot
+  id: LegionMaintLoot
   table: !type:GroupSelector
     children:
     - !type:GroupSelector
       children:
       - id: ClothingUniformJumpsuitOperative
       - id: ClothingUniformJumpskirtOperative
-    - id: ClothingBackpackDuffelSyndicate
+    - id: ClothingBackpackDuffelLegion
     - id: CyberPen
-    - id: CigPackSyndicate
-    - id: ClothingBackpackDuffelSyndicatePyjamaBundle
+    - id: CigPackLegion
+    - id: ClothingBackpackDuffelLegionPyjamaBundle
     - id: ClothingBeltMilitaryWebbing
     - id: ClothingShoesBootsCombatFilled
-    - id: ToolboxSyndicateFilled
+    - id: ToolboxLegionFilled
     - id: BalloonSyn
     - id: WeaponSniperMosin
       weight: 2
-    - id: ClothingHandsKnuckleDustersSyndicate
+    - id: ClothingHandsKnuckleDustersLegion
 
 - type: entityTable
   id: MaintenanceLockerLoot
@@ -214,9 +214,9 @@
     - !type:NestedSelector
       tableId: MaintWeaponTable
       prob: 0.075
-    # Syndie Loot
+    # Legion Loot
     - !type:NestedSelector
-      tableId: SyndieMaintLoot
+      tableId: LegionMaintLoot
       prob: 0.05
     # Recursive
     - id: ClosetMaintenanceFilledRandom
@@ -306,13 +306,13 @@
     - id: WeaponFlareGun
 
 - type: entityTable
-  id: ToiletCisternSyndicateTable
+  id: ToiletCisternLegionTable
   table: !type:GroupSelector
     children:
     - id: CyberPen
-    - id: CigPackSyndicate
-    - id: SoapSyndie
-    - id: SyndicatePersonalAI
+    - id: CigPackLegion
+    - id: SoapLegion
+    - id: LegionPersonalAI
     - id: UplinkLighterBox
 
 - type: entityTable
@@ -333,4 +333,4 @@
       tableId: ToiletCisternWeaponsTable
     - !type:NestedSelector
       weight: 1
-      tableId: ToiletCisternSyndicateTable
+      tableId: ToiletCisternLegionTable

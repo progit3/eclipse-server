@@ -22,7 +22,7 @@
     balance:
       Telecrystal: 0
     expectedFaction:
-    - Syndicate
+    - Legion
 
 - type: entity
   id: StorePresetSpellbook

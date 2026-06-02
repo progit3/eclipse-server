@@ -175,24 +175,24 @@
     back:
     - BoxSurvivalSecurityNitrogen
 
-# Syndicate
+# Legion
 - type: loadout
-  id: EmergencyOxygenSyndicate
+  id: EmergencyOxygenLegion
   effects:
   - !type:GroupLoadoutEffect
     proto: OxygenBreather
   storage:
     back:
-    - BoxSurvivalSyndicate
+    - BoxSurvivalLegion
 
 - type: loadout
-  id: EmergencyNitrogenSyndicate
+  id: EmergencyNitrogenLegion
   effects:
   - !type:GroupLoadoutEffect
     proto: NitrogenBreather
   storage:
     back:
-    - BoxSurvivalSyndicateNitrogen
+    - BoxSurvivalLegionNitrogen
 
 # Military / Double Extended
 - type: loadout

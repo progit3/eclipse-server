@@ -584,28 +584,28 @@
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
-  id: ClothingUniformJumpsuitSyndieFormal
-  result: ClothingUniformJumpsuitSyndieFormal
+  id: ClothingUniformJumpsuitLegionFormal
+  result: ClothingUniformJumpsuitLegionFormal
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
-  id: ClothingUniformJumpskirtSyndieFormalDress
-  result: ClothingUniformJumpskirtSyndieFormalDress
+  id: ClothingUniformJumpskirtLegionFormalDress
+  result: ClothingUniformJumpskirtLegionFormalDress
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
-  id: ClothingUniformJumpsuitPyjamaSyndicateBlack
-  result: ClothingUniformJumpsuitPyjamaSyndicateBlack
+  id: ClothingUniformJumpsuitPyjamaLegionBlack
+  result: ClothingUniformJumpsuitPyjamaLegionBlack
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
-  id: ClothingUniformJumpsuitPyjamaSyndicatePink
-  result: ClothingUniformJumpsuitPyjamaSyndicatePink
+  id: ClothingUniformJumpsuitPyjamaLegionPink
+  result: ClothingUniformJumpsuitPyjamaLegionPink
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
-  id: ClothingUniformJumpsuitPyjamaSyndicateRed
-  result: ClothingUniformJumpsuitPyjamaSyndicateRed
+  id: ClothingUniformJumpsuitPyjamaLegionRed
+  result: ClothingUniformJumpsuitPyjamaLegionRed
 
 - type: latheRecipe
   parent: BaseJumpsuitRecipe
@@ -766,13 +766,13 @@
 
 - type: latheRecipe
   parent: BaseCoatRecipe
-  id: ClothingOuterWinterSyndie
-  result: ClothingOuterWinterSyndie
+  id: ClothingOuterWinterLegion
+  result: ClothingOuterWinterLegion
 
 - type: latheRecipe
   parent: BaseCoatRecipe
-  id: ClothingOuterWinterSyndieCap
-  result: ClothingOuterWinterSyndieCap
+  id: ClothingOuterWinterLegionCap
+  result: ClothingOuterWinterLegionCap
 
 # Hats
 - type: latheRecipe
@@ -879,28 +879,28 @@
 
 - type: latheRecipe
   parent: BaseHatRecipe
-  id: ClothingHeadHatSyndie
-  result: ClothingHeadHatSyndie
+  id: ClothingHeadHatLegion
+  result: ClothingHeadHatLegion
 
 - type: latheRecipe
   parent: BaseHatRecipe
-  id: ClothingHeadHatSyndieMAA
-  result: ClothingHeadHatSyndieMAA
+  id: ClothingHeadHatLegionMAA
+  result: ClothingHeadHatLegionMAA
 
 - type: latheRecipe
   parent: BaseHatRecipe
-  id: ClothingHeadPyjamaSyndicateBlack
-  result: ClothingHeadPyjamaSyndicateBlack
+  id: ClothingHeadPyjamaLegionBlack
+  result: ClothingHeadPyjamaLegionBlack
 
 - type: latheRecipe
   parent: BaseHatRecipe
-  id: ClothingHeadPyjamaSyndicatePink
-  result: ClothingHeadPyjamaSyndicatePink
+  id: ClothingHeadPyjamaLegionPink
+  result: ClothingHeadPyjamaLegionPink
 
 - type: latheRecipe
   parent: BaseHatRecipe
-  id: ClothingHeadPyjamaSyndicateRed
-  result: ClothingHeadPyjamaSyndicateRed
+  id: ClothingHeadPyjamaLegionRed
+  result: ClothingHeadPyjamaLegionRed
 
 - type: latheRecipe
   parent: BaseHatRecipe

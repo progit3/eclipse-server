@@ -62,14 +62,14 @@
     targetName: nuclear authentication disk
 
 - type: entity
-  name: syndicate pinpointer
+  name: legion pinpointer
   description: Produced specifically for nuclear operative missions, get that disk!
-  id: PinpointerSyndicateNuclear
-  parent: [ PinpointerBase, BaseSyndicateContraband ]
+  id: PinpointerLegionNuclear
+  parent: [ PinpointerBase, BaseLegionContraband ]
   components:
   - type: Sprite
     layers:
-    - state: pinpointer-syndicate
+    - state: pinpointer-legion
       map: ["enum.PinpointerLayers.Base"]
     - state: pinonnull
       map: ["enum.PinpointerLayers.Screen"]
@@ -90,7 +90,7 @@
         color: "#6c0014"
       - state: inhand-right-top
   - type: Icon
-    state: pinpointer-syndicate
+    state: pinpointer-legion
   - type: Pinpointer
     component: NukeDisk
     targetName: nuclear authentication disk

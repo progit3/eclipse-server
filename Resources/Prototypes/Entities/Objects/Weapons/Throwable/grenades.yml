@@ -1,7 +1,7 @@
 - type: entity
   name: explosive grenade
   description: Grenade that creates a small but devastating explosion.
-  parent: [VolatileGrenadeBase, TimerGrenadeBase, BaseSyndicateContraband]
+  parent: [VolatileGrenadeBase, TimerGrenadeBase, BaseLegionContraband]
   id: ExGrenade
   components:
   - type: ExplodeOnTrigger
@@ -75,15 +75,15 @@
       lifetime: 0.5
 
 # Tuned to be a general bomb that deals equipment damage without explicitly gibbing, however it will still gladly instakill anyone that mishandles it.
-# One of the few syndie bombs that should punch holes in space.
+# One of the few legion bombs that should punch holes in space.
 - type: entity
-  name: syndicate minibomb
-  description: A syndicate-manufactured explosive used to stow destruction and cause chaos.
-  parent: [VolatileGrenadeBase, TimerGrenadeBase, BaseSyndicateContraband]
-  id: SyndieMiniBomb
+  name: legion minibomb
+  description: A legion-manufactured explosive used to stow destruction and cause chaos.
+  parent: [VolatileGrenadeBase, TimerGrenadeBase, BaseLegionContraband]
+  id: LegionMiniBomb
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Grenades/syndgrenade.rsi
+    sprite: Objects/Weapons/Grenades/legiongrenade.rsi
   - type: ExplosionResistance
     damageCoefficient: 0.1
   - type: TimerTrigger
@@ -152,7 +152,7 @@
 
 
 - type: entity
-  parent: [ FragileGrenadeBase, TimerGrenadeBase, BaseSyndicateContraband ]
+  parent: [ FragileGrenadeBase, TimerGrenadeBase, BaseLegionContraband ]
   id: SingularityGrenade
   name: singularity grenade
   description: Grenade that simulates the power of a singularity, pulling things in a heap.
@@ -367,7 +367,7 @@
 - type: entity
   name: EMP grenade
   description: A grenade designed to wreak havoc on electronic systems.
-  parent: [ImpactGrenadeBase, BaseSyndicateContraband]
+  parent: [ImpactGrenadeBase, BaseLegionContraband]
   id: EmpGrenade
   components:
   - type: Sprite
@@ -386,7 +386,7 @@
 - type: entity
   name: holy hand grenade
   description: O Lord, bless this thy hand grenade, that with it thou mayst blow thine enemies to tiny bits, in thy mercy.
-  parent: [TimerGrenadeBase, BaseSyndicateContraband]
+  parent: [TimerGrenadeBase, BaseLegionContraband]
   id: HolyHandGrenade
   components:
   - type: Sprite
@@ -442,13 +442,13 @@
       path: /Audio/Effects/countdown.ogg
 
 - type: entity
-  name: syndicate trickybomb
-  description: A syndicate-manufactured explosive used to make an excellent distraction.
-  parent: [GrenadeDummy, BaseSyndicateContraband]
-  id: SyndieTrickyBomb
+  name: legion trickybomb
+  description: A legion-manufactured explosive used to make an excellent distraction.
+  parent: [GrenadeDummy, BaseLegionContraband]
+  id: LegionTrickyBomb
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Grenades/syndgrenade.rsi
+    sprite: Objects/Weapons/Grenades/legiongrenade.rsi
   - type: TimerTrigger
     delay: 5
   - type: EmitSoundOnTrigger

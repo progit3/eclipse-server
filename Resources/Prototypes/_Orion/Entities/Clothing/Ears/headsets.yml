@@ -1,13 +1,13 @@
 - type: entity
   parent: [ClothingHeadset, BaseMinorContraband]
-  id: ClothingHeadsetInteQ
-  name: InteQ headset
-  description: Headset used by InteQ forces.
+  id: ClothingHeadsetAshLegion
+  name: AshLegion headset
+  description: Headset used by AshLegion forces.
   components:
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeyInteQ
+      - EncryptionKeyAshLegion
   - type: Sprite
     sprite: _Orion/Clothing/Ears/inteq_headset.rsi
   - type: Clothing

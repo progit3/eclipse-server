@@ -1,11 +1,11 @@
-ent-ReinforcementRadioInteQ = старое радио
+ent-ReinforcementRadioAshLegion = старое радио
     .desc = Винтажное радио с незнакомыми частотами.
-    .suffix = радио подкрепления InteQ
+    .suffix = радио подкрепления Легион пепла
 
-ent-ReinforcementRadioInteQAncestor = { ent-ReinforcementRadio }
-    .desc = { ent-ReinforcementRadioInteQ.desc }
-    .suffix = радио подкрепления генетического предка InteQ
+ent-ReinforcementRadioAshLegionAncestor = { ent-ReinforcementRadio }
+    .desc = { ent-ReinforcementRadioAshLegion.desc }
+    .suffix = радио подкрепления генетического предка Легион пепла
 
-ent-ReinforcementRadioInteQAncestorNukeops = { ent-ReinforcementRadioSyndicateAncestor }
-    .suffix = радио подкрепления генетического предка InteQ, Ядерные оперативники
-    .desc = { ent-ReinforcementRadioInteQAncestor.desc }
+ent-ReinforcementRadioAshLegionAncestorNukeops = { ent-ReinforcementRadioSyndicateAncestor }
+    .suffix = радио подкрепления генетического предка Легион пепла, Ядерные оперативники
+    .desc = { ent-ReinforcementRadioAshLegionAncestor.desc }

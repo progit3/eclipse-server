@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitInteQFormal
-  name: InteQ formal suit
-  description: The InteQ uniform is made in an elegant style, it's even a pity to do badass tricks in this.
+  id: ClothingUniformJumpsuitAshLegionFormal
+  name: AshLegion formal suit
+  description: The AshLegion uniform is made in an elegant style, it's even a pity to do badass tricks in this.
   components:
   - type: Sprite
     sprite: _Orion/Clothing/Uniforms/jumpsuit/inteq_formal.rsi
@@ -11,9 +11,9 @@
 
 - type: entity
   parent: UnsensoredClothingUniformBase
-  id: ClothingUniformJumpsuitInteQOperative
-  name: InteQ operative jumpsuit
-  description: Uniform for InteQ operatives performing tactical operations in deep space.
+  id: ClothingUniformJumpsuitAshLegionOperative
+  name: AshLegion operative jumpsuit
+  description: Uniform for AshLegion operatives performing tactical operations in deep space.
   components:
   - type: Sprite
     sprite: _Orion/Clothing/Uniforms/jumpsuit/inteq_operative.rsi
@@ -22,9 +22,9 @@
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitInteQHonorable
-  name: InteQ honorable suit
-  description: Honorable uniform of InteQ, looks graceful.
+  id: ClothingUniformJumpsuitAshLegionHonorable
+  name: AshLegion honorable suit
+  description: Honorable uniform of AshLegion, looks graceful.
   components:
   - type: Sprite
     sprite: _Orion/Clothing/Uniforms/jumpsuit/inteq_honorable.rsi
@@ -33,8 +33,8 @@
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitInteQMedical
-  name: InteQ medical suit
+  id: ClothingUniformJumpsuitAshLegionMedical
+  name: AshLegion medical suit
   description: Symbolizes our life.
   components:
   - type: Sprite

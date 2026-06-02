@@ -545,9 +545,9 @@
   - type: AccessReader
     access: [["Security"]]
 
-# Syndicate
+# Legion
 - type: entity
-  id: LockerSyndicatePersonal
+  id: LockerLegionPersonal
   name: blood-red locker
   parent: LockerBaseSecure
   description: It's a personal storage unit with a blood-red design.
@@ -555,18 +555,18 @@
   components:
   - type: Appearance
   - type: EntityStorageVisuals
-    stateBaseClosed: syndicate
-    stateDoorOpen: syndicate_open
-    stateDoorClosed: syndicate_door
+    stateBaseClosed: legion
+    stateDoorOpen: legion_open
+    stateDoorClosed: legion_door
   - type: AccessReader
-    access: [["SyndicateAgent"]]
+    access: [["LegionAgent"]]
 
 # Bluespace
 - type: entity
   id: LockerBluespaceStation
   name: bluespace locker
   suffix: once to station
-  parent: LockerSyndicatePersonal
+  parent: LockerLegionPersonal
   description: Advanced locker technology.
   components:
     - type: ArrivalsBlacklist

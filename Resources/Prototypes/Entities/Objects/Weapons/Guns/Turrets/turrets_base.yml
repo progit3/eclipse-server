@@ -22,7 +22,7 @@
     sprite: Objects/Weapons/Guns/Turrets/turrets.rsi
     drawdepth: Mobs
     layers:
-    - state: syndie_lethal
+    - state: legion_lethal
   - type: InteractionPopup
     interactDelay: 0.2
     successChance: 0.8

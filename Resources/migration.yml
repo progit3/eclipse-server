@@ -100,7 +100,7 @@ GeneratorUraniumMachineCircuitboard: PortableGeneratorSuperPacmanMachineCircuitb
 
 # 2023-12-12
 #No this is not the CMO hardsuit, their prototype IDs were just confusingly similar
-ClothingOuterHardsuitMedic: ClothingOuterHardsuitSyndieMedic
+ClothingOuterHardsuitMedic: ClothingOuterHardsuitLegionMedic
 
 # 2023-12-13
 VendingMachineSmartFridge: SmartFridge
@@ -179,8 +179,8 @@ FoodBoxDonkpocketGondola: FoodBoxDonkpocketPizza
 # 2024-01-31
 SpyCrewMonitor: null
 SpyCrewMonitorEmpty: null
-SyndiCrewMonitor: null
-SyndiCrewMonitorEmpty: null
+LegionCrewMonitor: null
+LegionCrewMonitorEmpty: null
 
 SpawnVehicleWheelchair: null
 SpawnVehicleWheelchairFolded: null
@@ -191,17 +191,17 @@ VehicleKeyJanicart: null
 VehicleKeySecway: null
 VehicleKeyATV: null
 VehicleKeySkeleton: null
-VehicleKeySyndicateSegway: null
+VehicleKeyLegionSegway: null
 VehicleKeySkeletonMotorcycle: null
 VehicleSecway: null
 VehicleATV: null
-VehicleSyndicateSegway: null
+VehicleLegionSegway: null
 VehicleSkeletonMotorcycle: null
 VehicleUnicycle: null
 VehicleUnicycleFolded: null
 ActionVehicleHorn: null
 CrateFunATV: null
-CrateFunSyndicateSegway: null
+CrateFunLegionSegway: null
 MobTaxiBot: null
 # MobSupplyBot: null
 SpawnVehicleMotobike: null
@@ -284,7 +284,7 @@ ClothingOuterArmorScaf: ClothingOuterArmorBasic
 # 2024-03-31
 ClothingNeckFlowerWreath: ClothingHeadHatFlowerWreath
 ClothingHeadHatFlowerCrown: ClothingHeadHatFlowerWreath
-BriefcaseSyndieBase: null
+BriefcaseLegionBase: null
 
 # 2024-04-08
 BodyBag_Container: BodyBag
@@ -334,8 +334,8 @@ WeaponRifleLecterRubber: WeaponRifleLecter
 
 # 2024-04-26
 GlassBoxLaserBroken: GlassBoxBroken
-ReinforcementRadioSyndicateMonkey: ReinforcementRadioSyndicateAncestor
-ReinforcementRadioSyndicateMonkeyNukeops: ReinforcementRadioSyndicateAncestorNukeops
+ReinforcementRadioLegionMonkey: ReinforcementRadioLegionAncestor
+ReinforcementRadioLegionMonkeyNukeops: ReinforcementRadioLegionAncestorNukeops
 
 # 2024-05-01
 DrinkBottleGoldschlager: DrinkBottleGildlager
@@ -358,7 +358,7 @@ DisasterVictimSpawner: CommandVisitorSpawner
 LostCargoTechnicianSpawner: VisitorCargoTechnicianSpawner
 ClownTroupeSpawner: VisitorClownSpawner
 TravelingChefSpawner: VisitorChefSpawner
-SyndieDisasterVictimSpawner: SyndieVisitorSpawner
+LegionDisasterVictimSpawner: LegionVisitorSpawner
 
 # 2024-06-15
 ClothingOuterCoatInspector: ClothingOuterCoatJensen
@@ -427,10 +427,10 @@ ClothingNeckShockCollar: ClothingBackpackElectropack
 # SalvageShuttleCircuitboardStealObjective: null
 
 # 2024-08-28
-ClothingBackpackDuffelSyndicateCostumeCentcom: null
+ClothingBackpackDuffelLegionCostumeCentcom: null
 ClothingHeadsetAltCentComFake: null
 CentcomPDAFake: null
-CentcomIDCardSyndie: null
+CentcomIDCardLegion: null
 
 # 2024-09-06
 AntimovCircuitBoard: null
@@ -598,12 +598,12 @@ LeadChemistryBottle: ChemistryBottleLead
 ToxinChemistryBottle: ChemistryBottleToxin
 
 # 2025-03-29
-ClothingBackpackDuffelSyndicateRaidBundle: ClothingBackpackSyndicateRaidBundle
+ClothingBackpackDuffelLegionRaidBundle: ClothingBackpackLegionRaidBundle
 
 # 2025-04-14
 MailRobustToolsSpam: MailSpamLetter
 MailNanotrasenSpam: MailSpamLetter
-MailSyndicateSpam: MailSpamLetter
+MailLegionSpam: MailSpamLetter
 MailAlternativeDimensionSpam: MailSpamLetter
 MailNarsieCultSpam: MailSpamLetter
 MailRageCageSpam: MailSpamLetter
@@ -622,7 +622,7 @@ MediumXenoArtifactItem: ComplexXenoArtifactItem
 VariedXenoArtifactItem: ComplexXenoArtifactItem
 
 # 2025-04-19
-ClothingOuterHardsuitSyndicate: ClothingOuterEVASuitSyndicate
+ClothingOuterHardsuitLegion: ClothingOuterEVASuitLegion
 AirlockMaintCommonLocked: AirlockMaintLocked
 AirlockMaintIntLocked: AirlockMaintLocked
 

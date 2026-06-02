@@ -328,42 +328,42 @@
     sprite: Structures/Doors/Airlocks/Glass/mining.rsi
     state: "assembly"
 
-#Syndicate
+#Legion
 - type: entity
   parent: AirlockAssembly
-  id: AirlockAssemblySyndicate
-  suffix: Syndicate
+  id: AirlockAssemblyLegion
+  suffix: Legion
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/syndicate.rsi
+    sprite: Structures/Doors/Airlocks/Standard/legion.rsi
     state: "assembly"
 
 - type: entity
   parent: AirlockAssembly
-  id: AirlockAssemblySyndicateGlass
-  suffix: Syndicate, Glass
+  id: AirlockAssemblyLegionGlass
+  suffix: Legion, Glass
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/syndicate.rsi
+    sprite: Structures/Doors/Airlocks/Glass/legion.rsi
     state: "assembly"
 
-#ShuttleSyndicate
+#ShuttleLegion
 - type: entity
   parent: AirlockAssembly
-  id: AirlockAssemblyShuttleSyndicate
-  suffix: ShuttleSyndicate
+  id: AirlockAssemblyShuttleLegion
+  suffix: ShuttleLegion
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Standard/shuttle_syndicate.rsi
+    sprite: Structures/Doors/Airlocks/Standard/shuttle_legion.rsi
     state: "assembly"
 
 - type: entity
   parent: AirlockAssembly
-  id: AirlockAssemblyShuttleSyndicateGlass
-  suffix: ShuttleSyndicate, Glass
+  id: AirlockAssemblyShuttleLegionGlass
+  suffix: ShuttleLegion, Glass
   components:
   - type: Sprite
-    sprite: Structures/Doors/Airlocks/Glass/shuttle_syndicate.rsi
+    sprite: Structures/Doors/Airlocks/Glass/shuttle_legion.rsi
     state: "assembly"
 
 #High Security

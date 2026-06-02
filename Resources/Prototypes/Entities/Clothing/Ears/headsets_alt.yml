@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   abstract: true
   parent: ClothingHeadset
   id: ClothingHeadsetAlt
@@ -122,10 +122,10 @@
     sprite: Clothing/Ears/Headsets/science.rsi
 
 - type: entity
-  parent: [ClothingHeadsetAlt, BaseSyndicateContraband]
-  id: ClothingHeadsetAltSyndicate
+  parent: [ClothingHeadsetAlt, BaseLegionContraband]
+  id: ClothingHeadsetAltLegion
   name: blood-red over-ear headset
-  description: An updated, modular syndicate intercom that fits over the head and takes encryption keys (there are 5 key slots.).
+  description: An updated, modular legion intercom that fits over the head and takes encryption keys (there are 5 key slots.).
   components:
   - type: Headset
   - type: EncryptionKeyHolder
@@ -133,11 +133,11 @@
   - type: ContainerFill
     containers:
       key_slots:
-      - EncryptionKeySyndie
+      - EncryptionKeyLegion
   - type: Sprite
-    sprite: Clothing/Ears/Headsets/syndicate.rsi
+    sprite: Clothing/Ears/Headsets/legion.rsi
   - type: Clothing
-    sprite: Clothing/Ears/Headsets/syndicate.rsi
+    sprite: Clothing/Ears/Headsets/legion.rsi
 
 - type: entity
   parent: ClothingHeadsetAlt

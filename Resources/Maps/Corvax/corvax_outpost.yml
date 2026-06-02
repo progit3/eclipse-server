@@ -81327,7 +81327,7 @@ entities:
     - type: Transform
       pos: -43.5,-9.5
       parent: 2
-- proto: LockerSyndicatePersonal
+- proto: LockerLegionPersonal
   entities:
   - uid: 914
     components:
@@ -100387,7 +100387,7 @@ entities:
     - type: Transform
       pos: -45.5,-5.5
       parent: 2
-- proto: VendingMachineSyndieDrobe
+- proto: VendingMachineLegionDrobe
   entities:
   - uid: 14291
     components:
@@ -126426,7 +126426,7 @@ entities:
     - type: Battery
       startingCharge: 1
       maxCharge: 1
-- proto: WeaponTurretSyndicateBroken
+- proto: WeaponTurretLegionBroken
   entities:
   - uid: 19342
     components:

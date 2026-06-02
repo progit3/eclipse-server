@@ -1,4 +1,4 @@
-#inteq
+#ashlegion
 - type: entity
   parent: [ClothingHeadBase, BaseSecurityContraband]
   id: ClothingHeadCapSecurityPilot

@@ -562,7 +562,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -6.5,0.5
       parent: 1
-- proto: AirlockShuttleSyndicate
+- proto: AirlockShuttleLegion
   entities:
   - uid: 44
     components:
@@ -588,7 +588,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -10.5,2.5
       parent: 1
-- proto: AirlockSyndicate
+- proto: AirlockLegion
   entities:
   - uid: 519
     components:
@@ -648,7 +648,7 @@ entities:
     - type: Transform
       pos: 10.5,7.5
       parent: 1
-- proto: BedsheetSyndie
+- proto: BedsheetLegion
   entities:
   - uid: 470
     components:
@@ -1551,7 +1551,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadHatSyndie
+- proto: ClothingHeadHatLegion
   entities:
   - uid: 476
     components:
@@ -1560,7 +1560,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadsetAltSyndicate
+- proto: ClothingHeadsetAltLegion
   entities:
   - uid: 133
     components:
@@ -1583,7 +1583,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterCoatSyndieCap
+- proto: ClothingOuterCoatLegionCap
   entities:
   - uid: 479
     components:
@@ -1592,7 +1592,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterWinterSyndie
+- proto: ClothingOuterWinterLegion
   entities:
   - uid: 484
     components:
@@ -1601,7 +1601,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterWinterSyndieCap
+- proto: ClothingOuterWinterLegionCap
   entities:
   - uid: 487
     components:
@@ -1635,7 +1635,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingShoesBootsWinterSyndicate
+- proto: ClothingShoesBootsWinterLegion
   entities:
   - uid: 473
     components:
@@ -1671,7 +1671,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpskirtSyndieFormalDress
+- proto: ClothingUniformJumpskirtLegionFormalDress
   entities:
   - uid: 488
     components:
@@ -1696,7 +1696,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitPyjamaSyndicateBlack
+- proto: ClothingUniformJumpsuitPyjamaLegionBlack
   entities:
   - uid: 481
     components:
@@ -1705,7 +1705,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitPyjamaSyndicatePink
+- proto: ClothingUniformJumpsuitPyjamaLegionPink
   entities:
   - uid: 478
     components:
@@ -1714,7 +1714,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitPyjamaSyndicateRed
+- proto: ClothingUniformJumpsuitPyjamaLegionRed
   entities:
   - uid: 483
     components:
@@ -1723,7 +1723,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitSyndieFormal
+- proto: ClothingUniformJumpsuitLegionFormal
   entities:
   - uid: 480
     components:
@@ -1739,7 +1739,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ComputerIFFSyndicate
+- proto: ComputerIFFLegion
   entities:
   - uid: 154
     components:
@@ -1761,7 +1761,7 @@ entities:
     - type: Transform
       pos: 0.5,1.5
       parent: 1
-- proto: ComputerShuttleSyndie
+- proto: ComputerShuttleLegion
   entities:
   - uid: 144
     components:
@@ -1782,7 +1782,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -1.5,3.5
       parent: 1
-- proto: CrateSyndicateSurplusBundle
+- proto: CrateLegionSurplusBundle
   entities:
   - uid: 459
     components:
@@ -1844,7 +1844,7 @@ entities:
     - type: Transform
       pos: 8.469106,9.509953
       parent: 1
-- proto: FaxMachineSyndie
+- proto: FaxMachineLegion
   entities:
   - uid: 155
     components:
@@ -2810,7 +2810,7 @@ entities:
           ents:
           - 494
           - 495
-- proto: LockerSyndicate
+- proto: LockerLegion
   entities:
   - uid: 471
     components:
@@ -2893,7 +2893,7 @@ entities:
     - type: Transform
       pos: -7.2296853,10.747841
       parent: 1
-- proto: PhoneInstrumentSyndicate
+- proto: PhoneInstrumentLegion
   entities:
   - uid: 498
     components:
@@ -3166,7 +3166,7 @@ entities:
     - type: Transform
       pos: 8.5,-0.5
       parent: 1
-- proto: SuitStorageSyndie
+- proto: SuitStorageLegion
   entities:
   - uid: 452
     components:
@@ -3234,7 +3234,7 @@ entities:
       - SurveillanceCameraSecurity
       nameSet: True
       id: Aft-Starboard
-- proto: SyndicateComputerComms
+- proto: LegionComputerComms
   entities:
   - uid: 142
     components:
@@ -3242,7 +3242,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -0.5,0.5
       parent: 1
-- proto: SyndieFlag
+- proto: LegionFlag
   entities:
   - uid: 468
     components:
@@ -3258,7 +3258,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: SyndieHandyFlag
+- proto: LegionHandyFlag
   entities:
   - uid: 466
     components:
@@ -3270,14 +3270,14 @@ entities:
     - type: Transform
       pos: 8.796873,10.651737
       parent: 1
-- proto: SyndieMiniBomb
+- proto: LegionMiniBomb
   entities:
   - uid: 506
     components:
     - type: Transform
       pos: 8.421873,7.766321
       parent: 1
-- proto: SyndieSoldierSpawner
+- proto: LegionSoldierSpawner
   entities:
   - uid: 528
     components:
@@ -3289,7 +3289,7 @@ entities:
     - type: Transform
       pos: 1.5,3.5
       parent: 1
-- proto: SyndieSoldierTeamLeaderSpawner
+- proto: LegionSoldierTeamLeaderSpawner
   entities:
   - uid: 530
     components:
@@ -3384,7 +3384,7 @@ entities:
     - type: Transform
       pos: 7.5,12.5
       parent: 1
-- proto: ToolboxSyndicateFilled
+- proto: ToolboxLegionFilled
   entities:
   - uid: 497
     components:

@@ -88,16 +88,16 @@
     price: 3000
 
 - type: entity
-  parent: [ClothingShoesBootsMagBase, BaseJetpack, BaseSyndicateContraband]
-  id: ClothingShoesBootsMagSyndie
+  parent: [ClothingShoesBootsMagBase, BaseJetpack, BaseLegionContraband]
+  id: ClothingShoesBootsMagLegion
   name: blood-red magboots
   description: Reverse-engineered from ERT magboots, they have a heavy magnetic pull and integrated thrusters. It can hold 0.75 L of gas.
   components:
   - type: Sprite
-    sprite: Clothing/Shoes/Boots/magboots-syndicate.rsi
+    sprite: Clothing/Shoes/Boots/magboots-legion.rsi
     state: icon
   - type: Clothing
-    sprite: Clothing/Shoes/Boots/magboots-syndicate.rsi
+    sprite: Clothing/Shoes/Boots/magboots-legion.rsi
   - type: ClothingSpeedModifier
     walkModifier: 0.9
     sprintModifier: 0.9
@@ -117,7 +117,7 @@
     price: 1500
 
 - type: entity
-  parent: [BaseCentcommContraband, ClothingShoesBootsMagSyndie]
+  parent: [BaseCentcommContraband, ClothingShoesBootsMagLegion]
   id: ClothingShoesBootsMagERT
   name: ERT magboots
   description: Upgraded magnetic boots utilized by Nanotrasen's Emergency Response Teams, they have a heavy magnetic pull and integrated thrusters. It can hold 0.75 L of gas.

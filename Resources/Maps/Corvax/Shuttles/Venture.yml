@@ -137,7 +137,7 @@ entities:
     - type: GasTileOverlay
     - type: RadiationGridResistance
     - type: SalvageShuttle
-- proto: AirlockShuttleSyndicate
+- proto: AirlockShuttleLegion
   entities:
   - uid: 33
     components:

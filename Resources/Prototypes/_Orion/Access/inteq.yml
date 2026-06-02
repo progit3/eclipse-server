@@ -1,7 +1,7 @@
 - type: accessLevel
-  id: InteQVanguard
+  id: AshLegionVanguard
   name: Vanguard
 
 - type: accessLevel
-  id: InteQVanguardLeader
+  id: AshLegionVanguardLeader
   name: Vanguard Leader

@@ -51,7 +51,7 @@
     state: icon
 
 - type: entity
-  parent: [ BaseSubfloorAnchorStorageAnchored, BriefcaseSyndie, BaseMinorContraband ]
+  parent: [ BaseSubfloorAnchorStorageAnchored, BriefcaseLegion, BaseMinorContraband ]
   id: BriefcaseSmugglerCash
   name: smuggler's briefcase
   suffix: Smuggler, Do Not Map

@@ -91,9 +91,9 @@
 
 - type: entity
   parent: FaxMachineBase
-  id: FaxMachineSyndie
-  name: syndicate long range fax machine
-  suffix: Syndicate
+  id: FaxMachineLegion
+  name: legion long range fax machine
+  suffix: Legion
   components:
   - type: Sprite
     layers:

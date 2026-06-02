@@ -940,49 +940,49 @@
     - NTVisitorSpawner
     chance: 0.10
 
-### Syndicate & Hostiles
+### Legion & Hostiles
 
 - type: entity
-  name: syndicate team leader spawner
-  id: SyndieSoldierTeamLeaderSpawner
+  name: legion team leader spawner
+  id: LegionSoldierTeamLeaderSpawner
   parent: MarkerBase
   components:
   - type: Sprite
     layers:
       - state: red
       - sprite: Structures/Decoration/banner.rsi
-        state: banner_syndicate
+        state: banner_legion
   - type: RandomSpawner
     prototypes:
-    - RandomHumanoidSyndieSoldierTeamLeader
+    - RandomHumanoidLegionSoldierTeamLeader
 
 - type: entity
-  name: syndicate soldier spawner
-  id: SyndieSoldierSpawner
+  name: legion soldier spawner
+  id: LegionSoldierSpawner
   parent: MarkerBase
   components:
   - type: Sprite
     layers:
       - state: red
       - sprite: Structures/Decoration/banner.rsi
-        state: banner_syndicate
+        state: banner_legion
   - type: RandomSpawner
     prototypes:
-    - RandomHumanoidSyndieSoldier
+    - RandomHumanoidLegionSoldier
 
 - type: entity
-  name: syndie disaster victim spawner
-  id: SyndieVisitorSpawner
+  name: legion disaster victim spawner
+  id: LegionVisitorSpawner
   parent: MarkerBase
   components:
   - type: Sprite
     layers:
       - state: red
       - sprite: Structures/Decoration/banner.rsi
-        state: banner_syndicate
+        state: banner_legion
   - type: RandomSpawner
     prototypes:
-    - RandomHumanoidSyndieVisitor
+    - RandomHumanoidLegionVisitor
 
 - type: entity
   name: pirate crewman spawner

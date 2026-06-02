@@ -1,86 +1,85 @@
 - type: startingGear
-  id: InteQOperativeGearFullNoUplink
+  id: AshLegionOperativeGearFullNoUplink
   equipment:
-    jumpsuit: ClothingUniformJumpsuitInteQOperative
-    back: ClothingBackpackDuffelInteQ
-    mask: ClothingMaskInteQInfiltrator
-    eyes: ClothingEyesGogglessInteQ
-    ears: ClothingHeadsetInteQ
+    jumpsuit: ClothingUniformJumpsuitAshLegionOperative
+    back: ClothingBackpackDuffelAshLegion
+    eyes: ClothingEyesGogglessAshLegion
+    ears: ClothingHeadsetAshLegion
     gloves: ClothingHandsGlovesCombat
-    outerClothing: ClothingOuterHardsuitInteQ
+    outerClothing: ClothingOuterHardsuitAshLegion
     shoes: ClothingShoesBootsCombatFilled
-    id: InteQBasePDA
-    belt: ClothingBeltInteQWebbing
+    id: AshLegionBasePDA
+    belt: ClothingBeltAshLegionWebbing
   storage:
     back:
-    - WeaponPistolInteQCommissar
+    - WeaponPistolAshLegionCommissar
     - PinpointerSyndicateNuclear
-    - DeathAcidifierImplanterInteQ
+    - DeathAcidifierImplanterAshLegion
 
 # Nuclear Operative Gear
 - type: startingGear
-  id: InteQOperativeGearFull
-  parent: InteQOperativeGearFullNoUplink
+  id: AshLegionOperativeGearFull
+  parent: AshLegionOperativeGearFullNoUplink
   equipment:
     pocket2: BaseUplinkRadio40TC
 
 - type: chameleonOutfit
-  id: InteQNukeopsOutfit
+  id: AshLegionNukeopsOutfit
   name: roles-antag-nuclear-operative-name
-  startingGear: InteQOperativeGearFullNoUplink
-  icon: "JobIconInteQ"
+  startingGear: AshLegionOperativeGearFullNoUplink
+  icon: "JobIconAshLegion"
   equipment:
     head: ClothingHeadHelmetHardsuitSyndie
     neck: ClothingNeckScarfStripedSyndieRed
 
 # Nuclear Operative Commander Gear
 - type: startingGear
-  id: InteQCommanderGearFull
-  parent: InteQOperativeGearFull
+  id: AshLegionCommanderGearFull
+  parent: AshLegionOperativeGearFull
   equipment:
-    neck: ClothingNeckCloakInteQ
-    outerClothing: ClothingOuterHardsuitInteQ
-    id: InteQLeaderPDA
+    neck: ClothingNeckCloakAshLegion
+    outerClothing: ClothingOuterHardsuitAshLegion
+    id: AshLegionLeaderPDA
   inhand:
   - NukeOpsDeclarationOfWar
 
 # Nuclear Operative Medic Gear
 - type: startingGear
-  id: InteQOperativeMedicFull
-  parent: InteQOperativeGearFull
+  id: AshLegionOperativeMedicFull
+  parent: AshLegionOperativeGearFull
   equipment:
-    back: ClothingBackpackDuffelInteQMedical
-    jumpsuit: ClothingUniformJumpsuitInteQMedical
-    eyes: ClothingEyesGogglessMedInteQ
-    shoes: ClothingShoesBootsMagInteQ
-    belt: ClothingBeltInteQWebbingMedFilled
-    id: InteQMedicalPDA
+    back: ClothingBackpackDuffelAshLegionMedical
+    jumpsuit: ClothingUniformJumpsuitAshLegionMedical
+    eyes: ClothingEyesGogglessMedAshLegion
+    shoes: ClothingShoesBootsMagAshLegion
+    belt: ClothingBeltAshLegionWebbingMedFilled
+    id: AshLegionMedicalPDA
   storage:
     back:
     - SyndiHypo
     - SawAdvanced
     - Cautery
     - CombatKnife
-    - WeaponPistolInteQCommissar
+    - WeaponPistolAshLegionCommissar
     - PinpointerSyndicateNuclear
     - HandheldHealthAnalyzer
     - CombatMedipen
-    - DeathAcidifierImplanterInteQ
+    - DeathAcidifierImplanterAshLegion
 
 - type: chameleonOutfit
-  id: InteQNukeopsMedicOutfit
+  id: AshLegionNukeopsMedicOutfit
   name: roles-antag-nuclear-operative-agent-name
-  startingGear: InteQOperativeMedicFull
-  icon: "JobIconInteQ"
+  startingGear: AshLegionOperativeMedicFull
+  icon: "JobIconAshLegion"
   equipment:
-    back: ClothingBackpackDuffelInteQMedical
-    jumpsuit: ClothingUniformJumpsuitInteQMedical
+    back: ClothingBackpackDuffelAshLegionMedical
+    jumpsuit: ClothingUniformJumpsuitAshLegionMedical
     head: ClothingHeadHelmetHardsuitSyndieMedic
     neck: ClothingNeckScarfStripedLightBlue
 
 #Lone Operative Gear
 - type: startingGear
-  id: InteQLoneOperativeGearFull
-  parent: InteQOperativeGearFull
+  id: AshLegionLoneOperativeGearFull
+  parent: AshLegionOperativeGearFull
   equipment:
     pocket2: BaseUplinkRadio60TC

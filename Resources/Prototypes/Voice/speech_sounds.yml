@@ -62,13 +62,13 @@
     path: /Audio/Voice/Talk/Silicon/borg_exclaim.ogg
 
 - type: speechSounds
-  id: SyndieBorg
+  id: LegionBorg
   saySound:
-    path: /Audio/Voice/Talk/Silicon/syndieborg.ogg
+    path: /Audio/Voice/Talk/Silicon/legionborg.ogg
   askSound:
-    path: /Audio/Voice/Talk/Silicon/syndieborg_ask.ogg
+    path: /Audio/Voice/Talk/Silicon/legionborg_ask.ogg
   exclaimSound:
-    path: /Audio/Voice/Talk/Silicon/syndieborg_exclaim.ogg
+    path: /Audio/Voice/Talk/Silicon/legionborg_exclaim.ogg
 
 - type: speechSounds
   id: Xenoborg

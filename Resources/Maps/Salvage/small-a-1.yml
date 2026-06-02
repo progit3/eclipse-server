@@ -631,7 +631,7 @@ entities:
     - type: Transform
       pos: -4.82792,-1.5621994
       parent: 1
-- proto: WeaponTurretSyndicateBroken
+- proto: WeaponTurretLegionBroken
   entities:
   - uid: 87
     components:

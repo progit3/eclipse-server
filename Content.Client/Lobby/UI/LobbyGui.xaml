@@ -175,7 +175,7 @@
                                   SeparationOverride="8">
                         <TextureRect Name="SettingsSectionIcon"
                                      Access="Public"
-                                     TexturePath="/Textures/Eclipse/MainMenu/icons/nav-settings.png"
+                                     TexturePath="/Textures/Interface/VerbIcons/settings.svg.192dpi.png"
                                      SetSize="34 34"
                                      Stretch="KeepAspectCentered"
                                      ModulateSelfOverride="#A6A6A6"
@@ -198,7 +198,42 @@
                     </BoxContainer>
                 </Button>
 
-                <Control MinHeight="14" />
+                <Button Name="RoadmapSectionButton"
+                        Access="Public"
+                        HorizontalExpand="True"
+                        MinHeight="76"
+                        StyleIdentifier="mainMenuNav">
+                    <BoxContainer Orientation="Horizontal"
+                                  HorizontalExpand="True"
+                                  VerticalExpand="True"
+                                  Margin="4 0 4 0"
+                                  SeparationOverride="8">
+                        <TextureRect Name="RoadmapSectionIcon"
+                                     Access="Public"
+                                     TexturePath="/Textures/Eclipse/MainMenu/icons/nav-roadmap.png"
+                                     SetSize="34 34"
+                                     Stretch="KeepAspectCentered"
+                                     ModulateSelfOverride="#A6A6A6"
+                                     VerticalAlignment="Center" />
+                        <BoxContainer Orientation="Vertical"
+                                      HorizontalExpand="True"
+                                      VerticalAlignment="Center"
+                                      SeparationOverride="5">
+                            <Label Name="RoadmapSectionTitle"
+                                   Access="Public"
+                                   Text="ПЛАНЫ"
+                                   StyleIdentifier="mainMenuNavTitle"
+                                   ClipText="True" />
+                            <Label Name="RoadmapSectionSubtitle"
+                                   Access="Public"
+                                   Text="Дорожная карта"
+                                   StyleIdentifier="mainMenuNavSubtitle"
+                                   ClipText="True" />
+                        </BoxContainer>
+                    </BoxContainer>
+                </Button>
+
+                <Control VerticalExpand="True" />
 
                 <Button Name="SiteButton"
                         Access="Public"
@@ -235,44 +270,7 @@
                     </BoxContainer>
                 </Button>
 
-                <Control MinHeight="14" />
-
-                <Button Name="RoadmapSectionButton"
-                        Access="Public"
-                        HorizontalExpand="True"
-                        MinHeight="76"
-                        StyleIdentifier="mainMenuNav">
-                    <BoxContainer Orientation="Horizontal"
-                                  HorizontalExpand="True"
-                                  VerticalExpand="True"
-                                  Margin="4 0 4 0"
-                                  SeparationOverride="8">
-                        <TextureRect Name="RoadmapSectionIcon"
-                                     Access="Public"
-                                     TexturePath="/Textures/Eclipse/MainMenu/icons/nav-settings.png"
-                                     SetSize="34 34"
-                                     Stretch="KeepAspectCentered"
-                                     ModulateSelfOverride="#A6A6A6"
-                                     VerticalAlignment="Center" />
-                        <BoxContainer Orientation="Vertical"
-                                      HorizontalExpand="True"
-                                      VerticalAlignment="Center"
-                                      SeparationOverride="5">
-                            <Label Name="RoadmapSectionTitle"
-                                   Access="Public"
-                                   Text="ДОРОЖНАЯ КАРТА"
-                                   StyleIdentifier="mainMenuNavTitle"
-                                   ClipText="True" />
-                            <Label Name="RoadmapSectionSubtitle"
-                                   Access="Public"
-                                   Text="Планы развития"
-                                   StyleIdentifier="mainMenuNavSubtitle"
-                                   ClipText="True" />
-                        </BoxContainer>
-                    </BoxContainer>
-                </Button>
-
-                <Control VerticalExpand="True" />
+                <Control MinHeight="12" />
 
                 <lobbyUi:LobbyCharacterPreviewPanel Name="CharacterPreview"
                                                     Access="Public"

@@ -8,10 +8,22 @@
   },
   "states": [
     {
-      "name": "inteq-inhand-left"
+      "name": "ashlegion-inhand-left"
     },
     {
-      "name": "inteq-inhand-right"
+      "name": "ashlegion-inhand-right"
+    },
+    {
+      "name": "ashlegion-1"
+    },
+    {
+      "name": "ashlegion-2"
+    },
+    {
+      "name": "ashlegion-3"
+    },
+    {
+      "name": "ashlegion-4"
     },
     {
       "name": "inteq-1"
@@ -24,6 +36,12 @@
     },
     {
       "name": "inteq-4"
+    },
+    {
+      "name": "inteq-inhand-left"
+    },
+    {
+      "name": "inteq-inhand-right"
     }
   ]
 }

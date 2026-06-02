@@ -177,9 +177,9 @@
 
 - type: entity
   parent: BaseComputerShuttle
-  id: ComputerShuttleSyndie
-  name: syndicate shuttle console
-  description: Used to pilot a syndicate shuttle.
+  id: ComputerShuttleLegion
+  name: legion shuttle console
+  description: Used to pilot a legion shuttle.
   components:
   - type: Sprite
     layers:
@@ -188,14 +188,14 @@
     - map: ["computerLayerKeyboard"]
       state: generic_keyboard
     - map: ["computerLayerScreen"]
-      state: syndishuttle
+      state: legionshuttle
     - map: ["computerLayerKeys"]
-      state: syndie_key
+      state: legion_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: Tag
     tags:
-      - Syndicate
+      - Legion
   - type: RadarConsole
     maxRange: 384
   - type: PointLight
@@ -203,7 +203,7 @@
     energy: 4.0
     color: "#c94242"
   - type: Computer
-    board: SyndicateShuttleConsoleCircuitboard
+    board: LegionShuttleConsoleCircuitboard
 
 - type: entity
   parent: BaseComputerShuttle
@@ -270,9 +270,9 @@
 
 - type: entity
   parent: ComputerIFF
-  id: ComputerIFFSyndicate
+  id: ComputerIFFLegion
   name: IFF computer
-  suffix: Syndicate
+  suffix: Legion
   description: Allows you to control the IFF and stealth characteristics of this vessel.
   components:
   - type: IFFConsole
@@ -289,7 +289,7 @@
         enum.WiresUiKey.Key:
           type: WiresBoundUserInterface
   - type: Computer
-    board: ComputerIFFSyndicateCircuitboard
+    board: ComputerIFFLegionCircuitboard
 
 - type: entity
   parent: BaseComputerAiAccess
@@ -685,8 +685,8 @@
 
 - type: entity
   parent: ComputerComms
-  id: SyndicateComputerComms
-  name: syndicate communications computer
+  id: LegionComputerComms
+  name: legion communications computer
   description: A computer capable of remotely hacking into the station's communications systems. Using this to make an announcement will alert the station to your presence.
   components:
   - type: Sprite
@@ -696,9 +696,9 @@
     - map: ["computerLayerKeyboard"]
       state: generic_keyboard
     - map: ["computerLayerScreen"]
-      state: comm_syndie
+      state: comm_legion
     - map: ["computerLayerKeys"]
-      state: syndie_key
+      state: legion_key
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   - type: AccessReader
@@ -711,7 +711,7 @@
     announceSentBy: false # The title already says who they are.
     sound: /Audio/Announcements/war.ogg
   - type: Computer
-    board: SyndicateCommsComputerCircuitboard
+    board: LegionCommsComputerCircuitboard
   - type: PointLight
     radius: 1.5
     energy: 4.0
@@ -1743,7 +1743,7 @@
 - type: entity
   parent: BaseComputer
   id: ComputerNukieDelivery
-  name: syndicate delivery computer
+  name: legion delivery computer
   description: "A computer that can bluespace in certain equipment for Nuclear Operations. \nThe circuitboard is integrated into the frame and can't be recovered if deconstructed."
   components:
   - type: Sprite
@@ -1753,13 +1753,13 @@
     - map: ["computerLayerKeyboard"]
       state: generic_keyboard
     - map: ["computerLayerScreen"]
-      state: request-syndie
+      state: request-legion
     - map: ["computerLayerKeys"]
-      state: syndie_generic_keys
+      state: legion_generic_keys
     - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
       state: generic_panel_open
   # - type: Computer
-  #   board: SyndicateCommsComputerCircuitboard
+  #   board: LegionCommsComputerCircuitboard
   - type: Anchorable
     flags:
     - Anchorable # No taking the console along!

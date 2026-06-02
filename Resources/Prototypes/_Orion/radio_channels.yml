@@ -1,6 +1,6 @@
 - type: radioChannel
-  id: InteQ
-  name: chat-radio-inteq
+  id: AshLegion
+  name: chat-radio-ash-legion
   keycode: 'ш'
   frequency: 1454
   color: "#FF8C00"

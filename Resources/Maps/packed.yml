@@ -42140,14 +42140,14 @@ entities:
     - type: Transform
       pos: 20.21703,5.52767
       parent: 2
-- proto: ClothingUniformJumpsuitRecruitSyndie
+- proto: ClothingUniformJumpsuitRecruitLegion
   entities:
   - uid: 12496
     components:
     - type: Transform
       pos: 11.480359,-11.451806
       parent: 2
-- proto: ClothingUniformJumpsuitRepairmanSyndie
+- proto: ClothingUniformJumpsuitRepairmanLegion
   entities:
   - uid: 12675
     components:

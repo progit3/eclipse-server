@@ -22205,7 +22205,7 @@ entities:
     - type: Transform
       pos: 21.01059,-31.695402
       parent: 1668
-- proto: CigPackSyndicate
+- proto: CigPackLegion
   entities:
   - uid: 2976
     components:
@@ -53051,7 +53051,7 @@ entities:
       - SurveillanceCameraEntertainment
       nameSet: True
       id: youtube.com/liltenhead
-- proto: SyndicateMicrowave
+- proto: LegionMicrowave
   entities:
   - uid: 1172
     components:
@@ -55230,7 +55230,7 @@ entities:
       pos: 22.5,10.5
       parent: 1668
     - type: Conveyed
-- proto: TargetSyndicate
+- proto: TargetLegion
   entities:
   - uid: 9834
     components:
@@ -55751,7 +55751,7 @@ entities:
     - type: Transform
       pos: -39.5,7.5
       parent: 1668
-- proto: VendingMachineBoozeSyndicate
+- proto: VendingMachineBoozeLegion
   entities:
   - uid: 1282
     components:

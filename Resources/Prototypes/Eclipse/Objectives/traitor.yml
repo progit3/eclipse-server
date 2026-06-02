@@ -92,7 +92,7 @@
 - type: entity
   parent: BaseTraitorObjective
   id: RecruitingRandomObjective
-  description: Recruit any member of the crew into the ranks of InteQ.
+  description: Recruit any member of the crew into the ranks of AshLegion.
   components:
   - type: Objective
     difficulty: 1

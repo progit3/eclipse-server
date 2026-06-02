@@ -63,10 +63,10 @@ job-name-zookeeper = зоотехник
 
 # antagonist jobs
 job-name-ninja = ниндзя
-job-name-syndicate = синдикат
-job-name-syndicate-commander = командир оперативников
-job-name-syndicate-corpsman = медик оперативников
-job-name-syndicate-operative = ядерный оперативник
+job-name-legion = легион
+job-name-legion-commander = командир оперативников
+job-name-legion-corpsman = медик оперативников
+job-name-legion-operative = оперативник Легиона пепла
 job-name-pirate = пират
 job-name-wizard = волшебник
 job-name-zombie = зомби

@@ -7,4 +7,4 @@ ent-ResignRandomObjective = { ent-BaseTraitorObjective }
 ent-BackstabRandomObjective = { ent-BaseTraitorObjective }
     .desc = Заказчику необходимо, чтобы цель посадили по любой статье КЗ.
 ent-RecruitingRandomObjective = { ent-BaseTraitorObjective }
-    .desc = InteQ необходим этот член экипажа в своих рядах.
+    .desc = Легион пепла необходим этот член экипажа в своих рядах.

@@ -556,37 +556,37 @@
 
 # Misc
 
-### Syndicate & Hostiles
+### Legion & Hostiles
 
 - type: entity
-  id: RandomHumanoidSyndieSoldierTeamLeader
-  name: syndicate team leader ghost role
+  id: RandomHumanoidLegionSoldierTeamLeader
+  name: legion team leader ghost role
   components:
     - type: Sprite
       sprite: Structures/Decoration/banner.rsi
-      state: banner_syndicate
+      state: banner_legion
     - type: RandomHumanoidSpawner
-      settings: SyndieSoldierTeamLeader
+      settings: LegionSoldierTeamLeader
 
 - type: entity
-  id: RandomHumanoidSyndieSoldier
-  name: syndicate soldier ghost role
+  id: RandomHumanoidLegionSoldier
+  name: legion soldier ghost role
   components:
     - type: Sprite
       sprite: Structures/Decoration/banner.rsi
-      state: banner_syndicate
+      state: banner_legion
     - type: RandomHumanoidSpawner
-      settings: SyndieSoldier
+      settings: LegionSoldier
 
 - type: entity
-  id: RandomHumanoidSyndieVisitor
-  name: syndie disaster victim ghost role
+  id: RandomHumanoidLegionVisitor
+  name: legion disaster victim ghost role
   components:
     - type: Sprite
       sprite: Structures/Decoration/banner.rsi
-      state: banner_syndicate
+      state: banner_legion
     - type: RandomHumanoidSpawner
-      settings: SyndieVisitor
+      settings: LegionVisitor
 
 - type: entity
   id: RandomHumanoidPirateScooner

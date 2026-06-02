@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from Baystation12 at https://github.com/Baystation12/Baystation12/tree/17e84546562b97d775cb26790a08e6d87e7f8077 and heavily modified by Flareguy for Space Station 14. Inhands by carousel. Syndie versions modified from generic by SlamBamActionman",
+    "copyright": "Taken from Baystation12 at https://github.com/Baystation12/Baystation12/tree/17e84546562b97d775cb26790a08e6d87e7f8077 and heavily modified by Flareguy for Space Station 14. Inhands by carousel. Legion versions modified from generic by SlamBamActionman",
     "size": {
         "x": 32,
         "y": 32
@@ -31,7 +31,7 @@
             "directions": 4
         },
         {
-            "name": "syndie",
+            "name": "legion",
         "delays": [
             [
             0.3,
@@ -40,11 +40,11 @@
         ]
         },
         {
-            "name": "inhand-left-syndie",
+            "name": "inhand-left-legion",
             "directions": 4
         },
         {
-            "name": "inhand-right-syndie",
+            "name": "inhand-right-legion",
             "directions": 4
         }
     ]

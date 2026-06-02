@@ -8,8 +8,8 @@ borg-type-janitor = [color= #a747c0]киборга-уборщика[/color]
 borg-type-medical = [color= #5995ba]киборга-доктора[/color]
 borg-type-service = [color= #508242]киборга-официанта[/color]
 
-borg-type-syndicate = [color= #962023]киборга Синдиката[/color]
-borg-type-syndicate-assault = [color= #680a0d]штурмового киборга Синдиката[/color]
+borg-type-legion = [color= #962023]киборга Легиона[/color]
+borg-type-legion-assault = [color= #680a0d]штурмового киборга Легиона[/color]
 
 xenoborg-type-all = [color= #3d94ff]любого ксеноборга[/color]
 xenoborg-type-engi = [color= #edd45b]инженерного ксеноборга[/color]

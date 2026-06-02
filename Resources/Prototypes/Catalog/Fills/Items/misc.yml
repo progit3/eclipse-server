@@ -58,7 +58,7 @@
       - KukriKnife
 
 - type: entity
-  id: ClothingShoesBootsSyndieFilled
+  id: ClothingShoesBootsLegionFilled
   parent: ClothingShoesBootsCombat
   suffix: Filled, Throwing Knife
   components:

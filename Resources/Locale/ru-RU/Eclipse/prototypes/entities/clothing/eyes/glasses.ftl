@@ -1,7 +1,7 @@
-ent-ClothingEyesGogglessInteQ = жёлтый визор
+ent-ClothingEyesGogglessAshLegion = жёлтый визор
     .desc = Используется для защиты глаз. Улучшенное покрытие блокирует множество вспышек.
-ent-ClothingEyesGogglessMedInteQ = { ent-ClothingEyesGogglessInteQ }
-    .desc = { ent-ClothingEyesGogglessInteQ.desc }
+ent-ClothingEyesGogglessMedAshLegion = { ent-ClothingEyesGogglessAshLegion }
+    .desc = { ent-ClothingEyesGogglessAshLegion.desc }
 
 ent-ClothingEyesNightVisionGoggles = очки ночного зрения
     .desc = Теперь вы сможете видеть в темноте!

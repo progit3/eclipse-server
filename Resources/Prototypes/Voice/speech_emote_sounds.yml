@@ -433,14 +433,14 @@
       path: /Audio/Effects/Cargo/ping.ogg
 
 - type: emoteSounds
-  id: UnisexSiliconSyndicate
+  id: UnisexSiliconLegion
   params:
     variation: 0.05
   sounds:
     Scream:
       collection: SiliconScreams
     Laugh:
-      path: /Audio/Voice/Silicon/syndieborg_laugh.ogg
+      path: /Audio/Voice/Silicon/legionborg_laugh.ogg
     Beep:
       path: /Audio/Machines/twobeep.ogg
     Chime:

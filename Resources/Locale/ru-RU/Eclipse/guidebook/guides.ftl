@@ -1,1 +1,1 @@
-guide-entry-blob = Блоб
+guide-entry-blob = Блоб

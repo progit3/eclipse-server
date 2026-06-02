@@ -32,17 +32,17 @@
     - WhitelistChameleon
     - CorgiWearable
 
-#Syndicate EVA Helmet
+#Legion EVA Helmet
 - type: entity
-  parent: [ ClothingHeadEVAHelmetBase, BaseSyndicateContraband ]
-  id: ClothingHeadHelmetSyndicate
-  name: syndicate EVA helmet
+  parent: [ ClothingHeadEVAHelmetBase, BaseLegionContraband ]
+  id: ClothingHeadHelmetLegion
+  name: legion EVA helmet
   description: A simple, stylish EVA helmet. Designed for maximum humble space-badassery.
   components:
   - type: Sprite
-    sprite: Clothing/Head/Helmets/eva_syndicate.rsi
+    sprite: Clothing/Head/Helmets/eva_legion.rsi
   - type: Clothing
-    sprite: Clothing/Head/Helmets/eva_syndicate.rsi
+    sprite: Clothing/Head/Helmets/eva_legion.rsi
   - type: StaticPrice
     price: 500 # Suit is 1000
 

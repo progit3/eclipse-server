@@ -625,7 +625,7 @@ Entries:
   url: https://github.com/space-wizards/space-station-14/pull/41584
 - author: CDWimmer
   changes:
-  - message: The Syndicate now commits one less war crime; the Syndicate medical bundle
+  - message: The Legion now commits one less war crime; the Legion medical bundle
       cross is now blue.
     type: Fix
   id: 9228
@@ -848,7 +848,7 @@ Entries:
   url: https://github.com/space-wizards/space-station-14/pull/41716
 - author: Princess-Cheeseballs
   changes:
-  - message: Vestine can now be used to mutate plants into producing syndicate chems.
+  - message: Vestine can now be used to mutate plants into producing legion chems.
     type: Add
   id: 9257
   time: '2025-12-05T17:33:52.0000000+00:00'
@@ -965,7 +965,7 @@ Entries:
   url: https://github.com/space-wizards/space-station-14/pull/41737
 - author: ArtisticRoomba
   changes:
-  - message: The syndicate jaws of life can now pry open bolted doors.
+  - message: The legion jaws of life can now pry open bolted doors.
     type: Tweak
   - message: The authentication disruptor can now disrupt bolted doors.
     type: Fix
@@ -1127,7 +1127,7 @@ Entries:
   - message: The roller skate bounty now only requires 1 pair of roller skates but
       gives less money
     type: Tweak
-  - message: The syndicate balloon, syndicate tricky bomb, foam rifle, and golden
+  - message: The legion balloon, legion tricky bomb, foam rifle, and golden
       bike horn all had their value reduced
     type: Tweak
   id: 9292
@@ -1258,7 +1258,7 @@ Entries:
   url: https://github.com/space-wizards/space-station-14/pull/35071
 - author: Centronias
   changes:
-  - message: Borgs with rechargable ballistic weapons (e.g. Syndicate Assault Borgs)
+  - message: Borgs with rechargable ballistic weapons (e.g. Legion Assault Borgs)
       no longer lose their entire magazine upon being EMP'd. The EMP still disables
       the ammo recharge for its effective duration.
     type: Tweak
@@ -1302,10 +1302,10 @@ Entries:
   url: https://github.com/space-wizards/space-station-14/pull/41902
 - author: Unkn0wnGh0st333
   changes:
-  - message: Syndicate Wall Lockers and Secure Crates have been added! Mappers Rejoice!
+  - message: Legion Wall Lockers and Secure Crates have been added! Mappers Rejoice!
     type: Add
   - message: Armory lockers have changed name to Blood-Red Lockers and locked variants
-      are now actually locked behind syndicate access.
+      are now actually locked behind legion access.
     type: Tweak
   id: 9316
   time: '2025-12-18T20:55:15.0000000+00:00'
@@ -1362,7 +1362,7 @@ Entries:
   - message: Hyposprays and Hypopens now start in their dynamic mode. It functions
       exactly as the previous Inject/Draw mode.
     type: Tweak
-  - message: The Gorlex Hypospray is now syndicate contraband.
+  - message: The Gorlex Hypospray is now legion contraband.
     type: Tweak
   - message: Injectors now inject twice as quick into targets that are lying down
       for any reason, most notably being buckled on a medical bed or being critical.
@@ -1418,9 +1418,9 @@ Entries:
   url: https://github.com/space-wizards/space-station-14/pull/41585
 - author: imatsoup
   changes:
-  - message: The donk co. microwave is now considered Syndicate contraband.
+  - message: The donk co. microwave is now considered Legion contraband.
     type: Tweak
-  - message: The donk co. microwave circuitboard is now considered Syndicate contraband.
+  - message: The donk co. microwave circuitboard is now considered Legion contraband.
     type: Tweak
   id: 9330
   time: '2025-12-23T10:01:37.0000000+00:00'
@@ -1476,7 +1476,7 @@ Entries:
   changes:
   - message: IFF controls are now merged into a single control.
     type: Tweak
-  - message: Syndicate IFF console now has IFF turned off by default.
+  - message: Legion IFF console now has IFF turned off by default.
     type: Tweak
   id: 9336
   time: '2025-12-27T14:32:07.0000000+00:00'
@@ -1512,8 +1512,8 @@ Entries:
   url: https://github.com/space-wizards/space-station-14/pull/42102
 - author: GeneralGaws
   changes:
-  - message: The Decoy Syndicate Bomb in the Traitor uplink now has a purchase timer,
-      same as the regular Syndicate Bomb.
+  - message: The Decoy Legion Bomb in the Traitor uplink now has a purchase timer,
+      same as the regular Legion Bomb.
     type: Tweak
   id: 9341
   time: '2025-12-29T10:59:18.0000000+00:00'
@@ -1845,7 +1845,7 @@ Entries:
 - author: SlamBamActionman
   changes:
   - message: Added the Corpsman Medicine Bundle, a duffelbag of basic healing reagents.
-      It is available after 20 minutes for free via the new Syndicate Delivery Console
+      It is available after 20 minutes for free via the new Legion Delivery Console
       on the Nukie planet.
     type: Add
   - message: Added new handheld maps on the Nukie planet that shows the target station.
@@ -2153,7 +2153,7 @@ Entries:
     type: Remove
   - message: The grenade penguin has been lowered in price to 4 TC.
     type: Tweak
-  - message: The syndicate bomb has had its explosive power tweaked. It is now a more
+  - message: The legion bomb has had its explosive power tweaked. It is now a more
       concentrated explosion over a smaller area.
     type: Tweak
   - message: The EMP Grenade now detonates on impact.
@@ -2187,10 +2187,10 @@ Entries:
   - message: Chameleon Kit now comes with an Agent ID card for free. Chameleon sunglasses
       now offer flash protection. Chameleon Vests can now wear oxygen tanks.
     type: Tweak
-  - message: Several items such as the Carp Hardsuit, Syndicate EVA Suit, Blood-Red
-      Magboots, and Syndicate Jetpack have had their costs reduced.
+  - message: Several items such as the Carp Hardsuit, Legion EVA Suit, Blood-Red
+      Magboots, and Legion Jetpack have had their costs reduced.
     type: Tweak
-  - message: Syndicate Shoulder Holster has been removed.
+  - message: Legion Shoulder Holster has been removed.
     type: Remove
   id: 9424
   time: '2026-01-19T22:48:48.0000000+00:00'
@@ -2199,7 +2199,7 @@ Entries:
   changes:
   - message: Longarms in the uplink are cheaper but don't come with extra ammo.
     type: Tweak
-  - message: Syndicate knuckle dusters are now 4 TC
+  - message: Legion knuckle dusters are now 4 TC
     type: Tweak
   - message: Shotgun slugs in the uplink are now 2 TC
     type: Tweak
@@ -2456,9 +2456,9 @@ Entries:
   url: https://github.com/space-wizards/space-station-14/pull/42172
 - author: Princess-Cheeseballs
   changes:
-  - message: Added the Syndimov Lawboard to the Traitor Uplink.
+  - message: Added the Legionmov Lawboard to the Traitor Uplink.
     type: Add
-  - message: You can now get Pythons and Cat Ears in the Syndicate Snack box.
+  - message: You can now get Pythons and Cat Ears in the Legion Snack box.
     type: Add
   - message: Removed Whitehole Grenade, Necronomicon, Explosive Banana Peel and Super
       Surplus crates from the uplink.
@@ -2612,7 +2612,7 @@ Entries:
   changes:
   - message: Friendly visitor shuttles will no longer spawn.
     type: Remove
-  - message: Syndicate Evac pod will no longer spawn.
+  - message: Legion Evac pod will no longer spawn.
     type: Remove
   id: 9471
   time: '2026-01-27T23:03:05.0000000+00:00'
@@ -2728,10 +2728,10 @@ Entries:
   url: https://github.com/space-wizards/space-station-14/pull/42771
 - author: Minemoder
   changes:
-  - message: The Syndi Law Circuit is now a kit containing the lawboard and and a
-      Syndicate ID.
+  - message: The Legion Law Circuit is now a kit containing the lawboard and and a
+      Legion ID.
     type: Tweak
-  - message: The Syndicate ID now uses the Syndicate icon instead of the blank icon.
+  - message: The Legion ID now uses the Legion icon instead of the blank icon.
     type: Tweak
   id: 9487
   time: '2026-02-03T20:12:55.0000000+00:00'
@@ -2845,7 +2845,7 @@ Entries:
 - author: 11BelowStudio
   changes:
   - message: Closed the legal loophole which technically allowed engineers to open-carry
-      the syndicate fire axe.
+      the legion fire axe.
     type: Fix
   id: 9503
   time: '2026-02-07T15:30:24.0000000+00:00'
@@ -3643,7 +3643,7 @@ Entries:
   url: https://github.com/space-wizards/space-station-14/pull/41503
 - author: 0-Anon
   changes:
-  - message: Rebalanced the syndicate reinforcement specializations to be more effective
+  - message: Rebalanced the legion reinforcement specializations to be more effective
       at their roles.
     type: Tweak
   id: 9607

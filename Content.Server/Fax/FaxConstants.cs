@@ -28,7 +28,7 @@ public static class FaxConstants
     public const string FaxPaperContentData = "fax_data_content";
     public const string FaxPaperStampStateData = "fax_data_stamp_state";
     public const string FaxPaperStampedByData = "fax_data_stamped_by";
-    public const string FaxSyndicateData = "fax_data_i_am_syndicate";
+    public const string FaxLegionData = "fax_data_i_am_legion";
     public const string FaxPaperLockedData = "fax_data_locked";
     public const string FaxPaperSenderFaxNameData = "fax_data_sender_fax_name";
 }

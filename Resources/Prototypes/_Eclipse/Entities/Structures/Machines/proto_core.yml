@@ -1,0 +1,94 @@
+- type: entity
+  id: ProtoCore
+  parent: BaseStructure
+  name: proto core
+  description: A stationary imperial energy vault used for emergency station power reserves.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Eclipse/Structures/Machines/proto_core.rsi
+    layers:
+    - state: base
+  - type: Icon
+    sprite: _Eclipse/Structures/Machines/proto_core.rsi
+    state: base
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-1.45,-1.45,1.45,1.45"
+        density: 600
+        mask:
+        - MachineMask
+        layer:
+        - MidImpassable
+        - LowImpassable
+  - type: InteractionOutline
+  - type: ProtoCore
+    meltdownTime: 900
+    criticalThreshold: 180
+    emergencyShuttleTime: 180
+  - type: Battery
+    netsync: false
+    maxCharge: 16000000
+    startingCharge: 16000000
+  - type: ExaminableBattery
+  - type: NodeContainer
+    examinable: true
+    nodes:
+      output:
+        !type:CableDeviceNode
+        nodeGroupID: HVPower
+  - type: BatteryDischarger
+    voltage: High
+    node: output
+  - type: PowerNetworkBattery
+    maxSupply: 250000
+    maxChargeRate: 0
+    supplyRampTolerance: 5000
+    supplyRampRate: 2000
+  - type: PointLight
+    radius: 3
+    energy: 1.8
+    color: "#ff8b24"
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: NavMapBeacon
+    color: "#ff8b24"
+    text: proto core
+    enabled: true
+
+- type: entity
+  id: ProtoCoreConsole
+  parent: BaseStructure
+  name: proto core control console
+  description: A hardened terminal wired into the emergency control loop of a proto core.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _Eclipse/Structures/Machines/proto_core_console.rsi
+    layers:
+    - state: base
+  - type: Icon
+    sprite: _Eclipse/Structures/Machines/proto_core_console.rsi
+    state: base
+  - type: InteractionOutline
+  - type: ProtoCoreConsole
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
+  - type: ApcPowerReceiver
+    powerLoad: 500

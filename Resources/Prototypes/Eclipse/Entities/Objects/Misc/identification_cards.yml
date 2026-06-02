@@ -179,9 +179,9 @@
     job: CentralCommandSecurity
 
 - type: entity
-  parent: [IDCardStandard, BaseInteQContraband]
-  id: InteQOpsLeaderIDCard
-  name: InteQ Leader ID card
+  parent: [IDCardStandard, BaseAshLegionContraband]
+  id: AshLegionOpsLeaderIDCard
+  name: AshLegion Leader ID card
   components:
   - type: Sprite
     layers:
@@ -190,16 +190,16 @@
     - sprite: Eclipse/Objects/Misc/id_cards.rsi
       state: lead
   - type: IdCard
-    jobIcon: JobIconInteQ
+    jobIcon: JobIconAshLegionCommander
   - type: Access
     tags:
-    - InteQVanguardLeader
-    - InteQVanguard
+    - AshLegionVanguardLeader
+    - AshLegionVanguard
 
 - type: entity
-  parent: [IDCardStandard, BaseInteQContraband]
-  id: InteQOpsMedicalIDCard
-  name: InteQ Medical ID card
+  parent: [IDCardStandard, BaseAshLegionContraband]
+  id: AshLegionOpsMedicalIDCard
+  name: AshLegion Medical ID card
   components:
   - type: Sprite
     layers:
@@ -208,15 +208,15 @@
     - sprite: Eclipse/Objects/Misc/id_cards.rsi
       state: med
   - type: IdCard
-    jobIcon: JobIconInteQ
+    jobIcon: JobIconAshLegionCorpsman
   - type: Access
     tags:
-    - InteQVanguard
+    - AshLegionVanguard
 
 - type: entity
-  parent: [IDCardStandard, BaseInteQContraband]
-  id: InteQOpsBaseIDCard
-  name: InteQ ID card
+  parent: [IDCardStandard, BaseAshLegionContraband]
+  id: AshLegionOpsBaseIDCard
+  name: AshLegion ID card
   components:
   - type: Sprite
     layers:
@@ -225,10 +225,10 @@
     - sprite: Eclipse/Objects/Misc/id_cards.rsi
       state: base
   - type: IdCard
-    jobIcon: JobIconInteQ
+    jobIcon: JobIconAshLegionOperative
   - type: Access
     tags:
-    - InteQVanguard
+    - AshLegionVanguard
 
 - type: entity
   parent: IDCardStandard
@@ -239,6 +239,8 @@
     layers:
     - sprite: Eclipse/Objects/Misc/id_cards.rsi
       state: id-nanotrasen-navy-cap
+  - type: PresetIdCard
+    job: NanoTrasenNavyCaptain
 
 - type: entity
   parent: IDCardStandard
@@ -249,6 +251,8 @@
     layers:
     - sprite: Eclipse/Objects/Misc/id_cards.rsi
       state: id-nanotrasen-navy-officer
+  - type: PresetIdCard
+    job: NanoTrasenNavyOfficer
 
 - type: entity
   parent: IDCardStandard
@@ -259,6 +263,8 @@
     layers:
     - sprite: Eclipse/Objects/Misc/id_cards.rsi
       state: id-nanotrasen-navy-wo-engineer
+  - type: PresetIdCard
+    job: NanoTrasenNavyWarrantOfficerEngineer
 
 - type: entity
   parent: IDCardStandard
@@ -269,6 +275,8 @@
     layers:
     - sprite: Eclipse/Objects/Misc/id_cards.rsi
       state: id-nanotrasen-navy-wo-medical
+  - type: PresetIdCard
+    job: NanoTrasenNavyWarrantOfficerMedical
 
 - type: entity
   parent: IDCardStandard
@@ -279,6 +287,8 @@
     layers:
     - sprite: Eclipse/Objects/Misc/id_cards.rsi
       state: id-nanotrasen-navy-sailor
+  - type: PresetIdCard
+    job: NanoTrasenNavySailor
 
 - type: entity
   parent: IDCardStandard
@@ -289,6 +299,8 @@
     layers:
     - sprite: Eclipse/Objects/Misc/id_cards.rsi
       state: id-nanotrasen-navy-engineer
+  - type: PresetIdCard
+    job: NanoTrasenNavyEngineer
 
 - type: entity
   parent: IDCardStandard
@@ -299,3 +311,5 @@
     layers:
     - sprite: Eclipse/Objects/Misc/id_cards.rsi
       state: id-nanotrasen-navy-medical
+  - type: PresetIdCard
+    job: NanoTrasenNavyMedical

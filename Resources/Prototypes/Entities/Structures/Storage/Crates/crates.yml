@@ -334,16 +334,16 @@
 
 - type: entity
   parent: CrateBaseSecure
-  id: CrateSyndicateSecure
-  name: secure syndicate crate
+  id: CrateLegionSecure
+  name: secure legion crate
   description: A dark steel crate with red bands and a letter S embossed on the front.
   components:
   - type: Icon
-    sprite: Structures/Storage/Crates/syndicate_secure.rsi
+    sprite: Structures/Storage/Crates/legion_secure.rsi
   - type: Sprite
-    sprite: Structures/Storage/Crates/syndicate_secure.rsi
+    sprite: Structures/Storage/Crates/legion_secure.rsi
   - type: AccessReader
-    access: [["SyndicateAgent", "NuclearOperative"]]
+    access: [["LegionAgent", "NuclearOperative"]]
 
 - type: entity
   parent: CrateGeneric
@@ -834,14 +834,14 @@
 
 - type: entity
   parent: CrateGenericSteel
-  id: CrateSyndicate
-  name: syndicate crate
+  id: CrateLegion
+  name: legion crate
   description: A dark steel crate with red bands and a letter S embossed on the front.
   components:
   - type: Icon
-    sprite: Structures/Storage/Crates/syndicate.rsi
+    sprite: Structures/Storage/Crates/legion.rsi
   - type: Sprite
-    sprite: Structures/Storage/Crates/syndicate.rsi
+    sprite: Structures/Storage/Crates/legion.rsi
 
 - type: entity
   parent: [StructureWheeled, CrateBaseWeldable]

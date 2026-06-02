@@ -312,15 +312,15 @@
     ignited: false
 
 - type: entity
-  parent: [BaseBrandedLighter, BaseSyndicateContraband]
-  id: SyndicateFlippo
+  parent: [BaseBrandedLighter, BaseLegionContraband]
+  id: LegionFlippo
   name: Blood-red flippo
   description: "A 'Valid' choice in lighters. Contains no copper."
   components:
   - type: Sprite
-    sprite: Objects/Tools/Lighters/syndielighter.rsi
+    sprite: Objects/Tools/Lighters/legionlighter.rsi
   - type: Item
-    sprite: Objects/Tools/Lighters/syndielighter.rsi
+    sprite: Objects/Tools/Lighters/legionlighter.rsi
   - type: Welder
     fuelConsumption: 0.005
     fuelLitCost: 0.01
@@ -387,7 +387,7 @@
         maxVol: 3
 
 - type: entity
-  parent: [BaseBrandedLighter, BaseSyndicateContraband]
+  parent: [BaseBrandedLighter, BaseLegionContraband]
   id: CybersunFlippo
   name: CyberSun Flippo
   description: "A Sleek black and magenta flippo lighter, bearing the logo and iconography of CyberSun Industries."
@@ -407,7 +407,7 @@
     color: magenta
 
 - type: entity
-  parent: [BaseBrandedLighter, BaseSyndicateContraband]
+  parent: [BaseBrandedLighter, BaseLegionContraband]
   id: InterdyneFlippo
   name: Interdyne Flippo
   description: "A deep blue flippo lighter, decorated with the logo of Interdyne Pharmaceuticals' 'Gene Clean' clinics. Become the master of your own cigarette."
@@ -527,7 +527,7 @@
     color: green
 
 - type: entity
-  parent: [BaseBrandedLighter, BaseSyndicateContraband]
+  parent: [BaseBrandedLighter, BaseLegionContraband]
   id: WaffleCoFlippo
   name: Waffle Co. flippo
   description: "A robust mass produced lighter. The Waffle Co. logo turns the spark wheel when pushed up, minimising risk of lighter burns for even the most inept user."

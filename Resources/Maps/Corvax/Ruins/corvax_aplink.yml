@@ -1380,21 +1380,21 @@ entities:
     - type: Transform
       pos: 12.5,29.5
       parent: 1
-- proto: AirlockAssemblyShuttleSyndicate
+- proto: AirlockAssemblyShuttleLegion
   entities:
   - uid: 4
     components:
     - type: Transform
       pos: 23.5,0.5
       parent: 1
-- proto: AirlockAssemblyShuttleSyndicateGlass
+- proto: AirlockAssemblyShuttleLegionGlass
   entities:
   - uid: 5
     components:
     - type: Transform
       pos: 0.5,20.5
       parent: 1
-- proto: AirlockAssemblySyndicate
+- proto: AirlockAssemblyLegion
   entities:
   - uid: 6
     components:
@@ -1406,14 +1406,14 @@ entities:
     - type: Transform
       pos: 25.5,11.5
       parent: 1
-- proto: AirlockAssemblySyndicateGlass
+- proto: AirlockAssemblyLegionGlass
   entities:
   - uid: 8
     components:
     - type: Transform
       pos: 4.5,19.5
       parent: 1
-- proto: AirlockGlassShuttleSyndicate
+- proto: AirlockGlassShuttleLegion
   entities:
   - uid: 9
     components:
@@ -1421,14 +1421,14 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,18.5
       parent: 1
-- proto: AirlockSyndicateGlassLocked
+- proto: AirlockLegionGlassLocked
   entities:
   - uid: 10
     components:
     - type: Transform
       pos: 15.5,28.5
       parent: 1
-- proto: AirlockSyndicateLocked
+- proto: AirlockLegionLocked
   entities:
   - uid: 11
     components:
@@ -3041,7 +3041,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 22.910286,26.204416
       parent: 1
-- proto: CigaretteSyndicate
+- proto: CigaretteLegion
   entities:
   - uid: 303
     components:
@@ -3123,14 +3123,14 @@ entities:
           - 312
     - type: Fixtures
       fixtures: {}
-- proto: ClothingHeadHatSyndieMAA
+- proto: ClothingHeadHatLegionMAA
   entities:
   - uid: 313
     components:
     - type: Transform
       pos: 10.68897,12.599863
       parent: 1
-- proto: ClothingHeadHelmetSyndicate
+- proto: ClothingHeadHelmetLegion
   entities:
   - uid: 314
     components:
@@ -3138,28 +3138,28 @@ entities:
       rot: 0.5585053606381855 rad
       pos: 14.854593,30.753374
       parent: 1
-- proto: ClothingMaskGasSyndicate
+- proto: ClothingMaskGasLegion
   entities:
   - uid: 315
     components:
     - type: Transform
       pos: 11.182872,32.586216
       parent: 1
-- proto: ClothingNeckScarfStripedSyndieGreen
+- proto: ClothingNeckScarfStripedLegionGreen
   entities:
   - uid: 316
     components:
     - type: Transform
       pos: 12.502442,31.736687
       parent: 1
-- proto: ClothingNeckScarfStripedSyndieRed
+- proto: ClothingNeckScarfStripedLegionRed
   entities:
   - uid: 317
     components:
     - type: Transform
       pos: 12.83593,19.44731
       parent: 1
-- proto: ClothingOuterCoatSyndieCap
+- proto: ClothingOuterCoatLegionCap
   entities:
   - uid: 318
     components:
@@ -3167,7 +3167,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 8.512768,11.576248
       parent: 1
-- proto: ClothingOuterEVASuitSyndicate
+- proto: ClothingOuterEVASuitLegion
   entities:
   - uid: 319
     components:
@@ -3198,7 +3198,7 @@ entities:
     - type: Transform
       pos: 18.405024,6.5002904
       parent: 1
-- proto: ComputerShuttleSyndie
+- proto: ComputerShuttleLegion
   entities:
   - uid: 323
     components:
@@ -3764,7 +3764,7 @@ entities:
     - type: Transform
       pos: 8.546536,7.3030214
       parent: 1
-- proto: LockerSyndicatePersonal
+- proto: LockerLegionPersonal
   entities:
   - uid: 416
     components:
@@ -4207,7 +4207,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandFreeSyndicateEncryptionKey
+- proto: PosterContrabandFreeLegionEncryptionKey
   entities:
   - uid: 491
     components:
@@ -4216,7 +4216,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandSyndicatePistol
+- proto: PosterContrabandLegionPistol
   entities:
   - uid: 492
     components:
@@ -5173,7 +5173,7 @@ entities:
     - type: Transform
       pos: 20.5,19.5
       parent: 1
-- proto: SpawnMobSyndicateFootSoldier
+- proto: SpawnMobLegionFootSoldier
   entities:
   - uid: 658
     components:

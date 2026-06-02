@@ -325,7 +325,7 @@
   group: Toxins
   desc: reagent-desc-lexorin
   physicalDesc: reagent-physical-desc-pungent
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Legion
   color: "#6b0007"
   metabolisms:
     Bloodstream:
@@ -461,7 +461,7 @@
   group: Toxins
   desc: reagent-desc-romerol
   physicalDesc: reagent-physical-desc-necrotic
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Legion
   flavor: bitter
   color: "#7e916e"
   worksOnTheDead: true
@@ -639,7 +639,7 @@
   group: Toxins
   desc: reagent-desc-vestine
   physicalDesc: reagent-physical-desc-shiny
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Legion
   flavor: medicine
   color: "#435166"
   plantMetabolism:
@@ -670,7 +670,7 @@
   group: Toxins
   desc: reagent-desc-tazinide
   physicalDesc: reagent-physical-desc-metallic
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Legion
   flavor: shocking
   color: "#FDD023"
   metabolisms:

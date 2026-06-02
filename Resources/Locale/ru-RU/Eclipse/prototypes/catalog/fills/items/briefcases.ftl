@@ -1,3 +1,3 @@
-ent-BriefcaseInteQLobbyingBundleFilled = коричневый чемодан
-    .suffix = InteQ, Кредиты
+ent-BriefcaseAshLegionLobbyingBundleFilled = коричневый чемодан
+    .suffix = Легион пепла, Кредиты
     .desc = { ent-BriefcaseSyndie.desc }

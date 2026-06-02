@@ -1,4 +1,4 @@
-﻿# base
+# base
 
 - type: entity
   id: VendingMachine
@@ -270,7 +270,7 @@
 
 - type: entity
   parent: VendingMachineBooze
-  id: VendingMachineBoozeSyndicate # syndie booze-o-mat for nukie outpost
+  id: VendingMachineBoozeLegion # legion booze-o-mat for nukie outpost
   name: Bruise-O-Mat
   description: A refurbished Booze-O-Mat for boosting operative morale. An imprint of a blood-red hardsuit is visible on one side, and the paint seems ashed off on the other side.
   components:
@@ -296,7 +296,7 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["SyndicateAgent"]]
+    access: [["LegionAgent"]]
   - type: GuideHelp
     guides:
     - Bartender
@@ -2004,21 +2004,21 @@
 
 - type: entity
   parent: VendingMachine
-  id: VendingMachineSyndieDrobe
-  name: SyndieDrobe
-  description: Wardrobe machine encoded by the syndicate, contains elite outfits for various operations.
+  id: VendingMachineLegionDrobe
+  name: LegionDrobe
+  description: Wardrobe machine encoded by the legion, contains elite outfits for various operations.
   components:
   - type: VendingMachine
-    pack: SyndieDrobeInventory
+    pack: LegionDrobeInventory
     offState: off
     brokenState: broken
     normalState: normal-unshaded
   - type: DatasetVocalizer
-    dataset: SyndieDrobeAds
+    dataset: LegionDrobeAds
   - type: SpeakOnUIClosed
-    pack: SyndieDrobeGoodbyes
+    pack: LegionDrobeGoodbyes
   - type: Sprite
-    sprite: Structures/Machines/VendingMachines/syndiedrobe.rsi
+    sprite: Structures/Machines/VendingMachines/legiondrobe.rsi
     layers:
     - state: "off"
       map: ["enum.VendingMachineVisualLayers.Base"]
@@ -2032,7 +2032,7 @@
     energy: 3.0
     color: "#d82929"
   - type: AccessReader
-    access: [["NuclearOperative"], ["SyndicateAgent"]]
+    access: [["NuclearOperative"], ["LegionAgent"]]
 
 - type: entity
   parent: VendingMachine
@@ -2278,19 +2278,19 @@
 
 - type: entity
   parent: VendingMachineChemicals
-  id: VendingMachineChemicalsSyndicate
-  name: SyndieJuice
-  description: Not made with freshly squeezed syndies I hope.
+  id: VendingMachineChemicalsLegion
+  name: LegionJuice
+  description: Not made with freshly squeezed legions I hope.
   components:
   - type: VendingMachine
-    pack: ChemVendInventorySyndicate
+    pack: ChemVendInventoryLegion
     offState: off
     brokenState: broken
     normalState: normal
     denyState: deny
     ejectDelay: 2
   - type: AccessReader
-    access: [["SyndicateAgent"]]
+    access: [["LegionAgent"]]
 
 # wallmount
 - type: entity

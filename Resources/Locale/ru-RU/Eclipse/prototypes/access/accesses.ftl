@@ -1,4 +1,4 @@
-id-card-access-level-inteq = Интек
+id-card-access-level-ashlegion = Легион пепла
 id-card-access-level-nanotrasen-navy-captain = Капитан ВКФ NT
 id-card-access-level-nanotrasen-navy-officer = Офицер ВКФ NT
 id-card-access-level-nanotrasen-navy-wo-engineering = УО инженер ВКФ NT

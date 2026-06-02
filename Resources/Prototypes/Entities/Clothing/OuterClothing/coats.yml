@@ -114,13 +114,13 @@
 
 - type: entity
   parent: ClothingOuterCoatJensen
-  id: ClothingOuterCoatJensenSyndie
-  suffix: Syndie
+  id: ClothingOuterCoatJensenLegion
+  suffix: Legion
   components:
   - type: EntityTableContainerFill
     containers:
       storagebase:
-        id: SyndieHandyFlag
+        id: LegionHandyFlag
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -385,26 +385,26 @@
     sprite: Clothing/OuterClothing/Coats/windbreaker_paramedic.rsi
 
 - type: entity
-  parent: [ClothingOuterStorageBase, BaseSyndicateContraband]
-  id: ClothingOuterCoatSyndieCap
-  name: syndicate's coat
-  description: The syndicate's coat is made of durable fabric, with gilded patterns.
+  parent: [ClothingOuterStorageBase, BaseLegionContraband]
+  id: ClothingOuterCoatLegionCap
+  name: legion's coat
+  description: The legion's coat is made of durable fabric, with gilded patterns.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecap.rsi
+    sprite: Clothing/OuterClothing/Coats/legion/coatlegioncap.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecap.rsi
+    sprite: Clothing/OuterClothing/Coats/legion/coatlegioncap.rsi
 
 - type: entity
-  parent: [BaseSyndicateContraband, ClothingOuterCoatHoSTrench] # BaseSyndicateContraband as first parent so contraband system takes that as priority, yeah I know
-  id: ClothingOuterCoatSyndieCapArmored
-  name: syndicate's armored coat
-  description: The syndicate's armored coat is made of durable fabric, with gilded patterns.
+  parent: [BaseLegionContraband, ClothingOuterCoatHoSTrench] # BaseLegionContraband as first parent so contraband system takes that as priority, yeah I know
+  id: ClothingOuterCoatLegionCapArmored
+  name: legion's armored coat
+  description: The legion's armored coat is made of durable fabric, with gilded patterns.
   components:
   - type: Sprite
-    sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecaparmored.rsi
+    sprite: Clothing/OuterClothing/Coats/legion/coatlegioncaparmored.rsi
   - type: Clothing
-    sprite: Clothing/OuterClothing/Coats/syndicate/coatsyndiecaparmored.rsi
+    sprite: Clothing/OuterClothing/Coats/legion/coatlegioncaparmored.rsi
 
 - type: entity
   parent: ClothingOuterStorageBase

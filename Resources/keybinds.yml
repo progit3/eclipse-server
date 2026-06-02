@@ -273,6 +273,9 @@ binds:
   type: State
   key: H
   mod1: Shift
+- function: ReloadFromBelt
+  type: State
+  key: R
 - function: OpenBackpack
   type: State
   key: V
@@ -302,6 +305,7 @@ binds:
 - function: RotateObjectClockwise
   type: State
   key: R
+  mod1: Alt
 - function: RotateObjectCounterclockwise
   type: State
   key: R

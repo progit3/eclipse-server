@@ -1812,7 +1812,7 @@ entities:
     - type: Transform
       pos: 3.5,13.5
       parent: 1
-- proto: WeaponTurretSyndicateBroken
+- proto: WeaponTurretLegionBroken
   entities:
   - uid: 197
     components:

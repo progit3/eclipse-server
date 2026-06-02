@@ -1,4 +1,4 @@
-job-name-inteq = Интек
+job-name-ashlegion = Легион пепла
 job-name-coscc = начальник штаба Центком
 job-name-centcom-officer = офицер Центком
 job-name-centcom-operator = оператор Центком

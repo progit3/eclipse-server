@@ -13090,7 +13090,7 @@ entities:
     - type: Transform
       pos: 2.5,60.5
       parent: 1
-- proto: BedsheetSyndie
+- proto: BedsheetLegion
   entities:
   - uid: 370
     components:
@@ -29242,7 +29242,7 @@ entities:
     - Butcherable
     - Food
     - Pullable
-- proto: ClothingNeckSyndicakePin
+- proto: ClothingNeckLegioncakePin
   entities:
   - uid: 3504
     components:
@@ -36393,7 +36393,7 @@ entities:
       parent: 1
     - type: FaxMachine
       name: ЦентКом
-- proto: FaxMachineSyndie
+- proto: FaxMachineLegion
   entities:
   - uid: 4513
     components:
@@ -36401,7 +36401,7 @@ entities:
       pos: 11.5,49.5
       parent: 1
     - type: FaxMachine
-      name: Техподдержка СиндиЛенда
+      name: Техподдержка ЛегионЛенда
 - proto: filingCabinet
   entities:
   - uid: 4514
@@ -55939,7 +55939,7 @@ entities:
       pos: 11.5,49.5
       parent: 1
     - type: WarpPoint
-      location: Факс Синдиката
+      location: Факс Легиона
   - uid: 6845
     components:
     - type: Transform
@@ -67400,7 +67400,7 @@ entities:
       canCollide: False
     - type: Stamp
       stampedName: Финансовый Департамент
-- proto: RubberStampSyndicate
+- proto: RubberStampLegion
   entities:
   - uid: 3299
     components:
@@ -71931,7 +71931,7 @@ entities:
       - SurveillanceCameraSupply
       nameSet: True
       id: Доки
-- proto: SyndieFlag
+- proto: LegionFlag
   entities:
   - uid: 8848
     components:
@@ -73761,7 +73761,7 @@ entities:
       parent: 1
     - type: DamagePopup
       damagePopupType: Total
-- proto: TargetSyndicate
+- proto: TargetLegion
   entities:
   - uid: 9172
     components:

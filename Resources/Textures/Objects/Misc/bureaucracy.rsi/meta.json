@@ -47,21 +47,7 @@
       "name": "nano_paper"
     },
     {
-      "name": "nano_paper_words",
-      "delays": [
-        [
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1,
-          0.1
-        ]
-      ]
+      "name": "nano_paper_words"
     },
     {
       "name": "newspaper"
@@ -202,10 +188,10 @@
       "name": "paper_stamp-rd"
     },
     {
-      "name": "paper_stamp-syndicate"
+      "name": "paper_stamp-trader"
     },
     {
-      "name": "paper_stamp-trader"
+      "name": "paper_stamp-approve"
     },
     {
       "name": "paper_stamp-warden"
@@ -217,16 +203,13 @@
       "name": "paper_stamp-greytide"
     },
     {
-      "name": "paper_stamp-approve"
-    },
-    {
-      "name": "syndicate_card"
-    },
-    {
       "name": "paper_stamp-psychologist"
     },
     {
       "name": "paper_stamp-wizard"
+    },
+    {
+      "name": "legion_card"
     }
   ]
 }

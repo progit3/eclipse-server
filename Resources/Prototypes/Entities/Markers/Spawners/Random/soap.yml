@@ -27,7 +27,7 @@
     - !type:GroupSelector # Rare soaps
       weight: 0.02 # 1 in 250
       children:
-      - id: SoapSyndie
+      - id: SoapLegion
       - id: SlipocalypseClusterSoap
       - id: SoapOmega
 

@@ -47,9 +47,9 @@
     state: HeadRevolutionary
 
 - type: factionIcon
-  id: SyndicateFaction
+  id: LegionFaction
   priority: 0
   locationPreference: Right # Corvax-TypingIndicator
   icon:
     sprite: /Textures/Interface/Misc/job_icons.rsi
-    state: Syndicate
+    state: Legion

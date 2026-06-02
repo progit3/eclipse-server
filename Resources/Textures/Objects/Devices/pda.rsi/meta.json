@@ -1,7 +1,7 @@
 {
   "version": 1,
   "license": "CC-BY-SA-3.0",
-  "copyright": "Taken from tgstation, pda-cluwne, pda-centcom and pda-brigmedic made by CatBackGround (GitHub) | pda-pirate made by brainfood1183 (Github), pda-syndi-agent drawn by Ubaser, pda-wizard recolour by Velken | pda-ert and pda-cburn made by nikitok007 (Discord)",
+  "copyright": "Taken from tgstation, pda-cluwne, pda-centcom and pda-brigmedic made by CatBackGround (GitHub) | pda-pirate made by brainfood1183 (Github), pda-legion-agent drawn by Ubaser, pda-wizard recolour by Velken | pda-ert and pda-cburn made by nikitok007 (Discord)",
   "size": {
     "x": 32,
     "y": 32
@@ -181,16 +181,16 @@
       "name": "pda-seniorresearcher"
     },
     {
-      "name": "pda-syndi"
+      "name": "pda-legion"
     },
     {
-      "name": "pda-syndi-corpsman"
+      "name": "pda-legion-corpsman"
     },
     {
-      "name": "pda-syndi-commander"
+      "name": "pda-legion-commander"
     },
     {
-      "name": "pda-syndi-operative"
+      "name": "pda-legion-operative"
     },
     {
       "name": "pda-virology"

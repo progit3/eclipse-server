@@ -30,14 +30,14 @@
         range: 1, 2
     - id: NukeDiskFake
       weight: 0.5
-    - id: ClothingBackpackDuffelSyndicateDecoyKitFilled
+    - id: ClothingBackpackDuffelLegionDecoyKitFilled
       weight: 0.75
-    - id: BriefcaseSyndieLobbyingBundleFilled
+    - id: BriefcaseLegionLobbyingBundleFilled
       amount: !type:RangeNumberSelector
         range: 1, 2
     - id: ChameleonProjector
     - id: CameraBug
-    - id: SyndicateJawsOfLife
+    - id: LegionJawsOfLife
     - id: RadioJammer
     - id: BorgModuleMartyr
     - id: ScramImplant
@@ -49,11 +49,11 @@
     - id: SlipocalypseClusterSoap
       amount: !type:RangeNumberSelector
         range: 1, 2
-    - id: ReinforcementRadioSyndicateAncestor
-    - id: ClothingEyesHudSyndicate
+    - id: ReinforcementRadioLegionAncestor
+    - id: ClothingEyesHudLegion
       amount: !type:RangeNumberSelector
         range: 1, 2
-    - id: CigPackSyndicate
+    - id: CigPackLegion
       amount: !type:RangeNumberSelector
         range: 1, 3
     - id: PenExplodingBox
@@ -63,7 +63,7 @@
   table: !type:GroupSelector
     children:
     - id: ThrowingKnivesKit
-    - id: ClothingHandsKnuckleDustersSyndicate
+    - id: ClothingHandsKnuckleDustersLegion
     - id: EnergyDaggerLoud
       weight: 0.5
     - id: WeaponRevolverPython

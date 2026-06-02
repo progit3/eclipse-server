@@ -1,6 +1,6 @@
 - type: entity
   parent: [ClothingEyesBase, BaseMinorContraband]
-  id: ClothingEyesGogglessInteQ
+  id: ClothingEyesGogglessAshLegion
   name: yellow goggles
   description: Used to help provide rudimentary eye cover. Enhanced shielding blocks many flashes.
   components:
@@ -14,7 +14,7 @@
 
 - type: entity
   parent: [ClothingEyesBase, BaseMinorContraband]
-  id: ClothingEyesGogglessMedInteQ
+  id: ClothingEyesGogglessMedAshLegion
   name: yellow goggles
   description: Used to help provide rudimentary eye cover. Enhanced shielding blocks many flashes.
   components:

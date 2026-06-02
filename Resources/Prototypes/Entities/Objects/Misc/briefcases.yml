@@ -27,14 +27,14 @@
 
 - type: entity
   parent: BriefcaseBrown
-  id: BriefcaseSyndie
-  suffix: Syndicate, Empty
+  id: BriefcaseLegion
+  suffix: Legion, Empty
   components:
   - type: Item
     size: Huge
 
 - type: entity
-  parent: [BriefcaseBase, BaseSyndicateContraband]
+  parent: [BriefcaseBase, BaseLegionContraband]
   id: BriefcaseWeapon
   name: secure weapon case
   suffix: Gun, Empty

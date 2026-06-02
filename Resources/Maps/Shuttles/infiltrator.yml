@@ -40,7 +40,7 @@ entities:
       parent: invalid
     - type: Tag
       tags:
-      - Syndicate
+      - Legion
     - type: MapGrid
       chunks:
         -1,-1:
@@ -457,52 +457,52 @@ entities:
             61: 3,-5
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo10
+            id: legionlogo10
           decals:
             20: -2,-7
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo11
+            id: legionlogo11
           decals:
             21: -1,-7
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo12
+            id: legionlogo12
           decals:
             22: 0,-7
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo2
+            id: legionlogo2
           decals:
             14: -2,-5
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo3
+            id: legionlogo3
           decals:
             15: -1,-5
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo4
+            id: legionlogo4
           decals:
             16: 0,-5
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo5
+            id: legionlogo5
           decals:
             30: -3,-6
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo6
+            id: legionlogo6
           decals:
             17: -2,-6
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo7
+            id: legionlogo7
           decals:
             18: -1,-6
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo8
+            id: legionlogo8
           decals:
             19: 0,-6
     - type: IFF
@@ -519,7 +519,7 @@ entities:
     - type: GridPathfinding
     - type: ImplicitRoof
     - type: ExplosionAirtightGrid
-- proto: AirlockExternalGlassShuttleSyndicateLocked
+- proto: AirlockExternalGlassShuttleLegionLocked
   entities:
   - uid: 2
     components:
@@ -547,7 +547,7 @@ entities:
           - Close
     - type: DeviceLinkSink
       invokeCounter: 1
-- proto: AirlockExternalSyndicateLocked
+- proto: AirlockExternalLegionLocked
   entities:
   - uid: 4
     components:
@@ -633,7 +633,7 @@ entities:
         7:
         - - DoorStatus
           - DoorBolt
-- proto: AirlockSyndicateGlassLocked
+- proto: AirlockLegionGlassLocked
   entities:
   - uid: 12
     components:
@@ -655,7 +655,7 @@ entities:
     - type: Transform
       pos: -2.5,-20.5
       parent: 1
-- proto: AirlockSyndicateLocked
+- proto: AirlockLegionLocked
   entities:
   - uid: 16
     components:
@@ -708,7 +708,7 @@ entities:
     - type: Transform
       pos: 3.5,-27.5
       parent: 1
-- proto: BannerSyndicate
+- proto: BannerLegion
   entities:
   - uid: 24
     components:
@@ -727,7 +727,7 @@ entities:
     - type: Transform
       pos: 3.5,-3.5
       parent: 1
-- proto: BedsheetSyndie
+- proto: BedsheetLegion
   entities:
   - uid: 27
     components:
@@ -741,7 +741,7 @@ entities:
     - type: Transform
       pos: -4.5,-27.5
       parent: 1
-- proto: BoxEncryptionKeySyndie
+- proto: BoxEncryptionKeyLegion
   entities:
   - uid: 30
     components:
@@ -2122,7 +2122,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -0.5,-3.5
       parent: 1
-- proto: ClothingBackpackDuffelSyndicateAmmoFilled
+- proto: ClothingBackpackDuffelLegionAmmoFilled
   entities:
   - uid: 303
     components:
@@ -2148,21 +2148,21 @@ entities:
           priority: 0
           component: ClothingSpeedModifier
         title: null
-- proto: ClothingBackpackDuffelSyndicateFilledMedical
+- proto: ClothingBackpackDuffelLegionFilledMedical
   entities:
   - uid: 304
     components:
     - type: Transform
       pos: -5.6167116,-4.2485933
       parent: 1
-- proto: ClothingHeadHatSyndie
+- proto: ClothingHeadHatLegion
   entities:
   - uid: 305
     components:
     - type: Transform
       pos: -3.0420556,-17.469692
       parent: 1
-- proto: ClothingHeadHatSyndieMAA
+- proto: ClothingHeadHatLegionMAA
   entities:
   - uid: 31
     components:
@@ -2171,7 +2171,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadPyjamaSyndicateRed
+- proto: ClothingHeadPyjamaLegionRed
   entities:
   - uid: 32
     components:
@@ -2180,14 +2180,14 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadsetAltSyndicate
+- proto: ClothingHeadsetAltLegion
   entities:
   - uid: 306
     components:
     - type: Transform
       pos: 1.3157192,-13.513277
       parent: 1
-- proto: ClothingMaskGasSyndicate
+- proto: ClothingMaskGasLegion
   entities:
   - uid: 307
     components:
@@ -2206,7 +2206,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterCoatSyndieCap
+- proto: ClothingOuterCoatLegionCap
   entities:
   - uid: 34
     components:
@@ -2215,7 +2215,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpskirtSyndieFormalDress
+- proto: ClothingUniformJumpskirtLegionFormalDress
   entities:
   - uid: 35
     components:
@@ -2224,7 +2224,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitPyjamaSyndicateRed
+- proto: ClothingUniformJumpsuitPyjamaLegionRed
   entities:
   - uid: 36
     components:
@@ -2233,7 +2233,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitSyndieFormal
+- proto: ClothingUniformJumpsuitLegionFormal
   entities:
   - uid: 37
     components:
@@ -2258,7 +2258,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -5.5,-5.5
       parent: 1
-- proto: ComputerIFFSyndicate
+- proto: ComputerIFFLegion
   entities:
   - uid: 310
     components:
@@ -2281,7 +2281,7 @@ entities:
     - type: Transform
       pos: 0.5,-2.5
       parent: 1
-- proto: ComputerShuttleSyndie
+- proto: ComputerShuttleLegion
   entities:
   - uid: 313
     components:
@@ -2554,7 +2554,7 @@ entities:
     - type: Transform
       pos: 1.4776825,-21.296862
       parent: 1
-- proto: FoodSnackSyndi
+- proto: FoodSnackLegion
   entities:
   - uid: 358
     components:
@@ -3535,7 +3535,7 @@ entities:
     - type: Transform
       pos: -1.483297,-2.2444057
       parent: 1
-- proto: LockerSyndicatePersonal
+- proto: LockerLegionPersonal
   entities:
   - uid: 29
     components:
@@ -3819,7 +3819,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandFreeSyndicateEncryptionKey
+- proto: PosterContrabandFreeLegionEncryptionKey
   entities:
   - uid: 527
     components:
@@ -3880,7 +3880,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandSyndicatePistol
+- proto: PosterContrabandLegionPistol
   entities:
   - uid: 534
     components:
@@ -3889,7 +3889,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandSyndicateRecruitment
+- proto: PosterContrabandLegionRecruitment
   entities:
   - uid: 535
     components:
@@ -4497,7 +4497,7 @@ entities:
     - type: Transform
       pos: -4.5,-19.5
       parent: 1
-- proto: SoapSyndie
+- proto: SoapLegion
   entities:
   - uid: 621
     components:
@@ -4525,7 +4525,7 @@ entities:
     - type: Transform
       pos: -3.5,-19.5
       parent: 1
-- proto: SuitStorageEVASyndicate
+- proto: SuitStorageEVALegion
   entities:
   - uid: 625
     components:
@@ -4547,7 +4547,7 @@ entities:
     - type: Transform
       pos: -4.5,-17.5
       parent: 1
-- proto: SyndicateMicrowave
+- proto: LegionMicrowave
   entities:
   - uid: 629
     components:
@@ -4733,7 +4733,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 3.5,-30.5
       parent: 1
-- proto: ToolboxSyndicate
+- proto: ToolboxLegion
   entities:
   - uid: 662
     components:
@@ -5585,7 +5585,7 @@ entities:
     - type: Transform
       pos: 0.5,-17.5
       parent: 1
-- proto: WeaponTurretSyndicate
+- proto: WeaponTurretLegion
   entities:
   - uid: 823
     components:

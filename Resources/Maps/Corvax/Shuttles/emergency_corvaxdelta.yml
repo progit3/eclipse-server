@@ -6855,7 +6855,7 @@ entities:
   - uid: 486
     components:
     - type: MetaData
-      name: SyndiCarp
+      name: LegionCarp
     - type: Transform
       parent: 479
     - type: Physics

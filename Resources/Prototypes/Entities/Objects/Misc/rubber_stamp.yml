@@ -207,17 +207,17 @@
     state: stamp-trader
 
 - type: entity
-  name: syndicate rubber stamp
-  parent: [RubberStampBase, BaseSyndicateContraband]
-  id: RubberStampSyndicate
+  name: legion rubber stamp
+  parent: [RubberStampBase, BaseLegionContraband]
+  id: RubberStampLegion
   categories: [ DoNotMap ]
   components:
   - type: Stamp
-    stampedName: stamp-component-stamped-name-syndicate
+    stampedName: stamp-component-stamped-name-legion
     stampedColor: "#850000"
-    stampState: "paper_stamp-syndicate"
+    stampState: "paper_stamp-legion"
   - type: Sprite
-    state: stamp-syndicate
+    state: stamp-legion
   - type: StaticPrice
     price: 1000
 

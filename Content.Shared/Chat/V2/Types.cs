@@ -33,7 +33,7 @@ public enum MessageType : byte
     /// <remarks>This does not tell you what radio channel has been chatted on!</remarks>
     Radio,
     /// <summary>
-    /// Chat that is used exclusively by syndie tots to collaborate on whatever tots do.
+    /// Chat that is used exclusively by legion tots to collaborate on whatever tots do.
     /// </summary>
     Whisper,
 

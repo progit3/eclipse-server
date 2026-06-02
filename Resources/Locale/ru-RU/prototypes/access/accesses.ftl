@@ -41,8 +41,8 @@ id-card-access-level-maintenance = Техобслуживание
 
 id-card-access-level-external = Внешний
 
-id-card-access-level-nuclear-operative = Ядерный оперативник
-id-card-access-level-syndicate-agent = Агент Синдиката
+id-card-access-level-nuclear-operative = Легион пепла (Не использовать)
+id-card-access-level-legion-agent = Агент Легиона
 
 id-card-access-level-central-command = Центральное командование
 

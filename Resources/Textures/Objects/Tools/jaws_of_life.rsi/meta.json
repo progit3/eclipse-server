@@ -38,6 +38,18 @@
     {
       "name": "equipped-BELT",
       "directions": 4
+    },
+    {
+      "name": "inteq_inhand-left"
+    },
+    {
+      "name": "inteq_inhand-right"
+    },
+    {
+      "name": "inteq_jaws_cutter"
+    },
+    {
+      "name": "inteq_jaws_pry"
     }
   ]
 }

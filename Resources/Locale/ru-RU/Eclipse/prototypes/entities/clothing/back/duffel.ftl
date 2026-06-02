@@ -1,8 +1,8 @@
-ent-ClothingBackpackDuffelInteQ = чёрно-оранжевый вещмешок
+ent-ClothingBackpackDuffelAshLegion = чёрно-оранжевый вещмешок
     .desc = Просторный вещмешок для оружия и припасов.
-ent-ClothingBackpackDuffelInteQAmmo = { ent-ClothingBackpackDuffelInteQ }
+ent-ClothingBackpackDuffelAshLegionAmmo = { ent-ClothingBackpackDuffelAshLegion }
     .desc = Просторный вещмешок для оружия и патронов.
     .suffix = вооружение
-ent-ClothingBackpackDuffelInteQMedical = { ent-ClothingBackpackDuffelInteQ }
+ent-ClothingBackpackDuffelAshLegionMedical = { ent-ClothingBackpackDuffelAshLegion }
     .desc = Просторный вещмешок для оружия и медикаментов.
     .suffix = медикаменты

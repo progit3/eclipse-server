@@ -1,1 +1,1 @@
-trait-category-masochism = Мазохизм
+trait-category-masochism = Мазохизм

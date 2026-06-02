@@ -1,5 +1,5 @@
-ent-InteQMedicalPDA = КПК медика InteQ
+ent-AshLegionMedicalPDA = КПК медика Легиона пепла
 
-ent-InteQLeaderPDA = КПК лидера InteQ
+ent-AshLegionLeaderPDA = КПК лидера Легиона пепла
 
-ent-InteQBasePDA = КПК InteQ
+ent-AshLegionBasePDA = КПК Легиона пепла

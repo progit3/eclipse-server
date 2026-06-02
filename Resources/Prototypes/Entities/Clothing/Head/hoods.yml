@@ -509,14 +509,14 @@
 
 - type: entity
   parent: ClothingHeadHatHoodWinterBase
-  id: ClothingHeadHatHoodWinterSyndie
+  id: ClothingHeadHatHoodWinterLegion
   categories: [ HideSpawnMenu ]
-  name: syndicate coat hood
+  name: legion coat hood
   components:
   - type: Sprite
-    sprite: Clothing/Head/Hoods/Coat/hoodsyndicate.rsi
+    sprite: Clothing/Head/Hoods/Coat/hoodlegion.rsi
   - type: Clothing
-    sprite: Clothing/Head/Hoods/Coat/hoodsyndicate.rsi
+    sprite: Clothing/Head/Hoods/Coat/hoodlegion.rsi
 
 - type: entity
   parent: ClothingHeadHatHoodWinterBase

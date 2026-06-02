@@ -128,7 +128,7 @@
   group: Narcotics
   desc: reagent-desc-stimulants
   physicalDesc: reagent-physical-desc-energizing
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Legion
   flavor: sharp
   color: "#9A040E"
   boilingPoint: 212.0
@@ -311,7 +311,7 @@
   group: Narcotics
   desc: reagent-desc-nocturine
   physicalDesc: reagent-physical-desc-powdery
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Legion
   color: "#128e80"
   boilingPoint: 444.0
   meltingPoint: 128.0
@@ -336,7 +336,7 @@
   group: Narcotics
   desc: reagent-desc-mute-toxin
   physicalDesc: reagent-physical-desc-syrupy
-  contrabandSeverity: Syndicate
+  contrabandSeverity: Legion
   color: "#000000"
   boilingPoint: 255.0
   meltingPoint: 36.0

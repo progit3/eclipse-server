@@ -830,7 +830,7 @@ entities:
     - type: Transform
       pos: 6.4459496,-0.54372054
       parent: 1
-- proto: CigaretteSyndicate
+- proto: CigaretteLegion
   entities:
   - uid: 188
     components:

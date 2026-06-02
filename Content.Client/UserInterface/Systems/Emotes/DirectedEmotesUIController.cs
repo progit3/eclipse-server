@@ -4,14 +4,17 @@ using Content.Client.Popups;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Chat;
 using Content.Client.Verbs;
+using Content.Shared._EinsteinEngines.DirectedEmotes;
 using Content.Shared.Chat;
 using Content.Shared.IdentityManagement;
 using Content.Shared.InteractionVerbs;
 using Content.Shared.Verbs;
 using JetBrains.Annotations;
 using Robust.Client.Player;
+using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Shared.Map;
+using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
@@ -26,10 +29,24 @@ public sealed class DirectedEmotesUIController : UIController, IOnStateChanged<G
     private const float RangeCheckInterval = 0.5f;
 
     [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly IClientNetManager _net = default!;
 
     private SimpleRadialMenu? _menu;
+    private DirectedEmotesWindow? _dialogWindow;
+    private int _conversationId;
     private readonly Dictionary<EntityUid, string> _trackedTargets = new();
     private float _rangeCheckTimer;
+
+    public override void Initialize()
+    {
+        base.Initialize();
+
+        _net.RegisterNetMessage<DirectedEmotesStartMessage>();
+        _net.RegisterNetMessage<DirectedEmotesSendMessage>();
+        _net.RegisterNetMessage<DirectedEmotesAddParticipantMessage>();
+        _net.RegisterNetMessage<DirectedEmotesStateMessage>(OnState);
+        _net.RegisterNetMessage<DirectedEmotesChatMessage>(OnChatMessage);
+    }
 
     public void OnStateEntered(GameplayState state)
     {
@@ -38,6 +55,7 @@ public sealed class DirectedEmotesUIController : UIController, IOnStateChanged<G
     public void OnStateExited(GameplayState state)
     {
         CloseMenu();
+        CloseDialog();
     }
 
     public override void FrameUpdate(FrameEventArgs args)
@@ -57,6 +75,12 @@ public sealed class DirectedEmotesUIController : UIController, IOnStateChanged<G
 
     public void OpenDirectedEmotesMenu(EntityUid? focusedTarget = null)
     {
+        if (focusedTarget is { } target)
+        {
+            OpenDialog(target);
+            return;
+        }
+
         if (_menu != null)
             CloseMenu();
 
@@ -165,6 +189,72 @@ public sealed class DirectedEmotesUIController : UIController, IOnStateChanged<G
         return models;
     }
 
+    private void OpenDialog(EntityUid target)
+    {
+        CloseMenu();
+
+        EnsureDialogWindow();
+        _dialogWindow!.OpenCentered();
+        _net.ClientSendMessage(new DirectedEmotesStartMessage
+        {
+            Target = EntityManager.GetNetEntity(target)
+        });
+    }
+
+    private void SendDialogMessage(string message)
+    {
+        if (_conversationId == 0)
+            return;
+
+        _net.ClientSendMessage(new DirectedEmotesSendMessage
+        {
+            ConversationId = _conversationId,
+            Message = message
+        });
+    }
+
+    private void AddParticipant()
+    {
+        if (_conversationId == 0)
+            return;
+
+        _net.ClientSendMessage(new DirectedEmotesAddParticipantMessage
+        {
+            ConversationId = _conversationId
+        });
+    }
+
+    private void OnState(DirectedEmotesStateMessage message)
+    {
+        _conversationId = message.ConversationId;
+
+        EnsureDialogWindow();
+        _dialogWindow!.SetParticipants(message.Participants, message.CanAddParticipant);
+        if (!_dialogWindow.IsOpen)
+            _dialogWindow.OpenCentered();
+    }
+
+    private void OnChatMessage(DirectedEmotesChatMessage message)
+    {
+        _conversationId = message.ConversationId;
+
+        EnsureDialogWindow();
+        _dialogWindow!.AddLine(message.Sender, message.Message, message.SystemMessage);
+        if (!_dialogWindow.IsOpen)
+            _dialogWindow.OpenCentered();
+    }
+
+    private void EnsureDialogWindow()
+    {
+        if (_dialogWindow != null && !_dialogWindow.Disposed)
+            return;
+
+        _dialogWindow = UIManager.CreateWindow<DirectedEmotesWindow>();
+        _dialogWindow.OnSend += SendDialogMessage;
+        _dialogWindow.OnAddParticipant += AddParticipant;
+        _dialogWindow.OnClose += OnDialogClosed;
+    }
+
     private void CheckTrackedTargets()
     {
         if (_player.LocalEntity is not { } user)
@@ -202,6 +292,24 @@ public sealed class DirectedEmotesUIController : UIController, IOnStateChanged<G
     private void OnMenuClosed()
     {
         CloseMenu();
+    }
+
+    private void OnDialogClosed()
+    {
+        _conversationId = 0;
+    }
+
+    private void CloseDialog()
+    {
+        if (_dialogWindow == null)
+            return;
+
+        _dialogWindow.OnSend -= SendDialogMessage;
+        _dialogWindow.OnAddParticipant -= AddParticipant;
+        _dialogWindow.OnClose -= OnDialogClosed;
+        _dialogWindow.Dispose();
+        _dialogWindow = null;
+        _conversationId = 0;
     }
 
     private void CloseMenu()

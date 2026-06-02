@@ -78,25 +78,25 @@
     - id: ClothingHeadHelmetEVALarge
     - id: ClothingMaskBreath
 
-#Syndicate EVA
+#Legion EVA
 - type: entity
-  id: SuitStorageEVASyndicate
+  id: SuitStorageEVALegion
   parent: SuitStorageBase
-  suffix: Syndicate EVA
+  suffix: Legion EVA
   components:
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: FillSuitStorageEVASyndicate
+        tableId: FillSuitStorageEVALegion
 
 - type: entityTable
-  id: FillSuitStorageEVASyndicate
+  id: FillSuitStorageEVALegion
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
-    - id: ClothingOuterEVASuitSyndicate
-    - id: ClothingHeadHelmetSyndicate
-    - id: ClothingMaskGasSyndicate
+    - id: ClothingOuterEVASuitLegion
+    - id: ClothingHeadHelmetLegion
+    - id: ClothingMaskGasLegion
 
 #Pirate EVA
 - type: entity
@@ -278,23 +278,23 @@
 
 #Blood-red hardsuit
 - type: entity
-  id: SuitStorageSyndie
+  id: SuitStorageLegion
   parent: SuitStorageBase
-  suffix: Syndicate Hardsuit
+  suffix: Legion Hardsuit
   components:
   - type: EntityTableContainerFill
     containers:
       entity_storage: !type:NestedSelector
-        tableId: FillSuitStorageSyndie
+        tableId: FillSuitStorageLegion
 
 - type: entityTable
-  id: FillSuitStorageSyndie
+  id: FillSuitStorageLegion
   table: !type:AllSelector
     children:
     - id: OxygenTankFilled
-    - id: ClothingOuterHardsuitSyndie
-    - id: ClothingShoesBootsMagSyndie
-    - id: ClothingMaskGasSyndicate
+    - id: ClothingOuterHardsuitLegion
+    - id: ClothingShoesBootsMagLegion
+    - id: ClothingMaskGasLegion
 
 #Pirate Captain's hardsuit
 - type: entity

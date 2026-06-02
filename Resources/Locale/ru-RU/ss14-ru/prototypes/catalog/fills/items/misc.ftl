@@ -25,6 +25,6 @@ ent-ClothingShoesHighheelBootsFilled = { ent-ClothingShoesHighheelBoots }
 ent-ClothingShoesBootsMercFilled = { ent-ClothingShoesBootsMerc }
     .desc = { ent-ClothingShoesBootsMerc.desc }
     .suffix = Заполненный
-ent-ClothingShoesBootsSyndieFilled = { ent-ClothingShoesBootsCombat }
+ent-ClothingShoesBootsLegionFilled = { ent-ClothingShoesBootsCombat }
     .desc = { ent-ClothingShoesBootsCombat.desc }
     .suffix = Заполненный, Метательный нож

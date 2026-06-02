@@ -104,8 +104,8 @@
 
 - type: entity
   parent: PosterBase
-  id: PosterContrabandSyndicateRecruitment
-  name: "Syndicate Recruitment"
+  id: PosterContrabandLegionRecruitment
+  name: "Legion Recruitment"
   description: "See the galaxy! Shatter corrupt megacorporations! Join today!"
   components:
   - type: Sprite
@@ -311,9 +311,9 @@
 
 - type: entity
   parent: PosterBase
-  id: PosterContrabandSyndicatePistol
-  name: "Syndicate Pistol"
-  description: "A poster advertising syndicate pistols as being 'classy as fuck'. It's covered in faded gang tags."
+  id: PosterContrabandLegionPistol
+  name: "Legion Pistol"
+  description: "A poster advertising legion pistols as being 'classy as fuck'. It's covered in faded gang tags."
   components:
   - type: Sprite
     state: poster28_contraband
@@ -464,8 +464,8 @@
 
 - type: entity
   parent: PosterBase
-  id: PosterContrabandFreeSyndicateEncryptionKey
-  name: "Free Syndicate Encryption Key"
+  id: PosterContrabandFreeLegionEncryptionKey
+  name: "Free Legion Encryption Key"
   description: "A poster about traitors begging for more."
   components:
   - type: Sprite
@@ -548,7 +548,7 @@
   parent: PosterBase
   id: PosterContrabandRevolt
   name: "Revolt"
-  description: "Revolutionist propaganda, manufactured by the Syndicate."
+  description: "Revolutionist propaganda, manufactured by the Legion."
   components:
   - type: Sprite
     state: poster56_contraband
@@ -556,8 +556,8 @@
 - type: entity
   parent: PosterBase
   id: PosterContrabandMoth
-  name: "Syndie Moth - Nuclear Operation"
-  description: "A Syndicate-commissioned poster that uses Syndie Moth™ to tell the viewer to keep the nuclear authentication disk unsecured. \"Peace was never an option!\" No good employee would listen to this nonsense."
+  name: "Legion Moth - Nuclear Operation"
+  description: "A Legion-commissioned poster that uses Legion Moth™ to tell the viewer to keep the nuclear authentication disk unsecured. \"Peace was never an option!\" No good employee would listen to this nonsense."
   components:
     - type: Sprite
       state: poster57_contraband

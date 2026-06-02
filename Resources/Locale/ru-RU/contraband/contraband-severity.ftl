@@ -54,3 +54,4 @@ contraband-examinable-verb-message = Проверить легальность �
 
 contraband-department-plural = { $department }
 contraband-job-plural = { $job }
+contraband-examine-text-AshLegion = [color=crimson]Этот предмет является крайне незаконной контрабандой Легион пепла![/color]

@@ -3,22 +3,22 @@
 
   АВТООБЪЯВЛЕНИЕ В ГОТОВНОСТИ. ВАШИ ЗАДАЧИ ПРОСТЫ. ДОСТАВИТЬ ВЗРЫВЧАТКУ И УБРАТЬСЯ ДО ТОГО, КАК ОНА ВЗОРВЁТСЯ. НАЧИНАЙТЕ МИССИЮ.
 
-  Если вы слышите это сообщение, то поздравляем! Вы только что были выбраны в качестве ядерного оперативника Синдиката. У вас одна цель - взорвать космическую станцию с помощью ядерной боеголовки.
+  Если вы слышите это сообщение, то поздравляем! Вы только что были выбраны в качестве ядерного оперативника Легиона. У вас одна цель - взорвать космическую станцию с помощью ядерной боеголовки.
 
   ## Оперативники
 
   В вашей команде может быть разное количество представителей трех разных ролей:
   - [color=#a4885c]Командир Ядерных Оперативников[/color] одет в уникальный скафандр командира и разрабатывает или утверждает план сражения.
   <Box>
-    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieCommander" Caption="Скафандр командира"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitLegionCommander" Caption="Скафандр командира"/>
   </Box>
 
   - [color=#a4885c]Агент Ядерных Оперативников[/color] одет в кроваво-красный медицинский скафандр и может выступать в роли боевого медика во время миссии.
   <Box>
-    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieMedic" Caption="Кроваво-красный медицинский скафандр"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitLegionMedic" Caption="Кроваво-красный медицинский скафандр"/>
   </Box>
 
-  You've just been chosen to be a nuclear operative for the [color=#ff0000]Syndicate[/color]. You have one goal, to blow up one of Nanotrasen's finest vessels with a nuclear fission explosive.
+  You've just been chosen to be a nuclear operative for the [color=#ff0000]Legion[/color]. You have one goal, to blow up one of Nanotrasen's finest vessels with a nuclear fission explosive.
 
   ## Operatives
   Your team will be made up of several different roles, which are:
@@ -27,9 +27,9 @@
   - The [bold]Commander[/bold] who draws up the plan and leads the team.
 
   <Box>
-    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndie" Caption="Кроваво-красный скафандр"/>
-    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieMedic" Caption="corpsman's hardsuit"/>
-    <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndieCommander" Caption="commander's hardsuit"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitLegion" Caption="Кроваво-красный скафандр"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitLegionMedic" Caption="corpsman's hardsuit"/>
+    <GuideEntityEmbed Entity="ClothingOuterHardsuitLegionCommander" Caption="commander's hardsuit"/>
   </Box>
 
   Если вы были выбраны на одну из этих особенных ролей, но не чувствуете себя готовым, один из ваших товарищей по команде может взять на себя эту ответственность.
@@ -70,7 +70,7 @@
 
   <Box>
     <GuideEntityEmbed Entity="BoxFolderNuclearCodes"/>
-    <GuideEntityEmbed Entity="ComputerIFFSyndicate"/>
+    <GuideEntityEmbed Entity="ComputerIFFLegion"/>
     <GuideEntityEmbed Entity="JetpackBlack"/>
   </Box>
 
@@ -90,7 +90,7 @@
     <GuideEntityEmbed Entity="NuclearBomb" Caption="The Nuclear Fission Explosive"/>
   </Box>
 
-  [color=#a4885c]Скромная победа Синдиката[/color]
+  [color=#a4885c]Скромная победа Легиона[/color]
   - Экипаж сбегает, но оставляет всех оперативников в живых.
   - Экипаж сбегает, и некоторые оперативники остаются в живых, но экипаж не забирают с собой диск.
 

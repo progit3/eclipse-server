@@ -1,1 +1,1 @@
-comp-self-unremovable-clothing = Это нельзя снять без посторонней помощи.
+comp-self-unremovable-clothing = Это нельзя снять без посторонней помощи.

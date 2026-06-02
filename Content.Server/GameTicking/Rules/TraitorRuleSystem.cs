@@ -131,7 +131,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
             Log.Debug($"MakeTraitor {ToPrettyString(traitor)} - did not get traitor briefing");
         }
 
-        var color = TraitorCodewordColor; // Fall back to a dark red Syndicate color if a prototype is not found
+        var color = TraitorCodewordColor; // Fall back to a dark red Legion color if a prototype is not found
 
         // The mind entity is stored in nullspace with a PVS override for the owner, so only they can see the codewords.
         var codewordComp = EnsureComp<RoleCodewordComponent>(mindId);
@@ -143,7 +143,7 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         // # Erida commented
         // _npcFaction.RemoveFaction(traitor, component.NanoTrasenFaction, false);
 
-        _npcFaction.AddFaction(traitor, component.SyndicateFaction);
+        _npcFaction.AddFaction(traitor, component.LegionFaction);
 
         Log.Debug($"MakeTraitor {ToPrettyString(traitor)} - Finished");
         return true;

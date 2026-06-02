@@ -475,7 +475,7 @@ entities:
     - type: Transform
       pos: 5.7307854,7.6795745
       parent: 1
-- proto: LockerSyndicate
+- proto: LockerLegion
   entities:
   - uid: 94
     components:

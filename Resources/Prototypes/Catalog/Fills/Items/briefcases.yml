@@ -10,9 +10,9 @@
         amount: 3
 
 - type: entity
-  id: BriefcaseSyndieSniperBundleFilled
+  id: BriefcaseLegionSniperBundleFilled
   parent: BriefcaseBrown
-  suffix: Syndicate, Sniper Bundle
+  suffix: Legion, Sniper Bundle
   components:
   - type: EntityTableContainerFill
     containers:
@@ -26,27 +26,27 @@
         - id: BarberScissors
 
 - type: entity
-  id: BriefcaseSyndieLobbyingBundleFilled
-  parent: BriefcaseSyndie
-  suffix: Syndicate, Spesos
+  id: BriefcaseLegionLobbyingBundleFilled
+  parent: BriefcaseLegion
+  suffix: Legion, Spesos
   components:
   - type: EntityTableContainerFill
     containers:
       storagebase: !type:AllSelector
         children:
-        - id: ClothingOuterCoatJensenSyndie
+        - id: ClothingOuterCoatJensenLegion
         - id: ClothingUniformJumpsuitTacticool
         - id: ClothingEyesGlassesSunglasses
         - id: SpaceCash30000
-        - id: EncryptionKeySyndie
+        - id: EncryptionKeyLegion
         - id: RubberStampTrader
-        - id: PhoneInstrumentSyndicate
+        - id: PhoneInstrumentLegion
         - id: ClothingHandsGlovesCombat
         - id: ClothingMaskNeckGaiter
 
 - type: entity
   id: BriefcaseThiefBribingBundleFilled
-  parent: BriefcaseSyndie
+  parent: BriefcaseLegion
   suffix: Thief, Spesos
   components:
   - type: EntityTableContainerFill

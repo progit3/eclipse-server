@@ -10,10 +10,12 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: NanoTrasen
   hostile:
+  - AshLegion
   - SimpleHostile
   - Syndicate
   - Xeno
@@ -23,6 +25,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: Mouse
@@ -45,6 +48,7 @@
   - Xeno
   - AllHostile
   - Dragon
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: SimpleHostile
@@ -60,6 +64,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: SimpleNeutral
@@ -67,6 +72,7 @@
 - type: npcFaction
   id: Syndicate
   hostile:
+  - AshLegion
   - NanoTrasen
   - SimpleHostile
   - Xeno
@@ -76,23 +82,12 @@
   - AllHostile
   - Wizard
   - Xenoborg
-
-- type: npcFaction
-  id: InteQ
-  hostile:
-  - NanoTrasen
-  - SimpleHostile
-  - Xeno
-  - PetsNT
-  - Zombie
-  - Dragon
-  - AllHostile
-  - Wizard
-  - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: Xeno
   hostile:
+  - AshLegion
   - NanoTrasen
   - Syndicate
   - Passive
@@ -103,6 +98,7 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: Zombie
@@ -118,6 +114,7 @@
   - Wizard
   - Dragon
   - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: Revolutionary
@@ -129,6 +126,7 @@
   - AllHostile
   - Wizard
   - Xenoborg
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: AllHostile
@@ -146,6 +144,8 @@
   - Revolutionary
   - Wizard
   - Xenoborg
+  - AshLegion
+  - Lavafauna # Goob - Lavaland
 
 - type: npcFaction
   id: Wizard
@@ -180,7 +180,7 @@
   - SimpleHostile
   - AllHostile
 
-# Lavaland mob faction to stop wildlife infighting.
+# Lavaland mob faction to stop gang wars
 - type: npcFaction
   id: Lavafauna
   hostile:
@@ -194,6 +194,6 @@
   - Xeno
   - Zombie
   - Revolutionary
-  - Wizard
+  - Wizard # goob edit - wizard
   friendly:
   - Dragon

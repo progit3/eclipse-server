@@ -277,7 +277,7 @@ entities:
     - type: Transform
       pos: 8.5,8.5
       parent: 1
-- proto: AirlockHatchSyndicate
+- proto: AirlockHatchLegion
   entities:
   - uid: 4
     components:
@@ -438,7 +438,7 @@ entities:
     - type: Transform
       pos: 8.5,4.5
       parent: 1
-- proto: CigPackSyndicate
+- proto: CigPackLegion
   entities:
   - uid: 214
     components:
@@ -456,14 +456,14 @@ entities:
       linearDamping: 0
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadHatSyndie
+- proto: ClothingHeadHatLegion
   entities:
   - uid: 213
     components:
     - type: Transform
       pos: 9.502089,16.355793
       parent: 1
-- proto: ClothingNeckScarfStripedSyndieRed
+- proto: ClothingNeckScarfStripedLegionRed
   entities:
   - uid: 36
     components:
@@ -510,7 +510,7 @@ entities:
     - type: Transform
       pos: 9.2765255,4.668701
       parent: 1
-- proto: LockerSyndicate
+- proto: LockerLegion
   entities:
   - uid: 12
     components:
@@ -732,7 +732,7 @@ entities:
     - type: Transform
       pos: 9.5,12.5
       parent: 1
-- proto: SyndieHandyFlag
+- proto: LegionHandyFlag
   entities:
   - uid: 212
     components:

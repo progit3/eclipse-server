@@ -38,7 +38,7 @@
 - type: entity
   id: ToolboxElectricalTurretFilled
   name: electrical toolbox
-  suffix: Syndicate, Turret, Filled
+  suffix: Legion, Turret, Filled
   parent: ToolboxElectricalTurret
   components:
   - type: EntityTableContainerFill
@@ -125,8 +125,8 @@
         - id: Multitool
 
 - type: entity
-  parent: ToolboxSyndicate
-  id: ToolboxSyndicateFilled
+  parent: ToolboxLegion
+  id: ToolboxLegionFilled
   suffix: Filled
   components:
   - type: EntityTableContainerFill
@@ -140,7 +140,7 @@
         - id: Welder
         - id: Multitool
         - id: ClothingHandsGlovesCombat
-        - id: ClothingMaskGasSyndicate
+        - id: ClothingMaskGasLegion
   - type: StaticPrice
     price: 1000
 

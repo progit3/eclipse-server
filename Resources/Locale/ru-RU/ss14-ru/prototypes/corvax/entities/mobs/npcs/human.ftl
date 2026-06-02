@@ -1,2 +1,2 @@
-ent-MobSyndicateSmuggler = контрабандист Синдиката
-    .desc = { ent-MobHuman.desc }
+ent-MobSyndicateSmuggler = контрабандист Легион пепла
+    .desc = { ent-BaseMobHuman.desc }

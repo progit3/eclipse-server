@@ -288,21 +288,21 @@
     - Meat
 
 - type: entity
-  name: syndi-cakes
+  name: legion-cakes
   parent: FoodSnackBase
-  id: FoodSnackSyndi
+  id: FoodSnackLegion
   description: An extremely moist snack cake that tastes just as good after being nuked.
   components:
   - type: FlavorProfile
     flavors:
-      - syndicakes
+      - legioncakes
   - type: Sprite
-    state: syndicakes
+    state: legioncakes
   - type: Item
-    heldPrefix: syndicakes
+    heldPrefix: legioncakes
   - type: Edible
     trash:
-    - FoodPacketSyndiTrash
+    - FoodPacketLegionTrash
 
 - type: entity
   parent: FoodSnackBase
@@ -792,11 +792,11 @@
 - type: entity
   categories: [ HideSpawnMenu ]
   parent: FoodPacketTrash
-  id: FoodPacketSyndiTrash
-  name: syndi-cakes box
+  id: FoodPacketLegionTrash
+  name: legion-cakes box
   components:
   - type: Sprite
-    state: syndicakes-trash
+    state: legioncakes-trash
   - type: Item
     inhandVisuals:
       left:

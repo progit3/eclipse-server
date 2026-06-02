@@ -596,11 +596,11 @@
       prototypes: [ CentcommGear ]
       roleLoadout: [ RoleSurvivalStandard ]
 
-## Syndicate
+## Legion
 
 - type: entity
-  id: RandomHumanoidSpawnerSyndicateAgent
-  name: syndicate agent
+  id: RandomHumanoidSpawnerLegionAgent
+  name: legion agent
   components:
     - type: Sprite
       sprite: Mobs/Species/Human/parts.rsi
@@ -608,16 +608,16 @@
     - type: RandomMetadata
       nameSegments: [ NamesDeathCommando ]
     - type: RandomHumanoidSpawner
-      settings: SyndicateAgent
+      settings: LegionAgent
 
 - type: randomHumanoidSettings
-  id: SyndicateAgent
+  id: LegionAgent
   components:
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: Loadout
-      prototypes: [SyndicateOperativeGearExtremelyBasic]
-      roleLoadout: [ RoleSurvivalSyndicate ]
+      prototypes: [LegionOperativeGearExtremelyBasic]
+      roleLoadout: [ RoleSurvivalLegion ]
 
 - type: entity
   id: RandomHumanoidSpawnerNukeOp

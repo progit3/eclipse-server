@@ -1,6 +1,6 @@
-ent-ClothingBeltInteQWebbingMedFilled = тактический жилет гренадёра
+ent-ClothingBeltAshLegionWebbingMedFilled = тактический жилет гренадёра
     .suffix = Заполненный
     .desc = { ent-ClothingBeltMilitaryWebbing.desc }
-ent-ClothingBeltInteQWebbingGrenadeFilled = тактический жилет медика
-    .desc = Тактический жилет, который носят оперативники-медики Мародёров InteQ
+ent-ClothingBeltAshLegionWebbingGrenadeFilled = тактический жилет медика
+    .desc = Тактический жилет, который носят оперативники-медики Мародёров Легион пепла
     .suffix = Заполненный

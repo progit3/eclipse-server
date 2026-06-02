@@ -1,4 +1,4 @@
-﻿- type: entity
+- type: entity
   id: AutolatheMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: autolathe machine board
@@ -1049,14 +1049,14 @@
       - MicrowaveMachineBoard
 
 - type: entity
-  id: SyndicateMicrowaveMachineCircuitboard
-  parent: [ BaseMachineCircuitboard, BaseSyndicateContraband ]
+  id: LegionMicrowaveMachineCircuitboard
+  parent: [ BaseMachineCircuitboard, BaseLegionContraband ]
   name: donk co. microwave machine board
   components:
     - type: Sprite
       state: service
     - type: MachineBoard
-      prototype: SyndicateMicrowave
+      prototype: LegionMicrowave
       stackRequirements:
         Manipulator: 1
         Glass: 2

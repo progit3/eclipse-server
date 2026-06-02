@@ -88,14 +88,14 @@
     state: banner_revolution
 
 - type: entity
-  id: BannerSyndicate
+  id: BannerLegion
   parent: BannerBase
-  name: syndicate banner
-  description: A banner from which, according to the syndicate, you should feel hatred for NT.
+  name: legion banner
+  description: A banner from which, according to the legion, you should feel hatred for NT.
   components:
   - type: Sprite
     sprite: Structures/Decoration/banner.rsi
-    state: banner_syndicate
+    state: banner_legion
 
 - type: entity
   id: BannerScience

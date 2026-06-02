@@ -268,15 +268,15 @@
     - Chemicals
 
 - type: entity
-  parent: [ BaseFlatpack, BaseSyndicateContraband ]
-  id: SyndicateMicrowaveFlatpack
+  parent: [ BaseFlatpack, BaseLegionContraband ]
+  id: LegionMicrowaveFlatpack
   name: donk co. microwave flatpack
   description: A flatpack used for constructing a microwave too hot for Nanotrasen to handle.
   components:
   - type: Item
     size: Normal
   - type: Flatpack
-    entity: SyndicateMicrowave
+    entity: LegionMicrowave
   - type: GuideHelp
     guides:
     - FoodRecipes

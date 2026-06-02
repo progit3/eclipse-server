@@ -43,11 +43,11 @@
   - DrinkShaker
 
 - type: thiefBackpackSet
-  id: SyndieSet
-  name: thief-backpack-category-syndie-name
-  description: thief-backpack-category-syndie-description
+  id: LegionSet
+  name: thief-backpack-category-legion-name
+  description: thief-backpack-category-legion-description
   sprite:
-    sprite: Objects/Specific/Syndicate/telecrystal.rsi
+    sprite: Objects/Specific/Legion/telecrystal.rsi
     state: telecrystal
   content:
   - RadioJammer
@@ -55,7 +55,7 @@
   - Emag
   - AccessBreaker
   - Lighter
-  - CigPackSyndicate
+  - CigPackLegion
   - Telecrystal10 #The thief cannot use them, but it may induce communication with traitors
 
 - type: thiefBackpackSet

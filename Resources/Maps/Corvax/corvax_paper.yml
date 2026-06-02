@@ -11783,7 +11783,7 @@ entities:
     - type: Transform
       pos: 59.5,43.5
       parent: 2
-- proto: AirlockHatchSyndicate
+- proto: AirlockHatchLegion
   entities:
   - uid: 289
     components:
@@ -16142,7 +16142,7 @@ entities:
     - type: Transform
       pos: 43.5,27.5
       parent: 2
-- proto: BannerSyndicate
+- proto: BannerLegion
   entities:
   - uid: 999
     components:
@@ -47331,7 +47331,7 @@ entities:
     - type: Transform
       pos: 60.43519,30.647387
       parent: 2
-- proto: ClothingHeadPyjamaSyndicateBlack
+- proto: ClothingHeadPyjamaLegionBlack
   entities:
   - uid: 6894
     components:
@@ -47343,14 +47343,14 @@ entities:
     - type: Transform
       pos: 79.597435,52.587864
       parent: 2
-- proto: ClothingHeadPyjamaSyndicatePink
+- proto: ClothingHeadPyjamaLegionPink
   entities:
   - uid: 6896
     components:
     - type: Transform
       pos: 75.36306,52.60349
       parent: 2
-- proto: ClothingHeadPyjamaSyndicateRed
+- proto: ClothingHeadPyjamaLegionRed
   entities:
   - uid: 6897
     components:
@@ -88577,7 +88577,7 @@ entities:
     - type: Transform
       pos: 54.5,16.5
       parent: 2
-- proto: LockerSyndicateShipGearBasic
+- proto: LockerLegionShipGearBasic
   entities:
   - uid: 12584
     components:
@@ -90124,10 +90124,10 @@ entities:
     - type: Transform
       parent: 1215
     - type: Paper
-      stampState: paper_stamp-syndicate
+      stampState: paper_stamp-legion
       stampedBy:
       - stampedColor: '#850000FF'
-        stampedName: stamp-component-stamped-name-syndicate
+        stampedName: stamp-component-stamped-name-legion
       content: >2+
                                             ⣀⡀⢠⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
         ⠀⠀⠀⠀⠀⠀⠀   ⡠⠄⠂⠉⠀⠠⠓⠀⠀⠀⠀⠐⠀⠀⢄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -92041,7 +92041,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandSyndicateRecruitment
+- proto: PosterContrabandLegionRecruitment
   entities:
   - uid: 13012
     components:
@@ -103744,7 +103744,7 @@ entities:
     - type: Transform
       pos: -4.440526,33.32755
       parent: 2
-- proto: SoapSyndie
+- proto: SoapLegion
   entities:
   - uid: 14866
     components:
@@ -107604,7 +107604,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 74.5,40.5
       parent: 2
-- proto: SyndicateSpongeWrapped
+- proto: LegionSpongeWrapped
   entities:
   - uid: 15322
     components:
@@ -110012,7 +110012,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: TowelColorSyndicate
+- proto: TowelColorLegion
   entities:
   - uid: 7071
     components:
@@ -110467,7 +110467,7 @@ entities:
       parent: 2
     missingComponents:
     - AccessReader
-- proto: VendingMachineBoozeSyndicate
+- proto: VendingMachineBoozeLegion
   entities:
   - uid: 15751
     components:

@@ -12288,7 +12288,7 @@ entities:
     - type: Transform
       pos: 11.3462105,-9.309806
       parent: 1
-- proto: ClothingShoesBootsSyndieFilled
+- proto: ClothingShoesBootsLegionFilled
   entities:
   - uid: 2280
     components:
@@ -13712,7 +13712,7 @@ entities:
       removedMasks: 20
     - type: PlaceableSurface
       isPlaceable: True
-- proto: SyndicateWhistle
+- proto: LegionWhistle
   entities:
   - uid: 2432
     components:

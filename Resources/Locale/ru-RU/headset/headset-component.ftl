@@ -13,7 +13,7 @@ chat-radio-science = Научный
 chat-radio-security = Безопасность
 chat-radio-service = Сервис
 chat-radio-supply = Снабжение
-chat-radio-syndicate = Синдикат
+chat-radio-legion = Легион
 chat-radio-freelance = Фриланс
 
 # not headset but whatever

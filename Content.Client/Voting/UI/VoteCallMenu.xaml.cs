@@ -1,5 +1,4 @@
 using System.Linq;
-using System.Numerics;
 using Content.Client.Gameplay;
 using Content.Client.Stylesheets;
 using Content.Shared.Administration;
@@ -21,7 +20,7 @@ using Robust.Shared.Timing;
 namespace Content.Client.Voting.UI
 {
     [GenerateTypedNameReferences]
-    public sealed partial class VoteCallMenu : BaseWindow
+    public sealed partial class VoteCallMenu : DefaultWindow
     {
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
@@ -64,7 +63,6 @@ namespace Content.Client.Voting.UI
             _votingSystem = _entityManager.System<VotingSystem>();
 
             Stylesheet = IoCManager.Resolve<IStylesheetManager>().SheetSystem;
-            CloseButton.OnPressed += _ => Close();
             VoteNotTrustedLabel.Text = Loc.GetString("ui-vote-trusted-users-notice", ("timeReq", _cfg.GetCVar(CCVars.VotekickEligibleVoterDeathtime)));
 
             foreach (StandardVoteType voteType in Enum.GetValues<StandardVoteType>())
@@ -256,7 +254,8 @@ namespace Content.Client.Voting.UI
                     VoteOptionsButtonContainer.AddChild(optionButton);
                     optionButton.Visible = true;
                     optionButton.OnItemSelected += ButtonSelected;
-                    optionButton.Margin = new Thickness(2, 1);
+                    optionButton.HorizontalExpand = true;
+                    optionButton.Margin = new Thickness(0, 2);
                     if (AvailableVoteOptions[(StandardVoteType)obj.Id].FollowDropdownId != null && AvailableVoteOptions[(StandardVoteType)obj.Id].FollowDropdownId == i)
                     {
                         _followDropdown = optionButton;
@@ -267,10 +266,6 @@ namespace Content.Client.Voting.UI
             }
         }
 
-        protected override DragMode GetDragModeFor(Vector2 relativeMousePos)
-        {
-            return DragMode.Move;
-        }
     }
 
     [UsedImplicitly, AnyCommand]

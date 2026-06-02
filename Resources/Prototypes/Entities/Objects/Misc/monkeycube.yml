@@ -90,14 +90,14 @@
 - type: entity
   parent: MonkeyCubeBox
   name: monkey cube box
-  suffix: Syndicate
-  id: SyndicateSpongeBox
+  suffix: Legion
+  id: LegionSpongeBox
   description: Drymate brand monkey cubes. Just add water!
   components:
   - type: EntityTableContainerFill
     containers:
       storagebase:
-        id: SyndicateSpongeWrapped
+        id: LegionSpongeWrapped
         amount: 6
   - type: Sprite
     sprite: Objects/Misc/monkeycube.rsi
@@ -106,9 +106,9 @@
 - type: entity
   parent: MonkeyCubeWrapped
   name: monkey cube
-  suffix: Wrapped, Syndicate
-  id: SyndicateSpongeWrapped
+  suffix: Wrapped, Legion
+  id: LegionSpongeWrapped
   components:
   - type: SpawnItemsOnUse
     items:
-      - id: SyndicateSponge
+      - id: LegionSponge

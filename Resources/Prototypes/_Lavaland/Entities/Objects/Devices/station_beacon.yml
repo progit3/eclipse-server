@@ -34,10 +34,10 @@
 - type: entity
   parent: DefaultStationBeaconLavalandRuin
   id: DefaultStationBeaconRuinChemistryLab
-  suffix: Ruin Syndicate
+  suffix: Ruin Legion
   components:
   - type: NavMapBeacon
-    defaultText: station-beacon-ruin-syndicate # You aren't going to that syndicate base that easily.
+    defaultText: station-beacon-ruin-legion # You aren't going to that legion base that easily.
 
 - type: entity
   parent: DefaultStationBeaconLavalandRuin

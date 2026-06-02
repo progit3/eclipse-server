@@ -50812,7 +50812,7 @@ entities:
       parent: 6483
     - type: Physics
       canCollide: False
-- proto: ClothingBackpackDuffelSyndicateEVABundle
+- proto: ClothingBackpackDuffelLegionEVABundle
   entities:
   - uid: 6492
     components:
@@ -51483,7 +51483,7 @@ entities:
     - type: Transform
       pos: -80.93193,-68.23383
       parent: 2
-- proto: ClothingHeadHatSyndieMAA
+- proto: ClothingHeadHatLegionMAA
   entities:
   - uid: 6637
     components:
@@ -51562,7 +51562,7 @@ entities:
     - type: Transform
       pos: -13.286184,-6.256197
       parent: 2
-- proto: ClothingHeadHelmetSyndicate
+- proto: ClothingHeadHelmetLegion
   entities:
   - uid: 6649
     components:
@@ -51582,7 +51582,7 @@ entities:
     - type: Transform
       pos: -60.661274,-34.149063
       parent: 2
-- proto: ClothingHeadPyjamaSyndicateBlack
+- proto: ClothingHeadPyjamaLegionBlack
   entities:
   - uid: 6652
     components:
@@ -51590,7 +51590,7 @@ entities:
       parent: 6651
     - type: Physics
       canCollide: False
-- proto: ClothingHeadPyjamaSyndicatePink
+- proto: ClothingHeadPyjamaLegionPink
   entities:
   - uid: 6655
     components:
@@ -51598,7 +51598,7 @@ entities:
       parent: 6654
     - type: Physics
       canCollide: False
-- proto: ClothingHeadPyjamaSyndicateRed
+- proto: ClothingHeadPyjamaLegionRed
   entities:
   - uid: 6658
     components:
@@ -52116,7 +52116,7 @@ entities:
     - type: Transform
       pos: -61.122795,24.354977
       parent: 2
-- proto: ClothingNeckScarfStripedSyndieGreen
+- proto: ClothingNeckScarfStripedLegionGreen
   entities:
   - uid: 3397
     components:
@@ -52125,7 +52125,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingNeckScarfStripedSyndieRed
+- proto: ClothingNeckScarfStripedLegionRed
   entities:
   - uid: 6710
     components:
@@ -52289,7 +52289,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -10.576322,8.359076
       parent: 2
-- proto: ClothingOuterCoatSyndieCap
+- proto: ClothingOuterCoatLegionCap
   entities:
   - uid: 6534
     components:
@@ -52302,7 +52302,7 @@ entities:
     - type: Transform
       pos: -81.30887,-68.73813
       parent: 2
-- proto: ClothingOuterEVASuitSyndicate
+- proto: ClothingOuterEVASuitLegion
   entities:
   - uid: 6728
     components:
@@ -52546,7 +52546,7 @@ entities:
     - type: Transform
       pos: -49.59955,4.6143484
       parent: 2
-- proto: ClothingShoesBootsWinterSyndicate
+- proto: ClothingShoesBootsWinterLegion
   entities:
   - uid: 6757
     components:
@@ -52891,7 +52891,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpskirtSyndieFormalDress
+- proto: ClothingUniformJumpskirtLegionFormalDress
   entities:
   - uid: 6801
     components:
@@ -53066,7 +53066,7 @@ entities:
       parent: 6631
     - type: Physics
       canCollide: False
-- proto: ClothingUniformJumpsuitPyjamaSyndicateBlack
+- proto: ClothingUniformJumpsuitPyjamaLegionBlack
   entities:
   - uid: 6653
     components:
@@ -53074,7 +53074,7 @@ entities:
       parent: 6651
     - type: Physics
       canCollide: False
-- proto: ClothingUniformJumpsuitPyjamaSyndicatePink
+- proto: ClothingUniformJumpsuitPyjamaLegionPink
   entities:
   - uid: 6656
     components:
@@ -53082,7 +53082,7 @@ entities:
       parent: 6654
     - type: Physics
       canCollide: False
-- proto: ClothingUniformJumpsuitPyjamaSyndicateRed
+- proto: ClothingUniformJumpsuitPyjamaLegionRed
   entities:
   - uid: 6659
     components:
@@ -53153,7 +53153,7 @@ entities:
       parent: 6553
     - type: Physics
       canCollide: False
-- proto: ClothingUniformJumpsuitSyndieFormal
+- proto: ClothingUniformJumpsuitLegionFormal
   entities:
   - uid: 5
     components:
@@ -95064,7 +95064,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandFreeSyndicateEncryptionKey
+- proto: PosterContrabandFreeLegionEncryptionKey
   entities:
   - uid: 12290
     components:
@@ -112509,7 +112509,7 @@ entities:
     - type: Transform
       pos: -19.5,-32.5
       parent: 2
-- proto: SyndieHandyFlag
+- proto: LegionHandyFlag
   entities:
   - uid: 14709
     components:
@@ -115019,7 +115019,7 @@ entities:
     - type: Transform
       pos: -42.50441,3.9867992
       parent: 2
-- proto: ToolboxSyndicateFilled
+- proto: ToolboxLegionFilled
   entities:
   - uid: 15138
     components:
@@ -115045,7 +115045,7 @@ entities:
     - type: Transform
       pos: -37.7167,-9.489765
       parent: 2
-- proto: TowelColorSyndicate
+- proto: TowelColorLegion
   entities:
   - uid: 15142
     components:
@@ -116154,7 +116154,7 @@ entities:
     - type: Transform
       pos: -20.5,-9.5
       parent: 2
-- proto: VendingMachineSyndieDrobe
+- proto: VendingMachineLegionDrobe
   entities:
   - uid: 15272
     components:
@@ -133269,7 +133269,7 @@ entities:
     - type: Transform
       pos: -12.461247,-3.2999437
       parent: 2
-- proto: WeaponTurretSyndicateBroken
+- proto: WeaponTurretLegionBroken
   entities:
   - uid: 19547
     components:

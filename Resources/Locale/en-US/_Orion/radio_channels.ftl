@@ -1,1 +1,1 @@
-chat-radio-inteq = InteQ
+chat-radio-ash-legion = Ash Legion

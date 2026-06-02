@@ -53157,7 +53157,7 @@ entities:
     - type: Transform
       pos: -9.183399,-6.3382816
       parent: 2
-- proto: ClothingHeadHatSyndieMAA
+- proto: ClothingHeadHatLegionMAA
   entities:
   - uid: 16057
     components:
@@ -53424,7 +53424,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterCoatSyndieCap
+- proto: ClothingOuterCoatLegionCap
   entities:
   - uid: 16060
     components:
@@ -53565,7 +53565,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitSyndieFormal
+- proto: ClothingUniformJumpsuitLegionFormal
   entities:
   - uid: 16056
     components:
@@ -91224,7 +91224,7 @@ entities:
     - type: Transform
       pos: 1.5,-22.5
       parent: 2
-- proto: LockerSyndicatePersonal
+- proto: LockerLegionPersonal
   entities:
   - uid: 16055
     components:
@@ -93540,7 +93540,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandSyndicateRecruitment
+- proto: PosterContrabandLegionRecruitment
   entities:
   - uid: 16054
     components:
@@ -107640,7 +107640,7 @@ entities:
       - SurveillanceCameraEntertainment
       nameSet: True
       id: Reporter's Field Camera
-- proto: SyndieFlag
+- proto: LegionFlag
   entities:
   - uid: 16077
     components:
@@ -107649,7 +107649,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: SyndieHandyFlag
+- proto: LegionHandyFlag
   entities:
   - uid: 16078
     components:

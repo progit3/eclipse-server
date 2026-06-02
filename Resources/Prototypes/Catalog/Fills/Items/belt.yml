@@ -179,7 +179,7 @@
         children:
         - id: ExGrenade
           amount: 4
-        - id: SyndieMiniBomb
+        - id: LegionMiniBomb
           amount: 2
         - id: EmpGrenade
           amount: 2

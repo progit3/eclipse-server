@@ -380,19 +380,19 @@
   - type: NukeCodePaper
 
 - type: entity
-  parent: [Paper, BaseSyndicateContraband] # eat or burn your damn piece of paper damn thieves
+  parent: [Paper, BaseLegionContraband] # eat or burn your damn piece of paper damn thieves
   id: TraitorCodePaper
-  name: syndicate codeword
-  description: A leaked codeword to possibly get in touch with the Syndicate.
+  name: legion codeword
+  description: A leaked codeword to possibly get in touch with the Legion.
   categories: [ DoNotMap ]
   components:
   - type: TraitorCodePaper
 
 - type: entity
-  parent: [Paper, BaseSyndicateContraband]
+  parent: [Paper, BaseLegionContraband]
   id: AllTraitorCodesPaper
-  name: syndicate codewords registry
-  description: A registry of all active Syndicate codewords.
+  name: legion codewords registry
+  description: A registry of all active Legion codewords.
   suffix: Admeme
   components:
   - type: TraitorCodePaper

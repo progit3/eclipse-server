@@ -1,7 +1,7 @@
 - files: ["mowed_grass.png"]
   license: "CC-BY-SA-3.0"
   copyright: "Created by Ko4erga (discord)"
-  source: "https://github.com/space-syndicate/space-station-14/pull/2282"
+  source: "https://github.com/space-legion/space-station-14/pull/2282"
   
 - files: ["wood_light.png", "wood_dark.png", "wood_black.png", "wood_red.png", "wood_large_light.png", "wood_large_dark.png", "wood_large_black.png", "wood_large_red.png", "wood_chess.png", "wood_chess_light.png", "wood_chess_dark.png", "wood_chess_black.png", "wood_chess_red.png", "wood_parquet.png", "wood_parquet_light.png", "wood_parquet_dark.png", "wood_parquet_black.png", "wood_parquet_red.png"]
   license: "CC-BY-SA-3.0"

@@ -17,9 +17,9 @@
   - type: HierophantBeat
 
 - type: lavalandGridRuin
-  id: SyndicateBase
-  name: lavaland-ruin-syndicate
-  path: /Maps/_Lavaland/Lavaland/ruin_syndicate_base.yml
+  id: LegionBase
+  name: lavaland-ruin-legion
+  path: /Maps/_Lavaland/Lavaland/ruin_legion_base.yml
   priority: -1 # highest priority
   patchToPlanet: false
 

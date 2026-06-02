@@ -8193,13 +8193,13 @@ entities:
             7095: -37.45244,0.16972017
         - node:
             color: '#FFFFFFFF'
-            id: syndlogo1
+            id: legionlogo1
           decals:
             3658: -19,-36
         - node:
             angle: 3.141592653589793 rad
             color: '#FFFFFFFF'
-            id: syndlogo1
+            id: legionlogo1
           decals:
             3659: -20,-36
     - type: GridAtmosphere
@@ -12270,7 +12270,7 @@ entities:
     - type: Transform
       pos: -14.5,25.5
       parent: 2
-- proto: BannerSyndicate
+- proto: BannerLegion
   entities:
   - uid: 456
     components:
@@ -28958,7 +28958,7 @@ entities:
     - type: Transform
       pos: 31.484837,24.871935
       parent: 2
-- proto: ClothingHeadHatSyndieMAA
+- proto: ClothingHeadHatLegionMAA
   entities:
   - uid: 3789
     components:
@@ -29096,7 +29096,7 @@ entities:
       rot: -0.22689280275926285 rad
       pos: 21.5,0.59375
       parent: 2
-- proto: ClothingMaskGasSyndicate
+- proto: ClothingMaskGasLegion
   entities:
   - uid: 3819
     components:
@@ -29220,7 +29220,7 @@ entities:
     - type: Transform
       pos: -25.417915,5.5386567
       parent: 2
-- proto: ClothingNeckScarfStripedSyndieRed
+- proto: ClothingNeckScarfStripedLegionRed
   entities:
   - uid: 3832
     components:

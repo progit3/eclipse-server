@@ -1735,7 +1735,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 1.5,5.5
       parent: 2
-- proto: CigaretteSyndicate
+- proto: CigaretteLegion
   entities:
   - uid: 656
     components:
@@ -1768,7 +1768,7 @@ entities:
           - 274
           - 297
           - 299
-- proto: ClothingBackpackDuffelSyndicate
+- proto: ClothingBackpackDuffelLegion
   entities:
   - uid: 385
     components:
@@ -1800,7 +1800,7 @@ entities:
     - type: Transform
       pos: 4.559528,-9.526169
       parent: 2
-- proto: ClothingMaskGasSyndicate
+- proto: ClothingMaskGasLegion
   entities:
   - uid: 383
     components:
@@ -2874,7 +2874,7 @@ entities:
         security are to preform regular searches of John Grey's cell. we have strong evidence that he is hiding something.
 
 
-        defence turrets are to be set to fire-at-will. we have received several reports from long range sensor stations of increased syndicate activity in the sector.
+        defence turrets are to be set to fire-at-will. we have received several reports from long range sensor stations of increased legion activity in the sector.
 
   - uid: 260
     components:
@@ -4863,7 +4863,7 @@ entities:
     - type: Transform
       pos: 3.5,-20.5
       parent: 2
-- proto: WeaponTurretSyndicateBroken
+- proto: WeaponTurretLegionBroken
   entities:
   - uid: 401
     components:

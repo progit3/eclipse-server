@@ -23,6 +23,7 @@ role-subtype-traitor = Traitor
 role-subtype-thief = Thief
 role-subtype-ninja = Ninja
 role-subtype-nukie = Nukie
+role-subtype-ash-legion = Ash Legion
 role-subtype-traitor-reinforcement = Reinforcement
 role-subtype-revolutionary = Rev
 role-subtype-head-revolutionary = Head Rev

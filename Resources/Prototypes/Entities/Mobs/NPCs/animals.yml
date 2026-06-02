@@ -1500,10 +1500,10 @@
 
 - type: entity
   name: monkey
-  id: MobBaseSyndicateMonkey
+  id: MobBaseLegionMonkey
   parent: MobBaseAncestor # TODO: fix copy paste from MobMonkey
   description: New church of neo-darwinists actually believe that EVERY animal evolved from a monkey. Tastes like pork, and killing them is both fun and relaxing.
-  suffix: syndicate base
+  suffix: legion base
   components:
   - type: NameIdentifier
     group: Monkey
@@ -1515,34 +1515,34 @@
   - type: MonkeyAccent
   - type: NpcFactionMember
     factions:
-    - Syndicate
+    - Legion
   - type: GhostRole
     prob: 0.05
     makeSentient: true
     name: ghost-role-information-monkey-name
     description: ghost-role-information-monkey-description
-    rules: ghost-role-information-syndicate-reinforcement-rules
+    rules: ghost-role-information-legion-reinforcement-rules
     mindRoles:
-    # This is for syndicate monkeys that randomly gain sentience, thus have no summoner to team with
+    # This is for legion monkeys that randomly gain sentience, thus have no summoner to team with
     - MindRoleGhostRoleSoloAntagonist
     raffle:
       settings: default
   - type: GhostTakeoverAvailable
   - type: Loadout
-    prototypes: [SyndicateOperativeGearMonkey]
+    prototypes: [LegionOperativeGearMonkey]
 
 - type: entity
-  id: MobMonkeySyndicateAgent
-  parent: MobBaseSyndicateMonkey
-  suffix: syndicate agent
+  id: MobMonkeyLegionAgent
+  parent: MobBaseLegionMonkey
+  suffix: legion agent
   components:
     # make the player a traitor once its taken
   - type: AutoTraitor
     profile: TraitorReinforcement
 
 - type: entity
-  id: MobMonkeySyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
-  parent: MobBaseSyndicateMonkey
+  id: MobMonkeyLegionAgentNukeops # Reinforcement exclusive to nukeops uplink
+  parent: MobBaseLegionMonkey
   suffix: NukeOps
   components:
   - type: NukeOperative
@@ -1676,9 +1676,9 @@
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
 
 - type: entity
-  id: MobBaseSyndicateKobold
+  id: MobBaseLegionKobold
   parent: MobBaseKobold
-  suffix: syndicate base
+  suffix: legion base
   components:
   - type: MobThresholds
     thresholds:
@@ -1687,22 +1687,22 @@
       200: Dead
   - type: NpcFactionMember
     factions:
-    - Syndicate
+    - Legion
   - type: Loadout
-    prototypes: [SyndicateOperativeGearMonkey]
+    prototypes: [LegionOperativeGearMonkey]
 
 - type: entity
-  id: MobKoboldSyndicateAgent
-  parent: MobBaseSyndicateKobold
-  suffix: syndicate agent
+  id: MobKoboldLegionAgent
+  parent: MobBaseLegionKobold
+  suffix: legion agent
   components:
     # make the player a traitor once its taken
   - type: AutoTraitor
     profile: TraitorReinforcement
 
 - type: entity
-  id: MobKoboldSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
-  parent: MobBaseSyndicateKobold
+  id: MobKoboldLegionAgentNukeops # Reinforcement exclusive to nukeops uplink
+  parent: MobBaseLegionKobold
   suffix: NukeOps
   components:
   - type: NukeOperative
@@ -2370,9 +2370,9 @@
 # TODO: Make grenade penguin voice activated like the rest of the stealth items.
 - type: entity
   name: grenade penguin
-  parent: [ MobPenguin, MobCombat, BaseSyndicateContraband ]
+  parent: [ MobPenguin, MobCombat, BaseLegionContraband ]
   id: MobGrenadePenguin
-  description: A small penguin with a grenade strapped around its neck. Harvested by the Syndicate from icy shit-hole planets.
+  description: A small penguin with a grenade strapped around its neck. Harvested by the Legion from icy shit-hole planets.
   components:
   - type: MovementSpeedModifier
     baseWalkSpeed: 3
@@ -2384,7 +2384,7 @@
       task: GrenadePenguinCompound
   - type: NpcFactionMember
     factions:
-    - Syndicate
+    - Legion
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -3179,29 +3179,29 @@
         Base: cat2_dead
 
 - type: entity
-  name: syndicat
-  id: MobCatSyndy
+  name: legioncat
+  id: MobCatLegion
   parent: MobCatSpace
   description: Explosive kitten.
   components:
   - type: Sprite
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: syndicat
+      state: legioncat
   - type: DamageStateVisuals
     states:
       Alive:
-        Base: syndicat
+        Base: legioncat
       Critical:
-        Base: syndicat_dead
+        Base: legioncat_dead
       Dead:
-        Base: syndicat_dead
+        Base: legioncat_dead
   - type: GhostRole
     prob: 1
-    name: ghost-role-information-SyndiCat-name
+    name: ghost-role-information-LegionCat-name
     allowMovement: true
-    description: ghost-role-information-SyndiCat-description
-    rules: ghost-role-information-SyndiCat-rules
+    description: ghost-role-information-LegionCat-description
+    rules: ghost-role-information-LegionCat-rules
     mindRoles:
     - MindRoleGhostRoleTeamAntagonist
     raffle:
@@ -3214,11 +3214,11 @@
     damageCoefficient: 0.2
   - type: NpcFactionMember
     factions:
-    - Syndicate
+    - Legion
   - type: Access
     tags:
     - NuclearOperative
-    - SyndicateAgent
+    - LegionAgent
   - type: MeleeWeapon
     altDisarm: false
     angle: 0

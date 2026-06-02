@@ -5,7 +5,7 @@
         "y": 32
     },
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/faf6db214927874c19b8fa8585d26b5d40de1acc, derelict generic sprites modified by GoldenCan(GitHub), xenoborg sprites, created and modified by Samuka-C (github), Derelict Engineer, Janitor, Miner, Medical, and Assault Borg sprites by _miket on Discord, minor resprite of the service borg by Kittygyat (github), red cross on Syndi Medical Borg changed to blue to avoid Geneva issues by CDWimmer (GitHub)",
+    "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/faf6db214927874c19b8fa8585d26b5d40de1acc, derelict generic sprites modified by GoldenCan(GitHub), xenoborg sprites, created and modified by Samuka-C (github), Derelict Engineer, Janitor, Miner, Medical, and Assault Borg sprites by _miket on Discord, minor resprite of the service borg by Kittygyat (github), red cross on Legion Medical Borg changed to blue to avoid Geneva issues by CDWimmer (GitHub)",
     "states": [
         {
             "name": "clown",
@@ -376,35 +376,35 @@
             "directions": 4
         },
         {
-            "name": "synd_sec",
+            "name": "legion_sec",
             "directions": 4
         },
         {
-            "name": "synd_sec_e",
+            "name": "legion_sec_e",
             "directions": 4
         },
         {
-            "name": "synd_sec_l",
+            "name": "legion_sec_l",
             "directions": 4
         },
         {
-            "name": "synd_sec_derelict",
+            "name": "legion_sec_derelict",
             "directions": 4
         },
         {
-            "name": "synd_sec_derelict_e",
+            "name": "legion_sec_derelict_e",
             "directions": 4
         },
         {
-            "name": "synd_sec_derelict_l",
+            "name": "legion_sec_derelict_l",
             "directions": 4
         },
         {
-            "name": "synd_medical",
+            "name": "legion_medical",
             "directions": 4
         },
         {
-            "name": "synd_medical_l",
+            "name": "legion_medical_l",
             "directions": 4,
             "delays": [
                 [
@@ -430,7 +430,7 @@
             ]
         },
         {
-            "name": "synd_medical_e",
+            "name": "legion_medical_e",
             "directions": 4,
             "delays": [
                 [
@@ -456,15 +456,15 @@
             ]
         },
         {
-            "name": "synd_engi",
+            "name": "legion_engi",
             "directions": 4
         },
         {
-            "name": "synd_engi_e",
+            "name": "legion_engi_e",
             "directions": 4
         },
         {
-            "name": "synd_engi_l",
+            "name": "legion_engi_l",
             "directions": 4
         },
         {

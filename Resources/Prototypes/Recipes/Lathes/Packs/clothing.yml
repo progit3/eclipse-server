@@ -216,21 +216,21 @@
   - ClothingUniformJumpsuitCentcomOfficial
 
 - type: latheRecipePack
-  id: ClothingSyndie
+  id: ClothingLegion
   recipes:
-  - ClothingHeadHatSyndieMAA
-  - ClothingHeadHatSyndie
+  - ClothingHeadHatLegionMAA
+  - ClothingHeadHatLegion
   - ClothingUniformJumpsuitOperative
   - ClothingUniformJumpskirtOperative
-  - ClothingUniformJumpsuitSyndieFormal
-  - ClothingUniformJumpskirtSyndieFormalDress
-  - ClothingHeadPyjamaSyndicateBlack
-  - ClothingUniformJumpsuitPyjamaSyndicateBlack
-  - ClothingHeadPyjamaSyndicatePink
-  - ClothingUniformJumpsuitPyjamaSyndicatePink
-  - ClothingHeadPyjamaSyndicateRed
-  - ClothingUniformJumpsuitPyjamaSyndicateRed
+  - ClothingUniformJumpsuitLegionFormal
+  - ClothingUniformJumpskirtLegionFormalDress
+  - ClothingHeadPyjamaLegionBlack
+  - ClothingUniformJumpsuitPyjamaLegionBlack
+  - ClothingHeadPyjamaLegionPink
+  - ClothingUniformJumpsuitPyjamaLegionPink
+  - ClothingHeadPyjamaLegionRed
+  - ClothingUniformJumpsuitPyjamaLegionRed
   - ClothingOuterWinterCentcom
-  - ClothingOuterWinterSyndie
-  - ClothingOuterWinterSyndieCap
-  - BedsheetSyndie
+  - ClothingOuterWinterLegion
+  - ClothingOuterWinterLegionCap
+  - BedsheetLegion

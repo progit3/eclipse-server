@@ -9333,7 +9333,7 @@ entities:
   - uid: 7536
     components:
     - type: MetaData
-      name: Syndi Puddle CS108
+      name: Legion Puddle CS108
     - type: Transform
       pos: -47.5992,-42.460846
       parent: 943
@@ -12570,7 +12570,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 59.5,14.5
       parent: 60
-- proto: AirlockExternalGlassShuttleSyndicateLocked
+- proto: AirlockExternalGlassShuttleLegionLocked
   entities:
   - uid: 8108
     components:
@@ -12619,7 +12619,7 @@ entities:
         11630:
         - - DoorStatus
           - DoorBolt
-- proto: AirlockExternalShuttleSyndicateLocked
+- proto: AirlockExternalShuttleLegionLocked
   entities:
   - uid: 8065
     components:
@@ -13881,7 +13881,7 @@ entities:
         12842:
         - - DoorStatus
           - DoorBolt
-- proto: AirlockSyndicateGlassLocked
+- proto: AirlockLegionGlassLocked
   entities:
   - uid: 5333
     components:
@@ -13898,7 +13898,7 @@ entities:
     - type: Transform
       pos: -15.5,-2.5
       parent: 7536
-- proto: AirlockSyndicateLocked
+- proto: AirlockLegionLocked
   entities:
   - uid: 5318
     components:
@@ -16555,7 +16555,7 @@ entities:
     - type: Transform
       pos: -34.5,20.5
       parent: 60
-- proto: BedsheetSyndie
+- proto: BedsheetLegion
   entities:
   - uid: 9131
     components:
@@ -60080,7 +60080,7 @@ entities:
     - type: Transform
       pos: 32.735313,22.361353
       parent: 60
-- proto: CigaretteSyndicate
+- proto: CigaretteLegion
   entities:
   - uid: 10818
     components:
@@ -75267,7 +75267,7 @@ entities:
     - type: Transform
       pos: -43.50482,8.738578
       parent: 60
-- proto: FoodSnackSyndi
+- proto: FoodSnackLegion
   entities:
   - uid: 10826
     components:
@@ -112928,7 +112928,7 @@ entities:
     - type: Transform
       pos: -21.5,-0.5
       parent: 60
-- proto: LockerSyndicatePersonal
+- proto: LockerLegionPersonal
   entities:
   - uid: 9113
     components:
@@ -115727,7 +115727,7 @@ entities:
       parent: 60
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandFreeSyndicateEncryptionKey
+- proto: PosterContrabandFreeLegionEncryptionKey
   entities:
   - uid: 7039
     components:
@@ -115956,7 +115956,7 @@ entities:
       parent: 60
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandSyndicatePistol
+- proto: PosterContrabandLegionPistol
   entities:
   - uid: 3591
     components:
@@ -115972,7 +115972,7 @@ entities:
       parent: 7536
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandSyndicateRecruitment
+- proto: PosterContrabandLegionRecruitment
   entities:
   - uid: 9125
     components:
@@ -131547,7 +131547,7 @@ entities:
   - uid: 7980
     components:
     - type: MetaData
-      name: Syndicate SMES
+      name: Legion SMES
     - type: Transform
       pos: -10.5,-2.5
       parent: 7536
@@ -135193,7 +135193,7 @@ entities:
   - uid: 8062
     components:
     - type: MetaData
-      name: Syndicate Substation
+      name: Legion Substation
     - type: Transform
       pos: -5.5,-1.5
       parent: 7536
@@ -135404,7 +135404,7 @@ entities:
     - type: Transform
       pos: -22.5,-9.5
       parent: 60
-- proto: SuitStorageEVASyndicate
+- proto: SuitStorageEVALegion
   entities:
   - uid: 21701
     components:
@@ -139830,7 +139830,7 @@ entities:
     - type: Transform
       pos: -24.5,19.5
       parent: 60
-- proto: TargetSyndicate
+- proto: TargetLegion
   entities:
   - uid: 10824
     components:
@@ -156774,7 +156774,7 @@ entities:
     - type: Transform
       pos: -26.496874,-6.540243
       parent: 60
-- proto: WeaponTurretSyndicateBroken
+- proto: WeaponTurretLegionBroken
   entities:
   - uid: 10821
     components:

@@ -1,8 +1,8 @@
-ent-InteQOpsLeaderIDCard = ID карта InteQ (Лидер)
+ent-AshLegionOpsLeaderIDCard = ID карта Легион пепла (Лидер)
     .desc = { ent-IDCardStandard.desc }
 
-ent-InteQOpsMedicIDCard = ID карта InteQ (Медик)
+ent-AshLegionOpsMedicIDCard = ID карта Легион пепла (Медик)
     .desc = { ent-IDCardStandard.desc }
 
-ent-InteQOpsBaseIDCard = ID карта InteQ
+ent-AshLegionOpsBaseIDCard = ID карта Легион пепла
     .desc = { ent-IDCardStandard.desc }

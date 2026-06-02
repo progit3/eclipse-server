@@ -151,7 +151,7 @@
     children:
     - id: SpaceCash100
       weight: 8
-    - id: CigPackSyndicate
+    - id: CigPackLegion
       weight: 0.5
     - id: CigCartonGreen
     - id: CigCartonRed
@@ -195,7 +195,7 @@
     - id: ClothingHeadHatOutlawHat
     - id: ClothingMaskItalianMoustache
     - id: ClothingHandsGlovesCombat
-    - id: ClothingNeckScarfStripedSyndieRed
+    - id: ClothingNeckScarfStripedLegionRed
 
 - type: entityTable #2x small
   id: RandomSatchelPayloadTable
@@ -220,7 +220,7 @@
     - id: SpaceCash100
       weight: 15
     - id: ChemDispenserMachineCircuitboard
-    - id: SyndicateMicrowaveMachineCircuitboard
+    - id: LegionMicrowaveMachineCircuitboard
     - id: HydroponicsTrayMachineCircuitboard
     - id: DawInstrumentMachineCircuitboard
     - id: PortableGeneratorPacmanMachineCircuitboard
@@ -381,7 +381,7 @@
     - !type:NestedSelector
       tableId: RandomSatchelCellsTable #1x small
     - !type:NestedSelector
-      tableId: RandomSatchelSyndicateTable #1x medium
+      tableId: RandomSatchelLegionTable #1x medium
     - !type:NestedSelector
       tableId: RandomSatchelToolsTable #1x small
 
@@ -443,7 +443,7 @@
     - id: PowerCellHigh
 
 - type: entityTable #1x medium
-  id: RandomSatchelSyndicateTable
+  id: RandomSatchelLegionTable
   table: !type:GroupSelector
     children:
     - id: SpaceCash100
@@ -455,7 +455,7 @@
     - id: ToySword
     - id: NukeDiskFake
     - id: RadioJammer
-    - id: SoapSyndie
+    - id: SoapLegion
     - id: SingularityToy
     - id: DehydratedSpaceCarp
 

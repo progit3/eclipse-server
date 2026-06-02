@@ -1,4 +1,4 @@
-﻿namespace Content.Client.Stylesheets;
+namespace Content.Client.Stylesheets;
 
 public abstract partial class BaseStylesheet
 {
@@ -13,7 +13,7 @@ public abstract partial class BaseStylesheet
     public virtual Type StylesheetConfigType => typeof(NoConfig);
 
     /// <remarks>
-    ///     ex. "Nanotrasen", "System", "Syndicate"
+    ///     ex. "Nanotrasen", "System", "Legion"
     /// </remarks>
     public abstract string StylesheetName { get; }
 

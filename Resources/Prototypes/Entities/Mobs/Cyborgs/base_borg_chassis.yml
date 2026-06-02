@@ -341,43 +341,43 @@
   - type: BorgControl
 
 - type: entity
-  id: BaseBorgChassisSyndicate
+  id: BaseBorgChassisLegion
   parent: BaseBorgChassis
   abstract: true
   components:
   - type: NpcFactionMember
     factions:
-    - Syndicate
+    - Legion
   - type: Access
     tags:
     - NuclearOperative
-    - SyndicateAgent
+    - LegionAgent
   - type: AccessReader
-    access: [["SyndicateAgent"], ["NuclearOperative"]]
+    access: [["LegionAgent"], ["NuclearOperative"]]
   - type: SiliconLawProvider
-    laws: SyndicateStatic
+    laws: LegionStatic
     subverted: true
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary
-    - Syndicate
+    - Legion
   - type: ActiveRadio
     channels:
     - Binary
-    - Syndicate
-  - type: ShowSyndicateIcons
+    - Legion
+  - type: ShowLegionIcons
   - type: MovementAlwaysTouching
   - type: Speech
-    speechSounds: SyndieBorg
+    speechSounds: LegionBorg
     allowedEmotes:
     - Laugh
   - type: Vocal
     sounds:
-      Unsexed: UnisexSiliconSyndicate
+      Unsexed: UnisexSiliconLegion
   - type: PointLight
     color: "#dd200b"
   - type: BypassLock
-    bypassDelay: 15 # We don't want people to easily be able to remove syndieborg brains.
+    bypassDelay: 15 # We don't want people to easily be able to remove legionborg brains.
 
 - type: entity
   id: BaseBorgChassisDerelict
@@ -400,28 +400,28 @@
   - type: ShowCrewIcons
 
 - type: entity
-  id: BaseBorgChassisSyndicateDerelict #For assault borg and maybe others in time
-  parent: BaseBorgChassis # We don't want them to see Nukies or have syndi comms, their database is out of date
+  id: BaseBorgChassisLegionDerelict #For assault borg and maybe others in time
+  parent: BaseBorgChassis # We don't want them to see Nukies or have legion comms, their database is out of date
   abstract: true
   components:
   - type: SiliconLawProvider
-    laws: SyndicateStatic #Non-subverted version so they can still be changed
+    laws: LegionStatic #Non-subverted version so they can still be changed
   - type: StartIonStormed
     ionStormAmount: 3
   - type: IonStormTarget
     chance: 1
   - type: ShowJobIcons
   - type: ShowCrewIcons
-  - type: NpcFactionMember # They're still syndicate even if they can't listen to the radio or see icons
+  - type: NpcFactionMember # They're still legion even if they can't listen to the radio or see icons
     factions:
-    - Syndicate
+    - Legion
   - type: Access
     tags:
     - NuclearOperative
-    - SyndicateAgent
+    - LegionAgent
   - type: AccessReader
-    access: [ [ "SyndicateAgent" ], [ "NuclearOperative" ] ]
-  - type: IntrinsicRadioTransmitter # Copy components from base SyndiBorg but without the stuff we don't want
+    access: [ [ "LegionAgent" ], [ "NuclearOperative" ] ]
+  - type: IntrinsicRadioTransmitter # Copy components from base LegionBorg but without the stuff we don't want
     channels:
     - Binary #1984
   - type: ActiveRadio
@@ -429,16 +429,16 @@
     - Binary
   - type: MovementAlwaysTouching
   - type: Speech
-    speechSounds: SyndieBorg
+    speechSounds: LegionBorg
     allowedEmotes:
     - Laugh
   - type: Vocal
     sounds:
-      Unsexed: UnisexSiliconSyndicate
+      Unsexed: UnisexSiliconLegion
   - type: PointLight
     color: "#dd200b"
   - type: BypassLock
-    bypassDelay: 15 # We don't want people to easily be able to remove syndieborg brains.
+    bypassDelay: 15 # We don't want people to easily be able to remove legionborg brains.
 
 - type: entity
   parent: BaseBorgChassisNotIonStormable

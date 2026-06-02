@@ -203,6 +203,14 @@ namespace Content.Shared.Ghost
     }
 
     /// <summary>
+    /// A client to server request for their ghost to respawn as a new character.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class GhostRespawnRequest : EntityEventArgs
+    {
+    }
+
+    /// <summary>
     /// A server to client update with the available ghost role count
     /// </summary>
     [Serializable, NetSerializable]

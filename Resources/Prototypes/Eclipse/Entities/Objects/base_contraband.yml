@@ -1,7 +1,7 @@
-# non-stealth InteQ stuff
+# non-stealth AshLegion stuff
 - type: entity
-  id: BaseInteQContraband
+  id: BaseAshLegionContraband
   abstract: true
   components:
   - type: Contraband
-    severity: InteQ
+    severity: AshLegion

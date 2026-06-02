@@ -544,9 +544,9 @@
   - GroupTankHarness
 
 - type: roleLoadout
-  id: RoleSurvivalSyndicate
+  id: RoleSurvivalLegion
   groups:
-  - SurvivalSyndicate
+  - SurvivalLegion
   - GroupSpeciesBreathTool
   - GroupTankHarness
 
@@ -558,7 +558,7 @@
 - type: roleLoadout
   id: RoleSurvivalNukie
   groups:
-  - SurvivalSyndicate
+  - SurvivalLegion
   - GroupSpeciesBreathTool
   - GroupPocketTankDouble
 

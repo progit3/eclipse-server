@@ -427,38 +427,38 @@
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSyndicate # Just in case you want to make it official which side you are on
+  id: JobIconLegion # Just in case you want to make it official which side you are on
   icon:
     sprite: *icon-rsi
-    state: Syndicate
-  jobName: job-name-syndicate
+    state: Legion
+  jobName: job-name-legion
   isCrewJob: false
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSyndicateCommander
+  id: JobIconLegionCommander
   icon:
     sprite: *icon-rsi
-    state: SyndicateCommander
-  jobName: job-name-syndicate-commander
+    state: LegionCommander
+  jobName: job-name-legion-commander
   isCrewJob: false
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSyndicateCorpsman
+  id: JobIconLegionCorpsman
   icon:
     sprite: *icon-rsi
-    state: SyndicateCorpsman
-  jobName: job-name-syndicate-corpsman
+    state: LegionCorpsman
+  jobName: job-name-legion-corpsman
   isCrewJob: false
 
 - type: jobIcon
   parent: JobIcon
-  id: JobIconSyndicateOperative
+  id: JobIconLegionOperative
   icon:
     sprite: *icon-rsi
-    state: SyndicateOperative
-  jobName: job-name-syndicate-operative
+    state: LegionOperative
+  jobName: job-name-legion-operative
   isCrewJob: false
 
 - type: jobIcon

@@ -37,7 +37,7 @@ entities:
   - uid: 104
     components:
     - type: MetaData
-      name: Syndicate Outpost
+      name: Legion Outpost
     - type: Transform
       parent: 1295
     - type: MapGrid
@@ -1617,7 +1617,7 @@ entities:
     - type: FTLDestination
       whitelist:
         tags:
-        - Syndicate
+        - Legion
     - type: Broadphase
     - type: OccluderTree
     - type: Parallax
@@ -1725,7 +1725,7 @@ entities:
     - type: Transform
       pos: -33.5,0.5
       parent: 104
-- proto: AirlockSyndicateNukeopGlassLocked
+- proto: AirlockLegionNukeopGlassLocked
   entities:
   - uid: 48
     components:
@@ -1782,7 +1782,7 @@ entities:
     - type: Transform
       pos: 6.5,-9.5
       parent: 104
-- proto: AirlockSyndicateNukeopLocked
+- proto: AirlockLegionNukeopLocked
   entities:
   - uid: 109
     components:
@@ -6589,7 +6589,7 @@ entities:
     - type: Transform
       pos: -1.5,-12.5
       parent: 104
-- proto: BedsheetSyndie
+- proto: BedsheetLegion
   entities:
   - uid: 154
     components:
@@ -10236,7 +10236,7 @@ entities:
     - type: Transform
       pos: 24.5,-14.5
       parent: 104
-- proto: ClothingBackpackDuffelSyndicateFilledMedical
+- proto: ClothingBackpackDuffelLegionFilledMedical
   entities:
   - uid: 2437
     components:
@@ -10431,7 +10431,7 @@ entities:
       parent: 104
     - type: Fixtures
       fixtures: {}
-- proto: FaxMachineSyndie
+- proto: FaxMachineLegion
   entities:
   - uid: 81
     components:
@@ -11072,7 +11072,7 @@ entities:
     - type: Transform
       pos: 10.5,2.5
       parent: 104
-- proto: LockerSyndicatePersonalFilled
+- proto: LockerLegionPersonalFilled
   entities:
   - uid: 178
     components:
@@ -11293,7 +11293,7 @@ entities:
     - type: Transform
       pos: 24.5,-16.5
       parent: 104
-- proto: PhoneInstrumentSyndicate
+- proto: PhoneInstrumentLegion
   entities:
   - uid: 1684
     components:
@@ -11562,7 +11562,7 @@ entities:
       parent: 104
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandSyndicatePistol
+- proto: PosterContrabandLegionPistol
   entities:
   - uid: 1386
     components:
@@ -11571,7 +11571,7 @@ entities:
       parent: 104
     - type: Fixtures
       fixtures: {}
-- proto: PosterContrabandSyndicateRecruitment
+- proto: PosterContrabandLegionRecruitment
   entities:
   - uid: 1242
     components:
@@ -13348,21 +13348,21 @@ entities:
       - SurveillanceCameraEntertainment
       nameSet: True
       id: Weeh
-- proto: SyndicateMicrowave
+- proto: LegionMicrowave
   entities:
   - uid: 10
     components:
     - type: Transform
       pos: 13.5,-6.5
       parent: 104
-- proto: SyndicatePersonalAI
+- proto: LegionPersonalAI
   entities:
   - uid: 160
     components:
     - type: Transform
       pos: 1.4711013,-3.6405277
       parent: 104
-- proto: SyndieFlag
+- proto: LegionFlag
   entities:
   - uid: 819
     components:
@@ -13371,7 +13371,7 @@ entities:
       parent: 104
     - type: Fixtures
       fixtures: {}
-- proto: SyndieHandyFlag
+- proto: LegionHandyFlag
   entities:
   - uid: 1810
     components:
@@ -13763,7 +13763,7 @@ entities:
     - type: Transform
       pos: -2.4700382,-4.362167
       parent: 104
-- proto: ToolboxSyndicateFilled
+- proto: ToolboxLegionFilled
   entities:
   - uid: 205
     components:
@@ -13834,7 +13834,7 @@ entities:
     - type: Transform
       pos: 12.453509,14.985125
       parent: 104
-- proto: VendingMachineBoozeSyndicate
+- proto: VendingMachineBoozeLegion
   entities:
   - uid: 1380
     components:
@@ -13848,7 +13848,7 @@ entities:
     - type: Transform
       pos: -10.5,7.5
       parent: 104
-- proto: VendingMachineChemicalsSyndicate
+- proto: VendingMachineChemicalsLegion
   entities:
   - uid: 1335
     components:
@@ -13890,7 +13890,7 @@ entities:
     - type: Transform
       pos: 6.5,0.5
       parent: 104
-- proto: VendingMachineSyndieDrobe
+- proto: VendingMachineLegionDrobe
   entities:
   - uid: 1299
     components:

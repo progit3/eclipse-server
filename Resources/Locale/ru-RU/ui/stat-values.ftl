@@ -1,1 +1,1 @@
-stat-values-ui-title = Статистика ближнего боя
+stat-values-ui-title = Статистика ближнего боя

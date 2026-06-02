@@ -545,13 +545,13 @@
             ]
         },
         {
-            "name": "syndicate"
+            "name": "legion"
         },
         {
-            "name": "syndicate_door"
+            "name": "legion_door"
         },
         {
-            "name": "syndicate_open"
+            "name": "legion_open"
         },
         {
             "name": "tac"

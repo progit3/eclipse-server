@@ -8916,7 +8916,7 @@ entities:
     - type: Transform
       pos: -7.5,0.5
       parent: 2
-- proto: AirlockShuttleSyndicate
+- proto: AirlockShuttleLegion
   entities:
   - uid: 6367
     components:
@@ -10195,7 +10195,7 @@ entities:
     - type: Transform
       pos: -34.5,12.5
       parent: 2
-- proto: BedsheetSyndie
+- proto: BedsheetLegion
   entities:
   - uid: 242
     components:
@@ -22928,7 +22928,7 @@ entities:
     - type: Transform
       pos: 9.572304,-4.1252627
       parent: 6350
-- proto: CigaretteSyndicate
+- proto: CigaretteLegion
   entities:
   - uid: 2161
     components:
@@ -22963,7 +22963,7 @@ entities:
     - type: Transform
       pos: 9.492766,0.5854777
       parent: 2
-- proto: CigPackSyndicate
+- proto: CigPackLegion
   entities:
   - uid: 2173
     components:
@@ -23366,7 +23366,7 @@ entities:
           - 8413
           - 8412
           - 8414
-- proto: ClothingBackpackSyndicate
+- proto: ClothingBackpackLegion
   entities:
   - uid: 8612
     components:
@@ -23392,7 +23392,7 @@ entities:
         title: null
     - type: InsideEntityStorage
     - type: Visibility
-- proto: ClothingBeltSyndieHolster
+- proto: ClothingBeltLegionHolster
   entities:
   - uid: 8613
     components:
@@ -23489,7 +23489,7 @@ entities:
     - type: Transform
       pos: -20.5,1.5
       parent: 2
-- proto: ClothingHandsKnuckleDustersSyndicate
+- proto: ClothingHandsKnuckleDustersLegion
   entities:
   - uid: 8614
     components:
@@ -23656,7 +23656,7 @@ entities:
     - type: Transform
       pos: -0.118377686,0.45568848
       parent: 6350
-- proto: ClothingHeadHelmetSwatSyndicate
+- proto: ClothingHeadHelmetSwatLegion
   entities:
   - uid: 8615
     components:
@@ -23665,7 +23665,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadsetAltSyndicate
+- proto: ClothingHeadsetAltLegion
   entities:
   - uid: 8616
     components:
@@ -23714,7 +23714,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingMaskGasSyndicate
+- proto: ClothingMaskGasLegion
   entities:
   - uid: 2234
     components:
@@ -23815,7 +23815,7 @@ entities:
         solution@food: !type:ContainerSlot
           ent: 12
     - type: InsideEntityStorage
-- proto: ClothingNeckScarfStripedSyndieRed
+- proto: ClothingNeckScarfStripedLegionRed
   entities:
   - uid: 8131
     components:
@@ -23823,7 +23823,7 @@ entities:
       parent: 8129
     - type: Physics
       canCollide: False
-- proto: ClothingNeckSyndicakePin
+- proto: ClothingNeckLegioncakePin
   entities:
   - uid: 2263
     components:
@@ -23912,7 +23912,7 @@ entities:
     - type: Transform
       pos: 4.5549645,37.390812
       parent: 2
-- proto: ClothingOuterCoatSyndieCap
+- proto: ClothingOuterCoatLegionCap
   entities:
   - uid: 8619
     components:
@@ -24057,7 +24057,7 @@ entities:
     - type: Transform
       pos: 7.698024,-16.490208
       parent: 2
-- proto: ClothingShoesBootsMagSyndie
+- proto: ClothingShoesBootsMagLegion
   entities:
   - uid: 6717
     components:
@@ -24386,7 +24386,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitRecruitSyndie
+- proto: ClothingUniformJumpsuitRecruitLegion
   entities:
   - uid: 8132
     components:
@@ -25104,7 +25104,7 @@ entities:
     - type: Transform
       pos: 7.5,22.5
       parent: 2
-- proto: CrateSyndicate
+- proto: CrateLegion
   entities:
   - uid: 8611
     components:
@@ -27854,7 +27854,7 @@ entities:
     - type: Transform
       pos: 5.5,13.5
       parent: 2
-- proto: EncryptionKeySyndie
+- proto: EncryptionKeyLegion
   entities:
   - uid: 6791
     components:
@@ -28036,7 +28036,7 @@ entities:
       name: Мостик
       receiveNukeCodes: True
       receiveStationGoal: True
-- proto: FaxMachineSyndie
+- proto: FaxMachineLegion
   entities:
   - uid: 2700
     components:
@@ -38080,7 +38080,7 @@ entities:
     - type: Transform
       pos: -7.5,10.5
       parent: 2
-- proto: LockerSyndicate
+- proto: LockerLegion
   entities:
   - uid: 6793
     components:
@@ -38106,7 +38106,7 @@ entities:
           showEnts: False
           occludes: True
           ent: null
-- proto: LockerSyndicatePersonal
+- proto: LockerLegionPersonal
   entities:
   - uid: 3898
     components:
@@ -39020,7 +39020,7 @@ entities:
 
         [color=#B50F1D] █░░░██░░░░░░░█[/color]    [head=3]Бланк документа[/head]
 
-        [color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Syndicate[/head]
+        [color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Legion[/head]
 
         [color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Silly ██-███ ███[/bold]
 
@@ -39349,7 +39349,7 @@ entities:
     - type: Transform
       pos: 1.9654026,-0.24364471
       parent: 2
-- proto: PhoneInstrumentSyndicate
+- proto: PhoneInstrumentLegion
   entities:
   - uid: 4001
     components:
@@ -44370,7 +44370,7 @@ entities:
     - type: Transform
       pos: 7.6471786,-1.5472101
       parent: 2
-- proto: RubberStampSyndicate
+- proto: RubberStampLegion
   entities:
   - uid: 4700
     components:
@@ -45467,7 +45467,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: SoapSyndie
+- proto: SoapLegion
   entities:
   - uid: 4791
     components:
@@ -45779,7 +45779,7 @@ entities:
     - type: Transform
       pos: 12.5,8.5
       parent: 6350
-- proto: SpawnMobSyndicateFootSoldier
+- proto: SpawnMobLegionFootSoldier
   entities:
   - uid: 7065
     components:
@@ -46296,7 +46296,7 @@ entities:
   - uid: 4899
     components:
     - type: MetaData
-      desc: Статуя грейтайда что построил космоБайк из говна и палок и смог основать данную станцию разобрав бывшую базу синдиката в одиночку!
+      desc: Статуя грейтайда что построил космоБайк из говна и палок и смог основать данную станцию разобрав бывшую базу легиона в одиночку!
       name: Статуя великого Грейтайда
     - type: Transform
       pos: -21.5,-12.5
@@ -47230,14 +47230,14 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -25.5,6.5
       parent: 2
-- proto: SyndicateJawsOfLife
+- proto: LegionJawsOfLife
   entities:
   - uid: 7081
     components:
     - type: Transform
       pos: 4.5,-5.5
       parent: 6350
-- proto: SyndicateMicrowaveMachineCircuitboard
+- proto: LegionMicrowaveMachineCircuitboard
   entities:
   - uid: 8625
     components:
@@ -47246,7 +47246,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: SyndieFlag
+- proto: LegionFlag
   entities:
   - uid: 5001
     components:
@@ -47283,7 +47283,7 @@ entities:
       parent: 6350
     - type: Fixtures
       fixtures: {}
-- proto: SyndieHandyFlag
+- proto: LegionHandyFlag
   entities:
   - uid: 8134
     components:
@@ -48607,7 +48607,7 @@ entities:
     - type: Transform
       pos: -7.5,2.5
       parent: 6350
-- proto: ToolboxSyndicateFilled
+- proto: ToolboxLegionFilled
   entities:
   - uid: 8626
     components:
@@ -48724,7 +48724,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: TowelColorSyndicate
+- proto: TowelColorLegion
   entities:
   - uid: 5165
     components:
@@ -59089,7 +59089,7 @@ entities:
     - type: Transform
       pos: 16.5,3.5
       parent: 6350
-- proto: WeaponTurretSyndicateBroken
+- proto: WeaponTurretLegionBroken
   entities:
   - uid: 7739
     components:
@@ -59106,7 +59106,7 @@ entities:
     - type: Transform
       pos: 4.5,-3.5
       parent: 6350
-- proto: WeaponTurretSyndicateDisposable
+- proto: WeaponTurretLegionDisposable
   entities:
   - uid: 6111
     components:

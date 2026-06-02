@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ FoodBreadBaguette, BaseSword, BaseSyndicateContraband ]
+  parent: [ FoodBreadBaguette, BaseSword, BaseLegionContraband ]
   id: WeaponBaguette
   suffix: Weapon
   components:

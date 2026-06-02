@@ -32,19 +32,19 @@
       "name": "missilepod_open"
     },
     {
-      "name": "syndiepod"
+      "name": "legionpod"
     },
     {
-      "name": "syndiepod_falling"
+      "name": "legionpod_falling"
     },
     {
-      "name": "syndiepod_door"
+      "name": "legionpod_door"
     },
     {
-      "name": "syndiepod_open"
+      "name": "legionpod_open"
     },
     {
-      "name": "syndicate"
+      "name": "legion"
     }
   ]
 }

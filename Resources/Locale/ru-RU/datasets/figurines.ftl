@@ -282,7 +282,7 @@ figurines-AI-7 = { law-nutimov-4 }
 
 figurines-footsoldier-1 = Я злой мальчик. С каждым днём всё меньше мальчик, с каждым днём всё больше злой.
 figurines-footsoldier-2 = Кого ты выберешь? Их или нас? Нас или их?
-figurines-footsoldier-3 = Слава Синдикату!
+figurines-footsoldier-3 = Слава Легиону!
 figurines-footsoldier-4 = Долой Nanotrasen!
 figurines-footsoldier-5 = Я лучше умру, чем присоединюсь к Nanotrasen.
 
@@ -302,7 +302,7 @@ figurines-nukie-5 = Командир?.. Это шарик...
 
 figurines-nukie-commander-1 = ДОСТАНЬТЕ ЭТОТ ЧЁРТОВ ДИСК!
 figurines-nukie-commander-2 = Ну и хрюкеры.
-figurines-nukie-commander-3 = Синдикат передаёт привет.
+figurines-nukie-commander-3 = Легион передаёт привет.
 figurines-nukie-commander-4 = Провал — это не вариант.
 figurines-nukie-commander-5 = Упс.
 

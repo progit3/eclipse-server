@@ -1,4 +1,4 @@
-﻿# generic "highly illegal" contraband; Syndicate/magical contraband are already considered highly illegal under Space Law,
+# generic "highly illegal" contraband; Legion/magical contraband are already considered highly illegal under Space Law,
 # so this is mostly for stuff that should be equally illegal but doesn't need its own unique contraband tier added
 - type: entity
   id: BaseHighlyIllegalContraband
@@ -23,13 +23,13 @@
   - type: Contraband
     severity: Magical
 
-# non-stealth syndicate stuff
+# non-stealth legion stuff
 - type: entity
-  id: BaseSyndicateContraband
+  id: BaseLegionContraband
   abstract: true
   components:
   - type: Contraband
-    severity: Syndicate
+    severity: Legion
     allowedDepartments: [  ]
     allowedJobs: [  ]
 
@@ -41,7 +41,7 @@
   - type: Contraband
     severity: Minor
 
-# major contraband, for things like guns or weaponry that don't belong to any department and aren't syndicate specific
+# major contraband, for things like guns or weaponry that don't belong to any department and aren't legion specific
 - type: entity
   id: BaseMajorContraband
   abstract: true

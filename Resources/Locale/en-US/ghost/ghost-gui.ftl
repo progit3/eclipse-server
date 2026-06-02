@@ -1,4 +1,6 @@
 ghost-gui-return-to-body-button = Return to body
+ghost-gui-respawn-button = Respawn
+ghost-gui-respawn-button-cooldown = Respawn ({ $seconds }s)
 ghost-gui-ghost-warp-button = Ghost Warp
 ghost-gui-ghost-roles-button = Ghost Roles ({$count})
 ghost-gui-toggle-ghost-visibility-popup-on = Enabled visibility of ghosts.
@@ -10,6 +12,7 @@ ghost-gui-toggle-fov-popup = Toggled field-of-view.
 
 ghost-gui-toggle-hearing-popup-on = You can now hear all messages.
 ghost-gui-toggle-hearing-popup-off = You can now only hear radio and nearby messages.
+ghost-respawn-cooldown = You can respawn in { $seconds } seconds.
 
 ghost-target-window-title = Ghost Warp
 ghost-target-window-current-button = Warp: {$name}

@@ -20,11 +20,11 @@ selectable-set-thief-chameleon-description =
     a chameleon projector, and an Agent ID.
     Disguise as anyone and anything.
 
-selectable-set-thief-syndie-name = Syndie Kit
-selectable-set-thief-syndie-description =
+selectable-set-thief-legion-name = Legion Kit
+selectable-set-thief-legion-description =
     Trinkets from a disavowed past, or stolen from a careless agent?
     You've made some connections. Whiskey, echo...
-    Includes: An Emag, Access Breaker, Interdyne cigs, a Syndicate codeword,
+    Includes: An Emag, Access Breaker, Interdyne cigs, a Legion codeword,
     a Radio Jammer, a novelty lighter box and some strange red crystals.
 
 selectable-set-thief-sleeper-name = Sleeper Kit
@@ -48,86 +48,86 @@ selectable-set-thief-smuggler-description =
     Includes: Fulton beacon, 10 fultons, 3 smoke grenades,
     and an invisible crate to hide valuable loot.
 
-# Syndicate
+# Legion
 
-selectable-set-syndicate-spy-name = Spy Bundle
-selectable-set-syndicate-spy-description =
+selectable-set-legion-spy-name = Spy Bundle
+selectable-set-legion-spy-description =
     Complete your objectives quietly with this compilation of stealthy items.
     Contains: chameleon thieving gloves, chameleon kit, voice mask,
     agent ID card, a hypopen with a nocturine bottle, camera bug,
-    stealth box, syndicate jaws of life, and a syndicate encryption key.
+    stealth box, legion jaws of life, and a legion encryption key.
 
-selectable-set-syndicate-hitman-name = Hitman Bundle
-selectable-set-syndicate-hitman-description =
+selectable-set-legion-hitman-name = Hitman Bundle
+selectable-set-legion-hitman-description =
     Find and eliminate your targets quietly and effectively with this bundle.
     Contains: Cobra pistol with 3 extra mags, CQC manual,
     a special invisible armor vest, Interdyne herbals packet,
-    combat medkit, a stylish look and a syndicate encryption key.
+    combat medkit, a stylish look and a legion encryption key.
 
-selectable-set-syndicate-implants-name = Cyberpsychosis Bundle
-selectable-set-syndicate-implants-description =
+selectable-set-legion-implants-name = Cyberpsychosis Bundle
+selectable-set-legion-implants-description =
     A few implants to give you some options for when you inevitably get arrested.
     Contains: nutriment pump, scram, freedom, smoke,
-    krav maga and syndicate radio implanters, Sandevistan
+    krav maga and legion radio implanters, Sandevistan
     and paired mantis blades autosurgeons, and a cool jacket.
 
-selectable-set-syndicate-hacker-name = Hacker Bundle
-selectable-set-syndicate-hacker-description =
+selectable-set-legion-hacker-name = Hacker Bundle
+selectable-set-legion-hacker-description =
     A bundle with everything you need to hack into and disrupt the Station itself,
     the station AI, its cyborgs and the Security team. HACK THE PLANET!
     Contains: A custom law board, authentication disruptor, EMAG,
-    radio jammer, filled toolbox, experimental syndicate teleporter,
-    cool glasses, binary decoder implanter and a syndicate encryption key.
+    radio jammer, filled toolbox, experimental legion teleporter,
+    cool glasses, binary decoder implanter and a legion encryption key.
 
-selectable-set-syndicate-desword-name = Dark Lord Bundle
-selectable-set-syndicate-desword-description =
+selectable-set-legion-desword-name = Dark Lord Bundle
+selectable-set-legion-desword-description =
     Turn your anger into hate and your hate into suffering with this lightsaber.
     Contains: double-bladed energy sword, hyperzine microinjector kit, glue tube,
-    all clothing you need for a proper cosplay and a syndicate encryption key.
+    all clothing you need for a proper cosplay and a legion encryption key.
 
-selectable-set-syndicate-grenadier-name = Grenadier Bundle
-selectable-set-syndicate-grenadier-description =
+selectable-set-legion-grenadier-name = Grenadier Bundle
+selectable-set-legion-grenadier-description =
     Some explosives to ensure you can blast your way through any situation.
-    Contains: syndicate encryption key, bomb suit, grenadier belt rig,
+    Contains: legion encryption key, bomb suit, grenadier belt rig,
     explosive-resistant backpack and so many grenades you'll fall asleep reading.
 
-selectable-set-syndicate-fluclear-name = Fluclear Operative Bundle
-selectable-set-syndicate-fluclear-description =
-    Declare your allegiance to the Syndicate with this bundle, get dat fuckin' disk!
+selectable-set-legion-fluclear-name = Fluclear Operative Bundle
+selectable-set-legion-fluclear-description =
+    Declare your allegiance to the Legion with this bundle, get dat fuckin' disk!
     Contains: C-20R SMG, 3 extra mags, energy shield, jetpack,
     a blood-red hardsuit and some basic nuclear operative gear.
 
-selectable-set-syndicate-friendship-name = Friendship Bundle
-selectable-set-syndicate-friendship-description =
+selectable-set-legion-friendship-name = Friendship Bundle
+selectable-set-legion-friendship-description =
     Friendship is magic! Go find yourself some friends with this bundle!
     Contains: a contractor baton and handcuffs for you, 4 mindcontrol implanters
-    and Mosin rifles for your friends, and 5 syndicate encryption keys for you all.
+    and Mosin rifles for your friends, and 5 legion encryption keys for you all.
 
-selectable-set-syndicate-carp-name = Carp Bundle
-selectable-set-syndicate-carp-description =
+selectable-set-legion-carp-name = Carp Bundle
+selectable-set-legion-carp-description =
     Grr! Rrrr! Grr... Grrow?! KOWABUNGA!
     Contains: a scroll of the Way of The Sleeping Carp, 10 dehydrated carp
-    (half of which are holo), a carp hardsuit and a syndicate encryption key.
+    (half of which are holo), a carp hardsuit and a legion encryption key.
 
-selectable-set-syndicate-western-name = Western Bundle
-selectable-set-syndicate-western-description =
+selectable-set-legion-western-name = Western Bundle
+selectable-set-legion-western-description =
     Light the western holo-cigar, tip the hat, and let the music play.
-    Contains: western holo-cigar, syndicate encryption key,
+    Contains: western holo-cigar, legion encryption key,
     resonant jumpsuit, sunglasses, classic poncho,
     cowboy hat and boots, two Python revolvers, six AP speedloaders,
     and two advanced combat medipens.
 
-selectable-set-syndicate-sus-name = Suspicion Bundle
-selectable-set-syndicate-sus-description =
+selectable-set-legion-sus-name = Suspicion Bundle
+selectable-set-legion-sus-description =
     When the traitor is sus. The traitor is you, of course.
     Contains: an advanced contortionist jumpsuit, betrayal knife, miniature
-    energy crossbow, stealth suit, and a syndicate encryption key.
+    energy crossbow, stealth suit, and a legion encryption key.
 
-selectable-set-syndicate-builder-name = Builder Bundle
-selectable-set-syndicate-builder-description =
+selectable-set-legion-builder-name = Builder Bundle
+selectable-set-legion-builder-description =
     It is funnier to pull down than to build. But it is not as effective.
     Contains: 2 disposable ballistic turrets, a telecrystal miner flatpack,
-    some tools and materials to get you started, and a syndicate encryption key.
+    some tools and materials to get you started, and a legion encryption key.
 
 # Blueshield
 

@@ -98,7 +98,7 @@ guidebook-corporatelaw-133-note =
 guidebook-corporatelaw-135-desc = [italic]Членство в группировках, запрещенных корпорацией NanoTrasen.[/italic]
 guidebook-corporatelaw-135-note =
     {"[italic]Запрещенными группировками считаются:[/italic]"}
-    - Синдикат,
+    - Легион,
     - Пиратские объединения,
     - Петрищевцы,
     - Расистские объединения.

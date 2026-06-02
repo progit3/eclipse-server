@@ -1,7 +1,7 @@
 #NANOTRASEN NAVY HARDSUITS
 #NT Navy Captain Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndieCommander ]
+  parent: [ BaseCentcommContraband, ClothingOuterHardsuitLegionCommander ]
   id: ClothingOuterHardsuitNTNavyCaptain
   name: nanotrasen navy captain hardsuit
   description: Hermetic high-level protection suit, custom-designed for NT Naval Command staff. It integrates reinforced armor plates with navy-blue heavy-duty synthetic fabric. Features ceremonial golden epaulettes and lateral gold piping.
@@ -15,7 +15,7 @@
 
 #NT Navy Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndie ]
+  parent: [ BaseCentcommContraband, ClothingOuterHardsuitLegion ]
   id: ClothingOuterHardsuitNTNavy
   name: nanotrasen navy hardsuit
   description: A protective hardsuit worn by crew members of an NanoTrasen naval vessels.
@@ -49,7 +49,7 @@
 
 #NT Navy Medical Hardsuit
 - type: entity
-  parent: [ BaseCentcommContraband, ClothingOuterHardsuitSyndieMedic ]
+  parent: [ BaseCentcommContraband, ClothingOuterHardsuitLegionMedic ]
   id: ClothingOuterHardsuitNTNavyMedical
   name: nanotrasen navy medical hardsuit
   description: A protective hardsuit worn by crew members of an NanoTrasen naval vessels.

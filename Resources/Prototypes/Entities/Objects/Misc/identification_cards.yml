@@ -5,6 +5,23 @@
   description: A card necessary to access various areas aboard the station.
   abstract: true
   components:
+    # handling sounds edit start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/Eclipse/Items/handling/card_pickup.ogg
+      params:
+        volume: -7
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/Eclipse/Items/handling/card_drop.ogg
+      params:
+        volume: -7
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/Eclipse/Items/handling/card_drop.ogg
+      params:
+        volume: -7
+    # handling sounds edit end
   - type: Sprite
     sprite: Objects/Misc/id_cards.rsi
   - type: Clothing
@@ -37,7 +54,7 @@
     layers:
     - state: default
     - sprite: &icon-rsi Interface/Misc/job_icons.rsi
-      offset: &icon-offset -0.09375, 0.0625 #3 pixels left, 2 pixels up
+      offset: &icon-offset -0.15375, 0.0325 #3 pixels left, 2 pixels up
       state: Passenger
   - type: PresetIdCard
     job: Passenger
@@ -515,6 +532,8 @@
     - sprite: *icon-rsi
       offset: *icon-offset
       state: Brigmedic
+  - type: PresetIdCard
+    job: Brigmedic
 
 - type: entity
   parent: SecurityIDCard
@@ -769,38 +788,6 @@
   - type: PresetIdCard
     job: Reporter
 
-- type: entity
-  parent: IDCardStandard
-  id: BoxerIDCard
-  name: boxer ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: stripe_top
-      color: *color-service-top
-    - state: stripe_bottom
-      color: *color-service-bottom
-    - sprite: *icon-rsi
-      offset: *icon-offset
-      state: Boxer
-
-- type: entity
-  parent: IDCardStandard
-  id: ZookeeperIDCard
-  name: zookeeper ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: stripe_top
-      color: *color-service-top
-    - state: stripe_bottom
-      color: *color-service-bottom
-    - sprite: *icon-rsi
-      offset: *icon-offset
-      state: Zookeeper
-
 #Supply
 
 - type: entity
@@ -958,7 +945,7 @@
     - NuclearOperative
 
 - type: entity
-  parent: [ IDCardStandard, BaseSyndicateContraband ]
+  parent: [ IDCardStandard, BaseLegionContraband ]
   id: SyndicateIDCard
   name: syndicate ID card
   components:
@@ -982,7 +969,7 @@
     - SyndicateAgent
 
 - type: entity
-  parent: [ SyndicateIDCard, BaseSyndicateContraband ]
+  parent: [ SyndicateIDCard, BaseLegionContraband ]
   id: SyndiOperativeIDCard
   name: syndicate operative ID card
   components:
@@ -1001,7 +988,7 @@
     jobIcon: JobIconSyndicateOperative
 
 - type: entity
-  parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
+  parent: [ SyndiOperativeIDCard, BaseLegionContraband ]
   id: SyndiCorpsmanIDCard
   name: syndicate corpsman ID card
   components:
@@ -1019,7 +1006,7 @@
     jobIcon: JobIconSyndicateCorpsman
 
 - type: entity
-  parent: [ SyndiOperativeIDCard, BaseSyndicateContraband ]
+  parent: [ SyndiOperativeIDCard, BaseLegionContraband ]
   id: SyndiCommanderIDCard
   name: syndicate commander ID card
   components:
@@ -1087,7 +1074,8 @@
     - state: default
   - type: Access
     tags:
-    - Xenoborg
+    - NuclearOperative
+    - SyndicateAgent
 
 - type: entity
   parent: [ IDCardStandard, BaseMagicalContraband ]
@@ -1319,6 +1307,7 @@
     tags:
     - CentralCommand
     - NuclearOperative
+    - AshLegion
     - SyndicateAgent
     - Wizard
     - Xenoborg
@@ -1333,3 +1322,39 @@
     interfaces:
       enum.AgentIDCardUiKey.Key:
         type: AgentIDCardBoundUserInterface
+
+- type: entity
+  parent: IDCardStandard
+  id: IAAIDCard
+  name: internal affairs agent ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: gold
+    - state: stripe_top
+      color: "#1b67a5"
+    - state: stripe_bottom
+      color: "#0e4069"
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: IAA
+  - type: PresetIdCard
+    job: IAA
+
+- type: entity
+  parent: IDCardStandard
+  id: PilotIDCard
+  name: pilot ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: stripe_top
+      color: *color-security-top
+    - state: stripe_bottom
+      color: *color-security-bottom
+    - sprite: *icon-rsi
+      offset: *icon-offset
+      state: Pilot
+  - type: PresetIdCard
+    job: SecurityPilot

@@ -87,28 +87,28 @@
       sprite: Clothing/Neck/Scarfs/purple.rsi
 
 - type: entity
-  parent: [ ClothingScarfBase, BaseSyndicateContraband ]
-  id: ClothingNeckScarfStripedSyndieGreen
-  name: striped syndicate green scarf
-  description: A stylish striped syndicate green scarf. The perfect winter accessory for those with a keen fashion sense, and those who are in the mood to steal something.
+  parent: [ ClothingScarfBase, BaseLegionContraband ]
+  id: ClothingNeckScarfStripedLegionGreen
+  name: striped legion green scarf
+  description: A stylish striped legion green scarf. The perfect winter accessory for those with a keen fashion sense, and those who are in the mood to steal something.
   components:
     - type: Sprite
-      sprite: Clothing/Neck/Scarfs/syndiegreen.rsi
+      sprite: Clothing/Neck/Scarfs/legiongreen.rsi
     - type: Clothing
-      sprite: Clothing/Neck/Scarfs/syndiegreen.rsi
+      sprite: Clothing/Neck/Scarfs/legiongreen.rsi
     - type: StaticPrice
       price: 500
 
 - type: entity
-  parent: [ ClothingScarfBase, BaseSyndicateContraband ]
-  id: ClothingNeckScarfStripedSyndieRed
-  name: striped syndicate red scarf
-  description: A stylish striped syndicate red scarf. The perfect winter accessory for those with a keen fashion sense, and those who are in the mood to steal something.
+  parent: [ ClothingScarfBase, BaseLegionContraband ]
+  id: ClothingNeckScarfStripedLegionRed
+  name: striped legion red scarf
+  description: A stylish striped legion red scarf. The perfect winter accessory for those with a keen fashion sense, and those who are in the mood to steal something.
   components:
     - type: Sprite
-      sprite: Clothing/Neck/Scarfs/syndiered.rsi
+      sprite: Clothing/Neck/Scarfs/legionred.rsi
     - type: Clothing
-      sprite: Clothing/Neck/Scarfs/syndiered.rsi
+      sprite: Clothing/Neck/Scarfs/legionred.rsi
     - type: StaticPrice
       price: 500
 

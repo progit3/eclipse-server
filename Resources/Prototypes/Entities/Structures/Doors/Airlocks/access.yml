@@ -157,12 +157,12 @@
 
 - type: entity
   parent: AirlockExternal
-  id: AirlockExternalSyndicateLocked
-  suffix: External, Syndicate, Locked
+  id: AirlockExternalLegionLocked
+  suffix: External, Legion, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSyndicateAgent ]
+      board: [ DoorElectronicsLegionAgent ]
   - type: Wires
     layoutId: AirlockSecurity
 
@@ -529,12 +529,12 @@
 
 - type: entity
   parent: AirlockExternalGlass
-  id: AirlockExternalGlassSyndicateLocked
-  suffix: External, Glass, Syndicate, Locked
+  id: AirlockExternalGlassLegionLocked
+  suffix: External, Glass, Legion, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSyndicateAgent ]
+      board: [ DoorElectronicsLegionAgent ]
   - type: Wires
     layoutId: AirlockSecurity
 
@@ -853,17 +853,17 @@
       board: [ DoorElectronicsExternal ]
 
 - type: entity
-  parent: AirlockSyndicateGlass
-  id: AirlockSyndicateGlassLocked
-  suffix: Syndicate, Locked
+  parent: AirlockLegionGlass
+  id: AirlockLegionGlassLocked
+  suffix: Legion, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSyndicateAgent ]
+      board: [ DoorElectronicsLegionAgent ]
 
 - type: entity
-  parent: AirlockSyndicateGlass
-  id: AirlockSyndicateNukeopGlassLocked
+  parent: AirlockLegionGlass
+  id: AirlockLegionNukeopGlassLocked
   suffix: Nukeop, Locked
   components:
   - type: ContainerFill
@@ -1116,17 +1116,17 @@
     sprite: Structures/Doors/Airlocks/Standard/maint.rsi
 
 - type: entity
-  parent: AirlockSyndicate
-  id: AirlockSyndicateLocked
-  suffix: Syndicate, Locked
+  parent: AirlockLegion
+  id: AirlockLegionLocked
+  suffix: Legion, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSyndicateAgent ]
+      board: [ DoorElectronicsLegionAgent ]
 
 - type: entity
-  parent: AirlockSyndicate
-  id: AirlockSyndicateNukeopLocked
+  parent: AirlockLegion
+  id: AirlockLegionNukeopLocked
   suffix: Nukeop, Locked
   components:
   - type: ContainerFill
@@ -1155,16 +1155,16 @@
       board: [ DoorElectronicsExternal ]
 
 - type: entity
-  parent: AirlockShuttleSyndicate
-  id: AirlockExternalShuttleSyndicateLocked
-  suffix: External, Docking, Syndicate, Locked
+  parent: AirlockShuttleLegion
+  id: AirlockExternalShuttleLegionLocked
+  suffix: External, Docking, Legion, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSyndicateAgent ]
+      board: [ DoorElectronicsLegionAgent ]
 
 - type: entity
-  parent: AirlockShuttleSyndicate
+  parent: AirlockShuttleLegion
   id: AirlockExternalShuttleNukeopLocked
   suffix: External, Docking, Nukeop, Locked
   components:
@@ -1193,16 +1193,16 @@
       board: [ DoorElectronicsExternal ]
 
 - type: entity
-  parent: AirlockGlassShuttleSyndicate
-  id: AirlockExternalGlassShuttleSyndicateLocked
-  suffix: Syndicate, Locked, Glass
+  parent: AirlockGlassShuttleLegion
+  id: AirlockExternalGlassShuttleLegionLocked
+  suffix: Legion, Locked, Glass
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSyndicateAgent ]
+      board: [ DoorElectronicsLegionAgent ]
 
 - type: entity
-  parent: AirlockGlassShuttleSyndicate
+  parent: AirlockGlassShuttleLegion
   id: AirlockExternalGlassShuttleNukeopLocked
   suffix: Nukeop, Locked, Glass
   components:
@@ -1286,13 +1286,13 @@
 #Airtight hatch
 
 - type: entity
-  parent: AirlockHatchSyndicate
-  id: AirlockHatchSyndicateLocked
-  suffix: Syndicate, Locked
+  parent: AirlockHatchLegion
+  id: AirlockHatchLegionLocked
+  suffix: Legion, Locked
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsSyndicateAgent ]
+      board: [ DoorElectronicsLegionAgent ]
 
 - type: entity
   parent: AirlockHatchMaintenance

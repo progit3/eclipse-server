@@ -106,43 +106,43 @@
     - SiliconEmotes
 
 - type: entity
-  parent: [ PersonalAI, BaseSyndicateContraband]
-  id: SyndicatePersonalAI
-  name: syndicate personal ai device
-  description: Your Syndicate pal who's fun to be with!
+  parent: [ PersonalAI, BaseLegionContraband]
+  id: LegionPersonalAI
+  name: legion personal ai device
+  description: Your Legion pal who's fun to be with!
   components:
   - type: Sprite
     sprite: Objects/Fun/pai.rsi
     layers:
     - state: pai-base
-    - state: syndicate-pai-off-overlay
+    - state: legion-pai-off-overlay
       shader: unshaded
       map: ["screen"]
   - type: ToggleableGhostRole
-    roleName: pai-system-role-name-syndicate
-    roleDescription: pai-system-role-description-syndicate
+    roleName: pai-system-role-name-legion
+    roleDescription: pai-system-role-description-legion
     roleRules: ghost-role-information-familiar-rules
     mindRoles:
     - MindRoleGhostRoleFamiliar
   - type: IntrinsicRadioTransmitter
     channels:
-    - Syndicate
+    - Legion
   - type: ActiveRadio
     channels:
-    - Syndicate
+    - Legion
   - type: Appearance
   - type: GenericVisualizer
     visuals:
       enum.ToggleableGhostRoleVisuals.Status:
         screen:
-          Off: { state: syndicate-pai-off-overlay }
-          Searching: { state: syndicate-pai-searching-overlay }
-          On: { state: syndicate-pai-on-overlay }
+          Off: { state: legion-pai-off-overlay }
+          Searching: { state: legion-pai-searching-overlay }
+          On: { state: legion-pai-on-overlay }
   - type: StaticPrice
     price: 500
   - type: Vocal
     sounds:
-      Unsexed: UnisexSiliconSyndicate
+      Unsexed: UnisexSiliconLegion
 
 - type: entity
   parent: PersonalAI

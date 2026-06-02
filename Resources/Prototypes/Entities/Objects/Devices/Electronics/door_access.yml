@@ -269,7 +269,7 @@
   - type: AccessReader
     access: [["Medical"]]
 
-# Syndicate
+# Legion
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsNukeop
@@ -280,11 +280,11 @@
 
 - type: entity
   parent: DoorElectronics
-  id: DoorElectronicsSyndicateAgent
-  suffix: SyndicateAgent, Locked
+  id: DoorElectronicsLegionAgent
+  suffix: LegionAgent, Locked
   components:
   - type: AccessReader
-    access: [["SyndicateAgent"]]
+    access: [["LegionAgent"]]
 
 # Misc
 - type: entity

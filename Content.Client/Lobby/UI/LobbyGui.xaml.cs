@@ -227,7 +227,7 @@ namespace Content.Client.Lobby.UI
 
         private void OpenNewsAdminWindow()
         {
-            if (_newsWindow is { Disposed: false })
+            if (_newsWindow is { Disposed: false, IsOpen: true })
             {
                 _newsWindow.MoveToFront();
                 return;
@@ -684,13 +684,13 @@ namespace Content.Client.Lobby.UI
                     SectionBody.Text = "Здесь будет отдельный полноэкранный профиль аккаунта. Аватар можно будет менять в этом разделе.";
                     break;
                 case LobbySection.Settings:
-                    SectionIconTexture.TexturePath = "/Textures/Eclipse/MainMenu/icons/nav-settings.png";
+                    SectionIconTexture.TexturePath = "/Textures/Interface/VerbIcons/settings.svg.192dpi.png";
                     SectionTitle.Text = "НАСТРОЙКИ";
                     SectionSubtitle.Text = "Игра и интерфейс";
                     SectionBody.Text = "Здесь будет отдельный полноэкранный раздел настроек.";
                     break;
                 case LobbySection.Roadmap:
-                    SectionIconTexture.TexturePath = "/Textures/Eclipse/MainMenu/icons/nav-settings.png";
+                    SectionIconTexture.TexturePath = "/Textures/Eclipse/MainMenu/icons/nav-roadmap.png";
                     SectionTitle.Text = "ДОРОЖНАЯ КАРТА";
                     SectionSubtitle.Text = "Чего ожидать в будущих обновлениях";
                     break;

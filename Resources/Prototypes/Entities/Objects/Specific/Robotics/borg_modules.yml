@@ -242,16 +242,16 @@
         color: "#313131"
 
 - type: entity
-  id: BaseBorgModuleSyndicate
+  id: BaseBorgModuleLegion
   parent: BaseBorgModule
   abstract: true
   components:
   - type: BorgModule
     borgFitTypes:
-    - borg-type-syndicate
+    - borg-type-legion
   - type: Tag
     tags:
-    - BorgModuleSyndicate
+    - BorgModuleLegion
   - type: Item
     inhandVisuals:
       left:
@@ -273,16 +273,16 @@
 
 
 - type: entity
-  id: BaseBorgModuleSyndicateAssault
+  id: BaseBorgModuleLegionAssault
   parent: BaseBorgModule
   abstract: true
   components:
   - type: BorgModule
     borgFitTypes:
-    - borg-type-syndicate-assault
+    - borg-type-legion-assault
   - type: Tag
     tags:
-    - BorgModuleSyndicateAssault
+    - BorgModuleLegionAssault
   - type: Item
     inhandVisuals:
       left:
@@ -1239,22 +1239,22 @@
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: adv-clowning-module }
 
-#syndicate modules
+#legion modules
 - type: entity
-  parent: [ BaseBorgModule, BaseProviderBorgModule, BaseSyndicateContraband ]
-  id: BorgModuleSyndicateWeapon
+  parent: [ BaseBorgModule, BaseProviderBorgModule, BaseLegionContraband ]
+  id: BorgModuleLegionWeapon
   name: weapon cyborg module
   components:
   - type: Sprite
     layers:
-    - state: syndicate
-    - state: icon-syndicate
+    - state: legion
+    - state: icon-legion
   - type: ItemBorgModule
     hands:
     - item: WeaponPistolEchis
     - item: EnergyDaggerLoud
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-weapon-module }
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: legion-weapon-module }
   - type: Item
     inhandVisuals:
       left:
@@ -1277,107 +1277,107 @@
     price: 2500
 
 - type: entity
-  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModuleLegion, BaseProviderBorgModule, BaseLegionContraband ]
   id: BorgModuleOperative
   name: operative cyborg module
-  description: A module that comes with a crowbar, an Emag, an Access Breaker and a syndicate pinpointer.
+  description: A module that comes with a crowbar, an Emag, an Access Breaker and a legion pinpointer.
   components:
     - type: Sprite
       layers:
-      - state: syndicate
-      - state: icon-syndicate
+      - state: legion
+      - state: icon-legion
     - type: ItemBorgModule
       hands:
       - item: Crowbar
       - item: Emag
       - item: AccessBreaker
-      - item: PinpointerSyndicateNuclear
+      - item: PinpointerLegionNuclear
     - type: BorgModuleIcon
-      icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-operative-module }
+      icon: { sprite: Interface/Actions/actions_borg.rsi, state: legion-operative-module }
 
 - type: entity
-  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModuleLegion, BaseProviderBorgModule, BaseLegionContraband ]
   id: BorgModuleEsword
   name: energy sword cyborg module
   description: A weapons module that comes with an energy sword.
   components:
   - type: Sprite
     layers:
-    - state: syndicate
-    - state: icon-syndicate
+    - state: legion
+    - state: icon-legion
   - type: ItemBorgModule
     hands:
     - item: CyborgEnergySword
-    - item: PinpointerSyndicateNuclear
+    - item: PinpointerLegionNuclear
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-esword-module }
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: legion-esword-module }
 
 - type: entity
   id: BorgModuleDoubleEsword
-  parent: [ BaseBorgModuleSyndicate, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModuleLegion, BaseProviderBorgModule, BaseLegionContraband ]
   name: double energy sword cyborg module
   description: A weapons module that comes with a double energy sword.
   components:
   - type: Sprite
     layers:
-    - state: syndicate
-    - state: icon-syndicate
+    - state: legion
+    - state: icon-legion
   - type: ItemBorgModule
     hands:
     - item: CyborgEnergySwordDouble
-    - item: PinpointerSyndicateNuclear
+    - item: PinpointerLegionNuclear
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-desword-module }
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: legion-desword-module }
 
 - type: entity
-  parent: [ BaseBorgModuleSyndicateAssault, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModuleLegionAssault, BaseProviderBorgModule, BaseLegionContraband ]
   id: BorgModuleL6C
   name: L6C ROW cyborg module
   description: A weapons module that comes with a L6C.
   components:
   - type: Sprite
     layers:
-    - state: syndicate
-    - state: icon-syndicate
+    - state: legion
+    - state: icon-legion
   - type: ItemBorgModule
     hands:
     - item: WeaponLightMachineGunL6C
-    - item: PinpointerSyndicateNuclear
+    - item: PinpointerLegionNuclear
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-l6c-module }
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: legion-l6c-module }
 
 - type: entity
-  parent: [ BaseBorgModuleSyndicateAssault, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModuleLegionAssault, BaseProviderBorgModule, BaseLegionContraband ]
   id: BorgModuleC20r
   name: C-20r ROW cyborg module
   description: A weapons module that comes with a burst-fire C-20r.
   components:
   - type: Sprite
     layers:
-    - state: syndicate
-    - state: icon-syndicate
+    - state: legion
+    - state: icon-legion
   - type: ItemBorgModule
     hands:
     - item: WeaponSubMachineGunC20rROW
-    - item: PinpointerSyndicateNuclear
+    - item: PinpointerLegionNuclear
   - type: BorgModuleIcon
-    icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-c20r-module }
+    icon: { sprite: Interface/Actions/actions_borg.rsi, state: legion-c20r-module }
 
 - type: entity
-  parent: [ BaseBorgModule, BaseProviderBorgModule, BaseSyndicateContraband ]
+  parent: [ BaseBorgModule, BaseProviderBorgModule, BaseLegionContraband ]
   id: BorgModuleMartyr
   name: martyr cyborg module
   description: "A module that comes with an explosive you probably don't want to handle yourself."
   components:
     - type: Sprite
       layers:
-        - state: syndicateborgbomb
+        - state: legionborgbomb
         - state: icon-bomb
     - type: ItemBorgModule
       hands:
       - item: SelfDestructSeq
     - type: BorgModuleIcon
-      icon: { sprite: Interface/Actions/actions_borg.rsi, state: syndicate-martyr-module }
+      icon: { sprite: Interface/Actions/actions_borg.rsi, state: legion-martyr-module }
     - type: Item
       inhandVisuals:
         left:

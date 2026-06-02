@@ -13565,7 +13565,7 @@ entities:
     - type: Transform
       pos: 27.5,-25.5
       parent: 2
-- proto: BannerSyndicate
+- proto: BannerLegion
   entities:
   - uid: 873
     components:
@@ -44442,7 +44442,7 @@ entities:
           - 6055
     - type: Fixtures
       fixtures: {}
-- proto: ClothingBackpackDuffelSyndicateEVABundle
+- proto: ClothingBackpackDuffelLegionEVABundle
   entities:
   - uid: 6049
     components:
@@ -45056,7 +45056,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitRecruitSyndie
+- proto: ClothingUniformJumpsuitRecruitLegion
   entities:
   - uid: 6131
     components:
@@ -45065,7 +45065,7 @@ entities:
     - type: Transform
       pos: -32.20217,38.51278
       parent: 2
-- proto: ClothingUniformJumpsuitSyndieFormal
+- proto: ClothingUniformJumpsuitLegionFormal
   entities:
   - uid: 6000
     components:
@@ -84803,7 +84803,7 @@ entities:
     - type: Transform
       pos: 32.5,-25.5
       parent: 2
-- proto: LockerSyndicate
+- proto: LockerLegion
   entities:
   - uid: 6074
     components:
@@ -103088,7 +103088,7 @@ entities:
     - type: Transform
       pos: 17.5,-9.5
       parent: 16911
-- proto: SuitStorageEVASyndicate
+- proto: SuitStorageEVALegion
   entities:
   - uid: 13568
     components:
@@ -121945,7 +121945,7 @@ entities:
     - type: Transform
       pos: -37.5,-35.5
       parent: 2
-- proto: WeaponTurretSyndicateBroken
+- proto: WeaponTurretLegionBroken
   entities:
   - uid: 16477
     components:
@@ -122434,7 +122434,7 @@ entities:
     - type: Transform
       pos: -64.5,36.5
       parent: 2
-- proto: WindoorSyndicateLocked
+- proto: WindoorLegionLocked
   entities:
   - uid: 16560
     components:

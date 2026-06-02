@@ -6,7 +6,7 @@
     - id: PosterContrabandAtmosiaDeclarationIndependence
     - id: PosterContrabandFunPolice
     - id: PosterContrabandRealExomorph
-    - id: PosterContrabandSyndicateRecruitment
+    - id: PosterContrabandLegionRecruitment
     - id: PosterContrabandClown
     - id: PosterContrabandSmoke
     - id: PosterContrabandGreyTide
@@ -29,7 +29,7 @@
     - id: PosterContrabandHaveaPuff
     - id: PosterContrabandRevolver
     - id: PosterContrabandDDayPromo
-    - id: PosterContrabandSyndicatePistol
+    - id: PosterContrabandLegionPistol
     - id: PosterContrabandEnergySwords
     - id: PosterContrabandRedRum
     - id: PosterContrabandCC64KAd
@@ -46,7 +46,7 @@
     - id: PosterContrabandKudzu
     - id: PosterContrabandMaskedMen
     - id: PosterContrabandUnreadableAnnouncement
-    - id: PosterContrabandFreeSyndicateEncryptionKey
+    - id: PosterContrabandFreeLegionEncryptionKey
     - id: PosterContrabandBountyHunters
     - id: PosterContrabandTheBigGasTruth
     - id: PosterContrabandWehWatches

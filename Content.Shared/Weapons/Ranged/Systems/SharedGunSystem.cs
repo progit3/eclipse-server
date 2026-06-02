@@ -422,7 +422,7 @@ public abstract partial class SharedGunSystem : EntitySystem
 
     private EntityCoordinates GetShootOrigin(Entity<GunComponent> gun, EntityUid user)
     {
-        if (!TryComp<TransformComponent>(gun.Owner, out var gunXform))
+        if (!TryComp(gun.Owner, out TransformComponent? gunXform))
             return Transform(user).Coordinates;
 
         var gunMap = TransformSystem.GetMapCoordinates((gun.Owner, gunXform));

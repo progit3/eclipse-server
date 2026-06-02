@@ -1,3 +1,4 @@
+using Content.Shared._Erida.Research;
 using Robust.Shared.Serialization;
 
 namespace Content.Shared.Research.Components
@@ -29,9 +30,14 @@ namespace Content.Shared.Research.Components
     public sealed class ResearchConsoleBoundInterfaceState : BoundUserInterfaceState
     {
         public int Points;
-        public ResearchConsoleBoundInterfaceState(int points)
+        /// <summary>
+        /// Goobstation field - all researches and their availablities
+        /// </summary>
+        public Dictionary<string, ResearchAvailability> Researches;
+        public ResearchConsoleBoundInterfaceState(int points, Dictionary<string, ResearchAvailability> researches)
         {
             Points = points;
+            Researches = researches; // Goobstation R&D console rework
         }
     }
 }

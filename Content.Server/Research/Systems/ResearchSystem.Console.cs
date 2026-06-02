@@ -69,22 +69,8 @@ public sealed partial class ResearchSystem
 
     private void UpdateConsoleInterface(EntityUid uid, ResearchConsoleComponent? component = null, ResearchClientComponent? clientComponent = null)
     {
-        if (!Resolve(uid, ref component, ref clientComponent, false))
-            return;
-
-        ResearchConsoleBoundInterfaceState state;
-
-        if (TryGetClientServer(uid, out _, out var serverComponent, clientComponent))
-        {
-            var points = clientComponent.ConnectedToServer ? serverComponent.Points : 0;
-            state = new ResearchConsoleBoundInterfaceState(points);
-        }
-        else
-        {
-            state = new ResearchConsoleBoundInterfaceState(default);
-        }
-
-        _uiSystem.SetUiState(uid, ResearchConsoleUiKey.Key, state);
+        // Goobstation R&D Console Rework commented and replaced with other func
+        UpdateFancyConsoleInterface(uid, component, clientComponent);
     }
 
     private void OnPointsChanged(EntityUid uid, ResearchConsoleComponent component, ref ResearchServerPointsChangedEvent args)

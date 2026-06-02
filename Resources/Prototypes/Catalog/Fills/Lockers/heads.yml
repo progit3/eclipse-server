@@ -144,6 +144,7 @@
       prob: 0.02
     - id: ClothingOuterCoatHOP # Corvax-Resprite
     - id: PrinterDocFlatpack # Corvax-Printer
+    - id: BoxPhotocopierToners # DeadSpace-Photocopier
 
 - type: entity
   id: LockerHeadOfPersonnelFilled

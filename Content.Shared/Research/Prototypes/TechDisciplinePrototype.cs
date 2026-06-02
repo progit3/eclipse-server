@@ -45,4 +45,9 @@ public sealed partial class TechDisciplinePrototype : IPrototype
     /// </summary>
     [DataField("lockoutTier")]
     public int LockoutTier = 3;
+
+    // Goobstation start
+    [DataField(required: true)]
+    public string UiName = string.Empty;
+    // Goobstation end
 }

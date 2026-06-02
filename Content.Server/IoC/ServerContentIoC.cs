@@ -9,6 +9,7 @@ using Content.Server.Corvax.TTS;
 using Content.Server.Database;
 using Content.Server.Discord;
 using Content.Server.Discord.DiscordLink;
+using Content.Server.Eclipse.Integration;
 using Content.Server.Discord.WebhookMessages;
 using Content.Server.EUI;
 using Content.Server.FeedbackSystem;
@@ -83,6 +84,7 @@ internal static class ServerContentIoC
         deps.Register<DiscordChatLink>();
         deps.Register<ServerFeedbackManager>();
         deps.Register<ISharedFeedbackManager, ServerFeedbackManager>();
+        deps.Register<EclipseSiteClient>();
         IoCManager.Register<TTSManager>(); // Corvax-TTS
     }
 }

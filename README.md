@@ -1,36 +1,99 @@
-<div class="header" align="center">
-<img alt="Space Station 14" width="880" height="300" src="https://raw.githubusercontent.com/space-wizards/asset-dump/de329a7898bb716b9d5ba9a0cd07f38e61f1ed05/github-logo.svg">
+<div align="center">
+
+# ECLIPSE
+
+### Русскоязычный сервер Space Station 14  
+#### Свой сеттинг · свои карты · свои механики · своя атмосфера
+
+<div align="center">
+
+![Last Commit](https://img.shields.io/github/last-commit/ShalnayaKlyaksa/eclipse-server?style=for-the-badge&color=76B9C8&labelColor=11131A&logo=git&logoColor=ffffff)
+![Top Language](https://img.shields.io/github/languages/top/ShalnayaKlyaksa/eclipse-server?style=for-the-badge&color=86DBCE&labelColor=11131A&logo=csharp&logoColor=ffffff)
+![Repo Size](https://img.shields.io/github/repo-size/ShalnayaKlyaksa/eclipse-server?style=for-the-badge&color=B48EAD&labelColor=11131A&logo=protondrive&logoColor=ffffff)
+![License](https://img.shields.io/badge/license-MIT-76B9C8?style=for-the-badge&labelColor=11131A)
+
 </div>
 
-Space Station 14 это ремейк SS13, который работает на собственном движке [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), написанном на C#.
+<a href="https://discord.gg/zF8nQVy7Jf">
+  <img src="https://img.shields.io/badge/Discord-Join%20server-5865F2?style=for-the-badge&logo=discord&logoColor=ffffff&labelColor=11131A" alt="Discord">
+</a>
+<a href="https://wiki.eclipse-station.online">
+  <img src="https://img.shields.io/badge/Wiki-Open-86DBCE?style=for-the-badge&logo=bookstack&logoColor=ffffff&labelColor=11131A" alt="Wiki">
+</a>
 
-Это репозиторий первого русскоязычного сервера по Space Station 14, целью которого является полный перевод игры на русский язык, поддержка актуальных изменений из основного репозитория, а так же добавление собственных изменений по необходимости.
+</div>
 
-## Ссылки
+---
 
-[Наш Discord](https://discord.station14.ru) | [Наша Вики](https://wiki.station14.ru) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Клиент без Steam](https://spacestation14.io/about/nightlies/) | [Основной репозиторий](https://github.com/space-wizards/space-station-14)
+<div align="center">
 
-## Документация
+## PROJECT
 
-На официальном сайте с [документацией](https://docs.spacestation14.io/) имеется вся необходимая информация о контенте SS14, движке, дизайне игры и многом другом. Также имеется много информации для начинающих разработчиков.
+</div>
 
-## Контрибьют
+**Eclipse** — это русскоязычный сервер, развиваемый как полноценный проект с собственным направлением.
 
-Мы рады принять вклад от любого человека. Заходите в Discord, если хотите помочь. У нас есть [список проблем](https://github.com/space-syndicate/space-station-14-content/issues), которые нужно решить, и любой может за них взяться. Не бойтесь просить о помощи!
-Только убедитесь, что ваши изменения и PRы соответствуют [руководству по контрибьюту](https://docs.spacestation14.com/en/general-development/codebase-info/pull-request-guidelines.html).
+Проект основан на [Space Station 14](https://github.com/space-wizards/space-station-14) и движке [Robust Toolbox](https://github.com/space-wizards/RobustToolbox).  
+Мы сохраняем техническую основу SS14, но развиваем собственный игровой стиль: лор, карты, механики, визуальное оформление и баланс.
 
-## Сборка
+Eclipse не стремится быть простой копией, а строится вокруг собственной истории, собственных фракций и собственных конфликтов.
 
-1. Склонируйте этот репозиторий локально
-2. Запустите `RUN_THIS.py` для инициализации подмодулей и скачивания движка.
-3. Скомпилируйте проект.
+---
 
-[Более подробная инструкция по запуску проекта.](https://docs.spacestation14.com/en/general-development/setup.html)
+<div align="center">
 
-## Лицензия
+## NAVIGATION
 
-Весь код репозитория лицензирован под [MIT](https://github.com/space-syndicate/space-station-14/blob/master/LICENSE.TXT).
+</div>
 
-Большинство ассетов лицензированы под [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), если не указано иное. Ассеты имеют свою лицензию и авторские права в файле метаданных. [Пример](https://github.com/space-syndicate/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
+<table align="center">
+  <tr>
+    <td align="center"><b>Discord</b></td>
+    <td align="center"><b>Wiki</b></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://discord.gg/zF8nQVy7Jf">Открыть</a></td>
+    <td align="center"><a href="https://wiki.eclipse-station.online">Открыть</a></td>
+  </tr>
+</table>
 
-Обратите внимание, что некоторые ассеты лицензированы на некоммерческой основе [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) или аналогичной некоммерческой лицензией, и их необходимо удалить, если вы хотите использовать этот проект в коммерческих целях.
+---
+
+<div align="center">
+
+## FEATURES
+
+</div>
+
+<details open>
+<summary><b>Что представляет собой Eclipse</b></summary>
+
+<br>
+
+- Русскоязычный игровой опыт.
+- Собственный лор и независимый сеттинг.
+- Новые карты и переработанные локации.
+- Собственные игровые механики.
+- Новые роли, Антагонисты, События и системы.
+- Изменения интерфейса и визуального стиля.
+- Открытая разработка для участников сообщества.
+
+</details>
+
+---
+
+<div align="center">
+
+## CONNECT
+
+</div>
+
+<details open>
+<summary><b>Подключение к серверу</b></summary>
+
+<br>
+
+Адрес сервера:
+
+```txt
+ss14://eclipse-station.online

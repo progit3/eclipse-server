@@ -22,6 +22,7 @@ public sealed class BlockGameArcadeSystem : EntitySystem
 
         Subs.BuiEvents<BlockGameArcadeComponent>(BlockGameUiKey.Key, subs =>
         {
+            subs.Event<BoundUIOpenedEvent>(OnUiOpen);
             subs.Event<BoundUIClosedEvent>(OnAfterUiClose);
             subs.Event<BlockGameMessages.BlockGamePlayerActionMessage>(OnPlayerAction);
         });
@@ -51,13 +52,30 @@ public sealed class BlockGameArcadeSystem : EntitySystem
 
     private void OnAfterUIOpen(EntityUid uid, BlockGameArcadeComponent component, AfterActivatableUIOpenEvent args)
     {
-        if (component.Player == null)
-            component.Player = args.User;
-        else
-            component.Spectators.Add(args.User);
+        OpenBlockGameUi(uid, component, args.User);
+    }
 
-        UpdatePlayerStatus(uid, args.User, component);
-        component.Game?.UpdateNewPlayerUI(args.User);
+    private void OnUiOpen(EntityUid uid, BlockGameArcadeComponent component, BoundUIOpenedEvent args)
+    {
+        OpenBlockGameUi(uid, component, args.Actor);
+    }
+
+    public void OpenBlockGameUi(EntityUid uid, BlockGameArcadeComponent component, EntityUid actor)
+    {
+        if (component.Player == actor || component.Spectators.Contains(actor))
+        {
+            UpdatePlayerStatus(uid, actor, component);
+            component.Game?.UpdateNewPlayerUI(actor);
+            return;
+        }
+
+        if (component.Player == null)
+            component.Player = actor;
+        else
+            component.Spectators.Add(actor);
+
+        UpdatePlayerStatus(uid, actor, component);
+        component.Game?.UpdateNewPlayerUI(actor);
     }
 
     private void OnAfterUiClose(EntityUid uid, BlockGameArcadeComponent component, BoundUIClosedEvent args)

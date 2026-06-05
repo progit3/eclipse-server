@@ -59,7 +59,7 @@ public sealed partial class TraitPrototype : IPrototype
     public EntProtoId? TraitGear;
 
     /// <summary>
-    /// Trait Price. If negative number, points will be added.
+    /// Trait point value. Positive values grant points, negative values spend points, and zero is neutral.
     /// </summary>
     [DataField]
     public int Cost = 0;
@@ -69,4 +69,16 @@ public sealed partial class TraitPrototype : IPrototype
     /// </summary>
     [DataField]
     public ProtoId<TraitCategoryPrototype>? Category;
+
+    /// <summary>
+    /// Other traits that cannot be selected together with this trait.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<TraitPrototype>> Conflicts = new();
+
+    /// <summary>
+    /// Jobs this trait should not be used with. This is data for role restriction validation.
+    /// </summary>
+    [DataField]
+    public HashSet<ProtoId<JobPrototype>> RestrictedJobs = new();
 }

@@ -118,8 +118,8 @@
 - type: entity
   parent: [ ClothingUniformBase, BaseCentcommContraband ]
   id: ClothingUniformJumpsuitCentcomAgent
-  name: CentComm agent's jumpsuit
-  description: A suit worn by CentComm's legal team. Smells of burnt coffee.
+  name: Eidos agent's jumpsuit
+  description: A suit worn by Eidos's legal team. Smells of burnt coffee.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/centcom_agent.rsi
@@ -129,8 +129,8 @@
 - type: entity
   parent: [ ClothingUniformBase, BaseCentcommContraband ]
   id: ClothingUniformJumpsuitCentcomOfficial
-  name: CentComm officer's suit # Corvax-Resprite
-  description: It's a suit worn by CentComm's highest-tier Commanders. # Corvax-Resprite
+  name: Eidos officer's suit # Corvax-Resprite
+  description: It's a suit worn by Eidos's highest-tier Commanders. # Corvax-Resprite
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/centcom_official.rsi
@@ -140,8 +140,8 @@
 - type: entity
   parent: [ ClothingUniformBase, BaseCentcommContraband ]
   id: ClothingUniformJumpsuitCentcomOfficer
-  name: CentComm turtleneck suit # Corvax-Resprite
-  description: A casual, yet refined green turtleneck, used by CentComm Officials. It has a fragrance of aloe. # Corvax-Resprite
+  name: Eidos turtleneck suit # Corvax-Resprite
+  description: A casual, yet refined green turtleneck, used by Eidos Officials. It has a fragrance of aloe. # Corvax-Resprite
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/centcom_officer.rsi
@@ -796,7 +796,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCentcomFormal
-  name: central command formal suit
+  name: Eidos Empire formal suit
   description: A suit for special occasions.
   components:
   - type: Sprite
@@ -964,7 +964,7 @@
   parent: [ BaseCentcommContraband, ClothingUniformBase ]
   id: ClothingUniformJumpsuitERTChaplain
   name: ERT chaplain uniform
-  description: A special suit made for Central Command's elite chaplain corps.
+  description: A special suit made for Eidos Empire's elite chaplain corps.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ert_chaplain.rsi
@@ -975,7 +975,7 @@
   parent: [ BaseCentcommContraband, ClothingUniformBase ]
   id: ClothingUniformJumpsuitERTEngineer
   name: ERT engineering uniform
-  description: A special suit made for the elite engineers under CentComm.
+  description: A special suit made for the elite engineers under Eidos.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ert_engineer.rsi
@@ -986,7 +986,7 @@
   parent: [ BaseCentcommContraband, ClothingUniformBase ]
   id: ClothingUniformJumpsuitERTJanitor
   name: ERT janitorial uniform
-  description: A special suit made for the elite janitors under CentComm.
+  description: A special suit made for the elite janitors under Eidos.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ert_janitor.rsi
@@ -997,7 +997,7 @@
   parent: [ BaseCentcommContraband, ClothingUniformBase ]
   id: ClothingUniformJumpsuitERTLeader
   name: ERT leader uniform
-  description: A special suit made for the best of the elites under CentComm.
+  description: A special suit made for the best of the elites under Eidos.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ert_leader.rsi
@@ -1008,7 +1008,7 @@
   parent: [ BaseCentcommContraband, ClothingUniformBase ]
   id: ClothingUniformJumpsuitERTMedic
   name: ERT medical uniform
-  description: A special suit made for the elite medics under CentComm.
+  description: A special suit made for the elite medics under Eidos.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ert_medic.rsi
@@ -1019,7 +1019,7 @@
   parent: [ BaseCentcommContraband, ClothingUniformBase ]
   id: ClothingUniformJumpsuitERTSecurity
   name: ERT security uniform
-  description: A special suit made for the elite security under CentComm.
+  description: A special suit made for the elite security under Eidos.
   components:
   - type: Sprite
     sprite: Clothing/Uniforms/Jumpsuit/ert_security.rsi

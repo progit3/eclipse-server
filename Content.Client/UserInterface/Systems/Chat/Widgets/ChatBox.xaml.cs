@@ -22,12 +22,12 @@ namespace Content.Client.UserInterface.Systems.Chat.Widgets;
 [Virtual]
 public partial class ChatBox : UIWidget
 {
-    private static readonly Color EclipseChatBackground = Color.FromHex("#190900F4");
-    private static readonly Color EclipseChatSurface = Color.FromHex("#220D02EC");
-    private static readonly Color EclipseChatInput = Color.FromHex("#252430F6");
-    private static readonly Color EclipseChatButton = Color.FromHex("#2D1100F4");
-    private static readonly Color EclipseChatBorder = Color.FromHex("#D47D1BAA");
-    private static readonly Color EclipseChatAccent = Color.FromHex("#D47D1BCC");
+    private static readonly Color EclipseChatBackground = Color.FromHex("#080100F2");
+    private static readonly Color EclipseChatSurface = Color.FromHex("#080100F2");
+    private static readonly Color EclipseChatInput = Color.FromHex("#070100F4");
+    private static readonly Color EclipseChatButton = Color.FromHex("#090200F4");
+    private static readonly Color EclipseChatBorder = Color.FromHex("#8A2F12AA");
+    private static readonly Color EclipseChatAccent = Color.FromHex("#A84B00CC");
 
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly ILogManager _log = default!;
@@ -74,7 +74,7 @@ public partial class ChatBox : UIWidget
         Contents.Margin = new Thickness(9, 9, 9, 5);
         Contents.HorizontalExpand = true;
         Contents.VerticalExpand = true;
-        Contents.StyleBoxOverride = Rounded(EclipseChatSurface, Color.FromHex("#D47D1B33"), 4f);
+        Contents.StyleBoxOverride = Rounded(EclipseChatSurface, Color.FromHex("#8A2F1233"), 4f);
 
         ChatInput.Margin = new Thickness(9, 0, 9, 9);
         ChatInput.MinHeight = 28f;
@@ -84,7 +84,7 @@ public partial class ChatBox : UIWidget
         ChatInput.ChannelSelector.MinWidth = 72f;
         ChatInput.ChannelSelector.MaxWidth = 72f;
         ChatInput.ChannelSelector.MinHeight = 24f;
-        ChatInput.ChannelSelector.StyleBoxOverride = Rounded(EclipseChatButton, Color.FromHex("#D47D1B66"), 4f);
+        ChatInput.ChannelSelector.StyleBoxOverride = Rounded(EclipseChatButton, Color.FromHex("#A84B0066"), 4f);
 
         ChatInput.Input.MinWidth = 0f;
         ChatInput.Input.MinHeight = 24f;
@@ -94,7 +94,7 @@ public partial class ChatBox : UIWidget
         ChatInput.FilterButton.MinWidth = 30f;
         ChatInput.FilterButton.MaxWidth = 30f;
         ChatInput.FilterButton.MinHeight = 24f;
-        ChatInput.FilterButton.StyleBoxOverride = Rounded(EclipseChatButton, Color.FromHex("#D47D1B88"), 4f);
+        ChatInput.FilterButton.StyleBoxOverride = Rounded(EclipseChatButton, Color.FromHex("#A84B0088"), 4f);
     }
 
     private static EclipseStyleBoxRounded Rounded(

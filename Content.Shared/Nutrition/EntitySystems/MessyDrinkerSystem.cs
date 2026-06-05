@@ -1,5 +1,6 @@
 using Content.Shared.Fluids;
 using Content.Shared.Nutrition.Components;
+using Content.Shared.Humanoid;
 using Content.Shared.Popups;
 using Content.Shared.Random.Helpers;
 using Content.Shared.Tag;
@@ -25,6 +26,10 @@ public sealed class MessyDrinkerSystem : EntitySystem
 
     private void OnIngested(Entity<MessyDrinkerComponent> ent, ref IngestingEvent ev)
     {
+        if (TryComp<HumanoidProfileComponent>(ent, out var humanoid)
+            && humanoid.Species == "Vulpkanin")
+            return;
+
         if (ent.Comp.SpillImmuneTag != null && _tag.HasTag(ev.Food, ent.Comp.SpillImmuneTag.Value))
             return;
 

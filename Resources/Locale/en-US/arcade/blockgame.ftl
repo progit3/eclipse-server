@@ -12,7 +12,7 @@ blockgame-menu-gameover-info = Global: {$global}
     Local: {$local}
     Points: {$points}
 
-blockgame-menu-title = Nanotrasen Block Game
+blockgame-menu-title = Blockinator
 blockgame-menu-button-new-game = New Game
 blockgame-menu-button-scoreboard = Scoreboard
 blockgame-menu-button-pause = Pause

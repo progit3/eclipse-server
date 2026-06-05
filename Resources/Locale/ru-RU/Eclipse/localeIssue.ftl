@@ -40,7 +40,7 @@ construction-graph-tag-paper = Бумага
 
 door-remote-toggle-eletrify-text = Переключить электрификацию
 
-store-preset-name-nukie-delivery = Доставка ядерных оперативников
+store-preset-name-nukie-delivery = Терминал снабжения Легиона пепла
 
 nuke-label-nanotrasen = NT-{$serial}
 

@@ -86,6 +86,10 @@
 - type: randomHumanoidSettings
   id: ERTLeader
   parent: EventHumanoidCentcomm
+  speciesBlacklist: # Corvax-MRP
+    - Diona
+    - Vox
+    - Arachnid
   components:
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
@@ -334,6 +338,8 @@
   id: ERTSecurity
   speciesBlacklist: # Corvax-MRP
     - Diona
+    - Vox
+    - Arachnid
   parent: ERTLeader
   components:
     - type: GhostRole
@@ -569,10 +575,10 @@
       - NamesMilitaryLast
       nameFormat: name-format-ert
 
-## Central Command
+## Eidos Empire
 
 - type: entity
-  name: CentComm official
+  name: Eidos official
   id: RandomHumanoidSpawnerCentcomOfficial
   components:
     - type: Sprite

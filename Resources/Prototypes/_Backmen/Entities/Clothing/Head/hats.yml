@@ -25,7 +25,7 @@
 - type: entity
   parent: ClothingHeadBase
   id: ClothingHeadHatBeretHoSCentcom
-  name: Берет Начальника Безопасности ЦК
+  name: Берет Начальника Безопасности ЭИ
   description: Стильный чёрный берет с зелёным значком показывает кто тут следит запорядком.
   components:
     - type: Sprite

@@ -2,7 +2,7 @@
   parent: [ BaseMachinePowered, ConstructibleMachine ]
   id: PhotocopierBase
   name: копировальный аппарат
-  description: ЦК закупило их чтобы сэкономить на ручках для юридического отдела.
+  description: ЭИ закупило их чтобы сэкономить на ручках для юридического отдела.
   suffix: Стандартный
   components:
   - type: Sprite
@@ -44,15 +44,15 @@
   parent: PhotocopierBase
   id: PhotocopierCommand
   name: копировальный аппарат командования
-  description: ЦК закупило их чтобы сэкономить на ручках для юридического отдела.
+  description: ЭИ закупило их чтобы сэкономить на ручках для юридического отдела.
   suffix: Командование
 
 - type: entity
   parent: PhotocopierBase
   id: PhotocopierCentcomm
-  name: копировальный аппарат Центкома
+  name: копировальный аппарат Эйдосской империи
   description: От этого копировального аппарата веет понижением зарплаты станции.
-  suffix: Центком
+  suffix: Эйдосская империя
 
 - type: entity
   parent: PhotocopierBase
@@ -299,7 +299,7 @@
   parent: Paper
   id: PaperPrintedCentcomm
   description: Лист бумаги с заголовком центкома. Страшно даже смотреть на него.
-  suffix: Nanotrasen, Центком
+  suffix: Nanotrasen, Эйдосская империя
   components:
   - type: Sprite
     sprite: Objects/Misc/bureaucracy.rsi

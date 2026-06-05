@@ -1,3 +1,5 @@
+using Content.Shared._Eclipse.ProtoCore;
+
 namespace Content.Server._Eclipse.ProtoCore.Components;
 
 [RegisterComponent]

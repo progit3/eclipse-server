@@ -53,7 +53,7 @@ entities:
   - uid: 1668
     components:
     - type: MetaData
-      name: Central Command
+      name: Eidos Empire
     - type: Transform
       parent: invalid
     - type: MapGrid
@@ -43556,7 +43556,7 @@ entities:
   - uid: 3239
     components:
     - type: MetaData
-      desc: Bane of Cybersun. Head of CentComm Security.
+      desc: Bane of Cybersun. Head of Eidos Security.
       name: Haunted Security Mannequin
     - type: Transform
       pos: 35.5,7.5
@@ -45057,7 +45057,7 @@ entities:
       parent: 1668
     - type: Fixtures
       fixtures: {}
-- proto: PosterLegitEidosEmpire
+- proto: PosterLegitCentComm
   entities:
   - uid: 484
     components:

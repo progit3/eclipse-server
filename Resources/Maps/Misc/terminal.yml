@@ -6507,7 +6507,7 @@ entities:
       fixtures: {}
     missingComponents:
     - Destructible
-- proto: PosterLegitEidosEmpire
+- proto: PosterLegitCentComm
   entities:
   - uid: 246
     components:

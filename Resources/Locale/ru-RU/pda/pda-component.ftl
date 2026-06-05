@@ -16,11 +16,11 @@ comp-pda-io-program-fallback-title = Программа
 
 comp-pda-io-no-programs-available = Нет доступных программ
 
-pda-bound-user-interface-show-uplink-title = Открыть аплинк
-pda-bound-user-interface-show-uplink-description = Получите доступ к своему аплинку
+pda-bound-user-interface-show-uplink-title = Открыть терминал снабжения
+pda-bound-user-interface-show-uplink-description = Получите доступ к своему терминалу снабжения
 
-pda-bound-user-interface-lock-uplink-title = Закрыть аплинк
-pda-bound-user-interface-lock-uplink-description = Предотвратите доступ к вашему аплинку персон без кода
+pda-bound-user-interface-lock-uplink-title = Закрыть терминал снабжения
+pda-bound-user-interface-lock-uplink-description = Предотвратите доступ к вашему терминалу снабжения персон без кода
 
 comp-pda-ui-menu-title = КПК
 
@@ -47,6 +47,9 @@ comp-pda-ui-toggle-flashlight-button = Переключить фонарик
 pda-bound-user-interface-music-button = Музыкальный инструмент
 
 pda-bound-user-interface-music-button-description = Слушайте музыку на своём КПК
+
+pda-bound-user-interface-blockinator-title = Блокинатор
+pda-bound-user-interface-blockinator-description = Запустить Блокинатор на КПК
 
 comp-pda-ui-unknown = Неизвестно
 

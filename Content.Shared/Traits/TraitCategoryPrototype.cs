@@ -9,6 +9,11 @@ namespace Content.Shared.Traits;
 public sealed partial class TraitCategoryPrototype : IPrototype
 {
     public const string Default = "Default";
+    public const string Disadvantages = "Disadvantages";
+    public const string Advantages = "Advantages";
+    public const string Neutral = "Neutral";
+    public const string Speech = "SpeechTraits";
+    public const string Languages = "Languages";
 
     [ViewVariables]
     [IdDataField]

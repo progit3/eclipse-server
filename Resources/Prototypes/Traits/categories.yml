@@ -1,12 +1,19 @@
 - type: traitCategory
-  id: Disabilities
-  name: trait-category-disabilities
+  id: Disadvantages
+  name: trait-category-disadvantages
+
+- type: traitCategory
+  id: Advantages
+  name: trait-category-advantages
+
+- type: traitCategory
+  id: Neutral
+  name: trait-category-neutral
 
 - type: traitCategory
   id: SpeechTraits
   name: trait-category-speech
-  maxTraitPoints: 2
 
 - type: traitCategory
-  id: Quirks
-  name: trait-category-quirks
+  id: Languages
+  name: trait-category-languages

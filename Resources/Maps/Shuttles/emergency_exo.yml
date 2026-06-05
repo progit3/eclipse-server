@@ -5132,7 +5132,7 @@ entities:
     - type: Transform
       pos: 7.359956,7.5404005
       parent: 2
-- proto: PosterLegitEidosEmpire
+- proto: PosterLegitCentComm
   entities:
   - uid: 1007
     components:

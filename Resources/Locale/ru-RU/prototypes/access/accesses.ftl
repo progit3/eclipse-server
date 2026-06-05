@@ -44,7 +44,7 @@ id-card-access-level-external = Внешний
 id-card-access-level-nuclear-operative = Легион пепла (Не использовать)
 id-card-access-level-legion-agent = Агент Легиона
 
-id-card-access-level-central-command = Центральное командование
+id-card-access-level-central-command = Эйдосская империя
 
 id-card-access-level-wizard = Волшебник
 

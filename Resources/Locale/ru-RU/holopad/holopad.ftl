@@ -157,5 +157,5 @@ holopad-ai-chute = ИИ — Транспортный блок
 holopad-station-bridge = Станция — Мостик
 holopad-station-cargo-bay = Станция — Грузовой отсек
 
-# CentComm
-holopad-centcomm-evac = Центком — Эвакуационный шаттл
+# Eidos
+holopad-centcomm-evac = Эйдосская империя — Эвакуационный шаттл

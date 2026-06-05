@@ -51,5 +51,5 @@ store-not-account-owner = This {$store} is not bound to you!
 
 store-preset-name-uplink = Legion Supply Terminal
 store-preset-name-spellbook = Spellbook
-store-preset-name-nukie-delivery = NukeOps Bluespace Delivery
+store-preset-name-nukie-delivery = Ash Legion Supply Terminal
 store-preset-name-changeling = DNA Store

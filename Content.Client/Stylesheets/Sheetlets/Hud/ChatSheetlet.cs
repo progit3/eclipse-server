@@ -15,10 +15,10 @@ public sealed class ChatSheetlet<T> : Sheetlet<T> where T: PalettedStylesheet, I
     {
         IButtonConfig btnCfg = sheet;
 
-        var chatBg = EclipsePanel("#190900F4", "#D47D1BAA", 0, 0);
-        var chatLine = EclipsePanel("#252430F6", "#D47D1BCC", 8, 4);
-        var chatChannelButton = EclipsePanel("#2D1100F4", "#D47D1B66", 9, 4);
-        var chatFilterButton = EclipsePanel("#2D1100F4", "#D47D1B88", 4, 4);
+        var chatBg = EclipsePanel("#080100F2", "#8A2F12AA", 0, 0);
+        var chatLine = EclipsePanel("#070100F4", "#A84B00CC", 8, 4);
+        var chatChannelButton = EclipsePanel("#090200F4", "#A84B0066", 9, 4);
+        var chatFilterButton = EclipsePanel("#090200F4", "#A84B0088", 4, 4);
 
         return
         [

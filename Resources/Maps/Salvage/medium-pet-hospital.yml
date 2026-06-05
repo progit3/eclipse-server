@@ -1150,7 +1150,7 @@ entities:
     - type: Transform
       pos: 8.5167885,-8.516763
       parent: 289
-- proto: PosterLegitEidosEmpire
+- proto: PosterLegitCentComm
   entities:
   - uid: 281
     components:

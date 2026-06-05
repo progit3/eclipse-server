@@ -108,6 +108,11 @@ stack-hv-cable = ВВ { $amount ->
     [few] кабеля
     *[other] кабелей
 }
+stack-proto-core-cable = контур Протоядра { $amount ->
+    [1] кабель
+    [few] кабеля
+    *[other] кабелей
+}
 stack-explosive-cord = { $amount ->
     [1] детонационный шнур
     [few] детонационных шнура

@@ -1,8 +1,8 @@
 ent-FaxMachineBase = факс дальнего действия
     .desc = Блюспейс-технологии на службе бюрократии.
-ent-FaxMachineCentcom = факс дальнего действия Центком
+ent-FaxMachineCentcom = факс дальнего действия Эйдосской империи
     .desc = { ent-FaxMachineBase.desc }
-    .suffix = Центком
+    .suffix = Эйдосская империя
 ent-FaxMachineLegion = факс дальнего действия Легиона
     .desc = { ent-FaxMachineBase.desc }
     .suffix = Легион

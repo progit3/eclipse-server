@@ -10,6 +10,9 @@ tool-quality-screwing-tool-name = Screwdriver
 tool-quality-cutting-name = Cutting
 tool-quality-cutting-tool-name = Wirecutter
 
+tool-quality-proto-core-cable-manipulation-name = Proto core conduit handling
+tool-quality-proto-core-cable-manipulation-tool-name = Proto core cable tool
+
 tool-quality-welding-name = Welding
 tool-quality-welding-tool-name = Welder
 

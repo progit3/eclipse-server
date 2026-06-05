@@ -74879,7 +74879,7 @@ entities:
       - stampedColor: '#5B0000FF'
         stampedName: stamp-component-stamped-name-warden
       content: >-
-        I own an Enforcer for Brig Defense, since thats what Central Command intended.
+        I own an Enforcer for Brig Defense, since thats whin the Eidos Empire intended.
 
         Four Gorlex Marauders blow a hole through my brig with C-4.
 
@@ -74892,7 +74892,7 @@ entities:
         Draw my Stun Baton on the last terrified Operative, he dies from spacing waiting for the paramedic to arrive becuase I took his suit off immediately after cuffing him.
 
 
-        Just as Central Command Intended.
+        Just as Eidos Empire Intended.
       editingDisabled: True
   - uid: 5325
     components:
@@ -75868,7 +75868,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: PosterLegitEidosEmpire
+- proto: PosterLegitCentComm
   entities:
   - uid: 7464
     components:

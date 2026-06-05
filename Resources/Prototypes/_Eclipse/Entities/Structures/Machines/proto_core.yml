@@ -15,6 +15,12 @@
     sprite: _Eclipse/Structures/Machines/proto_core.rsi
     layers:
     - state: base
+    - sprite: _Eclipse/Objects/Devices/ash_hacking_device.rsi
+      state: icon
+      map: ["enum.ProtoCoreVisualLayers.HackingDevice"]
+      offset: 0, -0.62
+      scale: 0.75, 0.75
+      visible: false
   - type: Icon
     sprite: _Eclipse/Structures/Machines/proto_core.rsi
     state: base
@@ -34,9 +40,44 @@
         - LowImpassable
   - type: InteractionOutline
   - type: ProtoCore
-    meltdownTime: 900
-    criticalThreshold: 180
+    meltdownTime: 600
+    warningThreshold: 240
+    criticalThreshold: 120
     emergencyShuttleTime: 180
+    meltdownMusic:
+      path: /Audio/Corvax/StationEvents/level.ogg
+    meltdownMusicDuration: 109.6
+    explosionTotalIntensity: 200000
+    explosionMaxTileIntensity: 200
+    explosionIntensitySlope: 5
+    roundEndDelay: 8
+  - type: ProtoCoreConsole
+    hackTime: 60
+    activationKeySlot:
+      name: proto-core-slot-component-slot-name-key
+      insertSound:
+        path: /Audio/Machines/terminal_insert_disc.ogg
+      ejectSound:
+        path: /Audio/Machines/terminal_insert_disc.ogg
+      whitelist:
+        components:
+        - ProtoCoreActivationKey
+    hackingDeviceSlot:
+      name: proto-core-slot-component-slot-name-device
+      disableEject: true
+      insertSound:
+        path: /Audio/Machines/terminal_insert_disc.ogg
+      ejectSound:
+        path: /Audio/Machines/terminal_insert_disc.ogg
+      whitelist:
+        components:
+        - AshHackingDevice
+  - type: ActivatableUI
+    key: enum.ProtoCoreConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ProtoCoreConsoleUiKey.Key:
+        type: ProtoCoreConsoleBoundUserInterface
   - type: Battery
     netsync: false
     maxCharge: 16000000
@@ -46,11 +87,18 @@
     examinable: true
     nodes:
       output:
-        !type:CableDeviceNode
+        !type:ProtoCoreCableDeviceNode
         nodeGroupID: HVPower
+        radius: 1
   - type: BatteryDischarger
     voltage: High
     node: output
+  - type: PowerSupplier
+    voltage: High
+    node: output
+    supplyRate: 5000
+    supplyRampRate: 1000
+    supplyRampTolerance: 500
   - type: PowerNetworkBattery
     maxSupply: 250000
     maxChargeRate: 0
@@ -63,32 +111,28 @@
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallicStrong
+  - type: ItemSlots
+  - type: ContainerContainer
+    containers:
+      ProtoCoreActivationKey: !type:ContainerSlot
+      ProtoCoreHackingDevice: !type:ContainerSlot
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ProtoCoreVisuals.HackingDeviceInstalled:
+        enum.ProtoCoreVisualLayers.HackingDevice:
+          True: { visible: true }
+          False: { visible: false }
   - type: NavMapBeacon
     color: "#ff8b24"
     text: proto core
     enabled: true
 
 - type: entity
-  id: ProtoCoreConsole
-  parent: BaseStructure
-  name: proto core control console
-  description: A hardened terminal wired into the emergency control loop of a proto core.
-  placement:
-    mode: SnapgridCenter
+  parent: SMESAdvanced
+  id: ProtoCoreSMES
+  name: proto core SMES
+  description: A protected superconducting storage unit tuned for proto core stabilization.
+  suffix: Proto Core, 16MJ
   components:
-  - type: Transform
-    anchored: true
-  - type: Sprite
-    sprite: _Eclipse/Structures/Machines/proto_core_console.rsi
-    layers:
-    - state: base
-  - type: Icon
-    sprite: _Eclipse/Structures/Machines/proto_core_console.rsi
-    state: base
-  - type: InteractionOutline
-  - type: ProtoCoreConsole
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: StructuralMetallic
-  - type: ApcPowerReceiver
-    powerLoad: 500
+  - type: ProtoCoreSmes

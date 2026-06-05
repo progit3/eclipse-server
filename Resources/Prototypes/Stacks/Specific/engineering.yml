@@ -34,3 +34,10 @@
   name: stack-hv-cable
   icon: { sprite: "/Textures/Objects/Tools/cable-coils.rsi", state: coilhv-30 }
   spawn: CableHVStack1
+
+- type: stack
+  parent: BaseMediumStack
+  id: ProtoCoreCable
+  name: stack-proto-core-cable
+  icon: { sprite: "/Textures/_Eclipse/Objects/Tools/proto_core_cable_coils.rsi", state: coilhv-30 }
+  spawn: ProtoCoreCableStack1

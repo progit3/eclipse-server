@@ -58,7 +58,18 @@ humanoid-profile-editor-traits-tab = Traits
 humanoid-profile-editor-no-traits = No traits available
 
 humanoid-profile-editor-trait-count-hint = Points available: [{$current}/{$max}]
+humanoid-profile-editor-trait-balance = Trait points: {$balance} / {$max}
+    Gained: {$gained}
+    Spent: {$spent}
+humanoid-profile-editor-trait-conflict = Conflicts with {$trait}.
+humanoid-profile-editor-trait-gain-limit = Disadvantage points limit exceeded: {$current}/{$max}.
+humanoid-profile-editor-trait-negative-balance = Not enough points: spent {$spent}, gained {$gained}.
+humanoid-profile-editor-language-count-hint = First language is free. Additional languages cost 2, then 3, then 4 trait points, and so on.
 
+trait-category-disadvantages = Disadvantages
+trait-category-advantages = Advantages
+trait-category-neutral = Neutral
+trait-category-speech = Speech
+trait-category-languages = Languages
 trait-category-disabilities = Disabilities
-trait-category-speech = Speech traits
 trait-category-quirks = Quirks

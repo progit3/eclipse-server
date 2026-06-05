@@ -440,7 +440,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
             if (TryComp<RuleGridsComponent>(uid, out var grids) && Transform(ev.DeclaratorEntity).MapID != grids.Map)
                 continue;
 
-            var newStatus = GetWarCondition(nukeops, ev.Status);
+            var newStatus = GetWarCondition(nukeops, ev.Status, ev.DeclaratorEntity.Comp.MinOps);
             ev.Status = newStatus;
             if (newStatus == WarConditionStatus.WarReady)
             {
@@ -458,12 +458,13 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     /// <summary>
     ///     Returns conditions for war declaration
     /// </summary>
-    public WarConditionStatus GetWarCondition(NukeopsRuleComponent nukieRule, WarConditionStatus? oldStatus)
+    public WarConditionStatus GetWarCondition(NukeopsRuleComponent nukieRule, WarConditionStatus? oldStatus, int? minOpsOverride = null)
     {
         if (!nukieRule.CanEnableWarOps)
             return WarConditionStatus.NoWarUnknown;
 
-        if (EntityQuery<NukeopsRoleComponent>().Count() < nukieRule.WarDeclarationMinOps)
+        var minOps = minOpsOverride ?? nukieRule.WarDeclarationMinOps;
+        if (EntityQuery<NukeopsRoleComponent>().Count() < minOps)
             return WarConditionStatus.NoWarSmallCrew;
 
         if (nukieRule.LeftOutpost)

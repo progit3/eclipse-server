@@ -86,7 +86,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: Станция ЦентКом
+      name: Станция Эйдосской империи
     - type: Transform
       pos: -48.14583,-52
       parent: invalid
@@ -31845,7 +31845,7 @@ entities:
       pos: 84.5,77.5
       parent: 1
     - type: NavMapBeacon
-      text: Офис ОЦК
+      text: Офис ОЭИ
     missingComponents:
     - WarpPoint
   - uid: 3822
@@ -31854,7 +31854,7 @@ entities:
       pos: 76.5,86.5
       parent: 1
     - type: NavMapBeacon
-      text: Офис НШЦК
+      text: Офис НШЭИ
     missingComponents:
     - WarpPoint
   - uid: 3823
@@ -31872,7 +31872,7 @@ entities:
       pos: 71.5,82.5
       parent: 1
     - type: NavMapBeacon
-      text: Жилые помещения ЦК
+      text: Жилые помещения ЭИ
     missingComponents:
     - WarpPoint
   - uid: 3825
@@ -31881,7 +31881,7 @@ entities:
       pos: 70.5,73.5
       parent: 1
     - type: NavMapBeacon
-      text: Уборная ЦК
+      text: Уборная ЭИ
     missingComponents:
     - WarpPoint
 - proto: DefaultStationBeaconCourtroom
@@ -32052,7 +32052,7 @@ entities:
       pos: 36.5,88.5
       parent: 1
     - type: NavMapBeacon
-      text: ОБР Инженер
+      text: ИКР Инженер
     missingComponents:
     - WarpPoint
   - uid: 3845
@@ -32070,7 +32070,7 @@ entities:
       pos: 28.5,86.5
       parent: 1
     - type: NavMapBeacon
-      text: Казармы ОБР
+      text: Казармы ИКР
     missingComponents:
     - WarpPoint
   - uid: 3847
@@ -32097,7 +32097,7 @@ entities:
       pos: 70.5,101.5
       parent: 1
     - type: NavMapBeacon
-      text: Стыковка ПЦК
+      text: Стыковка ПЭИ
     missingComponents:
     - WarpPoint
   - uid: 3850
@@ -32106,7 +32106,7 @@ entities:
       pos: 41.5,86.5
       parent: 1
     - type: NavMapBeacon
-      text: ОБР Уборщик
+      text: ИКР Уборщик
     missingComponents:
     - WarpPoint
 - proto: DefaultStationBeaconSecurityCheckpoint
@@ -36392,7 +36392,7 @@ entities:
       pos: 82.5,71.5
       parent: 1
     - type: FaxMachine
-      name: ЦентКом
+      name: Эйдосская империя
 - proto: FaxMachineLegion
   entities:
   - uid: 4513
@@ -55946,14 +55946,14 @@ entities:
       pos: 82.5,71.5
       parent: 1
     - type: WarpPoint
-      location: Факс ЦентКома
+      location: Факс Эйдосской империи
   - uid: 6846
     components:
     - type: Transform
       pos: 47.5,59.5
       parent: 1
     - type: WarpPoint
-      location: Станция ЦентКом
+      location: Станция Эйдосской империи
 - proto: GravityGenerator
   entities:
   - uid: 6847
@@ -58197,7 +58197,7 @@ entities:
   - uid: 7140
     components:
     - type: MetaData
-      desc: Эта кнопка пробуждает отряд ОБР.
+      desc: Эта кнопка пробуждает отряд ИКР.
     - type: Transform
       pos: 30.75,90.5
       parent: 1
@@ -58305,8 +58305,8 @@ entities:
   - uid: 7143
     components:
     - type: MetaData
-      desc: Эта кнопка пробуждает уборщика ОБР.
-      name: кнопка пробуждения уборщика ОБР
+      desc: Эта кнопка пробуждает уборщика ИКР.
+      name: кнопка пробуждения уборщика ИКР
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 43.5,87.5
@@ -58388,8 +58388,8 @@ entities:
   - uid: 7146
     components:
     - type: MetaData
-      desc: Эта кнопка пробуждает лидера ОБР.
-      name: кнопка пробуждения ЛОБР
+      desc: Эта кнопка пробуждает лидера ИКР.
+      name: кнопка пробуждения ЛИКР
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 20.741323,94.510124
@@ -58728,7 +58728,7 @@ entities:
   - uid: 3288
     components:
     - type: MetaData
-      name: шкаф НШЦК
+      name: шкаф НШЭИ
     - type: Transform
       pos: 79.5,87.5
       parent: 1
@@ -60399,27 +60399,27 @@ entities:
 
         ░░█░██░██░░██░█░░                   [head=3]NanoTrasen[/head]
 
-        ░░░░██░░██░██░██░                        [bold]ДСО-ЦК[/bold]
+        ░░░░██░░██░██░██░                        [bold]ДСО-ЭИ[/bold]
 
         ░░░░██░░░████░[/color][color=#b8972d]███[/color][color=#b8972d]                          ★ ★ ★[/color]
 
         ===================================================[bold]
                                                  УКАЗАНИЯ ДСО[/bold]
-        ===================================================[bold]Перечень условий по нажатию кнопки разморозки бойцов ОБР.[/bold]
+        ===================================================[bold]Перечень условий по нажатию кнопки разморозки бойцов ИКР.[/bold]
 
 
         Требования:
 
         [bullet]Станция должна подать рапорт о наличии на станции террористической или внутренней угрозы, угрожающей активам NanoTrasen.
 
-        [bullet]Бойцы должны быть разморожены исключительно по одобрению НШЦК и/или ОСО по вашему сектору. В противном случае разморозка запрещена.
+        [bullet]Бойцы должны быть разморожены исключительно по одобрению НШЭИ и/или ОСО по вашему сектору. В противном случае разморозка запрещена.
 
         [bullet]Бойцы должны быть проинструктированы лидером или другим вышестоящим лицом о ситуации на станции.
 
-        [bullet] После инструктажа и вооружения отряд должен немедленно отправиться на станцию для выполнения поставленной задачи. После её выполнения прибыть на ЦентКом и доложить о результатах.
+        [bullet] После инструктажа и вооружения отряд должен немедленно отправиться на станцию для выполнения поставленной задачи. После её выполнения прибыть на станцию Эйдосской империи и доложить о результатах.
 
 
-        Невыполнение данных условий повлечёт за собой штрафные санкции от Департамента Спецопераций по отношению к сотрудникам Центрального командования.
+        Невыполнение данных условий повлечёт за собой штрафные санкции от Департамента Спецопераций по отношению к сотрудникам Эйдосской империи.
 
                                            ★ [italic]Слава NanoTrasen![/italic] ★
         ===================================================[italic]
@@ -60583,7 +60583,7 @@ entities:
 
         ░░█░██░██░░██░█░░                   [head=3]NanoTrasen[/head]
 
-        ░░░░██░░██░██░██░                        [bold]ДСО-ЦК[/bold]
+        ░░░░██░░██░██░██░                        [bold]ДСО-ЭИ[/bold]
 
         ░░░░██░░░████░[/color][color=#b8972d]███[/color][color=#b8972d]                          ★ ★ ★[/color]
 
@@ -60596,14 +60596,14 @@ entities:
 
         [bullet]Станция должна подать рапорт о присутствии на станции [bold][color=#9F851C]радиационной[/color][/bold], [bold][color=#6D4B98]химической[/color][/bold], [bold][color=#9E2B30]биологической[/color][/bold] или [bold][color=#407D4A]зомби[/color][/bold] угрозы 5 уровня
 
-        [bullet]Бойцы должны быть разморожены исключительно по одобрению НШЦК и/или ОСО по вашему сектору. В противном случае разморозка запрещена.
+        [bullet]Бойцы должны быть разморожены исключительно по одобрению НШЭИ и/или ОСО по вашему сектору. В противном случае разморозка запрещена.
 
         [bullet]Бойцы должны быть проинструктированы лидером или другим вышестоящим лицом о ситуации на станции.
 
-        [bullet] После инструктажа и вооружения отряд должен немедленно отправиться на станцию для выполнения поставленной задачи. После её выполнения прибыть на ЦентКом и доложить о результатах.
+        [bullet] После инструктажа и вооружения отряд должен немедленно отправиться на станцию для выполнения поставленной задачи. После её выполнения прибыть на станцию Эйдосской империи и доложить о результатах.
 
 
-        Невыполнение данных условий повлечёт за собой штрафные санкции от Департамента Спецопераций по отношению к сотрудникам Центрального командования.
+        Невыполнение данных условий повлечёт за собой штрафные санкции от Департамента Спецопераций по отношению к сотрудникам Эйдосской империи.
 
                                            ★ [italic]Слава NanoTrasen![/italic] ★
         ===================================================[italic]
@@ -61432,7 +61432,7 @@ entities:
       parent: 1
     - type: Fixtures
       fixtures: {}
-- proto: PosterLegitEidosEmpire
+- proto: PosterLegitCentComm
   entities:
   - uid: 7441
     components:
@@ -67179,14 +67179,14 @@ entities:
   - uid: 3305
     components:
     - type: MetaData
-      desc: Печать Начальника Штаба Центрального Командования.
-      name: печать НШЦК
+      desc: Печать Начальника Штаба Эйдосской империи.
+      name: печать НШЭИ
     - type: Transform
       parent: 3304
     - type: Physics
       canCollide: False
     - type: Stamp
-      stampedName: Начальник Штаба ЦК
+      stampedName: Начальник Штаба ЭИ
   - uid: 8426
     components:
     - type: Transform
@@ -67210,12 +67210,12 @@ entities:
   - uid: 8430
     components:
     - type: MetaData
-      name: печать НШЦК
+      name: печать НШЭИ
     - type: Transform
       pos: 74.67628,86.31091
       parent: 1
     - type: Stamp
-      stampedName: НШЦК
+      stampedName: НШЭИ
 - proto: RubberStampChaplain
   entities:
   - uid: 3309
@@ -67290,7 +67290,7 @@ entities:
   - uid: 3301
     components:
     - type: MetaData
-      desc: Только для сотрудников и офицеров ЦК/ДСО и указанных в документе лиц.
+      desc: Только для сотрудников и офицеров ЭИ/ДСО и указанных в документе лиц.
       name: печать СОВЕРШЕННО СЕКРЕТНО
     - type: Transform
       parent: 3296
@@ -68449,7 +68449,7 @@ entities:
   - uid: 8547
     components:
     - type: MetaData
-      desc: Эта кнопка открывает гермозатворы ОБР и РХБЗЗ, если необходимо вызвать дополнительный отряд.
+      desc: Эта кнопка открывает гермозатворы ИКР и РХБЗЗ, если необходимо вызвать дополнительный отряд.
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 80.5,82.5
@@ -68710,7 +68710,7 @@ entities:
   - uid: 8557
     components:
     - type: MetaData
-      desc: 'ОБР: Лектеры | РХБЗЗ (дракон): Лазеры'
+      desc: 'ИКР: Лектеры | РХБЗЗ (дракон): Лазеры'
       name: стандартное оружие
     - type: Transform
       rot: 3.141592653589793 rad
@@ -69031,8 +69031,8 @@ entities:
   - uid: 8572
     components:
     - type: MetaData
-      desc: Спавнит подкрепление ОБР.
-      name: +2 ОБР
+      desc: Спавнит подкрепление ИКР.
+      name: +2 ИКР
     - type: Transform
       pos: 25.5,86.5
       parent: 1
@@ -69058,7 +69058,7 @@ entities:
   - uid: 8573
     components:
     - type: MetaData
-      desc: 'ОБР: Дрозд + WT | РХБЗЗ (зомба): Силовик'
+      desc: 'ИКР: Дрозд + WT | РХБЗЗ (зомба): Силовик'
       name: сильное оружие
     - type: Transform
       pos: 25.7,83.75
@@ -69106,7 +69106,7 @@ entities:
   - uid: 8574
     components:
     - type: MetaData
-      desc: Вызывает ОБР и РХБЗЗ с дополнительными отрядами и лидерами.
+      desc: Вызывает ИКР и РХБЗЗ с дополнительными отрядами и лидерами.
       name: спавн ВСЕХ
     - type: Transform
       pos: 25.5,88.75
@@ -69238,7 +69238,7 @@ entities:
   - uid: 8575
     components:
     - type: MetaData
-      desc: 'ОБР: Импульс карабины | РХБЗЗ (фофан): Бульдог'
+      desc: 'ИКР: Импульс карабины | РХБЗЗ (фофан): Бульдог'
       name: имба оружие
     - type: Transform
       pos: 25.7,82.75
@@ -70632,7 +70632,7 @@ entities:
   - uid: 3317
     components:
     - type: MetaData
-      name: хранилище скафандра инженера ОБР
+      name: хранилище скафандра инженера ИКР
     - type: Transform
       pos: 31.5,83.5
       parent: 1
@@ -70670,7 +70670,7 @@ entities:
   - uid: 3407
     components:
     - type: MetaData
-      name: хранилище скафандра офицера ОБР
+      name: хранилище скафандра офицера ИКР
     - type: Transform
       pos: 33.5,84.5
       parent: 1
@@ -70722,7 +70722,7 @@ entities:
   - uid: 3419
     components:
     - type: MetaData
-      name: хранилище скафандра ЛОБР
+      name: хранилище скафандра ЛИКР
     - type: Transform
       pos: 21.5,96.5
       parent: 1
@@ -70830,7 +70830,7 @@ entities:
   - uid: 3449
     components:
     - type: MetaData
-      name: хранилище скафандра медика ОБР
+      name: хранилище скафандра медика ИКР
     - type: Transform
       pos: 33.5,83.5
       parent: 1
@@ -70849,7 +70849,7 @@ entities:
   - uid: 3457
     components:
     - type: MetaData
-      name: хранилище скафандра офицера ОБР
+      name: хранилище скафандра офицера ИКР
     - type: Transform
       pos: 33.5,85.5
       parent: 1
@@ -70867,7 +70867,7 @@ entities:
   - uid: 3463
     components:
     - type: MetaData
-      name: хранилище скафандра офицера ОБР
+      name: хранилище скафандра офицера ИКР
     - type: Transform
       pos: 31.5,85.5
       parent: 1
@@ -70903,7 +70903,7 @@ entities:
   - uid: 3469
     components:
     - type: MetaData
-      name: хранилище скафандра офицера ОБР
+      name: хранилище скафандра офицера ИКР
     - type: Transform
       pos: 31.5,84.5
       parent: 1
@@ -71203,7 +71203,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraCommand
       nameSet: True
-      id: Кабинет НШЦК
+      id: Кабинет НШЭИ
   - uid: 8779
     components:
     - type: Transform
@@ -71236,7 +71236,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraCommand
       nameSet: True
-      id: ОЦК
+      id: ОЭИ
   - uid: 8782
     components:
     - type: Transform
@@ -71258,7 +71258,7 @@ entities:
       setupAvailableNetworks:
       - SurveillanceCameraCommand
       nameSet: True
-      id: КПП ЦентКома
+      id: КПП Эйдосской империи
   - uid: 8784
     components:
     - type: Transform

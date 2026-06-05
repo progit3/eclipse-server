@@ -4,6 +4,7 @@ using Content.Shared.Containers.ItemSlots;
 using Content.Shared.PDA;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.Controls;
 
 namespace Content.Client.PDA
 {
@@ -14,6 +15,7 @@ namespace Content.Client.PDA
 
         [ViewVariables]
         private PdaMenu? _menu;
+        private Control? _pocketBlockinator;
 
         public PdaBoundUserInterface(EntityUid owner, Enum uiKey) : base(owner, uiKey)
         {
@@ -72,10 +74,24 @@ namespace Content.Client.PDA
                 SendMessage(new PdaLockUplinkMessage());
             };
 
+            _menu.OnBlockGamePressed += () =>
+            {
+                OpenPocketBlockinator();
+            };
+
             _menu.OnProgramItemPressed += ActivateCartridge;
             _menu.OnInstallButtonPressed += InstallCartridge;
             _menu.OnUninstallButtonPressed += UninstallCartridge;
-            _menu.ProgramCloseButton.OnPressed += _ => DeactivateActiveCartridge();
+            _menu.ProgramCloseButton.OnPressed += _ =>
+            {
+                if (_pocketBlockinator != null)
+                {
+                    ClosePocketBlockinator();
+                    return;
+                }
+
+                DeactivateActiveCartridge();
+            };
 
             var borderColorComponent = GetBorderColorComponent();
             if (borderColorComponent == null)
@@ -116,6 +132,28 @@ namespace Content.Client.PDA
             _menu.ToHomeScreen();
             _menu.HideProgramHeader();
             _menu.ProgramView.RemoveChild(cartridgeUIFragment);
+        }
+
+        private void OpenPocketBlockinator()
+        {
+            if (_menu is null)
+                return;
+
+            _menu.ProgramView.RemoveAllChildren();
+            _pocketBlockinator = new PocketBlockinatorControl();
+            _menu.ProgramView.AddChild(_pocketBlockinator);
+            _menu.ToProgramView(Loc.GetString("pda-bound-user-interface-blockinator-title"));
+        }
+
+        private void ClosePocketBlockinator()
+        {
+            if (_menu is null || _pocketBlockinator is null)
+                return;
+
+            _menu.ProgramView.RemoveChild(_pocketBlockinator);
+            _pocketBlockinator = null;
+            _menu.HideProgramHeader();
+            _menu.ToHomeScreen();
         }
 
         protected override void UpdateAvailablePrograms(List<(EntityUid, CartridgeComponent)> programs)

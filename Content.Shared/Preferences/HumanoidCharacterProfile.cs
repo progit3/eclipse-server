@@ -426,47 +426,20 @@ namespace Content.Shared.Preferences
             };
         }
 
-        public HumanoidCharacterProfile WithTraitPreference(ProtoId<TraitPrototype> traitId, IPrototypeManager protoManager)
+        public HumanoidCharacterProfile WithTraitPreference(
+            ProtoId<TraitPrototype> traitId,
+            IPrototypeManager protoManager,
+            int maxPositivePoints)
         {
-            // null category is assumed to be default.
             if (!protoManager.TryIndex(traitId, out var traitProto))
                 return new(this);
 
-            var category = traitProto.Category;
-
-            // Category not found so dump it.
-            TraitCategoryPrototype? traitCategory = null;
-
-            if (category != null && !protoManager.Resolve(category, out traitCategory))
+            if (HasTraitConflict(traitId, traitProto, _traitPreferences, protoManager))
                 return new(this);
 
             var list = new HashSet<ProtoId<TraitPrototype>>(_traitPreferences) { traitId };
-
-            if (traitCategory == null || traitCategory.MaxTraitPoints < 0)
-            {
-                return new(this)
-                {
-                    _traitPreferences = list,
-                };
-            }
-
-            var count = 0;
-            foreach (var trait in list)
-            {
-                // If trait not found or another category don't count its points.
-                if (!protoManager.TryIndex<TraitPrototype>(trait, out var otherProto) ||
-                    otherProto.Category != traitCategory)
-                {
-                    continue;
-                }
-
-                count += otherProto.Cost;
-            }
-
-            if (count > traitCategory.MaxTraitPoints && traitProto.Cost != 0)
-            {
+            if (!TryCalculateTraitPoints(list, protoManager, maxPositivePoints, out _, out _, out _))
                 return new(this);
-            }
 
             return new(this)
             {
@@ -670,7 +643,10 @@ namespace Content.Shared.Preferences
             _antagPreferences.UnionWith(antags);
 
             _traitPreferences.Clear();
-            _traitPreferences.UnionWith(GetValidTraits(traits, prototypeManager));
+            _traitPreferences.UnionWith(GetValidTraits(
+                traits,
+                prototypeManager,
+                configManager.GetCVar(CCVars.GameMaxTraitPoints)));
 
             // Corvax-TTS-Start
             prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var voice);
@@ -704,40 +680,126 @@ namespace Content.Shared.Preferences
         /// <summary>
         /// Takes in an IEnumerable of traits and returns a List of the valid traits.
         /// </summary>
-        public List<ProtoId<TraitPrototype>> GetValidTraits(IEnumerable<ProtoId<TraitPrototype>> traits, IPrototypeManager protoManager)
+        public List<ProtoId<TraitPrototype>> GetValidTraits(
+            IEnumerable<ProtoId<TraitPrototype>> traits,
+            IPrototypeManager protoManager,
+            int maxPositivePoints)
         {
-            // Track points count for each group.
-            var groups = new Dictionary<string, int>();
+            var traitList = traits
+                .Where(protoManager.HasIndex)
+                .OrderBy(trait =>
+                {
+                    var traitProto = protoManager.Index<TraitPrototype>(trait);
+                    return traitProto.Cost < 0 ? 1 : 0;
+                })
+                .ToList();
             var result = new List<ProtoId<TraitPrototype>>();
+            var gained = 0;
+            var spent = 0;
+            var languages = 0;
 
-            foreach (var trait in traits)
+            foreach (var trait in traitList)
             {
-                if (!protoManager.TryIndex(trait, out var traitProto))
+                var traitProto = protoManager.Index<TraitPrototype>(trait);
+
+                if (result.Contains(trait) ||
+                    HasTraitConflict(trait, traitProto, result, protoManager))
                     continue;
 
-                // Always valid.
-                if (traitProto.Category == null)
+                if (traitProto.Cost > 0)
                 {
+                    if (gained + traitProto.Cost > maxPositivePoints)
+                        continue;
+
+                    gained += traitProto.Cost;
                     result.Add(trait);
                     continue;
                 }
 
-                // No category so dump it.
-                if (!protoManager.Resolve(traitProto.Category, out var category))
-                    continue;
+                var cost = GetTraitPointCost(traitProto, languages);
+                if (cost > 0)
+                {
+                    if (spent + cost > gained)
+                        continue;
 
-                var existing = groups.GetOrNew(category.ID);
-                existing += traitProto.Cost;
+                    spent += cost;
+                }
 
-                // Too expensive.
-                if (existing > category.MaxTraitPoints)
-                    continue;
+                if (traitProto.Category == TraitCategoryPrototype.Languages)
+                    languages++;
 
-                groups[category.ID] = existing;
                 result.Add(trait);
             }
 
             return result;
+        }
+
+        public static bool TryCalculateTraitPoints(
+            IEnumerable<ProtoId<TraitPrototype>> traits,
+            IPrototypeManager protoManager,
+            int maxPositivePoints,
+            out int gained,
+            out int spent,
+            out int balance)
+        {
+            gained = 0;
+            spent = 0;
+            var languages = 0;
+
+            foreach (var trait in traits.OrderBy(trait =>
+                     {
+                         if (!protoManager.TryIndex<TraitPrototype>(trait, out var traitProto))
+                             return 0;
+
+                         return traitProto.Cost < 0 || traitProto.Category == TraitCategoryPrototype.Languages ? 1 : 0;
+                     }))
+            {
+                if (!protoManager.TryIndex<TraitPrototype>(trait, out var traitProto))
+                    continue;
+
+                if (traitProto.Cost > 0)
+                    gained += traitProto.Cost;
+
+                spent += GetTraitPointCost(traitProto, languages);
+
+                if (traitProto.Category == TraitCategoryPrototype.Languages)
+                    languages++;
+            }
+
+            balance = gained - spent;
+            return gained <= maxPositivePoints && balance >= 0;
+        }
+
+        public static int GetTraitPointCost(TraitPrototype traitProto, int selectedLanguages)
+        {
+            if (traitProto.Category == TraitCategoryPrototype.Languages)
+            {
+                return selectedLanguages == 0 ? 0 : selectedLanguages + 1;
+            }
+
+            return traitProto.Cost < 0 ? -traitProto.Cost : 0;
+        }
+
+        public static bool HasTraitConflict(
+            ProtoId<TraitPrototype> trait,
+            TraitPrototype traitProto,
+            IEnumerable<ProtoId<TraitPrototype>> selected,
+            IPrototypeManager protoManager)
+        {
+            foreach (var selectedTrait in selected)
+            {
+                if (selectedTrait == trait)
+                    continue;
+
+                if (traitProto.Conflicts.Contains(selectedTrait))
+                    return true;
+
+                if (protoManager.TryIndex<TraitPrototype>(selectedTrait, out var selectedProto) &&
+                    selectedProto.Conflicts.Contains(trait))
+                    return true;
+            }
+
+            return false;
         }
 
         // Corvax-TTS-Start

@@ -78,7 +78,7 @@
 - type: entity
   parent: [ ClothingHeadset, BaseCentcommContraband ]
   id: ClothingHeadsetCentCom
-  name: CentComm headset
+  name: Eidos headset
   description: A headset used by the upper echelons of Nanotrasen.
   components:
   - type: ContainerFill

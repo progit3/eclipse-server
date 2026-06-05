@@ -66,6 +66,12 @@ public sealed partial class CCVars
         GameMaxCharacterSlots = CVarDef.Create("game.maxcharacterslots", 30, CVar.ARCHIVE | CVar.SERVERONLY);
 
     /// <summary>
+    ///     Maximum amount of points a character can gain from positive-cost disadvantage traits.
+    /// </summary>
+    public static readonly CVarDef<int>
+        GameMaxTraitPoints = CVarDef.Create("game.max_trait_points", 6, CVar.SERVER | CVar.REPLICATED);
+
+    /// <summary>
     ///     Controls the game map prototype to load. SS14 stores these prototypes in Prototypes/Maps.
     /// </summary>
     public static readonly CVarDef<string>

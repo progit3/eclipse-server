@@ -26,4 +26,4 @@ store-caregory-spellbook-equipment = Wizard Equipment
 store-caregory-spellbook-events = Event Spells
 
 # Nukie Delivery
-store-category-nukie-delivery = Offers
+store-category-nukie-delivery = Supply

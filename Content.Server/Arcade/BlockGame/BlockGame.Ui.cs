@@ -7,37 +7,17 @@ namespace Content.Server.Arcade.BlockGame;
 public sealed partial class BlockGame
 {
     /// <summary>
-    /// How often to check the currently pressed inputs for whether to move the active piece horizontally.
-    /// </summary>
-    private const float PressCheckSpeed = 0.08f;
-
-    /// <summary>
-    /// Whether the left button is pressed.
-    /// Moves the active piece left if true.
-    /// </summary>
-    private bool _leftPressed = false;
-
-    /// <summary>
-    /// How long the left button has been pressed.
-    /// </summary>
-    private float _accumulatedLeftPressTime = 0f;
-
-    /// <summary>
-    /// Whether the right button is pressed.
-    /// Moves the active piece right if true.
-    /// </summary>
-    private bool _rightPressed = false;
-
-    /// <summary>
-    /// How long the right button has been pressed.
-    /// </summary>
-    private float _accumulatedRightPressTime = 0f;
-
-    /// <summary>
     /// Whether the down button is pressed.
     /// Speeds up how quickly the active piece falls if true.
     /// </summary>
     private bool _softDropPressed = false;
+
+    /// <summary>
+    /// Prevents a held soft drop from immediately accelerating the piece spawned after a lock.
+    /// </summary>
+    private bool _softDropBlockedUntilRelease = false;
+
+    private bool SoftDropActive => _softDropPressed && !_softDropBlockedUntilRelease;
 
 
     /// <summary>
@@ -51,10 +31,10 @@ public sealed partial class BlockGame
             switch (action)
             {
                 case BlockGamePlayerAction.StartLeft:
-                    _leftPressed = true;
+                    TryMoveHorizontal(-1);
                     break;
                 case BlockGamePlayerAction.StartRight:
-                    _rightPressed = true;
+                    TryMoveHorizontal(1);
                     break;
                 case BlockGamePlayerAction.Rotate:
                     TrySetRotation(Next(_currentRotation, false));
@@ -64,8 +44,13 @@ public sealed partial class BlockGame
                     break;
                 case BlockGamePlayerAction.SoftdropStart:
                     _softDropPressed = true;
+                    if (_softDropBlockedUntilRelease)
+                        break;
+
                     if (_accumulatedFieldFrameTime > Speed)
-                        _accumulatedFieldFrameTime = Speed; //to prevent jumps
+                        _accumulatedFieldFrameTime = Speed;
+                    AddPoints(1);
+                    InternalFieldTick();
                     break;
                 case BlockGamePlayerAction.Harddrop:
                     PerformHarddrop();
@@ -79,13 +64,12 @@ public sealed partial class BlockGame
         switch (action)
         {
             case BlockGamePlayerAction.EndLeft:
-                _leftPressed = false;
                 break;
             case BlockGamePlayerAction.EndRight:
-                _rightPressed = false;
                 break;
             case BlockGamePlayerAction.SoftdropEnd:
                 _softDropPressed = false;
+                _softDropBlockedUntilRelease = false;
                 break;
             case BlockGamePlayerAction.Pause:
                 _running = false;
@@ -105,50 +89,18 @@ public sealed partial class BlockGame
         }
     }
 
-    /// <summary>
-    /// Handle moving the active game piece in response to user input.
-    /// </summary>
-    /// <param name="frameTime">The amount of time the current game tick covers.</param>
-    private void InputTick(float frameTime)
+    private bool TryMoveHorizontal(int offset, bool updateUi = true)
     {
-        var anythingChanged = false;
-        if (_leftPressed)
-        {
-            _accumulatedLeftPressTime += frameTime;
+        if (!CurrentPiece.Positions(_currentPiecePosition.AddToX(offset), _currentRotation)
+                .All(MoveCheck))
+            return false;
 
-            while (_accumulatedLeftPressTime >= PressCheckSpeed)
-            {
+        _currentPiecePosition = _currentPiecePosition.AddToX(offset);
 
-                if (CurrentPiece.Positions(_currentPiecePosition.AddToX(-1), _currentRotation)
-                    .All(MoveCheck))
-                {
-                    _currentPiecePosition = _currentPiecePosition.AddToX(-1);
-                    anythingChanged = true;
-                }
-
-                _accumulatedLeftPressTime -= PressCheckSpeed;
-            }
-        }
-
-        if (_rightPressed)
-        {
-            _accumulatedRightPressTime += frameTime;
-
-            while (_accumulatedRightPressTime >= PressCheckSpeed)
-            {
-                if (CurrentPiece.Positions(_currentPiecePosition.AddToX(1), _currentRotation)
-                    .All(MoveCheck))
-                {
-                    _currentPiecePosition = _currentPiecePosition.AddToX(1);
-                    anythingChanged = true;
-                }
-
-                _accumulatedRightPressTime -= PressCheckSpeed;
-            }
-        }
-
-        if (anythingChanged)
+        if (updateUi)
             UpdateFieldUI();
+
+        return true;
     }
 
     /// <summary>

@@ -63,8 +63,8 @@
 - type: entity
   parent: ClothingShoesBootsSpetsnaz
   id: ClothingShoesBootsCentcom
-  name: подкованные сапоги Центком
-  description: Специальная обувь служащих Центрального командования.
+  name: подкованные сапоги Эйдосской империи
+  description: Специальная обувь служащих Эйдосской империи.
   components:
   - type: Sprite
     sprite: _Backmen/Clothing/Shoes/Boots/centcom_jackboots.rsi

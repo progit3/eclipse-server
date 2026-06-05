@@ -110136,7 +110136,7 @@ entities:
       parent: 30
     - type: Fixtures
       fixtures: {}
-- proto: PosterLegitEidosEmpire
+- proto: PosterLegitCentComm
   entities:
   - uid: 2419
     components:

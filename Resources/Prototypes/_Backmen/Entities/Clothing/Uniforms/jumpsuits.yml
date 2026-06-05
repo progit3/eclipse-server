@@ -100,7 +100,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCentcomVeryOfficial
-  name: Официальная рубашка сотрудника ЦК
+  name: Официальная рубашка сотрудника ЭИ
   description: Вот прелесть карпоративной жизни, стильные костюмы в тему!
   components:
   - type: Sprite
@@ -111,7 +111,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCentcomIntern
-  name: Форма ассистента ЦК
+  name: Форма ассистента ЭИ
   description: Носитель данного костюма обязан принести чащечку кофе.
   components:
   - type: Sprite
@@ -122,8 +122,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCentcomMilitary
-  name: Военная униформа Начальника Безопасности ЦК
-  description: Свободная и крепкая униформа спец сил ЦК.
+  name: Военная униформа Начальника Безопасности ЭИ
+  description: Свободная и крепкая униформа спец сил ЭИ.
   components:
   - type: Sprite
     sprite: _Backmen/Clothing/Uniforms/jumpsuit/centcom-military.rsi
@@ -166,8 +166,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCentcomPrivateOfficer
-  name: Униформа Приватного Офицера СБ ЦК
-  description: Полевая униформа Приватного Офицера СБ ЦК
+  name: Униформа Приватного Офицера СБ ЭИ
+  description: Полевая униформа Приватного Офицера СБ ЭИ
   components:
     - type: Sprite
       sprite: _Backmen/Clothing/Uniforms/jumpsuit/centcom-private_officer.rsi
@@ -177,8 +177,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitseniorofficer
-  name: Униформа Старшего Офицера ЦК
-  description: Полевая униформа Старшего Офицера ЦК
+  name: Униформа Старшего Офицера ЭИ
+  description: Полевая униформа Старшего Офицера ЭИ
   components:
     - type: Sprite
       sprite: _Backmen/Clothing/Uniforms/jumpsuit/centcom-senior_officer.rsi
@@ -188,8 +188,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitseniorofficeruniform
-  name: Парадная Униформа Старшего Офицера ЦК
-  description: Парадная униформа Старшего Офицера ЦК
+  name: Парадная Униформа Старшего Офицера ЭИ
+  description: Парадная униформа Старшего Офицера ЭИ
   components:
     - type: Sprite
       sprite: _Backmen/Clothing/Uniforms/jumpsuit/centcom-senior_officer_uniform.rsi
@@ -265,8 +265,8 @@
 - type: entity
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitCenK # Backmen
-  name: Костюм Центрального Коммандования
-  description: Темно-зелёный костюм ЦК
+  name: костюм Эйдосской империи
+  description: Темно-зелёный костюм ЭИ
   components:
   - type: Sprite
     sprite: _Backmen/Clothing/Uniforms/jumpsuit/uni.rsi

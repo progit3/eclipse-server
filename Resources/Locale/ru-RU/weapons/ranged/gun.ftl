@@ -45,6 +45,7 @@ gun-chamber-bolt-open-state = закрыт
 gun-chamber-rack = Передёрнуть затвор
 
 # MagazineAmmoProvider
+gun-magazine-reload-no-magazine = Подходящий магазин не найден.
 gun-magazine-examine = Тут [color={ $color }]{ $count }[/color] { $count ->
     [one] штука
     [few] штуки

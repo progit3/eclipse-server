@@ -1,11 +1,13 @@
 using Content.Shared.Examine;
 using Content.Shared.DoAfter;
+using Content.Shared.Hands.Components;
 using Content.Shared.Input;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Verbs;
+using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Robust.Shared.Containers;
 using Robust.Shared.Input.Binding;
@@ -36,6 +38,7 @@ public abstract partial class SharedGunSystem
         SubscribeLocalEvent<MagazineAmmoProviderComponent, UseInHandEvent>(OnMagazineUse);
         SubscribeLocalEvent<MagazineAmmoProviderComponent, ExaminedEvent>(OnMagazineExamine);
         SubscribeLocalEvent<MagazineAmmoProviderComponent, BeltMagazineReloadDoAfterEvent>(OnBeltMagazineReloadDoAfter);
+        SubscribeLocalEvent<ChamberMagazineAmmoProviderComponent, BeltMagazineReloadDoAfterEvent>(OnBeltChamberMagazineReloadDoAfter);
     }
 
     public override void Shutdown()
@@ -49,16 +52,50 @@ public abstract partial class SharedGunSystem
         if (session?.AttachedEntity is not { Valid: true } user || !Exists(user))
             return;
 
-        if (!TryGetGun(user, out var gun) ||
-            !TryComp<MagazineAmmoProviderComponent>(gun, out _) ||
+        if (!TryGetGunForReload(user, out var gun) ||
+            !HasMagazineReloadProvider(gun) ||
             !_actionBlockerSystem.CanInteract(user, gun))
         {
             return;
         }
 
-        if (!TryGetBeltStorage(user, out var belt, out var storage) ||
-            !TryFindBeltMagazine(gun, user, (belt, storage), out _))
+        var hasHeldMagazine = TryFindHeldMagazine(gun, user, out var heldMagazine, out var heldAmmo);
+        var hasInventoryMagazine = TryFindInventoryMagazine(gun, user, out var storageEnt, out _, out _, out var inventoryAmmo);
+
+        if (hasHeldMagazine && (!hasInventoryMagazine || heldAmmo >= inventoryAmmo))
         {
+            if (!_slots.TryGetSlot(gun, MagazineSlot, out var magazineSlot))
+            {
+                return;
+            }
+
+            var oldMagazine = magazineSlot.Item;
+            if (oldMagazine != null &&
+                !_slots.TryEject(gun, magazineSlot, user, out _, excludeUserAudio: true))
+            {
+                return;
+            }
+
+            if (!_hands.TryDrop(user, heldMagazine, checkActionBlocker: false) ||
+                !_slots.TryInsert(gun, magazineSlot, heldMagazine, user, excludeUserAudio: true))
+            {
+                _hands.TryPickupAnyHand(user, heldMagazine, checkActionBlocker: false);
+
+                if (oldMagazine != null)
+                    _slots.TryInsert(gun, magazineSlot, oldMagazine.Value, user, excludeUserAudio: true);
+
+                return;
+            }
+
+            if (oldMagazine != null)
+                _hands.TryPickupAnyHand(user, oldMagazine.Value, checkActionBlocker: false);
+
+            return;
+        }
+
+        if (!hasInventoryMagazine)
+        {
+            PopupSystem.PopupClient(Loc.GetString("gun-magazine-reload-no-magazine"), user, user);
             return;
         }
 
@@ -67,7 +104,7 @@ public abstract partial class SharedGunSystem
             BeltMagazineReloadDelay,
             new BeltMagazineReloadDoAfterEvent(),
             gun,
-            target: belt,
+            target: storageEnt,
             used: gun)
         {
             BreakOnMove = false,
@@ -76,61 +113,188 @@ public abstract partial class SharedGunSystem
         });
     }
 
-    private bool TryGetBeltStorage(EntityUid user, out EntityUid belt, out StorageComponent storage)
+    private bool TryGetGunForReload(EntityUid user, out Entity<GunComponent> gun)
     {
-        belt = default;
-        storage = default!;
-
-        if (!_inventorySystem.TryGetSlotEntity(user, "belt", out var beltEnt) ||
-            beltEnt is not { } beltUid ||
-            !TryComp<StorageComponent>(beltUid, out var storageComp))
-        {
-            return false;
-        }
-
-        belt = beltUid;
-        storage = storageComp;
-        return true;
-    }
-
-    private bool TryFindBeltMagazine(
-        EntityUid gun,
-        EntityUid user,
-        Entity<StorageComponent> belt,
-        out EntityUid magazine)
-    {
-        magazine = default;
-
-        if (!_slots.TryGetSlot(gun, MagazineSlot, out var magazineSlot))
-            return false;
-
-        for (var i = belt.Comp.Container.ContainedEntities.Count - 1; i >= 0; i--)
-        {
-            var candidate = belt.Comp.Container.ContainedEntities[i];
-
-            if (!_slots.CanInsert(gun, candidate, user, magazineSlot, swap: true))
-                continue;
-
-            magazine = candidate;
+        if (TryGetGun(user, out gun) && HasMagazineReloadProvider(gun))
             return true;
+
+        if (!TryComp<HandsComponent>(user, out var hands))
+            return false;
+
+        foreach (var held in _hands.EnumerateHeld((user, hands)))
+        {
+            if (TryComp(held, out GunComponent? gunComp) && HasMagazineReloadProvider(held))
+            {
+                gun = (held, gunComp);
+                return true;
+            }
         }
 
         return false;
     }
 
+    private bool HasMagazineReloadProvider(EntityUid gun)
+    {
+        return HasComp<MagazineAmmoProviderComponent>(gun) ||
+               HasComp<ChamberMagazineAmmoProviderComponent>(gun);
+    }
+
+    private bool TryFindHeldMagazine(EntityUid gun, EntityUid user, out EntityUid magazine, out int ammoCount)
+    {
+        magazine = default;
+        ammoCount = -1;
+
+        if (!TryComp<HandsComponent>(user, out var hands) ||
+            !_slots.TryGetSlot(gun, MagazineSlot, out var magazineSlot))
+        {
+            return false;
+        }
+
+        foreach (var held in _hands.EnumerateHeld((user, hands)))
+        {
+            if (held == gun ||
+                !_slots.CanInsert(gun, held, user, magazineSlot, swap: true))
+            {
+                continue;
+            }
+
+            var count = GetReloadMagazineAmmoCount(held);
+            if (count <= ammoCount)
+                continue;
+
+            magazine = held;
+            ammoCount = count;
+        }
+
+        return ammoCount >= 0;
+    }
+
+    private bool TryFindInventoryMagazine(
+        EntityUid gun,
+        EntityUid user,
+        out EntityUid storageEnt,
+        out StorageComponent storage,
+        out EntityUid magazine,
+        out int ammoCount)
+    {
+        storageEnt = default;
+        storage = default!;
+        magazine = default;
+        ammoCount = -1;
+
+        TryFindMagazineInSlot(gun, user, "belt", out storageEnt, out storage, out magazine, out ammoCount);
+
+        if (_inventorySystem.TryGetContainerSlotEnumerator(user, out var enumerator))
+        {
+            while (enumerator.MoveNext(out var container, out var slot))
+            {
+                if (slot.Name == "belt" ||
+                    container.ContainedEntity is not { } contained ||
+                    !TryComp<StorageComponent>(contained, out var storageComp) ||
+                    !TryFindMagazineInStorage(gun, user, (contained, storageComp), out var candidate, out var candidateAmmo) ||
+                    candidateAmmo <= ammoCount)
+                {
+                    continue;
+                }
+
+                storageEnt = contained;
+                storage = storageComp;
+                magazine = candidate;
+                ammoCount = candidateAmmo;
+            }
+        }
+
+        return ammoCount >= 0;
+    }
+
+    private bool TryFindMagazineInSlot(
+        EntityUid gun,
+        EntityUid user,
+        string slot,
+        out EntityUid storageEnt,
+        out StorageComponent storage,
+        out EntityUid magazine,
+        out int ammoCount)
+    {
+        storageEnt = default;
+        storage = default!;
+        magazine = default;
+        ammoCount = -1;
+
+        if (!_inventorySystem.TryGetSlotEntity(user, slot, out var slotEnt) ||
+            slotEnt is not { } storageUid ||
+            !TryComp<StorageComponent>(storageUid, out var storageComp) ||
+            !TryFindMagazineInStorage(gun, user, (storageUid, storageComp), out magazine, out ammoCount))
+        {
+            return false;
+        }
+
+        storageEnt = storageUid;
+        storage = storageComp;
+        return true;
+    }
+
+    private bool TryFindMagazineInStorage(
+        EntityUid gun,
+        EntityUid user,
+        Entity<StorageComponent> storage,
+        out EntityUid magazine,
+        out int ammoCount)
+    {
+        magazine = default;
+        ammoCount = -1;
+
+        if (!_slots.TryGetSlot(gun, MagazineSlot, out var magazineSlot))
+            return false;
+
+        for (var i = storage.Comp.Container.ContainedEntities.Count - 1; i >= 0; i--)
+        {
+            var candidate = storage.Comp.Container.ContainedEntities[i];
+
+            if (!_slots.CanInsert(gun, candidate, user, magazineSlot, swap: true))
+                continue;
+
+            var count = GetReloadMagazineAmmoCount(candidate);
+            if (count <= ammoCount)
+                continue;
+
+            magazine = candidate;
+            ammoCount = count;
+        }
+
+        return ammoCount >= 0;
+    }
+
+    private int GetReloadMagazineAmmoCount(EntityUid magazine)
+    {
+        var ev = new GetAmmoCountEvent();
+        RaiseLocalEvent(magazine, ref ev, false);
+        return ev.Count;
+    }
+
     private void OnBeltMagazineReloadDoAfter(EntityUid uid, MagazineAmmoProviderComponent component, BeltMagazineReloadDoAfterEvent args)
+    {
+        OnMagazineReloadDoAfter(uid, args);
+    }
+
+    private void OnBeltChamberMagazineReloadDoAfter(EntityUid uid, ChamberMagazineAmmoProviderComponent component, BeltMagazineReloadDoAfterEvent args)
+    {
+        OnMagazineReloadDoAfter(uid, args);
+    }
+
+    private void OnMagazineReloadDoAfter(EntityUid uid, BeltMagazineReloadDoAfterEvent args)
     {
         if (args.Handled || args.Cancelled)
             return;
 
         args.Handled = true;
 
-        if (!TryGetGun(args.User, out var gun) ||
+        if (!TryGetGunForReload(args.User, out var gun) ||
             gun.Owner != uid ||
-            args.Target is not { Valid: true } belt ||
-            !TryComp<StorageComponent>(belt, out var storage) ||
+            args.Target is not { Valid: true } storageEnt ||
+            !TryComp<StorageComponent>(storageEnt, out var storage) ||
             !_slots.TryGetSlot(uid, MagazineSlot, out var magazineSlot) ||
-            !TryFindBeltMagazine(uid, args.User, (belt, storage), out var newMagazine))
+            !TryFindMagazineInStorage(uid, args.User, (storageEnt, storage), out var newMagazine, out _))
         {
             return;
         }
@@ -142,16 +306,16 @@ public abstract partial class SharedGunSystem
         if (oldMagazine != null)
         {
             if (!_slots.TryEject(uid, magazineSlot, args.User, out var ejected, excludeUserAudio: true) ||
-                !_storage.Insert(belt, ejected.Value, out _, args.User, storage, playSound: false))
+                !_storage.Insert(storageEnt, ejected.Value, out _, args.User, storage, playSound: false))
             {
-                _storage.Insert(belt, newMagazine, out _, args.User, storage, playSound: false);
+                _storage.Insert(storageEnt, newMagazine, out _, args.User, storage, playSound: false);
                 return;
             }
         }
 
         if (!_slots.TryInsert(uid, magazineSlot, newMagazine, args.User, excludeUserAudio: true))
         {
-            _storage.Insert(belt, newMagazine, out _, args.User, storage, playSound: false);
+            _storage.Insert(storageEnt, newMagazine, out _, args.User, storage, playSound: false);
             if (oldMagazine != null)
                 _slots.TryInsert(uid, magazineSlot, oldMagazine.Value, args.User, excludeUserAudio: true);
         }

@@ -26,4 +26,4 @@ store-caregory-spellbook-equipment = Волшебное снаряжение
 store-caregory-spellbook-events = Заклинания событий
 
 # Nukie Delivery
-store-category-nukie-delivery = Offers
+store-category-nukie-delivery = Снабжение

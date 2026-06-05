@@ -2251,12 +2251,12 @@ entities:
   - uid: 256
     components:
     - type: MetaData
-      name: голопад дальнего действия (Шаттл ОБР)
+      name: голопад дальнего действия (Шаттл ИКР)
     - type: Transform
       pos: 0.5,2.5
       parent: 1
     - type: Label
-      currentLabel: Шаттл ОБР
+      currentLabel: Шаттл ИКР
     - type: NameModifier
       baseName: голопад дальнего действия
 - proto: HospitalCurtainsOpen

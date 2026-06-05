@@ -7,6 +7,12 @@ namespace Content.Shared._Eclipse.ProtoCore;
 public sealed partial class ProtoCoreHackDoAfterEvent : SimpleDoAfterEvent;
 
 [Serializable, NetSerializable]
+public sealed partial class ProtoCoreInstallDeviceDoAfterEvent : SimpleDoAfterEvent;
+
+[Serializable, NetSerializable]
+public sealed partial class ProtoCoreCutDeviceDoAfterEvent : SimpleDoAfterEvent;
+
+[Serializable, NetSerializable]
 public sealed partial class ProtoCoreStartDoAfterEvent : SimpleDoAfterEvent;
 
 [Serializable, NetSerializable]

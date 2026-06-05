@@ -41,6 +41,7 @@ gun-chamber-bolt-open-state = closed
 gun-chamber-rack = Rack
 
 # MagazineAmmoProvider
+gun-magazine-reload-no-magazine = No suitable magazine found.
 gun-magazine-examine = It has [color={$color}]{$count}[/color] shots remaining.
 
 # RevolverAmmoProvider

@@ -60,13 +60,12 @@ public sealed partial class BlockGame
     /// </summary>
     public void StartGame()
     {
-        SendMessage(new BlockGameMessages.BlockGameSetScreenMessage(BlockGameMessages.BlockGameScreen.Game));
-
-        FullUpdate();
-
         Started = true;
         _running = true;
         _gameOver = false;
+
+        SendMessage(new BlockGameMessages.BlockGameSetScreenMessage(BlockGameMessages.BlockGameScreen.Game));
+        FullUpdate();
     }
 
     /// <summary>
@@ -95,8 +94,6 @@ public sealed partial class BlockGame
         if (!_running)
             return;
 
-        InputTick(frameTime);
-
         FieldTick(frameTime);
     }
 
@@ -118,7 +115,7 @@ public sealed partial class BlockGame
 
         while (_accumulatedFieldFrameTime >= checkTime)
         {
-            if (_softDropPressed)
+            if (SoftDropActive)
                 AddPoints(1);
 
             InternalFieldTick();
@@ -133,28 +130,47 @@ public sealed partial class BlockGame
     /// </summary>
     private void InternalFieldTick()
     {
-        if (CurrentPiece.Positions(_currentPiecePosition.AddToY(1), _currentRotation)
-            .All(DropCheck))
+        if (CanCurrentPieceDrop())
         {
             _currentPiecePosition = _currentPiecePosition.AddToY(1);
+
+            if (!CanCurrentPieceDrop())
+            {
+                LockCurrentPiece();
+                return;
+            }
         }
         else
         {
-            var blocks = CurrentPiece.Blocks(_currentPiecePosition, _currentRotation);
-            _field.AddRange(blocks);
+            LockCurrentPiece();
+            return;
+        }
 
-            //check loose conditions
-            if (IsGameOver)
-            {
-                InvokeGameover();
-                return;
-            }
+        UpdateFieldUI();
+    }
 
-            InitializeNewBlock();
+    private bool CanCurrentPieceDrop()
+    {
+        return CurrentPiece.Positions(_currentPiecePosition.AddToY(1), _currentRotation)
+            .All(DropCheck);
+    }
+
+    private void LockCurrentPiece()
+    {
+        if (_softDropPressed)
+            _softDropBlockedUntilRelease = true;
+
+        var blocks = CurrentPiece.Blocks(_currentPiecePosition, _currentRotation);
+        _field.AddRange(blocks);
+
+        if (IsGameOver)
+        {
+            InvokeGameover();
+            return;
         }
 
         CheckField();
-
+        InitializeNewBlock();
         UpdateFieldUI();
     }
 

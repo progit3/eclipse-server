@@ -141,7 +141,7 @@
 - type: entity
   parent: IDCardStandard
   id: CentralCommandHoSIDCard
-  name: Central Command HoS ID card
+  name: Eidos Empire HoS ID card
   components:
   - type: Sprite
     layers:
@@ -161,7 +161,7 @@
 - type: entity
   parent: IDCardStandard
   id: CentralCommandSecIDCard
-  name: Central Command Security ID card
+  name: Eidos Empire Security ID card
   components:
   - type: Sprite
     layers:

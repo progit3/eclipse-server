@@ -1,7 +1,7 @@
-ent-ClothingUniformJumpskirtCentcomOfficial = юбка-костюм офицера Центком
-    .desc = Это костюм с юбкой, который носят офицеры Центком высшего звена.
-ent-ClothingUniformJumpskirtCentcomOfficer = водолазка с юбкой Центком
-    .desc = Версия водолазки Центком с юбкой, более редкая и востребованная, чем оригинал.
+ent-ClothingUniformJumpskirtCentcomOfficial = юбка-костюм офицера Эйдосской империи
+    .desc = Это костюм с юбкой, который носят офицеры Эйдосской империи высшего звена.
+ent-ClothingUniformJumpskirtCentcomOfficer = водолазка с юбкой Эйдосской империи
+    .desc = Версия водолазки Эйдосской империи с юбкой, более редкая и востребованная, чем оригинал.
 ent-ClothingUniformJumpskirtElegantMaid = элегантная форма горничной
     .desc = Назови меня хозяином и принеси пивчански.
 ent-ClothingUniformJumpskirtSchool = школьная юбка

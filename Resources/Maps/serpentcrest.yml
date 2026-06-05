@@ -71614,7 +71614,7 @@ entities:
     components:
     - type: MetaData
       desc: this CC officer's cap has seen better days, its frayed and dirty, with a few specs of blood staining it
-      name: weathered CentComm cap
+      name: weathered Eidos cap
     - type: Transform
       pos: 11.549409,51.562477
       parent: 2
@@ -134112,7 +134112,7 @@ entities:
 
 
 
-        -central command requisitions department.
+        -Eidos Empire requisitions department.
   - uid: 24566
     components:
     - type: Transform
@@ -136351,7 +136351,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: PosterLegitEidosEmpire
+- proto: PosterLegitCentComm
   entities:
   - uid: 9653
     components:

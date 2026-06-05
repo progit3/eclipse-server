@@ -39,6 +39,7 @@ namespace Content.Client.PDA
         public event Action<EntityUid>? OnProgramItemPressed;
         public event Action<EntityUid>? OnUninstallButtonPressed;
         public event Action<EntityUid>? OnInstallButtonPressed;
+        public event Action? OnBlockGamePressed;
         public PdaMenu()
         {
             IoCManager.InjectDependencies(this);
@@ -202,27 +203,14 @@ namespace Content.Client.PDA
         {
             ProgramList.RemoveAllChildren();
 
-            if (programs.Count == 0)
-            {
-                ProgramList.AddChild(new Label()
-                {
-                    Text = Loc.GetString("comp-pda-io-no-programs-available"),
-                    HorizontalAlignment = HAlignment.Center,
-                    VerticalAlignment = VAlignment.Center,
-                    VerticalExpand = true
-                });
-
-                return;
-            }
-
             var row = CreateProgramListRow();
-            var itemCount = 1;
+            var itemCount = 0;
             ProgramList.AddChild(row);
+            AddBlockinatorProgramItem(ref row, ref itemCount);
 
             foreach (var (uid, component) in programs)
             {
-                //Create a new row every second program item starting from the first
-                if (itemCount % 2 != 0)
+                if (itemCount > 0 && itemCount % 2 == 0)
                 {
                     row = CreateProgramListRow();
                     ProgramList.AddChild(row);
@@ -257,8 +245,21 @@ namespace Content.Client.PDA
             }
 
             //Add a filler item to the last row when it only contains one item
-            if (itemCount % 2 == 0)
+            if (itemCount % 2 != 0)
                 row.AddChild(new Control() { HorizontalExpand = true });
+        }
+
+        private void AddBlockinatorProgramItem(ref BoxContainer row, ref int itemCount)
+        {
+            var item = new PdaProgramItem();
+
+            item.Icon.SetFromSpriteSpecifier(new SpriteSpecifier.Texture(new("/Textures/Interface/blockinator.png")));
+            item.OnPressed += _ => OnBlockGamePressed?.Invoke();
+            item.ProgramName.Text = Loc.GetString("pda-bound-user-interface-blockinator-title");
+            item.SetHeight = 20;
+            row.AddChild(item);
+
+            itemCount++;
         }
 
         /// <summary>

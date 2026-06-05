@@ -80,13 +80,13 @@
   categories: [ HideSpawnMenu ]
   parent: MobHuman
   id: MobHumanLoneNuclearOperative
-  name: Lone Operative
+  name: Ash Legion lone operative
   components:
   - type: RandomHumanoidAppearance
     randomizeName: false
   - type: NukeOperative
   - type: Loadout
-    prototypes: [LegionLoneOperativeGearFull]
+    prototypes: [AshLegionLoneOperativeGearFull]
     roleLoadout: [ RoleSurvivalLegion ]
   - type: RandomMetadata
     nameSegments:

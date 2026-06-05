@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
 using System.Text;
 using Content.Client.Arcade.UI;
@@ -16,7 +15,7 @@ using Robust.Shared.Graphics;
 using Robust.Shared.IoC;
 using Robust.Shared.Localization;
 using Robust.Shared.Maths;
-using Robust.Shared.Utility;
+using Robust.Shared.Timing;
 using static Robust.Client.UserInterface.Controls.BoxContainer;
 
 namespace Content.Client.Arcade
@@ -26,14 +25,12 @@ namespace Content.Client.Arcade
         private static readonly Color OverlayBackgroundColor = new(74, 74, 81, 180);
         private static readonly Color OverlayShadowColor = new(0, 0, 0, 83);
 
-        private static readonly Vector2 BlockSize = new(15, 15);
-
         private readonly PanelContainer _mainPanel;
 
         private readonly BoxContainer _gameRootContainer;
-        private GridContainer _gameGrid = default!;
-        private GridContainer _nextBlockGrid = default!;
-        private GridContainer _holdBlockGrid = default!;
+        private BlockGameGridControl _gameGrid = default!;
+        private BlockGamePreviewControl _nextBlockGrid = default!;
+        private BlockGamePreviewControl _holdBlockGrid = default!;
         private readonly Label _pointsLabel;
         private readonly Label _levelLabel;
         private readonly Button _pauseButton;
@@ -55,6 +52,15 @@ namespace Content.Client.Arcade
 
         private bool _isPlayer = false;
         private bool _gameOver = false;
+        private bool _leftHeld;
+        private bool _rightHeld;
+        private bool _softDropHeld;
+        private int _horizontalDirection;
+        private float _horizontalHoldTime;
+        private bool _horizontalRepeatStarted;
+
+        private const float HorizontalRepeatDelay = 0.22f;
+        private const float HorizontalRepeatInterval = 0.09f;
 
         public event Action<BlockGamePlayerAction>? OnAction;
 
@@ -62,7 +68,7 @@ namespace Content.Client.Arcade
         {
             Title = Loc.GetString("blockgame-menu-title");
 
-            MinSize = SetSize = new Vector2(410, 490);
+            MinSize = SetSize = new Vector2(430, 515);
 
             var resourceCache = IoCManager.Resolve<IResourceCache>();
             var backgroundTexture = resourceCache.GetTexture("/Textures/Interface/Nano/button.svg.96dpi.png");
@@ -73,46 +79,44 @@ namespace Content.Client.Arcade
             // building the game container
             _gameRootContainer = new BoxContainer
             {
-                Orientation = LayoutOrientation.Vertical
+                Orientation = LayoutOrientation.Vertical,
+                Margin = new Thickness(8)
             };
 
             _levelLabel = new Label
             {
-                Align = Label.AlignMode.Center,
-                HorizontalExpand = true
+                Align = Label.AlignMode.Center
             };
-            _gameRootContainer.AddChild(_levelLabel);
-            _gameRootContainer.AddChild(new Control
-            {
-                MinSize = new Vector2(1, 5)
-            });
 
             _pointsLabel = new Label
             {
-                Align = Label.AlignMode.Center,
-                HorizontalExpand = true
+                Align = Label.AlignMode.Center
             };
-            _gameRootContainer.AddChild(_pointsLabel);
-            _gameRootContainer.AddChild(new Control
-            {
-                MinSize = new Vector2(1, 10)
-            });
 
             var gameBox = new BoxContainer
             {
-                Orientation = LayoutOrientation.Horizontal
+                Orientation = LayoutOrientation.Horizontal,
+                HorizontalAlignment = HAlignment.Center
             };
-            gameBox.AddChild(SetupHoldBox(backgroundTexture));
-            gameBox.AddChild(new Control
-            {
-                MinSize = new Vector2(10, 1)
-            });
             gameBox.AddChild(SetupGameGrid(backgroundTexture));
             gameBox.AddChild(new Control
             {
-                MinSize = new Vector2(10, 1)
+                MinSize = new Vector2(12, 1)
             });
-            gameBox.AddChild(SetupNextBox(backgroundTexture));
+
+            var sideBar = new BoxContainer
+            {
+                Orientation = LayoutOrientation.Vertical,
+                MinSize = new Vector2(112, 1)
+            };
+            sideBar.AddChild(_levelLabel);
+            sideBar.AddChild(new Control { MinSize = new Vector2(1, 4) });
+            sideBar.AddChild(_pointsLabel);
+            sideBar.AddChild(new Control { MinSize = new Vector2(1, 14) });
+            sideBar.AddChild(SetupNextBox(backgroundTexture));
+            sideBar.AddChild(new Control { MinSize = new Vector2(1, 12) });
+            sideBar.AddChild(SetupHoldBox(backgroundTexture));
+            gameBox.AddChild(sideBar);
 
             _gameRootContainer.AddChild(gameBox);
 
@@ -361,30 +365,25 @@ namespace Content.Client.Arcade
 
         private Control SetupGameGrid(Texture panelTex)
         {
-            _gameGrid = new GridContainer
-            {
-                Columns = 10,
-                HSeparationOverride = 1,
-                VSeparationOverride = 1
-            };
-            UpdateBlocks(Array.Empty<BlockGameBlock>());
+            _gameGrid = new BlockGameGridControl();
 
             var back = new StyleBoxTexture
             {
                 Texture = panelTex,
-                Modulate = Color.FromHex("#4a4a51"),
+                Modulate = Color.FromHex("#202631"),
             };
             back.SetPatchMargin(StyleBox.Margin.All, 10);
 
             var gamePanel = new PanelContainer
             {
                 PanelOverride = back,
-                HorizontalExpand = true,
-                SizeFlagsStretchRatio = 34.25f
+                HorizontalAlignment = HAlignment.Center,
+                VerticalAlignment = VAlignment.Top
             };
             var backgroundPanel = new PanelContainer
             {
-                PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#86868d") }
+                PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#101722") },
+                Margin = new Thickness(6)
             };
             backgroundPanel.AddChild(_gameGrid);
             gamePanel.AddChild(backgroundPanel);
@@ -396,37 +395,32 @@ namespace Content.Client.Arcade
             var previewBack = new StyleBoxTexture
             {
                 Texture = panelTex,
-                Modulate = Color.FromHex("#4a4a51")
+                Modulate = Color.FromHex("#202631")
             };
             previewBack.SetPatchMargin(StyleBox.Margin.All, 10);
 
-            var grid = new GridContainer
+            var box = new BoxContainer
             {
-                Columns = 1,
-                HorizontalExpand = true,
-                SizeFlagsStretchRatio = 20
+                Orientation = LayoutOrientation.Vertical,
+                HorizontalExpand = true
             };
+            box.AddChild(new Label { Text = Loc.GetString("blockgame-menu-label-next"), Align = Label.AlignMode.Center });
+            box.AddChild(new Control { MinSize = new Vector2(1, 4) });
 
             var nextBlockPanel = new PanelContainer
             {
                 PanelOverride = previewBack,
-                MinSize = BlockSize * 6.5f,
-                HorizontalAlignment = HAlignment.Left,
+                MinSize = new Vector2(100, 100),
+                HorizontalAlignment = HAlignment.Center,
                 VerticalAlignment = VAlignment.Top
             };
             var nextCenterContainer = new CenterContainer();
-            _nextBlockGrid = new GridContainer
-            {
-                HSeparationOverride = 1,
-                VSeparationOverride = 1
-            };
+            _nextBlockGrid = new BlockGamePreviewControl();
             nextCenterContainer.AddChild(_nextBlockGrid);
             nextBlockPanel.AddChild(nextCenterContainer);
-            grid.AddChild(nextBlockPanel);
+            box.AddChild(nextBlockPanel);
 
-            grid.AddChild(new Label { Text = Loc.GetString("blockgame-menu-label-next"), Align = Label.AlignMode.Center });
-
-            return grid;
+            return box;
         }
 
         private Control SetupHoldBox(Texture panelTex)
@@ -434,37 +428,32 @@ namespace Content.Client.Arcade
             var previewBack = new StyleBoxTexture
             {
                 Texture = panelTex,
-                Modulate = Color.FromHex("#4a4a51")
+                Modulate = Color.FromHex("#202631")
             };
             previewBack.SetPatchMargin(StyleBox.Margin.All, 10);
 
-            var grid = new GridContainer
+            var box = new BoxContainer
             {
-                Columns = 1,
-                HorizontalExpand = true,
-                SizeFlagsStretchRatio = 20
+                Orientation = LayoutOrientation.Vertical,
+                HorizontalExpand = true
             };
+            box.AddChild(new Label { Text = Loc.GetString("blockgame-menu-label-hold"), Align = Label.AlignMode.Center });
+            box.AddChild(new Control { MinSize = new Vector2(1, 4) });
 
             var holdBlockPanel = new PanelContainer
             {
                 PanelOverride = previewBack,
-                MinSize = BlockSize * 6.5f,
-                HorizontalAlignment = HAlignment.Left,
+                MinSize = new Vector2(100, 100),
+                HorizontalAlignment = HAlignment.Center,
                 VerticalAlignment = VAlignment.Top
             };
             var holdCenterContainer = new CenterContainer();
-            _holdBlockGrid = new GridContainer
-            {
-                HSeparationOverride = 1,
-                VSeparationOverride = 1
-            };
+            _holdBlockGrid = new BlockGamePreviewControl();
             holdCenterContainer.AddChild(_holdBlockGrid);
             holdBlockPanel.AddChild(holdCenterContainer);
-            grid.AddChild(holdBlockPanel);
+            box.AddChild(holdBlockPanel);
 
-            grid.AddChild(new Label { Text = Loc.GetString("blockgame-menu-label-hold"), Align = Label.AlignMode.Center });
-
-            return grid;
+            return box;
         }
 
         protected override void KeyboardFocusExited()
@@ -478,6 +467,7 @@ namespace Content.Client.Arcade
 
         private void TryPause()
         {
+            ResetInputState();
             OnAction?.Invoke(BlockGamePlayerAction.Pause);
         }
 
@@ -502,12 +492,14 @@ namespace Content.Client.Arcade
                     break;
                 case BlockGameMessages.BlockGameScreen.Pause:
                     //ReleaseKeyboardFocus();
+                    ResetInputState();
                     CloseMenus();
                     _mainPanel.AddChild(_menuRootContainer);
                     _pauseButton.Disabled = true;
                     break;
                 case BlockGameMessages.BlockGameScreen.Gameover:
                     _gameOver = true;
+                    ResetInputState();
                     _pauseButton.Disabled = true;
                     //ReleaseKeyboardFocus();
                     CloseMenus();
@@ -580,16 +572,30 @@ namespace Content.Client.Arcade
             if (!_isPlayer || args.Handled)
                 return;
 
-            else if (args.Function == ContentKeyFunctions.ArcadeLeft)
-                OnAction?.Invoke(BlockGamePlayerAction.StartLeft);
+            if (args.Function == ContentKeyFunctions.ArcadeLeft)
+            {
+                StartHorizontalInput(-1);
+                args.Handle();
+            }
             else if (args.Function == ContentKeyFunctions.ArcadeRight)
-                OnAction?.Invoke(BlockGamePlayerAction.StartRight);
+            {
+                StartHorizontalInput(1);
+                args.Handle();
+            }
             else if (args.Function == ContentKeyFunctions.ArcadeUp)
                 OnAction?.Invoke(BlockGamePlayerAction.Rotate);
             else if (args.Function == ContentKeyFunctions.Arcade3)
                 OnAction?.Invoke(BlockGamePlayerAction.CounterRotate);
             else if (args.Function == ContentKeyFunctions.ArcadeDown)
-                OnAction?.Invoke(BlockGamePlayerAction.SoftdropStart);
+            {
+                if (!_softDropHeld)
+                {
+                    _softDropHeld = true;
+                    OnAction?.Invoke(BlockGamePlayerAction.SoftdropStart);
+                }
+
+                args.Handle();
+            }
             else if (args.Function == ContentKeyFunctions.Arcade2)
                 OnAction?.Invoke(BlockGamePlayerAction.Hold);
             else if (args.Function == ContentKeyFunctions.Arcade1)
@@ -603,88 +609,275 @@ namespace Content.Client.Arcade
             if (!_isPlayer || args.Handled)
                 return;
 
-            else if (args.Function == ContentKeyFunctions.ArcadeLeft)
-                OnAction?.Invoke(BlockGamePlayerAction.EndLeft);
+            if (args.Function == ContentKeyFunctions.ArcadeLeft)
+            {
+                EndHorizontalInput(-1);
+                args.Handle();
+            }
             else if (args.Function == ContentKeyFunctions.ArcadeRight)
-                OnAction?.Invoke(BlockGamePlayerAction.EndRight);
+            {
+                EndHorizontalInput(1);
+                args.Handle();
+            }
             else if (args.Function == ContentKeyFunctions.ArcadeDown)
+            {
+                _softDropHeld = false;
                 OnAction?.Invoke(BlockGamePlayerAction.SoftdropEnd);
+                args.Handle();
+            }
+        }
+
+        protected override void FrameUpdate(FrameEventArgs args)
+        {
+            base.FrameUpdate(args);
+
+            if (!_isPlayer || _horizontalDirection == 0)
+                return;
+
+            _horizontalHoldTime += args.DeltaSeconds;
+
+            if (!_horizontalRepeatStarted)
+            {
+                if (_horizontalHoldTime < HorizontalRepeatDelay)
+                    return;
+
+                SendHorizontalStep(_horizontalDirection);
+                _horizontalHoldTime = 0f;
+                _horizontalRepeatStarted = true;
+                return;
+            }
+
+            if (_horizontalHoldTime < HorizontalRepeatInterval)
+                return;
+
+            SendHorizontalStep(_horizontalDirection);
+            _horizontalHoldTime = 0f;
+        }
+
+        private void StartHorizontalInput(int direction)
+        {
+            if (direction < 0)
+            {
+                if (_leftHeld && _horizontalDirection == direction)
+                    return;
+
+                _leftHeld = true;
+            }
+            else
+            {
+                if (_rightHeld && _horizontalDirection == direction)
+                    return;
+
+                _rightHeld = true;
+            }
+
+            _horizontalDirection = direction;
+            _horizontalHoldTime = 0f;
+            _horizontalRepeatStarted = false;
+            SendHorizontalStep(direction);
+        }
+
+        private void EndHorizontalInput(int direction)
+        {
+            if (direction < 0)
+                _leftHeld = false;
+            else
+                _rightHeld = false;
+
+            if (_horizontalDirection != direction)
+                return;
+
+            if (_leftHeld)
+                _horizontalDirection = -1;
+            else if (_rightHeld)
+                _horizontalDirection = 1;
+            else
+                _horizontalDirection = 0;
+
+            _horizontalHoldTime = 0f;
+            _horizontalRepeatStarted = false;
+        }
+
+        private void SendHorizontalStep(int direction)
+        {
+            OnAction?.Invoke(direction < 0
+                ? BlockGamePlayerAction.StartLeft
+                : BlockGamePlayerAction.StartRight);
+        }
+
+        private void ResetInputState()
+        {
+            _leftHeld = false;
+            _rightHeld = false;
+            _softDropHeld = false;
+            _horizontalDirection = 0;
+            _horizontalHoldTime = 0f;
+            _horizontalRepeatStarted = false;
         }
 
         public void UpdateNextBlock(BlockGameBlock[] blocks)
         {
-            _nextBlockGrid.RemoveAllChildren();
-            if (blocks.Length == 0)
-                return;
-            var columnCount = blocks.Max(b => b.Position.X) + 1;
-            var rowCount = blocks.Max(b => b.Position.Y) + 1;
-            _nextBlockGrid.Columns = columnCount;
-            for (var y = 0; y < rowCount; y++)
-            {
-                for (var x = 0; x < columnCount; x++)
-                {
-                    var c = GetColorForPosition(blocks, x, y);
-                    _nextBlockGrid.AddChild(new PanelContainer
-                    {
-                        PanelOverride = new StyleBoxFlat { BackgroundColor = c },
-                        MinSize = BlockSize,
-                        RectDrawClipMargin = 0
-                    });
-                }
-            }
+            _nextBlockGrid.SetBlocks(blocks);
         }
 
         public void UpdateHeldBlock(BlockGameBlock[] blocks)
         {
-            _holdBlockGrid.RemoveAllChildren();
-            if (blocks.Length == 0)
-                return;
-            var columnCount = blocks.Max(b => b.Position.X) + 1;
-            var rowCount = blocks.Max(b => b.Position.Y) + 1;
-            _holdBlockGrid.Columns = columnCount;
-            for (var y = 0; y < rowCount; y++)
-            {
-                for (var x = 0; x < columnCount; x++)
-                {
-                    var c = GetColorForPosition(blocks, x, y);
-                    _holdBlockGrid.AddChild(new PanelContainer
-                    {
-                        PanelOverride = new StyleBoxFlat { BackgroundColor = c },
-                        MinSize = BlockSize,
-                        RectDrawClipMargin = 0
-                    });
-                }
-            }
+            _holdBlockGrid.SetBlocks(blocks);
         }
 
         public void UpdateBlocks(BlockGameBlock[] blocks)
         {
-            _gameGrid.RemoveAllChildren();
-            for (var y = 0; y < 20; y++)
+            _gameGrid.SetBlocks(blocks);
+        }
+    }
+
+    internal abstract class BlockGameBoardControl : Control
+    {
+        protected const int CellPadding = 1;
+
+        private readonly int _columns;
+        private readonly int _rows;
+        private readonly BlockGameBlock.BlockGameBlockColor?[,] _cells;
+
+        protected BlockGameBoardControl(int columns, int rows, Vector2 minSize)
+        {
+            _columns = columns;
+            _rows = rows;
+            _cells = new BlockGameBlock.BlockGameBlockColor?[columns, rows];
+            MinSize = minSize;
+            MouseFilter = MouseFilterMode.Pass;
+        }
+
+        public void SetBlocks(BlockGameBlock[] blocks)
+        {
+            Array.Clear(_cells);
+
+            foreach (var block in blocks)
             {
-                for (var x = 0; x < 10; x++)
+                var pos = block.Position;
+                if (pos.X < 0 || pos.X >= _columns || pos.Y < 0 || pos.Y >= _rows)
+                    continue;
+
+                _cells[pos.X, pos.Y] = block.GameBlockColor;
+            }
+
+            InvalidateArrange();
+        }
+
+        protected override void Draw(DrawingHandleScreen handle)
+        {
+            var cellSize = MathF.Floor(MathF.Min(PixelWidth / _columns, PixelHeight / _rows));
+            if (cellSize <= 0)
+                return;
+
+            var boardSize = new Vector2(cellSize * _columns, cellSize * _rows);
+            var origin = (PixelSize - boardSize) / 2f;
+            var boardBox = UIBox2.FromDimensions(origin, boardSize);
+
+            handle.DrawRect(boardBox, Color.FromHex("#101722"));
+
+            DrawGrid(handle, origin, cellSize);
+
+            for (var y = 0; y < _rows; y++)
+            {
+                for (var x = 0; x < _columns; x++)
                 {
-                    var c = GetColorForPosition(blocks, x, y);
-                    _gameGrid.AddChild(new PanelContainer
-                    {
-                        PanelOverride = new StyleBoxFlat { BackgroundColor = c },
-                        MinSize = BlockSize,
-                        RectDrawClipMargin = 0
-                    });
+                    var color = _cells[x, y];
+                    if (color == null)
+                        continue;
+
+                    DrawBlock(handle, origin, cellSize, x, y, color.Value);
                 }
             }
         }
 
-        private static Color GetColorForPosition(BlockGameBlock[] blocks, int x, int y)
+        private void DrawGrid(DrawingHandleScreen handle, Vector2 origin, float cellSize)
         {
-            var c = Color.Transparent;
-            var matchingBlock = blocks.FirstOrNull(b => b.Position.X == x && b.Position.Y == y);
-            if (matchingBlock.HasValue)
+            var lineColor = Color.FromHex("#2a3642").WithAlpha(0.7f);
+            for (var x = 0; x <= _columns; x++)
             {
-                c = BlockGameBlock.ToColor(matchingBlock.Value.GameBlockColor);
+                var lineX = origin.X + x * cellSize;
+                handle.DrawLine(new Vector2(lineX, origin.Y), new Vector2(lineX, origin.Y + _rows * cellSize), lineColor);
             }
 
-            return c;
+            for (var y = 0; y <= _rows; y++)
+            {
+                var lineY = origin.Y + y * cellSize;
+                handle.DrawLine(new Vector2(origin.X, lineY), new Vector2(origin.X + _columns * cellSize, lineY), lineColor);
+            }
+        }
+
+        private static void DrawBlock(
+            DrawingHandleScreen handle,
+            Vector2 origin,
+            float cellSize,
+            int x,
+            int y,
+            BlockGameBlock.BlockGameBlockColor blockColor)
+        {
+            var ghost = IsGhost(blockColor);
+            var color = GetBlockColor(blockColor);
+            var rect = UIBox2.FromDimensions(
+                origin + new Vector2(x * cellSize + CellPadding, y * cellSize + CellPadding),
+                new Vector2(cellSize - CellPadding * 2));
+
+            if (ghost)
+            {
+                handle.DrawRect(rect, color.WithAlpha(0.12f));
+                handle.DrawRect(rect, color.WithAlpha(0.55f), false);
+                return;
+            }
+
+            handle.DrawRect(rect, Color.FromHex("#05070b"));
+            handle.DrawRect(Deflate(rect, 1), color);
+            handle.DrawRect(new UIBox2(rect.Left + 2, rect.Top + 2, rect.Right - 2, rect.Top + MathF.Max(3, cellSize * 0.32f)), Color.White.WithAlpha(0.22f));
+            handle.DrawRect(Deflate(rect, 1), Color.Black.WithAlpha(0.45f), false);
+            handle.DrawRect(Deflate(rect, 3), Color.White.WithAlpha(0.12f), false);
+        }
+
+        private static UIBox2 Deflate(UIBox2 box, float amount)
+        {
+            return new UIBox2(box.Left + amount, box.Top + amount, box.Right - amount, box.Bottom - amount);
+        }
+
+        private static bool IsGhost(BlockGameBlock.BlockGameBlockColor color)
+        {
+            return color is BlockGameBlock.BlockGameBlockColor.GhostRed
+                or BlockGameBlock.BlockGameBlockColor.GhostOrange
+                or BlockGameBlock.BlockGameBlockColor.GhostYellow
+                or BlockGameBlock.BlockGameBlockColor.GhostGreen
+                or BlockGameBlock.BlockGameBlockColor.GhostBlue
+                or BlockGameBlock.BlockGameBlockColor.GhostLightBlue
+                or BlockGameBlock.BlockGameBlockColor.GhostPurple;
+        }
+
+        private static Color GetBlockColor(BlockGameBlock.BlockGameBlockColor color)
+        {
+            return color switch
+            {
+                BlockGameBlock.BlockGameBlockColor.Red or BlockGameBlock.BlockGameBlockColor.GhostRed => Color.FromHex("#e94f5d"),
+                BlockGameBlock.BlockGameBlockColor.Orange or BlockGameBlock.BlockGameBlockColor.GhostOrange => Color.FromHex("#f6a03a"),
+                BlockGameBlock.BlockGameBlockColor.Yellow or BlockGameBlock.BlockGameBlockColor.GhostYellow => Color.FromHex("#f3cf4c"),
+                BlockGameBlock.BlockGameBlockColor.Green or BlockGameBlock.BlockGameBlockColor.GhostGreen => Color.FromHex("#56bf6d"),
+                BlockGameBlock.BlockGameBlockColor.Blue or BlockGameBlock.BlockGameBlockColor.GhostBlue => Color.FromHex("#5f82e8"),
+                BlockGameBlock.BlockGameBlockColor.LightBlue or BlockGameBlock.BlockGameBlockColor.GhostLightBlue => Color.FromHex("#55c4df"),
+                BlockGameBlock.BlockGameBlockColor.Purple or BlockGameBlock.BlockGameBlockColor.GhostPurple => Color.FromHex("#b46ad9"),
+                _ => Color.FromHex("#a0a0a0")
+            };
+        }
+    }
+
+    internal sealed class BlockGameGridControl : BlockGameBoardControl
+    {
+        public BlockGameGridControl() : base(10, 20, new Vector2(210, 420))
+        {
+        }
+    }
+
+    internal sealed class BlockGamePreviewControl : BlockGameBoardControl
+    {
+        public BlockGamePreviewControl() : base(4, 4, new Vector2(76, 76))
+        {
         }
     }
 }

@@ -6392,7 +6392,7 @@ entities:
   - uid: 7784
     components:
     - type: MetaData
-      name: Шаттл ОБР KRN
+      name: Шаттл ИКР KRN
     - type: Transform
       pos: 9999.484,-0.46875
       parent: 1
@@ -37549,7 +37549,7 @@ entities:
   - uid: 3859
     components:
     - type: MetaData
-      name: вызов ОБР
+      name: вызов ИКР
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -3.5,-1.5
@@ -37575,7 +37575,7 @@ entities:
   - uid: 3860
     components:
     - type: MetaData
-      name: вызов ОБР
+      name: вызов ИКР
     - type: Transform
       pos: -13.5,15.5
       parent: 2
@@ -39116,7 +39116,7 @@ entities:
                           РАЗРЕШЕНИЕ НА НОШЕНИЕ ОРУЖИЯ
         =============================================
 
-        Центральное Командованием, разрешается ношение оружия Священником, до тех пор, пока оно используется по назначению. В случае нарушения разрешение аннулируется, оружие изымается Службой Безопасности.
+        Эйдосской империей, разрешается ношение оружия Священником, до тех пор, пока оно используется по назначению. В случае нарушения разрешение аннулируется, оружие изымается Службой Безопасности.
 
         Оружие:
 
@@ -39694,7 +39694,7 @@ entities:
       parent: 2
     - type: Fixtures
       fixtures: {}
-- proto: PosterLegitEidosEmpire
+- proto: PosterLegitCentComm
   entities:
   - uid: 4034
     components:

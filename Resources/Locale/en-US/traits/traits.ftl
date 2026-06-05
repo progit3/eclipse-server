@@ -65,3 +65,60 @@ trait-hemophilia-desc = Your body fails to make blood clots.
 
 trait-impaired-mobility-name = Impaired Mobility
 trait-impaired-mobility-desc = You have difficulty moving without a mobility aid.
+
+trait-endurance-name = Endurance
+trait-endurance-desc = You tire slightly slower. Costs 2 trait points.
+
+trait-strong-body-name = Strong body
+trait-strong-body-desc = You tolerate minor physical injuries slightly better. Costs 2 trait points.
+
+trait-sober-name = Sober
+trait-sober-desc = Alcohol affects you less. Costs 1 trait point. Incompatible with Lightweight drunk.
+
+trait-strong-liver-name = Strong liver
+trait-strong-liver-desc = Alcohol and some weak toxic effects affect you slightly less. Costs 1 trait point.
+
+trait-cold-head-name = Cold head
+trait-cold-head-desc = You handle stress, panic, or disorientation slightly better when those mechanics are present. Costs 2 trait points.
+
+trait-clear-diction-name = Clear diction
+trait-clear-diction-desc = Your speech is less affected by minor speech distortions when supported. Costs 1 trait point.
+
+trait-light-step-name = Light step
+trait-light-step-desc = You walk a little more quietly, without becoming fully stealthy. Costs 1 trait point.
+
+trait-observant-name = Observant
+trait-observant-desc = You are better at noticing small signs when a relevant mechanic is present. Costs 1 trait point.
+
+trait-stable-motorics-name = Stable motorics
+trait-stable-motorics-desc = Weak hand tremors or minor penalties affect you slightly less when supported. Costs 1 trait point.
+
+trait-tenacity-name = Tenacity
+trait-tenacity-desc = You stay effective a little longer under non-critical injuries. Costs 2 trait points.
+
+trait-italian-american-name = Italian-American accent
+trait-italian-american-desc = You speak with an Italian-American accent. Neutral speech trait, costs 0 points.
+
+trait-language-galactic-common-name = Galactic Common
+trait-language-galactic-common-desc = You know Galactic Common. The first language is free; each additional language costs trait points.
+
+trait-language-tradeband-name = Tradeband
+trait-language-tradeband-desc = You know Tradeband. The first language is free; each additional language costs trait points.
+
+trait-language-freespeak-name = Freespeak
+trait-language-freespeak-desc = You know Freespeak. The first language is free; each additional language costs trait points.
+
+trait-language-elyran-name = Elyran
+trait-language-elyran-desc = You know Elyran. The first language is free; each additional language costs trait points.
+
+trait-language-valyrian-name = Valyrian
+trait-language-valyrian-desc = You know Valyrian. The first language is free; each additional language costs trait points.
+
+trait-language-canilunzt-name = Canilunzt
+trait-language-canilunzt-desc = You know Canilunzt. The first language is free; each additional language costs trait points.
+
+trait-language-bubblish-name = Bubblish
+trait-language-bubblish-desc = You know Bubblish. The first language is free; each additional language costs trait points.
+
+trait-language-moffic-name = Moffic
+trait-language-moffic-desc = You know Moffic. The first language is free; each additional language costs trait points.

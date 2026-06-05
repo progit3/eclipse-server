@@ -114,7 +114,7 @@ public sealed partial class BlockGame
     /// Decreased by a constant amount per level.
     /// Decreased heavily by soft dropping the current piece (holding down).
     /// </summary>
-    private float Speed => Math.Max(0.03f, (_softDropPressed ? SoftDropModifier : 1f) - 0.03f * Level);
+    private float Speed => Math.Max(0.03f, (SoftDropActive ? SoftDropModifier : 1f) - 0.03f * Level);
 
     /// <summary>
     /// The base amount of time between piece steps while softdropping.
@@ -133,12 +133,27 @@ public sealed partial class BlockGame
         if (!CurrentPiece.CanSpin)
             return;
 
-        if (!CurrentPiece.Positions(_currentPiecePosition, rotation)
-            .All(RotateCheck))
-            return;
+        var kickOffsets = new[]
+        {
+            Vector2i.Zero,
+            new Vector2i(1, 0),
+            new Vector2i(-1, 0),
+            new Vector2i(2, 0),
+            new Vector2i(-2, 0),
+            new Vector2i(0, -1)
+        };
 
-        _currentRotation = rotation;
-        UpdateFieldUI();
+        foreach (var offset in kickOffsets)
+        {
+            var kickedPosition = _currentPiecePosition + offset;
+            if (!CurrentPiece.Positions(kickedPosition, rotation).All(RotateCheck))
+                continue;
+
+            _currentPiecePosition = kickedPosition;
+            _currentRotation = rotation;
+            UpdateFieldUI();
+            return;
+        }
     }
 
 

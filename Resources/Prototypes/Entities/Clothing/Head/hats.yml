@@ -303,7 +303,7 @@
 - type: entity
   parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: ClothingHeadHatCentcom
-  name: CentComm brand hat
+  name: Eidos brand hat
   description: Feels good being the king's boss.
   components:
   - type: Sprite
@@ -1195,8 +1195,8 @@
 - type: entity
   parent: [ ClothingHeadBase, BaseCentcommContraband ]
   id: ClothingHeadHatCentcomcap
-  name: CentComm cap
-  description: An extravagant, stylish cap worn by CentComm officials. Shows the Captain who's in charge.
+  name: Eidos cap
+  description: An extravagant, stylish cap worn by Eidos officials. Shows the Captain who's in charge.
   components:
   - type: Sprite
     sprite: Clothing/Head/Hats/comcap.rsi

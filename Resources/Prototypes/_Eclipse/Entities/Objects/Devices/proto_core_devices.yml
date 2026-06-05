@@ -7,6 +7,7 @@
   - type: Sprite
     sprite: _Eclipse/Objects/Devices/proto_core_activation_key.rsi
     state: icon
+    scale: 0.5, 0.5
   - type: Item
     size: Tiny
     sprite: _Eclipse/Objects/Devices/proto_core_activation_key.rsi
@@ -38,6 +39,29 @@
   - type: AshHackingDevice
   - type: StaticPrice
     price: 15000
+
+- type: entity
+  id: ProtoCoreCableTool
+  parent: BaseItem
+  name: proto core cable tool
+  description: A tuned extraction device for sealed proto core conduits.
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/multitool.rsi
+    layers:
+    - state: icon
+    - state: red-unlit
+      shader: unshaded
+  - type: Item
+    size: Small
+    sprite: Objects/Tools/multitool.rsi
+  - type: Tool
+    qualities:
+    - ProtoCoreCableManipulation
+    useSound:
+      path: /Audio/Items/wirecutter.ogg
+  - type: StaticPrice
+    price: 6000
 
 - type: entity
   id: PinpointerProtoCoreActivationKey

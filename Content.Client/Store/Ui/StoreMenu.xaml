@@ -2,8 +2,8 @@
     xmlns="https://spacestation14.io"
     xmlns:gfx="clr-namespace:Robust.Client.Graphics;assembly=Robust.Client"
     Title="{Loc 'store-ui-legion-terminal-title'}"
-    MinSize="960 740"
-    SetSize="1120 840">
+    MinSize="960 660"
+    SetSize="1120 720">
     <PanelContainer>
         <PanelContainer.PanelOverride>
             <gfx:StyleBoxFlat BackgroundColor="#070300F4" BorderColor="#A84B00" BorderThickness="1" />
@@ -67,12 +67,12 @@
                     <BoxContainer Orientation="Vertical" Margin="10">
                         <Label Text="{Loc 'store-ui-selected-label'}" FontColorOverride="#FF7A00" />
                         <PanelContainer StyleClasses="LowDivider" Margin="0 2 0 8" />
-                        <RichTextLabel Name="SelectedItemName" MinHeight="46" Margin="0 0 0 2" />
+                        <RichTextLabel Name="SelectedItemName" MinHeight="38" Margin="0 0 0 2" />
                         <Label Name="SelectedItemSubtitle" FontColorOverride="#FF7A00" Margin="0 0 0 8" />
                         <TextureRect
                             Name="SelectedItemTexture"
                             HorizontalExpand="True"
-                            SetHeight="150"
+                            SetHeight="108"
                             Stretch="KeepAspectCentered" />
                         <PanelContainer Margin="0 12 0 8">
                             <PanelContainer.PanelOverride>
@@ -128,26 +128,27 @@
                             </BoxContainer>
                         </PanelContainer>
 
-                        <RichTextLabel
-                            Name="SelectedItemDescription"
-                            VerticalExpand="True"
-                            Margin="0 4 0 8" />
+                        <ScrollContainer HScrollEnabled="False" SetHeight="104" Margin="0 4 0 8">
+                            <RichTextLabel
+                                Name="SelectedItemDescription"
+                                HorizontalExpand="True" />
+                        </ScrollContainer>
 
-                        <PanelContainer SetHeight="96">
+                        <PanelContainer SetHeight="82">
                             <PanelContainer.PanelOverride>
                                 <gfx:StyleBoxFlat BackgroundColor="#090909" BorderColor="#5B2B08" BorderThickness="1" />
                             </PanelContainer.PanelOverride>
                             <BoxContainer Orientation="Vertical" Margin="8">
-                                <Label Text="{Loc 'store-ui-purchase-details-label'}" FontColorOverride="#FF7A00" SetHeight="20" />
-                                <BoxContainer Orientation="Horizontal" Margin="0 6 0 0" SetHeight="22">
+                                <Label Text="{Loc 'store-ui-purchase-details-label'}" FontColorOverride="#FF7A00" SetHeight="18" />
+                                <BoxContainer Orientation="Horizontal" Margin="0 4 0 0" SetHeight="20">
                                     <Label Text="{Loc 'store-ui-cost-label'}" HorizontalExpand="True" FontColorOverride="#BEBEBE" />
                                     <Label Name="SelectedPriceLabel" FontColorOverride="#F2F2F2" />
                                 </BoxContainer>
-                                <BoxContainer Orientation="Horizontal" Margin="0 2 0 0" SetHeight="22">
+                                <BoxContainer Orientation="Horizontal" Margin="0 1 0 0" SetHeight="20">
                                     <Label Text="{Loc 'store-ui-availability-label'}" HorizontalExpand="True" FontColorOverride="#BEBEBE" />
                                     <Label Name="SelectedAvailabilityLabel" FontColorOverride="#FF7A00" />
                                 </BoxContainer>
-                                <Label Name="SelectedDiscountLabel" FontColorOverride="#FFB35C" Margin="0 2 0 0" SetHeight="18" />
+                                <Label Name="SelectedDiscountLabel" FontColorOverride="#FFB35C" Margin="0 1 0 0" SetHeight="16" />
                             </BoxContainer>
                         </PanelContainer>
 

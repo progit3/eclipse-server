@@ -36,6 +36,10 @@ stack-hv-cable = {$amount ->
     [1] hv cable
     *[other] hv cables
 }
+stack-proto-core-cable = {$amount ->
+    [1] proto-core conduit
+    *[other] proto-core conduits
+}
 stack-explosive-cord = {$amount ->
     [1] explosive cord
     *[other] explosive cords

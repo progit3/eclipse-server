@@ -58,7 +58,18 @@ humanoid-profile-editor-traits-tab = Черты персонажа
 humanoid-profile-editor-no-traits = Нет доступных черт
 
 humanoid-profile-editor-trait-count-hint = Доступно очков: [{ $current }/{ $max }]
+humanoid-profile-editor-trait-balance = Очки черт: { $balance } / { $max }
+    Получено: { $gained }
+    Потрачено: { $spent }
+humanoid-profile-editor-trait-conflict = Несовместимо с чертой «{ $trait }».
+humanoid-profile-editor-trait-gain-limit = Превышен лимит очков от недостатков: { $current }/{ $max }.
+humanoid-profile-editor-trait-negative-balance = Недостаточно очков: потрачено { $spent }, получено { $gained }.
+humanoid-profile-editor-language-count-hint = Первый язык бесплатный. Дополнительные языки стоят 2, затем 3, затем 4 очка черт и так далее.
 
+trait-category-disadvantages = Недостатки
+trait-category-advantages = Преимущества
+trait-category-neutral = Нейтральные
+trait-category-speech = Речь
+trait-category-languages = Языки
 trait-category-disabilities = Ограничения
-trait-category-speech = Черты речи
 trait-category-quirks = Причуды

@@ -14,7 +14,7 @@
   parent: CentcomPDA
   id: CentcomOfficerPDA
   categories: [ HideSpawnMenu ]
-  suffix: Central Command Officer PDA
+  suffix: Eidos Empire Officer PDA
   components:
   - type: Pda
     id: CentcomOfficerIDCard
@@ -26,7 +26,7 @@
   parent: CentcomPDA
   id: CentcomOperatorPDA
   categories: [ HideSpawnMenu ]
-  suffix: Central Command Operator PDA
+  suffix: Eidos Empire Operator PDA
   components:
   - type: Pda
     id: CentcomOperatorIDCard
@@ -38,7 +38,7 @@
   parent: CentcomPDA
   id: CentcomIntendantPDA
   categories: [ HideSpawnMenu ]
-  suffix: Central Command Intendant PDA
+  suffix: Eidos Empire Intendant PDA
   components:
   - type: Pda
     id: CentcomIntendantIDCard
@@ -50,7 +50,7 @@
   parent: CentcomPDA
   id: CentcomEngineerPDA
   categories: [ HideSpawnMenu ]
-  suffix: Central Command Engineer PDA
+  suffix: Eidos Empire Engineer PDA
   components:
   - type: Pda
     id: CentcomEngineerIDCard
@@ -62,7 +62,7 @@
   parent: CentcomPDA
   id: CentcomClercPDA
   categories: [ HideSpawnMenu ]
-  suffix: Central Command Clerc PDA
+  suffix: Eidos Empire Clerc PDA
   components:
   - type: Pda
     id: CentcomClercIDCard
@@ -86,7 +86,7 @@
   parent: CentcomPDA
   id: CentralCommandHoSPDA
   categories: [ HideSpawnMenu ]
-  suffix: Central Command HoS PDA
+  suffix: Eidos Empire HoS PDA
   components:
   - type: Pda
     id: CentralCommandHoSIDCard
@@ -98,7 +98,7 @@
   parent: CentcomPDA
   id: CentralCommandSecPDA
   categories: [ HideSpawnMenu ]
-  suffix: Central Command Security PDA
+  suffix: Eidos Empire Security PDA
   components:
   - type: Pda
     id: CentralCommandSecIDCard

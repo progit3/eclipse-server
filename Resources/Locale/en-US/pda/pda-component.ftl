@@ -48,6 +48,9 @@ pda-bound-user-interface-music-button = Music Instrument
 
 pda-bound-user-interface-music-button-description = Play music on your PDA
 
+pda-bound-user-interface-blockinator-title = Blockinator
+pda-bound-user-interface-blockinator-description = Play Blockinator on your PDA
+
 comp-pda-ui-unknown = Unknown
 
 comp-pda-ui-unassigned = Unassigned

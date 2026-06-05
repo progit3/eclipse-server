@@ -2,7 +2,7 @@ uplink-bound-user-interface-insufficient-funds-popup = Недостаточно 
 
 uplink-bound-user-interface-tc-balance-popup = Баланс ТК: [color={ $weightedColor }]{ $balance }[/color]
 
-uplink-user-interface-title = Аплинк
+uplink-user-interface-title = Терминал снабжения
 
 uplink-user-interface-search-label = Поиск
 

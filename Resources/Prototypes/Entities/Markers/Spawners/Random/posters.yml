@@ -122,7 +122,7 @@
     - id: PosterLegitTyrone
     - id: PosterLegitHelio
     - id: PosterLegitBotanyFear
-    - id: PosterLegitEidosEmpire
+    - id: PosterLegitCentComm
 
 - type: entity
   parent: MarkerBase

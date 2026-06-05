@@ -276,7 +276,7 @@
   parent: ClothingBackpackERTSecurity
   id: ClothingBackpackDeathSquad
   name: death squad backpack
-  description: Holds the kit of CentComm's most feared agents.
+  description: Holds the kit of Eidos's most feared agents.
   components:
     - type: Storage
       grid:

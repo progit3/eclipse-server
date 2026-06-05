@@ -27,6 +27,13 @@
   icon: { sprite: Objects/Tools/wirecutters.rsi, state: cutters-map }
 
 - type: tool
+  id: ProtoCoreCableManipulation
+  name: tool-quality-proto-core-cable-manipulation-name
+  toolName: tool-quality-proto-core-cable-manipulation-tool-name
+  spawn: ProtoCoreCableTool
+  icon: { sprite: Objects/Tools/multitool.rsi, state: icon }
+
+- type: tool
   id: Welding
   name: tool-quality-welding-name
   toolName: tool-quality-welding-tool-name

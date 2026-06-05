@@ -1,8 +1,8 @@
 - type: entity
   parent: [BaseItem, BaseLegionContraband ]
   id: NukeOpsDeclarationOfWar
-  name: war declarator
-  description: Use to send a declaration of hostilities to the target, delaying your shuttle departure while they prepare for your assault. Such a brazen move will attract the attention of powerful benefactors within the Legion, who will supply your team with a massive amount of bonus telecrystals. Must be used at start of mission, or your benefactors will lose interest.
+  name: Ash Legion war declarator
+  description: Use to send a declaration of hostilities in the name of the Ash Legion, delaying your shuttle departure while the target prepares for your assault. Requires at least three operatives.
   components:
     - type: Sprite
       sprite: Objects/Devices/declaration_of_war.rsi
@@ -22,5 +22,7 @@
           type: WarDeclaratorBoundUserInterface
     - type: WarDeclarator
       message: war-declarator-default-message
+      senderTitle: comms-console-announcement-title-ashlegion
+      minOps: 3
     - type: AccessReader
       access: [["NuclearOperative"]]

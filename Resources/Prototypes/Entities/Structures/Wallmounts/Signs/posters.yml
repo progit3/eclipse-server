@@ -196,7 +196,7 @@
   parent: PosterBase
   id: PosterContrabandTools
   name: "Tools"
-  description: "This poster looks like an advertisement for tools, but is in fact a subliminal jab at the tools at CentComm."
+  description: "This poster looks like an advertisement for tools, but is in fact a subliminal jab at the tools at Eidos."
   components:
   - type: Sprite
     state: poster15_contraband
@@ -259,7 +259,7 @@
   parent: PosterBase
   id: PosterContrabandKosmicheskayaStantsiya
   name: "Kosmicheskaya Stantsiya 13 Does Not Exist"
-  description: "A poster mocking CentComm's denial of the existence of the derelict station near Space Station 13."
+  description: "A poster mocking Eidos's denial of the existence of the derelict station near Space Station 13."
   components:
   - type: Sprite
     state: poster22_contraband
@@ -367,7 +367,7 @@
   parent: PosterBase
   id: PosterContrabandFreeDrone
   name: "Free Drone"
-  description: "This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by CentComm."
+  description: "This poster commemorates the bravery of the rogue drone; once exiled, and then ultimately destroyed by Eidos."
   components:
   - type: Sprite
     state: poster35_contraband
@@ -484,7 +484,7 @@
   parent: PosterBase
   id: PosterContrabandTheBigGasTruth
   name: "The Big Gas Giant Truth"
-  description: "Don't believe everything you see on a poster, patriots. All the lizards at central command don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOMM?"
+  description: "Don't believe everything you see on a poster, patriots. All the lizards in the Eidos Empire don't want to answer this SIMPLE QUESTION: WHERE IS THE GAS MINER MINING FROM, CENTCOMM?"
   components:
   - type: Sprite
     state: poster48_contraband
@@ -1141,7 +1141,7 @@
 
 - type: entity
   parent: PosterBase
-  id: PosterLegitEidosEmpire
+  id: PosterLegitCentComm
   name: "Eidosian Empire"
   description: "A poster with the emblem of the Eidosian Empire."
   components:

@@ -47,6 +47,12 @@ public sealed partial class WarDeclaratorComponent : Component
     public LocId SenderTitle = "comms-console-announcement-title-nukie";
 
     /// <summary>
+    /// Minimal operative count required by this declarator.
+    /// </summary>
+    [DataField]
+    public int MinOps = 4;
+
+    /// <summary>
     /// Time allowed for declaration of war
     /// </summary>
     [DataField]

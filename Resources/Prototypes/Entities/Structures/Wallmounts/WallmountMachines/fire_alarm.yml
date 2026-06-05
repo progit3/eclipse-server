@@ -53,12 +53,14 @@
   - type: WiresVisuals
   - type: AlertLevelDisplay
     alertVisuals:
-      green: fire_0
-      blue: fire_1
-      red: fire_2
-      violet: fire_1
-      yellow: fire_1
+      alpha: fire_0
+      enigma: fire_1
+      sigma: fire_2
+      tau: fire_1
+      kappa: fire_1
+      gamma: fire_2
       delta: fire_3
+      epsilon: fire_3
   - type: UserInterface
     interfaces:
       enum.WiresUiKey.Key:

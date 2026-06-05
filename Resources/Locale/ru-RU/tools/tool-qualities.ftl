@@ -10,6 +10,9 @@ tool-quality-screwing-tool-name = Отвёртка
 tool-quality-cutting-name = Резка
 tool-quality-cutting-tool-name = Кусачки
 
+tool-quality-proto-core-cable-manipulation-name = Обработка проводов Протоядра
+tool-quality-proto-core-cable-manipulation-tool-name = Инструмент проводов Протоядра
+
 tool-quality-welding-name = Варка
 tool-quality-welding-tool-name = Сварка
 

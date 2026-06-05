@@ -13,6 +13,7 @@ using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Eclipse.Progression;
 using Content.Shared.GameTicking;
+using Content.Shared.GameTicking.Prototypes;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Client;
@@ -22,7 +23,9 @@ using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Client.Lobby
 {
@@ -41,10 +44,16 @@ namespace Content.Client.Lobby
         [Dependency] private readonly JobRequirementsManager _jobRequirements = default!;
         [Dependency] private readonly IPrototypeManager _protoMan = default!;
         [Dependency] private readonly IClientAdminManager _adminManager = default!;
+        [Dependency] private readonly IRobustRandom _random = default!;
 
         private ClientGameTicker _gameTicker = default!;
         private ContentAudioSystem _contentAudioSystem = default!;
         private float _accountRefreshTimer;
+        private ResPath? _autoLobbyBackground;
+
+        private static readonly ResPath AutoLobbyBackgroundDirectory = new("/Textures/Eclipse/MainMenu/LobbyBackgrounds");
+        private static readonly ResPath FallbackLobbyBackground = new("/Textures/Eclipse/MainMenu/eclipse_lobby_background.png");
+        private static readonly string[] LobbyBackgroundExtensions = new[] {"png", "jpg", "jpeg", "webp"};
 
         protected override Type? LinkedScreenType { get; } = typeof(LobbyGui);
         public LobbyGui? Lobby;
@@ -347,8 +356,49 @@ namespace Content.Client.Lobby
 
         private void UpdateLobbyBackground()
         {
-            Lobby!.Background.Texture = _resourceCache.GetResource<TextureResource>("/Textures/Eclipse/MainMenu/eclipse_lobby_background.png");
-            Lobby!.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-no-background-text"));
+            _autoLobbyBackground ??= PickAutoLobbyBackground();
+            if (_autoLobbyBackground is { } autoBackground &&
+                _resourceCache.TryGetResource<TextureResource>(autoBackground, out var autoTexture))
+            {
+                Lobby!.Background.Texture = autoTexture;
+                Lobby.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-text",
+                    ("backgroundTitle", autoBackground.FilenameWithoutExtension),
+                    ("backgroundArtist", Loc.GetString("lobby-state-background-unknown-artist"))));
+
+                return;
+            }
+
+            if (_gameTicker.LobbyBackground is { } lobbyBackgroundId &&
+                _protoMan.TryIndex(lobbyBackgroundId, out LobbyBackgroundPrototype? lobbyBackground) &&
+                _resourceCache.TryGetResource<TextureResource>(lobbyBackground.Background, out var prototypeTexture))
+            {
+                Lobby!.Background.Texture = prototypeTexture;
+
+                var title = Loc.GetString(lobbyBackground.Title);
+                var artist = Loc.GetString(lobbyBackground.Artist);
+                Lobby.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-text",
+                    ("backgroundTitle", title),
+                    ("backgroundArtist", artist)));
+
+                return;
+            }
+
+            var texture = _resourceCache.GetResource<TextureResource>(FallbackLobbyBackground);
+            Lobby!.Background.Texture = texture;
+            Lobby.LobbyBackground.SetMarkup(Loc.GetString("lobby-state-background-text",
+                ("backgroundTitle", FallbackLobbyBackground.FilenameWithoutExtension),
+                ("backgroundArtist", Loc.GetString("lobby-state-background-unknown-artist"))));
+        }
+
+        private ResPath? PickAutoLobbyBackground()
+        {
+            var backgrounds = _resourceCache.ContentFindFiles(AutoLobbyBackgroundDirectory)
+                .Where(path => LobbyBackgroundExtensions.Contains(path.Extension))
+                .ToArray();
+
+            return backgrounds.Length == 0
+                ? null
+                : _random.Pick(backgrounds);
         }
 
         private void SetReady(bool newReady)

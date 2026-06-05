@@ -1898,7 +1898,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -1.5,-2.5
       parent: 410
-- proto: PosterLegitEidosEmpire
+- proto: PosterLegitCentComm
   entities:
   - uid: 380
     components:

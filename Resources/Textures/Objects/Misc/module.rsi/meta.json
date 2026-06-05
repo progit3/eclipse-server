@@ -344,6 +344,9 @@
       "name": "cpu_ashlegion"
     },
     {
+      "name": "cpu_legion"
+    },
+    {
       "name": "cpu_inteq"
     }
   ]

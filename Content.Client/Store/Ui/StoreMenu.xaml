@@ -20,15 +20,17 @@
                         <PanelContainer.PanelOverride>
                             <gfx:StyleBoxFlat BackgroundColor="#130801" BorderColor="#FF7A00" BorderThickness="2" />
                         </PanelContainer.PanelOverride>
-                        <TextureRect TexturePath="/Textures/Interface/Actions/shop.png" Stretch="KeepAspectCentered" Margin="8" />
+                        <TextureRect Name="HeaderIcon" TexturePath="/Textures/Interface/Actions/shop.png" Stretch="KeepAspectCentered" Margin="8" />
                     </PanelContainer>
 
                     <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalAlignment="Center">
                         <Label
+                            Name="HeaderTitle"
                             Text="{Loc 'store-ui-legion-terminal-title-caps'}"
                             FontColorOverride="#F0F0F0"
                             StyleClasses="LabelHeading" />
                         <Label
+                            Name="HeaderSubtitle"
                             Text="{Loc 'store-ui-legion-terminal-subtitle'}"
                             FontColorOverride="#FF7A00"
                             Margin="0 2 0 0" />
@@ -64,7 +66,7 @@
                     <PanelContainer.PanelOverride>
                         <gfx:StyleBoxFlat BackgroundColor="#0B0B0BEE" BorderColor="#A84B00" BorderThickness="1" />
                     </PanelContainer.PanelOverride>
-                    <BoxContainer Orientation="Vertical" Margin="10">
+                    <BoxContainer Orientation="Vertical" VerticalExpand="True" Margin="10">
                         <Label Text="{Loc 'store-ui-selected-label'}" FontColorOverride="#FF7A00" />
                         <PanelContainer StyleClasses="LowDivider" Margin="0 2 0 8" />
                         <RichTextLabel Name="SelectedItemName" MinHeight="38" Margin="0 0 0 2" />
@@ -74,7 +76,7 @@
                             HorizontalExpand="True"
                             SetHeight="108"
                             Stretch="KeepAspectCentered" />
-                        <PanelContainer Margin="0 12 0 8">
+                        <PanelContainer Name="StatsPanel" Margin="0 12 0 8">
                             <PanelContainer.PanelOverride>
                                 <gfx:StyleBoxFlat BackgroundColor="#090909" BorderColor="#5B2B08" BorderThickness="1" />
                             </PanelContainer.PanelOverride>
@@ -128,13 +130,17 @@
                             </BoxContainer>
                         </PanelContainer>
 
-                        <ScrollContainer HScrollEnabled="False" SetHeight="104" Margin="0 4 0 8">
+                        <ScrollContainer
+                            HScrollEnabled="False"
+                            VerticalExpand="True"
+                            MinHeight="42"
+                            Margin="0 4 0 8">
                             <RichTextLabel
                                 Name="SelectedItemDescription"
                                 HorizontalExpand="True" />
                         </ScrollContainer>
 
-                        <PanelContainer SetHeight="82">
+                        <PanelContainer SetHeight="82" VerticalAlignment="Bottom">
                             <PanelContainer.PanelOverride>
                                 <gfx:StyleBoxFlat BackgroundColor="#090909" BorderColor="#5B2B08" BorderThickness="1" />
                             </PanelContainer.PanelOverride>

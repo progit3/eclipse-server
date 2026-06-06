@@ -11,6 +11,13 @@ public enum StoreUiKey : byte
 }
 
 [Serializable, NetSerializable]
+public enum StoreUiTheme : byte
+{
+    Legion,
+    Spellbook
+}
+
+[Serializable, NetSerializable]
 public sealed class StoreUpdateState : BoundUserInterfaceState
 {
     public readonly HashSet<ListingDataWithCostModifiers> Listings;
@@ -21,12 +28,15 @@ public sealed class StoreUpdateState : BoundUserInterfaceState
 
     public readonly bool AllowRefund;
 
-    public StoreUpdateState(HashSet<ListingDataWithCostModifiers> listings, Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> balance, bool showFooter, bool allowRefund)
+    public readonly StoreUiTheme Theme;
+
+    public StoreUpdateState(HashSet<ListingDataWithCostModifiers> listings, Dictionary<ProtoId<CurrencyPrototype>, FixedPoint2> balance, bool showFooter, bool allowRefund, StoreUiTheme theme)
     {
         Listings = listings;
         Balance = balance;
         ShowFooter = showFooter;
         AllowRefund = allowRefund;
+        Theme = theme;
     }
 }
 

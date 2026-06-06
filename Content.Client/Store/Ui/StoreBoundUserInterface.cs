@@ -70,6 +70,7 @@ public sealed class StoreBoundUserInterface : BoundUserInterface
             case StoreUpdateState msg:
                 _listings = msg.Listings;
 
+                _menu?.SetTheme(msg.Theme);
                 _menu?.UpdateBalance(msg.Balance);
 
                 UpdateListingsWithSearchFilter();

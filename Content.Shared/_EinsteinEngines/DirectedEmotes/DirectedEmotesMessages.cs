@@ -55,6 +55,22 @@ public sealed class DirectedEmotesAddParticipantMessage : NetMessage
     }
 }
 
+public sealed class DirectedEmotesLeaveMessage : NetMessage
+{
+    public override MsgGroups MsgGroup => MsgGroups.Command;
+    public int ConversationId;
+
+    public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
+    {
+        ConversationId = buffer.ReadVariableInt32();
+    }
+
+    public override void WriteToBuffer(NetOutgoingMessage buffer, IRobustSerializer serializer)
+    {
+        buffer.WriteVariableInt32(ConversationId);
+    }
+}
+
 public sealed class DirectedEmotesStateMessage : NetMessage
 {
     public override MsgGroups MsgGroup => MsgGroups.Command;

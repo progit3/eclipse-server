@@ -52,6 +52,7 @@ public sealed partial class StoreMenu : DefaultWindow
     private string _selectedPrice = string.Empty;
     private string _selectedDiscount = string.Empty;
     private bool _selectedHasBalance;
+    private StoreUiTheme _theme = StoreUiTheme.Legion;
 
     public StoreMenu()
     {
@@ -69,6 +70,35 @@ public sealed partial class StoreMenu : DefaultWindow
         SortOptionButton.SelectId(0);
         FilterOptionButton.AddItem(Loc.GetString("store-ui-filter-all"));
         FilterOptionButton.SelectId(0);
+
+        UpdateSelectedPanel();
+    }
+
+    public void SetTheme(StoreUiTheme theme)
+    {
+        if (_theme == theme)
+            return;
+
+        _theme = theme;
+
+        switch (_theme)
+        {
+            case StoreUiTheme.Spellbook:
+                Title = Loc.GetString("store-ui-spellbook-title");
+                HeaderTitle.Text = Loc.GetString("store-ui-spellbook-title-caps");
+                HeaderSubtitle.Text = Loc.GetString("store-ui-spellbook-subtitle");
+                HeaderIcon.TexturePath = "/Textures/Objects/Magic/magicactions.rsi/spell_default.png";
+                StatsPanel.Visible = false;
+                break;
+
+            default:
+                Title = Loc.GetString("store-ui-legion-terminal-title");
+                HeaderTitle.Text = Loc.GetString("store-ui-legion-terminal-title-caps");
+                HeaderSubtitle.Text = Loc.GetString("store-ui-legion-terminal-subtitle");
+                HeaderIcon.TexturePath = "/Textures/Interface/Actions/shop.png";
+                StatsPanel.Visible = true;
+                break;
+        }
 
         UpdateSelectedPanel();
     }
@@ -374,7 +404,9 @@ public sealed partial class StoreMenu : DefaultWindow
         var description = ListingLocalisationHelpers.GetLocalisedDescriptionOrEntityDescription(_selectedListing, _prototypeManager);
 
         SelectedItemName.SetMarkup(GetSelectedNameMarkup(name));
-        SelectedItemSubtitle.Text = Loc.GetString("store-ui-selected-subtitle");
+        SelectedItemSubtitle.Text = Loc.GetString(_theme == StoreUiTheme.Spellbook
+            ? "store-ui-selected-spell-subtitle"
+            : "store-ui-selected-subtitle");
         SelectedItemDescription.SetMessage(description);
         SelectedItemTexture.Texture = _selectedTexture;
         SelectedFooterTexture.Texture = _selectedTexture;

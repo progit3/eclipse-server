@@ -436,6 +436,11 @@ CentcomIDCardLegion: null
 AntimovCircuitBoard: null
 OverlordCircuitBoard: null
 
+# 2026-06-05 - Eclipse
+PosterLegitEidosEmpire: PosterLegitCentComm
+TargetSyndicate: TargetLegion
+ToolboxSyndicateFilled: ToolboxAshLegionFilled
+
 # 2024-09-08
 HatBase: null
 

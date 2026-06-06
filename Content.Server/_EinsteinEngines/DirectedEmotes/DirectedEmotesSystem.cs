@@ -37,6 +37,7 @@ public sealed class DirectedEmotesSystem : EntitySystem
         _net.RegisterNetMessage<DirectedEmotesStartMessage>(OnStart);
         _net.RegisterNetMessage<DirectedEmotesSendMessage>(OnSend);
         _net.RegisterNetMessage<DirectedEmotesAddParticipantMessage>(OnAddParticipant);
+        _net.RegisterNetMessage<DirectedEmotesLeaveMessage>(OnLeave);
         _net.RegisterNetMessage<DirectedEmotesStateMessage>();
         _net.RegisterNetMessage<DirectedEmotesChatMessage>();
     }
@@ -143,6 +144,25 @@ public sealed class DirectedEmotesSystem : EntitySystem
         SendSystemLine(conversation, Loc.GetString("directed-emotes-dialog-participant-added", ("player", GetSessionName(candidate))));
     }
 
+    private void OnLeave(DirectedEmotesLeaveMessage message)
+    {
+        var session = _players.GetSessionByChannel(message.MsgChannel);
+        if (!_conversations.TryGetValue(message.ConversationId, out var conversation)
+            || !conversation.Participants.Contains(session.UserId))
+        {
+            return;
+        }
+
+        RemoveParticipant(conversation, session.UserId);
+        if (conversation.Participants.Count == 0)
+        {
+            _conversations.Remove(conversation.Id);
+            return;
+        }
+
+        SendState(conversation);
+    }
+
     private void AddParticipant(DirectedConversation conversation, ICommonSession session)
     {
         conversation.Participants.Add(session.UserId);
@@ -190,6 +210,9 @@ public sealed class DirectedEmotesSystem : EntitySystem
         conversation.Participants.Remove(userId);
         conversation.ActiveParticipants.Remove(userId);
         _participantConversations.Remove(userId);
+
+        if (conversation.Anchor == userId && conversation.Participants.Count > 0)
+            conversation.Anchor = conversation.Participants.First();
     }
 
     private ICommonSession? GetNearbyCandidate(DirectedConversation conversation, EntityUid anchor)
@@ -309,7 +332,7 @@ public sealed class DirectedEmotesSystem : EntitySystem
     private sealed class DirectedConversation(int id, NetUserId anchor)
     {
         public readonly int Id = id;
-        public readonly NetUserId Anchor = anchor;
+        public NetUserId Anchor = anchor;
         public readonly HashSet<NetUserId> Participants = [];
         public readonly HashSet<NetUserId> ActiveParticipants = [];
     }

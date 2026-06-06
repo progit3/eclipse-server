@@ -44,6 +44,7 @@ public sealed class DirectedEmotesUIController : UIController, IOnStateChanged<G
         _net.RegisterNetMessage<DirectedEmotesStartMessage>();
         _net.RegisterNetMessage<DirectedEmotesSendMessage>();
         _net.RegisterNetMessage<DirectedEmotesAddParticipantMessage>();
+        _net.RegisterNetMessage<DirectedEmotesLeaveMessage>();
         _net.RegisterNetMessage<DirectedEmotesStateMessage>(OnState);
         _net.RegisterNetMessage<DirectedEmotesChatMessage>(OnChatMessage);
     }
@@ -296,6 +297,19 @@ public sealed class DirectedEmotesUIController : UIController, IOnStateChanged<G
 
     private void OnDialogClosed()
     {
+        LeaveDialog();
+    }
+
+    private void LeaveDialog()
+    {
+        if (_conversationId == 0)
+            return;
+
+        _net.ClientSendMessage(new DirectedEmotesLeaveMessage
+        {
+            ConversationId = _conversationId
+        });
+
         _conversationId = 0;
     }
 
@@ -304,6 +318,7 @@ public sealed class DirectedEmotesUIController : UIController, IOnStateChanged<G
         if (_dialogWindow == null)
             return;
 
+        LeaveDialog();
         _dialogWindow.OnSend -= SendDialogMessage;
         _dialogWindow.OnAddParticipant -= AddParticipant;
         _dialogWindow.OnClose -= OnDialogClosed;

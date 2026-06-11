@@ -1290,16 +1290,16 @@
       hands:
       - item: Crowbar
       - item: Emag
-      - item: AccessBreaker
+      - item: AccessBreakerAshLegion
       - item: PinpointerLegionNuclear
     - type: BorgModuleIcon
       icon: { sprite: Interface/Actions/actions_borg.rsi, state: legion-operative-module }
 
 - type: entity
   parent: [ BaseBorgModuleLegion, BaseProviderBorgModule, BaseLegionContraband ]
-  id: BorgModuleEsword
-  name: energy sword cyborg module
-  description: A weapons module that comes with an energy sword.
+  id: BorgModulePlasmaSwordAlt
+  name: Plasma Sword Alt cyborg module
+  description: A weapons module that comes with an Cyborg Plasma SwordAlt.
   components:
   - type: Sprite
     layers:
@@ -1307,16 +1307,16 @@
     - state: icon-legion
   - type: ItemBorgModule
     hands:
-    - item: CyborgEnergySword
+    - item: CyborgPlasmaSwordAlt
     - item: PinpointerLegionNuclear
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: legion-esword-module }
 
 - type: entity
-  id: BorgModuleDoubleEsword
+  id: BorgModuleCyborgPlasmaScythe
   parent: [ BaseBorgModuleLegion, BaseProviderBorgModule, BaseLegionContraband ]
-  name: double energy sword cyborg module
-  description: A weapons module that comes with a double energy sword.
+  name: Scythe cyborg module
+  description: A weapons module that comes with plasma Scythe.
   components:
   - type: Sprite
     layers:
@@ -1324,7 +1324,7 @@
     - state: icon-legion
   - type: ItemBorgModule
     hands:
-    - item: CyborgEnergySwordDouble
+    - item: CyborgPlasmaScythe
     - item: PinpointerLegionNuclear
   - type: BorgModuleIcon
     icon: { sprite: Interface/Actions/actions_borg.rsi, state: legion-desword-module }

@@ -177,7 +177,7 @@
     - 0,0,8,4
 
 - type: entity
-  parent: [ ClothingBackpackDuffelLegion, BaseLegionContraband ]
+  parent: [ ClothingBackpackDuffelAshLegion, BaseLegionContraband ]
   id: ClothingBackpackDuffelLegionBundle
   abstract: true
   components:

@@ -10,7 +10,7 @@
   id: NukieDeliveryMedicineBundle
   name: nukie-delivery-medicine-bundle-name
   description: nukie-delivery-medicine-bundle-desc
-  productEntity: ClothingBackpackDuffelLegionFilledMedicine
+  productEntity: ClothingBackpackDuffelAshLegionMedical
   categories:
   - NukieDelivery
   restockTime: 1200

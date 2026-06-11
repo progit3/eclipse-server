@@ -177,8 +177,8 @@
     - id: ClothingBackpackDuffelLegionPyjamaBundle
     - id: ClothingBeltMilitaryWebbing
     - id: ClothingShoesBootsCombatFilled
-    - id: ToolboxLegionFilled
-    - id: BalloonSyn
+    - id: ToolboxAshLegionFilled
+    - id: BalloonAshLegion
     - id: WeaponSniperMosin
       weight: 2
     - id: ClothingHandsKnuckleDustersLegion
@@ -311,8 +311,8 @@
     children:
     - id: CyberPen
     - id: CigPackLegion
-    - id: SoapLegion
-    - id: LegionPersonalAI
+    - id: SoapAshLegion
+    - id: InteqPersonalAI
     - id: UplinkLighterBox
 
 - type: entityTable

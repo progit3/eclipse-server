@@ -6719,7 +6719,7 @@ entities:
     - type: Transform
       pos: 19.5,-12.5
       parent: 1
-- proto: CrateLegion
+- proto: CrateAshLegion
   entities:
   - uid: 148
     components:
@@ -19888,7 +19888,7 @@ entities:
     - type: Transform
       pos: 13.5,-16.5
       parent: 1
-- proto: LegionPersonalAI
+- proto: InteqPersonalAI
   entities:
   - uid: 3049
     components:
@@ -20330,7 +20330,7 @@ entities:
     - type: Transform
       pos: 18.5,-1.5
       parent: 1
-- proto: ToolboxLegionFilled
+- proto: ToolboxAshLegionFilled
   entities:
   - uid: 3121
     components:
@@ -20479,7 +20479,7 @@ entities:
     - type: Transform
       pos: 13.5,-11.5
       parent: 1
-- proto: VendingMachineLegionDrobe
+- proto: VendingMachineAshLegionDrobe
   entities:
   - uid: 3143
     components:
@@ -22276,7 +22276,7 @@ entities:
     - type: Transform
       pos: 31.5,-18.5
       parent: 1
-- proto: WeaponPistolViper
+- proto: WeaponPistolAshLegionCommissar
   entities:
   - uid: 3500
     components:

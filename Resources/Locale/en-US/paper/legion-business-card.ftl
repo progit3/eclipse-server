@@ -1,2 +1,2 @@
-legion-business-card-base = {"           "} It's nothing personal, it's just business
+legion-business-card-base = {"           "} The Death of the Endos Empire!
 

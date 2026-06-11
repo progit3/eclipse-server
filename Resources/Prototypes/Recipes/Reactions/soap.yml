@@ -70,7 +70,7 @@
       entity: SoapHomemade
 
 - type: reaction
-  id: CreateSoapLegion
+  id: CreateSoapAshLegion
   impact: Medium
   quantized: true
   minTemp: 373
@@ -85,7 +85,7 @@
       amount: 5
   effects:
     - !type:SpawnEntity
-      entity: SoapLegion
+      entity: SoapAshLegion
 
 - type: reaction
   id: CreateSoapOmega

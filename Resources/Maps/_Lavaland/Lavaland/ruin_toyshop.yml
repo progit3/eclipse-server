@@ -279,7 +279,7 @@ entities:
     - type: Physics
       angularDamping: 0
       linearDamping: 0
-- proto: BalloonSyn
+- proto: BalloonAshLegion
   entities:
   - uid: 23
     components:
@@ -2970,7 +2970,7 @@ entities:
     - type: Transform
       pos: 9.5,13.5
       parent: 1
-- proto: VendingMachineLegionDrobe
+- proto: VendingMachineAshLegionDrobe
   entities:
   - uid: 448
     components:

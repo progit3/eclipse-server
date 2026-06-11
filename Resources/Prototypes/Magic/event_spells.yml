@@ -32,7 +32,7 @@
     event: !type:RandomGlobalSpawnSpellEvent
       makeSurvivorAntagonist: true
       spawns:
-      - id: WeaponPistolViper
+      - id: WeaponPistolAshLegionCommissar
         orGroup: Guns
       - id: WeaponPistolCobra
         orGroup: Guns

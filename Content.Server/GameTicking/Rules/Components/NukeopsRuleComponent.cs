@@ -12,7 +12,7 @@ namespace Content.Server.GameTicking.Rules.Components;
 public sealed partial class NukeopsRuleComponent : Component
 {
     /// <summary>
-    /// What will happen if all of the nuclear operatives will die. Used by LoneOpsSpawn event.
+    /// What will happen if all of the nuclear operatives will die. Used by OpsSpawn event.
     /// </summary>
     [DataField]
     public RoundEndBehavior RoundEndBehavior = RoundEndBehavior.ShuttleCall;

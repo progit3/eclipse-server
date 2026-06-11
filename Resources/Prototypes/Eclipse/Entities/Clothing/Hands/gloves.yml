@@ -24,7 +24,7 @@
   parent: [ClothingHandsKnuckleDustersLegion, BaseAshLegionContraband]
   id: ClothingHandsKnuckleDustersAshLegion
   name: AshLegion knuckle dusters
-  description: "Plastitanium knuckle dusters branded with the blood-red S. A real man beats someone to death with these."
+  description: "Plastitanium knuckle dusters branded with the Yellow L. A real man beats someone to death with these."
   components:
   - type: Sprite
     sprite: Eclipse/Clothing/Hands/Gloves/KnuckleDusters/inteqknuckleduster.rsi

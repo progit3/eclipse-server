@@ -58282,7 +58282,7 @@ entities:
     - type: Transform
       pos: -18.5,-4.5
       parent: 2
-- proto: VendingMachineLegionDrobe
+- proto: VendingMachineAshLegionDrobe
   entities:
   - uid: 5713
     components:

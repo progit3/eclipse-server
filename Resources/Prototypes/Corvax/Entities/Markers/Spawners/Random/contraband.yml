@@ -20,7 +20,7 @@
         - ClothingOuterEVASuitLegion
         - ClothingHeadHelmetLegion
         - ClothingHeadHelmetSwatLegion
-        - ToolboxLegionFilled
+        - ToolboxAshLegionFilled
         - ClothingOuterVestWeb
         - LegionJawsOfLife
         - HappyHonkNukie
@@ -36,7 +36,7 @@
         - ClothingOuterRobesCult
         - ClothingShoesCult
         # Useless non-contra legion loot
-        - BalloonSyn
+        - BalloonAshLegion
         - ClothingUniformJumpsuitPyjamaLegionRed
         - ClothingUniformJumpsuitPyjamaLegionBlack
         - ClothingUniformJumpsuitPyjamaLegionPink
@@ -79,7 +79,7 @@
         - ClothingShoesBootsMagLegion
         - ClothingHeadsetAltLegion
         - Stimpack
-        - EncryptionKeyLegion
+        - EncryptionKeyAshLegion
         - LegionSpongeBox
         - PenExplodingBox
         - HypopenBox
@@ -98,12 +98,12 @@
         - CyberPen
         - ClothingHandsGlovesBoxingRiggedRed
         - ClothingMaskGasLegion
-        - RubberStampLegion
-        - SoapLegion
+        - RubberStampAshLegion
+        - SoapAshLegion
         - DrinkNukieCan
         - StimpackMini
         - NukeDiskFake
-        - LegionPersonalAI
+        - InteqPersonalAI
         - Telecrystal1
         - LegionIDCard
         - BaseUplinkRadio
@@ -162,7 +162,7 @@
         - ClothingHandsChameleon
         - ClothingShoesChameleon
         - ClothingUniformJumpsuitChameleon
-        - EncryptionKeyLegion
+        - EncryptionKeyAshLegion
         - LegionSpongeBox
         - EnergyDagger
         - EmpImplanter

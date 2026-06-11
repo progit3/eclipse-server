@@ -895,13 +895,13 @@
   id: MagazineMagnum # WeaponPistolN1984
 
 - type: Tag
-  id: MagazinePistol # WeaponPistolMk58, WeaponPistolViper, ClothingBeltSecurity
+  id: MagazinePistol # WeaponPistolMk58, WeaponPistolCommissioner, ClothingBeltSecurity
 
 - type: Tag
   id: MagazinePistolCaselessRifle # WeaponPistolCobra
 
 - type: Tag
-  id: MagazinePistolHighCapacity # WeaponPistolViper
+  id: MagazinePistolHighCapacity # WeaponPistolCommissioner
 
 - type: Tag
   id: MagazinePistolSubMachineGun # WeaponSubMachineGunC20r, WeaponSubMachineGunDrozd, WeaponSubMachineGunAtreides

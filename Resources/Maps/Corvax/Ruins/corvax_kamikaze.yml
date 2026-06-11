@@ -10354,7 +10354,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 9.260035,4.570198
       parent: 1
-- proto: WeaponPistolViper
+- proto: WeaponPistolAshLegionCommissar
   entities:
   - uid: 1317
     components:

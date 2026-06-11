@@ -10,7 +10,7 @@
     sprite: _Orion/Clothing/Uniforms/jumpsuit/inteq_formal.rsi
 
 - type: entity
-  parent: UnsensoredClothingUniformBase
+  parent: [UnsensoredClothingUniformBase, BaseLegionContraband]
   id: ClothingUniformJumpsuitAshLegionOperative
   name: AshLegion operative jumpsuit
   description: Uniform for AshLegion operatives performing tactical operations in deep space.

@@ -3794,7 +3794,7 @@ entities:
     - type: Transform
       pos: -8.5,8.5
       parent: 1
-- proto: LegionPersonalAI
+- proto: InteqPersonalAI
   entities:
   - uid: 575
     components:

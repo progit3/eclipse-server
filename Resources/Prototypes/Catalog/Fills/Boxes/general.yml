@@ -424,7 +424,7 @@
 - type: entity
   name: legion encryption key box
   parent: [BoxEncryptionKeyPassenger, BaseLegionContraband]
-  id: BoxEncryptionKeyLegion
+  id: BoxEncryptionKeyAshLegion
   description: Two legion encryption keys for the price of one. Miniaturized for ease of use.
   components:
   - type: Item
@@ -432,7 +432,7 @@
   - type: EntityTableContainerFill
     containers:
       storagebase:
-        id: EncryptionKeyLegion
+        id: EncryptionKeyAshLegion
         amount: 2
   - type: Storage
 

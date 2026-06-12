@@ -83,3 +83,9 @@
   parent: AshLegionOperativeGearFull
   equipment:
     pocket2: BaseUplinkRadio60TC
+  storage:
+    back:
+    - WeaponPistolAshLegionCommissar
+    - PinpointerSyndicateNuclear
+    - DeathAcidifierImplanterAshLegion
+    - AshHackingDevice

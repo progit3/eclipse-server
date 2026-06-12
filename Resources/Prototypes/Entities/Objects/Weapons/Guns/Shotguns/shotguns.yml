@@ -94,6 +94,7 @@
       gun_magazine: !type:ContainerSlot
       gun_chamber: !type:ContainerSlot
   - type: MagazineAmmoProvider
+  - type: MagazineShotgunReload
   - type: MagazineVisuals
     magState: mag
     steps: 1

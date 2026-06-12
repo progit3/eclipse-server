@@ -85,9 +85,6 @@
   - type: RandomHumanoidAppearance
     randomizeName: false
   - type: NukeOperative
-  - type: Loadout
-    prototypes: [AshLegionLoneOperativeGearFull]
-    roleLoadout: [ RoleSurvivalLegion ]
   - type: RandomMetadata
     nameSegments:
     - NamesLegionPrefix

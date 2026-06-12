@@ -132,6 +132,11 @@
     cableType: HighVoltage
     cuttingQuality: ProtoCoreCableManipulation
     cuttingDelay: 4
+  - type: NodeContainer
+    nodes:
+      power:
+        !type:ProtoCoreCableNode
+        nodeGroupID: HVPower
 
 - type: entity
   id: ProtoCoreCableUncuttable

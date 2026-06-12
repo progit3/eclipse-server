@@ -34,6 +34,7 @@
   - type: ActionGrant
     actions:
     - ActionJumpToCore
+    - ActionSurvCameraLights
     - ActionAIViewLaws
     - ActionAIShowRobotics
   - type: UserInterface
@@ -263,6 +264,7 @@
     batteryRechargeEfficiency: 0 # Setting to zero until the light flickering issue associated with dynamic power loads is fixed
   - type: StationAiCore
   - type: StationAiVision
+  - type: StationAiEarlyLeave
   - type: InteractionOutline
   - type: Sprite
     snapCardinals: true

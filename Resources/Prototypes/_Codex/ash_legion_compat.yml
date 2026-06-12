@@ -296,5 +296,41 @@
   id: MobCarpBrownAshLegion
 
 - type: entity
-  parent: AshLegion
+  parent: BaseNukeopsRule
   id: LoneOpsSpawn
+  components:
+  - type: StationEvent
+    weight: 3
+    earliestStart: 30
+    reoccurrenceDelay: 20
+    minimumPlayers: 20
+    duration: null
+    maxOccurrences: 1
+  - type: LoadMapRule
+    gridPath: /Maps/Shuttles/inteqinfiltrator.yml
+  - type: NukeopsRule
+    canEnableWarOps: false
+    roundEndBehavior: Nothing
+    welcomeText: ash-legion-welcome
+    briefingText: ash-legion-briefing
+  - type: AntagSpawner
+    prototype: MobHumanLoneNuclearOperative
+  - type: AntagSelection
+    agentName: roles-antag-ash-legion-name
+    definitions:
+    - prefRoles: [ AshLegion ]
+      fallbackRoles: [ Nukeops ]
+      spawnerPrototype: SpawnPointGhostLoneOpsAshLegion
+      min: 1
+      max: 1
+      pickPlayer: false
+      startingGear: AshLegionLoneOperativeGearFull
+      roleLoadout:
+      - RoleSurvivalLegion
+      components:
+      - type: NukeOperative
+      - type: NpcFactionMember
+        factions:
+        - Legion
+      mindRoles:
+      - MindRoleLoneops

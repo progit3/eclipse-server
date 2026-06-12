@@ -275,6 +275,35 @@ namespace Content.Server.Power.EntitySystems
             };
         }
 
+        public bool HasAvailableSupply(PowerState.Network network, float threshold = 0f)
+        {
+            var supply = 0f;
+
+            foreach (var supplyId in network.Supplies)
+            {
+                var networkSupply = _powerState.Supplies[supplyId];
+                if (!networkSupply.Enabled || networkSupply.Paused)
+                    continue;
+
+                supply += networkSupply.MaxSupply;
+                if (supply > threshold)
+                    return true;
+            }
+
+            foreach (var batteryId in network.BatterySupplies)
+            {
+                var battery = _powerState.Batteries[batteryId];
+                if (!battery.Enabled || battery.Paused || !battery.CanDischarge || battery.CurrentStorage <= 0f)
+                    continue;
+
+                supply += Math.Min(battery.MaxSupply, battery.CurrentStorage);
+                if (supply > threshold)
+                    return true;
+            }
+
+            return false;
+        }
+
         public override void Update(float frameTime)
         {
             base.Update(frameTime);

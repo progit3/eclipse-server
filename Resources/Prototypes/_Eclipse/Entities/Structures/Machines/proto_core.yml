@@ -45,8 +45,8 @@
     criticalThreshold: 120
     emergencyShuttleTime: 180
     meltdownMusic:
-      path: /Audio/Corvax/StationEvents/level.ogg
-    meltdownMusicDuration: 109.6
+      path: /Audio/_Eclipse/ProtoCore/protocore_meltdown.ogg
+    meltdownMusicDuration: 203
     explosionTotalIntensity: 200000
     explosionMaxTileIntensity: 200
     explosionIntensitySlope: 5
@@ -133,6 +133,9 @@
   id: ProtoCoreSMES
   name: proto core SMES
   description: A protected superconducting storage unit tuned for proto core stabilization.
-  suffix: Proto Core, 16MJ
+  suffix: Proto Core, 8MJ
   components:
   - type: ProtoCoreSmes
+  - type: Battery
+    maxCharge: 8000000
+    startingCharge: 8000000

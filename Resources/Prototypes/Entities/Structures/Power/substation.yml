@@ -246,15 +246,28 @@
   description: A substation with a priority input and an emergency reserve input.
   suffix: Automatic Transfer, 2.5MJ
   components:
+  - type: Sprite
+    sprite: Structures/Power/substation.rsi
+    snapCardinals: true
+    layers:
+    - state: substation
+    - state: screen
+      shader: unshaded
+    - state: full
+      shader: unshaded
   - type: AutomaticTransferPower
+    switchCooldown: 0
   - type: NodeContainer
     examinable: true
     nodes:
       main:
-        !type:CableDeviceNode
+        !type:FilteredCableDeviceNode
+        allowedCablePrototypes:
+        - CableHV
+        - CableHVUncuttable
         nodeGroupID: HVPower
       emergency:
-        !type:CableDeviceNode
+        !type:ProtoCoreCableDeviceNode
         nodeGroupID: HVPower
       output:
         !type:CableDeviceNode

@@ -9,6 +9,7 @@ namespace Content.Server.Power.EntitySystems;
 public sealed class AutomaticTransferPowerSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly PowerNetSystem _powerNet = default!;
 
     public override void Initialize()
     {
@@ -74,6 +75,6 @@ public sealed class AutomaticTransferPowerSystem : EntitySystem
             return false;
 
         return node.NodeGroup is IPowerNet powerNet
-               && powerNet.NetworkNode.LastCombinedMaxSupply > threshold;
+               && _powerNet.HasAvailableSupply(powerNet.NetworkNode, threshold);
     }
 }

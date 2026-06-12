@@ -152,7 +152,8 @@ public sealed class CharacterInfoSystem : EntitySystem
 
             personalTasks = GetOrGeneratePersonalTasks(mindId);
             UpdatePersonalTasks(mindId, mind, entity, roundEnd: false);
-            personalTasks = Comp<PersonalTasksComponent>(mindId).Tasks;
+            if (TryComp<PersonalTasksComponent>(mindId, out var tasks))
+                personalTasks = tasks.Tasks;
 
             briefing = _roles.MindGetBriefing(mindId);
         }

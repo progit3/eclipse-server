@@ -22,6 +22,8 @@ using Content.Shared.Power;
 using Content.Shared.Power.EntitySystems;
 using Content.Shared.Repairable;
 using Content.Shared.StationAi;
+using Content.Shared.Storage.Components;
+using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Verbs;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -52,6 +54,7 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     [Dependency] private readonly SharedContainerSystem _containers = default!;
     [Dependency] private readonly SharedDoorSystem _doors = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly SharedEntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly SharedElectrocutionSystem _electrify = default!;
     [Dependency] private readonly SharedEyeSystem _eye = default!;
     [Dependency] protected readonly SharedMapSystem Maps = default!;
@@ -72,8 +75,8 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     // StationAiOverlay handles the static overlay. It also handles interaction blocking on client and server
     // for anything under it.
 
-    [Dependency] private readonly EntityQuery<BroadphaseComponent> _broadphaseQuery = default!;
-    [Dependency] private readonly EntityQuery<MapGridComponent> _gridQuery = default!;
+    private EntityQuery<BroadphaseComponent> _broadphaseQuery;
+    private EntityQuery<MapGridComponent> _gridQuery;
 
     private static readonly EntProtoId DefaultAi = "StationAiBrain";
     private readonly ProtoId<ChatNotificationPrototype> _downloadChatNotificationPrototype = "IntellicardDownload";
@@ -82,10 +85,14 @@ public abstract partial class SharedStationAiSystem : EntitySystem
     {
         base.Initialize();
 
+        _broadphaseQuery = GetEntityQuery<BroadphaseComponent>();
+        _gridQuery = GetEntityQuery<MapGridComponent>();
+
         InitializeAirlock();
         InitializeHeld();
         InitializeLight();
         InitializeCustomization();
+        InitializeBorgCharger();
 
         SubscribeLocalEvent<StationAiWhitelistComponent, BoundUserInterfaceCheckRangeEvent>(OnAiBuiCheck);
 
@@ -642,6 +649,25 @@ public abstract partial class SharedStationAiSystem : EntitySystem
 
             aliveAis.Add((mind, mindComp));
         }
+    }
+}
+
+public abstract partial class SharedStationAiSystem
+{
+    private void InitializeBorgCharger()
+    {
+        SubscribeLocalEvent<EntityStorageComponent, StationAiToggleBorgChargerEvent>(OnToggleBorgCharger);
+    }
+
+    private void OnToggleBorgCharger(Entity<EntityStorageComponent> ent, ref StationAiToggleBorgChargerEvent args)
+    {
+        if (!PowerReceiver.IsPowered(ent.Owner))
+        {
+            ShowDeviceNotRespondingPopup(args.User);
+            return;
+        }
+
+        _entityStorage.ToggleOpen(user: args.User, ent.Owner, ent.Comp);
     }
 }
 

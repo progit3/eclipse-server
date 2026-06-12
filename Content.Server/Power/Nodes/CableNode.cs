@@ -5,7 +5,7 @@ using Robust.Shared.Map.Components;
 namespace Content.Server.Power.Nodes
 {
     [DataDefinition]
-    public sealed partial class CableNode : Node
+    public partial class CableNode : Node
     {
         public override IEnumerable<Node> GetReachableNodes(
             Entity<TransformComponent> xform,
@@ -29,11 +29,24 @@ namespace Content.Server.Power.Nodes
             {
                 if (node is CableNode && node != this)
                 {
+                    if (node is ICableConnectionFilter filter && !filter.AllowsCable(Owner, entMan))
+                        continue;
+
+                    nodeDirs.Add((dir, node));
+                }
+
+                if (node is IDirectionalCableNode directionalNode
+                    && dir != Direction.Invalid
+                    && directionalNode.ConnectsToCable(Owner, dir.GetOpposite(), xformQuery.GetComponent(node.Owner), entMan))
+                {
                     nodeDirs.Add((dir, node));
                 }
 
                 if (node is CableDeviceNode && dir == Direction.Invalid)
                 {
+                    if (node is ICableConnectionFilter filter && !filter.AllowsCable(Owner, entMan))
+                        continue;
+
                     // device on same tile
                     nodeDirs.Add((Direction.Invalid, node));
                 }

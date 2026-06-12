@@ -123,10 +123,38 @@
         state: radiation
 
 - type: entity
+  categories: [ Spawner ]
+  parent: MarkerBase
+  id: SpawnPointLoneOpsAshLegion
+  name: Ash Legion lone operative spawn point
+  suffix: LoneOpsAshLegion
+  components:
+  - type: SpawnPoint
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: Structures/Wallmounts/signs.rsi
+        state: radiation
+
+- type: entity
+  categories: [ HideSpawnMenu, Spawner ]
+  parent: SpawnPointLoneNukeOperative
+  id: SpawnPointGhostLoneOpsAshLegion
+  components:
+  - type: GhostRole
+    name: ghost-role-information-loneop-name
+    description: ghost-role-information-loneop-description
+    rules: ghost-role-information-loneop-rules
+    mindRoles:
+    - MindRoleLoneops
+
+- type: entity
   categories: [ HideSpawnMenu, Spawner ]
   parent: SpawnPointLoneNukeOperative
   id: SpawnPointNukeopsCommander
   components:
+  - type: SpawnPoint
   - type: GhostRole
     name: roles-antag-nuclear-operative-commander-name
     description: roles-antag-nuclear-operative-commander-objective
@@ -139,6 +167,7 @@
   parent: SpawnPointLoneNukeOperative
   id: SpawnPointNukeopsMedic
   components:
+  - type: SpawnPoint
   - type: GhostRole
     name: roles-antag-nuclear-operative-agent-name
     description: roles-antag-nuclear-operative-agent-objective
@@ -151,6 +180,7 @@
   parent: SpawnPointLoneNukeOperative
   id: SpawnPointNukeopsOperative
   components:
+  - type: SpawnPoint
   - type: GhostRole
     name: roles-antag-nuclear-operative-name
     description: roles-antag-nuclear-operative-objective

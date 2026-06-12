@@ -1,0 +1,26 @@
+- type: entity
+  parent: BaseItem
+  id: 1
+  name: BoomBox
+  description: Слушать музыку и бегать одновременно никто не запрещал.
+  components:
+    - type: Sprite
+      sprite: _Backmen/Objects/Devices/boombox.rsi
+      size: little
+      state: "off"
+
+      -type: Item
+      onState: on
+      offState: off
+      selectState: select
+    - type: Jukebox
+      onState: off
+      offState: off
+      selectState: select
+
+    - type: ActivatableUI
+      key: enum.JukeboxUiKey.Key
+    - type: UserInterface
+      interfaces:
+        enum.JukeboxUiKey.Key:
+          type: JukeboxBoundUserInterface

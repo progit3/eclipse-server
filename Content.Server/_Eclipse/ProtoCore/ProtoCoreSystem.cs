@@ -403,11 +403,18 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
             return;
         }
 
+        StartMeltdown(core);
+        _audio.PlayPvs(_beep, ent);
+    }
+
+    public void StartMeltdown(Entity<ProtoCoreComponent> core, float? remainingTime = null)
+    {
         core.Comp.State = ProtoCoreState.Meltdown;
-        core.Comp.RemainingTime = core.Comp.MeltdownTime;
+        core.Comp.RemainingTime = remainingTime ?? core.Comp.MeltdownTime;
         core.Comp.WarningStageStarted = false;
         core.Comp.CriticalStageStarted = false;
         core.Comp.EmergencyShuttleCalled = false;
+        core.Comp.Exploded = false;
         var storage = GetCoreNetworkStorage(core.Owner);
         core.Comp.LastStorageCharge = storage.Charge;
         core.Comp.LastStorageCapacity = storage.Capacity;
@@ -420,7 +427,9 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
             Loc.GetString("proto-core-announcement-meltdown-started", ("time", FormatTime(core.Comp.RemainingTime))),
             sender: Loc.GetString("proto-core-announcement-sender"),
             colorOverride: Color.Red);
-        _audio.PlayPvs(_beep, ent);
+
+        if (core.Comp.RemainingTime <= core.Comp.MeltdownMusicDuration)
+            EnterWarningStage(core.Owner, core.Comp);
     }
 
     private void OnStabilizeDoAfter(Entity<ProtoCoreConsoleComponent> ent, ref ProtoCoreStabilizeDoAfterEvent args)
@@ -492,6 +501,7 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
             return;
 
         core.CriticalStageStarted = true;
+        EnterWarningStage(uid, core);
         core.State = ProtoCoreState.Critical;
         UpdateConsoleUisForCore((uid, core));
         SetRuleResult(ProtoCoreState.Critical);

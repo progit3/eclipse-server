@@ -64,3 +64,9 @@ ash-legion-roundend-critical = The proto core reached a critical state.
 ash-legion-roundend-stabilized = The proto core was stabilized.
 ash-legion-roundend-started = The Ash Legion activated the proto core meltdown procedure.
 steal-target-groups-proto-core-activation-key = activation key
+
+cmd-protocorearm-desc = Start the proto core meltdown timer. You can set timer directly. Uid is optional.
+cmd-protocorearm-help = protocorearm <timer> <uid>
+cmd-protocorearm-not-found = Can't find any entity with a ProtoCoreComponent.
+cmd-protocorearm-1-help = Time (in seconds)
+cmd-protocorearm-2-help = Proto core

@@ -4,6 +4,7 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Input;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
+using Content.Shared.Movement.Components;
 using Content.Shared.Storage;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Verbs;
@@ -39,6 +40,8 @@ public abstract partial class SharedGunSystem
         SubscribeLocalEvent<MagazineAmmoProviderComponent, ExaminedEvent>(OnMagazineExamine);
         SubscribeLocalEvent<MagazineAmmoProviderComponent, BeltMagazineReloadDoAfterEvent>(OnBeltMagazineReloadDoAfter);
         SubscribeLocalEvent<ChamberMagazineAmmoProviderComponent, BeltMagazineReloadDoAfterEvent>(OnBeltChamberMagazineReloadDoAfter);
+        SubscribeLocalEvent<MagazineShotgunReloadComponent, ShotAttemptedEvent>(OnMagazineShotgunShotAttempted);
+        SubscribeLocalEvent<MagazineShotgunReloadComponent, BeltMagazineReloadDoAfterEvent>(OnMagazineShotgunReloadDoAfter);
     }
 
     public override void Shutdown()
@@ -99,9 +102,10 @@ public abstract partial class SharedGunSystem
             return;
         }
 
-        _doAfter.TryStartDoAfter(new DoAfterArgs(EntityManager,
+        var delay = GetBeltMagazineReloadDelay(gun, user);
+        var doAfterArgs = new DoAfterArgs(EntityManager,
             user,
-            BeltMagazineReloadDelay,
+            delay,
             new BeltMagazineReloadDoAfterEvent(),
             gun,
             target: storageEnt,
@@ -110,7 +114,39 @@ public abstract partial class SharedGunSystem
             BreakOnMove = false,
             BreakOnDamage = false,
             NeedHand = true,
-        });
+        };
+
+        if (_doAfter.TryStartDoAfter(doAfterArgs, out var doAfterId) &&
+            TryComp<MagazineShotgunReloadComponent>(gun, out var magazineShotgunReload))
+        {
+            magazineShotgunReload.ReloadDoAfter = doAfterId;
+        }
+    }
+
+    private TimeSpan GetBeltMagazineReloadDelay(EntityUid gun, EntityUid user)
+    {
+        if (!TryComp<MagazineShotgunReloadComponent>(gun, out var magazineShotgunReload) ||
+            !IsUserRunning(user, magazineShotgunReload))
+        {
+            return BeltMagazineReloadDelay;
+        }
+
+        return TimeSpan.FromSeconds(BeltMagazineReloadDelay.TotalSeconds * magazineShotgunReload.RunningReloadDelayMultiplier);
+    }
+
+    private bool IsUserRunning(EntityUid user, MagazineShotgunReloadComponent component)
+    {
+        var walkSpeed = MovementSpeedModifierComponent.DefaultBaseWalkSpeed;
+        var sprintSpeed = MovementSpeedModifierComponent.DefaultBaseSprintSpeed;
+
+        if (TryComp<MovementSpeedModifierComponent>(user, out var movement))
+        {
+            walkSpeed = movement.CurrentWalkSpeed;
+            sprintSpeed = movement.CurrentSprintSpeed;
+        }
+
+        var runningThreshold = walkSpeed + (sprintSpeed - walkSpeed) * component.RunningSpeedThreshold;
+        return Physics.GetMapLinearVelocity(user).Length() > runningThreshold;
     }
 
     private bool TryGetGunForReload(EntityUid user, out Entity<GunComponent> gun)
@@ -280,6 +316,20 @@ public abstract partial class SharedGunSystem
     private void OnBeltChamberMagazineReloadDoAfter(EntityUid uid, ChamberMagazineAmmoProviderComponent component, BeltMagazineReloadDoAfterEvent args)
     {
         OnMagazineReloadDoAfter(uid, args);
+    }
+
+    private void OnMagazineShotgunShotAttempted(EntityUid uid, MagazineShotgunReloadComponent component, ref ShotAttemptedEvent args)
+    {
+        if (component.ReloadDoAfter == null)
+            return;
+
+        _doAfter.Cancel(component.ReloadDoAfter, force: true);
+        component.ReloadDoAfter = null;
+    }
+
+    private void OnMagazineShotgunReloadDoAfter(EntityUid uid, MagazineShotgunReloadComponent component, BeltMagazineReloadDoAfterEvent args)
+    {
+        component.ReloadDoAfter = null;
     }
 
     private void OnMagazineReloadDoAfter(EntityUid uid, BeltMagazineReloadDoAfterEvent args)

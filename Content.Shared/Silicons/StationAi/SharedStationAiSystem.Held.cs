@@ -186,6 +186,7 @@ public abstract partial class SharedStationAiSystem
 
         var verb = new AlternativeVerb
         {
+            Priority = int.MaxValue,
             Text = isOpen ? Loc.GetString("ai-close") : Loc.GetString("ai-open"),
             Act = () =>
             {

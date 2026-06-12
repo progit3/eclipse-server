@@ -103581,7 +103581,7 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 66.5,27.5
       parent: 2
-- proto: SlipocalypseClusterSoap
+- proto: SlipocalypseAshLegionClusterSoap
   entities:
   - uid: 14840
     components:
@@ -103744,7 +103744,7 @@ entities:
     - type: Transform
       pos: -4.440526,33.32755
       parent: 2
-- proto: SoapLegion
+- proto: SoapAshLegion
   entities:
   - uid: 14866
     components:

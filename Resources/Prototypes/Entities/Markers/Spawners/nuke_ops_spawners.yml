@@ -46,7 +46,7 @@
         range: 1, 3
     - id: EmpImplanter
     - id: MicroBombImplanter
-    - id: SlipocalypseClusterSoap
+    - id: SlipocalypseAshLegionClusterSoap
       amount: !type:RangeNumberSelector
         range: 1, 2
     - id: ReinforcementRadioLegionAncestor
@@ -63,7 +63,7 @@
   table: !type:GroupSelector
     children:
     - id: ThrowingKnivesKit
-    - id: ClothingHandsKnuckleDustersLegion
+    - id: ClothingHandsKnuckleDustersAshLegion
     - id: EnergyDaggerLoud
       weight: 0.5
     - id: WeaponRevolverPython

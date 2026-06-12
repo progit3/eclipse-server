@@ -56,14 +56,13 @@
 
 - type: entity
   name: deathrattle implant box
-  parent: [BoxCardboard, BaseLegionContraband]
+  parent: [BoxCardboard, BaseLegionContraband, BoxAshLegion]
   id: BoxDeathRattleImplants
   description: Six deathrattle implants for the whole squad.
   components:
   - type: Sprite
-    layers:
-      - state: box_of_doom
-      - state: syringe
+    sprite: _Orion/Objects/Storage/inteq_box.rsi
+    state: icon
   - type: Storage
     grid:
     - 0,0,5,3
@@ -116,5 +115,5 @@
       storagebase: !type:AllSelector
         children:
         - id: LegionmovCircuitBoard
-        - id: LegionIDCard
+        - id: AshLegionOpsBaseIDCard
 

@@ -115019,7 +115019,7 @@ entities:
     - type: Transform
       pos: -42.50441,3.9867992
       parent: 2
-- proto: ToolboxLegionFilled
+- proto: ToolboxAshLegionFilled
   entities:
   - uid: 15138
     components:
@@ -116154,7 +116154,7 @@ entities:
     - type: Transform
       pos: -20.5,-9.5
       parent: 2
-- proto: VendingMachineLegionDrobe
+- proto: VendingMachineAshLegionDrobe
   entities:
   - uid: 15272
     components:

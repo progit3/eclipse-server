@@ -17,9 +17,9 @@
     - type: Paper
       content: legion-business-card-base
     - type: PaperVisuals
-      headerImagePath: "/Textures/Interface/Paper/paper_heading_legion_logo.svg.96dpi.png"
+      headerImagePath: "/Textures/Interface/Paper/paper_heading_Legion(new)_logo.svg.96dpi.png"
       headerMargin: 0.0, 0.0, 0.0, 2.0
-      backgroundImagePath: "/Textures/Interface/Paper/paper_background_blood_red.svg.96dpi.png"
+      backgroundImagePath: "/Textures/Interface/Paper/paper_background_Yellow.svg.96dpi.png"
       backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
       contentMargin: 4.0, 4.0, 4.0, 4.0
       maxWritableArea: 400.0, 256.0

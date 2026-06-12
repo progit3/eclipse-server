@@ -1,6 +1,6 @@
 - type: entity
-  parent: [ CrateLegion, StorePresetUplink, BaseLegionContraband ]
-  id: CrateLegionSurplusBundle
+  parent: [ CrateAshLegion, StorePresetUplink, BaseLegionContraband ]
+  id: CrateAshLegionSurplusBundle
   name: Legion surplus crate
   description: Contains 50 telecrystals worth of completely random Legion items. It can be useless junk or really good.
   components:
@@ -8,7 +8,7 @@
       totalPrice: 50
 
 - type: entity
-  parent: CrateLegion
+  parent: CrateAshLegion
   id: CrateCybersunJuggernautBundle
   name: Cybersun juggernaut bundle
   suffix: Filled
@@ -23,8 +23,8 @@
           tableId: LegionHardsuitExtrasEntityTable
 
 - type: entity
-  parent: [ CrateLegion, StorePresetUplink, BaseLegionContraband ]
-  id: CrateLegionSuperSurplusBundle
+  parent: [ CrateAshLegion, StorePresetUplink, BaseLegionContraband ]
+  id: CrateAshLegionSuperSurplusBundle
   name: Legion super surplus crate
   description: Contains 125 telecrystals worth of completely random Legion items.
   components:

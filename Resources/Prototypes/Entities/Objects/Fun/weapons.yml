@@ -213,72 +213,35 @@
     - 0,0,0,2
 
 - type: entity
-  parent: [ BaseItem, BaseToySword ]
+  parent: [ BaseItem, BaseToySword, PlasmaSword ]
   id: ToySword
   name: toy sword
   description: New Sandy-Cat plastic sword! Comes with realistic sound and full color! Looks almost like the real thing!
   components:
-  - type: Sprite
-    sprite: Objects/Weapons/Melee/e_sword.rsi
-    layers:
-    - state: e_sword
-    - state: e_sword_blade
-      color: "#FFFFFF"
-      visible: false
-      shader: unshaded
-      map: [ "blade" ]
-  - type: EnergySword
-  - type: ItemToggle
-    soundActivate:
-      path: /Audio/Weapons/ebladeon.ogg
-    soundDeactivate:
-      path: /Audio/Weapons/ebladeoff.ogg
-  - type: ItemToggleActiveSound
-    activeSound:
-      path: /Audio/Weapons/ebladehum.ogg
-  - type: Item
-    size: Small
-    sprite: Objects/Weapons/Melee/e_sword-inhands.rsi
-  - type: UseDelay
-    delay: 1.0
-  - type: PointLight
-    enabled: false
-    radius: 2
-    energy: 2
-    color: white
-    netsync: false
-  - type: Appearance
-  - type: ToggleableVisuals
-    spriteLayer: blade
-    inhandVisuals:
-      left:
-      - state: inhand-left-blade
-        shader: unshaded
-      right:
-      - state: inhand-right-blade
-        shader: unshaded
-  - type: ItemTogglePointLight
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/_Orion/Weapons/Melee/plasma/plasma_hit.wav
+      params:
+        variation: 0.250
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/punchmiss.ogg
+      params:
+        variation: 0.250
+        volume: -10
+    activatedSoundOnSwing:
+      path: /Audio/_Orion/Weapons/Melee/plasma/plasma_swing.wav
+      params:
+        variation: 0.125
+    activatedDamage:
+      types:
+        Slash: 0
+        Heat: 0.3
+        Structural: 0
   - type: MeleeWeapon
     wideAnimationRotation: -135
     damage:
       types:
         Blunt: 0
-  - type: ItemToggleMeleeWeapon
-    activatedSoundOnHit:
-      path: /Audio/Weapons/eblade1.ogg
-      params:
-        variation: 0.250
-    activatedSoundOnHitNoDamage:
-      path: /Audio/Weapons/eblade1.ogg
-      params:
-        variation: 0.250
-    activatedSoundOnSwing:
-      path: /Audio/Weapons/eblademiss.ogg
-      params:
-        variation: 0.125
-    activatedDamage:
-      types:
-        Heat: 0.3
 
 - type: entity
   parent: [ BaseItem, BaseToySword ]

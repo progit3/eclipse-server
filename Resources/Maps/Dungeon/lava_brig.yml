@@ -11036,7 +11036,7 @@ entities:
     - type: Transform
       pos: 20.5,46.5
       parent: 588
-- proto: SoapLegion
+- proto: SoapAshLegion
   entities:
   - uid: 1856
     components:

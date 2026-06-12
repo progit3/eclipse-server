@@ -334,7 +334,7 @@
 
 - type: entity
   parent: CrateBaseSecure
-  id: CrateLegionSecure
+  id: CrateAshLegionSecure
   name: secure legion crate
   description: A dark steel crate with red bands and a letter S embossed on the front.
   components:
@@ -834,14 +834,14 @@
 
 - type: entity
   parent: CrateGenericSteel
-  id: CrateLegion
-  name: legion crate
-  description: A dark steel crate with red bands and a letter S embossed on the front.
+  id: CrateAshLegion
+  name: AshLegion crate
+  description: COOLEST CRATE EVER!
   components:
   - type: Icon
-    sprite: Structures/Storage/Crates/legion.rsi
+    sprite: Eclipse/Structures/Storage/Crates/inteq.rsi
   - type: Sprite
-    sprite: Structures/Storage/Crates/legion.rsi
+    sprite: Eclipse/Structures/Storage/Crates/inteq.rsi
 
 - type: entity
   parent: [StructureWheeled, CrateBaseWeldable]

@@ -586,7 +586,7 @@
       borg_module:
         - BorgModuleOperative
         - BorgModuleL6C
-        - BorgModuleDoubleEsword
+        - BorgModuleCyborgPlasmaScythe
   - type: ItemSlots
     slots:
       cell_slot:
@@ -860,7 +860,7 @@
       borg_module:
       - BorgModuleOperative
       - BorgModuleC20r
-      - BorgModuleEsword
+      - BorgModuleCyborgPlasmaScythe
   - type: ItemSlots
     slots:
       cell_slot:

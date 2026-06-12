@@ -754,7 +754,7 @@ entities:
       removedMasks: 20
     - type: PlaceableSurface
       isPlaceable: True
-- proto: CrateLegion
+- proto: CrateAshLegion
   entities:
   - uid: 92
     components:
@@ -1403,7 +1403,7 @@ entities:
     - type: Transform
       pos: -2.1572118,-3.752955
       parent: 1
-- proto: ToolboxLegionFilled
+- proto: ToolboxAshLegionFilled
   entities:
   - uid: 96
     components:

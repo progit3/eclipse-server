@@ -81,8 +81,8 @@
   id: UplinkAshLegionKnuckleDusters
   name: uplink-ashlegion-weapon-knuckle-dusters-name
   description: uplink-ashlegion-weapon-knuckle-dusters-desc
-  icon: { sprite: /Textures/Clothing/Hands/Gloves/KnuckleDusters/legionknuckleduster.rsi, state: legionknuckleduster }
-  productEntity: ClothingHandsKnuckleDustersLegion
+  icon: { sprite: /Textures/Eclipse/Clothing/Hands/Gloves/KnuckleDusters/inteqknuckleduster.rsi, state: inteqknuckleduster }
+  productEntity: ClothingHandsKnuckleDustersAshLegion
   cost:
     Telecrystal: 4
   categories:
@@ -208,7 +208,7 @@
   id: UplinkC4Bundle
   name: uplink-c4-bundle-name
   description: uplink-c4-bundle-desc
-  productEntity: ClothingBackpackDuffelLegionC4tBundle
+  productEntity: ClothingBackpackDuffelAshLegionC4tBundle
   discountCategory: veryRareDiscounts
   discountDownTo:
     Telecrystal: 8
@@ -398,7 +398,7 @@
   id: UplinkAmmoBundle
   name: uplink-ammo-bundle-name
   description: uplink-ammo-bundle-desc
-  productEntity: ClothingBackpackDuffelLegionAmmoFilled
+  productEntity: ClothingBackpackDuffelAshLegionAmmoFilled
   cost:
     Telecrystal: 15
   categories:
@@ -556,7 +556,7 @@
   id: UplinkMedsBundle
   name: uplink-meds-bundle-name
   description: uplink-meds-bundle-desc
-  productEntity: ClothingBackpackDuffelLegionMedicalBundleFilled
+  productEntity: ClothingBackpackDuffelAshLegionMedicalBundleFilled
   discountCategory: rareDiscounts
   discountDownTo:
     Telecrystal: 16
@@ -576,10 +576,10 @@
 
 # Deception
 - type: listing
-  id: UplinkLegionIDCard
+  id: UplinkAshLegionIDCard
   name: uplink-legion-id-card-name
   description: uplink-legion-id-card-desc
-  productEntity: LegionIDCard
+  productEntity: AshLegionOpsBaseIDCard
   cost:
     Telecrystal: 1
   categories:
@@ -628,8 +628,8 @@
   id: UplinkHeadsetEncryptionKey
   name: uplink-encryption-key-name
   description: uplink-encryption-key-desc
-  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: legion_label }
-  productEntity: BoxEncryptionKeyLegion # Two for the price of one
+  icon: { sprite: /Textures/_Orion/Objects/Devices/encryption_keys.rsi, state: ashlegion_label }
+  productEntity: BoxEncryptionKeyAshLegion # Two for the price of one
   discountCategory: usualDiscounts
   discountDownTo:
     Telecrystal: 1
@@ -732,10 +732,10 @@
 # Disruption
 
 - type: listing
-  id: UplinkAccessBreaker
+  id: UplinkAccessBreakerAshLegion
   name: uplink-access-breaker-name
   description: uplink-access-breaker-desc
-  productEntity: AccessBreaker
+  productEntity: AccessBreakerAshLegion
   discountCategory: rareDiscounts
   discountDownTo:
     Telecrystal: 2
@@ -819,17 +819,17 @@
   id: UplinkSoapLegion
   name: uplink-soap-name
   description: uplink-soap-desc
-  productEntity: SoapLegion
+  productEntity: SoapAshLegion
   cost:
     Telecrystal: 1
   categories:
   - UplinkDisruption
 
 - type: listing
-  id: UplinkSlipocalypseClusterSoap
+  id: UplinkSlipocalypseAshLegionClusterSoap
   name: uplink-slipocalypse-clustersoap-name
   description: uplink-slipocalypse-clustersoap-desc
-  productEntity: SlipocalypseClusterSoap
+  productEntity: SlipocalypseAshLegionClusterSoap
   discountCategory: rareDiscounts
   cost:
     Telecrystal: 1
@@ -840,7 +840,7 @@
   id: UplinkToolbox
   name: uplink-toolbox-name
   description: uplink-toolbox-desc
-  productEntity: ToolboxLegionFilled
+  productEntity: ToolboxAshLegionFilled
   discountCategory: rareDiscounts
   discountDownTo:
     Telecrystal: 1
@@ -940,7 +940,7 @@
   id: UplinkSurplusBundle
   name: uplink-surplus-bundle-name
   description: uplink-surplus-bundle-desc
-  productEntity: CrateLegionSurplusBundle
+  productEntity: CrateAshLegionSurplusBundle
   cost:
     Telecrystal: 20
   categories:
@@ -1050,7 +1050,7 @@
           - NukeOpsUplink
 
 - type: listing
-  id: UplinkReinforcementRadioLegionNukeops # Version for Nukeops that spawns another nuclear operative without the uplink.
+  id: UplinkReinforcementRadioAshLegionNukeops # Version for Nukeops that spawns another nuclear operative without the uplink.
   name: uplink-reinforcement-radio-nukeops-name
   description: uplink-reinforcement-radio-nukeops-desc
   productEntity: ReinforcementRadioLegionNukeops
@@ -1085,7 +1085,7 @@
   id: UplinkReinforcementRadioLegionAncestor
   name: uplink-reinforcement-radio-ancestor-name
   description: uplink-reinforcement-radio-ancestor-desc
-  productEntity: ReinforcementRadioLegionAncestor
+  productEntity: ReinforcementRadioAshLegionAncestor
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-ancestor }
   discountCategory: usualDiscounts
   discountDownTo:
@@ -1101,10 +1101,10 @@
           - NukeOpsUplink
 
 - type: listing
-  id: UplinkReinforcementRadioLegionAncestorNukeops # Version for Nukeops that spawns a legion monkey with the NukeOperative component.
+  id: UplinkReinforcementRadioAshLegionAncestorNukeops # Version for Nukeops that spawns a legion monkey with the NukeOperative component.
   name: uplink-reinforcement-radio-ancestor-name
   description: uplink-reinforcement-radio-ancestor-desc
-  productEntity: ReinforcementRadioLegionAncestorNukeops
+  productEntity: ReinforcementRadioAshLegionAncestorNukeops
   icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-ancestor }
   discountCategory: usualDiscounts
   discountDownTo:
@@ -1149,11 +1149,11 @@
     - UplinkAllies
 
 - type: listing
-  id: UplinkLegionPersonalAI
+  id: UplinkInteqPersonalAI
   name: uplink-legion-pai-name
   description: uplink-legion-pai-desc
-  icon: { sprite: /Textures/Objects/Fun/pai.rsi, state: legion-icon-pai-off }
-  productEntity: LegionPersonalAI
+  icon: { sprite: /Textures/Eclipse/Objects/Fun/pai.rsi, state: inteq-icon-pai-off }
+  productEntity: InteqPersonalAI
   cost:
     Telecrystal: 1
   categories:
@@ -1240,11 +1240,11 @@
     - UplinkImplants
 
 - type: listing
-  id: UplinkRadioImplanter
+  id: UplinkRadioImplanterAshLegion
   name: uplink-radio-implanter-name
   description: uplink-radio-implanter-desc
-  icon: { sprite: /Textures/Objects/Devices/encryption_keys.rsi, state: legion_label }
-  productEntity: RadioImplanter
+  icon: { sprite: /Textures/_Orion/Objects/Devices/encryption_keys.rsi, state: ashlegion_label }
+  productEntity: RadioImplanterAshLegion
   discountCategory: usualDiscounts
   discountDownTo:
     Telecrystal: 1
@@ -1313,7 +1313,7 @@
   id: UplinkUplinkImplanter # uplink uplink real
   name: uplink-uplink-implanter-name
   description: uplink-uplink-implanter-desc
-  icon: { sprite: /Textures/Objects/Devices/communication.rsi, state: old-radio }
+  icon: { sprite: _Eclipse/Objects/Devices/legion_supply_terminal.rsi, state: icon }
   productEntity: UplinkImplanter
   cost:
     Telecrystal: 1
@@ -1876,10 +1876,10 @@
   - UplinkPointless
 
 - type: listing
-  id: UplinkLegionStamp
+  id: UplinkAshLegionStamp
   name: uplink-legion-stamp-name
   description: uplink-legion-stamp-desc
-  productEntity: RubberStampLegion
+  productEntity: RubberStampAshLegion
   categories:
   - UplinkPointless
   conditions:
@@ -1978,7 +1978,7 @@
   id: UplinkBalloon
   name: uplink-balloon-name
   description: uplink-balloon-desc
-  productEntity: BalloonSyn
+  productEntity: BalloonAshLegion
   cost:
     Telecrystal: 20
   categories:

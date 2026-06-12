@@ -312,7 +312,7 @@
       - id: BalloonNT
         weight: 5 # NT bias
       - id: BalloonCorgi
-      - id: BalloonSyn
+      - id: BalloonAshLegion
     - !type:GroupSelector # Sports ball
       children:
       - id: Basketball

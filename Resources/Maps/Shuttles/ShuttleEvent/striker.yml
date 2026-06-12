@@ -1767,7 +1767,7 @@ entities:
       parent: 325
     - type: Fixtures
       fixtures: {}
-- proto: SoapLegion
+- proto: SoapAshLegion
   entities:
   - uid: 90
     components:
@@ -2097,7 +2097,7 @@ entities:
       parent: 102
     - type: Physics
       canCollide: False
-- proto: ToolboxLegionFilled
+- proto: ToolboxAshLegionFilled
   entities:
   - uid: 177
     components:
@@ -2113,7 +2113,7 @@ entities:
     - type: Transform
       pos: -2.3371089,-2.140279
       parent: 325
-- proto: VendingMachineLegionDrobe
+- proto: VendingMachineAshLegionDrobe
   entities:
   - uid: 163
     components:

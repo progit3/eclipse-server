@@ -31,7 +31,7 @@
     price: 500
 
 - type: entity
-  parent: [SoapAshLegion, ScatteringGrenadeBase, BaseAshLegionContraband]
+  parent: [SoapAshLegion, ScatteringGrenadeBase, ImpactGrenadeBase, BaseAshLegionContraband]
   id: SlipocalypseAshLegionClusterSoap
   name: slipocalypse clustersoap
   description: Spreads small pieces of AshLegion soap over an area upon landing on the floor.
@@ -46,7 +46,8 @@
   - type: Item
     heldPrefix: inteq
   - type: ScatteringGrenade
-    fillPrototype: SoapletSyndie
+    triggerKey: trigger
+    fillPrototype: SoapletLegion
     capacity: 30
     delayBeforeTriggerContents: 60
     randomDistance: true

@@ -741,7 +741,7 @@ entities:
     - type: Transform
       pos: -4.5,-27.5
       parent: 1
-- proto: BoxEncryptionKeyLegion
+- proto: BoxEncryptionKeyAshLegion
   entities:
   - uid: 30
     components:
@@ -4497,7 +4497,7 @@ entities:
     - type: Transform
       pos: -4.5,-19.5
       parent: 1
-- proto: SoapLegion
+- proto: SoapAshLegion
   entities:
   - uid: 621
     components:

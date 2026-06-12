@@ -181,8 +181,8 @@
   id: ComputerIFFSyndicate
 
 - type: entity
-  parent: ToolboxLegion
-  id: HandledBoomBox
+  parent: ToolboxAshLegion
+  id: SusToolbox
 
 - type: entity
   parent: AshLegionJawsOfLife
@@ -297,4 +297,4 @@
 
 - type: entity
   parent: AshLegion
-  id: LoneOpsSpawn
+  id: OpsSpawn

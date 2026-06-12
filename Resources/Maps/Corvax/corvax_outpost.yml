@@ -100387,7 +100387,7 @@ entities:
     - type: Transform
       pos: -45.5,-5.5
       parent: 2
-- proto: VendingMachineLegionDrobe
+- proto: VendingMachineAshLegionDrobe
   entities:
   - uid: 14291
     components:
@@ -126351,7 +126351,7 @@ entities:
     - type: Transform
       pos: 28.427675,31.71158
       parent: 2
-- proto: WeaponPistolViper
+- proto: WeaponPistolAshLegionCommissar
   entities:
   - uid: 19336
     components:

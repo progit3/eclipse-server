@@ -226,7 +226,7 @@
 - type: entity
   parent: [ EncryptionKey, BaseLegionContraband ]
   id: EncryptionKeyLegion
-  name: blood-red encryption key
+  name: dark Yellow encryption key
   description: An encryption key used by... wait... Who is the owner of this chip?
   components:
   - type: EncryptionKey
@@ -235,7 +235,7 @@
     defaultChannel: Legion
   - type: Sprite
     layers:
-    - state: crypt_red
+    - state: crypt_dark_Yellow
     - state: legion_label
   - type: StaticPrice
     price: 500 # 1000 for 2
@@ -256,7 +256,7 @@
     - state: ai_label
 
 - type: entity
-  parent: [ EncryptionKey, BaseLegionContraband ]
+  parent: [ EncryptionKey, BaseLegionContraband, ]
   id: EncryptionKeyBinaryLegion
   name: binary translator key
   description: A legion encryption key that translates binary signals used by silicons.
@@ -266,8 +266,9 @@
     - Binary
     defaultChannel: Binary
   - type: Sprite
+    sprite: _Orion/Objects/Devices/encryption_keys.rsi
     layers:
-    - state: crypt_red
+    - state: crypt_brown
     - state: ai_label
   - type: StaticPrice
     price: 1000

@@ -5,6 +5,7 @@
   components:
   - type: Stamp
     stampedName: stamp-component-stamped-name-AshLegion
+    stampedColor: "#FFA500"
     stampState: "paper_stamp-ashlegion"
   - type: Sprite
     sprite: _Orion/Objects/Misc/inteq_bur.rsi

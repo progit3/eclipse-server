@@ -180,6 +180,15 @@
 
 - type: entity
   parent: [IDCardStandard, BaseAshLegionContraband]
+  id: BaseAshLegionOpsIDCard
+  components:
+  - type: Access
+    tags:
+    - NuclearOperative
+    - LegionAgent
+
+- type: entity
+  parent: [IDCardStandard, BaseAshLegionContraband, BaseAshLegionOpsIDCard]
   id: AshLegionOpsLeaderIDCard
   name: AshLegion Leader ID card
   components:
@@ -197,7 +206,7 @@
     - AshLegionVanguard
 
 - type: entity
-  parent: [IDCardStandard, BaseAshLegionContraband]
+  parent: [IDCardStandard, BaseAshLegionContraband, BaseAshLegionOpsIDCard]
   id: AshLegionOpsMedicalIDCard
   name: AshLegion Medical ID card
   components:
@@ -214,7 +223,7 @@
     - AshLegionVanguard
 
 - type: entity
-  parent: [IDCardStandard, BaseAshLegionContraband]
+  parent: [IDCardStandard, BaseAshLegionContraband, BaseAshLegionOpsIDCard]
   id: AshLegionOpsBaseIDCard
   name: AshLegion ID card
   components:

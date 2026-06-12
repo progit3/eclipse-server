@@ -67400,7 +67400,7 @@ entities:
       canCollide: False
     - type: Stamp
       stampedName: Финансовый Департамент
-- proto: RubberStampLegion
+- proto: RubberStampAshLegion
   entities:
   - uid: 3299
     components:

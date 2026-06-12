@@ -28,3 +28,15 @@
     maxItemSize: Huge
     grid:
     - 0,0,8,4
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: JugBicaridine
+        - id: JugPuncturase
+        - id: JugDermaline
+        - id: JugDylovene
+        - id: JugHyronalin
+        - id: JugSaline
+        - id: JugDexalinPlus
+        - id: JugTranexamicAcid

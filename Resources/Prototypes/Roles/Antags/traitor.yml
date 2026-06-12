@@ -38,22 +38,22 @@
     gloves: ClothingHandsGlovesColorBlack
   storage:
     back:
-    - WeaponPistolViper
+    - WeaponPistolAshLegionCommissar
     - PinpointerLegionNuclear
     - DeathAcidifierImplanter
 
 - type: startingGear
   id: LegionOperativeClothing
   equipment:
-    jumpsuit: ClothingUniformJumpsuitOperative
-    back: ClothingBackpackLegion
+    jumpsuit: ClothingUniformJumpsuitAshLegionOperative
+    back: ClothingBackpackAshLegion
     shoes: ClothingShoesBootsLegionFilled
     gloves: ClothingHandsGlovesColorBlack
 
 - type: startingGear
   id: LegionReinforcementMedic
   equipment:
-    jumpsuit: ClothingUniformJumpsuitOperative
+    jumpsuit: ClothingUniformJumpsuitAshLegionOperative
     shoes: ClothingShoesColorRed
     gloves: ClothingHandsGlovesLatex
     head: ClothingHeadHatSurgcapPurple
@@ -72,29 +72,28 @@
     - CigPackLegion
     - UniformScrubsColorPurple
     - ChemistryBottleToxin
-    - WeaponPistolViper
+    - WeaponPistolAshLegionCommissar
     - Syringe
     - Syringe
-    
+
 - type: startingGear
   id: LegionReinforcementSpy
   equipment:
-    jumpsuit: ClothingUniformJumpsuitOperative
-    back: ClothingBackpack
+    jumpsuit: ClothingUniformJumpsuitAshLegionOperative
+    back: ClothingBackpackChameleonFillAgent
     shoes: ClothingShoesColorBlack
     gloves: ClothingHandsGlovesColorBlack
-    pocket1: WeaponPistolViper
+    pocket1: WeaponPistolAshLegionCommissar
     pocket2: VoiceMaskImplanter
-  inhand:
-    - ClothingBackpackChameleonFillAgent
 - type: startingGear
+
   id: LegionReinforcementThief
   parent: LegionOperativeClothing
   equipment:
-    pocket1: WeaponPistolViper
+    pocket1: WeaponPistolAshLegionCommissar
     pocket2: MagazinePistolHighCapacity
   inhand:
-    - ToolboxLegionFilled
+    - ToolboxAshLegionFilled
   storage:
     back:
     - LegionJawsOfLife

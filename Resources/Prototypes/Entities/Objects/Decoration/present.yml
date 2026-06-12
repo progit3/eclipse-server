@@ -254,7 +254,7 @@
         orGroup: GiftPool
       - id: SoapDeluxe
         orGroup: GiftPool
-      - id: SoapLegion
+      - id: SoapAshLegion
         orGroup: GiftPool
       - id: SoapOmega
         orGroup: GiftPool
@@ -372,7 +372,7 @@
         orGroup: GiftPool
       - id: ToyRubberDuck
         orGroup: GiftPool
-      - id: BalloonSyn
+      - id: BalloonAshLegion
         orGroup: GiftPool
       - id: RGBStaff
         orGroup: GiftPool

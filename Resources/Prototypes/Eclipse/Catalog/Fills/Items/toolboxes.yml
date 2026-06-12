@@ -2,7 +2,7 @@
   name: suspicious toolbox
   parent: [ToolboxBase, BaseAshLegionContraband]
   id: ToolboxAshLegion
-  description: Cool toolbox, yeah!
+  description: Зловеще выглядящий ящик для инструментов. Кто знает, что может храниться в нем?...
   components:
   - type: Sprite
     sprite: Eclipse/Objects/Tools/Toolboxes/toolbox_inteq.rsi
@@ -32,6 +32,6 @@
     - id: Welder
     - id: Multitool
     - id: ClothingHandsGlovesCombat
-    - id: ClothingEyesGlassesMeson
+    - id: ClothingMaskGasLegion
   - type: StaticPrice
     price: 1000

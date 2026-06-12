@@ -1,2 +1,2 @@
-legion-business-card-base = { "           " } Ничего личного, просто бизнес.
+legion-business-card-base = { "           " } Смерть Эндосской Империи!
 

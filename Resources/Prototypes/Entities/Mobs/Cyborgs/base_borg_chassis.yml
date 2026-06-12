@@ -350,21 +350,22 @@
     - Legion
   - type: Access
     tags:
+    - AshLegionVanguard
     - NuclearOperative
     - LegionAgent
   - type: AccessReader
-    access: [["LegionAgent"], ["NuclearOperative"]]
+    access: [["LegionAgent"], ["NuclearOperative"], ["AshLegionVanguard"]]
   - type: SiliconLawProvider
     laws: LegionStatic
     subverted: true
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary
-    - Legion
+    - AshLegion
   - type: ActiveRadio
     channels:
     - Binary
-    - Legion
+    - AshLegion
   - type: ShowLegionIcons
   - type: MovementAlwaysTouching
   - type: Speech

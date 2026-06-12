@@ -6,9 +6,9 @@
   description: Call in a legion agent of questionable quality, instantly! Only basic equipment provided.
   components:
   - type: Sprite
-    sprite: Objects/Devices/communication.rsi
+    sprite: _Orion/Objects/Devices/inteq_uplink.rsi
     layers:
-    - state: old-radio
+    - state: ashlegion-uplink
   - type: UserInterface
     interfaces:
       enum.GhostRoleRadioUiKey.Key:

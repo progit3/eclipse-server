@@ -1311,6 +1311,8 @@
     - SyndicateAgent
     - Wizard
     - Xenoborg
+    - AshLegionVanguard
+
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener

@@ -575,7 +575,7 @@ entities:
         - 0
         - 0
         - 0
-- proto: CrateLegion
+- proto: CrateAshLegion
   entities:
   - uid: 92
     components:
@@ -1126,7 +1126,7 @@ entities:
     - type: Transform
       pos: -1.5,2.5
       parent: 1
-- proto: RubberStampLegion
+- proto: RubberStampAshLegion
   entities:
   - uid: 94
     components:
@@ -1198,7 +1198,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 3.5,-1.5
       parent: 1
-- proto: ToolboxLegionFilled
+- proto: ToolboxAshLegionFilled
   entities:
   - uid: 96
     components:

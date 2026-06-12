@@ -64,7 +64,7 @@
     - NamesLegionNormal
     nameFormat: name-format-nukie-operator
   - type: Loadout
-    prototypes: [LegionOperativeGearFullNoUplink]
+    prototypes: [AshLegionOperativeGearFullNoUplink]
 
 # Nuclear Operative
 - type: entity

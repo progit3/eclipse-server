@@ -1,13 +1,3 @@
-- type: entity
-  parent: CrateGenericSteel
-  id: CrateAshLegion
-  name: AshLegion crate
-  description: COOLEST CRATE EVER!
-  components:
-  - type: Icon
-    sprite: Eclipse/Structures/Storage/Crates/inteq.rsi
-  - type: Sprite
-    sprite: Eclipse/Structures/Storage/Crates/inteq.rsi
 
 - type: entity
   parent: CrateBaseSecure

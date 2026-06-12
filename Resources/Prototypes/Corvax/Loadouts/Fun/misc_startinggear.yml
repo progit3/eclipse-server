@@ -31,7 +31,7 @@
   storage:
     back:
     - MedkitCombatFilled
-  inhand: 
+  inhand:
     - Scalpel
 
 - type: startingGear
@@ -42,7 +42,7 @@
     outerClothing: ClothingOuterWinterLegionCapArmored
     jumpsuit: ClothingUniformJumpsuitTacticool
     gloves: ClothingHandsGlovesCombat
-    pocket1: WeaponPistolViper
+    pocket1: WeaponPistolAshLegionCommissar
     pocket2: MagazinePistol
     eyes: ClothingEyesGlassesHiddenSecurity
   inhand:

@@ -4,11 +4,7 @@
   id: ReinforcementRadioAshLegion
   name: AshLegion reinforcement radio
   description: Call in a AshLegion agent of questionable quality, instantly! Only basic equipment provided.
-  components:
-  - type: Sprite
-    sprite: _Orion/Objects/Devices/inteq_uplink.rsi
-    layers:
-    - state: ashlegion-uplink
+
 
 - type: entity
   parent: [ReinforcementRadioAshLegion, ReinforcementRadioLegionAncestor]

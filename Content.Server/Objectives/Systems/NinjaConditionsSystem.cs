@@ -2,6 +2,7 @@ using Content.Server.Objectives.Components;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Components;
+using Content.Shared.Station.Components;
 using Content.Shared.Warps;
 using Content.Shared.Whitelist;
 using Robust.Shared.Random;
@@ -60,7 +61,8 @@ public sealed class NinjaConditionsSystem : EntitySystem
         while (allEnts.MoveNext(out var warpUid, out var warp))
         {
             if (_whitelist.IsWhitelistFail(bombingBlacklist, warpUid)
-                && !string.IsNullOrWhiteSpace(warp.Location))
+                && !string.IsNullOrWhiteSpace(warp.Location)
+                && IsStationWarpPoint(warpUid))
             {
                 warps.Add(warpUid);
             }
@@ -72,6 +74,12 @@ public sealed class NinjaConditionsSystem : EntitySystem
             return;
         }
         comp.Target = _random.Pick(warps);
+    }
+
+    private bool IsStationWarpPoint(EntityUid warpUid)
+    {
+        var grid = Transform(warpUid).GridUid;
+        return grid != null && HasComp<StationMemberComponent>(grid.Value);
     }
 
     private void OnSpiderChargeAfterAssign(EntityUid uid, SpiderChargeConditionComponent comp, ref ObjectiveAfterAssignEvent args)

@@ -3,7 +3,7 @@
   parent: LegionComputerComms
   components:
   - type: AccessReader
-    access: [["AshLegion"]]
+    access: [["AshLegion"], ["NuclearOperative"]]
   - type: CommunicationsConsole
     title: comms-console-announcement-title-ashlegion-nukie
     color: "#fda502"

@@ -87,7 +87,10 @@ public sealed partial class GhostGui : UIWidget
             return;
         }
 
-        var remaining = _ghost.TimeOfDeath + RespawnCooldown - _timing.RealTime;
+        var deathTime = _timing.ServerTime != TimeSpan.Zero
+            ? _timing.RealServerToLocal(_ghost.TimeOfDeath)
+            : _ghost.TimeOfDeath;
+        var remaining = deathTime + RespawnCooldown - _timing.RealTime;
         RespawnButton.Disabled = remaining > TimeSpan.Zero;
         RespawnButton.Text = remaining > TimeSpan.Zero
             ? Loc.GetString("ghost-gui-respawn-button-cooldown", ("seconds", Math.Ceiling(remaining.TotalSeconds)))

@@ -64,4 +64,31 @@ public sealed partial class StationEmergencyShuttleComponent : Component
     /// </summary>
     [DataField]
     public LocId LaunchExtendedMessage = "emergency-shuttle-extended";
+
+    /// <summary>
+    /// Whether a station-scoped evacuation countdown is active for this station.
+    /// </summary>
+    [DataField]
+    public bool EvacCalled;
+
+    /// <summary>
+    /// Whether this station's emergency shuttle has docked via a station-scoped evacuation.
+    /// </summary>
+    [DataField]
+    public bool EvacArrived;
+
+    /// <summary>
+    /// Countdown until this station's emergency shuttle launches after docking.
+    /// </summary>
+    [DataField]
+    public float? EvacConsoleAccumulator;
+
+    [DataField]
+    public bool EvacLaunchAuthorized;
+
+    [DataField]
+    public bool EvacLaunched;
+
+    [DataField]
+    public bool EvacShuttleLeft;
 }

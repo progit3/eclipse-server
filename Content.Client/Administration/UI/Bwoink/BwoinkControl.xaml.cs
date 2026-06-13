@@ -210,33 +210,53 @@ namespace Content.Client.Administration.UI.Bwoink
 
         private void ApplyEclipseStyle()
         {
-            var actionButtons = new Button[]
+            foreach (var button in new Button[]
+                     {
+                         PopOut,
+                         Bans,
+                         Notes,
+                         Ban,
+                         Kick,
+                         Respawn,
+                         Follow,
+                     })
             {
-                PopOut,
-                Bans,
-                Notes,
-                Ban,
-                Follow,
-            };
-
-            foreach (var button in actionButtons)
-            {
-                button.StyleBoxOverride = EclipseButtonBox();
-                button.ModulateSelfOverride = Color.FromHex("#FFF1D6");
+                RegisterActionButtonHover(button);
             }
 
-            Kick.StyleBoxOverride = EclipseButtonBox();
-            Respawn.StyleBoxOverride = EclipseButtonBox();
             AdminOnly.ModulateSelfOverride = Color.FromHex("#FFF1D6");
             PlaySound.ModulateSelfOverride = Color.FromHex("#FFF1D6");
         }
 
-        private static StyleBoxFlat EclipseButtonBox()
+        private static void RegisterActionButtonHover(Button button)
+        {
+            SetActionButtonVisual(button, hovered: false);
+
+            button.OnMouseEntered += _ =>
+            {
+                if (button.Disabled)
+                    return;
+
+                SetActionButtonVisual(button, hovered: true);
+            };
+
+            button.OnMouseExited += _ => SetActionButtonVisual(button, hovered: false);
+        }
+
+        private static void SetActionButtonVisual(Button button, bool hovered)
+        {
+            button.StyleBoxOverride = EclipseButtonBox(hovered);
+            button.ModulateSelfOverride = hovered
+                ? Color.FromHex("#FFFAEE")
+                : Color.FromHex("#FFF1D6");
+        }
+
+        private static StyleBoxFlat EclipseButtonBox(bool hovered = false)
         {
             return new StyleBoxFlat
             {
-                BackgroundColor = Color.FromHex("#3A1600E8"),
-                BorderColor = Color.FromHex("#D47D1B55"),
+                BackgroundColor = Color.FromHex(hovered ? "#5A2800F0" : "#3A1600E8"),
+                BorderColor = Color.FromHex(hovered ? "#D47D1BAA" : "#D47D1B55"),
                 BorderThickness = new Thickness(1),
                 ContentMarginLeftOverride = 10,
                 ContentMarginRightOverride = 10,
@@ -285,6 +305,25 @@ namespace Content.Client.Administration.UI.Bwoink
 
             Follow.Visible = _adminManager.CanCommand("follow");
             Follow.Disabled = !Follow.Visible || disabled;
+
+            ResetActionButtonVisuals();
+        }
+
+        private void ResetActionButtonVisuals()
+        {
+            foreach (var button in new Button[]
+                     {
+                         PopOut,
+                         Bans,
+                         Notes,
+                         Ban,
+                         Kick,
+                         Respawn,
+                         Follow,
+                     })
+            {
+                SetActionButtonVisual(button, hovered: false);
+            }
         }
 
         private string FormatTabTitle(ItemList.Item li, PlayerInfo? pl = default)

@@ -2,7 +2,7 @@
   parent: [BaseItem, BaseLegionContraband ]
   id: NukeOpsDeclarationOfWar
   name: Ash Legion war declarator
-  description: Use to send a declaration of hostilities in the name of the Ash Legion, delaying your shuttle departure while the target prepares for your assault. Requires at least three operatives.
+  description: Use to send a declaration of hostilities in the name of the Ash Legion, delaying your shuttle departure while the target prepares for your assault. Requires at least two operatives.
   components:
     - type: Sprite
       sprite: Objects/Devices/declaration_of_war.rsi
@@ -23,6 +23,8 @@
     - type: WarDeclarator
       message: war-declarator-default-message
       senderTitle: comms-console-announcement-title-ashlegion
-      minOps: 3
+      minOps: 2
+      warDeclarationDelay: 10
+      sound: /Audio/Announcements/war.ogg
     - type: AccessReader
-      access: [["NuclearOperative"]]
+      access: [["NuclearOperative"], ["AshLegion"], ["AshLegionVanguard"], ["AshLegionVanguardLeader"]]

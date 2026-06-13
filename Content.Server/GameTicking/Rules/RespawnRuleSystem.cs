@@ -44,9 +44,10 @@ public sealed class RespawnRuleSystem : GameRuleSystem<RespawnDeadRuleComponent>
 
         foreach (var tracker in EntityQuery<RespawnTrackerComponent>())
         {
-            foreach (var (player, time) in tracker.RespawnQueue)
+            var queue = new Dictionary<NetUserId, TimeSpan>(tracker.RespawnQueue);
+            foreach (var (player, time) in queue)
             {
-                if (_timing.CurTime < time)
+                if (_timing.RealTime < time)
                     continue;
 
                 if (!_playerManager.TryGetSessionById(player, out var session))
@@ -117,7 +118,7 @@ public sealed class RespawnRuleSystem : GameRuleSystem<RespawnDeadRuleComponent>
         var wrappedMsg = Loc.GetString("chat-manager-server-wrap-message", ("message", msg));
         _chatManager.ChatMessageToOne(ChatChannel.Server, msg, wrappedMsg, respawnTracker, false, player.Comp.PlayerSession.Channel, Color.LimeGreen);
 
-        respawnTracker.Comp.RespawnQueue[player.Comp.PlayerSession.UserId] = _timing.CurTime + respawnTracker.Comp.RespawnDelay;
+        respawnTracker.Comp.RespawnQueue[player.Comp.PlayerSession.UserId] = _timing.RealTime + respawnTracker.Comp.RespawnDelay;
 
         return true;
     }

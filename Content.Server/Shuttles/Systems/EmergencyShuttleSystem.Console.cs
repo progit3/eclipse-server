@@ -8,6 +8,7 @@ using Content.Shared.Database;
 using Content.Shared.Emag.Systems;
 using Content.Shared.DeviceNetwork;
 using Content.Shared.DeviceNetwork.Components;
+using Content.Shared.Localizations;
 using Content.Shared.Popups;
 using Content.Shared.Shuttles.BUIStates;
 using Content.Shared.Shuttles.Components;
@@ -18,7 +19,6 @@ using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Timer = Robust.Shared.Timing.Timer;
 using Robust.Shared.Random;
-
 namespace Content.Server.Shuttles.Systems;
 
 // TODO full game saves
@@ -40,6 +40,70 @@ public sealed partial class EmergencyShuttleSystem
     /// How much time remaining until the shuttle consoles for emergency shuttles are unlocked?
     /// </summary>
     private float _consoleAccumulator = float.MinValue;
+
+    /// <summary>
+    /// Optional dock-time override for the next shuttle arrival, cleared after docking.
+    /// </summary>
+    private float? _pendingDockTimeOverride;
+
+    /// <summary>
+    /// Overrides <see cref="CCVars.EmergencyShuttleDockTime"/> for the next emergency shuttle dock.
+    /// </summary>
+    public void SetPendingDockTime(float seconds)
+    {
+        _pendingDockTimeOverride = seconds;
+    }
+
+    /// <summary>
+    /// Calls the emergency shuttle for a single station without affecting other stations or the global round-end countdown.
+    /// </summary>
+    public void RequestStationEmergencyShuttle(
+        EntityUid stationUid,
+        TimeSpan countdownTime,
+        float dockTime,
+        string text = "round-end-system-shuttle-called-announcement",
+        string name = "round-end-system-shuttle-sender-announcement")
+    {
+        if (!_emergencyShuttleEnabled || !TryComp<StationEmergencyShuttleComponent>(stationUid, out var shuttleComp))
+            return;
+
+        if (shuttleComp.EvacCalled || shuttleComp.EvacArrived)
+            return;
+
+        shuttleComp.EvacCalled = true;
+        Dirty(stationUid, shuttleComp);
+
+        int time;
+        string units;
+
+        if (countdownTime.TotalSeconds < 60)
+        {
+            time = countdownTime.Seconds;
+            units = "eta-units-seconds";
+        }
+        else
+        {
+            time = countdownTime.Minutes;
+            units = "eta-units-minutes";
+        }
+
+        _chatSystem.DispatchStationAnnouncement(
+            stationUid,
+            Loc.GetString(text, ("time", time), ("units", Loc.GetString(units))),
+            Loc.GetString(name),
+            playDefaultSound: true,
+            colorOverride: Color.Gold);
+
+        _logger.Add(LogType.ShuttleCalled, LogImpact.High, $"Station-scoped shuttle called for {ToPrettyString(stationUid):station}");
+
+        Timer.Spawn(countdownTime, () =>
+        {
+            if (!Exists(stationUid))
+                return;
+
+            DockStationEmergencyShuttle(stationUid, dockTime);
+        });
+    }
 
     /// <summary>
     /// How long after the transit is over to end the round.
@@ -242,6 +306,83 @@ public sealed partial class EmergencyShuttleSystem
         }
     }
 
+    private void UpdateStationEvacConsole(float frameTime)
+    {
+        var query = AllEntityQuery<StationEmergencyShuttleComponent>();
+
+        while (query.MoveNext(out var stationUid, out var comp))
+        {
+            if (!comp.EvacArrived || comp.EvacShuttleLeft || comp.EvacConsoleAccumulator is not { } accumulator)
+                continue;
+
+            accumulator -= frameTime;
+            comp.EvacConsoleAccumulator = accumulator;
+
+            if (!comp.EvacLaunchAuthorized && accumulator <= _authorizeTime)
+            {
+                comp.EvacLaunchAuthorized = true;
+                _chatSystem.DispatchStationAnnouncement(
+                    stationUid,
+                    Loc.GetString("emergency-shuttle-launch-time", ("consoleAccumulator", $"{accumulator:0}")),
+                    playDefaultSound: false,
+                    colorOverride: DangerColor);
+            }
+
+            if (!comp.EvacLaunched && accumulator <= _shuttle.DefaultStartupTime)
+            {
+                comp.EvacLaunched = true;
+                LaunchStationEmergencyShuttle(stationUid, comp, accumulator);
+            }
+
+            if (accumulator <= 0f)
+            {
+                comp.EvacShuttleLeft = true;
+                _chatSystem.DispatchStationAnnouncement(
+                    stationUid,
+                    Loc.GetString("emergency-shuttle-left", ("transitTime", $"{TransitTime:0}")),
+                    playDefaultSound: false);
+            }
+
+            Dirty(stationUid, comp);
+        }
+    }
+
+    private void LaunchStationEmergencyShuttle(EntityUid stationUid, StationEmergencyShuttleComponent comp, float hyperspaceTime)
+    {
+        if (!TryComp<ShuttleComponent>(comp.EmergencyShuttle, out var shuttle) ||
+            !TryComp<StationCentcommComponent>(stationUid, out var centcomm))
+        {
+            return;
+        }
+
+        if (!Deleted(centcomm.Entity))
+        {
+            _shuttle.FTLToDock(comp.EmergencyShuttle!.Value, shuttle, centcomm.Entity.Value, hyperspaceTime, TransitTime);
+            return;
+        }
+
+        if (!Deleted(centcomm.MapEntity))
+        {
+            _shuttle.FTLToCoordinates(
+                comp.EmergencyShuttle!.Value,
+                shuttle,
+                new EntityCoordinates(centcomm.MapEntity.Value, _random.NextVector2(1000f)),
+                hyperspaceTime,
+                TransitTime);
+        }
+    }
+
+    private void ResetStationEvacState(EntityUid stationUid, StationEmergencyShuttleComponent comp)
+    {
+        comp.EvacCalled = false;
+        comp.EvacArrived = false;
+        comp.EvacConsoleAccumulator = null;
+        comp.EvacLaunchAuthorized = false;
+        comp.EvacLaunched = false;
+        comp.EvacShuttleLeft = false;
+        Dirty(stationUid, comp);
+    }
+
     private void OnEmergencyRepealAll(EntityUid uid, EmergencyShuttleConsoleComponent component, EmergencyShuttleRepealAllMessage args)
     {
         var player = args.Actor;
@@ -325,6 +466,12 @@ public sealed partial class EmergencyShuttleSystem
         TransitTime = MinimumTransitTime + (MaximumTransitTime - MinimumTransitTime) * _random.NextFloat();
         // Round to nearest 10
         TransitTime = MathF.Round(TransitTime / 10f) * 10f;
+
+        var evacQuery = AllEntityQuery<StationEmergencyShuttleComponent>();
+        while (evacQuery.MoveNext(out var stationUid, out var evacComp))
+        {
+            ResetStationEvacState(stationUid, evacComp);
+        }
     }
 
     private void UpdateAllEmergencyConsoles()

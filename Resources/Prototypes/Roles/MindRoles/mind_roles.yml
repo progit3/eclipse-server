@@ -215,6 +215,7 @@
     subtype: role-subtype-ash-legion
     exclusiveAntag: true
     antagPrototype: AshLegion
+  - type: NukeopsRole
 
 - type: entity
   parent: MindRoleAshLegion

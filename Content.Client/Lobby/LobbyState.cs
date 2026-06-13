@@ -18,6 +18,7 @@ using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Robust.Client;
 using Robust.Client.Console;
+using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -33,6 +34,7 @@ namespace Content.Client.Lobby
     {
         [Dependency] private readonly IBaseClient _baseClient = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
+        [Dependency] private readonly IPlayerManager _playerManager = default!;
         [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
         [Dependency] private readonly IEntityManager _entityManager = default!;
         [Dependency] private readonly IResourceCache _resourceCache = default!;
@@ -227,7 +229,9 @@ namespace Content.Client.Lobby
             if (Lobby == null)
                 return;
 
-            var accountName = _cfg.GetCVar(CCVars.PlayerName).Trim();
+            var accountName = _playerManager.LocalSession?.Name?.Trim();
+            if (string.IsNullOrWhiteSpace(accountName))
+                accountName = _cfg.GetCVar(CCVars.PlayerName).Trim();
             if (string.IsNullOrWhiteSpace(accountName))
                 accountName = Loc.GetString("generic-unknown-title");
 

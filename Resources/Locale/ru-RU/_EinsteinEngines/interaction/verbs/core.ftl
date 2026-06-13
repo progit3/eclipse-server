@@ -15,7 +15,17 @@ directed-emotes-dialog-participants = Участники
 directed-emotes-dialog-add-participant = Добавить участника
 directed-emotes-dialog-send = Отправить
 directed-emotes-dialog-input-placeholder = Сообщение
+directed-emotes-dialog-input-placeholder-voice = Сказать что-нибудь...
+directed-emotes-dialog-input-placeholder-whisper = Прошептать...
+directed-emotes-dialog-input-placeholder-emotion = Описать действие...
+directed-emotes-dialog-type-whisper = Шёпот
+directed-emotes-dialog-type-voice = Голос
+directed-emotes-dialog-type-emotion = Эмоции
+directed-emotes-dialog-scroll-down = ↓ Вниз
 directed-emotes-dialog-message-wrap = [bold]{$player}:[/bold] {$message}
+directed-emotes-dialog-message-voice = [color=#FFF1D6][bold]{$player}:[/bold][/color] {$message}
+directed-emotes-dialog-message-whisper = [color=#9A8A78][italic]{$player} шепчет:[/italic][/color] [color=#BFA88A]{$message}[/color]
+directed-emotes-dialog-message-emotion = [color=#D4A574][italic]* {$player} {$message}*[/italic][/color]
 directed-emotes-dialog-participant-out-of-range = {$player} (вне зоны)
 directed-emotes-dialog-started = Диалог начат.
 directed-emotes-dialog-participant-added = {$player} добавлен в диалог.

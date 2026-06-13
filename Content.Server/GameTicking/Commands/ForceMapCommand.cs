@@ -2,7 +2,6 @@ using System.Linq;
 using Content.Server.Administration;
 using Content.Server.Maps;
 using Content.Shared.Administration;
-using Content.Shared.CCVar;
 using Content.Shared.Maps;
 using Robust.Shared.Configuration;
 using Robust.Shared.Console;
@@ -29,19 +28,18 @@ namespace Content.Server.GameTicking.Commands
 
             var name = args[0];
 
-            // An empty string clears the forced map
-            if (!string.IsNullOrEmpty(name) && !_gameMapManager.CheckMapExists(name))
+            switch (ForcedGameMapCommandHelper.TrySetForcedMap(_configurationManager, _gameMapManager, name))
             {
-                shell.WriteLine(Loc.GetString("cmd-forcemap-map-not-found", ("map", name)));
-                return;
+                case ForcedGameMapCommandHelper.Result.MapNotFound:
+                    shell.WriteLine(Loc.GetString("cmd-forcemap-map-not-found", ("map", name)));
+                    break;
+                case ForcedGameMapCommandHelper.Result.Cleared:
+                    shell.WriteLine(Loc.GetString("cmd-forcemap-cleared"));
+                    break;
+                case ForcedGameMapCommandHelper.Result.Success:
+                    shell.WriteLine(Loc.GetString("cmd-forcemap-success", ("map", name)));
+                    break;
             }
-
-            _configurationManager.SetCVar(CCVars.GameMap, name);
-
-            if (string.IsNullOrEmpty(name))
-                shell.WriteLine(Loc.GetString("cmd-forcemap-cleared"));
-            else
-                shell.WriteLine(Loc.GetString("cmd-forcemap-success", ("map", name)));
         }
 
         public override CompletionResult GetCompletion(IConsoleShell shell, string[] args)

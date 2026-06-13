@@ -345,7 +345,7 @@
                               SeparationOverride="2">
                     <Label Name="AccountName"
                            Access="Public"
-                           Text="JoeGenero"
+                           Text=""
                            StyleIdentifier="mainMenuText"
                            ClipText="True" />
                     <Label Name="AccountTitle"

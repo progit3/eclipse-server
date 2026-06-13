@@ -5,10 +5,12 @@ using Content.Server.Chat.Systems;
 using Content.Server.Explosion.EntitySystems;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
+using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Popups;
 using Content.Server.Power.Components;
 using Content.Server.Power.NodeGroups;
 using Content.Server.RoundEnd;
+using Content.Server.Shuttles.Systems;
 using Content.Server.Station.Systems;
 using Content.Shared._Eclipse.ProtoCore;
 using Content.Shared.Audio;
@@ -38,6 +40,7 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
     [Dependency] private readonly ChatSystem _chat = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
+    [Dependency] private readonly EmergencyShuttleSystem _emergencyShuttle = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly ItemSlotsSystem _itemSlots = default!;
@@ -77,12 +80,29 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
         SubscribeLocalEvent<ProtoCoreConsoleComponent, ProtoCoreStabilizeDoAfterEvent>(OnStabilizeDoAfter);
         SubscribeLocalEvent<ProtoCoreConsoleComponent, ProtoCorePhysicalOverrideDoAfterEvent>(OnPhysicalOverrideDoAfter);
         SubscribeLocalEvent<ProtoCoreConsoleComponent, DamageChangedEvent>(OnConsoleDamaged);
+        SubscribeLocalEvent<AshLegionRuleComponent, RuleLoadedGridsEvent>(OnAshLegionGridsLoaded);
 
         Subs.BuiEvents<ProtoCoreConsoleComponent>(ProtoCoreConsoleUiKey.Key, subs =>
         {
             subs.Event<BoundUIOpenedEvent>(OnConsoleUiOpened);
             subs.Event<ProtoCoreConsoleActionMessage>(OnConsoleActionMessage);
         });
+    }
+
+    private void OnAshLegionGridsLoaded(Entity<AshLegionRuleComponent> ent, ref RuleLoadedGridsEvent args)
+    {
+        if (ent.Comp.ShuttleGrid != null)
+            return;
+
+        foreach (var grid in args.Grids)
+        {
+            if (!Exists(grid) || !TryComp<NukeOpsShuttleComponent>(grid, out var shuttle))
+                continue;
+
+            shuttle.AssociatedRule = ent.Owner;
+            ent.Comp.ShuttleGrid = grid;
+            break;
+        }
     }
 
     public override void Update(float frameTime)
@@ -271,8 +291,9 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
     private void OnConsoleItemSlotEjectAttempt(Entity<ProtoCoreConsoleComponent> ent, ref ItemSlotEjectAttemptEvent args)
     {
         if (args.Slot.ID != ent.Comp.HackingDeviceSlot.ID ||
-            !IsHackingDeviceConnected(ent) ||
-            ent.Comp.ForceDeviceEjectInProgress)
+            !ent.Comp.HackingDeviceSlot.HasItem ||
+            ent.Comp.ForceDeviceEjectInProgress ||
+            !ent.Comp.HackInProgress)
             return;
 
         args.Cancelled = true;
@@ -323,10 +344,12 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
         if (args.Cancelled || !ent.Comp.HackingDeviceSlot.HasItem)
             return;
 
+        ent.Comp.ForceDeviceEjectInProgress = true;
         DisconnectHackingDevice(ent);
         UpdateHackingDeviceVisual(ent);
         UpdateConsoleUi(ent);
         _itemSlots.TryEjectToHands(ent, ent.Comp.HackingDeviceSlot, args.User, true);
+        ent.Comp.ForceDeviceEjectInProgress = false;
         _popup.PopupEntity(Loc.GetString("proto-core-console-device-disconnected"), ent, args.User);
     }
 
@@ -337,7 +360,7 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
 
         var user = args.User;
 
-        if (TryFindCore(ent, out var core) && IsAuthorized(ent) && IsHackingDeviceConnected(ent) && core.Comp.State is ProtoCoreState.Hacked or ProtoCoreState.Idle)
+        if (TryFindCore(ent, out var core) && CanStartMeltdown(ent, core.Comp.State))
         {
             args.Verbs.Add(new ActivationVerb
             {
@@ -348,11 +371,14 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
 
         if (TryFindCore(ent, out core) && core.Comp.State is ProtoCoreState.Meltdown or ProtoCoreState.Critical)
         {
-            args.Verbs.Add(new ActivationVerb
+            if (CanStabilize(core))
             {
-                Text = Loc.GetString("proto-core-verb-stabilize"),
-                Act = () => StartDoAfter(ent, user, new ProtoCoreStabilizeDoAfterEvent(), ent.Comp.StabilizeTime),
-            });
+                args.Verbs.Add(new ActivationVerb
+                {
+                    Text = Loc.GetString(HasProtoCoreSmes(core) ? "proto-core-verb-stabilize" : "proto-core-verb-defuse"),
+                    Act = () => StartDoAfter(ent, user, new ProtoCoreStabilizeDoAfterEvent(), ent.Comp.StabilizeTime),
+                });
+            }
 
             if (IsHackingDeviceConnected(ent))
             {
@@ -379,14 +405,14 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
         ent.Comp.DeviceConnected = true;
         UpdateConsoleUi(ent);
 
-        if (TryFindCore(ent, out var core) && core.Comp.State is ProtoCoreState.Idle or ProtoCoreState.Hacked)
+        if (TryFindCore(ent, out var core) && IsMeltdownStartable(core.Comp.State))
         {
             SetState(core, ProtoCoreState.Hacked);
         }
 
-        _chat.DispatchGlobalAnnouncement(
+        AnnounceForStation(
+            ent.Owner,
             Loc.GetString("proto-core-announcement-unauthorized-connection"),
-            sender: Loc.GetString("proto-core-announcement-sender"),
             announcementSound: _breachAnnouncement,
             colorOverride: Color.Red);
         _audio.PlayPvs(_beep, ent);
@@ -397,17 +423,17 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
         if (args.Cancelled || !TryFindCore(ent, out var core))
             return;
 
-        if (!IsAuthorized(ent) || !IsHackingDeviceConnected(ent))
+        if (!CanStartMeltdown(ent, core.Comp.State))
         {
             _audio.PlayPvs(_deny, ent);
             return;
         }
 
-        StartMeltdown(core);
+        StartMeltdownFromConsole(ent, core);
         _audio.PlayPvs(_beep, ent);
     }
 
-    public void StartMeltdown(Entity<ProtoCoreComponent> core, float? remainingTime = null)
+    public void StartMeltdown(Entity<ProtoCoreComponent> core, float? remainingTime = null, bool skipEmergencyShuttle = false)
     {
         core.Comp.State = ProtoCoreState.Meltdown;
         core.Comp.RemainingTime = remainingTime ?? core.Comp.MeltdownTime;
@@ -415,6 +441,7 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
         core.Comp.CriticalStageStarted = false;
         core.Comp.EmergencyShuttleCalled = false;
         core.Comp.Exploded = false;
+        core.Comp.SkipEmergencyShuttle = skipEmergencyShuttle;
         var storage = GetCoreNetworkStorage(core.Owner);
         core.Comp.LastStorageCharge = storage.Charge;
         core.Comp.LastStorageCapacity = storage.Capacity;
@@ -423,9 +450,9 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
         SetRuleResult(ProtoCoreState.Meltdown);
 
         SetDeltaAlert(core.Owner);
-        _chat.DispatchGlobalAnnouncement(
+        AnnounceForStation(
+            core.Owner,
             Loc.GetString("proto-core-announcement-meltdown-started", ("time", FormatTime(core.Comp.RemainingTime))),
-            sender: Loc.GetString("proto-core-announcement-sender"),
             colorOverride: Color.Red);
 
         if (core.Comp.RemainingTime <= core.Comp.MeltdownMusicDuration)
@@ -469,9 +496,6 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
         DisconnectHackingDevice(ent);
         UpdateConsoleUi(ent);
         Stabilize(core);
-        _chat.DispatchGlobalAnnouncement(
-            Loc.GetString("proto-core-announcement-stabilized"),
-            sender: Loc.GetString("proto-core-announcement-sender"));
     }
 
     private void StartDoAfter(Entity<ProtoCoreConsoleComponent> ent, EntityUid user, SimpleDoAfterEvent ev, float delay)
@@ -506,22 +530,30 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
         UpdateConsoleUisForCore((uid, core));
         SetRuleResult(ProtoCoreState.Critical);
 
-        _chat.DispatchGlobalAnnouncement(
-            Loc.GetString("proto-core-announcement-critical"),
-            sender: Loc.GetString("proto-core-announcement-sender"),
+        var criticalAnnouncement = core.SkipEmergencyShuttle
+            ? "proto-core-announcement-critical-no-evac"
+            : "proto-core-announcement-critical";
+
+        AnnounceForStation(
+            uid,
+            Loc.GetString(criticalAnnouncement),
             announcementSound: _breachAnnouncement,
             colorOverride: Color.Red);
 
-        if (core.EmergencyShuttleCalled)
+        if (core.SkipEmergencyShuttle || core.EmergencyShuttleCalled)
+            return;
+
+        var station = GetCoreStation(uid);
+        if (station is not { } stationUid)
             return;
 
         core.EmergencyShuttleCalled = true;
-        _roundEnd.RequestRoundEnd(
+        _emergencyShuttle.RequestStationEmergencyShuttle(
+            stationUid,
             TimeSpan.FromSeconds(core.EmergencyShuttleTime),
-            checkCooldown: false,
+            core.EmergencyShuttleDockTime,
             text: "proto-core-announcement-shuttle-called",
-            name: "proto-core-announcement-sender",
-            cantRecall: true);
+            name: "proto-core-announcement-sender");
     }
 
     private void FinishMeltdown(EntityUid uid, ProtoCoreComponent core)
@@ -559,10 +591,9 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
         core.Comp.CriticalStageStarted = false;
         UpdateConsoleUisForCore(core);
         SetRuleResult(ProtoCoreState.Stabilized);
+        RestorePreMeltdownAlert(core.Owner, core.Comp);
 
-        _chat.DispatchGlobalAnnouncement(
-            Loc.GetString("proto-core-announcement-stabilized"),
-            sender: Loc.GetString("proto-core-announcement-sender"));
+        AnnounceForStation(core.Owner, Loc.GetString("proto-core-announcement-stabilized"));
     }
 
     private void SetState(Entity<ProtoCoreComponent> core, ProtoCoreState state)
@@ -582,11 +613,52 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
 
     private void SetDeltaAlert(EntityUid core)
     {
-        var station = _station.GetOwningStation(core) ?? _station.GetStationInMap(Transform(core).MapID);
+        var station = GetCoreStation(core);
         if (station is not { } stationUid)
             return;
 
+        if (TryComp<ProtoCoreComponent>(core, out var protoCore))
+            protoCore.PreMeltdownAlertLevel = _alertLevel.GetLevel(stationUid);
+
         _alertLevel.SetLevel(stationUid, "delta", true, true, true, true);
+    }
+
+    private void RestorePreMeltdownAlert(EntityUid core, ProtoCoreComponent component)
+    {
+        if (string.IsNullOrEmpty(component.PreMeltdownAlertLevel))
+            return;
+
+        var station = GetCoreStation(core);
+        if (station is not { } stationUid)
+            return;
+
+        _alertLevel.SetLevel(stationUid, component.PreMeltdownAlertLevel, true, true, true, false);
+        component.PreMeltdownAlertLevel = string.Empty;
+    }
+
+    private EntityUid? GetCoreStation(EntityUid core)
+    {
+        return _station.GetOwningStation(core) ?? _station.GetStationInMap(Transform(core).MapID);
+    }
+
+    private void AnnounceForStation(
+        EntityUid source,
+        string message,
+        bool playSound = true,
+        SoundSpecifier? announcementSound = null,
+        Color? colorOverride = null)
+    {
+        var station = GetCoreStation(source);
+        if (station is not { } stationUid)
+            return;
+
+        _chat.DispatchStationAnnouncement(
+            stationUid,
+            message,
+            sender: Loc.GetString("proto-core-announcement-sender"),
+            playDefaultSound: playSound,
+            announcementSound: announcementSound,
+            colorOverride: colorOverride);
     }
 
     private void OnConsoleUiOpened(Entity<ProtoCoreConsoleComponent> ent, ref BoundUIOpenedEvent args)
@@ -609,15 +681,13 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
         switch (args.Action)
         {
             case ProtoCoreConsoleAction.Start:
-                if (IsAuthorized(ent) &&
-                    IsHackingDeviceConnected(ent) &&
-                    core.Comp.State is ProtoCoreState.Hacked or ProtoCoreState.Idle)
+                if (CanStartMeltdown(ent, core.Comp.State))
                     StartDoAfter(ent, user, new ProtoCoreStartDoAfterEvent(), ent.Comp.StartTime);
                 else
                     _audio.PlayPvs(_deny, ent);
                 break;
             case ProtoCoreConsoleAction.Stabilize:
-                if (core.Comp.State is ProtoCoreState.Meltdown or ProtoCoreState.Critical)
+                if (core.Comp.State is ProtoCoreState.Meltdown or ProtoCoreState.Critical && CanStabilize(core))
                     StartDoAfter(ent, user, new ProtoCoreStabilizeDoAfterEvent(), ent.Comp.StabilizeTime);
                 else
                     _audio.PlayPvs(_deny, ent);
@@ -657,13 +727,11 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
         var storedEnergy = coreInRange ? GetStoredEnergy(core.Owner) : "--";
         var authorized = IsAuthorized(ent);
         var hackingDeviceConnected = IsHackingDeviceConnected(ent);
-        var canStart = coreInRange &&
-                       authorized &&
-                       hackingDeviceConnected &&
-                       state is (ProtoCoreState.Hacked or ProtoCoreState.Idle);
-        var canStabilize = coreInRange && state is (ProtoCoreState.Meltdown or ProtoCoreState.Critical);
-        if (canStabilize && !CanStabilize(core))
-            canStabilize = false;
+        var canStart = coreInRange && CanStartMeltdown(ent, state);
+        var noSmesRemaining = coreInRange && !HasProtoCoreSmes(core);
+        var canStabilize = coreInRange &&
+                           state is (ProtoCoreState.Meltdown or ProtoCoreState.Critical) &&
+                           CanStabilize(core);
 
         _ui.SetUiState(ent.Owner, ProtoCoreConsoleUiKey.Key, new ProtoCoreConsoleBoundUserInterfaceState(
             state,
@@ -671,7 +739,8 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
             powerOutput,
             storedEnergy,
             canStart,
-            canStabilize));
+            canStabilize,
+            noSmesRemaining));
     }
 
     private void DisconnectHackingDevice(Entity<ProtoCoreConsoleComponent> ent)
@@ -687,6 +756,45 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
     private void UpdateHackingDeviceVisual(Entity<ProtoCoreConsoleComponent> ent)
     {
         _appearance.SetData(ent, ProtoCoreVisuals.HackingDeviceInstalled, ent.Comp.HackingDeviceSlot.HasItem);
+    }
+
+    private static bool IsMeltdownStartable(ProtoCoreState state) =>
+        state is ProtoCoreState.Idle or ProtoCoreState.Hacked or ProtoCoreState.Stabilized;
+
+    private bool CanStartMeltdown(Entity<ProtoCoreConsoleComponent> ent, ProtoCoreState state)
+    {
+        if (!IsMeltdownStartable(state) || !IsAuthorized(ent))
+            return false;
+
+        if (TryGetZeroShiftKey(ent, out _))
+            return true;
+
+        return IsHackingDeviceConnected(ent);
+    }
+
+    private bool TryGetZeroShiftKey(Entity<ProtoCoreConsoleComponent> ent, out ProtoCoreActivationKeyComponent key)
+    {
+        key = default!;
+        if (!ent.Comp.ActivationKeySlot.HasItem ||
+            !TryComp(ent.Comp.ActivationKeySlot.Item, out ProtoCoreActivationKeyComponent? keyComp) ||
+            !keyComp.ZeroShift)
+        {
+            return false;
+        }
+
+        key = keyComp;
+        return true;
+    }
+
+    private void StartMeltdownFromConsole(Entity<ProtoCoreConsoleComponent> console, Entity<ProtoCoreComponent> core)
+    {
+        if (TryGetZeroShiftKey(console, out var zeroShiftKey))
+        {
+            StartMeltdown(core, zeroShiftKey.ZeroShiftMeltdownTime, skipEmergencyShuttle: true);
+            return;
+        }
+
+        StartMeltdown(core);
     }
 
     private static bool IsAuthorized(Entity<ProtoCoreConsoleComponent> ent)
@@ -752,10 +860,19 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
         }
     }
 
+    private bool HasProtoCoreSmes(Entity<ProtoCoreComponent> core)
+    {
+        return GetCoreNetworkStorage(core.Owner).Capacity > 0f;
+    }
+
     private bool CanStabilize(Entity<ProtoCoreComponent> core)
     {
         var (charge, capacity) = GetCoreNetworkStorage(core.Owner);
-        return capacity > 0f && charge <= StorageEmptyThreshold;
+
+        if (capacity <= 0f)
+            return true;
+
+        return charge <= StorageEmptyThreshold;
     }
 
     private void CheckStorageDisconnectedDuringMeltdown(Entity<ProtoCoreComponent> core)
@@ -771,9 +888,9 @@ public sealed class ProtoCoreSystem : GameRuleSystem<AshLegionRuleComponent>
         {
             core.Comp.RemainingTime = MathF.Min(core.Comp.RemainingTime, core.Comp.CriticalThreshold);
             EnterCritical(core.Owner, core.Comp);
-            _chat.DispatchGlobalAnnouncement(
+            AnnounceForStation(
+                core.Owner,
                 Loc.GetString("proto-core-announcement-storage-disconnected"),
-                sender: Loc.GetString("proto-core-announcement-sender"),
                 announcementSound: _breachAnnouncement,
                 colorOverride: Color.Red);
         }

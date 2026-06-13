@@ -10,10 +10,10 @@ namespace Content.Server._Eclipse.ProtoCore.Components;
 public sealed partial class ProtoCoreComponent : Component
 {
     [DataField]
-    public float MeltdownTime = 900f;
+    public float MeltdownTime = 360f;
 
     [DataField]
-    public float CriticalThreshold = 180f;
+    public float CriticalThreshold = 120f;
 
     [DataField]
     public float WarningThreshold = 240f;
@@ -22,13 +22,16 @@ public sealed partial class ProtoCoreComponent : Component
     public float PowerLossPenalty = 120f;
 
     [DataField]
-    public float EmergencyShuttleTime = 180f;
+    public float EmergencyShuttleTime = 60f;
+
+    [DataField]
+    public float EmergencyShuttleDockTime = 30f;
 
     [DataField]
     public SoundSpecifier MeltdownMusic = new SoundCollectionSpecifier("NukeMusic");
 
     [DataField]
-    public float MeltdownMusicDuration = 203f;
+    public float MeltdownMusicDuration = 208f;
 
     [DataField]
     public ProtoId<ExplosionPrototype> ExplosionType = "Default";
@@ -43,7 +46,7 @@ public sealed partial class ProtoCoreComponent : Component
     public float ExplosionMaxTileIntensity = 200f;
 
     [DataField]
-    public float RoundEndDelay = 8f;
+    public float RoundEndDelay = 60f;
 
     [DataField]
     public float RemainingTime;
@@ -74,4 +77,16 @@ public sealed partial class ProtoCoreComponent : Component
 
     [DataField]
     public bool Exploded;
+
+    /// <summary>
+    /// Alert level active on the station before meltdown forced delta.
+    /// </summary>
+    [DataField]
+    public string PreMeltdownAlertLevel = string.Empty;
+
+    /// <summary>
+    /// When set, critical stage does not call an emergency shuttle for the station.
+    /// </summary>
+    [DataField]
+    public bool SkipEmergencyShuttle;
 }

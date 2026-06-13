@@ -9,7 +9,10 @@
       shuttleTime: 600
     enigma:
       announcement: alert-level-enigma-announcement
-      sound: /Audio/Eclipse/Misc/alerts/enigma_new_style_alert.ogg
+      sound:
+        path: /Audio/Eclipse/Misc/alerts/short_amber.ogg
+        params:
+          volume: -8
       color: DodgerBlue
       forceEnableEmergencyLights: true
       emergencyLightColor: DodgerBlue

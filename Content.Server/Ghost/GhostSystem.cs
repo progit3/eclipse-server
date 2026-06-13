@@ -289,7 +289,7 @@ namespace Content.Server.Ghost
                 return;
             }
 
-            var remaining = ghost.TimeOfDeath + RespawnCooldown - _gameTiming.RealTime;
+            var remaining = GetRemainingDeathCooldown(ghost.TimeOfDeath, RespawnCooldown);
             if (remaining > TimeSpan.Zero)
             {
                 _popup.PopupEntity(Loc.GetString(

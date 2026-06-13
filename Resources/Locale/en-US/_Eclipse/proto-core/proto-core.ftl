@@ -2,12 +2,16 @@ ent-ProtoCore = proto core
     .desc = A stationary imperial energy vault used for emergency station power reserves.
 ent-ProtoCoreActivationKey = activation key
     .desc = A secured imperial data key that grants access to emergency proto core protocols.
+ent-ProtoCoreZeroShiftActivationKey = zero shift activation key
+    .desc = An imperial override key that forces proto core meltdown without evacuation protocols.
 ent-AshHackingDevice = ash hacking device
     .desc = A compact breaching apparatus built to force external authorization into a proto core.
 ent-ProtoCoreSMES = proto core SMES
     .desc = A protected superconducting storage unit tuned for proto core stabilization.
 ent-PinpointerProtoCoreActivationKey = activation key tracker
     .desc = A handheld tracker locked onto the activation key's emergency beacon.
+ent-PinpointerSyndicateNuclear = ash legion pinpointer
+    .desc = Produced specifically for ash legion operative missions, get that key!
 
 ash-legion-title = Ash Legionnaires
 ash-legion-description = The Ash Legion targets the station's built-in proto core instead of bringing a nuclear device.
@@ -26,6 +30,7 @@ proto-core-announcement-unauthorized-connection = SECURITY BREACH CONFIRMED. Pro
 proto-core-announcement-meltdown-started = DELTA PROTOCOL ENFORCED. Proto core switched to meltdown mode. Total collapse in {$time}.
 proto-core-announcement-stabilized = Stabilization complete. The proto core has returned to emergency energy accumulation mode.
 proto-core-announcement-critical = Eidos Imperial directive: containment failure is irreversible. Evacuate immediately. Emergency shuttle will arrive in 1 minute.
+proto-core-announcement-critical-no-evac = Eidos Imperial directive: containment failure is irreversible. Evacuation protocols are disabled. Clear the immediate area.
 proto-core-announcement-shuttle-called = Emergency shuttle called automatically due to proto core critical state. Arrival in 1 minute.
 proto-core-announcement-storage-disconnected = Proto core stabilization storage was severed while charged. Containment failure accelerated.
 
@@ -39,6 +44,7 @@ ash-hacking-device-locked = The device is locked into the proto core loop. Disco
 
 proto-core-verb-start = Start meltdown procedure
 proto-core-verb-stabilize = Stabilize proto core
+proto-core-verb-defuse = Defuse proto core
 proto-core-verb-physical-override = Force device disconnect
 
 proto-core-state-idle = idle

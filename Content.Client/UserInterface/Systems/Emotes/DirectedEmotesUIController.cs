@@ -202,7 +202,7 @@ public sealed class DirectedEmotesUIController : UIController, IOnStateChanged<G
         });
     }
 
-    private void SendDialogMessage(string message)
+    private void SendDialogMessage(string message, DirectedEmotesMessageType messageType)
     {
         if (_conversationId == 0)
             return;
@@ -210,7 +210,8 @@ public sealed class DirectedEmotesUIController : UIController, IOnStateChanged<G
         _net.ClientSendMessage(new DirectedEmotesSendMessage
         {
             ConversationId = _conversationId,
-            Message = message
+            Message = message,
+            MessageType = messageType
         });
     }
 
@@ -240,7 +241,7 @@ public sealed class DirectedEmotesUIController : UIController, IOnStateChanged<G
         _conversationId = message.ConversationId;
 
         EnsureDialogWindow();
-        _dialogWindow!.AddLine(message.Sender, message.Message, message.SystemMessage);
+        _dialogWindow!.AddLine(message.Sender, message.Message, message.SystemMessage, message.MessageType);
         if (!_dialogWindow.IsOpen)
             _dialogWindow.OpenCentered();
     }

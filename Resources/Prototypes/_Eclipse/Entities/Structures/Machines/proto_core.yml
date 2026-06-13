@@ -40,17 +40,18 @@
         - LowImpassable
   - type: InteractionOutline
   - type: ProtoCore
-    meltdownTime: 600
+    meltdownTime: 360
     warningThreshold: 240
     criticalThreshold: 120
-    emergencyShuttleTime: 180
+    emergencyShuttleTime: 60
+    emergencyShuttleDockTime: 30
     meltdownMusic:
       path: /Audio/_Eclipse/ProtoCore/protocore_meltdown.ogg
-    meltdownMusicDuration: 203
+    meltdownMusicDuration: 208
     explosionTotalIntensity: 200000
     explosionMaxTileIntensity: 200
     explosionIntensitySlope: 5
-    roundEndDelay: 8
+    roundEndDelay: 60
   - type: ProtoCoreConsole
     hackTime: 60
     activationKeySlot:
@@ -64,7 +65,6 @@
         - ProtoCoreActivationKey
     hackingDeviceSlot:
       name: proto-core-slot-component-slot-name-device
-      disableEject: true
       insertSound:
         path: /Audio/Machines/terminal_insert_disc.ogg
       ejectSound:
@@ -74,6 +74,7 @@
         - AshHackingDevice
   - type: ActivatableUI
     key: enum.ProtoCoreConsoleUiKey.Key
+    requireActiveHand: false
   - type: UserInterface
     interfaces:
       enum.ProtoCoreConsoleUiKey.Key:
@@ -136,6 +137,7 @@
   suffix: Proto Core, 8MJ
   components:
   - type: ProtoCoreSmes
+  - type: Godmode
   - type: Battery
     maxCharge: 8000000
     startingCharge: 8000000

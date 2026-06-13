@@ -52,6 +52,9 @@ public sealed class ProtoCoreConsoleWindow : FancyWindow
 
         _startButton.Disabled = !state.CanStart;
         _stabilizeButton.Disabled = !state.CanStabilize;
+        _stabilizeButton.Text = Loc.GetString(state.NoSmesRemaining
+            ? "proto-core-verb-defuse"
+            : "proto-core-verb-stabilize");
     }
 
     private static Label AddStatusRow(BoxContainer root, string label)

@@ -40,10 +40,12 @@
       "directions": 4
     },
     {
-      "name": "inteq_inhand-left"
+      "name": "inteq_inhand-left",
+      "directions": 4
     },
     {
-      "name": "inteq_inhand-right"
+      "name": "inteq_inhand-right",
+      "directions": 4
     },
     {
       "name": "inteq_jaws_cutter"

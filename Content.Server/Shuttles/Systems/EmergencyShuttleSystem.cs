@@ -160,7 +160,10 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         base.Update(frameTime);
         // Don't handle any of this logic if in lobby
         if (_ticker.RunLevel != GameRunLevel.PreRoundLobby)
+        {
             UpdateEmergencyConsole(frameTime);
+            UpdateStationEvacConsole(frameTime);
+        }
     }
 
     /// <summary>
@@ -323,10 +326,11 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
     /// <summary>
     /// Do post-shuttle-dock setup. Announce to the crew and set up shuttle timers.
     /// </summary>
-    public void AnnounceShuttleDock(ShuttleDockResult result, bool extended)
+    public void AnnounceShuttleDock(ShuttleDockResult result, bool extended, float? consoleAccumulator = null)
     {
         var stationShuttleComp = result.Station.Comp;
         var shuttle = result.Station.Comp.EmergencyShuttle;
+        var dockTime = consoleAccumulator ?? _consoleAccumulator;
 
         DebugTools.Assert(shuttle != null);
 
@@ -366,7 +370,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             result.Station,
             Loc.GetString(
                 locKey,
-                ("time", $"{_consoleAccumulator:0}"),
+                ("time", $"{dockTime:0}"),
                 ("direction", direction),
                 ("location", location),
                 ("extended", extendedText)),
@@ -374,7 +378,7 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
 
         // Trigger shuttle timers on the shuttle.
 
-        var time = TimeSpan.FromSeconds(_consoleAccumulator);
+        var time = TimeSpan.FromSeconds(dockTime);
         if (TryComp<DeviceNetworkComponent>(shuttle, out var netComp))
         {
             var payload = new NetworkPayload
@@ -439,7 +443,8 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
             return;
         }
 
-        _consoleAccumulator = ConfigManager.GetCVar(CCVars.EmergencyShuttleDockTime);
+        _consoleAccumulator = _pendingDockTimeOverride ?? ConfigManager.GetCVar(CCVars.EmergencyShuttleDockTime);
+        _pendingDockTimeOverride = null;
         EmergencyShuttleArrived = true;
 
         var query = AllEntityQuery<StationEmergencyShuttleComponent>();
@@ -475,6 +480,37 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         }
 
         _commsConsole.UpdateCommsConsoleInterface();
+    }
+
+    /// <summary>
+    /// Docks the emergency shuttle for a single station as part of a station-scoped evacuation.
+    /// </summary>
+    public void DockStationEmergencyShuttle(EntityUid stationUid, float dockTime)
+    {
+        if (!_emergencyShuttleEnabled ||
+            !TryComp<StationEmergencyShuttleComponent>(stationUid, out var comp) ||
+            comp.EvacArrived)
+        {
+            return;
+        }
+
+        comp.EvacConsoleAccumulator = dockTime;
+        comp.EvacArrived = true;
+        Dirty(stationUid, comp);
+
+        if (DockSingleEmergencyShuttle(stationUid, comp) is not { } dockResult)
+            return;
+
+        var multiplier = dockResult.ResultType switch
+        {
+            ShuttleDockResultType.OtherDock => ConfigManager.GetCVar(CCVars.EmergencyShuttleDockTimeMultiplierOtherDock),
+            ShuttleDockResultType.NoDock => ConfigManager.GetCVar(CCVars.EmergencyShuttleDockTimeMultiplierNoDock),
+            _ => 1,
+        };
+
+        comp.EvacConsoleAccumulator = dockTime * multiplier;
+        Dirty(stationUid, comp);
+        AnnounceShuttleDock(dockResult, multiplier > 1, comp.EvacConsoleAccumulator);
     }
 
     private void SetupEmergencyShuttle()

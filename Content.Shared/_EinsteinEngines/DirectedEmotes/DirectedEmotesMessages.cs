@@ -4,6 +4,13 @@ using Robust.Shared.Serialization;
 
 namespace Content.Shared._EinsteinEngines.DirectedEmotes;
 
+public enum DirectedEmotesMessageType : byte
+{
+    Whisper = 0,
+    Voice = 1,
+    Emotion = 2,
+}
+
 public sealed class DirectedEmotesStartMessage : NetMessage
 {
     public override MsgGroups MsgGroup => MsgGroups.Command;
@@ -25,17 +32,20 @@ public sealed class DirectedEmotesSendMessage : NetMessage
     public override MsgGroups MsgGroup => MsgGroups.Command;
     public int ConversationId;
     public string Message = string.Empty;
+    public DirectedEmotesMessageType MessageType = DirectedEmotesMessageType.Voice;
 
     public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
     {
         ConversationId = buffer.ReadVariableInt32();
         Message = buffer.ReadString();
+        MessageType = (DirectedEmotesMessageType) buffer.ReadByte();
     }
 
     public override void WriteToBuffer(NetOutgoingMessage buffer, IRobustSerializer serializer)
     {
         buffer.WriteVariableInt32(ConversationId);
         buffer.Write(Message);
+        buffer.Write((byte) MessageType);
     }
 }
 
@@ -117,6 +127,7 @@ public sealed class DirectedEmotesChatMessage : NetMessage
     public string Sender = string.Empty;
     public string Message = string.Empty;
     public bool SystemMessage;
+    public DirectedEmotesMessageType MessageType = DirectedEmotesMessageType.Voice;
 
     public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
     {
@@ -124,6 +135,7 @@ public sealed class DirectedEmotesChatMessage : NetMessage
         Sender = buffer.ReadString();
         Message = buffer.ReadString();
         SystemMessage = buffer.ReadBoolean();
+        MessageType = (DirectedEmotesMessageType) buffer.ReadByte();
     }
 
     public override void WriteToBuffer(NetOutgoingMessage buffer, IRobustSerializer serializer)
@@ -132,6 +144,7 @@ public sealed class DirectedEmotesChatMessage : NetMessage
         buffer.Write(Sender);
         buffer.Write(Message);
         buffer.Write(SystemMessage);
+        buffer.Write((byte) MessageType);
     }
 }
 

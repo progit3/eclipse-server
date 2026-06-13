@@ -15,7 +15,17 @@ directed-emotes-dialog-participants = Participants
 directed-emotes-dialog-add-participant = Add participant
 directed-emotes-dialog-send = Send
 directed-emotes-dialog-input-placeholder = Message
+directed-emotes-dialog-input-placeholder-voice = Say something...
+directed-emotes-dialog-input-placeholder-whisper = Whisper...
+directed-emotes-dialog-input-placeholder-emotion = Describe an action...
+directed-emotes-dialog-type-whisper = Whisper
+directed-emotes-dialog-type-voice = Voice
+directed-emotes-dialog-type-emotion = Emotion
+directed-emotes-dialog-scroll-down = ↓ Down
 directed-emotes-dialog-message-wrap = [bold]{$player}:[/bold] {$message}
+directed-emotes-dialog-message-voice = [color=#FFF1D6][bold]{$player}:[/bold][/color] {$message}
+directed-emotes-dialog-message-whisper = [color=#9A8A78][italic]{$player} whispers:[/italic][/color] [color=#BFA88A]{$message}[/color]
+directed-emotes-dialog-message-emotion = [color=#D4A574][italic]* {$player} {$message}*[/italic][/color]
 directed-emotes-dialog-participant-out-of-range = {$player} (out of range)
 directed-emotes-dialog-started = Dialogue started.
 directed-emotes-dialog-participant-added = {$player} joined the dialogue.

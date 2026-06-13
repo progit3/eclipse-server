@@ -54,6 +54,8 @@ namespace Content.Client.Lobby.UI
         private const float LaunchStatusWidth = 158f;
         private const float LaunchStatusAnimationSpeed = 5f;
         private const float AccountWidthWithLaunch = 775f;
+        private const float VotePopupHeight = 180f;
+        private const float VotePopupSpacing = 4f;
         private readonly EclipseNewsEntry[] _news;
         private readonly StoreItem[] _storeItems;
         private readonly RoadmapEntry[] _roadmapEntries;
@@ -795,7 +797,11 @@ namespace Content.Client.Lobby.UI
             SetRightStretch(RightSide, rightGap, RightPanelTop, rightWidth, RightPanelBottomGap);
             SetTopRight(ExpandPanel, rightGap, RightPanelTop, 44f, 44f);
             SetBottomRight(BottomActions, rightGap, BottomGap, rightWidth, BottomActionsHeight);
-            SetTopLeft(VoteContainer, CenterLeft, TopGap + AccountHeight + 12f, Math.Clamp(accountWidth, 360f, 640f), 180f);
+            var voteCount = VoteContainer.ChildCount;
+            var voteHeight = voteCount == 0
+                ? VotePopupHeight
+                : voteCount * VotePopupHeight + (voteCount - 1) * VotePopupSpacing;
+            SetTopLeft(VoteContainer, CenterLeft, TopGap + AccountHeight + 12f, Math.Clamp(accountWidth, 360f, 640f), voteHeight);
             var centerRightReserve = RightSide.Visible ? rightGap + rightWidth + 28f : rightGap;
             SetTopLeft(SectionPanel, SidebarWidth, 0f, MathF.Max(width - SidebarWidth - centerRightReserve, 1f), height);
 

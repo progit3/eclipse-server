@@ -61,6 +61,9 @@
     - state: icon
   - type: Item
     sprite: _Eclipse/Objects/Devices/legion_supply_terminal.rsi
+    inhandVisuals:
+      left: []
+      right: []
   - type: UserInterface
     interfaces:
       enum.StoreUiKey.Key:

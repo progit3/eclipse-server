@@ -1,5 +1,7 @@
+using Content.Server.Mind.Filters;
 using Content.Server.Objectives.Components;
 using Content.Shared.Mind;
+using Content.Shared.Mind.Filters;
 using Content.Shared.Objectives.Components;
 using Content.Server.GameTicking.Rules;
 using Content.Server.Revolutionary.Components;
@@ -17,6 +19,11 @@ public sealed class PickObjectiveTargetSystem : EntitySystem
 {
     [Dependency] private readonly TargetObjectiveSystem _objective = default!;
     [Dependency] private readonly TargetSystem _target = default!;
+
+    private static readonly List<MindFilter> DefaultTargetFilters = new()
+    {
+        new ValidObjectiveTargetMindFilter(),
+    };
 
     public override void Initialize()
     {
@@ -69,7 +76,8 @@ public sealed class PickObjectiveTargetSystem : EntitySystem
             return;
 
         // couldn't find a target :(
-        if (_target.PickFromPool(ent.Comp.Pool, ent.Comp.Filters, args.MindId) is not {} picked)
+        var filters = ent.Comp.Filters.Count > 0 ? ent.Comp.Filters : DefaultTargetFilters;
+        if (_target.PickFromPool(ent.Comp.Pool, filters, args.MindId) is not {} picked)
         {
             args.Cancelled = true;
             return;

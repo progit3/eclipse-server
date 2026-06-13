@@ -118,7 +118,8 @@
   - type: LoadMapRule
     mapPath: /Maps/Nonstations/nukieplanet.yml
   - type: NukeopsRule
-    canEnableWarOps: false
+    canEnableWarOps: true
+    warDeclarationMinOps: 2
     welcomeText: ash-legion-welcome
     briefingText: ash-legion-briefing
   - type: AshLegionRule

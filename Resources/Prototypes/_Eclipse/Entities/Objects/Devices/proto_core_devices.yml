@@ -41,6 +41,19 @@
     price: 15000
 
 - type: entity
+  id: ProtoCoreZeroShiftActivationKey
+  parent: ProtoCoreActivationKey
+  name: zero shift activation key
+  description: An imperial override key that forces proto core meltdown without evacuation protocols.
+  suffix: Zero Shift
+  components:
+  - type: ProtoCoreActivationKey
+    zeroShift: true
+    zeroShiftMeltdownTime: 320
+  - type: NavMapBeacon
+    text: zero shift activation key
+
+- type: entity
   id: ProtoCoreCableTool
   parent: BaseItem
   name: proto core cable tool

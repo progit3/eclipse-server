@@ -51,7 +51,8 @@ public sealed class ProtoCoreConsoleBoundUserInterfaceState(
     string powerOutput,
     string storedEnergy,
     bool canStart,
-    bool canStabilize) : BoundUserInterfaceState
+    bool canStabilize,
+    bool noSmesRemaining) : BoundUserInterfaceState
 {
     public ProtoCoreState State = state;
     public string RemainingTime = remainingTime;
@@ -59,6 +60,7 @@ public sealed class ProtoCoreConsoleBoundUserInterfaceState(
     public string StoredEnergy = storedEnergy;
     public bool CanStart = canStart;
     public bool CanStabilize = canStabilize;
+    public bool NoSmesRemaining = noSmesRemaining;
 }
 
 [Serializable, NetSerializable]

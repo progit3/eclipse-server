@@ -1,5 +1,4 @@
-﻿using Content.Client.FeedbackPopup;
-using Content.Client.Gameplay;
+﻿using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Guidebook;
 using Content.Client.UserInterface.Systems.Info;
@@ -22,11 +21,12 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
     [Dependency] private readonly IClientConsoleHost _console = default!;
     [Dependency] private readonly IUriOpener _uri = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly ChangelogUIController _changelog = default!;
     [Dependency] private readonly InfoUIController _info = default!;
     [Dependency] private readonly OptionsUIController _options = default!;
     [Dependency] private readonly GuidebookUIController _guidebook = default!;
-    [Dependency] private readonly FeedbackPopupUIController _feedback = null!;
+
+    private static readonly Uri SiteUri = new("https://www.eclipse-station.online");
+    private static readonly Uri DiscordUri = new("https://discord.gg/zF8nQVy7Jf");
 
     private Options.UI.EscapeMenu? _escapeWindow;
 
@@ -65,17 +65,9 @@ public sealed class EscapeUIController : UIController, IOnStateEntered<GameplayS
         _escapeWindow.OnClose += DeactivateButton;
         _escapeWindow.OnOpen += ActivateButton;
 
-        _escapeWindow.FeedbackButton.OnPressed += _ =>
-        {
-            CloseEscapeWindow();
-            _feedback.ToggleWindow();
-        };
+        _escapeWindow.DiscordButton.OnPressed += _ => _uri.OpenUri(DiscordUri);
 
-        _escapeWindow.ChangelogButton.OnPressed += _ =>
-        {
-            CloseEscapeWindow();
-            _changelog.ToggleWindow();
-        };
+        _escapeWindow.SiteButton.OnPressed += _ => _uri.OpenUri(SiteUri);
 
         _escapeWindow.RulesButton.OnPressed += _ =>
         {

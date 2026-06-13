@@ -31,7 +31,7 @@ namespace Content.Shared.Ghost
 
         private void OnGhostExamine(EntityUid uid, GhostComponent component, ExaminedEvent args)
         {
-            var timeSinceDeath = _gameTiming.RealTime.Subtract(component.TimeOfDeath);
+            var timeSinceDeath = _gameTiming.RealTime.Subtract(GetLocalDeathTime(component.TimeOfDeath));
             var deathTimeInfo = timeSinceDeath.Minutes > 0
                 ? Loc.GetString("comp-ghost-examine-time-minutes", ("minutes", timeSinceDeath.Minutes))
                 : Loc.GetString("comp-ghost-examine-time-seconds", ("seconds", timeSinceDeath.Seconds));
@@ -49,6 +49,24 @@ namespace Content.Shared.Ghost
         {
             if (!component.CanGhostInteract)
                 args.Cancel();
+        }
+
+        /// <summary>
+        /// Converts a server-stored real time of death to the local real-time coordinate system.
+        /// </summary>
+        protected TimeSpan GetLocalDeathTime(TimeSpan timeOfDeath)
+        {
+            return _gameTiming.ServerTime != TimeSpan.Zero
+                ? _gameTiming.RealServerToLocal(timeOfDeath)
+                : timeOfDeath;
+        }
+
+        /// <summary>
+        /// Gets the remaining cooldown time based on a server-stored real time of death.
+        /// </summary>
+        protected TimeSpan GetRemainingDeathCooldown(TimeSpan timeOfDeath, TimeSpan cooldown)
+        {
+            return GetLocalDeathTime(timeOfDeath) + cooldown - _gameTiming.RealTime;
         }
 
         /// <summary>

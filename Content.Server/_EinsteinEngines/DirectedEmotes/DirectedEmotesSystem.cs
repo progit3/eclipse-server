@@ -118,10 +118,14 @@ public sealed class DirectedEmotesSystem : EntitySystem
         if (text.Length == 0 || _chat.MessageCharacterLimit(session, text))
             return;
 
+        var messageType = Enum.IsDefined(message.MessageType)
+            ? message.MessageType
+            : DirectedEmotesMessageType.Voice;
+
         text = FormattedMessage.RemoveMarkupOrThrow(text);
         var sender = GetSessionName(session);
-        SendLine(conversation, sender, text, false, activeOnly: true);
-        _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Directed emotes chat from {session:Player}: {text}");
+        SendLine(conversation, sender, text, false, messageType, activeOnly: true);
+        _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Directed emotes chat from {session:Player} ({messageType}): {text}");
     }
 
     private void OnAddParticipant(DirectedEmotesAddParticipantMessage message)
@@ -291,17 +295,24 @@ public sealed class DirectedEmotesSystem : EntitySystem
 
     private void SendSystemLine(DirectedConversation conversation, string text)
     {
-        SendLine(conversation, string.Empty, text, true, activeOnly: false);
+        SendLine(conversation, string.Empty, text, true, DirectedEmotesMessageType.Voice, activeOnly: false);
     }
 
-    private void SendLine(DirectedConversation conversation, string sender, string text, bool system, bool activeOnly)
+    private void SendLine(
+        DirectedConversation conversation,
+        string sender,
+        string text,
+        bool system,
+        DirectedEmotesMessageType messageType,
+        bool activeOnly)
     {
         var message = new DirectedEmotesChatMessage
         {
             ConversationId = conversation.Id,
             Sender = sender,
             Message = text,
-            SystemMessage = system
+            SystemMessage = system,
+            MessageType = messageType
         };
 
         foreach (var session in GetParticipantSessions(conversation, activeOnly))

@@ -103,9 +103,9 @@
   - type: Item
     inhandVisuals:
       left:
-      - state: ashlegion_inhand-left
+      - state: inteq_inhand-left
       right:
-      - state: ashlegion_inhand-right
+      - state: inteq_inhand-right
     size: Normal
   - type: MultipleTool
     entries:

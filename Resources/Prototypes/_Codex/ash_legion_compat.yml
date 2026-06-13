@@ -85,7 +85,7 @@
     state: SyndicateCommander
 
 - type: entity
-  parent: AshLegionJawsOfLife
+  parent: SyndicateJawsOfLife
   id: LegionJawsOfLife
 
 - type: entity
@@ -103,6 +103,11 @@
 - type: entity
   parent: PinpointerLegionNuclear
   id: PinpointerSyndicateNuclear
+  description: Produced specifically for ash legion operative missions, get that key!
+  components:
+  - type: Pinpointer
+    component: ProtoCoreActivationKey
+    targetName: activation key
 
 - type: entity
   parent: ClothingHeadHelmetHardsuitLegion

@@ -202,6 +202,9 @@
     jobIcon: JobIconAshLegionCommander
   - type: Access
     tags:
+    - AshLegion
+    - NuclearOperative
+    - LegionAgent
     - AshLegionVanguardLeader
     - AshLegionVanguard
 
@@ -220,6 +223,9 @@
     jobIcon: JobIconAshLegionCorpsman
   - type: Access
     tags:
+    - AshLegion
+    - NuclearOperative
+    - LegionAgent
     - AshLegionVanguard
 
 - type: entity
@@ -237,6 +243,9 @@
     jobIcon: JobIconAshLegionOperative
   - type: Access
     tags:
+    - AshLegion
+    - NuclearOperative
+    - LegionAgent
     - AshLegionVanguard
 
 - type: entity

@@ -195,7 +195,7 @@ ent-AdvancedJetInjector = продвинутый инъектор
 gun-set-fire-mode-examine = Выбран режим [color=yellow]{$mode}[/color].
 gun-set-fire-mode-popup = Выбран режим { $mode }
 
-ui-escape-feedback = Фидбэк
+ui-escape-discord = Дискорд
 
 ui-options-hold-to-attack-melee = Атака при удержании (ближний)
 ui-options-hold-to-attack-ranged = Атака при удержании (дальний)

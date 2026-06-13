@@ -3,6 +3,7 @@
   hostile:
   - NanoTrasen
   - Syndicate
+  - Legion
   - Xeno
   - PetsNT
   - Zombie
@@ -55,6 +56,7 @@
   hostile:
   - NanoTrasen
   - Syndicate
+  - Legion
   - Passive
   - PetsNT
   - Zombie

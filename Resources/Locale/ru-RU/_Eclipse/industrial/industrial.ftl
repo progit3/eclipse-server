@@ -271,3 +271,51 @@ industrial-machine-tier-industrial = промышленный
 industrial-machine-tier-perfect = совершенный
 
 
+
+# Промышленные стеки переработки руды
+
+stack-copper-ore = медная руда
+
+stack-crushed-iron-ore = дроблёная железная руда
+
+stack-iron-concentrate = железный концентрат
+
+stack-clean-iron-concentrate = очищенный железный концентрат
+
+stack-iron-metallurgic-fraction = железная металлургическая фракция
+
+stack-industrial-steel-billet = промышленная стальная заготовка
+
+stack-crushed-copper-ore = дроблёная медная руда
+
+stack-copper-concentrate = медный концентрат
+
+stack-clean-copper-concentrate = очищенный медный концентрат
+
+stack-copper-metallurgic-fraction = медная металлургическая фракция
+
+stack-industrial-copper-billet = промышленная медная заготовка
+
+stack-crushed-quartz = дроблёный кварц
+
+stack-quartz-concentrate = кварцевый концентрат
+
+stack-clean-quartz-concentrate = очищенный кварцевый концентрат
+
+stack-quartz-glass-fraction = кварцевая стекольная фракция
+
+stack-industrial-glass-batch = промышленная стекольная партия
+
+stack-stone-dust = каменная пыль
+
+stack-waste-rock = пустая порода
+
+stack-dirty-sludge = грязный шлам
+
+stack-mineral-residue = минеральный осадок
+
+stack-metal-dust = металлическая пыль
+
+stack-industrial-scrap = промышленный лом
+
+

@@ -271,3 +271,51 @@ industrial-machine-tier-industrial = industrial
 industrial-machine-tier-perfect = perfect
 
 
+
+# Industrial ore processing stacks
+
+stack-copper-ore = copper ore
+
+stack-crushed-iron-ore = crushed iron ore
+
+stack-iron-concentrate = iron concentrate
+
+stack-clean-iron-concentrate = clean iron concentrate
+
+stack-iron-metallurgic-fraction = iron metallurgic fraction
+
+stack-industrial-steel-billet = industrial steel billet
+
+stack-crushed-copper-ore = crushed copper ore
+
+stack-copper-concentrate = copper concentrate
+
+stack-clean-copper-concentrate = clean copper concentrate
+
+stack-copper-metallurgic-fraction = copper metallurgic fraction
+
+stack-industrial-copper-billet = industrial copper billet
+
+stack-crushed-quartz = crushed quartz
+
+stack-quartz-concentrate = quartz concentrate
+
+stack-clean-quartz-concentrate = clean quartz concentrate
+
+stack-quartz-glass-fraction = quartz glass fraction
+
+stack-industrial-glass-batch = industrial glass batch
+
+stack-stone-dust = stone dust
+
+stack-waste-rock = waste rock
+
+stack-dirty-sludge = dirty sludge
+
+stack-mineral-residue = mineral residue
+
+stack-metal-dust = metal dust
+
+stack-industrial-scrap = industrial scrap
+
+

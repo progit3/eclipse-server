@@ -71,7 +71,6 @@ public sealed partial class EmergencyShuttleSystem
             return;
 
         shuttleComp.EvacCalled = true;
-        Dirty(stationUid, shuttleComp);
 
         int time;
         string units;
@@ -342,8 +341,6 @@ public sealed partial class EmergencyShuttleSystem
                     Loc.GetString("emergency-shuttle-left", ("transitTime", $"{TransitTime:0}")),
                     playDefaultSound: false);
             }
-
-            Dirty(stationUid, comp);
         }
     }
 
@@ -380,7 +377,6 @@ public sealed partial class EmergencyShuttleSystem
         comp.EvacLaunchAuthorized = false;
         comp.EvacLaunched = false;
         comp.EvacShuttleLeft = false;
-        Dirty(stationUid, comp);
     }
 
     private void OnEmergencyRepealAll(EntityUid uid, EmergencyShuttleConsoleComponent component, EmergencyShuttleRepealAllMessage args)

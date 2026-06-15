@@ -248,7 +248,11 @@
   - type: Stack
     stackType: CrushedQuartz
   - type: Sprite
+    sprite: Objects/Materials/ore.rsi
     state: spacequartz
+  - type: Item
+    sprite: Objects/Materials/ore.rsi
+    heldPrefix: spacequartz
 
 - type: entity
   parent: CrushedQuartz
@@ -266,7 +270,11 @@
   - type: Stack
     stackType: QuartzConcentrate
   - type: Sprite
+    sprite: Objects/Materials/ore.rsi
     state: spacequartz
+  - type: Item
+    sprite: Objects/Materials/ore.rsi
+    heldPrefix: spacequartz
 
 - type: entity
   parent: QuartzConcentrate
@@ -284,7 +292,11 @@
   - type: Stack
     stackType: CleanQuartzConcentrate
   - type: Sprite
+    sprite: Objects/Materials/ore.rsi
     state: spacequartz
+  - type: Item
+    sprite: Objects/Materials/ore.rsi
+    heldPrefix: spacequartz
 
 - type: entity
   parent: CleanQuartzConcentrate
@@ -302,7 +314,11 @@
   - type: Stack
     stackType: QuartzGlassFraction
   - type: Sprite
+    sprite: Objects/Materials/ore.rsi
     state: spacequartz
+  - type: Item
+    sprite: Objects/Materials/ore.rsi
+    heldPrefix: spacequartz
 
 - type: entity
   parent: QuartzGlassFraction

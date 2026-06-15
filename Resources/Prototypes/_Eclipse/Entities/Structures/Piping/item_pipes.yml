@@ -1,0 +1,81 @@
+# Industrial item pipes — separate from atmos piping.
+# TODO: Replace placeholder sprites with dedicated item pipe RSI per tier.
+
+- type: entity
+  abstract: true
+  parent: BaseStructure
+  id: BaseItemPipe
+  name: item pipe
+  description: Moves items between industrial machines.
+  placement:
+    mode: SnapgridCenter
+  components:
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Physics
+    bodyType: Static
+    canCollide: false
+  - type: Anchorable
+  - type: ItemPipe
+  - type: Sprite
+    # TODO: Replace with dedicated _Eclipse/Structures/Piping/item_pipe.rsi
+    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    drawdepth: ThinPipe
+    state: pipeStraight
+  - type: Icon
+    sprite: Structures/Piping/Atmospherics/pipe.rsi
+    state: storageStraight
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Metallic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: StaticPrice
+    price: 20
+
+- type: entity
+  parent: BaseItemPipe
+  id: BasicItemPipe
+  name: basic item pipe
+  description: Moves items between industrial machines. Has low throughput.
+  components:
+  - type: ItemPipe
+    tier: Basic
+
+- type: entity
+  parent: BaseItemPipe
+  id: IndustrialItemPipe
+  name: industrial item pipe
+  description: Quickly moves items between industrial machines.
+  components:
+  - type: ItemPipe
+    tier: Industrial
+  - type: Sprite
+    # TODO: distinct industrial tier sprite
+    state: pipeHalf
+  - type: Icon
+    state: storageHalf
+
+- type: entity
+  parent: BaseItemPipe
+  id: PerfectItemPipe
+  name: perfect item pipe
+  description: High-speed item pipe for advanced production lines.
+  components:
+  - type: ItemPipe
+    tier: Perfect
+  - type: Sprite
+    # TODO: distinct perfect tier sprite
+    state: pipeFourway
+  - type: Icon
+    state: storageFourway

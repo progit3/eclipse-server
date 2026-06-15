@@ -496,7 +496,6 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
 
         comp.EvacConsoleAccumulator = dockTime;
         comp.EvacArrived = true;
-        Dirty(stationUid, comp);
 
         if (DockSingleEmergencyShuttle(stationUid, comp) is not { } dockResult)
             return;
@@ -509,7 +508,6 @@ public sealed partial class EmergencyShuttleSystem : SharedEmergencyShuttleSyste
         };
 
         comp.EvacConsoleAccumulator = dockTime * multiplier;
-        Dirty(stationUid, comp);
         AnnounceShuttleDock(dockResult, multiplier > 1, comp.EvacConsoleAccumulator);
     }
 
